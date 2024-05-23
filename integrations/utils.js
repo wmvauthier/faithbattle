@@ -1,10 +1,29 @@
+const URL_DECKS_JSON = "data/decks.json";
+const URL_CARDS_JSON = "data/cards.json";
+
 function getCardDetails(cardNumber) {
   localStorage.setItem("idSelectedCard", cardNumber);
-  location.href = "/card-details.html";
+  location.href = "./card-details.html";
+}
+
+async function getCards() {
+  const decksUrl = URL_CARDS_JSON;
+
+  try {
+    const response = await fetch(decksUrl);
+    if (!response.ok) {
+      throw new Error("Erro ao carregar o arquivo JSON de cards");
+    }
+    const decks = await response.json();
+    return decks;
+  } catch (error) {
+    console.error("Erro:", error);
+    return [];
+  }
 }
 
 async function getDecks() {
-  const decksUrl = "data/decks.json"; // Caminho para o arquivo JSON dos decks
+  const decksUrl = URL_DECKS_JSON;
 
   try {
     const response = await fetch(decksUrl);

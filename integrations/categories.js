@@ -1,55 +1,44 @@
 let cards;
 
 document.addEventListener("DOMContentLoaded", async function () {
-  const jsonUrl = "data/cards.json";
+  let data = await getCards();
+  let decks = await getDecks();
 
-  try {
-    const response = await fetch(jsonUrl);
-    if (!response.ok) {
-      throw new Error("Erro ao carregar o arquivo JSON");
-    }
+  data.forEach((card) => {
+    card.ocurrences = getOccurrencesInDecks(card.number, decks);
+  });
 
-    let data = await response.json();
-    let decks = await getDecks();
+  cards = sortByStarsAndDate(data);
 
-    data.forEach((card) => {
-      card.ocurrences = getOccurrencesInDecks(card.number, decks);
-    });
+  generateTextFilterByProperty("name", "Nome", "Digite o Nome");
+  generateTextFilterByProperty("text", "Text", "Digite o Texto da Carta");
+  generateTextFilterByProperty("flavor", "Flavor", "Digite o Versículo");
+  generateSelectFilterByProperty(cards, "type", "Tipo", "Tipo");
+  generateSelectFilterByProperty(cards, "subtype", "SubTipo", "SubTipo");
+  generateCategoryFilter(cards);
+  generateSelectFilterByProperty(cards, "cost", "Custo", "Custo");
+  generateEffectFilter(cards);
+  generateSelectFilterByProperty(cards, "strength", "Força", "Força");
+  generateSelectFilterByProperty(
+    cards,
+    "resistence",
+    "Resistência",
+    "Resistência"
+  );
+  generateSelectFilterByProperty(cards, "collection", "Coleção", "Coleção");
 
-    cards = sortByStarsAndDate(data);
+  const uniqueStars = Array.from(
+    new Set(cards.map((item) => Math.floor(item.stars)))
+  );
+  const uniqueYears = Array.from(
+    new Set(cards.map((item) => new Date(item.date).getFullYear()))
+  );
 
-    generateTextFilterByProperty("name", "Nome", "Digite o Nome");
-    generateTextFilterByProperty("text", "Text", "Digite o Texto da Carta");
-    generateTextFilterByProperty("flavor", "Flavor", "Digite o Versículo");
-    generateSelectFilterByProperty(cards, "type", "Tipo", "Tipo");
-    generateSelectFilterByProperty(cards, "subtype", "SubTipo", "SubTipo");
-    generateCategoryFilter(cards);
-    generateSelectFilterByProperty(cards, "cost", "Custo", "Custo");
-    generateEffectFilter(cards);
-    generateSelectFilterByProperty(cards, "strength", "Força", "Força");
-    generateSelectFilterByProperty(
-      cards,
-      "resistence",
-      "Resistência",
-      "Resistência"
-    );
-    generateSelectFilterByProperty(cards, "collection", "Coleção", "Coleção");
+  generateStarsFilter(uniqueStars, "ASC");
+  generateYearFilter(uniqueYears, "DESC");
+  generateSelectFilterByProperty(cards, "artist", "Artista", "Artista");
 
-    const uniqueStars = Array.from(
-      new Set(cards.map((item) => Math.floor(item.stars)))
-    );
-    const uniqueYears = Array.from(
-      new Set(cards.map((item) => new Date(item.date).getFullYear()))
-    );
-
-    generateStarsFilter(uniqueStars, "ASC");
-    generateYearFilter(uniqueYears, "DESC");
-    generateSelectFilterByProperty(cards, "artist", "Artista", "Artista");
-
-    renderCards(cards);
-  } catch (error) {
-    console.error("Erro:", error);
-  }
+  renderCards(cards);
 });
 
 function generateSelectFilterByProperty(

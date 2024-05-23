@@ -1,75 +1,64 @@
 let cards;
 
 document.addEventListener("DOMContentLoaded", async function () {
-  const jsonUrl = "data/cards.json";
-
   let idSelectedCard = localStorage.getItem("idSelectedCard");
 
   if (idSelectedCard && idSelectedCard > 0) {
-    try {
-      const response = await fetch(jsonUrl);
-      if (!response.ok) {
-        throw new Error("Erro ao carregar o arquivo JSON");
-      }
-      const data = await response.json();
+    const data = await getCards();
 
-      const card = data.find((element) => element.number == idSelectedCard);
-      const cardStatus = `&#9876;${card.strength} / &#10070;${card.resistence}`;
+    const card = data.find((element) => element.number == idSelectedCard);
+    const cardStatus = `&#9876;${card.strength} / &#10070;${card.resistence}`;
 
-      if (card) {
-        cards = data;
-        let decks = await getDecks();
-        let similarCards = getRelatedCardsInDecks(card.number, decks);
-        let relatedDecks = getRelatedDecks(similarCards, decks);
+    if (card) {
+      cards = data;
+      let decks = await getDecks();
+      let similarCards = getRelatedCardsInDecks(card.number, decks);
+      let relatedDecks = getRelatedDecks(similarCards, decks);
 
-        const similarCardDetails = await fetchRelatedCardsDetails(
-          similarCards.map((card) => card.idcard)
-        );
+      const similarCardDetails = await fetchRelatedCardsDetails(
+        similarCards.map((card) => card.idcard)
+      );
 
-        const elementsToUpdate = {
-          tag_cardName: card.name,
-          tag_cardFlavor: card.flavor,
-          tag_cardText: card.text,
-          tag_cardType: card.type,
-          tag_cardCategories: card.categories.split(";").join("; "),
-          tag_cardCost: String.fromCharCode(10121 + card.cost),
-          tag_cardStatus: cardStatus,
-          tag_cardEffect: card.effects,
-          tag_cardNumber: card.number,
-          tag_cardCollection: card.collection,
-          tag_cardDate: formatDate(card.date),
-          tag_cardArtist: card.artist,
-          tag_cardImg: card.img,
-          tag_cardStars: card.stars, // Assumindo que a propriedade é 'stars'
-        };
+      const elementsToUpdate = {
+        tag_cardName: card.name,
+        tag_cardFlavor: card.flavor,
+        tag_cardText: card.text,
+        tag_cardType: card.type,
+        tag_cardCategories: card.categories.split(";").join("; "),
+        tag_cardCost: String.fromCharCode(10121 + card.cost),
+        tag_cardStatus: cardStatus,
+        tag_cardEffect: card.effects,
+        tag_cardNumber: card.number,
+        tag_cardCollection: card.collection,
+        tag_cardDate: formatDate(card.date),
+        tag_cardArtist: card.artist,
+        tag_cardImg: card.img,
+        tag_cardStars: card.stars, // Assumindo que a propriedade é 'stars'
+      };
 
-        for (const [id, value] of Object.entries(elementsToUpdate)) {
-          const element = document.getElementById(id);
-          if (element) {
-            if (id === "tag_cardImg") {
-              element.src = value;
-            } else if (id === "tag_cardStars") {
-              updateStars(element, value); // Atualizar as estrelas
-            } else {
-              element.textContent = value;
-            }
+      for (const [id, value] of Object.entries(elementsToUpdate)) {
+        const element = document.getElementById(id);
+        if (element) {
+          if (id === "tag_cardImg") {
+            element.src = value;
+          } else if (id === "tag_cardStars") {
+            updateStars(element, value); // Atualizar as estrelas
+          } else {
+            element.textContent = value;
           }
         }
-
-        const el = document.getElementById("tag_cardStatus");
-        el.innerHTML = `&#9876;${card.strength} / &#10070;${card.resistence}`;
-
-        updateSimilarCardsDOM(similarCardDetails, similarCards);
-        updateRelatedDecks(relatedDecks);
-      } else {
-        console.log(`Card com ID ${idSelectedCard} não encontrado`);
       }
-    } catch (error) {
-      console.error("Erro:", error);
-      location.href = "/categories.html";
+
+      const el = document.getElementById("tag_cardStatus");
+      el.innerHTML = `&#9876;${card.strength} / &#10070;${card.resistence}`;
+
+      updateSimilarCardsDOM(similarCardDetails, similarCards);
+      updateRelatedDecks(relatedDecks);
+    } else {
+      console.log(`Card com ID ${idSelectedCard} não encontrado`);
     }
   } else {
-    location.href = "/categories.html";
+    location.href = "./categories.html";
   }
 });
 
@@ -94,14 +83,14 @@ function updateSimilarCardsDOM(similarCardDetails, similarCards) {
         </div>
       `;
 
-      cardElement.addEventListener("click", () => getCardDetails(details.number));
+      cardElement.addEventListener("click", () =>
+        getCardDetails(details.number)
+      );
 
       similarCardsContainer.appendChild(cardElement);
     }
   });
 }
-
-
 
 function updateRelatedDecks(relatedDecks) {
   const relatedDecksContainer = document.getElementById(
