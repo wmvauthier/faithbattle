@@ -49,18 +49,17 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li class="active"><a href="./index.html">Homepage</a></li>
-                                <li><a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>
+                                <li><a href="./categories.html">Cards <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="./categories.html">Categories</a></li>
-                                        <li><a href="./card-details.html">Anime Details</a></li>
-                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
-                                        <li><a href="./blog-details.html">Blog Details</a></li>
-                                        <li><a href="./signup.html">Sign Up</a></li>
-                                        <li><a href="./login.html">Login</a></li>
+                                        <li><a href="./categories.html">Lista de Cards</a></li>
+                                        <!-- <li><a href="./anime-watching.html">Anime Watching</a></li> -->
+                                        <!-- <li><a href="./blog-details.html">Blog Details</a></li> -->
+                                        <!-- <li><a href="./signup.html">Sign Up</a></li> -->
+                                        <!-- <li><a href="./login.html">Login</a></li> -->
                                     </ul>
                                 </li>
-                                <li><a href="./blog.html">Our Blog</a></li>
-                                <li><a href="#">Contacts</a></li>
+                                <!-- <li><a href="./blog.html">Our Blog</a></li> -->
+                                <!-- <li><a href="#">Contacts</a></li> -->
                             </ul>
                         </nav>
                     </div>
@@ -84,7 +83,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./categories.html">Categories</a>
+                        <a href="./categories.html">Cards</a>
                         <span>Romance</span>
                     </div>
                 </div>
@@ -162,6 +161,33 @@
                                 padding: 7px;
                                 /* Adiciona um padding de 5px ao placeholder */
                             }
+
+                            .pagination-container {
+                                display: flex;
+                                justify-content: center;
+                                margin-top: 20px;
+                            }
+
+                            .pagination-button {
+                                background-color: #e53637;
+                                color: #fff;
+                                border: none;
+                                padding: 10px 20px;
+                                margin: 0 5px;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                font-size: 1rem;
+                                transition: background-color 0.3s ease;
+                            }
+
+                            .pagination-button:hover {
+                                background-color: #e5363795;
+                            }
+
+                            .pagination-button.active {
+                                background-color: #e5363795;
+                                font-weight: bold;
+                            }
                         </style>
 
                         <div class="row">
@@ -200,6 +226,7 @@
                         </div>
 
                         <div style="margin-top: 30px;" id="products-container" class="row"></div>
+                        <div id="pagination-container"></div>
 
                     </div>
                     <!-- <div class="product__pagination">
@@ -233,9 +260,9 @@
                     <div class="footer__nav">
                         <ul>
                             <li class="active"><a href="./index.html">Homepage</a></li>
-                            <li><a href="./categories.html">Categories</a></li>
-                            <li><a href="./blog.html">Our Blog</a></li>
-                            <li><a href="#">Contacts</a></li>
+                            <li><a href="./categories.html">Lista de Cards</a></li>
+                            <!-- <li><a href="./blog.html">Our Blog</a></li> -->
+                            <!-- <li><a href="#">Contacts</a></li> -->
                         </ul>
                     </div>
                 </div>

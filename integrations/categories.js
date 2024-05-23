@@ -1,4 +1,6 @@
-let cards;
+const CARDS_PER_PAGE = 12; // Número de cards por página
+let currentPage = 1; // Página atual
+let cards = []; // Lista de todos os cards
 
 document.addEventListener("DOMContentLoaded", async function () {
   let data = await getCards();
@@ -443,7 +445,11 @@ function renderCards(cards) {
   const cardContainer = document.getElementById("products-container");
   cardContainer.innerHTML = "";
 
-  cards.forEach((card) => {
+  const start = (currentPage - 1) * CARDS_PER_PAGE;
+  const end = start + CARDS_PER_PAGE;
+  const paginatedCards = cards.slice(start, end);
+
+  paginatedCards.forEach((card) => {
     if (card.categories) {
       const categoriesArray = card.categories.split(";");
 
@@ -481,6 +487,8 @@ function renderCards(cards) {
       cardContainer.appendChild(productItem);
     }
   });
+
+  createPagination(cards);
 }
 
 function getCurrentSelectedFilters() {
@@ -523,6 +531,29 @@ function sortByStarsAndDate(data) {
   });
 
   return data;
+}
+
+function createPagination(cards) {
+  const paginationContainer = document.getElementById("pagination-container");
+  paginationContainer.innerHTML = ""; // Limpa o contêiner de paginação
+
+  const totalPages = Math.ceil(cards.length / CARDS_PER_PAGE);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const pageButton = document.createElement("button");
+    pageButton.textContent = i;
+    pageButton.classList.add("pagination-button");
+    if (i === currentPage) {
+      pageButton.classList.add("active");
+    }
+    pageButton.addEventListener("click", () => goToPage(i, cards));
+    paginationContainer.appendChild(pageButton);
+  }
+}
+
+function goToPage(pageNumber, cards) {
+  currentPage = pageNumber;
+  renderCards(cards); // Re-renderiza os cards da nova página
 }
 
 function calculateWeightedScore(stars, monthDiff, usage) {
