@@ -88,7 +88,7 @@
     /*------------------
         Niceselect
     --------------------*/
-    $('select').niceSelect();
+    // $('select').niceSelect();
 
     /*------------------
         Scroll To Top

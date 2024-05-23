@@ -1,29 +1,182 @@
-document.addEventListener("DOMContentLoaded", function () {
-  
-  // Caminho para o arquivo JSON
-  var jsonUrl = "data/cards.json";
+let cards;
 
-  // Fetch para carregar o arquivo JSON
-  fetch(jsonUrl)
-    .then((response) => {
-      // Verifique se a resposta foi bem-sucedida
+document.addEventListener("DOMContentLoaded", async function () {
+  const jsonUrl = "data/cards.json";
+
+  let idSelectedCard = localStorage.getItem("idSelectedCard");
+
+  if (idSelectedCard && idSelectedCard > 0) {
+    try {
+      const response = await fetch(jsonUrl);
       if (!response.ok) {
         throw new Error("Erro ao carregar o arquivo JSON");
       }
-      return response.json();
-    })
-    .then((data) => {
-      // Selecione a div pelo id
-      var div = document.getElementById("meuConteudo");
+      const data = await response.json();
 
-      // Verifique se a div foi encontrada e se o conteúdo está no JSON
-      if (div && data.conteudo) {
-        // Altere o conteúdo da div
-        div.textContent = data.conteudo;
+      const card = data.find((element) => element.number == idSelectedCard);
+      const cardStatus = `&#9876;${card.strength} / &#10070;${card.resistence}`;
+
+      if (card) {
+        cards = data;
+        let decks = await getDecks();
+        let similarCards = getRelatedCardsInDecks(card.number, decks);
+        let relatedDecks = getRelatedDecks(similarCards, decks);
+
+        const similarCardDetails = await fetchRelatedCardsDetails(
+          similarCards.map((card) => card.idcard)
+        );
+
+        const elementsToUpdate = {
+          tag_cardName: card.name,
+          tag_cardFlavor: card.flavor,
+          tag_cardText: card.text,
+          tag_cardType: card.type,
+          tag_cardCategories: card.categories.split(";").join("; "),
+          tag_cardCost: String.fromCharCode(10121 + card.cost),
+          tag_cardStatus: cardStatus,
+          tag_cardEffect: card.effects,
+          tag_cardNumber: card.number,
+          tag_cardCollection: card.collection,
+          tag_cardDate: formatDate(card.date),
+          tag_cardArtist: card.artist,
+          tag_cardImg: card.img,
+          tag_cardStars: card.stars, // Assumindo que a propriedade é 'stars'
+        };
+
+        for (const [id, value] of Object.entries(elementsToUpdate)) {
+          const element = document.getElementById(id);
+          if (element) {
+            if (id === "tag_cardImg") {
+              element.src = value;
+            } else if (id === "tag_cardStars") {
+              updateStars(element, value); // Atualizar as estrelas
+            } else {
+              element.textContent = value;
+            }
+          }
+        }
+
+        const el = document.getElementById("tag_cardStatus");
+        el.innerHTML = `&#9876;${card.strength} / &#10070;${card.resistence}`;
+
+        updateSimilarCardsDOM(similarCardDetails, similarCards);
+        updateRelatedDecks(relatedDecks);
+      } else {
+        console.log(`Card com ID ${idSelectedCard} não encontrado`);
       }
-    })
-    .catch((error) => {
+    } catch (error) {
       console.error("Erro:", error);
-    });
-
+      location.href = "/categories.html";
+    }
+  } else {
+    location.href = "/categories.html";
+  }
 });
+
+function updateSimilarCardsDOM(similarCardDetails, similarCards) {
+  const similarCardsContainer = document.querySelector("#relatedCardsList");
+  if (!similarCardsContainer) return;
+
+  similarCardsContainer.innerHTML = "";
+
+  similarCards.forEach((similarCard) => {
+    const details = similarCardDetails.find(
+      (card) => card.number === similarCard.idcard
+    );
+    if (details) {
+      const cardElement = document.createElement("div");
+      cardElement.className =
+        "col-lg-2 col-md-6 col-sm-6 card__related__sidebar__view__item set-bg";
+      cardElement.style.cursor = "pointer";
+      cardElement.innerHTML = `
+        <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
+        <div class="card__related__info">
+        </div>
+      `;
+
+      cardElement.addEventListener("click", () => getCardDetails(details.number));
+
+      similarCardsContainer.appendChild(cardElement);
+    }
+  });
+}
+
+
+
+function updateRelatedDecks(relatedDecks) {
+  const relatedDecksContainer = document.getElementById(
+    "related-decks-container"
+  );
+  relatedDecksContainer.innerHTML = ""; // Limpa o conteúdo existente
+
+  relatedDecks.forEach((deck) => {
+    const keywordsArray = deck.keywords.split(";");
+
+    const deckElement = document.createElement("div");
+    deckElement.innerHTML = `
+<div class="product__sidebar__comment__item">
+<div class="product__sidebar__comment__item__pic">
+  <img src="${
+    deck.img
+  }" alt="Deck Image" style="max-width: 90px; height: auto; max-height: 130px;">
+</div>
+<div class="product__sidebar__comment__item__text">
+  <ul>
+    ${keywordsArray.map((keyword) => `<li>${keyword}</li>`).join("")}
+  </ul>
+  <h5><a href="#">${deck.name}</a></h5>
+</div>
+</div>`;
+
+    relatedDecksContainer.appendChild(deckElement);
+  });
+}
+
+async function fetchRelatedCardsDetails(cardIds) {
+  return cards.filter((card) => cardIds.includes(card.number));
+}
+
+// Função para atualizar as estrelas
+function updateStars(element, stars) {
+  const fullStars = Math.floor(stars);
+  const halfStar = stars % 1 !== 0;
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+  element.innerHTML = "";
+
+  // Adiciona estrelas cheias
+  for (let i = 0; i < fullStars; i++) {
+    element.innerHTML += '<a href="#"><i class="fa fa-star"></i></a>';
+  }
+
+  // Adiciona meia estrela, se necessário
+  if (halfStar) {
+    element.innerHTML += '<a href="#"><i class="fa fa-star-half-o"></i></a>';
+  }
+
+  // Adiciona estrelas vazias
+  for (let i = 0; i < emptyStars; i++) {
+    element.innerHTML += '<a href="#"><i class="fa fa-star-o"></i></a>';
+  }
+}
+
+function formatDate(dateString) {
+  const months = [
+    "jan",
+    "fev",
+    "mar",
+    "abr",
+    "mai",
+    "jun",
+    "jul",
+    "ago",
+    "set",
+    "out",
+    "nov",
+    "dez",
+  ];
+  const date = new Date(dateString);
+  const monthName = months[date.getMonth()];
+  const year = date.getFullYear();
+  return `(${monthName}/${year})`;
+}
