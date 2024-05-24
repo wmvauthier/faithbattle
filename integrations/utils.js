@@ -1,127 +1,77 @@
 const URL_DECKS_JSON = "data/decks.json";
-const URL_CARDS_JSON = "data/cards.json";
+const URL_HEROES_JSON = "data/heroes.json";
+const URL_MIRACLES_JSON = "data/miracles.json";
+const URL_SINS_JSON = "data/sins.json";
+const URL_ARTIFACTS_JSON = "data/artifacts.json";
+const URL_LEGENDARIES_JSON = "data/legendary.json";
 
 function getCardDetails(cardNumber) {
   localStorage.setItem("idSelectedCard", cardNumber);
   location.href = "./card-details.html";
 }
 
-async function getCards() {
-  const decksUrl = URL_CARDS_JSON;
-
+async function fetchJSON(url) {
   try {
-    const response = await fetch(decksUrl);
-    if (!response.ok) {
-      throw new Error("Erro ao carregar o arquivo JSON de cards");
-    }
-    const decks = await response.json();
-    return decks;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+    return await response.json();
   } catch (error) {
-    console.error("Erro:", error);
+    console.error("Error:", error);
     return [];
   }
+}
+
+async function getCards() {
+  const heroes = await fetchJSON(URL_HEROES_JSON);
+  const miracles = await fetchJSON(URL_MIRACLES_JSON);
+  const sins = await fetchJSON(URL_SINS_JSON);
+  const artifacts = await fetchJSON(URL_ARTIFACTS_JSON);
+  const legendaries = await fetchJSON(URL_LEGENDARIES_JSON);
+
+  return [...heroes, ...miracles, ...sins, ...artifacts, ...legendaries];
 }
 
 async function getDecks() {
-  const decksUrl = URL_DECKS_JSON;
-
-  try {
-    const response = await fetch(decksUrl);
-    if (!response.ok) {
-      throw new Error("Erro ao carregar o arquivo JSON de decks");
-    }
-    const decks = await response.json();
-    return decks;
-  } catch (error) {
-    console.error("Erro:", error);
-    return [];
-  }
+  return await fetchJSON(URL_DECKS_JSON);
 }
 
 function getOccurrencesInDecks(cardId, decks) {
-  let count = 0;
-  decks.forEach((deck) => {
-    if (deck.cards.includes(cardId)) {
-      count++;
-    }
-  });
-  return count;
+  return decks.reduce((count, deck) => count + (deck.cards.includes(cardId) ? 1 : 0), 0);
 }
 
 function getRelatedCardsInDecks(cardId, decks) {
   const relatedCardsMap = new Map();
 
-  decks.forEach((deck) => {
+  decks.forEach(deck => {
     if (deck.cards.includes(cardId)) {
-      deck.cards.forEach((id) => {
+      deck.cards.forEach(id => {
         if (id !== cardId) {
-          // Exclui a carta passada como parâmetro
-          if (relatedCardsMap.has(id)) {
-            relatedCardsMap.set(id, relatedCardsMap.get(id) + 1);
-          } else {
-            relatedCardsMap.set(id, 1);
-          }
+          relatedCardsMap.set(id, (relatedCardsMap.get(id) || 0) + 1);
         }
       });
     }
   });
 
-  const relatedCardsArray = Array.from(relatedCardsMap.entries())
+  return Array.from(relatedCardsMap.entries())
     .map(([idcard, qtd]) => ({ idcard, qtd }))
     .sort((a, b) => b.qtd - a.qtd)
-    .slice(0, 6);
-
-  return relatedCardsArray;
+    .slice(0, 12);
 }
 
-// Função para obter os decks relacionados
 function getRelatedDecks(relatedCards, decks) {
-  // Ordena os relatedCards por qtd em ordem decrescente
   relatedCards.sort((a, b) => b.qtd - a.qtd);
 
-  const deckScores = decks.map((deck) => {
-    // Conta o número de cópias dos relatedCards presentes no deck
+  const deckScores = decks.map(deck => {
     const score = deck.cards.reduce((acc, cardId) => {
-      const relatedCard = relatedCards.find(
-        (relatedCard) => relatedCard.idcard === cardId
-      );
+      const relatedCard = relatedCards.find(relatedCard => relatedCard.idcard === cardId);
       return relatedCard ? acc + relatedCard.qtd : acc;
     }, 0);
 
     return { deck, score };
   });
 
-  // Ordena os decks descendentemente pelo score e limita a 4 decks
-  const sortedDecks = deckScores
+  return deckScores
     .sort((a, b) => b.score - a.score)
     .slice(0, 4)
-    .map((deckScore) => deckScore.deck);
-
-  return sortedDecks;
-}
-
-// Função para obter os cards relacionados em decks
-function getRelatedCardsInDecks(cardId, decks) {
-  const relatedCardsMap = new Map();
-
-  decks.forEach((deck) => {
-    if (deck.cards.includes(cardId)) {
-      deck.cards.forEach((id) => {
-        if (id !== cardId) {
-          // Exclui a carta passada como parâmetro
-          if (relatedCardsMap.has(id)) {
-            relatedCardsMap.set(id, relatedCardsMap.get(id) + 1);
-          } else {
-            relatedCardsMap.set(id, 1);
-          }
-        }
-      });
-    }
-  });
-
-  const relatedCardsArray = Array.from(relatedCardsMap.entries())
-    .map(([idcard, qtd]) => ({ idcard, qtd }))
-    .sort((a, b) => b.qtd - a.qtd); // Ordena de maneira decrescente pela propriedade qtd
-
-  return relatedCardsArray.slice(0, 6); // Limita a 6 cards
+    .map(deckScore => deckScore.deck);
 }

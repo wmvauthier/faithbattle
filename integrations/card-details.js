@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const data = await getCards();
 
     const card = data.find((element) => element.number == idSelectedCard);
-    const cardStatus = `&#9876;${card.strength} / &#10070;${card.resistence}`;
+    let cardStatus = `&#9876;${card.strength} / &#10070;${card.resistence}`;
 
     if (card) {
       cards = data;
@@ -52,6 +52,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       const el = document.getElementById("tag_cardStatus");
       el.innerHTML = `&#9876;${card.strength} / &#10070;${card.resistence}`;
 
+      if (card.strength == 0 && card.resistence == 0) {
+        el.innerHTML = "";
+      }
+
       updateSimilarCardsDOM(similarCardDetails, similarCards);
       updateRelatedDecks(relatedDecks);
     } else {
@@ -75,7 +79,7 @@ function updateSimilarCardsDOM(similarCardDetails, similarCards) {
     if (details) {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-2 col-md-6 col-sm-6 card__related__sidebar__view__item set-bg";
+        "col-lg-1 col-md-3 col-sm-4 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />

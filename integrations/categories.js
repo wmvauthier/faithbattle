@@ -1,4 +1,4 @@
-const CARDS_PER_PAGE = 12; // Número de cards por página
+const CARDS_PER_PAGE = 30; // Número de cards por página
 let currentPage = 1; // Página atual
 let cards = []; // Lista de todos os cards
 
@@ -421,7 +421,6 @@ function filterResults(data) {
     "Coleção",
     "Coleção"
   );
-  generateSelectFilterByProperty(filteredData, "artist", "Artista", "Artista");
 
   const uniqueStars = Array.from(
     new Set(filteredData.map((item) => Math.floor(item.stars)))
@@ -437,6 +436,7 @@ function filterResults(data) {
 
   generateStarsFilter(uniqueStars, "ASC");
   generateYearFilter(uniqueYears, "DESC");
+  generateSelectFilterByProperty(filteredData, "artist", "Artista", "Artista");
 
   renderCards(filteredData);
 }
@@ -454,35 +454,33 @@ function renderCards(cards) {
       const categoriesArray = card.categories.split(";");
 
       const productItem = document.createElement("div");
-      productItem.className = "col-lg-3 col-md-6 col-sm-6";
+      productItem.className = "col-lg-2 col-md-3 col-sm-3";
       productItem.setAttribute("onclick", `getCardDetails(${card.number})`);
       productItem.style.cursor = "pointer";
 
       const costCircledNumber = String.fromCharCode(10121 + card.cost); // Gerando o código do caractere circulado com base no custo do card
 
       productItem.innerHTML = `
-          <div class="product__item">
-            <div class="product__item__pic set-bg" style="background-image: url(${
-              card.img
-            });">
-              <div class="ep">&#9733; ${card.stars}</div>
-              <div class="comment">&#9923; ${card.ocurrences}</div>
-              <div class="view">${card.collection}</div>
-            </div>
-            <div class="product__item__text">
-              <ul>
-                ${categoriesArray
-                  .map((category) => `<li>${category}</li>`)
-                  .join(" ")}
-              </ul>
-              <h5><a href="#">${costCircledNumber} ${
-        card.name
-      }</a> <a href="#" style="float:right;">&#9876;${card.strength} /&#10070;${
-        card.resistence
-      }</a></h5>
-            </div>
-          </div>
-        `;
+      <div class="product__item">
+        <div class="product__item__pic set-bg" style="background-image: url(${card.img});">
+          <div class="ep">&#9733; ${card.stars}</div>
+          <div class="comment">&#9923; ${card.ocurrences}</div>
+          <div class="view">${card.collection}</div>
+        </div>
+        <div class="product__item__text">
+          <ul>
+            ${categoriesArray.map((category) => `<li>${category}</li>`).join(" ")}
+          </ul>
+          <h5>
+            <a href="#">${costCircledNumber} ${card.name}</a>
+            ${card.strength !== 0 && card.resistence !== 0 ? 
+              `<a href="#" style="float:right;">&#9876;${card.strength} / &#10070;${card.resistence}</a>` : 
+              ''
+            }
+          </h5>
+        </div>
+      </div>
+    `;
 
       cardContainer.appendChild(productItem);
     }
