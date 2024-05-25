@@ -12,17 +12,19 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <!-- <link rel="stylesheet" href="css/nice-select.css" type="text/css"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
 </head>
 
 <body>
@@ -46,7 +48,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li><a href="./index.html">Homepage</a></li>
+                                <li class="active"><a href="./index.html">Homepage</a></li>
                                 <li><a href="./card-list.html">Cards <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="./card-list.html">Lista de Cards</a></li>
@@ -75,68 +77,110 @@
     </header>
     <!-- Header End -->
 
-    <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/normal-breadcrumb.jpg">
+    <!-- Breadcrumb Begin -->
+    <!-- <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="normal__breadcrumb__text">
-                        <h2>Login</h2>
-                        <p>Welcome to the official Anime blog.</p>
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="./card-list.html">Cards</a>
+                        <span>Romance</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Normal Breadcrumb End -->
+    </div> -->
+    <!-- Breadcrumb End -->
 
-    <!-- Login Section Begin -->
-    <section class="login spad">
+    <!-- Product Section Begin -->
+    <section class="product-page spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="login__form">
-                        <h3>Login</h3>
-                        <form action="#">
-                            <div class="input__item">
-                                <input type="text" placeholder="Email address">
-                                <span class="icon_mail"></span>
+                <div class="col-lg-12">
+                    <div class="product__page__content">
+
+                        <div class="product__page__title">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="section-title">
+                                        <h4>Lista de Cards</h4>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6"></div>
+
+                                <!-- <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <div class="product__page__filter">
+                                        <p>Order by:</p>
+                                        <select>
+                                            <option value="">A-Z</option>
+                                            <option value="">1-10</option>
+                                            <option value="">10-50</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+
                             </div>
-                            <div class="input__item">
-                                <input type="text" placeholder="Password">
-                                <span class="icon_lock"></span>
-                            </div>
-                            <button type="submit" class="site-btn">Login Now</button>
-                        </form>
-                        <a href="#" class="forget_pass">Forgot Your Password?</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="login__register">
-                        <h3>Dont’t Have An Account?</h3>
-                        <a href="#" class="primary-btn">Register Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="login__social">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="login__social__links">
-                            <span>or</span>
-                            <ul>
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With
-                                Facebook</a></li>
-                                <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a>
-                                </li>
-                            </ul>
                         </div>
+
+                        <style>
+                            
+                        </style>
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-9 col-sm-9">
+                                <div class="blog__details__form" style="padding-top: 0px;">
+                                    <div id="selected-filters" class="selected-filters">
+                                        <!-- Filtros selecionados serão exibidos aqui -->
+                                    </div>
+                                    <!-- <button type="button" onclick="applyFilters()" class="site-btn">Aplicar Filtros</button> -->
+                                    <!-- <button type="button" onclick="clearFilters()" class="site-btn">Limpar Filtros</button> -->
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-lg-12 col-md-9 col-sm-9">
+                                <div class="blog__details__form" style="padding-top: 0px;">
+                                    <div id="filters">
+                                        <!-- Os selects gerados dinamicamente serão adicionados aqui -->
+                                    </div>
+                                    <!-- <button type="button" onclick="applyFilters()" class="site-btn">Aplicar Filtros</button> -->
+                                    <!-- <button type="button" onclick="clearFilters()" class="site-btn">Limpar Filtros</button> -->
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="blog__details__form" style="padding-top: 0px;">
+                                    <form action="#">
+                                        <button type="submit" class="site-btn">Send Message</button>
+                                    </form>
+                                </div>
+                            </div> -->
+
+                        </div>
+
+                        <div style="margin-top: 30px;" id="products-container" class="row"></div>
+                        <div id="pagination-container"></div>
+
                     </div>
+                    <!-- <div class="product__pagination">
+                        <a href="#" class="current-page">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
+                    </div> -->
                 </div>
+
             </div>
         </div>
     </section>
-    <!-- Login Section End -->
+    <!-- Product Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -163,17 +207,21 @@
                 </div>
                 <div class="col-lg-3">
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                        is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                            target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
 
-                  </div>
-              </div>
-          </div>
-      </footer>
-      <!-- Footer Section End -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
 
-      <!-- Search model Begin -->
-      <div class="search-model">
+    <!-- Search model Begin -->
+    <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch"><i class="icon_close"></i></div>
             <form class="search-model-form">
@@ -187,12 +235,16 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/player.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- <script src="js/jquery.nice-select.min.js"></script> -->
     <script src="js/mixitup.min.js"></script>
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <script src="integrations/utils.js"></script>
+    <script src="integrations/card-list.js"></script>
 
 </body>
 

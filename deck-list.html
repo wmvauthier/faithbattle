@@ -49,9 +49,10 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li class="active"><a href="./index.html">Homepage</a></li>
-                                <li><a href="./categories.html">Cards <span class="arrow_carrot-down"></span></a>
+                                <li><a href="./card-list.html">Cards <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="./categories.html">Lista de Cards</a></li>
+                                        <li><a href="./card-list.html">Lista de Cards</a></li>
+                                        <li><a href="./deck-list.html">Lista de Decks</a></li>
                                         <!-- <li><a href="./anime-watching.html">Anime Watching</a></li> -->
                                         <!-- <li><a href="./blog-details.html">Blog Details</a></li> -->
                                         <!-- <li><a href="./signup.html">Sign Up</a></li> -->
@@ -83,7 +84,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./categories.html">Cards</a>
+                        <a href="./card-list.html">Cards</a>
                         <span>Romance</span>
                     </div>
                 </div>
@@ -123,73 +124,6 @@
                             </div>
                         </div>
 
-                        <style>
-                            .selected-filters {
-                                display: flex;
-                                flex-wrap: wrap;
-                                margin-bottom: 10px;
-                            }
-
-                            .selected-filter {
-                                background: #e53637;
-                                color: white;
-                                padding: 5px 10px;
-                                margin: 5px;
-                                border-radius: 3px;
-                                cursor: pointer;
-                            }
-
-                            .selected-filter:hover {
-                                background: #e5363795;
-                            }
-
-                            .custom-text-input {
-                                width: auto;
-                            }
-
-                            .custom-select-input {
-                                width: auto;
-                            }
-
-                            .custom-select-input,
-                            .custom-text-input {
-                                height: 38px;
-                            }
-
-                            .custom-select-input,
-                            .custom-text-input {
-                                padding: 7px;
-                                /* Adiciona um padding de 5px ao placeholder */
-                            }
-
-                            .pagination-container {
-                                display: flex;
-                                justify-content: center;
-                                margin-top: 20px;
-                            }
-
-                            .pagination-button {
-                                background-color: #e53637;
-                                color: #fff;
-                                border: none;
-                                padding: 10px 20px;
-                                margin: 0 5px;
-                                border-radius: 5px;
-                                cursor: pointer;
-                                font-size: 1rem;
-                                transition: background-color 0.3s ease;
-                            }
-
-                            .pagination-button:hover {
-                                background-color: #e5363795;
-                            }
-
-                            .pagination-button.active {
-                                background-color: #e5363795;
-                                font-weight: bold;
-                            }
-                        </style>
-
                         <div class="row">
                             <div class="col-lg-12 col-md-9 col-sm-9">
                                 <div class="blog__details__form" style="padding-top: 0px;">
@@ -224,6 +158,38 @@
                             </div> -->
 
                         </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Empresa</th>
+                                    <th>Valor Atual</th>
+                                    <th>Variação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Empresa A</td>
+                                    <td>R$ 150,00</td>
+                                    <td class="up-arrow positive">+5,00%</td>
+                                </tr>
+                                <tr>
+                                    <td>Empresa B</td>
+                                    <td>R$ 120,00</td>
+                                    <td class="down-arrow negative">-3,50%</td>
+                                </tr>
+                                <tr>
+                                    <td>Empresa C</td>
+                                    <td>R$ 200,00</td>
+                                    <td class="up-arrow positive">+2,10%</td>
+                                </tr>
+                                <tr>
+                                    <td>Empresa D</td>
+                                    <td>R$ 180,00</td>
+                                    <td class="down-arrow negative">-1,25%</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
                         <div style="margin-top: 30px;" id="products-container" class="row"></div>
                         <div id="pagination-container"></div>
@@ -260,7 +226,8 @@
                     <div class="footer__nav">
                         <ul>
                             <li class="active"><a href="./index.html">Homepage</a></li>
-                            <li><a href="./categories.html">Lista de Cards</a></li>
+                            <li><a href="./card-list.html">Lista de Cards</a></li>
+                            <li><a href="./deck-list.html">Lista de Decks</a></li>
                             <!-- <li><a href="./blog.html">Our Blog</a></li> -->
                             <!-- <li><a href="#">Contacts</a></li> -->
                         </ul>
@@ -305,7 +272,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
     <script src="integrations/utils.js"></script>
-    <script src="integrations/categories.js"></script>
+    <script src="integrations/deck-list.js"></script>
 
 </body>
 

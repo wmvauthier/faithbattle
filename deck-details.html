@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
 </head>
 
 <body>
@@ -93,86 +94,140 @@
     <!-- Anime Section Begin -->
     <section class="card-details spad">
         <div class="container">
-            <div class="anime__details__content">
 
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4">
-                        <!-- <div class="anime__details__pic set-bg" data-setbg="img/herois/moises.webp"> -->
-                        <div class="anime__details__pic set-bg">
-                            <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                            <!-- <div class="view"><i class="fa fa-eye"></i> 9141</div> -->
-                            <img id="tag_cardImg" class="card__details set-card-bg" />
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-lg-12 col-md-12">
+                    <div class="anime__details__review">
+                        <div class="section-title">
+                            <h5>Decklist - <span id="tag_deckName"></span></h5>
                         </div>
+                        <div id="deckList" class="row"></div>
                     </div>
-                    <div class="col-lg-8 col-md-8 col-sm-8">
-                        <div class="anime__details__text">
-                            <div class="anime__details__title">
-                                <h3 id="tag_cardName"></h3>
-                                <span><i id="tag_cardFlavor"></i></span>
-                            </div>
-                            <div class="anime__details__rating">
-                                <div id="tag_cardStars" class="rating"></div>
-                                <span>1.029 Votos</span>
-                            </div>
-                            <p>Quando Moisés entra em jogo, procure um Milagre no seu baralho ou no Mar do Esquecimento,
-                                revele-o e compre essa carta</p>
-                            <div class="anime__details__widget">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <ul>
-                                            <li><span>Tipo:</span> <text id="tag_cardType"></text></li>
-                                            <li><span>Custo:</span> <text id="tag_cardCost"></text></li>
-                                            <li><span>Status:</span> <text id="tag_cardStatus"></text></li>
-                                            <li><span>Efeito:</span> <text id="tag_cardEffect"></text></li>
-                                            <li><span>Categorias:</span> <text id="tag_cardCategories"></text></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <ul>
-                                            <li><span>Número:</span> <text id="tag_cardNumber"></text></li>
-                                            <li><span>Coleção:</span> <text id="tag_cardCollection"></text></li>
-                                            <li><span>Lançamento:</span> <text id="tag_cardDate"></text></li>
-                                            <li><span>Artista:</span> <text id="tag_cardArtist"></text></li>
-                                            <!-- <li><span>Quality:</span> <text id="tag_cardResistence"></text></li> -->
-                                        </ul>
-                                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 5px;">
+                <div class="col-lg-12 col-md-12">
+                    <div class="anime__details__review">
+                        <div class="section-title" style="margin-bottom: 0px;">
+                            <h5>Informações</h5>
+                        </div>
+                        <div class="row">
+
+                            <!-- <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="anime__details__pic set-bg" data-setbg="img/herois/moises.webp">
+                                <div class="anime__details__pic set-bg">
+                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <img id="tag_deckImg" class="card__details set-card-bg" />
                                 </div>
-                            </div>
-                            <!-- <div class="anime__details__btn">
-                                <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
-                                <a href="#" class="watch-btn"><span>Watch Now</span> <i
-                                        class="fa fa-angle-right"></i></a>
                             </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="anime__details__text">
+                                    <div class="anime__details__title">
+                                        <h3 id="tag_deckName"></h3>
+                                        <span><i id="tag_deckFlavor"></i></span>
+                                    </div>
+                                    <!-- <div class="anime__details__rating">
+                                        <div id="tag_deckStars" class="rating"></div>
+                                        <span>1.029 Votos</span>
+                                    </div> -->
 
-            <div class="row" style="margin-top: 100px;">
-                <div class="col-lg-12 col-md-12">
-                    <div class="anime__details__review">
-                        <div class="section-title">
-                            <h5>Cards Relacionados</h5>
-                        </div>
-                        <div id="relatedCardsList" class="row"></div>
-                    </div>
-                </div>
-            </div>
+                                    <style>
+                                        .categories-container {
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            gap: 10px;
+                                            margin: 20px;
+                                        }
 
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="anime__details__review">
-                        <div class="section-title">
-                            <h5>Funcionamento do card</h5>
-                        </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <img src="img/anime/review-1.jpg" alt="">
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                                <p>whachikan Just noticed that someone categorized this as belonging to the genre
-                                    "demons" LOL</p>
+                                        .category-item {
+                                            background-color: #e53637;
+                                            border-radius: 10px;
+                                            padding: 10px;
+                                            display: flex;
+                                            align-items: center;
+                                            font-family: Arial, sans-serif;
+                                            color: white;
+                                        }
+
+                                        .category-item input {
+                                            font-size: 1rem;
+                                            border: none;
+                                            background: none;
+                                            margin: 0;
+                                            padding: 0;
+                                            flex: 1;
+                                            color: white;
+                                            outline: none;
+                                            /* Remove a borda que aparece ao focar no input */
+                                            box-shadow: none;
+                                            /* Remove qualquer sombra de caixa padrão */
+                                            appearance: none;
+                                            /* Remove a aparência padrão do navegador */
+                                        }
+                                    </style>
+
+                                    <div id="categoriesContainer" class="categories-container"></div>
+
+                                    <div class="anime__details__widget">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3">
+                                                <ul>
+                                                    <li><span><b>Características</b></span></li>
+                                                    <li><span>Formato</span> <text id="tag_deckFormat"></text></li>
+                                                    <li><span>Estilo</span> <text id="tag_deckStyle"></text></li>
+                                                    <li><span>Data</span> <text id="tag_deckCollection"></text>
+                                                    </li>
+                                                    <li><span>Criador</span> <text id="tag_deckArtist"></text></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3">
+                                                <ul>
+                                                    <li><span><b>Números</b></span></li>
+                                                    <li><span>Principal</span> <text id="tag_deckSize"></text></li>
+                                                    <li><span>Sabedorias</span> <text id="tag_deckSizeSabedorias"></text></li>
+                                                    <li><span>Extra</span> <text id="tag_deckSizeExtra"></text>
+                                                    </li>
+                                                    <li><span>Sideboard</span> <text id="tag_deckSizeSideboard"></text>
+                                                    </li>
+                                                    <!-- <li><span>Quality:</span> <text id="tag_deckResistence"></text></li> -->
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3">
+                                                <ul>
+                                                    <li><span><b>Quantidades</b></span></li>
+                                                    <li><span>Heróis</span> <text id="tag_deckQtdHero"></text></li>
+                                                    <li><span>Milagres</span> <text id="tag_deckQtdMiracle"></text>
+                                                    </li>
+                                                    <li><span>Artefatos</span> <text id="tag_deckQtdArtifact"></text>
+                                                    </li>
+                                                    <li><span>Pecados</span> <text id="tag_deckQtdSin"></text></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3">
+                                                <ul>
+                                                    <li><span><b>Custo Médio</b></span></li>
+                                                    <li><span>Heróis</span> <text id="tag_deckCostHero"></text> &#8593;
+                                                    </li>
+                                                    <li><span>Milagres</span> <text id="tag_deckCostMiracle"></text>
+                                                        &#8595;</li>
+                                                    <li><span>Artefatos</span> <text
+                                                            id="tag_deckCostArtifact"></text>&#8595;
+                                                    </li>
+                                                    <li><span>Pecados</span> <text id="tag_deckCostSin"></text>&#8595;
+                                                    </li>
+                                                    <!-- <li><span>Quality:</span> <text id="tag_deckResistence"></text></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="anime__details__btn">
+                                        <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
+                                        <a href="#" class="watch-btn"><span>Watch Now</span> <i
+                                                class="fa fa-angle-right"></i></a>
+                                    </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -255,7 +310,7 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="product__sidebar__comment">
                         <div class="section-title">
-                            <h5>Melhores Decks</h5>
+                            <h5>Prêmios</h5>
                         </div>
 
                         <div id="related-decks-container"></div>
@@ -285,7 +340,7 @@
                         <ul>
                             <li class="active"><a href="./index.html">Homepage</a></li>
                             <li><a href="./card-list.html">Lista de Cards</a></li>
-                                        <li><a href="./deck-list.html">Lista de Decks</a></li>
+                            <li><a href="./deck-list.html">Lista de Decks</a></li>
                             <!-- <li><a href="./blog.html">Our Blog</a></li> -->
                             <!-- <li><a href="#">Contacts</a></li> -->
                         </ul>
@@ -328,7 +383,7 @@
     <script src="js/main.js"></script>
 
     <script src="integrations/utils.js"></script>
-    <script src="integrations/card-details.js"></script>
+    <script src="integrations/deck-details.js"></script>
 
 </body>
 

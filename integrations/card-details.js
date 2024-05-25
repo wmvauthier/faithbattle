@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       console.log(`Card com ID ${idSelectedCard} não encontrado`);
     }
   } else {
-    location.href = "./categories.html";
+    location.href = "./card-list.html";
   }
 });
 

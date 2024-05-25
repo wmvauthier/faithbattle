@@ -1,14 +1,18 @@
 [
     {
+        "number": "1",
         "name": "Armadura de Deus",
-        "img": "img/herois/2.webp",
-        "keywords": "Proteção;Combo;Artefato",
+        "img": "img/artefatos/23.webp",
+        "style": "Combo",
+        "format": "Standard",
+        "keywords": "Controle;Combo;Proteção;Artefato",
         "cards": [
             1,
             5,
             5,
             9,
             9,
+            11,
             12,
             12,
             47,
@@ -19,7 +23,6 @@
             43,
             44,
             50,
-            52,
             17,
             17,
             18,
@@ -34,22 +37,86 @@
             42,
             48,
             48
-        ]
+        ],
+        "extra": [
+            52
+        ],
+        "sideboard": [
+            52
+        ],
+        "sabedorias": 10
     },
     {
+        "number": "2",
         "name": "Exator de Fé",
-        "img": "img/herois/2.webp",
+        "img": "img/milagres/20.webp",
+        "style": "Controle;Combo;Proteção;Artefato",
+        "format": "Standard",
         "keywords": "Proteção;Combo",
-        "cards": [
-
-        ]
+        "cards": [],
+        "extra": [
+            52
+        ],
+        "sideboard": [
+            52
+        ],
+        "sabedorias": 10
     },
     {
+        "number": "3",
         "name": "Bombardeio Celestial",
-        "img": "img/herois/2.webp",
+        "img": "img/lendarias/52.webp",
+        "style": "Controle;Combo;Proteção;Artefato",
+        "format": "Standard",
         "keywords": "Proteção;Combo",
         "cards": [
-
-        ]
+            1,
+            52
+        ],
+        "extra": [
+            52
+        ],
+        "sideboard": [
+            52
+        ],
+        "sabedorias": 10
+    },
+    {
+        "number": "4",
+        "name": "Bombardeio Celestial 2.0",
+        "img": "img/lendarias/52.webp",
+        "style": "Controle;Combo;Proteção;Artefato",
+        "format": "Standard",
+        "keywords": "Proteção;Combo",
+        "cards": [
+            1,
+            52
+        ],
+        "extra": [
+            52
+        ],
+        "sideboard": [
+            52
+        ],
+        "sabedorias": 10
+    },
+    {
+        "number": "5",
+        "name": "Bombardeio Celestial 3.0",
+        "img": "img/lendarias/52.webp",
+        "style": "Controle;Combo;Proteção;Artefato",
+        "format": "Standard",
+        "keywords": "Proteção;Combo",
+        "cards": [
+            1,
+            52
+        ],
+        "extra": [
+            52
+        ],
+        "sideboard": [
+            52
+        ],
+        "sabedorias": 10
     }
 ]
