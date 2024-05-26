@@ -96,12 +96,34 @@
         <div class="container">
 
             <div class="row" style="margin-top: 0px;">
-                <div class="col-lg-12 col-md-12">
-                    <div class="anime__details__review">
+                <div class="col-lg-12 col-md-12" style="margin-bottom: 0px">
+                    <div class="anime__details__review" style="margin-bottom: 0px">
                         <div class="section-title">
                             <h5>Decklist - <span id="tag_deckName"></span></h5>
                         </div>
                         <div id="deckList" class="row"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-lg-12 col-md-12">
+                    <div class="anime__details__review" style="margin-bottom: 0px">
+                        <div class="section-title">
+                            <h5>Extra Deck</h5>
+                        </div>
+                        <div id="extraDeckList" class="row"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-lg-12 col-md-12">
+                    <div class="anime__details__review" style="margin-bottom: 0px">
+                        <div class="section-title">
+                            <h5>Sideboard</h5>
+                        </div>
+                        <div id="sideboardList" class="row"></div>
                     </div>
                 </div>
             </div>
@@ -177,8 +199,7 @@
                                                     <li><span><b>Características</b></span></li>
                                                     <li><span>Formato</span> <text id="tag_deckFormat"></text></li>
                                                     <li><span>Estilo</span> <text id="tag_deckStyle"></text></li>
-                                                    <li><span>Data</span> <text id="tag_deckCollection"></text>
-                                                    </li>
+                                                    <li><span>Data</span> <text id="tag_deckCollection"></text></li>
                                                     <li><span>Criador</span> <text id="tag_deckArtist"></text></li>
                                                 </ul>
                                             </div>
@@ -186,42 +207,71 @@
                                                 <ul>
                                                     <li><span><b>Números</b></span></li>
                                                     <li><span>Principal</span> <text id="tag_deckSize"></text></li>
-                                                    <li><span>Sabedorias</span> <text id="tag_deckSizeSabedorias"></text></li>
-                                                    <li><span>Extra</span> <text id="tag_deckSizeExtra"></text>
-                                                    </li>
+                                                    <li><span>Extra</span> <text id="tag_deckSizeExtra"></text></li>
                                                     <li><span>Sideboard</span> <text id="tag_deckSizeSideboard"></text>
                                                     </li>
-                                                    <!-- <li><span>Quality:</span> <text id="tag_deckResistence"></text></li> -->
+                                                    <li><span>Status</span> 
+                                                        <text id="tag_deckStrengthComparison"></text>
+                                                        &#9876;<text id="tag_deckStrength"></text> /
+                                                        &#10070;<text id="tag_deckResistence"></text>
+                                                        <text id="tag_deckResistanceComparison"></text>
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-3 col-md-3">
                                                 <ul>
                                                     <li><span><b>Quantidades</b></span></li>
-                                                    <li><span>Heróis</span> <text id="tag_deckQtdHero"></text></li>
-                                                    <li><span>Milagres</span> <text id="tag_deckQtdMiracle"></text>
+                                                    <li>
+                                                        <span>Heróis</span>
+                                                        <text id="tag_deckQtdHero"></text>
+                                                        <text id="tag_deckQtdHeroComparison"></text>
                                                     </li>
-                                                    <li><span>Artefatos</span> <text id="tag_deckQtdArtifact"></text>
+                                                    <li>
+                                                        <span>Milagres</span>
+                                                        <text id="tag_deckQtdMiracle"></text>
+                                                        <text id="tag_deckQtdMiracleComparison"></text>
                                                     </li>
-                                                    <li><span>Pecados</span> <text id="tag_deckQtdSin"></text></li>
+                                                    <li>
+                                                        <span>Artefatos</span>
+                                                        <text id="tag_deckQtdArtifact"></text>
+                                                        <text id="tag_deckQtdArtifactComparison"></text>
+                                                    </li>
+                                                    <li>
+                                                        <span>Pecados</span>
+                                                        <text id="tag_deckQtdSin"></text>
+                                                        <text id="tag_deckQtdSinComparison"></text>
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-3 col-md-3">
                                                 <ul>
                                                     <li><span><b>Custo Médio</b></span></li>
-                                                    <li><span>Heróis</span> <text id="tag_deckCostHero"></text> &#8593;
+                                                    <li>
+                                                        <span>Heróis</span>
+                                                        <text id="tag_deckCostHero"></text>
+                                                        <text id="tag_deckCostHeroComparison"></text>
                                                     </li>
-                                                    <li><span>Milagres</span> <text id="tag_deckCostMiracle"></text>
-                                                        &#8595;</li>
-                                                    <li><span>Artefatos</span> <text
-                                                            id="tag_deckCostArtifact"></text>&#8595;
+                                                    <li>
+                                                        <span>Milagres</span>
+                                                        <text id="tag_deckCostMiracle"></text>
+                                                        <text id="tag_deckCostMiracleComparison"></text>
                                                     </li>
-                                                    <li><span>Pecados</span> <text id="tag_deckCostSin"></text>&#8595;
+                                                    <li>
+                                                        <span>Artefatos</span>
+                                                        <text id="tag_deckCostArtifact"></text>
+                                                        <text id="tag_deckCostArtifactComparison"></text>
                                                     </li>
-                                                    <!-- <li><span>Quality:</span> <text id="tag_deckResistence"></text></li> -->
+                                                    <li>
+                                                        <span>Pecados</span>
+                                                        <text id="tag_deckCostSin"></text>
+                                                        <text id="tag_deckCostSinComparison"></text>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <!-- <div class="anime__details__btn">
                                         <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
                                         <a href="#" class="watch-btn"><span>Watch Now</span> <i

@@ -5,6 +5,8 @@ const URL_SINS_JSON = "data/sins.json";
 const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
 
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
+
 function getCardDetails(cardNumber) {
   localStorage.setItem("idSelectedCard", cardNumber);
   location.href = "./card-details.html";
@@ -22,25 +24,38 @@ async function fetchJSON(url) {
   }
 }
 
+async function fetchOrGetFromLocalStorage(key, url) {
+  const cachedData = localStorage.getItem(key);
+  const cachedTimestamp = localStorage.getItem(`${key}_timestamp`);
+  const now = Date.now();
+
+  if (cachedData && cachedTimestamp && (now - cachedTimestamp < CACHE_DURATION)) {
+    return JSON.parse(cachedData);
+  }
+
+  const data = await fetchJSON(url);
+  localStorage.setItem(key, JSON.stringify(data));
+  localStorage.setItem(`${key}_timestamp`, now);
+  return data;
+}
+
 async function getCards() {
-  const heroes = await fetchJSON(URL_HEROES_JSON);
-  const miracles = await fetchJSON(URL_MIRACLES_JSON);
-  const sins = await fetchJSON(URL_SINS_JSON);
-  const artifacts = await fetchJSON(URL_ARTIFACTS_JSON);
-  const legendaries = await fetchJSON(URL_LEGENDARIES_JSON);
+  const heroes = await fetchOrGetFromLocalStorage('heroes', URL_HEROES_JSON);
+  const miracles = await fetchOrGetFromLocalStorage('miracles', URL_MIRACLES_JSON);
+  const sins = await fetchOrGetFromLocalStorage('sins', URL_SINS_JSON);
+  const artifacts = await fetchOrGetFromLocalStorage('artifacts', URL_ARTIFACTS_JSON);
+  const legendaries = await fetchOrGetFromLocalStorage('legendaries', URL_LEGENDARIES_JSON);
 
   return [...heroes, ...miracles, ...sins, ...artifacts, ...legendaries];
 }
 
 async function getDecks() {
-  return await fetchJSON(URL_DECKS_JSON);
+  return await fetchOrGetFromLocalStorage('decks', URL_DECKS_JSON);
 }
 
 function getCardsFromDeck(ids, cards) {
-  // Array para armazenar os cards correspondentes aos IDs fornecidos
   const allCards = [];
 
-  // Iterar sobre os IDs e adicionar os cards correspondentes ao array
   ids.forEach((id) => {
     cards.forEach((card) => {
       if (card.number === id) {
@@ -49,7 +64,6 @@ function getCardsFromDeck(ids, cards) {
     });
   });
 
-  // Função de comparação para ordenar os cards conforme os critérios
   const typeOrder = {
     "Herói de Fé - Lendário": 1,
     "Herói de Fé": 2,
@@ -59,15 +73,8 @@ function getCardsFromDeck(ids, cards) {
   };
 
   allCards.sort((a, b) => {
-    // Combinar tipo e subtipo se necessário
-    const typeA =
-      a.type === "Herói de Fé" && a.subtype === "Lendário"
-        ? "Herói de Fé - Lendário"
-        : a.type;
-    const typeB =
-      b.type === "Herói de Fé" && b.subtype === "Lendário"
-        ? "Herói de Fé - Lendário"
-        : b.type;
+    const typeA = a.type === "Herói de Fé" && a.subtype === "Lendário" ? "Herói de Fé - Lendário" : a.type;
+    const typeB = b.type === "Herói de Fé" && b.subtype === "Lendário" ? "Herói de Fé - Lendário" : b.type;
 
     if (typeA === typeB) {
       return a.cost - b.cost;
@@ -80,17 +87,13 @@ function getCardsFromDeck(ids, cards) {
 }
 
 function getOccurrencesInDecks(cardId, decks) {
-  return decks.reduce(
-    (count, deck) => count + (deck.cards.includes(cardId) ? 1 : 0),
-    0
-  );
+  return decks.reduce((count, deck) => count + (deck.cards.includes(cardId) ? 1 : 0), 0);
 }
 
 function getRelatedCardsInDecks(cardId, decks) {
   const relatedCardsMap = new Map();
 
   decks.forEach((deck) => {
-
     if (deck.extra.includes(cardId)) {
       deck.extra.forEach((id) => {
         if (id !== cardId) {
@@ -114,7 +117,6 @@ function getRelatedCardsInDecks(cardId, decks) {
         }
       });
     }
-
   });
 
   return Array.from(relatedCardsMap.entries())
@@ -128,9 +130,7 @@ function getRelatedDecks(relatedCards, decks) {
 
   const deckScores = decks.map((deck) => {
     const score = deck.cards.reduce((acc, cardId) => {
-      const relatedCard = relatedCards.find(
-        (relatedCard) => relatedCard.idcard === cardId
-      );
+      const relatedCard = relatedCards.find((relatedCard) => relatedCard.idcard === cardId);
       return relatedCard ? acc + relatedCard.qtd : acc;
     }, 0);
 

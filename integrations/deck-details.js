@@ -1,11 +1,12 @@
 let deck;
 let decks;
+let allCards;
 
 document.addEventListener("DOMContentLoaded", async function () {
   let idSelectedDeck = localStorage.getItem("idSelectedDeck");
 
   if (idSelectedDeck && idSelectedDeck > 0) {
-    const cards = await getCards();
+    allCards = await getCards();
     decks = await getDecks();
 
     const selectedDeck = decks.find(
@@ -14,52 +15,87 @@ document.addEventListener("DOMContentLoaded", async function () {
     // let cardStatus = `&#9876;${card.strength} / &#10070;${card.resistence}`;
 
     if (selectedDeck) {
+      const analysisResult = analyzeDecks(decks);
+
       deck = selectedDeck;
 
-      let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, cards);
+      let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
       let info = analyzeCards(cardsFromDeck);
 
-      console.log(deck.extra)
-
+      console.log(info);
       const elementsToUpdate = {
-        tag_deckName: deck.name,
+        tag_deckName: selectedDeck.name,
 
-        tag_deckQtdHero: info.cardSummary["Herói de Fé"].total,
-        tag_deckQtdMiracle: info.cardSummary.Milagre.total,
-        tag_deckQtdSin: info.cardSummary.Pecado.total,
-        tag_deckQtdArtifact: info.cardSummary.Artefato.total,
+        tag_deckStrength: info.averageStrength,
+        tag_deckResistence: info.averageResistance,
 
-        tag_deckCostHero: info.cardSummary["Herói de Fé"].averageCost,
-        tag_deckCostMiracle: info.cardSummary.Milagre.averageCost,
-        tag_deckCostSin: info.cardSummary.Pecado.averageCost,
-        tag_deckCostArtifact: info.cardSummary.Artefato.averageCost,
+        tag_deckQtdHero: info.heroCount,
+        tag_deckQtdMiracle: info.miracleCount,
+        tag_deckQtdSin: info.sinCount,
+        tag_deckQtdArtifact: info.artifactCount,
 
-        tag_deckStyle: deck.style,
-        tag_deckFormat: deck.format,
-        tag_deckSize: deck.cards.length,
-        tag_deckSizeExtra: deck.extra.length,
-        tag_deckSizeSideboard: deck.sideboard.length,
-        tag_deckSizeSabedorias: deck.sabedorias,
+        tag_deckCostHero:
+          info.heroCount > 0 ? info.averageCostHero.toFixed(2) : "0.00",
+        tag_deckCostMiracle:
+          info.miracleCount > 0 ? info.averageCostMiracle.toFixed(2) : "0.00",
+        tag_deckCostSin:
+          info.sinCount > 0 ? info.averageCostSin.toFixed(2) : "0.00",
+        tag_deckCostArtifact:
+          info.artifactCount > 0 ? info.averageCostArtifact.toFixed(2) : "0.00",
+
+        tag_deckStyle: selectedDeck.style,
+        tag_deckFormat: selectedDeck.format,
+        tag_deckSize: selectedDeck.cards.length,
+        tag_deckSizeExtra: selectedDeck.extra.length,
+        tag_deckSizeSideboard: selectedDeck.sideboard.length,
+        tag_deckSizeSabedorias: selectedDeck.sabedorias,
       };
 
-      console.log(info);
-      console.log(elementsToUpdate);
-      console.log("Aggro -> Tempo -> Control -> Combo -> Midrange");
+      const comparisonElements = {
+        // Comparações Gerais
+        tag_deckStrengthComparison: info.comparison.hero.strength,
+        tag_deckResistanceComparison: info.comparison.hero.resistance,
 
-      for (const [id, value] of Object.entries(elementsToUpdate)) {
-        const element = document.getElementById(id);
+        // Comparações de custo
+        tag_deckCostHeroComparison: info.comparison.hero.cost,
+        tag_deckCostMiracleComparison: info.comparison.miracle.cost,
+        tag_deckCostSinComparison: info.comparison.sin.cost,
+        tag_deckCostArtifactComparison: info.comparison.artifact.cost,
+
+        // Comparações de quantidade
+        tag_deckQtdHeroComparison: info.comparison.hero.count,
+        tag_deckQtdMiracleComparison: info.comparison.miracle.count,
+        tag_deckQtdSinComparison: info.comparison.sin.count,
+        tag_deckQtdArtifactComparison: info.comparison.artifact.count,
+      };
+
+      for (const [key, value] of Object.entries(elementsToUpdate)) {
+        const element = document.getElementById(key);
         if (element) {
-          if (id === "tag_deckImg") {
-            element.src = value;
-          } else if (id === "tag_deckStars") {
-            updateStars(element, value);
+          element.textContent = value;
+        }
+      }
+
+      for (const [key, value] of Object.entries(comparisonElements)) {
+        const element = document.getElementById(key);
+        if (element) {
+          if (value === "higher") {
+            element.innerHTML = "&#8593;";
+            element.style.color = "green";
+          } else if (value === "lower") {
+            element.innerHTML = "&#8595;";
+            element.style.color = "red";
           } else {
-            element.textContent = value;
+            element.innerHTML = "";
           }
         }
       }
 
+      console.log("Aggro -> Tempo -> Control -> Combo -> Midrange");
+
       updateDeckListDOM(cardsFromDeck);
+      updateMiniCards(allCards, selectedDeck.extra, "#extraDeckList");
+      updateMiniCards(allCards, selectedDeck.sideboard, "#sideboardList");
     } else {
       console.log(`Card com ID ${idSelectedCard} não encontrado`);
     }
@@ -67,89 +103,180 @@ document.addEventListener("DOMContentLoaded", async function () {
     location.href = "./card-list.html";
   }
 });
-
 function analyzeCards(cards) {
-  // Inicializando os contadores e somas
-  const summary = {
-    "Herói de Fé": {
-      total: 0,
-      totalCost: 0,
-      totalStrength: 0,
-      totalResistence: 0,
-    },
-    Milagre: { total: 0, totalCost: 0 },
-    Pecado: { total: 0, totalCost: 0 },
-    Artefato: { total: 0, totalCost: 0 },
+  const result = {
+    heroCount: 0,
+    miracleCount: 0,
+    sinCount: 0,
+    artifactCount: 0,
+    totalCostHero: 0,
+    totalCostMiracle: 0,
+    totalCostSin: 0,
+    totalCostArtifact: 0,
+    totalStrength: 0,
+    totalResistance: 0,
+    categoriesCount: {},
+    effectsCount: {},
+    averageCost: 0,
   };
 
-  const categoriesCount = {};
-  const effectsCount = {};
-
-  // Iterando sobre cada card
   cards.forEach((card) => {
-    const type =
-      card.type === "Herói de Fé" && card.subtype === "Lendário"
-        ? "Herói de Fé - Lendário"
-        : card.type;
-    if (summary[type]) {
-      summary[type].total += 1;
-      summary[type].totalCost += card.cost;
-      if (type === "Herói de Fé") {
-        summary[type].totalStrength += card.strength;
-        summary[type].totalResistence += card.resistence;
-      }
+    result.averageCost += card.cost;
+    switch (card.type) {
+      case "Herói de Fé":
+        result.heroCount++;
+        result.totalCostHero += card.cost;
+        result.totalStrength += card.strength;
+        result.totalResistance += card.resistence;
+        break;
+      case "Milagre":
+        result.miracleCount++;
+        result.totalCostMiracle += card.cost;
+        break;
+      case "Pecado":
+        result.sinCount++;
+        result.totalCostSin += card.cost;
+        break;
+      case "Artefato":
+        result.artifactCount++;
+        result.totalCostArtifact += card.cost;
+        break;
     }
 
-    // Contando categorias
-    const categories = card.categories ? card.categories.split(";") : [];
-    categories.forEach((category) => {
-      category = category.trim();
+    card.categories.split(";").forEach((category) => {
       if (category) {
-        categoriesCount[category] = (categoriesCount[category] || 0) + 1;
+        result.categoriesCount[category] =
+          (result.categoriesCount[category] || 0) + 1;
       }
     });
 
-    // Contando efeitos
-    const effects = card.effects ? card.effects.split(";") : [];
-    effects.forEach((effect) => {
-      effect = effect.trim();
+    card.effects.split(";").forEach((effect) => {
       if (effect) {
-        effectsCount[effect] = (effectsCount[effect] || 0) + 1;
+        result.effectsCount[effect] = (result.effectsCount[effect] || 0) + 1;
       }
     });
   });
 
-  // Calculando a média de custo, força e resistência
-  const result = {};
-  for (const type in summary) {
-    if (summary[type].total > 0) {
-      result[type] = {
-        total: summary[type].total,
-        averageCost: (summary[type].totalCost / summary[type].total).toFixed(2),
-      };
-      if (type === "Herói de Fé") {
-        result[type].averageStrength =
-          summary[type].totalStrength / summary[type].total;
-        result[type].averageResistence =
-          summary[type].totalResistence / summary[type].total;
-      }
-    } else {
-      result[type] = {
-        total: 0,
-        averageCost: 0,
-        averageStrength: 0,
-        averageResistence: 0,
-      };
+  const totalCards = cards.length;
+  if (totalCards > 0) {
+    result.averageCost /= totalCards;
+    if (result.heroCount > 0) {
+      result.averageCostHero = result.totalCostHero / result.heroCount;
+      result.averageStrength = result.totalStrength / result.heroCount;
+      result.averageResistance = result.totalResistance / result.heroCount;
+    }
+    if (result.miracleCount > 0) {
+      result.averageCostMiracle = result.totalCostMiracle / result.miracleCount;
+    }
+    if (result.sinCount > 0) {
+      result.averageCostSin = result.totalCostSin / result.sinCount;
+    }
+    if (result.artifactCount > 0) {
+      result.averageCostArtifact =
+        result.totalCostArtifact / result.artifactCount;
     }
   }
 
-  generateCategoryItems(categoriesCount);
-
-  return {
-    cardSummary: result,
-    categoriesCount: categoriesCount,
-    effectsCount: effectsCount,
+  // Comparação das médias com a média geral
+  result.comparison = {
+    hero: {
+      cost:
+        result.heroCount > 0
+          ? result.averageCostHero > result.averageCost
+            ? "higher"
+            : "lower"
+          : "N/A",
+      strength:
+        result.heroCount > 0
+          ? result.averageStrength > result.totalStrength / totalCards
+            ? "higher"
+            : "lower"
+          : "N/A",
+      resistance:
+        result.heroCount > 0
+          ? result.averageResistance > result.totalResistance / totalCards
+            ? "higher"
+            : "lower"
+          : "N/A",
+      count: result.heroCount > totalCards / 4 ? "higher" : "lower",
+    },
+    miracle: {
+      cost:
+        result.miracleCount > 0
+          ? result.averageCostMiracle > result.averageCost
+            ? "higher"
+            : "lower"
+          : "N/A",
+      count: result.miracleCount > totalCards / 4 ? "higher" : "lower",
+    },
+    sin: {
+      cost:
+        result.sinCount > 0
+          ? result.averageCostSin > result.averageCost
+            ? "higher"
+            : "lower"
+          : "N/A",
+      count: result.sinCount > totalCards / 4 ? "higher" : "lower",
+    },
+    artifact: {
+      cost:
+        result.artifactCount > 0
+          ? result.averageCostArtifact > result.averageCost
+            ? "higher"
+            : "lower"
+          : "N/A",
+      count: result.artifactCount > totalCards / 4 ? "higher" : "lower",
+    },
   };
+
+  return result;
+}
+
+function analyzeDecks(decks) {
+  const totalResult = {
+    totalDecks: decks.length,
+    heroCount: 0,
+    miracleCount: 0,
+    sinCount: 0,
+    artifactCount: 0,
+    averageCost: 0,
+    averageStrength: 0,
+    averageResistance: 0,
+    categoriesCount: {},
+    effectsCount: {},
+  };
+
+  decks.forEach((deck) => {
+    const deckAnalysis = analyzeCards(getCardsFromDeck(deck.cards, allCards));
+
+    totalResult.heroCount += deckAnalysis.heroCount;
+    totalResult.miracleCount += deckAnalysis.miracleCount;
+    totalResult.sinCount += deckAnalysis.sinCount;
+    totalResult.artifactCount += deckAnalysis.artifactCount;
+    totalResult.averageCost += deckAnalysis.averageCost;
+    totalResult.averageStrength += deckAnalysis.averageStrength;
+    totalResult.averageResistance += deckAnalysis.averageResistance;
+
+    for (const category in deckAnalysis.categoriesCount) {
+      totalResult.categoriesCount[category] =
+        (totalResult.categoriesCount[category] || 0) +
+        deckAnalysis.categoriesCount[category];
+    }
+
+    for (const effect in deckAnalysis.effectsCount) {
+      totalResult.effectsCount[effect] =
+        (totalResult.effectsCount[effect] || 0) +
+        deckAnalysis.effectsCount[effect];
+    }
+  });
+
+  if (totalResult.totalDecks > 0) {
+    totalResult.averageCost /= totalResult.totalDecks;
+    totalResult.averageStrength /= totalResult.totalDecks;
+    totalResult.averageResistance /= totalResult.totalDecks;
+  }
+
+  return totalResult;
 }
 
 function generateCategoryItems(categoriesCount) {
@@ -188,5 +315,33 @@ function updateDeckListDOM(cardsFromDeck) {
     cardElement.addEventListener("click", () => getCardDetails(card.number));
 
     deckListContainer.appendChild(cardElement);
+  });
+}
+
+function updateMiniCards(allCards, cardsList, id) {
+  const similarCardsContainer = document.querySelector(id);
+  if (!similarCardsContainer) return;
+
+  similarCardsContainer.innerHTML = "";
+
+  cardsList.forEach((similarCard) => {
+    const details = allCards.find((card) => card.number === similarCard);
+    if (details) {
+      const cardElement = document.createElement("div");
+      cardElement.className =
+        "col-lg-1 col-md-1 col-sm-4 card__related__sidebar__view__item set-bg";
+      cardElement.style.cursor = "pointer";
+      cardElement.innerHTML = `
+        <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
+        <div class="card__related__info">
+        </div>
+      `;
+
+      cardElement.addEventListener("click", () =>
+        getCardDetails(details.number)
+      );
+
+      similarCardsContainer.appendChild(cardElement);
+    }
   });
 }

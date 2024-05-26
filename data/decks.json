@@ -42,7 +42,7 @@
             52
         ],
         "sideboard": [
-            52
+            41
         ],
         "sabedorias": 10
     },
@@ -53,12 +53,12 @@
         "style": "Controle;Combo;Proteção;Artefato",
         "format": "Standard",
         "keywords": "Proteção;Combo",
-        "cards": [],
+        "cards": [1],
         "extra": [
             52
         ],
         "sideboard": [
-            52
+            41
         ],
         "sabedorias": 10
     },
@@ -70,14 +70,13 @@
         "format": "Standard",
         "keywords": "Proteção;Combo",
         "cards": [
-            1,
-            52
+            1
         ],
         "extra": [
             52
         ],
         "sideboard": [
-            52
+            41
         ],
         "sabedorias": 10
     },
@@ -89,14 +88,13 @@
         "format": "Standard",
         "keywords": "Proteção;Combo",
         "cards": [
-            1,
-            52
+            1
         ],
         "extra": [
             52
         ],
         "sideboard": [
-            52
+            41
         ],
         "sabedorias": 10
     },
@@ -108,14 +106,13 @@
         "format": "Standard",
         "keywords": "Proteção;Combo",
         "cards": [
-            1,
-            52
+            1
         ],
         "extra": [
             52
         ],
         "sideboard": [
-            52
+            41
         ],
         "sabedorias": 10
     }
