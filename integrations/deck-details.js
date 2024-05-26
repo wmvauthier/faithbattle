@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", async function () {
       let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
       let info = analyzeCards(cardsFromDeck);
 
+      console.log(analysisResult);
       console.log(info);
+
       const elementsToUpdate = {
         tag_deckName: selectedDeck.name,
 
@@ -53,20 +55,18 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const comparisonElements = {
         // Comparações Gerais
-        tag_deckStrengthComparison: info.comparison.hero.strength,
-        tag_deckResistanceComparison: info.comparison.hero.resistance,
-
+        // tag_deckStrengthComparison: info.comparison.hero.strength,
+        // tag_deckResistanceComparison: info.comparison.hero.resistance,
         // Comparações de custo
-        tag_deckCostHeroComparison: info.comparison.hero.cost,
-        tag_deckCostMiracleComparison: info.comparison.miracle.cost,
-        tag_deckCostSinComparison: info.comparison.sin.cost,
-        tag_deckCostArtifactComparison: info.comparison.artifact.cost,
-
+        // tag_deckCostHeroComparison: info.comparison.hero.cost,
+        // tag_deckCostMiracleComparison: info.comparison.miracle.cost,
+        // tag_deckCostSinComparison: info.comparison.sin.cost,
+        // tag_deckCostArtifactComparison: info.comparison.artifact.cost,
         // Comparações de quantidade
-        tag_deckQtdHeroComparison: info.comparison.hero.count,
-        tag_deckQtdMiracleComparison: info.comparison.miracle.count,
-        tag_deckQtdSinComparison: info.comparison.sin.count,
-        tag_deckQtdArtifactComparison: info.comparison.artifact.count,
+        // tag_deckQtdHeroComparison: info.comparison.hero.count,
+        // tag_deckQtdMiracleComparison: info.comparison.miracle.count,
+        // tag_deckQtdSinComparison: info.comparison.sin.count,
+        // tag_deckQtdArtifactComparison: info.comparison.artifact.count,
       };
 
       for (const [key, value] of Object.entries(elementsToUpdate)) {
@@ -177,7 +177,6 @@ function analyzeCards(cards) {
     }
   }
 
-  // Comparação das médias com a média geral
   result.comparison = {
     hero: {
       cost:
@@ -247,15 +246,22 @@ function analyzeDecks(decks) {
   };
 
   decks.forEach((deck) => {
-    const deckAnalysis = analyzeCards(getCardsFromDeck(deck.cards, allCards));
+    let cardsFromDeck = getCardsFromDeck(deck.cards, allCards);
+    const deckAnalysis = analyzeCards(cardsFromDeck);
+
+    console.log(cardsFromDeck);
 
     totalResult.heroCount += deckAnalysis.heroCount;
     totalResult.miracleCount += deckAnalysis.miracleCount;
     totalResult.sinCount += deckAnalysis.sinCount;
     totalResult.artifactCount += deckAnalysis.artifactCount;
     totalResult.averageCost += deckAnalysis.averageCost;
-    totalResult.averageStrength += deckAnalysis.averageStrength;
-    totalResult.averageResistance += deckAnalysis.averageResistance;
+    totalResult.averageStrength += deckAnalysis.averageStrength
+      ? deckAnalysis.averageStrength
+      : 0;
+    totalResult.averageResistance += deckAnalysis.averageResistance
+      ? deckAnalysis.averageResistance
+      : 0;
 
     for (const category in deckAnalysis.categoriesCount) {
       totalResult.categoriesCount[category] =
@@ -275,6 +281,13 @@ function analyzeDecks(decks) {
     totalResult.averageStrength /= totalResult.totalDecks;
     totalResult.averageResistance /= totalResult.totalDecks;
   }
+
+  delete totalResult.totalDecks;
+  delete totalResult.heroCount;
+  delete totalResult.miracleCount;
+  delete totalResult.sinCount;
+  delete totalResult.artifactCount;
+  console.log(totalResult);
 
   return totalResult;
 }
