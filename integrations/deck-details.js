@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     const selectedDeck = decks.find(
       (element) => element.number == idSelectedDeck
     );
-    // let cardStatus = `&#9876;${card.strength} / &#10070;${card.resistence}`;
 
     if (selectedDeck) {
       const analysisResult = analyzeDecks(decks);
@@ -22,8 +21,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
       let info = analyzeCards(cardsFromDeck);
 
-      console.log(analysisResult);
-      console.log(info);
+      // console.log(analysisResult);
+      // console.log(info);
 
       const elementsToUpdate = {
         tag_deckName: selectedDeck.name,
@@ -234,10 +233,13 @@ function analyzeCards(cards) {
 function analyzeDecks(decks) {
   const totalResult = {
     totalDecks: decks.length,
+    
     heroCount: 0,
     miracleCount: 0,
     sinCount: 0,
     artifactCount: 0,
+
+    averageQtd: 0,
     averageCost: 0,
     averageStrength: 0,
     averageResistance: 0,
@@ -250,6 +252,8 @@ function analyzeDecks(decks) {
     const deckAnalysis = analyzeCards(cardsFromDeck);
 
     console.log(cardsFromDeck);
+
+    totalResult.averageQtd += deck.cards.length ? deck.cards.length : 0;
 
     totalResult.heroCount += deckAnalysis.heroCount;
     totalResult.miracleCount += deckAnalysis.miracleCount;
@@ -277,6 +281,7 @@ function analyzeDecks(decks) {
   });
 
   if (totalResult.totalDecks > 0) {
+    totalResult.averageQtd /= totalResult.totalDecks;
     totalResult.averageCost /= totalResult.totalDecks;
     totalResult.averageStrength /= totalResult.totalDecks;
     totalResult.averageResistance /= totalResult.totalDecks;
