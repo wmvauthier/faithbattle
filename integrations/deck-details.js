@@ -36,19 +36,39 @@ document.addEventListener("DOMContentLoaded", async function () {
         tag_deckStrength: info.averageStrength.toFixed(2),
         tag_deckResistence: info.averageResistance.toFixed(2),
 
-        tag_deckQtdHero: info.heroCount,
-        tag_deckQtdMiracle: info.miracleCount,
-        tag_deckQtdSin: info.sinCount,
-        tag_deckQtdArtifact: info.artifactCount,
+        tag_deckQtdHero:
+          info.heroCount > 0
+            ? info.heroCount
+            : info.comparison.hero.count,
+        tag_deckQtdMiracle:
+          info.miracleCount > 0
+            ? info.miracleCount
+            : info.comparison.miracle.count,
+        tag_deckQtdSin:
+          info.sinCount > 0
+            ? info.sinCount
+            : info.comparison.sin.count,
+        tag_deckQtdArtifact:
+          info.artifactCount > 0
+            ? info.artifactCount
+            : info.comparison.artifact.count,
 
         tag_deckCostHero:
-          info.heroCount > 0 ? info.averageCostHero.toFixed(2) : "0.00",
+          info.heroCount > 0
+            ? info.averageCostHero.toFixed(2)
+            : info.comparison.hero.cost,
         tag_deckCostMiracle:
-          info.miracleCount > 0 ? info.averageCostMiracle.toFixed(2) : "0.00",
+          info.miracleCount > 0
+            ? info.averageCostMiracle.toFixed(2)
+            : info.comparison.miracle.cost,
         tag_deckCostSin:
-          info.sinCount > 0 ? info.averageCostSin.toFixed(2) : "0.00",
+          info.sinCount > 0
+            ? info.averageCostSin.toFixed(2)
+            : info.comparison.sin.cost,
         tag_deckCostArtifact:
-          info.artifactCount > 0 ? info.averageCostArtifact.toFixed(2) : "0.00",
+          info.artifactCount > 0
+            ? info.averageCostArtifact.toFixed(2)
+            : info.comparison.artifact.cost,
       };
 
       const comparisonElements = {

@@ -5,6 +5,100 @@ const URL_SINS_JSON = "data/sins.json";
 const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
 
+const WEIGHT_LEGENDARY = 300;
+const WEIGHT_NAME = 200;
+const WEIGHT_TEXT = 90;
+const WEIGHT_TYPE = 30;
+const WEIGHT_EFFECT = 20;
+const WEIGHT_CATEGORY = 70;
+// const WEIGHT_OCURRENCY_DECK = 10;
+// const WEIGHT_OCURRENCY_EXTRA = 10;
+// const WEIGHT_OCURRENCY_SIDEBOARD = 5;
+const WEIGHT_OCURRENCY_DECK = 0;
+const WEIGHT_OCURRENCY_EXTRA = 0;
+const WEIGHT_OCURRENCY_SIDEBOARD = 0;
+
+const excludedWords = [
+  "zona",
+  "batalha",
+  "oponente",
+  "alvo",
+  "heroi",
+  "herois",
+  "jogador",
+  "sempre",
+  "carta",
+  "jogo",
+  "toda",
+  "quando",
+  "entra",
+  "ataca",
+  "atacar",
+  "atacando",
+  "atacantes",
+  "inicio",
+  "fim",
+  "final",
+  "turno",
+  "entra",
+  "sob",
+  "seu",
+  "sua",
+  "essa",
+  "esse",
+  "uma",
+  "você",
+  "tem",
+  "disso",
+  "que",
+  "ate",
+  "pode",
+  "ele",
+  "torna",
+  "sabedoria",
+  "controle",
+  "estiver",
+  "ponto",
+  "por",
+  "cada",
+  "ganhe",
+  "ganha",
+  "ganham",
+  "perde",
+  "campo",
+  "ambos",
+  "sao",
+  "destruidos",
+  "vez",
+  "escolha",
+  "pague",
+  "ative",
+  "apenas",
+  "rodada",
+  "acrescente",
+  "usada",
+  "esta",
+  "esteja",
+  "estejam",
+  "estava",
+  "equipado",
+  "todos",
+  "artefatos",
+  "nao",
+  "ser",
+  "diretamente",
+  "ceu",
+  "entre",
+  "nesta",
+  "recebe",
+  "afetado",
+  "neste",
+  "+1/+0",
+  "+0/+2",
+  "seus",
+  "outros",
+];
+
 // const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
 const CACHE_DURATION = 1000; // 24 horas
 
@@ -109,13 +203,16 @@ function getCardsFromDeck(ids, cards) {
 
 function getOccurrencesInDecks(cardId, decks) {
   return decks.reduce((count, deck) => {
-    const cards = deck.cards.concat(deck.extra, deck.sideboard); // Concatenando todas as listas de cards
+    const cards = deck.cards.concat(deck.extra); // Concatenando todas as listas de cards
 
     return count + (cards.includes(cardId) ? 1 : 0);
   }, 0);
 }
 
 async function getRelatedCardsInDecks(cardId, decks) {
+  const allCards = await getCards();
+  const selectedCard = allCards.find((card) => card.number == cardId);
+
   const relatedCardsMap = new Map();
 
   const addCardWithWeight = (id, weight) => {
@@ -124,49 +221,127 @@ async function getRelatedCardsInDecks(cardId, decks) {
     }
   };
 
-  let allCards = await getCards();
+  const addWeightForSelectedCardWords = (card, selectedCardWords) => {
+    const nameWords = card.name
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .split(/[.,;]/)
+      .join("")
+      .toLowerCase()
+      .split(" ")
+      .filter((word) => word?.length > 2 && !excludedWords.includes(word));
 
-  decks.forEach((deck) => {
+    const textWords = card.text
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .split(/[.,;]/)
+      .join("")
+      .toLowerCase()
+      .split(" ")
+      .filter((word) => word.length > 2 && !excludedWords.includes(word));
 
-    let cardsFromDeck = getCardsFromDeck(deck.cards, allCards);
-    let selectedCard = cardsFromDeck.find((objeto) => objeto.number == cardId);
-    console.log(cardsFromDeck);
-    console.log(cardId);
+    selectedCardWords.textWords.forEach((word) => {
+      if (textWords.includes(word)) {
+        addCardWithWeight(card.number, WEIGHT_TEXT);
+      } else if (nameWords.includes(word)) {
+        addCardWithWeight(card.number, WEIGHT_NAME);
+      }
+    });
 
-    if (selectedCard) {
-      cardsFromDeck.forEach((card) => {
-        if (card.text.includes(selectedCard.name)) {
-          deck.cards.forEach((id) => addCardWithWeight(id, 3));
-          deck.extra.forEach((id) => addCardWithWeight(id, 3));
-          deck.sideboard.forEach((id) => addCardWithWeight(id, 3));
-          console.log(card);
+    selectedCardWords.nameWords.forEach((word) => {
+      if (textWords.includes(word)) {
+        addCardWithWeight(card.number, WEIGHT_NAME);
+      } else if (nameWords.includes(word)) {
+        addCardWithWeight(card.number, WEIGHT_NAME);
+      }
+    });
+  };
+
+  allCards.forEach((card) => {
+    if (card.number !== cardId) {
+      //CHECAGEM DE TIPO E SUBTIPO
+
+      if (card.type == selectedCard.type) {
+        addCardWithWeight(card.number, WEIGHT_TYPE);
+      }
+
+      if (
+        (card.subtype == "Lendário" && card.commonNumber == cardId) ||
+        (selectedCard.subtype == "Lendário" &&
+          selectedCard.commonNumber == card.number)
+      ) {
+        addCardWithWeight(card.number, WEIGHT_LEGENDARY);
+      }
+
+      //CHECAGEM DE PALAVRAS
+
+      const selectedCardNameWords = selectedCard.name
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .split(/[.,;]/)
+        .join("")
+        .toLowerCase()
+        .split(" ")
+        .filter((word) => word.length > 2 && !excludedWords.includes(word));
+      const selectedCardTextWords = selectedCard.text
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .split(/[.,;]/)
+        .join("")
+        .toLowerCase()
+        .split(" ")
+        .filter((word) => word.length > 2 && !excludedWords.includes(word));
+      const selectedCardWords = {
+        nameWords: selectedCardNameWords,
+        textWords: selectedCardTextWords,
+      };
+
+      console.log(selectedCardWords.nameWords);
+      console.log(selectedCardWords.textWords);
+
+      addWeightForSelectedCardWords(card, selectedCardWords);
+
+      //CHECAGEM DE EFEITOS E CATEGORIAS
+      let effects = card.effects.split(";");
+      let categories = card.categories.split(";");
+      let selectedCardEffects = selectedCard.effects.split(";");
+      let selectedCardcategories = selectedCard.categories.split(";");
+
+      selectedCardEffects.forEach((selectedEffect) => {
+        if (effects.includes(selectedEffect)) {
+          addCardWithWeight(card.number, WEIGHT_EFFECT);
         }
-        //VERIFICAR NOME E EXISTENCIA DE LENDARIA CORRELATA
+      });
+
+      selectedCardcategories.forEach((selectedCategory) => {
+        if (categories.includes(selectedCategory)) {
+          addCardWithWeight(card.number, WEIGHT_CATEGORY);
+        }
       });
     }
-
-    if (
-      deck.extra.includes(cardId) ||
-      deck.cards.includes(cardId) ||
-      deck.sideboard.includes(cardId)
-    ) {
-      deck.cards.forEach((id) => addCardWithWeight(id, 3));
-      deck.extra.forEach((id) => addCardWithWeight(id, 3));
-      deck.sideboard.forEach((id) => addCardWithWeight(id, 1));
-    }
-
   });
 
-  let r = Array.from(relatedCardsMap.entries())
-    .map(([idcard, qtd]) => ({ idcard, qtd }))
-    .sort((a, b) => b.qtd - a.qtd);
+  decks.forEach((deck) => {
+    const allCardIds = [...deck.cards, ...deck.extra, ...deck.sideboard];
 
-  console.log(r);
+    allCardIds.forEach((id) => {
+      const weight = deck.cards.includes(id)
+        ? WEIGHT_OCURRENCY_DECK
+        : deck.extra.includes(id)
+        ? WEIGHT_OCURRENCY_EXTRA
+        : WEIGHT_OCURRENCY_SIDEBOARD;
+      addCardWithWeight(id, weight);
+    });
+  });
 
-  return Array.from(relatedCardsMap.entries())
+  const relatedCardsArray = Array.from(relatedCardsMap.entries())
     .map(([idcard, qtd]) => ({ idcard, qtd }))
     .sort((a, b) => b.qtd - a.qtd)
     .slice(0, 12);
+
+  console.log(relatedCardsArray);
+
+  return relatedCardsArray;
 }
 
 function getRelatedDecks(relatedCards, decks) {
