@@ -5,11 +5,17 @@ const URL_SINS_JSON = "data/sins.json";
 const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
 
-const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
+// const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
+const CACHE_DURATION = 1000; // 24 horas
 
 function getCardDetails(cardNumber) {
   localStorage.setItem("idSelectedCard", cardNumber);
   location.href = "./card-details.html";
+}
+
+function getDeckDetails(cardNumber) {
+  localStorage.setItem("idSelectedDeck", cardNumber);
+  location.href = "./deck-details.html";
 }
 
 async function fetchJSON(url) {
@@ -29,7 +35,7 @@ async function fetchOrGetFromLocalStorage(key, url) {
   const cachedTimestamp = localStorage.getItem(`${key}_timestamp`);
   const now = Date.now();
 
-  if (cachedData && cachedTimestamp && (now - cachedTimestamp < CACHE_DURATION)) {
+  if (cachedData && cachedTimestamp && now - cachedTimestamp < CACHE_DURATION) {
     return JSON.parse(cachedData);
   }
 
@@ -40,17 +46,26 @@ async function fetchOrGetFromLocalStorage(key, url) {
 }
 
 async function getCards() {
-  const heroes = await fetchOrGetFromLocalStorage('heroes', URL_HEROES_JSON);
-  const miracles = await fetchOrGetFromLocalStorage('miracles', URL_MIRACLES_JSON);
-  const sins = await fetchOrGetFromLocalStorage('sins', URL_SINS_JSON);
-  const artifacts = await fetchOrGetFromLocalStorage('artifacts', URL_ARTIFACTS_JSON);
-  const legendaries = await fetchOrGetFromLocalStorage('legendaries', URL_LEGENDARIES_JSON);
+  const heroes = await fetchOrGetFromLocalStorage("heroes", URL_HEROES_JSON);
+  const miracles = await fetchOrGetFromLocalStorage(
+    "miracles",
+    URL_MIRACLES_JSON
+  );
+  const sins = await fetchOrGetFromLocalStorage("sins", URL_SINS_JSON);
+  const artifacts = await fetchOrGetFromLocalStorage(
+    "artifacts",
+    URL_ARTIFACTS_JSON
+  );
+  const legendaries = await fetchOrGetFromLocalStorage(
+    "legendaries",
+    URL_LEGENDARIES_JSON
+  );
 
   return [...heroes, ...miracles, ...sins, ...artifacts, ...legendaries];
 }
 
 async function getDecks() {
-  return await fetchOrGetFromLocalStorage('decks', URL_DECKS_JSON);
+  return await fetchOrGetFromLocalStorage("decks", URL_DECKS_JSON);
 }
 
 function getCardsFromDeck(ids, cards) {
@@ -73,8 +88,14 @@ function getCardsFromDeck(ids, cards) {
   };
 
   allCards.sort((a, b) => {
-    const typeA = a.type === "Herói de Fé" && a.subtype === "Lendário" ? "Herói de Fé - Lendário" : a.type;
-    const typeB = b.type === "Herói de Fé" && b.subtype === "Lendário" ? "Herói de Fé - Lendário" : b.type;
+    const typeA =
+      a.type === "Herói de Fé" && a.subtype === "Lendário"
+        ? "Herói de Fé - Lendário"
+        : a.type;
+    const typeB =
+      b.type === "Herói de Fé" && b.subtype === "Lendário"
+        ? "Herói de Fé - Lendário"
+        : b.type;
 
     if (typeA === typeB) {
       return a.cost - b.cost;
@@ -87,37 +108,60 @@ function getCardsFromDeck(ids, cards) {
 }
 
 function getOccurrencesInDecks(cardId, decks) {
-  return decks.reduce((count, deck) => count + (deck.cards.includes(cardId) ? 1 : 0), 0);
+  return decks.reduce((count, deck) => {
+    const cards = deck.cards.concat(deck.extra, deck.sideboard); // Concatenando todas as listas de cards
+
+    return count + (cards.includes(cardId) ? 1 : 0);
+  }, 0);
 }
 
-function getRelatedCardsInDecks(cardId, decks) {
+async function getRelatedCardsInDecks(cardId, decks) {
   const relatedCardsMap = new Map();
 
+  const addCardWithWeight = (id, weight) => {
+    if (id !== cardId) {
+      relatedCardsMap.set(id, (relatedCardsMap.get(id) || 0) + weight);
+    }
+  };
+
+  let allCards = await getCards();
+
   decks.forEach((deck) => {
-    if (deck.extra.includes(cardId)) {
-      deck.extra.forEach((id) => {
-        if (id !== cardId) {
-          relatedCardsMap.set(id, (relatedCardsMap.get(id) || 0) + 1);
+
+    let cardsFromDeck = getCardsFromDeck(deck.cards, allCards);
+    let selectedCard = cardsFromDeck.find((objeto) => objeto.number == cardId);
+    console.log(cardsFromDeck);
+    console.log(cardId);
+
+    if (selectedCard) {
+      cardsFromDeck.forEach((card) => {
+        if (card.text.includes(selectedCard.name)) {
+          deck.cards.forEach((id) => addCardWithWeight(id, 3));
+          deck.extra.forEach((id) => addCardWithWeight(id, 3));
+          deck.sideboard.forEach((id) => addCardWithWeight(id, 3));
+          console.log(card);
         }
+        //VERIFICAR NOME E EXISTENCIA DE LENDARIA CORRELATA
       });
     }
 
-    if (deck.cards.includes(cardId)) {
-      deck.cards.forEach((id) => {
-        if (id !== cardId) {
-          relatedCardsMap.set(id, (relatedCardsMap.get(id) || 0) + 1);
-        }
-      });
+    if (
+      deck.extra.includes(cardId) ||
+      deck.cards.includes(cardId) ||
+      deck.sideboard.includes(cardId)
+    ) {
+      deck.cards.forEach((id) => addCardWithWeight(id, 3));
+      deck.extra.forEach((id) => addCardWithWeight(id, 3));
+      deck.sideboard.forEach((id) => addCardWithWeight(id, 1));
     }
 
-    if (deck.sideboard.includes(cardId)) {
-      deck.sideboard.forEach((id) => {
-        if (id !== cardId) {
-          relatedCardsMap.set(id, (relatedCardsMap.get(id) || 0) + 1);
-        }
-      });
-    }
   });
+
+  let r = Array.from(relatedCardsMap.entries())
+    .map(([idcard, qtd]) => ({ idcard, qtd }))
+    .sort((a, b) => b.qtd - a.qtd);
+
+  console.log(r);
 
   return Array.from(relatedCardsMap.entries())
     .map(([idcard, qtd]) => ({ idcard, qtd }))
@@ -130,7 +174,9 @@ function getRelatedDecks(relatedCards, decks) {
 
   const deckScores = decks.map((deck) => {
     const score = deck.cards.reduce((acc, cardId) => {
-      const relatedCard = relatedCards.find((relatedCard) => relatedCard.idcard === cardId);
+      const relatedCard = relatedCards.find(
+        (relatedCard) => relatedCard.idcard === cardId
+      );
       return relatedCard ? acc + relatedCard.qtd : acc;
     }, 0);
 
@@ -141,4 +187,18 @@ function getRelatedDecks(relatedCards, decks) {
     .sort((a, b) => b.score - a.score)
     .slice(0, 4)
     .map((deckScore) => deckScore.deck);
+}
+
+function getKeyWithMaxAbsoluteValue(obj) {
+  let maxKey = 0;
+  let maxValue = -Infinity;
+
+  for (const [key, value] of Object.entries(obj)) {
+    if (Math.abs(value) > maxValue) {
+      maxValue = value;
+      maxKey = key;
+    }
+  }
+
+  return maxKey;
 }

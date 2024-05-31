@@ -48,7 +48,7 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li class="active"><a href="./index.html">Homepage</a></li>
-                                <li><a href="./card-list.html">Cards <span class="arrow_carrot-down"></span></a>
+                                <li><a href="./card-list.html">Listas <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="./card-list.html">Lista de Cards</a></li>
                                         <li><a href="./deck-list.html">Lista de Decks</a></li>
@@ -82,7 +82,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./card-list.html">Cards</a>
+                        <a href="./card-list.html">Listas</a>
                         <span>Romance</span>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="anime__details__review" style="margin-bottom: 0px">
                         <div class="section-title">
-                            <h5>Sideboard</h5>
+                            <h5>Sideboard / Alternativas</h5>
                         </div>
                         <div id="sideboardList" class="row"></div>
                     </div>
@@ -164,13 +164,15 @@
                                         }
 
                                         .category-item {
-                                            background-color: #e53637;
+                                            /* background-color: #e53637; */
+                                            background-color: #ddd;
                                             border-radius: 10px;
                                             padding: 10px;
                                             display: flex;
                                             align-items: center;
                                             font-family: Arial, sans-serif;
-                                            color: white;
+                                            font-weight: bold;
+                                            color: #000;
                                         }
 
                                         .category-item input {
@@ -190,6 +192,7 @@
                                         }
                                     </style>
 
+                                    <div id="effectsContainer" class="categories-container"></div>
                                     <div id="categoriesContainer" class="categories-container"></div>
 
                                     <div class="anime__details__widget">
@@ -199,18 +202,21 @@
                                                     <li><span><b>Características</b></span></li>
                                                     <li><span>Formato</span> <text id="tag_deckFormat"></text></li>
                                                     <li><span>Estilo</span> <text id="tag_deckStyle"></text></li>
-                                                    <li><span>Data</span> <text id="tag_deckCollection"></text></li>
-                                                    <li><span>Criador</span> <text id="tag_deckArtist"></text></li>
+                                                    <li><span>Categoria</span> <text id="tag_deckCategory"></text></li>
+                                                    <li><span>Efeito</span> <text id="tag_deckEffect"></text></li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-3 col-md-3">
                                                 <ul>
                                                     <li><span><b>Números</b></span></li>
-                                                    <li><span>Principal</span> <text id="tag_deckSize"></text></li>
-                                                    <li><span>Extra</span> <text id="tag_deckSizeExtra"></text></li>
-                                                    <li><span>Sideboard</span> <text id="tag_deckSizeSideboard"></text>
+                                                    <li><span>Cartas</span> <text id="tag_deckSize"></text><text
+                                                            id="tag_deckQtdComparison"></text></li>
+                                                    <li><span>Extra Deck</span> <text id="tag_deckSizeExtra"></text>
                                                     </li>
-                                                    <li><span>Status</span> 
+                                                    <li><span>Custo Médio</span> <text id="tag_deckMedCost"></text>
+                                                        <text id="tag_deckMedCostComparison"></text>
+                                                    </li>
+                                                    <li><span>Status</span>
                                                         <text id="tag_deckStrengthComparison"></text>
                                                         &#9876;<text id="tag_deckStrength"></text> /
                                                         &#10070;<text id="tag_deckResistence"></text>
@@ -271,12 +277,17 @@
                                         </div>
                                     </div>
 
-
                                     <!-- <div class="anime__details__btn">
                                         <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
                                         <a href="#" class="watch-btn"><span>Watch Now</span> <i
                                                 class="fa fa-angle-right"></i></a>
                                     </div> -->
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <canvas id="myChart"></canvas>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -284,7 +295,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-9 col-md-9">
                     <div class="anime__details__review">
                         <div class="section-title">
@@ -347,7 +358,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="anime__details__form">
+                    <div class="anime__details__form">
                         <div class="section-title">
                             <h5>Your Comment</h5>
                         </div>
@@ -355,19 +366,19 @@
                             <textarea placeholder="Your Comment"></textarea>
                             <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
                         </form>
-                    </div> -->
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="product__sidebar__comment">
-                        <div class="section-title">
-                            <h5>Prêmios</h5>
-                        </div>
-
-                        <div id="related-decks-container"></div>
-
                     </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+            <div class="product__sidebar__comment">
+                <div class="section-title">
+                    <h5>Prêmios</h5>
                 </div>
+
+                <div id="related-decks-container"></div>
+
             </div>
+        </div>
+        </div> -->
 
         </div>
     </section>
@@ -423,6 +434,9 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/player.js"></script>
@@ -433,6 +447,7 @@
     <script src="js/main.js"></script>
 
     <script src="integrations/utils.js"></script>
+    <script src="integrations/analysis.js"></script>
     <script src="integrations/deck-details.js"></script>
 
 </body>

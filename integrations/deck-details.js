@@ -14,21 +14,27 @@ document.addEventListener("DOMContentLoaded", async function () {
     );
 
     if (selectedDeck) {
-      const analysisResult = analyzeDecks(decks);
-
       deck = selectedDeck;
 
+      const analysisAverages = await analyzeDecks(decks);
       let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
-      let info = analyzeCards(cardsFromDeck);
+      let info = await analyzeCards(cardsFromDeck, analysisAverages);
 
-      // console.log(analysisResult);
-      // console.log(info);
+      console.log(info);
 
       const elementsToUpdate = {
         tag_deckName: selectedDeck.name,
 
-        tag_deckStrength: info.averageStrength,
-        tag_deckResistence: info.averageResistance,
+        tag_deckStyle: selectedDeck.style,
+        tag_deckFormat: selectedDeck.format,
+        tag_deckCategory: getKeyWithMaxAbsoluteValue(info.categoriesCount),
+        tag_deckEffect: getKeyWithMaxAbsoluteValue(info.effectsCount),
+
+        tag_deckSize: `${selectedDeck.cards.length} `,
+        tag_deckSizeExtra: selectedDeck.extra.length,
+        tag_deckMedCost: info.averageCost.toFixed(2),
+        tag_deckStrength: info.averageStrength.toFixed(2),
+        tag_deckResistence: info.averageResistance.toFixed(2),
 
         tag_deckQtdHero: info.heroCount,
         tag_deckQtdMiracle: info.miracleCount,
@@ -43,29 +49,24 @@ document.addEventListener("DOMContentLoaded", async function () {
           info.sinCount > 0 ? info.averageCostSin.toFixed(2) : "0.00",
         tag_deckCostArtifact:
           info.artifactCount > 0 ? info.averageCostArtifact.toFixed(2) : "0.00",
-
-        tag_deckStyle: selectedDeck.style,
-        tag_deckFormat: selectedDeck.format,
-        tag_deckSize: selectedDeck.cards.length,
-        tag_deckSizeExtra: selectedDeck.extra.length,
-        tag_deckSizeSideboard: selectedDeck.sideboard.length,
-        tag_deckSizeSabedorias: selectedDeck.sabedorias,
       };
 
       const comparisonElements = {
         // Comparações Gerais
-        // tag_deckStrengthComparison: info.comparison.hero.strength,
-        // tag_deckResistanceComparison: info.comparison.hero.resistance,
+        tag_deckQtdComparison: info.comparison.general.qtd,
+        tag_deckMedCostComparison: info.comparison.general.cost,
+        tag_deckStrengthComparison: info.comparison.general.strength,
+        tag_deckResistanceComparison: info.comparison.general.resistance,
         // Comparações de custo
-        // tag_deckCostHeroComparison: info.comparison.hero.cost,
-        // tag_deckCostMiracleComparison: info.comparison.miracle.cost,
-        // tag_deckCostSinComparison: info.comparison.sin.cost,
-        // tag_deckCostArtifactComparison: info.comparison.artifact.cost,
+        tag_deckCostHeroComparison: info.comparison.hero.cost,
+        tag_deckCostMiracleComparison: info.comparison.miracle.cost,
+        tag_deckCostSinComparison: info.comparison.sin.cost,
+        tag_deckCostArtifactComparison: info.comparison.artifact.cost,
         // Comparações de quantidade
-        // tag_deckQtdHeroComparison: info.comparison.hero.count,
-        // tag_deckQtdMiracleComparison: info.comparison.miracle.count,
-        // tag_deckQtdSinComparison: info.comparison.sin.count,
-        // tag_deckQtdArtifactComparison: info.comparison.artifact.count,
+        tag_deckQtdHeroComparison: info.comparison.hero.count,
+        tag_deckQtdMiracleComparison: info.comparison.miracle.count,
+        tag_deckQtdSinComparison: info.comparison.sin.count,
+        tag_deckQtdArtifactComparison: info.comparison.artifact.count,
       };
 
       for (const [key, value] of Object.entries(elementsToUpdate)) {
@@ -77,240 +78,78 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       for (const [key, value] of Object.entries(comparisonElements)) {
         const element = document.getElementById(key);
+
         if (element) {
+          const color = getComparisonColor(key, value);
+          element.style.color = color;
+
           if (value === "higher") {
-            element.innerHTML = "&#8593;";
-            element.style.color = "green";
+            element.innerHTML = "&#9652;";
           } else if (value === "lower") {
-            element.innerHTML = "&#8595;";
-            element.style.color = "red";
+            element.innerHTML = "&#9662;";
+          } else if (value === "equal") {
+            element.innerHTML = "&#8860;";
           } else {
             element.innerHTML = "";
           }
         }
       }
 
-      console.log("Aggro -> Tempo -> Control -> Combo -> Midrange");
+      // console.log("Aggro -> Tempo -> Control -> Combo -> Midrange");
+
+      generateCategoryItems(
+        info.effectsCount,
+        info.comparison.effects,
+        "effectsContainer"
+      );
+      generateCategoryItems(
+        info.categoriesCount,
+        info.comparison.categories,
+        "categoriesContainer"
+      );
 
       updateDeckListDOM(cardsFromDeck);
       updateMiniCards(allCards, selectedDeck.extra, "#extraDeckList");
       updateMiniCards(allCards, selectedDeck.sideboard, "#sideboardList");
+
+      renderGraph(cardsFromDeck);
     } else {
-      console.log(`Card com ID ${idSelectedCard} não encontrado`);
+      location.href = "./deck-list.html";
     }
   } else {
-    location.href = "./card-list.html";
+    location.href = "./deck-list.html";
   }
 });
-function analyzeCards(cards) {
-  const result = {
-    heroCount: 0,
-    miracleCount: 0,
-    sinCount: 0,
-    artifactCount: 0,
-    totalCostHero: 0,
-    totalCostMiracle: 0,
-    totalCostSin: 0,
-    totalCostArtifact: 0,
-    totalStrength: 0,
-    totalResistance: 0,
-    categoriesCount: {},
-    effectsCount: {},
-    averageCost: 0,
-  };
 
-  cards.forEach((card) => {
-    result.averageCost += card.cost;
-    switch (card.type) {
-      case "Herói de Fé":
-        result.heroCount++;
-        result.totalCostHero += card.cost;
-        result.totalStrength += card.strength;
-        result.totalResistance += card.resistence;
-        break;
-      case "Milagre":
-        result.miracleCount++;
-        result.totalCostMiracle += card.cost;
-        break;
-      case "Pecado":
-        result.sinCount++;
-        result.totalCostSin += card.cost;
-        break;
-      case "Artefato":
-        result.artifactCount++;
-        result.totalCostArtifact += card.cost;
-        break;
-    }
+function generateCategoryItems(categoriesCount, averages, id) {
+  const container = document.getElementById(id);
 
-    card.categories.split(";").forEach((category) => {
-      if (category) {
-        result.categoriesCount[category] =
-          (result.categoriesCount[category] || 0) + 1;
-      }
-    });
+  const categoryArray = Object.entries(categoriesCount);
 
-    card.effects.split(";").forEach((effect) => {
-      if (effect) {
-        result.effectsCount[effect] = (result.effectsCount[effect] || 0) + 1;
-      }
-    });
+  categoryArray.sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
+
+  categoryArray.forEach(([category, count]) => {
+    const comparison = averages[category];
+    const color = getComparisonColor(category, comparison);
+    const input = document.createElement("div");
+    input.setAttribute(
+      "style",
+      "font-size: 1rem !important; margin-right: 0px !important; margin-bottom: 0px !important;"
+    );
+    input.classList.add("custom-text-input", "category-item");
+
+    input.innerHTML = `${category} : ${count} <span style="color:${color}"> ${
+      comparison === "higher"
+        ? "&#9650;"
+        : comparison === "lower"
+        ? "&#9660;"
+        : comparison === "equal"
+        ? "&#8860;"
+        : ""
+    }</span>`;
+
+    container.appendChild(input);
   });
-
-  const totalCards = cards.length;
-  if (totalCards > 0) {
-    result.averageCost /= totalCards;
-    if (result.heroCount > 0) {
-      result.averageCostHero = result.totalCostHero / result.heroCount;
-      result.averageStrength = result.totalStrength / result.heroCount;
-      result.averageResistance = result.totalResistance / result.heroCount;
-    }
-    if (result.miracleCount > 0) {
-      result.averageCostMiracle = result.totalCostMiracle / result.miracleCount;
-    }
-    if (result.sinCount > 0) {
-      result.averageCostSin = result.totalCostSin / result.sinCount;
-    }
-    if (result.artifactCount > 0) {
-      result.averageCostArtifact =
-        result.totalCostArtifact / result.artifactCount;
-    }
-  }
-
-  result.comparison = {
-    hero: {
-      cost:
-        result.heroCount > 0
-          ? result.averageCostHero > result.averageCost
-            ? "higher"
-            : "lower"
-          : "N/A",
-      strength:
-        result.heroCount > 0
-          ? result.averageStrength > result.totalStrength / totalCards
-            ? "higher"
-            : "lower"
-          : "N/A",
-      resistance:
-        result.heroCount > 0
-          ? result.averageResistance > result.totalResistance / totalCards
-            ? "higher"
-            : "lower"
-          : "N/A",
-      count: result.heroCount > totalCards / 4 ? "higher" : "lower",
-    },
-    miracle: {
-      cost:
-        result.miracleCount > 0
-          ? result.averageCostMiracle > result.averageCost
-            ? "higher"
-            : "lower"
-          : "N/A",
-      count: result.miracleCount > totalCards / 4 ? "higher" : "lower",
-    },
-    sin: {
-      cost:
-        result.sinCount > 0
-          ? result.averageCostSin > result.averageCost
-            ? "higher"
-            : "lower"
-          : "N/A",
-      count: result.sinCount > totalCards / 4 ? "higher" : "lower",
-    },
-    artifact: {
-      cost:
-        result.artifactCount > 0
-          ? result.averageCostArtifact > result.averageCost
-            ? "higher"
-            : "lower"
-          : "N/A",
-      count: result.artifactCount > totalCards / 4 ? "higher" : "lower",
-    },
-  };
-
-  return result;
-}
-
-function analyzeDecks(decks) {
-  const totalResult = {
-    totalDecks: decks.length,
-    
-    heroCount: 0,
-    miracleCount: 0,
-    sinCount: 0,
-    artifactCount: 0,
-
-    averageQtd: 0,
-    averageCost: 0,
-    averageStrength: 0,
-    averageResistance: 0,
-    categoriesCount: {},
-    effectsCount: {},
-  };
-
-  decks.forEach((deck) => {
-    let cardsFromDeck = getCardsFromDeck(deck.cards, allCards);
-    const deckAnalysis = analyzeCards(cardsFromDeck);
-
-    console.log(cardsFromDeck);
-
-    totalResult.averageQtd += deck.cards.length ? deck.cards.length : 0;
-
-    totalResult.heroCount += deckAnalysis.heroCount;
-    totalResult.miracleCount += deckAnalysis.miracleCount;
-    totalResult.sinCount += deckAnalysis.sinCount;
-    totalResult.artifactCount += deckAnalysis.artifactCount;
-    totalResult.averageCost += deckAnalysis.averageCost;
-    totalResult.averageStrength += deckAnalysis.averageStrength
-      ? deckAnalysis.averageStrength
-      : 0;
-    totalResult.averageResistance += deckAnalysis.averageResistance
-      ? deckAnalysis.averageResistance
-      : 0;
-
-    for (const category in deckAnalysis.categoriesCount) {
-      totalResult.categoriesCount[category] =
-        (totalResult.categoriesCount[category] || 0) +
-        deckAnalysis.categoriesCount[category];
-    }
-
-    for (const effect in deckAnalysis.effectsCount) {
-      totalResult.effectsCount[effect] =
-        (totalResult.effectsCount[effect] || 0) +
-        deckAnalysis.effectsCount[effect];
-    }
-  });
-
-  if (totalResult.totalDecks > 0) {
-    totalResult.averageQtd /= totalResult.totalDecks;
-    totalResult.averageCost /= totalResult.totalDecks;
-    totalResult.averageStrength /= totalResult.totalDecks;
-    totalResult.averageResistance /= totalResult.totalDecks;
-  }
-
-  delete totalResult.totalDecks;
-  delete totalResult.heroCount;
-  delete totalResult.miracleCount;
-  delete totalResult.sinCount;
-  delete totalResult.artifactCount;
-  console.log(totalResult);
-
-  return totalResult;
-}
-
-function generateCategoryItems(categoriesCount) {
-  const container = document.getElementById("categoriesContainer");
-
-  for (const category in categoriesCount) {
-    if (categoriesCount.hasOwnProperty(category)) {
-      const input = document.createElement("div");
-      input.setAttribute("font-size", "1rem !important");
-      input.setAttribute("margin-right", "0px !important");
-      input.setAttribute("margin-bottom", "0px !important");
-      input.classList.add("custom-text-input", "category-item");
-      input.innerHTML = `${category} : ${categoriesCount[category]}`;
-      container.appendChild(input);
-    }
-  }
 }
 
 function updateDeckListDOM(cardsFromDeck) {
@@ -322,7 +161,7 @@ function updateDeckListDOM(cardsFromDeck) {
   cardsFromDeck.forEach((card) => {
     const cardElement = document.createElement("div");
     cardElement.className =
-      "col-lg-1 col-md-1 col-sm-4 col-xs-4 card__related__sidebar__view__item set-bg";
+      "col-lg-1 col-md-1 col-sm-2 col-xs-2 card__related__sidebar__view__item set-bg";
     cardElement.style.cursor = "pointer";
     cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
@@ -347,7 +186,7 @@ function updateMiniCards(allCards, cardsList, id) {
     if (details) {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-1 col-md-1 col-sm-4 card__related__sidebar__view__item set-bg";
+        "col-lg-1 col-md-1 col-sm-2 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
@@ -361,5 +200,47 @@ function updateMiniCards(allCards, cardsList, id) {
 
       similarCardsContainer.appendChild(cardElement);
     }
+  });
+}
+
+function renderGraph(cardsFromDeck) {
+  // Dados do gráfico
+  const data = generateData(cardsFromDeck);
+
+  // Configurações do gráfico
+  const options = {
+    scales: {
+      xAxes: [
+        {
+          ticks: {
+            beginAtZero: true, // Começar o eixo X a partir do zero
+          },
+          scaleLabel: {
+            display: true,
+            labelString: "Custo", // Rótulo do eixo X
+          },
+        },
+      ],
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true, // Começar o eixo Y a partir do zero
+            stepSize: 30, // Incremento do eixo Y
+          },
+          scaleLabel: {
+            display: true,
+            labelString: "Quantidade de Cartas", // Rótulo do eixo Y
+          },
+        },
+      ],
+    },
+  };
+
+  // Criação do gráfico
+  const ctx = document.getElementById("myChart").getContext("2d");
+  const myChart = new Chart(ctx, {
+    type: "bar", // Tipo de gráfico (barra)
+    data: data, // Dados do gráfico
+    options: options, // Configurações do gráfico
   });
 }

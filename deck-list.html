@@ -49,7 +49,7 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li class="active"><a href="./index.html">Homepage</a></li>
-                                <li><a href="./card-list.html">Cards <span class="arrow_carrot-down"></span></a>
+                                <li><a href="./card-list.html">Listas <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="./card-list.html">Lista de Cards</a></li>
                                         <li><a href="./deck-list.html">Lista de Decks</a></li>
@@ -84,7 +84,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./card-list.html">Cards</a>
+                        <a href="./card-list.html">Listas</a>
                         <span>Romance</span>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="section-title">
-                                        <h4>Lista de Cards</h4>
+                                        <h4>Lista de Decks</h4>
                                     </div>
                                 </div>
 
@@ -159,40 +159,89 @@
 
                         </div>
 
+                        <style>
+                            table {
+                                width: 100%;
+                                margin: 50px auto;
+                                border-collapse: collapse;
+                                border: 1px solid #e53637;
+                                color: #fff;
+                            }
+
+                            th,
+                            td {
+                                /* border: 0.9px solid #e53637; */
+                                padding: 10px;
+                                text-align: center;
+                            }
+
+                            th {
+                                background-color: #e53637;
+                                color: #fff;
+                                text-transform: uppercase;
+                            }
+
+                            tr:nth-child(even) {
+                                background-color: #2c2c2c;
+                            }
+
+                            tr:hover {
+                                background-color: #383838;
+                            }
+
+                            .deck-image {
+                                width: 40px;
+                                /* Ajuste a largura conforme necessário */
+                                height: 40px;
+                                /* Ajuste a altura conforme necessário */
+                                border-radius: 50%;
+                                /* Torna a imagem redonda */
+                                overflow: hidden;
+                                /* Garante que a imagem redonda mantenha sua forma */
+                            }
+
+                            .pagination {
+                                margin: 20px auto;
+                                text-align: center;
+                            }
+
+                            .pagination button {
+                                background-color: #e53637;
+                                color: #fff;
+                                border: none;
+                                padding: 8px 16px;
+                                margin: 0 5px;
+                                cursor: pointer;
+                            }
+
+                            .pagination button:hover {
+                                background-color: #e5363795;
+                            }
+
+                            .pagination button.active {
+                                background-color: #e5363795;
+                            }
+                            .copied {
+    background-color: #4CAF50;
+    color: white;
+    cursor: not-allowed;
+  }
+                        </style>
+
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Empresa</th>
-                                    <th>Valor Atual</th>
-                                    <th>Variação</th>
+                                    <th>#</th>
+                                    <th>Nome</th>
+                                    <th>Estilo</th>
+                                    <th>Formato</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Empresa A</td>
-                                    <td>R$ 150,00</td>
-                                    <td class="up-arrow positive">+5,00%</td>
-                                </tr>
-                                <tr>
-                                    <td>Empresa B</td>
-                                    <td>R$ 120,00</td>
-                                    <td class="down-arrow negative">-3,50%</td>
-                                </tr>
-                                <tr>
-                                    <td>Empresa C</td>
-                                    <td>R$ 200,00</td>
-                                    <td class="up-arrow positive">+2,10%</td>
-                                </tr>
-                                <tr>
-                                    <td>Empresa D</td>
-                                    <td>R$ 180,00</td>
-                                    <td class="down-arrow negative">-1,25%</td>
-                                </tr>
-                            </tbody>
+                            <tbody id="decks-table-body"></tbody>
                         </table>
 
-                        <div style="margin-top: 30px;" id="products-container" class="row"></div>
-                        <div id="pagination-container"></div>
+                        <div class="pagination" id="pagination"></div>
 
                     </div>
                     <!-- <div class="product__pagination">
@@ -272,6 +321,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
     <script src="integrations/utils.js"></script>
+    <script src="integrations/analysis.js"></script>
+    <script src="integrations/cryptoDeck.js"></script>
     <script src="integrations/deck-list.js"></script>
 
 </body>
