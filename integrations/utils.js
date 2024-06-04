@@ -5,18 +5,16 @@ const URL_SINS_JSON = "data/sins.json";
 const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
 
-const WEIGHT_LEGENDARY = 300;
-const WEIGHT_NAME = 200;
-const WEIGHT_TEXT = 90;
-const WEIGHT_TYPE = 30;
-const WEIGHT_EFFECT = 20;
-const WEIGHT_CATEGORY = 70;
-// const WEIGHT_OCURRENCY_DECK = 10;
-// const WEIGHT_OCURRENCY_EXTRA = 10;
-// const WEIGHT_OCURRENCY_SIDEBOARD = 5;
-const WEIGHT_OCURRENCY_DECK = 0;
-const WEIGHT_OCURRENCY_EXTRA = 0;
-const WEIGHT_OCURRENCY_SIDEBOARD = 0;
+const WEIGHT_LEGENDARY = 100000;
+const WEIGHT_SAME = 50000;
+const WEIGHT_NAME = 100;
+const WEIGHT_TEXT = 60;
+const WEIGHT_TYPE = 10;
+const WEIGHT_EFFECT = 10;
+const WEIGHT_CATEGORY = 100;
+const WEIGHT_OCURRENCY_DECK = 40;
+const WEIGHT_OCURRENCY_EXTRA = 40;
+const WEIGHT_OCURRENCY_SIDEBOARD = 20;
 
 const excludedWords = [
   "zona",
@@ -99,8 +97,8 @@ const excludedWords = [
   "outros",
 ];
 
-// const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
-const CACHE_DURATION = 1000; // 24 horas
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
+// const CACHE_DURATION = 1000; // 24 horas
 
 function getCardDetails(cardNumber) {
   localStorage.setItem("idSelectedCard", cardNumber);
@@ -119,7 +117,8 @@ async function fetchJSON(url) {
       throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
     return await response.json();
   } catch (error) {
-    console.error("Error:", error);
+    console.error(url);
+    console.error(error);
     return [];
   }
 }
@@ -173,6 +172,10 @@ function getCardsFromDeck(ids, cards) {
     });
   });
 
+  return orderCardsFromDeck(allCards);
+}
+
+function orderCardsFromDeck(cards) {
   const typeOrder = {
     "Herói de Fé - Lendário": 1,
     "Herói de Fé": 2,
@@ -181,7 +184,7 @@ function getCardsFromDeck(ids, cards) {
     Pecado: 5,
   };
 
-  allCards.sort((a, b) => {
+  cards = cards.sort((a, b) => {
     const typeA =
       a.type === "Herói de Fé" && a.subtype === "Lendário"
         ? "Herói de Fé - Lendário"
@@ -192,13 +195,16 @@ function getCardsFromDeck(ids, cards) {
         : b.type;
 
     if (typeA === typeB) {
+      if (a.cost === b.cost) {
+        return a.name.localeCompare(b.name);
+      }
       return a.cost - b.cost;
     }
 
     return typeOrder[typeA] - typeOrder[typeB];
   });
 
-  return allCards;
+  return cards;
 }
 
 function getOccurrencesInDecks(cardId, decks) {
@@ -296,8 +302,8 @@ async function getRelatedCardsInDecks(cardId, decks) {
         textWords: selectedCardTextWords,
       };
 
-      console.log(selectedCardWords.nameWords);
-      console.log(selectedCardWords.textWords);
+      // console.log(selectedCardWords.nameWords);
+      // console.log(selectedCardWords.textWords);
 
       addWeightForSelectedCardWords(card, selectedCardWords);
 
@@ -336,10 +342,8 @@ async function getRelatedCardsInDecks(cardId, decks) {
 
   const relatedCardsArray = Array.from(relatedCardsMap.entries())
     .map(([idcard, qtd]) => ({ idcard, qtd }))
-    .sort((a, b) => b.qtd - a.qtd)
-    .slice(0, 12);
-
-  console.log(relatedCardsArray);
+    .sort((a, b) => b.qtd - a.qtd);
+  // console.log(relatedCardsArray);
 
   return relatedCardsArray;
 }
@@ -364,6 +368,45 @@ function getRelatedDecks(relatedCards, decks) {
     .map((deckScore) => deckScore.deck);
 }
 
+function calculateWeightedScore(stars, monthDiff, usage) {
+  const weightStars = 0.3;
+  const weightDate = 0.3;
+  const weightUsage = 0.4;
+
+  const score =
+    stars * weightStars + (12 - monthDiff) * weightDate + usage * weightUsage;
+
+  return score;
+}
+
+function sortByStarsAndDate(data) {
+  const currentDate = new Date();
+
+  data.sort((a, b) => {
+    const starsA = parseFloat(a.stars);
+    const starsB = parseFloat(b.stars);
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+
+    const monthDiffA =
+      (currentDate.getFullYear() - dateA.getFullYear()) * 12 +
+      currentDate.getMonth() -
+      dateA.getMonth();
+
+    const monthDiffB =
+      (currentDate.getFullYear() - dateB.getFullYear()) * 12 +
+      currentDate.getMonth() -
+      dateB.getMonth();
+
+    const weightA = calculateWeightedScore(starsA, monthDiffA, a.ocurrences);
+    const weightB = calculateWeightedScore(starsB, monthDiffB, b.ocurrences);
+
+    return weightB - weightA;
+  });
+
+  return data;
+}
+
 function getKeyWithMaxAbsoluteValue(obj) {
   let maxKey = 0;
   let maxValue = -Infinity;
@@ -376,4 +419,10 @@ function getKeyWithMaxAbsoluteValue(obj) {
   }
 
   return maxKey;
+}
+
+function wait(segundos) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, segundos);
+  });
 }

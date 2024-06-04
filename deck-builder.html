@@ -91,42 +91,14 @@
     </div> -->
     <!-- Breadcrumb End -->
 
+    <style>
+
+
+    </style>
+
     <!-- Anime Section Begin -->
     <section class="card-details spad">
         <div class="container">
-
-            <div class="row" style="margin-top: 0px;">
-                <div class="col-lg-12 col-md-12" style="margin-bottom: 0px">
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Decklist - <span id="tag_deckName"></span></h5>
-                        </div>
-                        <div id="deckList" class="row"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row" style="margin-top: 10px;">
-                <div class="col-lg-12 col-md-12">
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Extra Deck</h5>
-                        </div>
-                        <div id="extraDeckList" class="row"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row" style="margin-top: 10px;">
-                <div class="col-lg-12 col-md-12">
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Sideboard / Alternativas</h5>
-                        </div>
-                        <div id="sideboardList" class="row"></div>
-                    </div>
-                </div>
-            </div>
 
             <div class="row" style="margin-top: 5px;">
                 <div class="col-lg-12 col-md-12">
@@ -213,6 +185,48 @@
                                             box-shadow: none;
                                             appearance: none;
                                         }
+
+                                        #filteredCards {
+                                            margin-top: 20px;
+                                        }
+
+                                        .card {
+                                            background-color: #29293d;
+                                            border: 2px solid #4caf50;
+                                            border-radius: 10px;
+                                            padding: 15px;
+                                            margin: 10px 0;
+                                        }
+
+                                        #addByCategoriesList {
+                                            margin: 20px 0;
+                                        }
+
+                                        button {
+                                            background-color: #33334d;
+                                            color: #ffffff;
+                                            border: 2px solid #e53637;
+                                            border-radius: 10px;
+                                            padding: 10px 20px;
+                                            margin: 5px;
+                                            font-size: 16px;
+                                            cursor: pointer;
+                                            transition: background-color 0.3s, transform 0.3s;
+                                        }
+
+                                        button:hover {
+                                            background-color: #e53637;
+                                            transform: scale(1.1);
+                                        }
+
+                                        button.selected {
+                                            background-color: #e53637;
+                                            font-weight: bold;
+                                        }
+
+                                        button:active {
+                                            transform: scale(0.9);
+                                        }
                                     </style>
 
                                     <div id="effectsContainer" class="categories-container"></div>
@@ -232,7 +246,7 @@
                                             <div class="col-lg-3 col-md-3">
                                                 <ul>
                                                     <li><span><b>Números</b></span></li>
-                                                    <li><span>Cartas</span> <text id="tag_deckSize"></text><text
+                                                    <li><span>Cartas</span> <text id="tag_deckSize"></text> <text
                                                             id="tag_deckQtdComparison"></text></li>
                                                     <li><span>Custo Médio</span> <text id="tag_deckMedCost"></text>
                                                         <text id="tag_deckMedCostComparison"></text>
@@ -305,11 +319,6 @@
                                         <a href="#" class="watch-btn"><span>Watch Now</span> <i
                                                 class="fa fa-angle-right"></i></a>
                                     </div> -->
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <canvas id="myChart"></canvas>
-                                        </div>
-                                    </div>
 
                                 </div>
                             </div>
@@ -317,6 +326,67 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 0px">
+                    <div class="anime__details__review" style="margin-bottom: 0px">
+                        <div class="section-title">
+                            <h5>Adição por Categorias<span id=""></span></h5>
+                        </div>
+                        <div id="addByCategoriesList" class="row"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-lg-8 col-md-8 col-sm-8" style="margin-bottom: 0px">
+                    <div class="anime__details__review" style="margin-bottom: 0px">
+                        <div class="section-title">
+                            <h5>Extra Deck<span id=""></span></h5>
+                        </div>
+                        <div id="extraDeckList" class="row"></div>
+                    </div>
+                    <div class="anime__details__review" style="margin-bottom: 0px">
+                        <div class="section-title">
+                            <h5>Deck<span id=""></span></h5>
+                        </div>
+                        <div id="deckList" class="row"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="anime__details__review" style="margin-bottom: 0px">
+                        <div class="section-title">
+                            <h5>Sugestões de Adição</h5>
+                        </div>
+                        <div class="row" style="padding:15px; padding-top: 0px;">
+                            <button onclick="autoGenerateDeck()" style="width: 100%;">Autocompletar Deck</button>
+                        </div>
+                        <div id="suggestionsDeckList" class="row vertical-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="row" style="margin-top: 10px;">
+                <div class="col-lg-12 col-md-12">
+                    <div class="anime__details__review" style="margin-bottom: 0px">
+                        <div class="section-title">
+                            <h5>Extra Deck</h5>
+                        </div>
+                        <div id="extraDeckList" class="row"></div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- <div class="row" style="margin-top: 10px;">
+                <div class="col-lg-12 col-md-12">
+                    <div class="anime__details__review" style="margin-bottom: 0px">
+                        <div class="section-title">
+                            <h5>Sideboard / Alternativas</h5>
+                        </div>
+                        <div id="sideboardList" class="row"></div>
+                    </div>
+                </div>
+            </div> -->
 
             <!-- <div class="row">
                 <div class="col-lg-9 col-md-9">
@@ -471,7 +541,7 @@
 
     <script src="integrations/utils.js"></script>
     <script src="integrations/analysis.js"></script>
-    <script src="integrations/deck-details.js"></script>
+    <script src="integrations/deck-builder.js"></script>
 
 </body>
 

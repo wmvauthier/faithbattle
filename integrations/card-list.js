@@ -503,34 +503,6 @@ function getCurrentSelectedFilters() {
   return selectedFilters;
 }
 
-function sortByStarsAndDate(data) {
-  const currentDate = new Date();
-
-  data.sort((a, b) => {
-    const starsA = parseFloat(a.stars);
-    const starsB = parseFloat(b.stars);
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
-
-    const monthDiffA =
-      (currentDate.getFullYear() - dateA.getFullYear()) * 12 +
-      currentDate.getMonth() -
-      dateA.getMonth();
-
-    const monthDiffB =
-      (currentDate.getFullYear() - dateB.getFullYear()) * 12 +
-      currentDate.getMonth() -
-      dateB.getMonth();
-
-    const weightA = calculateWeightedScore(starsA, monthDiffA, a.ocurrences);
-    const weightB = calculateWeightedScore(starsB, monthDiffB, b.ocurrences);
-
-    return weightB - weightA;
-  });
-
-  return data;
-}
-
 function createPagination(cards) {
   const paginationContainer = document.getElementById("pagination-container");
   paginationContainer.innerHTML = ""; // Limpa o contêiner de paginação
@@ -552,15 +524,4 @@ function createPagination(cards) {
 function goToPage(pageNumber, cards) {
   currentPage = pageNumber;
   renderCards(cards); // Re-renderiza os cards da nova página
-}
-
-function calculateWeightedScore(stars, monthDiff, usage) {
-  const weightStars = 0.3;
-  const weightDate = 0.3;
-  const weightUsage = 0.4;
-
-  const score =
-    stars * weightStars + (12 - monthDiff) * weightDate + usage * weightUsage;
-
-  return score;
 }

@@ -112,6 +112,18 @@ document.addEventListener("DOMContentLoaded", async function () {
           } else {
             element.innerHTML = "";
           }
+
+          if (
+            info.comparison.totalCards > deckMinimumSize &&
+            info.comparison.totalCards < analysisAverages.averageQtd
+          ) {
+            element.style.color = "green";
+          } else if (
+            info.comparison.totalCards < deckMinimumSize
+          ) {
+            element.style.color = "red";
+          }
+          
         }
       }
 
@@ -152,6 +164,13 @@ function generateCategoryItems(categoriesCount, averages, id) {
     const comparison = averages[category];
     const color = getComparisonColor(category, comparison);
     const input = document.createElement("div");
+
+    if (comparison == "higher") {
+      input.classList.add("green");
+    } else if (comparison == "lower") {
+      input.classList.add("red");
+    }
+    
     input.setAttribute(
       "style",
       "font-size: 1rem !important; margin-right: 0px !important; margin-bottom: 0px !important;"

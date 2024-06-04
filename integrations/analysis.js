@@ -1,3 +1,5 @@
+let deckMinimumSize = 30;
+
 function analyzeCards(cards, averages) {
   const result = {
     heroCount: 0,
@@ -15,15 +17,21 @@ function analyzeCards(cards, averages) {
     averageCost: 0,
   };
 
+  cards = cards.filter(
+    (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
+  );
+
   cards.forEach((card) => {
     if (Number.isInteger(card.cost)) {
       result.averageCost += card.cost;
       switch (card.type) {
         case "Herói de Fé":
-          result.heroCount++;
-          result.totalCostHero += card.cost;
-          result.totalStrength += card.strength;
-          result.totalResistance += card.resistence;
+          if (card.subtype !== "Lendário") {
+            result.heroCount++;
+            result.totalCostHero += card.cost;
+            result.totalStrength += card.strength;
+            result.totalResistance += card.resistence;
+          }
           break;
         case "Milagre":
           result.miracleCount++;
@@ -55,6 +63,7 @@ function analyzeCards(cards, averages) {
   });
 
   const totalCards = cards.length;
+
   if (totalCards > 0) {
     result.averageCost /= totalCards;
 
@@ -82,9 +91,10 @@ function analyzeCards(cards, averages) {
     );
 
     result.comparison = {
+      totalCards: totalCards,
       general: {
         qtd:
-          result.heroCount > 0
+          totalCards > 0
             ? totalCards > averages.averageQtd
               ? "higher"
               : totalCards < averages.averageQtd
@@ -92,7 +102,7 @@ function analyzeCards(cards, averages) {
               : "equal"
             : "N/A",
         cost:
-          result.heroCount > 0
+          totalCards > 0
             ? result.averageCost > averages.averageCost
               ? "higher"
               : result.averageCost < averages.averageCost
@@ -387,7 +397,7 @@ function generateData(cards) {
 
 function compareCategoriesAndEffects(result, averages) {
   const comparison = {};
-  console.log(averages);
+  // console.log(averages);
   for (const [category, count] of Object.entries(result.categoriesCount)) {
     const averageCategory = averages.averageCategories.find(
       (avg) => avg["name"] === category
@@ -461,6 +471,7 @@ function getComparisonColor(key, value) {
   };
 
   const [category, type] = keyMap[key] || [];
+
   if (
     category &&
     type &&
