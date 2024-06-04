@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
       let info = await analyzeCards(cardsFromDeck, analysisAverages);
 
-      console.log(info);
+      // console.log(info);
 
       const elementsToUpdate = {
         tag_deckName: selectedDeck.name,

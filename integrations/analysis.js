@@ -397,7 +397,7 @@ function generateData(cards) {
 
 function compareCategoriesAndEffects(result, averages) {
   const comparison = {};
-  // console.log(averages);
+
   for (const [category, count] of Object.entries(result.categoriesCount)) {
     const averageCategory = averages.averageCategories.find(
       (avg) => avg["name"] === category

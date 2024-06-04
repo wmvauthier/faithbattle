@@ -302,9 +302,6 @@ async function getRelatedCardsInDecks(cardId, decks) {
         textWords: selectedCardTextWords,
       };
 
-      // console.log(selectedCardWords.nameWords);
-      // console.log(selectedCardWords.textWords);
-
       addWeightForSelectedCardWords(card, selectedCardWords);
 
       //CHECAGEM DE EFEITOS E CATEGORIAS
@@ -343,7 +340,6 @@ async function getRelatedCardsInDecks(cardId, decks) {
   const relatedCardsArray = Array.from(relatedCardsMap.entries())
     .map(([idcard, qtd]) => ({ idcard, qtd }))
     .sort((a, b) => b.qtd - a.qtd);
-  // console.log(relatedCardsArray);
 
   return relatedCardsArray;
 }
