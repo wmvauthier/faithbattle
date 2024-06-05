@@ -113,15 +113,15 @@ document.addEventListener("DOMContentLoaded", async function () {
             element.innerHTML = "";
           }
 
-          if (
-            info.comparison.totalCards > deckMinimumSize &&
-            info.comparison.totalCards < analysisAverages.averageQtd
-          ) {
-            element.style.color = "green";
-          } else if (
-            info.comparison.totalCards < deckMinimumSize
-          ) {
-            element.style.color = "red";
+          if (key == "tag_deckQtdComparison") {
+            if (
+              info.comparison.totalCards > deckMinimumSize &&
+              info.comparison.totalCards < analysisAverages.averageQtd
+            ) {
+              element.style.color = "green";
+            } else if (info.comparison.totalCards < deckMinimumSize) {
+              element.style.color = "red";
+            }
           }
           
         }
