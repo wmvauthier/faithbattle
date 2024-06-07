@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       updateSimilarCardsDOM(similarCardDetails, similarCards);
       updateRelatedDecks(relatedDecks);
     } else {
-      console.log(`Card com ID ${idSelectedCard} não encontrado`);
+      location.href = "./card-list.html";
     }
   } else {
     location.href = "./card-list.html";

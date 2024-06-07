@@ -25,15 +25,26 @@ const excludedWords = [
   "herois",
   "jogador",
   "sempre",
+  "fizer",
   "carta",
+  "cartas",
+  "baralho",
   "jogo",
   "toda",
   "quando",
   "entra",
+  "reorganize-as",
+  "olhe",
+  "primeiras",
+  "como",
+  "quiser",
   "ataca",
   "atacar",
   "atacando",
+  "atacado",
   "atacantes",
+  "ataque",
+  "defenda",
   "inicio",
   "fim",
   "final",
@@ -45,13 +56,50 @@ const excludedWords = [
   "essa",
   "esse",
   "uma",
-  "você",
+  "voce",
+  "mao",
+  "for",
+  "aleatoria",
   "tem",
+  "anule",
+  "qualquer",
+  "efeito",
+  "nesse",
+  "instante",
   "disso",
+  "proximo",
+  "pontos",
+  "afetam",
+  "suas",
+  "retorna",
+  "escolhe",
+  "qual",
+  "voltara",
+  "sofre",
+  "efeitos",
   "que",
+  "entra",
+  "direto",
   "ate",
+  "equipar",
+  "armadura",
+  "(efesios",
+  "deus",
+  "custo",
+  "revela",
+  "custo",
+  "igual",
+  "dessa",
+  "defensor",
+  "custam",
+  "para",
+  "serem",
+  "jogadas",
+  "(nao",
+  "reduzido",
   "pode",
   "ele",
+  "este",
   "torna",
   "sabedoria",
   "controle",
@@ -91,14 +139,19 @@ const excludedWords = [
   "recebe",
   "afetado",
   "neste",
+  "1s:",
   "+1/+0",
+  "+1/+1",
   "+0/+2",
+  "+2/+2",
+  "+3/+3",
+  "e/ou",
   "seus",
   "outros",
 ];
 
-const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
-// const CACHE_DURATION = 1000; // 24 horas
+//const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
+const CACHE_DURATION = 1000; // 24 horas
 
 function getCardDetails(cardNumber) {
   localStorage.setItem("idSelectedCard", cardNumber);
@@ -245,6 +298,9 @@ async function getRelatedCardsInDecks(cardId, decks) {
       .toLowerCase()
       .split(" ")
       .filter((word) => word.length > 2 && !excludedWords.includes(word));
+
+    // console.log(selectedCardWords.nameWords);
+    // console.log(selectedCardWords.textWords);
 
     selectedCardWords.textWords.forEach((word) => {
       if (textWords.includes(word)) {
