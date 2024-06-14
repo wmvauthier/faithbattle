@@ -15,7 +15,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/13.webp"
+        "img": "img/milagres/13.png"
     },
     {
         "name": "Fogo do Céu",
@@ -33,7 +33,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/14.webp"
+        "img": "img/milagres/14.png"
     },
     {
         "name": "Passagem Segura",
@@ -51,7 +51,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/15.webp"
+        "img": "img/milagres/15.png"
     },
     {
         "name": "Restauração de Fé",
@@ -69,7 +69,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/16.webp"
+        "img": "img/milagres/16.png"
     },
     {
         "name": "Proteção Divina",
@@ -87,7 +87,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/17.webp"
+        "img": "img/milagres/17.png"
     },
     {
         "name": "Liberação Celestial",
@@ -105,7 +105,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/18.webp"
+        "img": "img/milagres/18.png"
     },
     {
         "name": "Ressurreição",
@@ -123,7 +123,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/19.webp"
+        "img": "img/milagres/19.png"
     },
     {
         "name": "Sarça Ardente",
@@ -141,7 +141,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/20.webp"
+        "img": "img/milagres/20.png"
     },
     {
         "name": "Dilúvio",
@@ -159,7 +159,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/21.webp"
+        "img": "img/milagres/21.png"
     },
     {
         "name": "Cordeiro de Deus",
@@ -177,7 +177,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/29.webp"
+        "img": "img/milagres/29.png"
     },
     {
         "name": "Sabedoria de Salomão",
@@ -195,7 +195,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/42.webp"
+        "img": "img/milagres/42.png"
     },
     {
         "name": "No Céu tem Pão",
@@ -213,6 +213,6 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/milagres/48.webp"
+        "img": "img/milagres/48.png"
     }
 ]

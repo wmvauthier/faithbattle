@@ -15,7 +15,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/artefatos/22.webp"
+        "img": "img/artefatos/22.png"
     },
     {
         "name": "Espada do Espírito",
@@ -33,7 +33,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/artefatos/23.webp"
+        "img": "img/artefatos/23.png"
     },
     {
         "name": "Escudo da Fé",
@@ -51,7 +51,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/artefatos/24.webp"
+        "img": "img/artefatos/24.png"
     },
     {
         "name": "Cajado de Moisés",
@@ -69,7 +69,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/artefatos/25.webp"
+        "img": "img/artefatos/25.png"
     },
     {
         "name": "Couraça da Justiça",
@@ -87,7 +87,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/artefatos/26.webp"
+        "img": "img/artefatos/26.png"
     },
     {
         "name": "Arca da Aliança",
@@ -105,7 +105,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/artefatos/28.webp"
+        "img": "img/artefatos/28.png"
     },
     {
         "name": "Botas do Evangelho",
@@ -123,7 +123,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/artefatos/43.webp"
+        "img": "img/artefatos/43.png"
     },
     {
         "name": "Capacete da Salvação",
@@ -141,7 +141,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/artefatos/44.webp"
+        "img": "img/artefatos/44.png"
     },
     {
         "name": "Os 10 Mandamentos",
@@ -159,7 +159,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/artefatos/49.webp"
+        "img": "img/artefatos/49.png"
     },
     {
         "name": "Cinturão da Verdade",
@@ -177,6 +177,6 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/artefatos/50.webp"
+        "img": "img/artefatos/50.png"
     }
 ]

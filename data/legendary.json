@@ -16,7 +16,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/lendarias/51.webp"
+        "img": "img/lendarias/51.png"
     },
     {
         "name": "Moisés",
@@ -35,7 +35,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/lendarias/52.webp"
+        "img": "img/lendarias/52.png"
     },
     {
         "name": "Davi",
@@ -54,6 +54,6 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/lendarias/53.webp"
+        "img": "img/lendarias/53.png"
     }
 ]

@@ -2,7 +2,7 @@
     {
         "number": "1",
         "name": "Armadura de Deus",
-        "img": "img/artefatos/23.webp",
+        "img": "img/artefatos/23.png",
         "style": "Combo",
         "format": "Standard",
         "keywords": "Controle;Combo;Proteção;Artefato",
@@ -53,7 +53,7 @@
     {
         "number": "2",
         "name": "Exator de Fé",
-        "img": "img/milagres/20.webp",
+        "img": "img/milagres/20.png",
         "style": "Aggro",
         "format": "Standard",
         "keywords": "Proteção;Combo",
@@ -96,7 +96,7 @@
     {
         "number": "3",
         "name": "Bombardeio Celestial",
-        "img": "img/lendarias/52.webp",
+        "img": "img/lendarias/52.png",
         "style": "Midrange",
         "format": "Standard",
         "keywords": "Proteção;Combo",
@@ -150,7 +150,7 @@
     {
         "number": "4",
         "name": "Power Trio",
-        "img": "img/lendarias/53.webp",
+        "img": "img/lendarias/53.png",
         "style": "Tempo",
         "format": "Standard",
         "keywords": "Proteção;Combo",

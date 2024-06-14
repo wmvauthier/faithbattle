@@ -15,7 +15,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/pecados/27.webp"
+        "img": "img/pecados/27.png"
     },
     {
         "name": "Traição",
@@ -33,7 +33,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/pecados/30.webp"
+        "img": "img/pecados/30.png"
     },
     {
         "name": "Idolatria",
@@ -51,6 +51,6 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/pecados/41.webp"
+        "img": "img/pecados/41.png"
     }
 ]
