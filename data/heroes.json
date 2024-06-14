@@ -33,7 +33,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/2.webp"
+        "img": "img/herois/2.png"
     },
     {
         "name": "Elias",
@@ -51,7 +51,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/3.webp"
+        "img": "img/herois/3.png"
     },
     {
         "name": "Salomão",
@@ -69,7 +69,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/4.webp"
+        "img": "img/herois/4.png"
     },
     {
         "name": "Eva",
@@ -87,7 +87,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/5.webp"
+        "img": "img/herois/5.png"
     },
     {
         "name": "Josué",
@@ -105,7 +105,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/6.webp"
+        "img": "img/herois/6.png"
     },
     {
         "name": "Abraão",
@@ -123,7 +123,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/7.webp"
+        "img": "img/herois/7.png"
     },
     {
         "name": "Sansão",
@@ -141,7 +141,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/8.webp"
+        "img": "img/herois/8.png"
     },
     {
         "name": "Jacó",
@@ -159,7 +159,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/9.webp"
+        "img": "img/herois/9.png"
     },
     {
         "name": "Adão",
@@ -177,7 +177,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/10.webp"
+        "img": "img/herois/10.png"
     },
     {
         "name": "José do Egito",
@@ -195,7 +195,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/11.webp"
+        "img": "img/herois/11.png"
     },
     {
         "name": "Maria",
@@ -213,7 +213,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/12.webp"
+        "img": "img/herois/12.png"
     },
     {
         "name": "Daniel",
@@ -231,7 +231,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/45.webp"
+        "img": "img/herois/45.png"
     },
     {
         "name": "Noé",
@@ -249,7 +249,7 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/46.webp"
+        "img": "img/herois/46.png"
     },
     {
         "name": "Ester",
@@ -267,6 +267,6 @@
         "collection": "Alpha",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
-        "img": "img/herois/47.webp"
+        "img": "img/herois/47.png"
     }
 ]
