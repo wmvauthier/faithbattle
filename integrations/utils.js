@@ -6,7 +6,7 @@ const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
 
 const WEIGHT_LEGENDARY = 100000;
-const WEIGHT_SAME = 50000;
+const WEIGHT_SAME = 30000;
 const WEIGHT_NAME = 10000;
 const WEIGHT_TEXT = 60;
 const WEIGHT_TYPE = 10;
