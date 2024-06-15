@@ -1,0 +1,70 @@
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-buttons .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-buttons .btn i {
+    margin-right: 10px;
+}
+
+.social-buttons .email {
+    background-color: #0072c6;
+}
+
+.social-buttons .email:hover {
+    background-color: #005a9c;
+}
+
+.social-buttons .whatsapp {
+    background-color: #25D366;
+}
+
+.social-buttons .whatsapp:hover {
+    background-color: #1da851;
+}
+
+.social-buttons .discord {
+    background-color: #7289da;
+}
+
+.social-buttons .discord:hover {
+    background-color: #5b6eae;
+}
+
+.social-buttons .store {
+    background-color: #ff9900;
+}
+
+.social-buttons .store:hover {
+    background-color: #cc7a00;
+}
+
+.social-buttons .instagram {
+    background-color: #E1306C;
+}
+
+.social-buttons .instagram:hover {
+    background-color: #b82457;
+}
+
+.social-buttons .youtube {
+    background-color: #FF0000;
+}
+
+.social-buttons .youtube:hover {
+    background-color: #cc0000;
+}
