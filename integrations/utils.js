@@ -150,8 +150,8 @@ const excludedWords = [
   "outros",
 ];
 
-//const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
-const CACHE_DURATION = 1000; // 24 horas
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
+// const CACHE_DURATION = 1000; // 24 horas
 
 function getCardDetails(cardNumber) {
   localStorage.setItem("idSelectedCard", cardNumber);
@@ -320,7 +320,7 @@ async function getRelatedCardsInDecks(cardId, decks, isDeckBuilder) {
         }
       });
     }
-    
+
   };
 
   allCards.forEach((card) => {
