@@ -69,8 +69,6 @@ async function updateAnalysisFromDeck() {
 
     suggestions = mergedAndSummed.sort((a, b) => b.qtd - a.qtd);
 
-    console.log(similarCardsArray);
-
     similarCardsArray = mergedAndSummed
       .sort((a, b) => b.qtd - a.qtd)
       .slice(0, suggestionsQtd);

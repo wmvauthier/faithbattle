@@ -53,7 +53,7 @@ function generateSelectFilterByProperty(
   const filtersContainer = document.getElementById("filters");
   const currentSelectedFilters = getCurrentSelectedFilters();
 
-  const uniqueValues = Array.from(
+  let uniqueValues = Array.from(
     new Set(
       jsonData.map((item) => {
         if (property === "stars") {
@@ -76,6 +76,8 @@ function generateSelectFilterByProperty(
       return b - a;
     }
   });
+
+  uniqueValues = uniqueValues.filter(item => item !== undefined);
 
   const select = document.createElement("select");
 
@@ -205,7 +207,7 @@ function generateEffectFilter(jsonData) {
   });
 
   // Converte o conjunto de categorias de volta para um array
-  const uniqueEffects = Array.from(effectsSet);
+  const uniqueEffects = Array.from(effectsSet).filter(item => item != "");
 
   // Cria o select e adiciona as opções com as categorias únicas
   const select = document.createElement("select");
