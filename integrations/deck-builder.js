@@ -56,7 +56,7 @@ async function updateAnalysisFromDeck() {
 
     await Promise.all(
       deck.cards.map(async (card) => {
-        const similarCards = await getRelatedCardsInDecks(card, decks);
+        const similarCards = await getRelatedCardsInDecks(card, decks, true);
         similarCards.forEach((c) => {
           similarCardsArray.push(c);
         });
@@ -68,6 +68,8 @@ async function updateAnalysisFromDeck() {
     const mergedAndSummed = mergeAndSumSimilarCards(similarCardsArray);
 
     suggestions = mergedAndSummed.sort((a, b) => b.qtd - a.qtd);
+
+    console.log(similarCardsArray);
 
     similarCardsArray = mergedAndSummed
       .sort((a, b) => b.qtd - a.qtd)

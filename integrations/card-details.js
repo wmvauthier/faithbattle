@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (card) {
       cards = data;
       let decks = await getDecks();
-      let similarCards = await getRelatedCardsInDecks(card.number, decks);
+      let similarCards = await getRelatedCardsInDecks(card.number, decks, false);
       similarCards = similarCards.slice(0, 12);
       let relatedDecks = getRelatedDecks(similarCards, decks);
 

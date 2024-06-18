@@ -6,15 +6,15 @@ const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
 
 const WEIGHT_LEGENDARY = 100000;
-const WEIGHT_SAME = 30000;
-const WEIGHT_NAME = 10000;
+const WEIGHT_SAME = 5000;
+const WEIGHT_NAME = 1000;
 const WEIGHT_TEXT = 60;
 const WEIGHT_TYPE = 10;
 const WEIGHT_EFFECT = 10;
-const WEIGHT_CATEGORY = 100;
-const WEIGHT_OCURRENCY_DECK = 30;
-const WEIGHT_OCURRENCY_EXTRA = 30;
-const WEIGHT_OCURRENCY_SIDEBOARD = 20;
+const WEIGHT_CATEGORY = 30;
+const WEIGHT_OCURRENCY_DECK = 50;
+const WEIGHT_OCURRENCY_EXTRA = 50;
+const WEIGHT_OCURRENCY_SIDEBOARD = 30;
 
 const excludedWords = [
   "zona",
@@ -268,7 +268,7 @@ function getOccurrencesInDecks(cardId, decks) {
   }, 0);
 }
 
-async function getRelatedCardsInDecks(cardId, decks) {
+async function getRelatedCardsInDecks(cardId, decks, isDeckBuilder) {
   const allCards = await getCards();
   const selectedCard = allCards.find((card) => card.number == cardId);
 
@@ -310,13 +310,17 @@ async function getRelatedCardsInDecks(cardId, decks) {
       }
     });
 
-    selectedCardWords.nameWords.forEach((word) => {
-      if (textWords.includes(word)) {
-        addCardWithWeight(card.number, WEIGHT_NAME);
-      } else if (nameWords.includes(word)) {
-        addCardWithWeight(card.number, WEIGHT_NAME);
-      }
-    });
+    if (!isDeckBuilder || card.type != "Pecado") {
+
+      selectedCardWords.nameWords.forEach((word) => {
+        if (textWords.includes(word)) {
+          addCardWithWeight(card.number, WEIGHT_NAME);
+        } else if (nameWords.includes(word)) {
+          addCardWithWeight(card.number, WEIGHT_NAME);
+        }
+      });
+    }
+    
   };
 
   allCards.forEach((card) => {
