@@ -292,24 +292,33 @@ async function autoGenerateHand(isMulligan) {
     return shuffledArray.slice(0, numItems);
   }
 
-  if (deck.cards.length > 0 && handTestCards.length < 6) {
-    if (!isMulligan) {
-      handTestCards = [];
-    }
+  if (!isMulligan) {
+    handTestCards = [];
+  }
 
-    let cardList = await getCardsFromDeck(deck.cards, allCards);
+  let cardList = await getCardsFromDeck(deck.cards, allCards);
 
-    cardList = cardList.filter(
-      (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
-    );
+  cardList = cardList.filter(
+    (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
+  );
 
+  if (
+    deck.cards.length > 0 &&
+    handTestCards.length < 6 &&
+    isMulligan != "draw"
+  ) {
     const cards = getRandomItemsFromArray(cardList, 5 - handTestCards.length);
     cards.forEach((card) => {
       addCardToHand(card.number);
     });
-
-    updateTestHand(allCards, handTestCards, "#handTestList");
+  } else if (isMulligan == "draw" && handTestCards.length < cardList.length) {
+    const cards = getRandomItemsFromArray(cardList, 1);
+    cards.forEach((card) => {
+      addCardToHand(card.number);
+    });
   }
+
+  updateTestHand(allCards, handTestCards, "#handTestList");
 }
 
 async function generateTypeSuggestions(rerun) {
@@ -627,6 +636,7 @@ function updateTestHand(allCards, cardsList, id) {
         "col-lg-2 col-md-2 col-sm-2 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.style.padding = "2px";
+      cardElement.style.margin = "2px";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
         <div class="card__related__info">

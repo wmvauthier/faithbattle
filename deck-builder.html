@@ -379,15 +379,19 @@
                 <div class="col-lg-4 col-md-4">
                     <div class="anime__details__review" style="margin-bottom: 0px">
                         <div class="section-title">
-                            <h5>Testes de Mão</h5>
+                            <h5>Testes de Mão e Draw</h5>
                         </div>
-                        <div id="handTestList" class="row vertical-line"></div>
+                        <div id="handTestList" style="padding-right: 15px; padding-left: 15px;"
+                            class="row vertical-line"></div>
                         <div class="row" style="padding:15px; padding-top: 0px;">
-                            <div class="col-lg-6">
-                                <button onclick="autoGenerateHand()" style="width: 100%;">Testar</button>
+                            <div class="col-lg-4">
+                                <button onclick="autoGenerateHand(false)" style="width: 100%;">Testar</button>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <button onclick="autoGenerateHand(true)" style="width: 100%;">Mulligan</button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button onclick="autoGenerateHand('draw')" style="width: 100%;">Draw</button>
                             </div>
                         </div>
                     </div>
