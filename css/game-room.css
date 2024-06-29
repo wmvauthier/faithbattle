@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f7fb;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 630px;
+    justify-content: center;
+}
+
+.container .box {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 12px;
+    border: 2px solid #333;
+}
+
+.box .image {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://s2-quem.glbimg.com/AkU9oTlpXr5H34tOfvEG1wXi_1w=/0x0:928x928/fit-in/980x928/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2022/u/i/Dw8wuORVafhWx70AySzw/2020-02-05-scarlett-johansson.jpeg");
+}
+
+.box .image2 {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://s2-quem.glbimg.com/XFSF-2HUE342drNmn2ddLIE9110=/72x0:860x788/fit-in/996x788/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2022/o/S/NyKVQfRFWggWw6AMwBUA/2021-01-04-chris-evans.jpeg");
+}
+
+.box.hovered {
+    border: 2px dashed #333;
+}
