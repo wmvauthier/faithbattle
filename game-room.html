@@ -3,105 +3,352 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="description"
-        content="Today in this blog you will learn how to Drag & Drop elements from one position to another by using HTML CSS & JavaScript. At the end of this blog post, you will a project that has drag-and-drop functionality with some animations." />
-    <meta name="keywords"
-        content="drag drop html,drag drop html css javascript,drag drop javascript,drag drop js,draggable HTML and CSS,HTML, CSS, JavaScript " />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drag & Drop in JavaScript | CodingNepal</title>
     <link rel="stylesheet" href="./css/game-room.css" />
     <link rel="stylesheet" href="../custom-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="./integrations/game-room.js" defer></script>
-    <style>
-        .download-btn-cn a {
-            background: none;
-            color: #7d2ae8;
-            border: 2px solid #7d2ae8;
-        }
-
-        .download-btn-cn a:hover {
-            color: #fff;
-            background: #7d2ae8;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .box {
-            width: 100px;
-            height: 100px;
-            border: 1px solid #ccc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .image,
-        .image2 {
-            width: 50px;
-            height: 50px;
-            background-color: #7d2ae8;
-        }
-
-        .image2 {
-            background-color: #e2728e;
-        }
-
-        .hovered {
-            background-color: #f1f1f1;
-        }
-
-        .row {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-    </style>
 </head>
 
 <body>
+    <div class="container">
 
-    <section class="container">
-        <div class="box">
-            <div class="image" draggable="true"></div>
+        <div class="column dashboard">
+
+            <div class="row" style="margin-top:10px; margin-bottom: 10px;">
+                <img class="previewImgHover" src="./img/herois/1.png" />
+            </div>
+
+            <div class="row">
+                <div class="col lifeCounter"><i class="fa-solid fa-circle-user"></i>&nbsp;#TENMA007</div>
+                <div class="col lifeCounter"><i class="fa-solid fa-heart-pulse"></i>&nbsp;02</div>
+                <div class="col lifeCounter"><i class="fa-solid fa-hand"></i>&nbsp;20</div>
+                <div class="col lifeCounter"><i class="fa-solid fa-database"></i>&nbsp;20</div>
+                <div class="col lifeCounter"><i class="fa-solid fa-skull"></i>&nbsp;20</div>
+            </div>
+
+            <div class="extraZone">
+                <div class="row">
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                </div>
+            </div>
+
+            <div class="graveyardZone">
+
+                <div class="row">
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                </div>
+                <div class="row">
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                </div>
+                <div class="row">
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col lifeCounter"><i class="fa-solid fa-circle-user"></i>&nbsp;#TENMA007</div>
+                <div class="col lifeCounter"><i class="fa-solid fa-heart-pulse"></i>&nbsp;02</div>
+                <div class="col lifeCounter"><i class="fa-solid fa-hand"></i>&nbsp;20</div>
+                <div class="col lifeCounter"><i class="fa-solid fa-database"></i>&nbsp;20</div>
+                <div class="col lifeCounter"><i class="fa-solid fa-skull"></i>&nbsp;20</div>
+            </div>
+
+            <div class="extraZone">
+                <div class="row">
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                    <div class="minorBox box extraBox"></div>
+                </div>
+            </div>
+
+            <div class="graveyardZone">
+
+                <div class="row">
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                </div>
+                <div class="row">
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                </div>
+                <div class="row">
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                    <div class="minorBox box graveyardBox"></div>
+                </div>
+
+            </div>
+
         </div>
-        <div class="box">
-            <div class="image2" draggable="true"></div>
+
+        <div class="column playmats">
+
+            <div id="player1Area">
+
+                <div class="playmat">
+                    <div class="row">
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                    </div>
+                </div>
+
+                <div class="playmat">
+                    <div class="row">
+                        <div class="box knownZoneBox">
+                            <div class="image" draggable="true" style="background-image: url('./img/herois/1.png')">
+                            </div>
+                        </div>
+                        <div class="box knownZoneBox">
+                            <div class="image" draggable="true" style="background-image: url('./img/herois/2.png')">
+                            </div>
+                        </div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                    </div>
+                    <div class="row">
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                    </div>
+                    <div class="row">
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="playmat battleArea">
+                    <div class="row">
+                        <div class="box battleAreaBoxDown"></div>
+                        <div class="box battleAreaBoxDown"></div>
+                        <div class="box battleAreaBoxDown"></div>
+                        <div class="box battleAreaBoxDown"></div>
+                        <div class="box battleAreaBoxDown"></div>
+                        <div class="box battleAreaBoxDown"></div>
+                        <div class="box battleAreaBoxDown"></div>
+                        <div class="box battleAreaBoxDown"></div>
+                        <div class="box battleAreaBoxDown"></div>
+                        <div class="box battleAreaBoxDown"></div>
+                    </div>
+                    <div class="row">
+                        <div class="box battleAreaBoxUp"></div>
+                        <div class="box battleAreaBoxUp"></div>
+                        <div class="box battleAreaBoxUp"></div>
+                        <div class="box battleAreaBoxUp"></div>
+                        <div class="box battleAreaBoxUp"></div>
+                        <div class="box battleAreaBoxUp"></div>
+                        <div class="box battleAreaBoxUp"></div>
+                        <div class="box battleAreaBoxUp"></div>
+                        <div class="box battleAreaBoxUp"></div>
+                        <div class="box battleAreaBoxUp"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="player2Area">
+
+                <div class="playmat">
+                    <div class="row">
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                        <div class="box battleZoneBox"></div>
+                    </div>
+                    <div class="row">
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                        <div class="box preparationZoneBox"></div>
+                    </div>
+                    <div class="row">
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                        <div class="box knownZoneBox"></div>
+                    </div>
+                </div>
+
+                <div class="playmat">
+                    <div class="row">
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                        <div class="box handBox"></div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-        <div class="box"></div>
-    </section>
 
-    <section class="container">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-    </section>
-    
-    <section class="container">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-    </section>
+        <div class="column dashboard">
 
-    <section class="container">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-    </section>
+            <div id="battleHistoric" class="chat-container">
+                <div class="message"><span class="user">#Tenma7</span> comprou 1 card</div>
+                <div class="message"><span class="user">#Tenma7</span> jogou <b>Eva</b></div>
+            </div>
 
-    <script src="script.js"></script>
+            <div class="category">
+                <button class="category-title"><i class="fas fa-rotate"></i> &nbsp;Sabedorias</button>
+                <div class="category-content">
+                    <button class="stat"><i class="fa-solid fa-circle-minus"></i></button>
+                    <button class="stat"><i class="fa-solid fa-circle-plus"></i></button>
+                </div>
+            </div>
+            <div class="category">
+                <button class="category-title"><i class="fas fa-hand"></i> &nbsp;Mão</button>
+                <div class="category-content">
+                    <button class="stat"><i class="fa-solid fa-shuffle"></i></button>
+                    <button class="stat"><i class="fa-solid fa-eye"></i></button>
+                </div>
+            </div>
+            <div class="category">
+                <button class="category-title"><i class="fas fa-heart-pulse"></i> &nbsp;Pontos de Fé</button>
+                <div class="category-content">
+                    <button class="stat"><i class="fa-solid fa-circle-minus"></i></button>
+                    <button class="stat"><i class="fa-solid fa-circle-plus"></i></button>
+                </div>
+            </div>
+            <div class="category">
+                <button class="category-title"><i class="fas fa-shield"></i> &nbsp;Combate</button>
+                <div class="category-content">
+                    <button class="stat"><i class="fa-solid fa-shield"></i></button>
+                    <button class="stat"><i class="fa-solid fa-chevron-circle-up"></i></button>
+                </div>
+            </div>
+            <div class="category">
+                <button class="category-title"><i class="fas fa-database"></i> &nbsp;Deck</button>
+                <div class="category-content">
+                    <button class="stat"><i class="fa-solid fa-shuffle"></i></button>
+                    <button class="stat"><i class="fa-solid fa-hand-point-up"></i></button>
+                    <button class="stat"><i class="fa-solid fa-hand-holding-medical"></i></button>
+                </div>
+            </div>
 
+        </div>
+
+    </div>
 </body>
 
 </html>

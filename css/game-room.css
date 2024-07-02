@@ -1,31 +1,105 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #040d19;
+    color: white;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: #f6f7fb;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
     display: flex;
-    gap: 10px;
+    width: 99%;
+    min-width: 1600px;
+    height: 99%;
+    border: 1px solid #61dafb;
+    border-radius: 10px;
+    overflow: hidden;
     flex-wrap: wrap;
-    width: 630px;
-    justify-content: center;
+    gap: 10px;
 }
 
-.container .box {
-    position: relative;
-    height: 200px;
-    width: 200px;
-    border-radius: 12px;
-    border: 2px solid #333;
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.dashboard {
+    background-color: rgba(26, 40, 59, 1);
+    overflow: hidden;
+    /* Evita o overflow horizontal */
+}
+
+.dashboard:last-child {
+    border-right: none;
+}
+
+.playmats {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.playmat {
+    background-color: rgba(26, 40, 59, 1);
+    border: 1px solid #61dafb;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.battleArea {
+    border: 1px solid #d94c4c !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.box {
+    width: 55px;
+    height: 55px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .fa {
+    font-size: 14px;
+    opacity: 0.3;
+}
+
+.minorBox {
+    width: 30px !important;
+    height: 30px !important;
+    border: 1px solid #ccc;
 }
 
 .box .image {
@@ -33,19 +107,177 @@ body {
     width: 100%;
     border-radius: 10px;
     background-size: cover;
-    background-position: center;
-    background-image: url("https://s2-quem.glbimg.com/AkU9oTlpXr5H34tOfvEG1wXi_1w=/0x0:928x928/fit-in/980x928/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2022/u/i/Dw8wuORVafhWx70AySzw/2020-02-05-scarlett-johansson.jpeg");
-}
-
-.box .image2 {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-    background-image: url("https://s2-quem.glbimg.com/XFSF-2HUE342drNmn2ddLIE9110=/72x0:860x788/fit-in/996x788/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2022/o/S/NyKVQfRFWggWw6AMwBUA/2021-01-04-chris-evans.jpeg");
+    background-position: center 24%;
+    background-size: 140%;
 }
 
 .box.hovered {
     border: 2px dashed #333;
+    border-radius: 10px;
 }
+
+.image {
+    width: 50px;
+    height: 50px;
+    background-color: #7d2ae8;
+    cursor: pointer;
+}
+
+
+.hovered {
+    background-color: #f1f1f1ff;
+}
+
+.card {
+    position: relative;
+    background-color: #61dafb;
+    color: #20232a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.card-icon {
+    font-size: 1em;
+    margin-bottom: 10px;
+    /* Espaço entre o ícone e o número */
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-number {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Tooltip styles */
+.card::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #20232a;
+    color: #61dafb;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.card:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.previewImgHover {
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    /* padding: 5px; */
+    /* border: 1px solid #61dafb; */
+    border-radius: 10px;
+}
+
+.lifeCounter {
+    padding: 10px;
+    margin: 1px;
+    /* border: 1px solid #61dafb; */
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+/* // DASHBOARD DIREITA */
+
+.category {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.category-title {
+    background-color: #61dafb;
+    color: #20232a;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    width: auto;
+    /* Ajusta para ocupar o tamanho necessário */
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.category-content {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    /* Alinha os stats à direita */
+}
+
+.stat {
+    background-color: #61dafb;
+    color: #20232a;
+    border: none;
+    padding: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.stat i {
+    font-size: 1.5em;
+}
+
+.stat:hover {
+    background-color: #4da9e5;
+    color: #fff;
+}
+
+/* // CHAT DA DASHBOARD DIREITA */
+
+.chat-container {
+    width: 100%;
+    height: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #ffffffcc;
+    color: #000;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.message {
+    padding: 1px 20px;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.user {
+    color: #333;
+    font-weight: bold;
+}
+
+/* .timestamp {
+    color: #999;
+    font-size: 12px;
+    margin-left: 10px;
+} */
