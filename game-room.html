@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/game-room.css" />
     <link rel="stylesheet" href="../custom-styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="./integrations/utils.js" defer></script>
     <script src="./integrations/game-room.js" defer></script>
 </head>
 
@@ -16,15 +17,15 @@
         <div class="column dashboard">
 
             <div class="row" style="margin-top:10px; margin-bottom: 10px;">
-                <img class="previewImgHover" src="./img/herois/1.png" />
+                <img class="previewImgHover" src="./img/versos/normal.png" />
             </div>
 
             <div class="row">
-                <div class="col lifeCounter"><i class="fa-solid fa-circle-user"></i>&nbsp;#TENMA007</div>
-                <div class="col lifeCounter"><i class="fa-solid fa-heart-pulse"></i>&nbsp;02</div>
-                <div class="col lifeCounter"><i class="fa-solid fa-hand"></i>&nbsp;20</div>
-                <div class="col lifeCounter"><i class="fa-solid fa-database"></i>&nbsp;20</div>
-                <div class="col lifeCounter"><i class="fa-solid fa-skull"></i>&nbsp;20</div>
+                <div id="player1GamerTag" class="col lifeCounter"></div>
+                <div id="player1FaithSize" class="col lifeCounter"></div>
+                <div id="player1DeckSize" class="col lifeCounter"></div>
+                <div id="player1HandSize" class="col lifeCounter"></div>
+                <div id="player1GravSize" class="col lifeCounter"></div>
             </div>
 
             <div class="extraZone">
@@ -84,11 +85,11 @@
             </div>
 
             <div class="row">
-                <div class="col lifeCounter"><i class="fa-solid fa-circle-user"></i>&nbsp;#TENMA007</div>
-                <div class="col lifeCounter"><i class="fa-solid fa-heart-pulse"></i>&nbsp;02</div>
-                <div class="col lifeCounter"><i class="fa-solid fa-hand"></i>&nbsp;20</div>
-                <div class="col lifeCounter"><i class="fa-solid fa-database"></i>&nbsp;20</div>
-                <div class="col lifeCounter"><i class="fa-solid fa-skull"></i>&nbsp;20</div>
+                <div id="player2GamerTag" class="col lifeCounter"></div>
+                <div id="player2FaithSize" class="col lifeCounter"></div>
+                <div id="player2DeckSize" class="col lifeCounter"></div>
+                <div id="player2HandSize" class="col lifeCounter"></div>
+                <div id="player2GravSize" class="col lifeCounter"></div>
             </div>
 
             <div id="extraZonePlayer2" class="extraZone">
@@ -253,7 +254,7 @@
                         <div class="box battleZoneBox"></div>
                         <div class="box battleZoneBox"></div>
                     </div>
-                    <div class="row">
+                    <div id="preparationZonePlayer2" class="row">
                         <div class="box preparationZoneBox"></div>
                         <div class="box preparationZoneBox"></div>
                         <div class="box preparationZoneBox"></div>
@@ -281,22 +282,16 @@
 
                 <div class="playmat">
                     <div class="row">
-                        <div class="box handBox">
-                            <div class="image" draggable="true" style="background-image: url('./img/herois/1.png')">
-                            </div>
-                        </div>
-                        <div class="box handBox">
-                            <div class="image" draggable="true" style="background-image: url('./img/herois/2.png')">
-                            </div>
-                        </div>
-                        <div class="box handBox"></div>
-                        <div class="box handBox"></div>
-                        <div class="box handBox"></div>
-                        <div class="box handBox"></div>
-                        <div class="box handBox"></div>
-                        <div class="box handBox"></div>
-                        <div class="box handBox"></div>
-                        <div class="box handBox"></div>
+                        <div id="handZone1" class="box handBox"></div>
+                        <div id="handZone2" class="box handBox"></div>
+                        <div id="handZone3" class="box handBox"></div>
+                        <div id="handZone4" class="box handBox"></div>
+                        <div id="handZone5" class="box handBox"></div>
+                        <div id="handZone6" class="box handBox"></div>
+                        <div id="handZone7" class="box handBox"></div>
+                        <div id="handZone8" class="box handBox"></div>
+                        <div id="handZone9" class="box handBox"></div>
+                        <div id="deckZonePlayer2" onclick="drawCard()" class="box handBox"></div>
                     </div>
                 </div>
 
@@ -328,8 +323,8 @@
             <div class="category">
                 <button class="category-title"><i class="fas fa-heart-pulse"></i> &nbsp;Pontos de Fé</button>
                 <div class="category-content">
-                    <button class="stat"><i class="fa-solid fa-circle-minus"></i></button>
-                    <button class="stat"><i class="fa-solid fa-circle-plus"></i></button>
+                    <button onclick="removeFaith()" class="stat"><i class="fa-solid fa-circle-minus"></i></button>
+                    <button onclick="addFaith()" class="stat"><i class="fa-solid fa-circle-plus"></i></button>
                 </div>
             </div>
             <div class="category">
@@ -342,9 +337,9 @@
             <div class="category">
                 <button class="category-title"><i class="fas fa-database"></i> &nbsp;Deck</button>
                 <div class="category-content">
-                    <button class="stat"><i class="fa-solid fa-shuffle"></i></button>
+                    <button onclick="shuffleDeck()" class="stat"><i class="fa-solid fa-shuffle"></i></button>
                     <button class="stat"><i class="fa-solid fa-hand-point-up"></i></button>
-                    <button class="stat"><i class="fa-solid fa-hand-holding-medical"></i></button>
+                    <button onclick="drawCard()" class="stat"><i class="fa-solid fa-hand-holding-medical"></i></button>
                 </div>
             </div>
 
