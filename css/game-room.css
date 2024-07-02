@@ -112,7 +112,7 @@ body {
 }
 
 .box.hovered {
-    border: 2px dashed #333;
+    border: 1px dashed #333;
     border-radius: 10px;
 }
 
@@ -125,7 +125,7 @@ body {
 
 
 .hovered {
-    background-color: #f1f1f1ff;
+    background-color: #f1f1f155;
 }
 
 .card {
