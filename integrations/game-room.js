@@ -429,9 +429,6 @@ function formatNumber00(num) {
   return num.toString().padStart(2, "0");
 }
 
-shuffleDeck();
-renderBattlefield();
-
 // Eventos do deck
 deckZonePlayer2.addEventListener("drop", (e) => {
   const draggedElementId = e.dataTransfer.getData("text/plain");
@@ -582,6 +579,49 @@ function sendBoard() {
     {
       selector: "#battleZoneP2e10",
       mirrorSelector: "#battleZoneP1e1",
+    },
+
+    // COMBAT
+
+    {
+      selector: "#combatZoneP2e1",
+      mirrorSelector: "#combatZoneP1e10",
+    },
+    {
+      selector: "#combatZoneP2e2",
+      mirrorSelector: "#combatZoneP1e9",
+    },
+    {
+      selector: "#combatZoneP2e3",
+      mirrorSelector: "#combatZoneP1e8",
+    },
+    {
+      selector: "#combatZoneP2e4",
+      mirrorSelector: "#combatZoneP1e7",
+    },
+    {
+      selector: "#combatZoneP2e5",
+      mirrorSelector: "#combatZoneP1e6",
+    },
+    {
+      selector: "#combatZoneP2e6",
+      mirrorSelector: "#combatZoneP1e5",
+    },
+    {
+      selector: "#combatZoneP2e7",
+      mirrorSelector: "#combatZoneP1e4",
+    },
+    {
+      selector: "#combatZoneP2e8",
+      mirrorSelector: "#combatZoneP1e3",
+    },
+    {
+      selector: "#combatZoneP2e9",
+      mirrorSelector: "#combatZoneP1e2",
+    },
+    {
+      selector: "#combatZoneP2e10",
+      mirrorSelector: "#combatZoneP1e1",
     }
 
   ];
@@ -674,3 +714,9 @@ function updateBoard(data, isAMoveRequisition) {
 }
 
 setRoomIDAndPlayerID();
+shuffleDeck();
+renderBattlefield();
+
+window.onload = () => {
+  setTimeout(renderBattlefield, 3000); // 5000 milissegundos = 5 segundos
+};
