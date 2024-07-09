@@ -1,23 +1,57 @@
 // Seleciona todas as caixas e imagens
 const boxes = document.querySelectorAll(".box");
-const boxesPlayer2 = player2Area.querySelectorAll(".box");
-
+const boxesPlayer2 = document.querySelectorAll("#player2Area .box");
 const preparationZonePlayer2 = document.querySelector(
   "#preparationZonePlayer2"
 );
 const graveyardZonePlayer2 = document.querySelector("#graveyardZonePlayer2");
 const extraZonePlayer2 = document.querySelector("#extraZonePlayer2");
 const deckZonePlayer2 = document.querySelector("#deckZonePlayer2");
+const deckZonePlayer1 = document.querySelector("#deckZonePlayer1");
 
 const boxesGraveyardZonePlayer2 = graveyardZonePlayer2.querySelectorAll(".box");
 const boxesExtraZonePlayer2 = extraZonePlayer2.querySelectorAll(".box");
 const boxesPreparationZonePlayer2 =
   preparationZonePlayer2.querySelectorAll(".box");
+const boxesBattleArea = document.querySelectorAll("#battleAreaP2 .box");
 
-const boxesBattleArea = battleArea.querySelectorAll(".box");
+const knownZoneBoxes = getZoneBoxes("knownZone", 10);
+const handZoneBoxes = getZoneBoxes("handZone", 9);
+
+let knownZoneBoxesPlayer2 = [
+  document.querySelector("#knownZoneP2e1"),
+  document.querySelector("#knownZoneP2e2"),
+  document.querySelector("#knownZoneP2e3"),
+  document.querySelector("#knownZoneP2e4"),
+  document.querySelector("#knownZoneP2e5"),
+  document.querySelector("#knownZoneP2e6"),
+  document.querySelector("#knownZoneP2e7"),
+  document.querySelector("#knownZoneP2e8"),
+  document.querySelector("#knownZoneP2e9"),
+  document.querySelector("#knownZoneP2e10"),
+];
+
+let handZoneBoxesPlayer2 = [
+  document.querySelector("#handZoneP2e1"),
+  document.querySelector("#handZoneP2e2"),
+  document.querySelector("#handZoneP2e3"),
+  document.querySelector("#handZoneP2e4"),
+  document.querySelector("#handZoneP2e5"),
+  document.querySelector("#handZoneP2e6"),
+  document.querySelector("#handZoneP2e7"),
+  document.querySelector("#handZoneP2e8"),
+  document.querySelector("#handZoneP2e9"),
+];
+
 let images = document.querySelectorAll(".image");
 
-//CONTADORES DO HUD  -------------------------------------------------------------------------
+// CONTADORES DO HUD
+
+let player1GamerTag = document.querySelector("#player1GamerTag");
+let player1DeckSize = document.querySelector("#player1DeckSize");
+let player1HandSize = document.querySelector("#player1HandSize");
+let player1GravSize = document.querySelector("#player1GravSize");
+let player1FaithSize = document.querySelector("#player1FaithSize");
 
 let player2GamerTag = document.querySelector("#player2GamerTag");
 let player2DeckSize = document.querySelector("#player2DeckSize");
@@ -25,10 +59,17 @@ let player2HandSize = document.querySelector("#player2HandSize");
 let player2GravSize = document.querySelector("#player2GravSize");
 let player2FaithSize = document.querySelector("#player2FaithSize");
 
-let player1FaithCounter = 0;
-let player2FaithCounter = 0;
+player1GamerTag.innerHTML = '<i class="fa-solid fa-circle-user"></i>&nbsp;';
+player1DeckSize.innerHTML = `<i class="fa-solid fa-database"></i>&nbsp;00`;
+player1HandSize.innerHTML = `<i class="fa-solid fa-hand"></i>&nbsp;00`;
+player1GravSize.innerHTML = `<i class="fa-solid fa-skull"></i>&nbsp;00`;
+player1FaithSize.innerHTML = `&nbsp;00`;
 
-//VARIÁVEIS INICIAIS -------------------------------------------------------------------------
+// VARIÁVEIS INICIAIS
+
+let gamerId = localStorage.getItem("gamerId");
+let roomId = localStorage.getItem("roomId");
+let deckHash = localStorage.getItem("deckHash");
 
 let deck = [
   1, 5, 5, 9, 9, 11, 12, 12, 47, 47, 23, 24, 26, 43, 44, 50, 17, 17, 18, 18, 19,
@@ -36,21 +77,33 @@ let deck = [
 ];
 let cardsFromDeck = [];
 
-// Atualiza a lista de caixas da zona conhecida
-const knownZoneBoxes = [];
-for (let i = 1; i <= 10; i++) {
-  const element = document.getElementById(`knownZone${i}`);
-  if (element) {
-    knownZoneBoxes.push(element);
-  }
-}
+//VARIÁVEIS SOCKET
 
-const handZoneBoxes = [];
-for (let i = 1; i <= 9; i++) {
-  const element = document.getElementById(`handZone${i}`);
-  if (element) {
-    handZoneBoxes.push(element);
+const socket = new WebSocket("ws://localhost:8080");
+
+socket.onopen = () => {
+  // Envia a mensagem de entrada na sala
+  socket.send(JSON.stringify({ type: "join", gamerId, roomId, deckHash }));
+};
+
+socket.onmessage = (event) => {
+  const data = JSON.parse(event.data);
+
+  if (data.boardState) {
+    updateBoard(data.boardState, data.type === "move");
   }
+};
+
+// Função para obter as caixas de uma zona específica
+function getZoneBoxes(zonePrefix, count) {
+  const boxes = [];
+  for (let i = 1; i <= count; i++) {
+    const element = document.getElementById(`${zonePrefix}${i}`);
+    if (element) {
+      boxes.push(element);
+    }
+  }
+  return boxes;
 }
 
 // Define as caixas que podem aceitar drag and drop
@@ -63,8 +116,8 @@ const droppableBoxes = [
   ...boxesPreparationZonePlayer2,
 ].filter((box) => !box.classList.contains("knownZoneBox"));
 
-// Adiciona os eventos de drag and drop nas caixas droppable
-droppableBoxes.forEach((box) => {
+// Função para adicionar eventos de drag and drop
+function addDragAndDropEvents(box) {
   box.addEventListener("dragover", (e) => {
     e.preventDefault();
     box.classList.add("hovered");
@@ -81,150 +134,132 @@ droppableBoxes.forEach((box) => {
     setTimeout(() => {
       const draggedElement = document.getElementById(draggedElementId);
 
-      if (draggedElement) {
-        if (
-          box.children.length === 1 &&
-          box.children[0].tagName.toLowerCase() === "i"
-        ) {
-          box.replaceChild(draggedElement, box.children[0]);
-        } else {
-          box.appendChild(draggedElement);
+      if (draggedElementId == "") {
+        updateDraggableImages();
+        addDragAndDropEvents(box);
+      } else {
+        if (draggedElement) {
+          if (
+            box.children.length === 1 &&
+            box.children[0].tagName.toLowerCase() === "i"
+          ) {
+            box.replaceChild(draggedElement, box.children[0]);
+          } else {
+            box.appendChild(draggedElement);
+          }
+
+          box.classList.remove("hovered");
+          renderBattlefield();
         }
-
-        box.classList.remove("hovered");
-
-        renderBattlefield();
       }
-    }, 50);
+    }, 10);
   });
-});
+}
 
-// Remove a funcionalidade de arrastar das caixas da zona conhecida
-knownZoneBoxes.forEach((box) => {
+// Adiciona os eventos de drag and drop nas caixas droppable
+droppableBoxes.forEach(addDragAndDropEvents);
+
+// Remove a funcionalidade de arrastar das caixas da zona conhecida e adiciona evento de clique
+function removeDraggableAndAddClickEvent(box) {
   const imageDiv = box.querySelector('div.image[draggable="true"]');
   if (imageDiv) {
     imageDiv.removeAttribute("draggable");
   }
 
-  // Adiciona o evento de clique para alternar a imagem
   box.addEventListener("click", () => toggleKnownCard(box));
-});
+}
 
+knownZoneBoxes.forEach(removeDraggableAndAddClickEvent);
+
+// Aplica estilos iniciais às caixas
 boxes.forEach((box) => {
   box.style.boxShadow = "1px 1px 1px rgba(249, 250, 251, 1)"; // Branco
 });
 
-renderBattlefield();
-
-//DECK ---------------------------------------------------------------------------------
-
-deckZonePlayer2.addEventListener("drop", (e) => {
-  const draggedElementId = e.dataTransfer.getData("text/plain");
-  const draggedElement = document.getElementById(draggedElementId);
-
-  if (draggedElement) {
-    let cardDroppedId = draggedElement.style["background-image"]
-      .split("/")[2]
-      .split(".")[0];
-    deck.push(parseInt(cardDroppedId));
-  }
-
-  deckZonePlayer2.style.backgroundImage = "url('./img/versos/normal.png')";
-
-  if (draggedElement) {
-    draggedElement.remove();
-  }
-
-  renderBattlefield();
-});
-
-//DECK -------------------------------------------------------------------------------
-
+// Função para embaralhar o deck
 function shuffleDeck() {
-  // Cria uma cópia do array original para não modificá-lo diretamente
-  let shuffledArray = deck.slice();
-
-  // Função de comparação para o método sort()
-  function compareRandom() {
-    return Math.random() - 0.5; // Retorna um número aleatório entre -0.5 e 0.5
-  }
-
-  // Embaralha o array usando o método sort() com a função de comparação
-  shuffledArray.sort(compareRandom);
-  shuffledArray.sort(compareRandom);
-
-  deck = shuffledArray;
+  deck = deck
+    .sort(() => Math.random() - 0.5)
+    .sort(() => Math.random() - 0.5)
+    .sort(() => Math.random() - 0.5);
 }
 
+// Função para comprar uma carta do deck
 function drawCard() {
-  let choosenCardID = deck.pop();
-  let choosenCard = cardsFromDeck.filter((a) => a.number == choosenCardID);
+  const choosenCardID = deck.pop();
+  const choosenCard = cardsFromDeck.find(
+    (card) => card.number === choosenCardID
+  );
 
-  for (const handZoneBox of handZoneBoxes) {
-    if (
-      !handZoneBox.querySelector("div.image") &&
-      choosenCardID &&
-      choosenCard &&
-      choosenCard[0]
-    ) {
-      const newDiv = document.createElement("div");
-      newDiv.classList.add("image");
-      newDiv.draggable = true;
-      newDiv.style.backgroundImage = "url('" + choosenCard[0].img + "')";
-      handZoneBox.innerHTML = "";
-
-      if (choosenCard[0].type == "Milagre") {
-        newDiv.style.boxShadow = "1px 1px 1px rgba(34, 211, 153, 1)"; // Verde
-      } else if (choosenCard[0].type == "Herói de Fé") {
-        newDiv.style.boxShadow = "1px 1px 1px rgba(59, 130, 246, 1)"; // Azul
-      } else if (choosenCard[0].type == "Pecado") {
-        newDiv.style.boxShadow = "1px 1px 1px rgba(255, 255, 0, 1)";
-      } else if (choosenCard[0].type == "Artefato") {
-        newDiv.style.boxShadow = "1px 1px 1px rgba(251, 191, 36, 1)"; // Amarelo
-      } else {
-        newDiv.style.boxShadow = "1px 1px 1px rgba(249, 250, 251, 1)"; // Branco
+  if (choosenCard) {
+    for (const handZoneBox of handZoneBoxesPlayer2) {
+      if (!handZoneBox.querySelector("div.image")) {
+        const newDiv = createCardElement(choosenCard);
+        handZoneBox.innerHTML = "";
+        handZoneBox.appendChild(newDiv);
+        break;
       }
-
-      handZoneBox.appendChild(newDiv);
-      break;
     }
   }
 
   renderBattlefield();
 }
 
-//SABEDORIAS -------------------------------------------------------------------------
+// Função para criar um elemento de carta
+function createCardElement(card) {
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("image");
+  newDiv.draggable = true;
+  newDiv.style.backgroundImage = `url('${card.img}')`;
+  newDiv.style.boxShadow = getCardBoxShadow(card.type);
+  return newDiv;
+}
 
+// Função para obter o box shadow baseado no tipo de carta
+function getCardBoxShadow(type) {
+  const shadows = {
+    Milagre: "1px 1px 1px rgba(34, 211, 153, 1)", // Verde
+    "Herói de Fé": "1px 1px 1px rgba(59, 130, 246, 1)", // Azul
+    Pecado: "1px 1px 1px rgba(217, 76, 76, 1)", //Vermelho
+    Artefato: "1px 1px 1px rgba(251, 191, 36, 1)", // Amarelo
+    default: "1px 1px 1px rgba(249, 250, 251, 1)", // Branco
+  };
+  return shadows[type] || shadows["default"];
+}
+
+// Função para adicionar uma carta à zona conhecida
 function addKnown() {
-  for (const knownZoneBox of knownZoneBoxes) {
+  for (const knownZoneBox of knownZoneBoxesPlayer2) {
     if (!knownZoneBox.querySelector("div.image")) {
-      const newDiv = document.createElement("div");
-      newDiv.classList.add("image");
-      newDiv.style.backgroundImage = "url('./img/versos/sabedoria.png')";
-      newDiv.style["background-size"] = "cover";
-      newDiv.style["background-position"] = "center 24%";
+      const newDiv = createKnownCardElement();
+      console.log(newDiv);
       knownZoneBox.innerHTML = "";
-
       knownZoneBox.appendChild(newDiv);
+      // knownZoneBox.classList.add("inactiveKnown");
       break;
     }
   }
 
   // Atualiza a funcionalidade de drag para as novas imagens
-  knownZoneBoxes.forEach((box) => {
-    const imageDiv = box.querySelector("div.image");
-    if (imageDiv) {
-      imageDiv.removeAttribute("draggable");
-    }
-  });
+  knownZoneBoxesPlayer2.forEach(removeDraggableAndAddClickEvent);
 
   renderBattlefield();
 }
 
+// Função para criar um elemento de carta conhecida
+function createKnownCardElement() {
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("image");
+  newDiv.style.backgroundImage = "url('./img/versos/sabedoria.png')";
+  newDiv.style.backgroundSize = "cover";
+  newDiv.style.backgroundPosition = "center 24%";
+  return newDiv;
+}
+
 // Função para remover uma carta da zona conhecida
 function removeKnown() {
-  for (let i = knownZoneBoxes.length - 1; i >= 0; i--) {
-    const knownZoneBox = knownZoneBoxes[i];
+  for (let i = knownZoneBoxesPlayer2.length - 1; i >= 0; i--) {
+    const knownZoneBox = knownZoneBoxesPlayer2[i];
     const imageDiv = knownZoneBox.querySelector("div.image");
     if (imageDiv) {
       knownZoneBox.removeChild(imageDiv);
@@ -239,8 +274,8 @@ function toggleKnownCard(box) {
   const imageDiv = box.querySelector("div.image");
   if (imageDiv) {
     const currentImage = imageDiv.style.backgroundImage;
-    imageDiv.style["background-size"] = "cover";
-    imageDiv.style["background-position"] = "center 24%";
+    imageDiv.style.backgroundSize = "cover";
+    imageDiv.style.backgroundPosition = "center 24%";
 
     if (currentImage.includes("sabedoria.png")) {
       imageDiv.style.backgroundImage = "url('./img/sabedorias/37.png')";
@@ -251,129 +286,391 @@ function toggleKnownCard(box) {
   renderBattlefield();
 }
 
-//PONTOS DE FÉ ----------------------------------------------------------------------
-
+// Funções para gerenciar pontos de fé
 function addFaith() {
-  player2FaithCounter++;
+  let a = isNaN(
+    document.querySelector("#player2FaithSize").innerHTML.replace("&nbsp;", "")
+  )
+    ? "00"
+    : document
+        .querySelector("#player2FaithSize")
+        .innerHTML.replace("&nbsp;", "");
+  a++;
+  document.querySelector("#player2FaithSize").innerHTML =
+    "&nbsp;" + formatNumber00(a);
   renderBattlefield();
 }
 
 function removeFaith() {
-  if (player2FaithCounter > 0) player2FaithCounter--;
+  let a = isNaN(
+    document.querySelector("#player2FaithSize").innerHTML.replace("&nbsp;", "")
+  )
+    ? "00"
+    : document
+        .querySelector("#player2FaithSize")
+        .innerHTML.replace("&nbsp;", "");
+  if (a > 0) a--;
+  document.querySelector("#player2FaithSize").innerHTML =
+    "&nbsp;" + formatNumber00(a);
   renderBattlefield();
 }
 
-//ATUALIZAR TELA --------------------------------------------------------------------
-
+// Função para renderizar o campo de batalha
 async function renderBattlefield() {
-  async function loadDeck() {
-    let allCards = await getCards();
-    cardsFromDeck = getCardsFromDeck(deck, allCards);
-  }
-
   await loadDeck();
 
+  updateHUD();
+  updateDeckZone();
+  updateBoxIcons();
+
+  // Adiciona evento de hover para pré-visualização da imagem
+  document.querySelectorAll(".image").forEach((imageDiv) => {
+    imageDiv.addEventListener("mouseover", () => {
+      const imageUrl = imageDiv.style.backgroundImage.slice(5, -2); // Extrai a URL da imagem de fundo
+      document.querySelector(".previewImgHover").src = imageUrl;
+    });
+  });
+
+  sendBoard();
+  updateHUD();
+  updateDeckZone();
+  updateDraggableImages();
+}
+
+// Função para carregar o deck
+async function loadDeck() {
+  const allCards = await getCards();
+  cardsFromDeck = getCardsFromDeck(deck, allCards);
+}
+
+// Função para atualizar a zona do deck
+function updateDeckZone() {
   if (deck.length > 0) {
     deckZonePlayer2.style.backgroundImage = "url('./img/versos/normal.png')";
   } else {
     deckZonePlayer2.style.backgroundImage = "";
   }
-  deckZonePlayer2.style["background-size"] = "cover";
-  deckZonePlayer2.style["background-position"] = "center 24%";
-  deckZonePlayer2.style["cursor"] = "pointer";
+  deckZonePlayer2.style.backgroundSize = "cover";
+  deckZonePlayer2.style.backgroundPosition = "center 24%";
+  deckZonePlayer2.style.cursor = "pointer";
 
-  let player2HandSizeCnt = 0;
-  let player2GravSizeCnt = 0;
+  deckZonePlayer1.style.backgroundImage = "url('./img/versos/normal.png')";
+  deckZonePlayer1.style.backgroundSize = "cover";
+  deckZonePlayer1.style.backgroundPosition = "center 24%";
+  deckZonePlayer1.style.cursor = "pointer";
+}
 
-  for (const handZoneBox of handZoneBoxes) {
-    if (handZoneBox.querySelector("div.image")) {
-      player2HandSizeCnt++;
-    }
-  }
-  for (const handZoneBox of boxesGraveyardZonePlayer2) {
-    if (handZoneBox.querySelector("div.image")) {
-      player2GravSizeCnt++;
-    }
-  }
+// Função para atualizar o HUD
+function updateHUD() {
+  const player2HandSizeCnt = countImages(handZoneBoxes);
+  const player2GravSizeCnt = countImages(boxesGraveyardZonePlayer2);
 
-  player2GamerTag.innerHTML =
-    '<i class="fa-solid fa-circle-user"></i>&nbsp;#TENMA007';
-  player2DeckSize.innerHTML =
-    '<i class="fa-solid fa-database"></i>&nbsp;' +
-    formatNumber00(deck.length) +
-    "";
-  player2HandSize.innerHTML =
-    '<i class="fa-solid fa-hand"></i>&nbsp;' +
-    formatNumber00(player2HandSizeCnt);
-  player2GravSize.innerHTML =
-    '<i class="fa-solid fa-skull"></i>&nbsp;' +
-    formatNumber00(player2GravSizeCnt);
-  player2FaithSize.innerHTML =
-    '<i class="fa-solid fa-heart-pulse"></i>&nbsp;' +
-    formatNumber00(player2FaithCounter);
+  player2GamerTag.innerHTML = "&nbsp;" + localStorage.getItem("gamerId") + "";
+  player2DeckSize.innerHTML = `&nbsp;${formatNumber00(deck.length)}`;
+  player2HandSize.innerHTML = `&nbsp;${formatNumber00(player2HandSizeCnt)}`;
+  player2GravSize.innerHTML = `&nbsp;${formatNumber00(player2GravSizeCnt)}`;
+}
 
-  let images = document.querySelectorAll(".image");
+// Função para contar as imagens nas caixas
+function countImages(zoneBoxes) {
+  return Array.from(zoneBoxes).filter((box) => box.querySelector("div.image"))
+    .length;
+}
 
-  images.forEach((image) => {
+// Função para atualizar as imagens arrastáveis
+function updateDraggableImages() {
+  document.querySelectorAll(".image").forEach((image) => {
     image.id = `draggable-${Math.random().toString(36).substr(2, 9)}`;
 
     image.addEventListener("dragstart", (e) => {
       e.dataTransfer.setData("text", e.target.id);
     });
   });
-
-  document.querySelectorAll(".image").forEach((imageDiv) => {
-    imageDiv.addEventListener("mouseover", () => {
-      const classes = imageDiv.classList;
-      let imageUrl = "";
-
-      classes.forEach((className) => {
-        if (className.startsWith("image")) {
-          const bgImage = imageDiv.style.backgroundImage;
-          imageUrl = bgImage.slice(5, -2); // Extrai a URL da imagem de fundo
-        }
-      });
-
-      document.querySelector(".previewImgHover").src = imageUrl;
-    });
-  });
-
-  boxes.forEach((box) => {
-    fillIconBox(box);
-  });
 }
 
 // Função para preencher a caixa com um ícone se estiver vazia
-function fillIconBox(box) {
-  if (box.children.length === 0) {
-    let iconClass;
-    // Verifica a classe do box e define a classe do ícone
-    if (box.classList.contains("extraBox")) {
-      iconClass = "fa-circle-plus";
-    } else if (box.classList.contains("graveyardBox")) {
-      iconClass = "fa-skull";
-    } else if (box.classList.contains("handBox")) {
-      iconClass = "fa-hand";
-    } else if (box.classList.contains("knownZoneBox")) {
-      iconClass = "fa-rotate";
-    } else if (box.classList.contains("preparationZoneBox")) {
-      iconClass = "fa-hourglass-half";
-    } else if (box.classList.contains("battleZoneBox")) {
-      iconClass = "fa-shield";
-    } else if (box.classList.contains("battleAreaBoxUp")) {
-      iconClass = "fa-circle-chevron-up";
-    } else if (box.classList.contains("battleAreaBoxDown")) {
-      iconClass = "fa-circle-chevron-down";
+function updateBoxIcons() {
+  boxes.forEach((box) => {
+    if (box.children.length === 0) {
+      const iconClass = getBoxIconClass(box);
+      if (iconClass) {
+        const iconElement = document.createElement("i");
+        iconElement.classList.add("fas", "fa", "fa-solid", iconClass);
+        box.appendChild(iconElement);
+      }
     }
-
-    if (iconClass) {
-      const iconElement = document.createElement("i");
-      iconElement.classList.add("fas", "fa", "fa-solid", iconClass);
-      box.appendChild(iconElement);
-    }
-  }
+  });
 }
 
+// Função para obter a classe do ícone baseado na classe da caixa
+function getBoxIconClass(box) {
+  const iconClasses = {
+    extraBox: "fa-circle-plus",
+    graveyardBox: "fa-skull",
+    handBox: "fa-hand",
+    knownZoneBox: "fa-rotate",
+    preparationZoneBox: "fa-hourglass-half",
+    battleZoneBox: "fa-shield",
+    battleAreaBoxUp: "fa-circle-chevron-up",
+    battleAreaBoxDown: "fa-circle-chevron-down",
+  };
+
+  for (const className in iconClasses) {
+    if (box.classList.contains(className)) {
+      return iconClasses[className];
+    }
+  }
+
+  return null;
+}
+
+// Função para formatar números com dois dígitos
 function formatNumber00(num) {
   return num.toString().padStart(2, "0");
 }
+
+shuffleDeck();
+renderBattlefield();
+
+// Eventos do deck
+deckZonePlayer2.addEventListener("drop", (e) => {
+  const draggedElementId = e.dataTransfer.getData("text/plain");
+  const draggedElement = document.getElementById(draggedElementId);
+
+  if (draggedElement) {
+    const cardDroppedId = draggedElement.style["background-image"]
+      .split("/")[2]
+      .split(".")[0];
+    deck.push(parseInt(cardDroppedId));
+    draggedElement.remove();
+  }
+
+  deckZonePlayer2.style.backgroundImage = "url('./img/versos/normal.png')";
+  renderBattlefield();
+});
+
+function setRoomIDAndPlayerID() {
+  if (!gamerId) {
+    gamerId = prompt("Digite seu ID de usuário:");
+    localStorage.setItem("gamerId", gamerId);
+  }
+  if (!roomId) {
+    roomId = prompt("Digite o ID da sala:");
+    localStorage.setItem("roomId", roomId);
+  }
+  if (!deckHash) {
+    deckHash = prompt("Digite o Hash do Deck:");
+    localStorage.setItem("deckHash", deckHash);
+  }
+}
+
+function sendBoard() {
+  const selectors = [
+    //HUD
+    { selector: "#player2GamerTag", mirrorSelector: "#player1GamerTag" },
+    { selector: "#player2FaithSize", mirrorSelector: "#player1FaithSize" },
+    { selector: "#player2HandSize", mirrorSelector: "#player1HandSize" },
+    { selector: "#player2DeckSize", mirrorSelector: "#player1DeckSize" },
+    { selector: "#player2GravSize", mirrorSelector: "#player1GravSize" },
+
+    //HAND
+    { selector: "#deckZonePlayer2", mirrorSelector: "#deckZonePlayer1" },
+    { selector: "#handZoneP2e1", mirrorSelector: "#handZoneP1e9" },
+    { selector: "#handZoneP2e2", mirrorSelector: "#handZoneP1e8" },
+    { selector: "#handZoneP2e3", mirrorSelector: "#handZoneP1e7" },
+    { selector: "#handZoneP2e4", mirrorSelector: "#handZoneP1e6" },
+    { selector: "#handZoneP2e5", mirrorSelector: "#handZoneP1e5" },
+    { selector: "#handZoneP2e6", mirrorSelector: "#handZoneP1e4" },
+    { selector: "#handZoneP2e7", mirrorSelector: "#handZoneP1e3" },
+    { selector: "#handZoneP2e8", mirrorSelector: "#handZoneP1e2" },
+    { selector: "#handZoneP2e9", mirrorSelector: "#handZoneP1e1" },
+
+    // KNOWN
+
+    { selector: "#knownZoneP2e1", mirrorSelector: "#knownZoneP1e10" },
+    { selector: "#knownZoneP2e2", mirrorSelector: "#knownZoneP1e9" },
+    { selector: "#knownZoneP2e3", mirrorSelector: "#knownZoneP1e8" },
+    { selector: "#knownZoneP2e4", mirrorSelector: "#knownZoneP1e7" },
+    { selector: "#knownZoneP2e5", mirrorSelector: "#knownZoneP1e6" },
+    { selector: "#knownZoneP2e6", mirrorSelector: "#knownZoneP1e5" },
+    { selector: "#knownZoneP2e7", mirrorSelector: "#knownZoneP1e4" },
+    { selector: "#knownZoneP2e8", mirrorSelector: "#knownZoneP1e3" },
+    { selector: "#knownZoneP2e9", mirrorSelector: "#knownZoneP1e2" },
+    { selector: "#knownZoneP2e10", mirrorSelector: "#knownZoneP1e1" },
+
+    // PREPARATION
+
+    {
+      selector: "#preparationZoneP2e1",
+      mirrorSelector: "#preparationZoneP1e10",
+    },
+    {
+      selector: "#preparationZoneP2e2",
+      mirrorSelector: "#preparationZoneP1e9",
+    },
+    {
+      selector: "#preparationZoneP2e3",
+      mirrorSelector: "#preparationZoneP1e8",
+    },
+    {
+      selector: "#preparationZoneP2e4",
+      mirrorSelector: "#preparationZoneP1e7",
+    },
+    {
+      selector: "#preparationZoneP2e5",
+      mirrorSelector: "#preparationZoneP1e6",
+    },
+    {
+      selector: "#preparationZoneP2e6",
+      mirrorSelector: "#preparationZoneP1e5",
+    },
+    {
+      selector: "#preparationZoneP2e7",
+      mirrorSelector: "#preparationZoneP1e4",
+    },
+    {
+      selector: "#preparationZoneP2e8",
+      mirrorSelector: "#preparationZoneP1e3",
+    },
+    {
+      selector: "#preparationZoneP2e9",
+      mirrorSelector: "#preparationZoneP1e2",
+    },
+    {
+      selector: "#preparationZoneP2e10",
+      mirrorSelector: "#preparationZoneP1e1",
+    },
+
+    // BATTLE
+
+    {
+      selector: "#battleZoneP2e1",
+      mirrorSelector: "#battleZoneP1e10",
+    },
+    {
+      selector: "#battleZoneP2e2",
+      mirrorSelector: "#battleZoneP1e9",
+    },
+    {
+      selector: "#battleZoneP2e3",
+      mirrorSelector: "#battleZoneP1e8",
+    },
+    {
+      selector: "#battleZoneP2e4",
+      mirrorSelector: "#battleZoneP1e7",
+    },
+    {
+      selector: "#battleZoneP2e5",
+      mirrorSelector: "#battleZoneP1e6",
+    },
+    {
+      selector: "#battleZoneP2e6",
+      mirrorSelector: "#battleZoneP1e5",
+    },
+    {
+      selector: "#battleZoneP2e7",
+      mirrorSelector: "#battleZoneP1e4",
+    },
+    {
+      selector: "#battleZoneP2e8",
+      mirrorSelector: "#battleZoneP1e3",
+    },
+    {
+      selector: "#battleZoneP2e9",
+      mirrorSelector: "#battleZoneP1e2",
+    },
+    {
+      selector: "#battleZoneP2e10",
+      mirrorSelector: "#battleZoneP1e1",
+    }
+
+  ];
+
+  const boardState = selectors.map(({ selector, mirrorSelector }) => {
+    const element = document.querySelector(selector);
+    return {
+      gamerId: gamerId,
+      querySelector: selector,
+      querySelectorMirror: mirrorSelector,
+      content: element ? element.textContent : "",
+      innerHTML: element ? element.innerHTML : "",
+    };
+  });
+
+  const jsonBoardState = JSON.stringify({
+    type: "move",
+    roomId,
+    gamerId,
+    boardState,
+  });
+
+  socket.send(jsonBoardState);
+}
+
+function updateBoard(data, isAMoveRequisition) {
+  console.log(data);
+
+  let enemyState = {};
+
+  if (isAMoveRequisition) {
+    for (let key in data) {
+      if (data.hasOwnProperty(key) && key != gamerId) {
+        enemyState = data[key];
+      }
+    }
+  } else {
+    for (let key in data) {
+      if (data.hasOwnProperty(key)) {
+        enemyState[key] = data[key];
+      }
+    }
+  }
+
+  if (data && enemyState != {}) {
+    for (let key in enemyState) {
+      let objects = enemyState[key];
+
+      // Verifica se 'objects' é um array
+      if (Array.isArray(objects)) {
+        objects.forEach((object) => {
+          if (object?.querySelector && object?.querySelectorMirror) {
+            let content =
+              object.content != ""
+                ? object.content
+                : object.innerHTML
+                ? object.innerHTML
+                : "";
+
+            if (object.gamerId == gamerId) {
+              document.querySelector(object.querySelector).innerHTML = content;
+            } else {
+              document.querySelector(object.querySelectorMirror).innerHTML =
+                content;
+            }
+          }
+        });
+      } else {
+        // Trata 'objects' como um único objeto
+        let content =
+          objects.content != ""
+            ? objects.content
+            : objects.innerHTML
+            ? objects.innerHTML
+            : "";
+
+        if (objects?.querySelector && objects?.querySelectorMirror) {
+          if (objects.gamerId == gamerId) {
+            document.querySelector(objects.querySelector).innerHTML = content;
+          } else {
+            document.querySelector(objects.querySelectorMirror).innerHTML =
+              content;
+          }
+        }
+      }
+    }
+  }
+
+  updateBoxIcons();
+}
+
+setRoomIDAndPlayerID();
