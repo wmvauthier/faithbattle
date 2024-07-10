@@ -232,7 +232,6 @@ function addKnown() {
   for (const knownZoneBox of knownZoneBoxesPlayer2) {
     if (!knownZoneBox.querySelector("div.image")) {
       const newDiv = createKnownCardElement();
-      console.log(newDiv);
       knownZoneBox.innerHTML = "";
       knownZoneBox.appendChild(newDiv);
       // knownZoneBox.classList.add("inactiveKnown");
@@ -724,4 +723,6 @@ window.onload = () => {
   setTimeout(renderBattlefield, 1000); // 5000 milissegundos = 5 segundos
   setTimeout(renderBattlefield, 2000); // 5000 milissegundos = 5 segundos
   setTimeout(renderBattlefield, 3000); // 5000 milissegundos = 5 segundos
+  setTimeout(addKnown, 3000); // 5000 milissegundos = 5 segundos
+  setTimeout(removeKnown, 3001); // 5000 milissegundos = 5 segundos
 };
