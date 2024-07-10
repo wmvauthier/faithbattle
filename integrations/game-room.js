@@ -718,5 +718,10 @@ shuffleDeck();
 renderBattlefield();
 
 window.onload = () => {
+  setTimeout(renderBattlefield, 150); // 5000 milissegundos = 5 segundos
+  setTimeout(renderBattlefield, 250); // 5000 milissegundos = 5 segundos
+  setTimeout(renderBattlefield, 500); // 5000 milissegundos = 5 segundos
+  setTimeout(renderBattlefield, 1000); // 5000 milissegundos = 5 segundos
+  setTimeout(renderBattlefield, 2000); // 5000 milissegundos = 5 segundos
   setTimeout(renderBattlefield, 3000); // 5000 milissegundos = 5 segundos
 };
