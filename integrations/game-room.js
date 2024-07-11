@@ -621,8 +621,174 @@ function sendBoard() {
     {
       selector: "#combatZoneP2e10",
       mirrorSelector: "#combatZoneP1e1",
-    }
+    },
 
+    // EXTRA
+
+    {
+      selector: "#extraZoneP2e1",
+      mirrorSelector: "#extraZoneP1e1",
+    },
+    {
+      selector: "#extraZoneP2e2",
+      mirrorSelector: "#extraZoneP1e2",
+    },
+    {
+      selector: "#extraZoneP2e3",
+      mirrorSelector: "#extraZoneP1e3",
+    },
+    {
+      selector: "#extraZoneP2e4",
+      mirrorSelector: "#extraZoneP1e4",
+    },
+    {
+      selector: "#extraZoneP2e5",
+      mirrorSelector: "#extraZoneP1e5",
+    },
+    {
+      selector: "#extraZoneP2e6",
+      mirrorSelector: "#extraZoneP1e6",
+    },
+    {
+      selector: "#extraZoneP2e7",
+      mirrorSelector: "#extraZoneP1e7",
+    },
+    {
+      selector: "#extraZoneP2e8",
+      mirrorSelector: "#extraZoneP1e8",
+    },
+    {
+      selector: "#extraZoneP2e9",
+      mirrorSelector: "#extraZoneP1e9",
+    },
+    {
+      selector: "#extraZoneP2e10",
+      mirrorSelector: "#extraZoneP1e10",
+    },
+
+    // GRAVEYARD
+
+    {
+      selector: "#graveyardZoneP2e1",
+      mirrorSelector: "#graveyardZoneP1e1",
+    },
+    {
+      selector: "#graveyardZoneP2e2",
+      mirrorSelector: "#graveyardZoneP1e2",
+    },
+    {
+      selector: "#graveyardZoneP2e3",
+      mirrorSelector: "#graveyardZoneP1e3",
+    },
+    {
+      selector: "#graveyardZoneP2e4",
+      mirrorSelector: "#graveyardZoneP1e4",
+    },
+    {
+      selector: "#graveyardZoneP2e5",
+      mirrorSelector: "#graveyardZoneP1e5",
+    },
+    {
+      selector: "#graveyardZoneP2e6",
+      mirrorSelector: "#graveyardZoneP1e6",
+    },
+    {
+      selector: "#graveyardZoneP2e7",
+      mirrorSelector: "#graveyardZoneP1e7",
+    },
+    {
+      selector: "#graveyardZoneP2e8",
+      mirrorSelector: "#graveyardZoneP1e8",
+    },
+    {
+      selector: "#graveyardZoneP2e9",
+      mirrorSelector: "#graveyardZoneP1e9",
+    },
+    {
+      selector: "#graveyardZoneP2e10",
+      mirrorSelector: "#graveyardZoneP1e10",
+    },
+    {
+      selector: "#graveyardZoneP2e11",
+      mirrorSelector: "#graveyardZoneP1e11",
+    },
+    {
+      selector: "#graveyardZoneP2e12",
+      mirrorSelector: "#graveyardZoneP1e12",
+    },
+    {
+      selector: "#graveyardZoneP2e13",
+      mirrorSelector: "#graveyardZoneP1e13",
+    },
+    {
+      selector: "#graveyardZoneP2e14",
+      mirrorSelector: "#graveyardZoneP1e14",
+    },
+    {
+      selector: "#graveyardZoneP2e15",
+      mirrorSelector: "#graveyardZoneP1e15",
+    },
+    {
+      selector: "#graveyardZoneP2e16",
+      mirrorSelector: "#graveyardZoneP1e16",
+    },
+    {
+      selector: "#graveyardZoneP2e17",
+      mirrorSelector: "#graveyardZoneP1e17",
+    },
+    {
+      selector: "#graveyardZoneP2e18",
+      mirrorSelector: "#graveyardZoneP1e18",
+    },
+    {
+      selector: "#graveyardZoneP2e19",
+      mirrorSelector: "#graveyardZoneP1e19",
+    },
+    {
+      selector: "#graveyardZoneP2e20",
+      mirrorSelector: "#graveyardZoneP1e20",
+    },
+    {
+      selector: "#graveyardZoneP2e21",
+      mirrorSelector: "#graveyardZoneP1e21",
+    },
+    {
+      selector: "#graveyardZoneP2e22",
+      mirrorSelector: "#graveyardZoneP1e22",
+    },
+    {
+      selector: "#graveyardZoneP2e23",
+      mirrorSelector: "#graveyardZoneP1e23",
+    },
+    {
+      selector: "#graveyardZoneP2e24",
+      mirrorSelector: "#graveyardZoneP1e24",
+    },
+    {
+      selector: "#graveyardZoneP2e25",
+      mirrorSelector: "#graveyardZoneP1e25",
+    },
+    {
+      selector: "#graveyardZoneP2e26",
+      mirrorSelector: "#graveyardZoneP1e26",
+    },
+    {
+      selector: "#graveyardZoneP2e27",
+      mirrorSelector: "#graveyardZoneP1e27",
+    },
+    {
+      selector: "#graveyardZoneP2e28",
+      mirrorSelector: "#graveyardZoneP1e28",
+    },
+    {
+      selector: "#graveyardZoneP2e29",
+      mirrorSelector: "#graveyardZoneP1e29",
+    },
+    {
+      selector: "#graveyardZoneP2e30",
+      mirrorSelector: "#graveyardZoneP1e30",
+    }
+    
   ];
 
   const boardState = selectors.map(({ selector, mirrorSelector }) => {
