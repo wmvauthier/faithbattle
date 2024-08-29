@@ -201,7 +201,7 @@
     },
     {
         "number": "5",
-        "name": "Deck do Will",
+        "name": "Batedores de Jericó",
         "img": "img/lendarias/53.png",
         "style": "Tempo",
         "format": "Standard",
@@ -244,13 +244,7 @@
             25
         ],
         "extra": [],
-        "sideboard": [
-            51,
-            14,
-            16,
-            24,
-            26
-        ],
+        "sideboard": [],
         "sabedorias": 10
     }
 ]

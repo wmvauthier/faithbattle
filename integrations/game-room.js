@@ -80,7 +80,8 @@ let cardsFromDeck = [];
 //VARIÁVEIS SOCKET
 
 const host = window.location.hostname;
-const socketUrl = host === "localhost" ? "ws://localhost:80" : "wss://faithbattle-api.adaptable.app";
+// const socketUrl = "wss://faithbattle-api.adaptable.app";
+const socketUrl =  "ws://localhost:8080";
 const socket = new WebSocket(socketUrl);
 
 socket.onopen = () => {
@@ -90,7 +91,7 @@ socket.onopen = () => {
 
 socket.onmessage = (event) => {
   const data = JSON.parse(event.data);
-
+  console.log(data);
   if (data.boardState) {
     updateBoard(data.boardState, data.type === "move");
   }
@@ -789,8 +790,7 @@ function sendBoard() {
     {
       selector: "#graveyardZoneP2e30",
       mirrorSelector: "#graveyardZoneP1e30",
-    }
-
+    },
   ];
 
   const boardState = selectors.map(({ selector, mirrorSelector }) => {

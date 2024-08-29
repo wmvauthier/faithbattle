@@ -337,7 +337,7 @@ async function autoGenerateHand(isMulligan) {
 }
 
 async function generateTypeSuggestions(rerun) {
-  const suggestionNumbers = suggestions.map((obj) => obj.idcard);
+  const suggestionNumbers = allCards.map((obj) => obj.number);
 
   let cardList = await getCardsFromDeck(suggestionNumbers, allCards);
   let tipos = cardList.flatMap((obj) => obj.type.split(";"));
@@ -371,7 +371,7 @@ async function generateTypeSuggestions(rerun) {
 }
 
 async function generateCostSuggestions(rerun) {
-  const suggestionNumbers = suggestions.map((obj) => obj.idcard);
+  const suggestionNumbers = allCards.map((obj) => obj.number);
 
   let cardList = await getCardsFromDeck(suggestionNumbers, allCards);
   let custos = cardList.flatMap((obj) => obj.cost).sort((a, b) => a - b);
@@ -403,7 +403,8 @@ async function generateCostSuggestions(rerun) {
 }
 
 async function generateCategorySuggestions(rerun) {
-  const suggestionNumbers = suggestions.map((obj) => obj.idcard);
+
+  const suggestionNumbers = allCards.map((obj) => obj.number);
 
   let cardList = await getCardsFromDeck(suggestionNumbers, allCards);
   let categorias = cardList.flatMap((obj) => obj.categories.split(";"));
