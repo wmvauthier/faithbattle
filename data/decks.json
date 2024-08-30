@@ -3,6 +3,7 @@
         "number": "1",
         "name": "Armadura de Deus",
         "img": "img/artefatos/23.png",
+        "archetype": "Midrange",
         "style": "Combo",
         "format": "Standard",
         "keywords": "Controle;Combo;Proteção;Artefato",
@@ -48,12 +49,20 @@
             21,
             3
         ],
+        "topcards": [
+            49,
+            27,
+            14,
+            21,
+            3
+        ],
         "sabedorias": 10
     },
     {
         "number": "2",
         "name": "Exator de Fé",
         "img": "img/milagres/20.png",
+        "archetype": "Midrange",
         "style": "Aggro",
         "format": "Standard",
         "keywords": "Proteção;Combo",
@@ -91,12 +100,20 @@
         ],
         "extra": [],
         "sideboard": [],
+        "topcards": [
+            49,
+            27,
+            14,
+            21,
+            3
+        ],
         "sabedorias": 10
     },
     {
         "number": "3",
         "name": "Bombardeio Celestial",
-        "img": "img/lendarias/52.png",
+        "img": "img/milagres/14.png",
+        "archetype": "Midrange",
         "style": "Midrange",
         "format": "Standard",
         "keywords": "Proteção;Combo",
@@ -145,12 +162,20 @@
             6,
             23
         ],
+        "topcards": [
+            49,
+            27,
+            14,
+            21,
+            3
+        ],
         "sabedorias": 10
     },
     {
         "number": "4",
         "name": "Power Trio",
         "img": "img/lendarias/53.png",
+        "archetype": "Midrange",
         "style": "Tempo",
         "format": "Standard",
         "keywords": "Proteção;Combo",
@@ -197,12 +222,20 @@
             29,
             45
         ],
+        "topcards": [
+            49,
+            27,
+            14,
+            21,
+            3
+        ],
         "sabedorias": 10
     },
     {
         "number": "5",
         "name": "Batedores de Jericó",
         "img": "img/lendarias/53.png",
+        "archetype": "Midrange",
         "style": "Tempo",
         "format": "Standard",
         "keywords": "Proteção;Combo",
@@ -245,6 +278,13 @@
         ],
         "extra": [],
         "sideboard": [],
+        "topcards": [
+            49,
+            27,
+            14,
+            21,
+            3
+        ],
         "sabedorias": 10
     }
 ]

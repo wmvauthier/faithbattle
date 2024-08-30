@@ -37,17 +37,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         tag_deckResistence: info.averageResistance.toFixed(2),
 
         tag_deckQtdHero:
-          info.heroCount > 0
-            ? info.heroCount
-            : info.comparison.hero.count,
+          info.heroCount > 0 ? info.heroCount : info.comparison.hero.count,
         tag_deckQtdMiracle:
           info.miracleCount > 0
             ? info.miracleCount
             : info.comparison.miracle.count,
         tag_deckQtdSin:
-          info.sinCount > 0
-            ? info.sinCount
-            : info.comparison.sin.count,
+          info.sinCount > 0 ? info.sinCount : info.comparison.sin.count,
         tag_deckQtdArtifact:
           info.artifactCount > 0
             ? info.artifactCount
@@ -123,7 +119,6 @@ document.addEventListener("DOMContentLoaded", async function () {
               element.style.color = "red";
             }
           }
-          
         }
       }
 
@@ -140,11 +135,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         "categoriesContainer"
       );
 
+      updateCardListDOM(cardsFromDeck);
       updateDeckListDOM(cardsFromDeck);
       updateMiniCards(allCards, selectedDeck.extra, "#extraDeckList");
       updateMiniCards(allCards, selectedDeck.sideboard, "#sideboardList");
 
-      renderGraph(cardsFromDeck);
+      // renderGraph(cardsFromDeck);
     } else {
       location.href = "./deck-list.html";
     }
@@ -170,7 +166,7 @@ function generateCategoryItems(categoriesCount, averages, id) {
     } else if (comparison == "lower") {
       input.classList.add("red");
     }
-    
+
     input.setAttribute(
       "style",
       "font-size: 1rem !important; margin-right: 0px !important; margin-bottom: 0px !important;"
@@ -191,8 +187,8 @@ function generateCategoryItems(categoriesCount, averages, id) {
   });
 }
 
-function updateDeckListDOM(cardsFromDeck) {
-  const deckListContainer = document.querySelector("#deckList");
+function updateCardListDOM(cardsFromDeck) {
+  const deckListContainer = document.querySelector("#deckCards");
   if (!deckListContainer) return;
 
   deckListContainer.innerHTML = "";
@@ -200,7 +196,7 @@ function updateDeckListDOM(cardsFromDeck) {
   cardsFromDeck.forEach((card) => {
     const cardElement = document.createElement("div");
     cardElement.className =
-      "col-lg-1 col-md-1 col-sm-2 col-xs-2 card__related__sidebar__view__item set-bg";
+      "col-lg-2 col-md-2 col-sm-2 col-xs-2 card__related__sidebar__view__item set-bg";
     cardElement.style.cursor = "pointer";
     cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
@@ -212,6 +208,67 @@ function updateDeckListDOM(cardsFromDeck) {
 
     deckListContainer.appendChild(cardElement);
   });
+}
+
+function updateDeckListDOM(cardsFromDeck) {
+
+  const deckListContainer = document.querySelector("#deckList");
+  if (!deckListContainer) return;
+
+  const result = removeDuplicatesAndCount(cardsFromDeck);
+  deckListContainer.innerHTML = "";
+
+  // Cria a tabela
+  const table = document.createElement("table");
+  table.style.width = "100%";
+  table.style.borderCollapse = "collapse";
+  table.style.color = "white"; // Define o texto da tabela para branco
+
+  // Cria o cabeçalho da tabela
+  const thead = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  // Cria o corpo da tabela
+  const tbody = document.createElement("tbody");
+
+  result.forEach((card) => {
+
+    const row = document.createElement("tr");
+
+    const countCell = document.createElement("td");
+    countCell.textContent = card.count + "x";
+    countCell.style.border = "1px solid black";
+    countCell.style.padding = "8px";
+    countCell.style.border = "none"; // Remove a borda
+    countCell.style.padding = "0"; // Remove a borda
+
+    const nameCell = document.createElement("td");
+    nameCell.textContent = card.name;
+    nameCell.style.border = "1px solid black";
+    nameCell.style.padding = "8px";
+    nameCell.style.border = "none"; // Remove a borda
+    nameCell.style.padding = "0"; // Remove a borda
+
+    const valueCell = document.createElement("td");
+    valueCell.textContent = String.fromCharCode(10121 + card.cost);
+    valueCell.style.border = "1px solid black";
+    valueCell.style.padding = "8px";
+    valueCell.style.border = "none"; // Remove a borda
+    valueCell.style.padding = "0"; // Remove a borda
+
+    row.appendChild(countCell);
+    row.appendChild(nameCell);
+    row.appendChild(valueCell);
+    tbody.appendChild(row);
+
+  });
+
+  table.appendChild(tbody);
+  deckListContainer.appendChild(table);
+
 }
 
 function updateMiniCards(allCards, cardsList, id) {
@@ -242,44 +299,61 @@ function updateMiniCards(allCards, cardsList, id) {
   });
 }
 
-function renderGraph(cardsFromDeck) {
-  // Dados do gráfico
-  const data = generateData(cardsFromDeck);
+function removeDuplicatesAndCount(arr) {
+  const map = new Map();
 
-  // Configurações do gráfico
-  const options = {
-    scales: {
-      xAxes: [
-        {
-          ticks: {
-            beginAtZero: true, // Começar o eixo X a partir do zero
-          },
-          scaleLabel: {
-            display: true,
-            labelString: "Custo", // Rótulo do eixo X
-          },
-        },
-      ],
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true, // Começar o eixo Y a partir do zero
-            stepSize: 30, // Incremento do eixo Y
-          },
-          scaleLabel: {
-            display: true,
-            labelString: "Quantidade de Cartas", // Rótulo do eixo Y
-          },
-        },
-      ],
-    },
-  };
-
-  // Criação do gráfico
-  const ctx = document.getElementById("myChart").getContext("2d");
-  const myChart = new Chart(ctx, {
-    type: "bar", // Tipo de gráfico (barra)
-    data: data, // Dados do gráfico
-    options: options, // Configurações do gráfico
+  arr.forEach((obj) => {
+    if (map.has(obj.number)) {
+      // Incrementa a contagem se o objeto já estiver no map
+      map.get(obj.number).count++;
+    } else {
+      // Insere o objeto com count = 1 se for a primeira vez
+      map.set(obj.number, { ...obj, count: 1 });
+    }
   });
+
+  // Converte o map de volta para um array
+  return Array.from(map.values());
 }
+
+// function renderGraph(cardsFromDeck) {
+//   // Dados do gráfico
+//   const data = generateData(cardsFromDeck);
+
+//   // Configurações do gráfico
+//   const options = {
+//     scales: {
+//       xAxes: [
+//         {
+//           ticks: {
+//             beginAtZero: true, // Começar o eixo X a partir do zero
+//           },
+//           scaleLabel: {
+//             display: true,
+//             labelString: "Custo", // Rótulo do eixo X
+//           },
+//         },
+//       ],
+//       yAxes: [
+//         {
+//           ticks: {
+//             beginAtZero: true, // Começar o eixo Y a partir do zero
+//             stepSize: 30, // Incremento do eixo Y
+//           },
+//           scaleLabel: {
+//             display: true,
+//             labelString: "Quantidade de Cartas", // Rótulo do eixo Y
+//           },
+//         },
+//       ],
+//     },
+//   };
+
+//   // Criação do gráfico
+//   // const ctx = document.getElementById("myChart").getContext("2d");
+//   // const myChart = new Chart(ctx, {
+//   //   type: "bar", // Tipo de gráfico (barra)
+//   //   data: data, // Dados do gráfico
+//   //   options: options, // Configurações do gráfico
+//   // });
+// }
