@@ -6,14 +6,21 @@ const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
 
 const WEIGHT_LEGENDARY = 100000;
+// const WEIGHT_LEGENDARY = 0;
 const WEIGHT_SAME = 5000;
-const WEIGHT_NAME = 1000;
-const WEIGHT_TEXT = 60;
-const WEIGHT_TYPE = 10;
-const WEIGHT_EFFECT = 10;
-const WEIGHT_CATEGORY = 30;
-const WEIGHT_OCURRENCY_DECK = 50;
-const WEIGHT_OCURRENCY_EXTRA = 50;
+// const WEIGHT_SAME = 0;
+// const WEIGHT_NAME = 1000;
+const WEIGHT_NAME = 0;
+// const WEIGHT_TEXT = 60;
+const WEIGHT_TEXT = 0;
+// const WEIGHT_TYPE = 10;
+const WEIGHT_TYPE = 0;
+// const WEIGHT_EFFECT = 10;
+const WEIGHT_EFFECT = 0;
+// const WEIGHT_CATEGORY = 30;
+const WEIGHT_CATEGORY = 0;
+const WEIGHT_OCURRENCY_DECK = 200;
+const WEIGHT_OCURRENCY_EXTRA = 200;
 const WEIGHT_OCURRENCY_SIDEBOARD = 30;
 
 const excludedWords = [
@@ -150,8 +157,8 @@ const excludedWords = [
   "outros",
 ];
 
-const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
-// const CACHE_DURATION = 1000; // 24 horas
+// const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horask
+const CACHE_DURATION = 1000; // 24 horas
 
 function getCardDetails(cardNumber) {
   localStorage.setItem("idSelectedCard", cardNumber);
@@ -311,7 +318,6 @@ async function getRelatedCardsInDecks(cardId, decks, isDeckBuilder) {
     });
 
     if (!isDeckBuilder || card.type != "Pecado") {
-
       selectedCardWords.nameWords.forEach((word) => {
         if (textWords.includes(word)) {
           addCardWithWeight(card.number, WEIGHT_NAME);
@@ -320,7 +326,6 @@ async function getRelatedCardsInDecks(cardId, decks, isDeckBuilder) {
         }
       });
     }
-
   };
 
   allCards.forEach((card) => {
@@ -389,10 +394,10 @@ async function getRelatedCardsInDecks(cardId, decks, isDeckBuilder) {
 
     allCardIds.forEach((id) => {
       const weight = deck.cards.includes(id)
-        ? WEIGHT_OCURRENCY_DECK
+        ? WEIGHT_OCURRENCY_DECK / decks.length
         : deck.extra.includes(id)
-        ? WEIGHT_OCURRENCY_EXTRA
-        : WEIGHT_OCURRENCY_SIDEBOARD;
+        ? WEIGHT_OCURRENCY_EXTRA / decks.length
+        : WEIGHT_OCURRENCY_SIDEBOARD / decks.length;
       addCardWithWeight(id, weight);
     });
   });

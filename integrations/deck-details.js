@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const analysisAverages = await analyzeDecks(decks);
       let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
       let info = await analyzeCards(cardsFromDeck, analysisAverages);
+      const cardsFromDeckWithExtra = selectedDeck.cards.concat(selectedDeck.extra); // Concatenando todas as listas de cards
 
       // console.log(info);
 
@@ -211,12 +212,14 @@ function updateCardListDOM(cardsFromDeck) {
 }
 
 function updateDeckListDOM(cardsFromDeck) {
-
   const deckListContainer = document.querySelector("#deckList");
   if (!deckListContainer) return;
 
   const result = removeDuplicatesAndCount(cardsFromDeck);
   deckListContainer.innerHTML = "";
+
+  console.log(cardsFromDeck);
+  console.log(result);
 
   // Cria a tabela
   const table = document.createElement("table");
@@ -235,7 +238,6 @@ function updateDeckListDOM(cardsFromDeck) {
   const tbody = document.createElement("tbody");
 
   result.forEach((card) => {
-
     const row = document.createElement("tr");
 
     const countCell = document.createElement("td");
@@ -263,12 +265,10 @@ function updateDeckListDOM(cardsFromDeck) {
     row.appendChild(nameCell);
     row.appendChild(valueCell);
     tbody.appendChild(row);
-
   });
 
   table.appendChild(tbody);
   deckListContainer.appendChild(table);
-
 }
 
 function updateMiniCards(allCards, cardsList, id) {

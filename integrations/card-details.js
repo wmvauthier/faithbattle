@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         similarCards.map((card) => card.idcard)
       );
 
+      console.log(similarCards);
+
       const elementsToUpdate = {
         tag_cardName: card.name,
         tag_cardFlavor: card.flavor,

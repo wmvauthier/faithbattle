@@ -42,6 +42,8 @@ async function renderPage(page) {
       deck.topcards.includes(obj.number)
     );
 
+    console.log(filteredObjects);
+
     const row = document.createElement("div");
     row.innerHTML = `
       <div class="tile">
@@ -79,7 +81,7 @@ async function renderPage(page) {
                             style="width: 100%; height: 100%; transform: scale(1.5); object-fit: cover; position: absolute; top: 20%; left: 0;">
                       </div>
                       <div class="banner-img col-2" style="width: 100%; height: 40px; overflow: hidden; position: relative;">
-                        <img src="${filteredObjects[4]?.img}" alt="Image 1"
+                        <img src="${filteredObjects[5]?.img}" alt="Image 1"
                             style="width: 100%; height: 100%; transform: scale(1.5); object-fit: cover; position: absolute; top: 20%; left: 0;">
                       </div>
                   </div>

@@ -286,5 +286,60 @@
             3
         ],
         "sabedorias": 10
+    },
+    {
+        "number": "6",
+        "name": "Miracles",
+        "img": "img/lendarias/52.png",
+        "archetype": "Midrange",
+        "style": "Tempo",
+        "format": "Standard",
+        "keywords": "Proteção;Combo",
+        "cards": [
+            1,
+            5,
+            5,
+            8,
+            9,
+            12,
+            12,
+            47,
+            47,
+            13,
+            13,
+            14,
+            14,
+            17,
+            17,
+            18,
+            18,
+            19,
+            19,
+            20,
+            20,
+            21,
+            29,
+            29,
+            42,
+            42,
+            48,
+            48,
+            25,
+            25,
+            30
+        ],
+        "extra": [
+            52
+        ],
+        "sideboard": [],
+        "topcards": [
+            1,
+            25,
+            8,
+            48,
+            18,
+            19
+        ],
+        "sabedorias": 10
     }
 ]
