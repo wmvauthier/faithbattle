@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   generateStarsFilter(uniqueStars, "ASC");
   generateYearFilter(uniqueYears, "DESC");
-  generateSelectFilterByProperty(cards, "artist", "Artista", "Artista");
+  // generateSelectFilterByProperty(cards, "artist", "Artista", "Artista");
 
   renderCards(cards);
 });

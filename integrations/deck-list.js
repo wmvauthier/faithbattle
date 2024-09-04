@@ -1,4 +1,4 @@
-const CARDS_PER_PAGE = 4; // Número de cards por página
+const CARDS_PER_PAGE = 16; // Número de cards por página
 let currentPage = 1; // Página atual
 let decks = []; // Lista de todos os decks
 let cards = []; // Lista de todos os decks
@@ -42,7 +42,7 @@ async function renderPage(page) {
       deck.topcards.includes(obj.number)
     );
 
-    console.log(filteredObjects);
+    // console.log(filteredObjects);
 
     const row = document.createElement("div");
     row.innerHTML = `
@@ -97,11 +97,11 @@ async function renderPage(page) {
               <div class="stats" style="padding-top:0px;">
 
                   <div style="width:50%;">
-                      <strong>ARQUÉTIPO</strong> ${deck.archetype.toUpperCase()}
+                      <strong>ESTILO</strong> ${deck.style.toUpperCase()}
                   </div>
 
                   <div style="width:50%;">
-                      <strong>ESTILO</strong> ${deck.style.toUpperCase()}
+                      <strong>ARQUÉTIPO</strong> ${deck.archetype.toUpperCase()}
                   </div>
 
               </div>

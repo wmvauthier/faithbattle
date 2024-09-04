@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         tag_deckStyle: selectedDeck.style,
         tag_deckFormat: selectedDeck.format,
         tag_deckCategory: getKeyWithMaxAbsoluteValue(info.categoriesCount),
-        tag_deckEffect: getKeyWithMaxAbsoluteValue(info.effectsCount),
+        tag_deckEffect: selectedDeck.archetype,
 
         tag_deckSize: `${selectedDeck.cards.length} `,
         tag_deckSizeExtra: selectedDeck.extra.length,
@@ -218,8 +218,8 @@ function updateDeckListDOM(cardsFromDeck) {
   const result = removeDuplicatesAndCount(cardsFromDeck);
   deckListContainer.innerHTML = "";
 
-  console.log(cardsFromDeck);
-  console.log(result);
+  // console.log(cardsFromDeck);
+  // console.log(result);
 
   // Cria a tabela
   const table = document.createElement("table");

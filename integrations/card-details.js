@@ -12,7 +12,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (card) {
       cards = data;
       let decks = await getDecks();
-      let similarCards = await getRelatedCardsInDecks(card.number, decks, false);
+      let similarCards = await getRelatedCardsInDecks(
+        card.number,
+        decks,
+        false,
+        null,
+        null
+      );
       similarCards = similarCards.slice(0, 12);
       let relatedDecks = getRelatedDecks(similarCards, decks);
 
@@ -127,7 +133,6 @@ function updateRelatedDecks(relatedDecks) {
     deckElement.style.cursor = "pointer";
     deckElement.addEventListener("click", () => getDeckDetails(deck.number));
     relatedDecksContainer.appendChild(deckElement);
-
   });
 }
 

@@ -7,7 +7,7 @@ const URL_LEGENDARIES_JSON = "data/legendary.json";
 
 const WEIGHT_LEGENDARY = 100000;
 // const WEIGHT_LEGENDARY = 0;
-const WEIGHT_SAME = 5000;
+const WEIGHT_SAME = 1000;
 // const WEIGHT_SAME = 0;
 // const WEIGHT_NAME = 1000;
 const WEIGHT_NAME = 0;
@@ -22,6 +22,9 @@ const WEIGHT_CATEGORY = 0;
 const WEIGHT_OCURRENCY_DECK = 200;
 const WEIGHT_OCURRENCY_EXTRA = 200;
 const WEIGHT_OCURRENCY_SIDEBOARD = 30;
+
+const WEIGHT_DECK_STYLE = 3;
+const WEIGHT_DECK_ARCHETYPE = 3;
 
 const excludedWords = [
   "zona",
@@ -177,8 +180,8 @@ async function fetchJSON(url) {
       throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
     return await response.json();
   } catch (error) {
-    console.error(url);
-    console.error(error);
+    // console.error(url);
+    // console.error(error);
     return [];
   }
 }
@@ -275,7 +278,13 @@ function getOccurrencesInDecks(cardId, decks) {
   }, 0);
 }
 
-async function getRelatedCardsInDecks(cardId, decks, isDeckBuilder) {
+async function getRelatedCardsInDecks(
+  cardId,
+  decks,
+  isDeckBuilder,
+  selectedStyle,
+  selectedArchetype
+) {
   const allCards = await getCards();
   const selectedCard = allCards.find((card) => card.number == cardId);
 
@@ -283,7 +292,10 @@ async function getRelatedCardsInDecks(cardId, decks, isDeckBuilder) {
 
   const addCardWithWeight = (id, weight) => {
     if (id !== cardId) {
-      relatedCardsMap.set(id, (relatedCardsMap.get(id) || 0) + weight);
+      relatedCardsMap.set(
+        id,
+        (relatedCardsMap.get(id) || 0) + Math.round(weight)
+      );
     }
   };
 
@@ -393,11 +405,26 @@ async function getRelatedCardsInDecks(cardId, decks, isDeckBuilder) {
     const allCardIds = [...deck.cards, ...deck.extra, ...deck.sideboard];
 
     allCardIds.forEach((id) => {
-      const weight = deck.cards.includes(id)
+      let weight = deck.cards.includes(id)
         ? WEIGHT_OCURRENCY_DECK / decks.length
         : deck.extra.includes(id)
         ? WEIGHT_OCURRENCY_EXTRA / decks.length
         : WEIGHT_OCURRENCY_SIDEBOARD / decks.length;
+
+      // console.log(selectedStyle);
+      // console.log(selectedArchetype);
+
+      if (selectedStyle && deck.style == selectedStyle) {
+        weight = weight * WEIGHT_DECK_STYLE;
+      }
+
+      if (selectedArchetype && deck.archetype == selectedArchetype) {
+        weight = weight * WEIGHT_DECK_ARCHETYPE;
+      }
+
+      // console.log(selectedStyle);
+      // console.log(selectedArchetype);
+
       addCardWithWeight(id, weight);
     });
   });
