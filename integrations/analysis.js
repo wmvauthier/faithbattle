@@ -341,10 +341,10 @@ async function analyzeDecks(decks) {
 
   totalResult.averageCategories = Object.entries(
     totalResult.categoriesCount
-  ).map(([name, count]) => ({ name, media: count / totalResult.totalDecks }));
+  ).map(([name, count]) => ({ name, media: Math.round(count / totalResult.totalDecks) }));
 
   totalResult.averageEffects = Object.entries(totalResult.effectsCount).map(
-    ([name, count]) => ({ name, media: count / totalResult.totalDecks })
+    ([name, count]) => ({ name, media: Math.round(count / totalResult.totalDecks) })
   );
 
   delete totalResult.totalDecks;

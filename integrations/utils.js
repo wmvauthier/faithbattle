@@ -14,11 +14,11 @@ const WEIGHT_NAME = 0;
 // const WEIGHT_TEXT = 60;
 const WEIGHT_TEXT = 0;
 // const WEIGHT_TYPE = 10;
-const WEIGHT_TYPE = 0;
+const WEIGHT_TYPE = 10;
 // const WEIGHT_EFFECT = 10;
 const WEIGHT_EFFECT = 0;
 // const WEIGHT_CATEGORY = 100;
-const WEIGHT_CATEGORY = 0;
+const WEIGHT_CATEGORY = 200;
 const WEIGHT_OCURRENCY_DECK = 200;
 const WEIGHT_OCURRENCY_EXTRA = 200;
 const WEIGHT_OCURRENCY_SIDEBOARD = 200;
@@ -393,15 +393,21 @@ async function getRelatedCardsInDecks(
         }
       });
 
+      let weightCategory = WEIGHT_CATEGORY;
+      if (!isDeckBuilder) {
+        WEIGHT_CATEGORY = WEIGHT_CATEGORY * 2;
+      }
+
       selectedCardcategories.forEach((selectedCategory) => {
         if (categories.includes(selectedCategory)) {
-          addCardWithWeight(card.number, WEIGHT_CATEGORY);
+          addCardWithWeight(card.number, weightCategory);
         }
       });
+
     }
   });
 
-  decks = decks.filter(item => item.active !== false);
+  decks = decks.filter((item) => item.active !== false);
 
   decks.forEach((deck) => {
     const allCardIds = [...deck.cards, ...deck.extra, ...deck.sideboard];
