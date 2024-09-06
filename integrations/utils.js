@@ -17,14 +17,14 @@ const WEIGHT_TEXT = 0;
 const WEIGHT_TYPE = 0;
 // const WEIGHT_EFFECT = 10;
 const WEIGHT_EFFECT = 0;
-// const WEIGHT_CATEGORY = 30;
+// const WEIGHT_CATEGORY = 100;
 const WEIGHT_CATEGORY = 0;
 const WEIGHT_OCURRENCY_DECK = 200;
 const WEIGHT_OCURRENCY_EXTRA = 200;
-const WEIGHT_OCURRENCY_SIDEBOARD = 50;
+const WEIGHT_OCURRENCY_SIDEBOARD = 200;
 
-const WEIGHT_DECK_STYLE = 4;
-const WEIGHT_DECK_ARCHETYPE = 4;
+const WEIGHT_DECK_STYLE = 2;
+const WEIGHT_DECK_ARCHETYPE = 100;
 
 const excludedWords = [
   "zona",
@@ -400,6 +400,8 @@ async function getRelatedCardsInDecks(
       });
     }
   });
+
+  decks = decks.filter(item => item.active !== false);
 
   decks.forEach((deck) => {
     const allCardIds = [...deck.cards, ...deck.extra, ...deck.sideboard];
