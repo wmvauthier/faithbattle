@@ -125,11 +125,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       // console.log("Aggro -> Tempo -> Control -> Combo -> Midrange");
 
-      generateCategoryItems(
-        info.effectsCount,
-        info.comparison.effects,
-        "effectsContainer"
-      );
+      // generateCategoryItems(
+      //   info.effectsCount,
+      //   info.comparison.effects,
+      //   "effectsContainer"
+      // );
       generateCategoryItems(
         info.categoriesCount,
         info.comparison.categories,
