@@ -1,6 +1,6 @@
 	       agressivo	equilibrado	controlador
-dano	   OK	OK	OK
+maravilha/prodígio	   OK	OK	OK
 combate	   OK	OK	OK
 fé	       OK	OK	OK
 combo	   ?	OK	OK
-supressão	OK	OK	OK
+supressão  OK	OK	OK

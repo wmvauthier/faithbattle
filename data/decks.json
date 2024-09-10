@@ -468,5 +468,62 @@
             98
         ],
         "sabedorias": 10
+    },
+    {
+        "number": "9",
+        "name": "Tempestade do Céu",
+        "img": "img/herois/3.png",
+        "style": "Equilibrado",
+        "archetype": "Combate",
+        "format": "Standard",
+        "keywords": "Proteção;Combo",
+        "active": true,
+        "cards": [
+            73,
+            73,
+            10,
+            5,
+            10,
+            61,
+            61,
+            28,
+            43,
+            44,
+            3,
+            3,
+            23,
+            14,
+            14,
+            99,
+            99,
+            77,
+            87,
+            72,
+            72,
+            19,
+            19,
+            48,
+            68,
+            68,
+            4,
+            64,
+            1,
+            59
+        ],
+        "extra": [
+            52
+        ],
+        "sideboard": [
+            60,8,7,42,29,17,13,27,88
+        ],
+        "topcards": [
+            61,
+            10,
+            4,
+            14,
+            77,
+            99
+        ],
+        "sabedorias": 10
     }
 ]

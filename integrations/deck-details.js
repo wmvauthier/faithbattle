@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (selectedDeck) {
       deck = selectedDeck;
 
-      const analysisAverages = await analyzeDecks(decks);
+      const analysisAverages = await analyzeDecks(decks, null, null);
       let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
       let info = await analyzeCards(cardsFromDeck, analysisAverages);
       const cardsFromDeckWithExtra = selectedDeck.cards.concat(selectedDeck.extra); // Concatenando todas as listas de cards

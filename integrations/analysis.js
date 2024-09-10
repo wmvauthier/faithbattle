@@ -224,8 +224,19 @@ function analyzeCards(cards, averages) {
   return result;
 }
 
-async function analyzeDecks(decks) {
+async function analyzeDecks(decks, selectedStyle, selectedArchetype) {
   let allCards = await getCards();
+
+  decks = decks.filter((deck) => {
+    let match = true;
+    if (selectedStyle) {
+      match = match && deck.style === selectedStyle;
+    }
+    if (selectedArchetype) {
+      match = match && deck.archetype === selectedArchetype;
+    }
+    return match;
+  });
 
   const totalResult = {
     totalDecks: decks.length,
@@ -337,14 +348,22 @@ async function analyzeDecks(decks) {
     totalResult.averageQtdMiracle /= totalResult.totalDecks;
     totalResult.averageQtdSin /= totalResult.totalDecks;
     totalResult.averageQtdArtifact /= totalResult.totalDecks;
+
+    totalResult.averageQtd = Math.round(totalResult.averageQtd);
   }
 
   totalResult.averageCategories = Object.entries(
     totalResult.categoriesCount
-  ).map(([name, count]) => ({ name, media: Math.round(count / totalResult.totalDecks) }));
+  ).map(([name, count]) => ({
+    name,
+    media: Math.round(count / totalResult.totalDecks),
+  }));
 
   totalResult.averageEffects = Object.entries(totalResult.effectsCount).map(
-    ([name, count]) => ({ name, media: Math.round(count / totalResult.totalDecks) })
+    ([name, count]) => ({
+      name,
+      media: Math.round(count / totalResult.totalDecks),
+    })
   );
 
   delete totalResult.totalDecks;
