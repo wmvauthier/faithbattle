@@ -303,8 +303,8 @@ async function tuningDeck() {
   );
 
   if (deck.cards.length > 0) {
-    // while (markerHasChanged == true && counterLoop < allCards.length) {
-      while (markerHasChanged == true && counterLoop < 5) {
+    while (markerHasChanged == true && counterLoop < allCards.length) {
+      // while (markerHasChanged == true && counterLoop < 5) {
       markerHasChanged = false;
 
       const filteredCategories = analysisAverages.averageCategories.filter(
@@ -364,7 +364,6 @@ async function tuningDeck() {
         addCardToDeckBuilder(suggestionNumbers[0]);
         markerHasChanged = true;
       } else if (deck.cards.length > analysisAverages.averageQtd) {
-
         await removeCardFromSpecifiedCategory(maiorCategoria);
         await wait(500);
 
@@ -380,8 +379,7 @@ async function tuningDeck() {
         });
         markerHasChanged = true;
       } else {
-
-        if(menorCategoria != null && maiorCategoria != null){
+        if (menorCategoria != null && maiorCategoria != null) {
           if (innexistentCategories.length > 0) {
             await addCardFromSpecifiedCategory(
               innexistentCategories[0],
@@ -389,7 +387,10 @@ async function tuningDeck() {
             );
             await removeCardFromSpecifiedCategory(maiorCategoria);
             markerHasChanged = true;
-          } else if (higherCategories.length > 0 && lowerCategories.length > 0) {
+          } else if (
+            higherCategories.length > 0 &&
+            lowerCategories.length > 0
+          ) {
             await addCardFromSpecifiedCategory(
               lowerCategories[0],
               suggestionNumbers
@@ -398,7 +399,6 @@ async function tuningDeck() {
             markerHasChanged = true;
           }
         }
-        
       }
 
       counterLoop++;
