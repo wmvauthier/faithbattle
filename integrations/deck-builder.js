@@ -294,8 +294,17 @@ async function tuningDeck() {
   let markerHasChanged = true;
   let counterLoop = 0;
 
+  let filteredDeck = deck.cards.filter((str) =>
+    legendaries.some((json) => json.number === str)
+  );
+
+  deck.cards = deck.cards.filter(
+    (str) => !legendaries.some((json) => json.number === str)
+  );
+
   if (deck.cards.length > 0) {
-    while (markerHasChanged == true && counterLoop < allCards.length) {
+    // while (markerHasChanged == true && counterLoop < allCards.length) {
+      while (markerHasChanged == true && counterLoop < 5) {
       markerHasChanged = false;
 
       const filteredCategories = analysisAverages.averageCategories.filter(
@@ -347,12 +356,15 @@ async function tuningDeck() {
       const suggestionNumbers = suggestions.map((obj) => obj.idcard);
 
       console.log(analysisAverages);
-      console.log(suggestionNumbers);
 
-      if (deck.cards.length < analysisAverages.averageQtd) {
-        // addCardToDeckBuilder(cardFromSuggestion.idcard);
+      if (
+        deck.cards.length < analysisAverages.averageQtd &&
+        suggestionNumbers.length > 0
+      ) {
+        addCardToDeckBuilder(suggestionNumbers[0]);
         markerHasChanged = true;
       } else if (deck.cards.length > analysisAverages.averageQtd) {
+
         await removeCardFromSpecifiedCategory(maiorCategoria);
         await wait(500);
 
@@ -368,27 +380,36 @@ async function tuningDeck() {
         });
         markerHasChanged = true;
       } else {
-        if (innexistentCategories.length > 0) {
-          await addCardFromSpecifiedCategory(
-            innexistentCategories[0],
-            suggestionNumbers
-          );
-          await removeCardFromSpecifiedCategory(maiorCategoria);
-          markerHasChanged = true;
-        } else if (higherCategories.length > 0 && lowerCategories.length > 0) {
-          await addCardFromSpecifiedCategory(
-            lowerCategories[0],
-            suggestionNumbers
-          );
-          await removeCardFromSpecifiedCategory(maiorCategoria);
-          markerHasChanged = true;
+
+        if(menorCategoria != null && maiorCategoria != null){
+          if (innexistentCategories.length > 0) {
+            await addCardFromSpecifiedCategory(
+              innexistentCategories[0],
+              suggestionNumbers
+            );
+            await removeCardFromSpecifiedCategory(maiorCategoria);
+            markerHasChanged = true;
+          } else if (higherCategories.length > 0 && lowerCategories.length > 0) {
+            await addCardFromSpecifiedCategory(
+              lowerCategories[0],
+              suggestionNumbers
+            );
+            await removeCardFromSpecifiedCategory(maiorCategoria);
+            markerHasChanged = true;
+          }
         }
+        
       }
 
       counterLoop++;
       await wait(500);
     }
   }
+
+  filteredDeck.forEach(async (card) => {
+    addCardToDeckBuilder(card);
+    await wait(1);
+  });
 }
 
 // ADICIONAR A MELHOR CARTA DE UMA CATEGORIA EM ESPECÍFICO
