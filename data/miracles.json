@@ -358,5 +358,23 @@
         "date": "2024-10-01",
         "artist": "Lucas Bird",
         "img": "img/milagres/99.png"
+    },
+    {
+        "name": "Oferta do Justo",
+        "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+        "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+        "stars": "5.0",
+        "type": "Milagre",
+        "subtype": "-",
+        "categories": "Draw;Ganho de Fé",
+        "cost": 1,
+        "strength": 0,
+        "resistence": 0,
+        "effects": "Alvo",
+        "number": 84,
+        "collection": "Gênesis",
+        "date": "2024-10-01",
+        "artist": "Lucas Bird",
+        "img": "img/milagres/84.png"
     }
 ]

@@ -303,7 +303,11 @@ async function tuningDeck() {
   );
 
   if (deck.cards.length > 0) {
-    while (markerHasChanged == true && counterLoop < allCards.length) {
+    while (
+      // deck.cards.length != analysisAverages.averageQtd &&
+      markerHasChanged == true &&
+      counterLoop < analysisAverages.averageQtd
+    ) {
       // while (markerHasChanged == true && counterLoop < 5) {
       markerHasChanged = false;
 
@@ -353,9 +357,11 @@ async function tuningDeck() {
         `Maior valor: ${maiorValor}, Categoria maior: ${maiorCategoria}`
       );
 
-      const suggestionNumbers = suggestions.map((obj) => obj.idcard);
+      let suggestionNumbers = suggestions.map((obj) => obj.idcard);
 
-      console.log(analysisAverages);
+      suggestionNumbers = suggestionNumbers.filter(
+        (str) => !filteredDeck.some((json) => json === str)
+      );
 
       if (
         deck.cards.length < analysisAverages.averageQtd &&
@@ -365,7 +371,7 @@ async function tuningDeck() {
         markerHasChanged = true;
       } else if (deck.cards.length > analysisAverages.averageQtd) {
         await removeCardFromSpecifiedCategory(maiorCategoria);
-        await wait(500);
+        await wait(1);
 
         maiorValor = -Infinity;
         maiorCategoria = null;
@@ -401,15 +407,38 @@ async function tuningDeck() {
         }
       }
 
+      let filteredDeck2 = deck.cards.filter((str) =>
+        legendaries.some((json) => json.number === str)
+      );
+
+      deck.cards = deck.cards.filter(
+        (str) => !legendaries.some((json) => json.number === str)
+      );
+
+      filteredDeck.push(...filteredDeck2);
+
+      if (deck.cards.length != analysisAverages.averageQtd) {
+        markerHasChanged = true;
+      }
+
+      // VERIFICAR SE A PSÓXIMA SUGESTÃO É LENDÁRIA. SE SIM, ADICIONAR
+      // VERIFICAR SE TEM MAIS DE UMA LENDÁRIA, SE SIM RETIRAR
+      // VERIFICAR SE TEM DUAS CÓPIAS DA COMUM TENDO A LENDÁRIA NA LISTA
+
       counterLoop++;
-      await wait(500);
+      await wait(1);
     }
   }
+
+  deck.cards = deck.cards.filter(
+    (str) => !legendaries.some((json) => json.number === str)
+  );
 
   filteredDeck.forEach(async (card) => {
     addCardToDeckBuilder(card);
     await wait(1);
   });
+
 }
 
 // ADICIONAR A MELHOR CARTA DE UMA CATEGORIA EM ESPECÍFICO
@@ -428,7 +457,7 @@ async function addCardFromSpecifiedCategory(category, suggestionNumbers) {
   // console.log(suggestionList);
 
   addCardToDeckBuilder(suggestionList[0].number);
-  await wait(1);
+  await wait(500);
 }
 
 // REMOVA DE UM DECK A PIOR CARTA DE UMA CATEGORIA EM ESPECÍFICO
@@ -462,7 +491,7 @@ async function removeCardFromSpecifiedCategory(category) {
 
   if (cardsMenorOcorrencia.length > 0) {
     removeCardFromDeckBuilder(cardsMenorOcorrencia[0].number);
-    await wait(1);
+    await wait(500);
   }
 }
 
