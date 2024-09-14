@@ -357,11 +357,19 @@ async function tuningDeck() {
         `Maior valor: ${maiorValor}, Categoria maior: ${maiorCategoria}`
       );
 
-      let suggestionNumbers = suggestions.map((obj) => obj.idcard);
+      // Filtra os itens cujo "number" está em filteredDeck e retorna apenas "commonNumber"
+      const filteredCommonNumbers = legendaries.reduce((acc, item) => {
+        if (filteredDeck.includes(item.number)) acc.push(item.commonNumber);
+        return acc;
+      }, []);
 
-      suggestionNumbers = suggestionNumbers.filter(
-        (str) => !filteredDeck.some((json) => json === str)
-      );
+      // Mapeia suggestions para obter os ids das cartas
+      let suggestionNumbers = suggestions
+        .map((obj) => obj.idcard)
+        // Remove os que já estão em filteredDeck
+        .filter((str) => !filteredDeck.includes(str))
+        // Remove os que já estão em filteredCommonNumbers
+        .filter((str) => !filteredCommonNumbers.includes(str));
 
       if (
         deck.cards.length < analysisAverages.averageQtd &&
@@ -421,12 +429,9 @@ async function tuningDeck() {
         markerHasChanged = true;
       }
 
-      // VERIFICAR SE A PSÓXIMA SUGESTÃO É LENDÁRIA. SE SIM, ADICIONAR
-      // VERIFICAR SE TEM MAIS DE UMA LENDÁRIA, SE SIM RETIRAR
-      // VERIFICAR SE TEM DUAS CÓPIAS DA COMUM TENDO A LENDÁRIA NA LISTA
-
       counterLoop++;
       await wait(1);
+
     }
   }
 
@@ -438,7 +443,7 @@ async function tuningDeck() {
     addCardToDeckBuilder(card);
     await wait(1);
   });
-
+  
 }
 
 // ADICIONAR A MELHOR CARTA DE UMA CATEGORIA EM ESPECÍFICO

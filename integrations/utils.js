@@ -24,7 +24,7 @@ const WEIGHT_OCURRENCY_EXTRA = 200;
 const WEIGHT_OCURRENCY_SIDEBOARD = 200;
 
 const WEIGHT_DECK_STYLE = 2;
-const WEIGHT_DECK_ARCHETYPE = 100;
+const WEIGHT_DECK_ARCHETYPE = 200;
 
 const excludedWords = [
   "zona",
