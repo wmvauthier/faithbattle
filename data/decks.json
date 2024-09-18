@@ -316,7 +316,7 @@
         "name": "Miracles",
         "img": "img/lendarias/52.png",
         "style": "Controlador",
-        "archetype": "Dano",
+        "archetype": "Maravilhas",
         "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
