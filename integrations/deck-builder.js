@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 async function updateAnalysisFromDeck() {
-
   deck.cards = limitStringOccurrences(deck.cards, 2);
 
   cardsFromDeck = await getCardsFromDeck(deck.cards, allCards);
@@ -951,6 +950,7 @@ function updateMiniCards(allCards, cardsList, id) {
 
 function addCardToDeckBuilder(id) {
   deck.cards.push(id);
+  console.log(deck.cards);
   updateAnalysisFromDeck();
 }
 
