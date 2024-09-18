@@ -96,7 +96,7 @@
         "stars": "5.0",
         "type": "Pecado",
         "subtype": "-",
-        "categories": "Dano",
+        "categories": "Dano;Confusão",
         "cost": 0,
         "strength": 0,
         "resistence": 0,

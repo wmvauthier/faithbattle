@@ -515,12 +515,13 @@ async function removeCardFromSpecifiedCategory(category) {
   }
 }
 
-function cleanDeck() {
+async function cleanDeck() {
   while (deck.cards.length > 0) {
     deck.cards.forEach((card) => {
       removeCardFromDeckBuilder(card);
     });
   }
+  await updateAnalysisFromDeck();
 }
 
 async function autoGenerateHand(isMulligan) {
