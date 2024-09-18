@@ -619,5 +619,71 @@
             99
         ],
         "sabedorias": 10
+    },
+    {
+        "number": "11",
+        "name": "Circuncisão Mill",
+        "img": "img/milagres/62.png",
+        "style": "Controlador",
+        "archetype": "Supressão",
+        "format": "Standard",
+        "keywords": "Proteção;Combo",
+        "active": true,
+        "cards": [
+            18,
+            18,
+            83,
+            19,
+            5,
+            19,
+            79,
+            79,
+            48,
+            48,
+            17,
+            17,
+            68,
+            68,
+            29,
+            29,
+            30,
+            30,
+            69,
+            89,
+            89,
+            84,
+            84,
+            116,
+            116,
+            58,
+            83,
+            1,
+            21,
+            21
+        ],
+        "extra": [
+            100,
+            113
+        ],
+        "sideboard": [
+            60,
+            8,
+            7,
+            42,
+            29,
+            17,
+            13,
+            27,
+            88
+        ],
+        "topcards": [
+            61,
+            10,
+            4,
+            14,
+            77,
+            99
+        ],
+        "sabedorias": 10
     }
 ]
