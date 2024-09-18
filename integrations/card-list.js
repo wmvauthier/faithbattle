@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   data.forEach((card) => {
     card.ocurrences = getOccurrencesInDecks(card.number, decks);
+    card.stars = scaleToFive((getOccurrencesInSides(card.number, decks) / decks.length) * 100);
   });
 
   cards = sortByStarsAndDate(data);
@@ -77,7 +78,7 @@ function generateSelectFilterByProperty(
     }
   });
 
-  uniqueValues = uniqueValues.filter(item => item !== undefined);
+  uniqueValues = uniqueValues.filter((item) => item !== undefined);
 
   const select = document.createElement("select");
 
@@ -207,7 +208,7 @@ function generateEffectFilter(jsonData) {
   });
 
   // Converte o conjunto de categorias de volta para um array
-  const uniqueEffects = Array.from(effectsSet).filter(item => item != "");
+  const uniqueEffects = Array.from(effectsSet).filter((item) => item != "");
 
   // Cria o select e adiciona as opções com as categorias únicas
   const select = document.createElement("select");
@@ -464,20 +465,25 @@ function renderCards(cards) {
 
       productItem.innerHTML = `
       <div class="product__item">
-        <div class="product__item__pic set-bg" style="background-image: url(${card.img});">
+        <div class="product__item__pic set-bg" style="background-image: url(${
+          card.img
+        });">
           <div class="ep">&#9733; ${card.stars}</div>
           <div class="comment">&#9923; ${card.ocurrences}</div>
           <div class="view">${card.collection}</div>
         </div>
         <div class="product__item__text">
           <ul>
-            ${categoriesArray.map((category) => `<li>${category}</li>`).join(" ")}
+            ${categoriesArray
+              .map((category) => `<li>${category}</li>`)
+              .join(" ")}
           </ul>
           <h5>
             <a href="#">${costCircledNumber} ${card.name}</a>
-            ${card.strength !== 0 && card.resistence !== 0 ? 
-              `<a href="#" style="float:right;">&#9876;${card.strength} / &#10070;${card.resistence}</a>` : 
-              ''
+            ${
+              card.strength !== 0 && card.resistence !== 0
+                ? `<a href="#" style="float:right;">&#9876;${card.strength} / &#10070;${card.resistence}</a>`
+                : ""
             }
           </h5>
         </div>

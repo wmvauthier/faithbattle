@@ -273,7 +273,13 @@ function orderCardsFromDeck(cards) {
 function getOccurrencesInDecks(cardId, decks) {
   return decks.reduce((count, deck) => {
     const cards = deck.cards.concat(deck.extra); // Concatenando todas as listas de cards
+    return count + (cards.includes(cardId) ? 1 : 0);
+  }, 0);
+}
 
+function getOccurrencesInSides(cardId, decks) {
+  return decks.reduce((count, deck) => {
+    const cards = deck.cards.concat(deck.extra).concat(deck.sideboard); // Concatenando todas as listas de cards
     return count + (cards.includes(cardId) ? 1 : 0);
   }, 0);
 }
@@ -465,9 +471,9 @@ function getRelatedDecks(relatedCards, decks) {
 }
 
 function calculateWeightedScore(stars, monthDiff, usage) {
-  const weightStars = 0.3;
-  const weightDate = 0.3;
-  const weightUsage = 0.4;
+  const weightStars = 0.75;
+  const weightDate  = 0.01;
+  const weightUsage = 0.24;
 
   const score =
     stars * weightStars + (12 - monthDiff) * weightDate + usage * weightUsage;
@@ -520,5 +526,18 @@ function getKeyWithMaxAbsoluteValue(obj) {
 function wait(segundos) {
   return new Promise((resolve) => {
     setTimeout(resolve, segundos);
+  });
+}
+
+function scaleToFive(num) {
+  return Math.min(5, Math.max(1, (num / 20).toFixed(1)));
+}
+
+function limitStringOccurrences(arr, maxOccurrences) {
+  const counts = {};
+
+  return arr.filter(item => {
+    counts[item] = (counts[item] || 0) + 1;
+    return counts[item] <= maxOccurrences;
   });
 }
