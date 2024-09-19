@@ -457,7 +457,7 @@ function renderCards(cards) {
       const categoriesArray = card.categories.split(";");
 
       const productItem = document.createElement("div");
-      productItem.className = "col-lg-2 col-md-3 col-sm-3";
+      productItem.className = "col-lg-2 col-md-3 col-sm-3 col-6";
       productItem.setAttribute("onclick", `getCardDetails(${card.number})`);
       productItem.style.cursor = "pointer";
 

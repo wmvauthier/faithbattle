@@ -117,7 +117,7 @@ async function renderPage(page) {
     });
 
     row.style.cursor = "pointer";
-    row.classList.add("col-lg-3", "col-md-4", "col-sm-6", "col-xs-12");
+    row.classList.add("col-lg-3", "col-md-4", "col-sm-6", "col-xs-6");
 
     tableBody.appendChild(row);
   });

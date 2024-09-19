@@ -880,6 +880,7 @@ function updateDeckListDOM(cardsFromDeck) {
       cardElement.addEventListener("click", () =>
         removeCardFromDeckBuilder(card.number)
       );
+      cardElement.style = "padding-right:5px; padding-left: 5px;";
 
       deckListContainer.appendChild(cardElement);
     }
@@ -942,6 +943,7 @@ function updateMiniCards(allCards, cardsList, id) {
       cardElement.addEventListener("click", () =>
         addCardToDeckBuilder(details.number)
       );
+      cardElement.style = "padding-right:5px; padding-left: 5px;";
 
       similarCardsContainer.appendChild(cardElement);
     }

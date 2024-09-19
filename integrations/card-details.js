@@ -88,7 +88,7 @@ function updateSimilarCardsDOM(similarCardDetails, similarCards) {
     if (details) {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-1 col-md-3 col-sm-4 card__related__sidebar__view__item set-bg";
+        "col-lg-1 col-md-3 col-sm-4 col-3 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
