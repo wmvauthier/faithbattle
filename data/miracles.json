@@ -475,7 +475,7 @@
         "type": "Milagre",
         "subtype": "-",
         "categories": "Compra;Escolha;Santificação",
-        "cost": 3,
+        "cost": 2,
         "strength": 0,
         "resistence": 0,
         "effects": "Alvo",
