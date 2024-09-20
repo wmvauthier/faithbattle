@@ -334,52 +334,58 @@
             </div>
 
             <div class="row" style="margin-top: 0px;">
-                <div class="col-lg-8 col-md-8 col-sm-8" style="margin-bottom: 0px">
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Filtros por Tipos de Carta<span id=""></span></h5>
-                        </div>
-                        <div id="addByTypesList" class="row"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4" style="margin-bottom: 0px">
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Filtros por Custos<span id=""></span></h5>
-                        </div>
-                        <div id="addByCostList" class="row"></div>
-                    </div>
-                </div>
-            </div><br>
 
-            <div class="row" style="margin-top: 0px;">
                 <div class="col-lg-8 col-md-8 col-sm-8" style="margin-bottom: 0px">
                     <div class="anime__details__review" style="margin-bottom: 0px">
                         <div class="section-title">
-                            <h5>Filtros por Categorias<span id=""></span></h5>
+                            <h5>Sugestões de Adição</h5>
                         </div>
-                        <div id="addByCategoriesList" class="row"></div>
+                        <div id="suggestionsDeckList" class="row vertical-line"></div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4" style="margin-bottom: 0px">
+                    <div class="row">
+                        <div class="anime__details__review col" style="margin-bottom: 0px">
+                            <div class="section-title">
+                                <h5>Estilo e Arquétipo do Deck<span id=""></span></h5>
+                            </div>
+                            <div class="row" style="padding:15px; padding-top: 0px;">
+                                <div class="col-lg-6">
+                                    <div id="addByStyleList" class="row"></div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div id="addByArchetypeList" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anime__details__review col" style="margin-bottom: 0px">
+                            <div class="section-title">
+                                <h5>Testes de Mão e Compra</h5>
+                            </div>
+                            <div id="handTestList" style="padding-right: 15px; padding-left: 15px;"
+                                class="row vertical-line"></div>
+                            <div class="row" style="padding:10px; padding-top: 0px;">
+                                <div class="col-lg-4" style="padding:10px; padding-top: 0px;">
+                                    <button onclick="autoGenerateHand(false)" style="width: 100%;">Testar</button>
+                                </div>
+                                <div class="col-lg-4" style="padding:10px; padding-top: 0px;">
+                                    <button onclick="autoGenerateHand(true)" style="width: 100%;">Mulligan</button>
+                                </div>
+                                <div class="col-lg-4" style="padding:10px; padding-top: 0px;">
+                                    <button onclick="autoGenerateHand('draw')" style="width: 100%;">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="anime__details__review" style="margin-bottom: 0px">
                         <div class="section-title">
-                            <h5>Estilo e Arquétipo do Deck<span id=""></span></h5>
+                            <h5>Funções Automatizadas</h5>
                         </div>
                         <div class="row" style="padding:15px; padding-top: 0px;">
-                            <div class="col-lg-6">
-                                <div id="addByStyleList" class="row"></div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div id="addByArchetypeList" class="row"></div>
-                            </div>
+                            <button class="col" onclick="generateDeck()" style="width: 100%;">Gerar Deck</button>
+                            <button class="col" onclick="completeDeck()" style="width: 100%;">Completar Deck</button>
+                            <button class="col" onclick="tuningDeck()" style="width: 100%;">Melhorar Deck</button>
+                            <button class="col" onclick="cleanDeck()" style="width: 100%;">Limpar Deck</button>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="row" style="margin-top: 0px;">
-                <div class="col-lg-8 col-md-8 col-sm-8" style="margin-bottom: 0px">
                     <div class="anime__details__review" style="margin-bottom: 0px">
                         <div class="section-title">
                             <h5>Extra Deck<span id=""></span></h5>
@@ -393,153 +399,37 @@
                         <div id="deckList" class="row"></div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Testes de Mão e Compra</h5>
-                        </div>
-                        <div id="handTestList" style="padding-right: 15px; padding-left: 15px;"
-                            class="row vertical-line"></div>
-                        <div class="row" style="padding:10px; padding-top: 0px;">
-                            <div class="col-lg-4" style="padding:10px; padding-top: 0px;">
-                                <button onclick="autoGenerateHand(false)" style="width: 100%;">Testar</button>
+
+                <div class="col-lg-4 col-md-4 col-sm-4" style="margin-bottom: 0px">
+                    <div class="row" style="margin-bottom: 0px; padding-left:20px;">
+                        <div class="anime__details__review" style="margin-bottom: 0px">
+                            <div class="section-title">
+                                <h5>Filtros por Categorias<span id=""></span></h5>
                             </div>
-                            <div class="col-lg-4" style="padding:10px; padding-top: 0px;">
-                                <button onclick="autoGenerateHand(true)" style="width: 100%;">Mulligan</button>
+                            <div id="addByCategoriesList" class="row"></div>
+                        </div>
+                    </div><br>
+
+                    <div class="row" style="margin-bottom: 0px; padding-left:20px;">
+                        <div class="anime__details__review" style="margin-bottom: 0px">
+                            <div class="section-title">
+                                <h5>Filtros por Tipos de Carta<span id=""></span></h5>
                             </div>
-                            <div class="col-lg-4" style="padding:10px; padding-top: 0px;">
-                                <button onclick="autoGenerateHand('draw')" style="width: 100%;">Comprar</button>
+                            <div id="addByTypesList" class="row" style="margin-bottom: 0px; padding-left:20px;"></div>
+                        </div>
+                    </div><br>
+                    
+                    <div class="row" style="margin-bottom: 0px; padding-left:20px;">
+                        <div class="anime__details__review" style="margin-bottom: 0px">
+                            <div class="section-title">
+                                <h5>Filtros por Custos<span id=""></span></h5>
                             </div>
+                            <div id="addByCostList" class="row" style="margin-bottom: 0px; padding-left:20px;"></div>
                         </div>
-                    </div>
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Funções Automatizadas</h5>
-                        </div>
-                        <div class="row" style="padding:15px; padding-top: 0px;">
-                            <button class="col" onclick="generateDeck()" style="width: 100%;">Gerar Deck</button>
-                            <button class="col" onclick="completeDeck()" style="width: 100%;">Completar Deck</button>
-                        </div>
-                        <div class="row" style="padding:15px; padding-top: 0px;">
-                            <button class="col" onclick="tuningDeck()" style="width: 100%;">Melhorar Deck</button>
-                            <button class="col" onclick="cleanDeck()" style="width: 100%;">Limpar Deck</button>
-                        </div>
-                    </div>
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Sugestões de Adição</h5>
-                        </div>
-                        <div id="suggestionsDeckList" class="row vertical-line"></div>
                     </div>
                 </div>
-            </div>
 
-            <!-- <div class="row" style="margin-top: 10px;">
-                <div class="col-lg-12 col-md-12">
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Extra Deck</h5>
-                        </div>
-                        <div id="extraDeckList" class="row"></div>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- <div class="row" style="margin-top: 10px;">
-                <div class="col-lg-12 col-md-12">
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Sideboard / Alternativas</h5>
-                        </div>
-                        <div id="sideboardList" class="row"></div>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- <div class="row">
-                <div class="col-lg-9 col-md-9">
-                    <div class="anime__details__review">
-                        <div class="section-title">
-                            <h5>Principais Interações</h5>
-                        </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <img src="img/anime/review-1.jpg" alt="">
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                                <p>whachikan Just noticed that someone categorized this as belonging to the genre
-                                    "demons" LOL</p>
-                            </div>
-                        </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <img src="img/anime/review-2.jpg" alt="">
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>Lewis Mann - <span>5 Hour ago</span></h6>
-                                <p>Finally it came out ages ago</p>
-                            </div>
-                        </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <img src="img/anime/review-3.jpg" alt="">
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>Louis Tyler - <span>20 Hour ago</span></h6>
-                                <p>Where is the episode 15 ? Slow update! Tch</p>
-                            </div>
-                        </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <img src="img/anime/review-4.jpg" alt="">
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                                <p>whachikan Just noticed that someone categorized this as belonging to the genre
-                                    "demons" LOL</p>
-                            </div>
-                        </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <img src="img/anime/review-5.jpg" alt="">
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>Lewis Mann - <span>5 Hour ago</span></h6>
-                                <p>Finally it came out ages ago</p>
-                            </div>
-                        </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <img src="img/anime/review-6.jpg" alt="">
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>Louis Tyler - <span>20 Hour ago</span></h6>
-                                <p>Where is the episode 15 ? Slow update! Tch</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="anime__details__form">
-                        <div class="section-title">
-                            <h5>Your Comment</h5>
-                        </div>
-                        <form action="#">
-                            <textarea placeholder="Your Comment"></textarea>
-                            <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
-                        </form>
-                    </div>
-        </div>
-        <div class="col-lg-3 col-md-3">
-            <div class="product__sidebar__comment">
-                <div class="section-title">
-                    <h5>Prêmios</h5>
-                </div>
-
-                <div id="related-decks-container"></div>
-
-            </div>
-        </div>
-        </div> -->
+            </div><br>
 
         </div>
     </section>

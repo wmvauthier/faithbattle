@@ -356,8 +356,8 @@ async function analyzeDecks(decks, selectedStyle, selectedArchetype) {
     totalResult.categoriesCount
   ).map(([name, count]) => ({
     name,
-    media: Math.round(count / totalResult.totalDecks),
-  }));
+    media: Math.floor(count / totalResult.totalDecks),
+  }));  
 
   totalResult.averageEffects = Object.entries(totalResult.effectsCount).map(
     ([name, count]) => ({

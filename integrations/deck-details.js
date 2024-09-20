@@ -197,7 +197,7 @@ function updateCardListDOM(cardsFromDeck) {
   cardsFromDeck.forEach((card) => {
     const cardElement = document.createElement("div");
     cardElement.className =
-      "col-lg-2 col-md-2 col-sm-2 col-xs-2 card__related__sidebar__view__item set-bg";
+      "col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2 card__related__sidebar__view__item set-bg";
     cardElement.style.cursor = "pointer";
     cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
@@ -206,6 +206,8 @@ function updateCardListDOM(cardsFromDeck) {
       `;
 
     cardElement.addEventListener("click", () => getCardDetails(card.number));
+
+    cardElement.style = "padding-right:5px; padding-left: 5px;";
 
     deckListContainer.appendChild(cardElement);
   });
@@ -282,7 +284,7 @@ function updateMiniCards(allCards, cardsList, id) {
     if (details) {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-2 col-md-2 col-sm-2 card__related__sidebar__view__item set-bg";
+        "col-lg-2 col-md-2 col-sm-2 col-2 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
@@ -293,6 +295,8 @@ function updateMiniCards(allCards, cardsList, id) {
       cardElement.addEventListener("click", () =>
         getCardDetails(details.number)
       );
+
+      cardElement.style = "padding-right:5px; padding-left: 5px;";
 
       similarCardsContainer.appendChild(cardElement);
     }
