@@ -692,7 +692,7 @@
         "name": "Walls",
         "img": "img/herois/65.png",
         "style": "Controlador",
-        "archetype": "Combate",
+        "archetype": "Batalha",
         "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,

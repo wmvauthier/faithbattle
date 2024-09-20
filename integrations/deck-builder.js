@@ -853,7 +853,7 @@ function updateDeckListDOM(cardsFromDeck) {
     if (card.type == "Herói de Fé" && card.subtype == "Lendário") {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-2 col-md-2 card__related__sidebar__view__item set-bg";
+        "col-lg-2 col-md-2 col-2 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
@@ -869,7 +869,7 @@ function updateDeckListDOM(cardsFromDeck) {
     } else {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-2 col-md-2 card__related__sidebar__view__item set-bg";
+        "col-lg-2 col-md-2 col-3 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
@@ -932,7 +932,7 @@ function updateMiniCards(allCards, cardsList, id) {
     if (details) {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-3 col-md-3 col-sm-3 card__related__sidebar__view__item set-bg";
+        "col-lg-3 col-md-3 col-sm-3 col-3 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
