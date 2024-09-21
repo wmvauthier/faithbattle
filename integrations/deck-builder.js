@@ -867,6 +867,7 @@ function updateDeckListDOM(cardsFromDeck) {
       cardElement.addEventListener("click", () =>
         removeCardFromDeckBuilder(card.number)
       );
+      cardElement.style = "padding-right:5px; padding-left: 5px;";
 
       extraDeckListContainer.appendChild(cardElement);
     } else {
@@ -935,7 +936,7 @@ function updateMiniCards(allCards, cardsList, id) {
     if (details) {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-1 col-md-1 col-sm-2 col-2 card__related__sidebar__view__item set-bg";
+        "col-lg-2 col-md-2 col-sm-2 col-2 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />

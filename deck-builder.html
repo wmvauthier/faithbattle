@@ -101,248 +101,217 @@
     </div> -->
     <!-- Breadcrumb End -->
 
+    <style>
+        .categories-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px;
+        }
+
+        .category-item {
+            background-color: #33334d;
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .category-item.green {
+            border: 2px solid #4caf50;
+        }
+
+        .category-item.red {
+            border: 2px solid #e53637;
+        }
+
+        .category-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px;
+        }
+
+        .category-item.green:hover,
+        .category-item.green.selected {
+            background-color: #4caf50;
+            box-shadow: 0 0 10px #4caf50;
+        }
+
+        .category-item.red:hover,
+        .category-item.red.selected {
+            background-color: #e53637;
+            box-shadow: 0 0 10px #e53637;
+        }
+
+        .category-item input {
+            font-size: 1rem;
+            border: none;
+            background: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            color: #ffffff;
+            outline: none;
+            box-shadow: none;
+            appearance: none;
+        }
+
+        #filteredCards {
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #29293d;
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        #addByTypesList {
+            margin: 20px 0;
+        }
+
+        #addByCategoriesList {
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #33334d;
+            color: #ffffff;
+            border: 2px solid #e53637;
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #e53637;
+            transform: scale(1.1);
+        }
+
+        button.selected {
+            background-color: #e53637;
+            font-weight: bold;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+    </style>
+
     <!-- Anime Section Begin -->
     <section class="card-details spad">
         <div class="container">
 
-            <div class="row" style="margin-top: 5px;">
-                <div class="col-lg-12 col-md-12">
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title" style="margin-bottom: 0px;">
-                            <h5>Informações</h5>
-                        </div>
-                        <div class="row">
-
-                            <!-- <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="anime__details__pic set-bg" data-setbg="img/herois/moises.webp">
-                                <div class="anime__details__pic set-bg">
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                    <img id="tag_deckImg" class="card__details set-card-bg" />
-                                </div>
-                            </div> -->
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <div class="anime__details__text">
-                                    <!-- <div class="anime__details__rating">
-                                        <div id="tag_deckStars" class="rating"></div>
-                                        <span>1.029 Votos</span>
-                                    </div> -->
-
-                                    <style>
-                                        .categories-container {
-                                            display: flex;
-                                            flex-wrap: wrap;
-                                            gap: 10px;
-                                            margin: 20px;
-                                        }
-
-                                        .category-item {
-                                            background-color: #33334d;
-                                            color: #ffffff;
-                                            border-radius: 10px;
-                                            padding: 10px 20px;
-                                            display: flex;
-                                            align-items: center;
-                                            font-family: Arial, sans-serif;
-                                            font-weight: bold;
-                                            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-                                            cursor: pointer;
-                                        }
-
-                                        .category-item.green {
-                                            border: 2px solid #4caf50;
-                                        }
-
-                                        .category-item.red {
-                                            border: 2px solid #e53637;
-                                        }
-
-                                        .category-item:hover {
-                                            transform: scale(1.1);
-                                            box-shadow: 0 0 10px;
-                                        }
-
-                                        .category-item.green:hover,
-                                        .category-item.green.selected {
-                                            background-color: #4caf50;
-                                            box-shadow: 0 0 10px #4caf50;
-                                        }
-
-                                        .category-item.red:hover,
-                                        .category-item.red.selected {
-                                            background-color: #e53637;
-                                            box-shadow: 0 0 10px #e53637;
-                                        }
-
-                                        .category-item input {
-                                            font-size: 1rem;
-                                            border: none;
-                                            background: none;
-                                            margin: 0;
-                                            padding: 0;
-                                            flex: 1;
-                                            color: #ffffff;
-                                            outline: none;
-                                            box-shadow: none;
-                                            appearance: none;
-                                        }
-
-                                        #filteredCards {
-                                            margin-top: 20px;
-                                        }
-
-                                        .card {
-                                            background-color: #29293d;
-                                            border: 2px solid #4caf50;
-                                            border-radius: 10px;
-                                            padding: 15px;
-                                            margin: 10px 0;
-                                        }
-
-                                        #addByTypesList {
-                                            margin: 20px 0;
-                                        }
-
-                                        #addByCategoriesList {
-                                            margin: 20px 0;
-                                        }
-
-                                        button {
-                                            background-color: #33334d;
-                                            color: #ffffff;
-                                            border: 2px solid #e53637;
-                                            border-radius: 10px;
-                                            padding: 10px 20px;
-                                            margin: 5px;
-                                            font-size: 16px;
-                                            cursor: pointer;
-                                            transition: background-color 0.3s, transform 0.3s;
-                                        }
-
-                                        button:hover {
-                                            background-color: #e53637;
-                                            transform: scale(1.1);
-                                        }
-
-                                        button.selected {
-                                            background-color: #e53637;
-                                            font-weight: bold;
-                                        }
-
-                                        button:active {
-                                            transform: scale(0.9);
-                                        }
-                                    </style>
-
-                                    <!-- <div id="effectsContainer" class="categories-container"></div> -->
-                                    <div id="categoriesContainer" class="categories-container"></div>
-
-                                    <div class="anime__details__widget">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-3">
-                                                <ul>
-                                                    <li><span><b>Características</b></span></li>
-                                                    <li><span>Formato</span> <text id="tag_deckFormat"></text></li>
-                                                    <li><span>Estilo</span> <text id="tag_deckStyle"></text></li>
-                                                    <!-- <li><span>Arquétipo</span> <text id="tag_deckEffect"></text></li> -->
-                                                    <li><span>Arquétipo</span></text></li>
-                                                    <li><span>Categoria</span> <text id="tag_deckCategory"></text></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3">
-                                                <ul>
-                                                    <li><span><b>Números</b></span></li>
-                                                    <li><span>Cartas</span> <text id="tag_deckSize"></text> <text
-                                                            id="tag_deckQtdComparison"></text></li>
-                                                    <li><span>Custo Médio</span> <text id="tag_deckMedCost"></text>
-                                                        <text id="tag_deckMedCostComparison"></text>
-                                                    </li>
-                                                    <li><span>Força</span>
-                                                        &#9876; <text id="tag_deckStrength"></text>
-                                                        <text id="tag_deckStrengthComparison"></text>
-                                                    </li>
-                                                    <li><span>Resistência</span>
-                                                        &#10070; <text id="tag_deckResistence"></text>
-                                                        <text id="tag_deckResistanceComparison"></text>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3">
-                                                <ul>
-                                                    <li><span><b>Quantidades</b></span></li>
-                                                    <li>
-                                                        <span>Heróis</span>
-                                                        <text id="tag_deckQtdHero"></text>
-                                                        <text id="tag_deckQtdHeroComparison"></text>
-                                                    </li>
-                                                    <li>
-                                                        <span>Milagres</span>
-                                                        <text id="tag_deckQtdMiracle"></text>
-                                                        <text id="tag_deckQtdMiracleComparison"></text>
-                                                    </li>
-                                                    <li>
-                                                        <span>Artefatos</span>
-                                                        <text id="tag_deckQtdArtifact"></text>
-                                                        <text id="tag_deckQtdArtifactComparison"></text>
-                                                    </li>
-                                                    <li>
-                                                        <span>Pecados</span>
-                                                        <text id="tag_deckQtdSin"></text>
-                                                        <text id="tag_deckQtdSinComparison"></text>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3">
-                                                <ul>
-                                                    <li><span><b>Custo Médio</b></span></li>
-                                                    <li>
-                                                        <span>Heróis</span>
-                                                        <text id="tag_deckCostHero"></text>
-                                                        <text id="tag_deckCostHeroComparison"></text>
-                                                    </li>
-                                                    <li>
-                                                        <span>Milagres</span>
-                                                        <text id="tag_deckCostMiracle"></text>
-                                                        <text id="tag_deckCostMiracleComparison"></text>
-                                                    </li>
-                                                    <li>
-                                                        <span>Artefatos</span>
-                                                        <text id="tag_deckCostArtifact"></text>
-                                                        <text id="tag_deckCostArtifactComparison"></text>
-                                                    </li>
-                                                    <li>
-                                                        <span>Pecados</span>
-                                                        <text id="tag_deckCostSin"></text>
-                                                        <text id="tag_deckCostSinComparison"></text>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- <div class="anime__details__btn">
-                                        <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
-                                        <a href="#" class="watch-btn"><span>Watch Now</span> <i
-                                                class="fa fa-angle-right"></i></a>
-                                    </div> -->
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="row" style="margin-top: 0px;">
 
                 <div class="col-lg-8 col-md-8 col-sm-8" style="margin-bottom: 0px">
+
+                    <div class="section-title" style="margin-bottom: 0px;">
+                        <h5>Informações</h5>
+                    </div>
+
+                    <div id="categoriesContainer" class="categories-container"></div>
+
+                    <div class="anime__details__widget">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <ul>
+                                    <li><span><b>Números</b></span></li>
+                                    <li><span>Cartas</span> <text id="tag_deckSize"></text> <text
+                                            id="tag_deckQtdComparison"></text></li>
+                                    <li><span>Custo Médio</span> <text id="tag_deckMedCost"></text>
+                                        <text id="tag_deckMedCostComparison"></text>
+                                    </li>
+                                    <li><span>Força</span>
+                                        &#9876; <text id="tag_deckStrength"></text>
+                                        <text id="tag_deckStrengthComparison"></text>
+                                    </li>
+                                    <li><span>Resistência</span>
+                                        &#10070; <text id="tag_deckResistence"></text>
+                                        <text id="tag_deckResistanceComparison"></text>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <ul>
+                                    <li><span><b>Quantidades</b></span></li>
+                                    <li>
+                                        <span>Heróis</span>
+                                        <text id="tag_deckQtdHero"></text>
+                                        <text id="tag_deckQtdHeroComparison"></text>
+                                    </li>
+                                    <li>
+                                        <span>Milagres</span>
+                                        <text id="tag_deckQtdMiracle"></text>
+                                        <text id="tag_deckQtdMiracleComparison"></text>
+                                    </li>
+                                    <li>
+                                        <span>Artefatos</span>
+                                        <text id="tag_deckQtdArtifact"></text>
+                                        <text id="tag_deckQtdArtifactComparison"></text>
+                                    </li>
+                                    <li>
+                                        <span>Pecados</span>
+                                        <text id="tag_deckQtdSin"></text>
+                                        <text id="tag_deckQtdSinComparison"></text>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <ul>
+                                    <li><span><b>Custo Médio</b></span></li>
+                                    <li>
+                                        <span>Heróis</span>
+                                        <text id="tag_deckCostHero"></text>
+                                        <text id="tag_deckCostHeroComparison"></text>
+                                    </li>
+                                    <li>
+                                        <span>Milagres</span>
+                                        <text id="tag_deckCostMiracle"></text>
+                                        <text id="tag_deckCostMiracleComparison"></text>
+                                    </li>
+                                    <li>
+                                        <span>Artefatos</span>
+                                        <text id="tag_deckCostArtifact"></text>
+                                        <text id="tag_deckCostArtifactComparison"></text>
+                                    </li>
+                                    <li>
+                                        <span>Pecados</span>
+                                        <text id="tag_deckCostSin"></text>
+                                        <text id="tag_deckCostSinComparison"></text>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="anime__details__review" style="margin-bottom: 0px">
                         <div class="section-title">
-                            <h5>Sugestões de Adição</h5>
+                            <h5>Extra Deck<span id=""></span></h5>
                         </div>
-                        <div id="suggestionsDeckList" class="row vertical-line"></div>
+                        <div id="extraDeckList" class="row"></div>
                     </div>
-                    <div class="row">
+                    <div class="anime__details__review" style="margin-bottom: 0px">
+                        <div class="section-title">
+                            <h5>Deck<span id=""></span></h5>
+                        </div>
+                        <div id="deckList" class="row"></div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4" style="margin-bottom: 0px">
+
+                    <div class="row" style="margin-bottom: 0px;">
                         <div class="anime__details__review col" style="margin-bottom: 0px">
                             <div class="section-title">
                                 <h5>Estilo e Arquétipo do Deck<span id=""></span></h5>
@@ -356,51 +325,43 @@
                                 </div>
                             </div>
                         </div>
+                    </div><br>
+
+                    <div class="row" style="margin-bottom: 0px;">
                         <div class="anime__details__review col" style="margin-bottom: 0px">
                             <div class="section-title">
                                 <h5>Testes de Mão e Compra</h5>
                             </div>
-                            <div id="handTestList" style="padding-right: 15px; padding-left: 15px;"
+                            <div id="handTestList" style="padding-right: 15px;"
                                 class="row vertical-line"></div>
                             <div class="row" style="padding:10px; padding-top: 0px;">
-                                <div class="col-lg-4" style="padding:10px; padding-top: 0px;">
+                                <div class="col" style="padding:10px; padding-top: 0px;">
                                     <button onclick="autoGenerateHand(false)" style="width: 100%;">Testar</button>
                                 </div>
-                                <div class="col-lg-4" style="padding:10px; padding-top: 0px;">
+                                <div class="col" style="padding:10px; padding-top: 0px;">
                                     <button onclick="autoGenerateHand(true)" style="width: 100%;">Mulligan</button>
                                 </div>
-                                <div class="col-lg-4" style="padding:10px; padding-top: 0px;">
+                                <div class="col" style="padding:10px; padding-top: 0px;">
                                     <button onclick="autoGenerateHand('draw')" style="width: 100%;">Comprar</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Funções Automatizadas</h5>
-                        </div>
-                        <div class="row" style="padding:15px; padding-top: 0px;">
-                            <button class="col" onclick="generateDeck()" style="width: 100%;">Gerar Deck</button>
-                            <button class="col" onclick="completeDeck()" style="width: 100%;">Completar Deck</button>
-                            <button class="col" onclick="tuningDeck()" style="width: 100%;">Melhorar Deck</button>
-                            <button class="col" onclick="cleanDeck()" style="width: 100%;">Limpar Deck</button>
-                        </div>
-                    </div>
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Extra Deck<span id=""></span></h5>
-                        </div>
-                        <div id="extraDeckList" class="row"></div>
-                    </div>
-                    <div class="anime__details__review" style="margin-bottom: 0px">
-                        <div class="section-title">
-                            <h5>Deck<span id=""></span></h5>
-                        </div>
-                        <div id="deckList" class="row"></div>
-                    </div>
-                </div>
+                    </div><br>
 
-                <div class="col-lg-4 col-md-4 col-sm-4" style="margin-bottom: 0px">
+                    <div class="row" style="margin-bottom: 0px; padding-left:20px;">
+                        <div class="anime__details__review" style="margin-bottom: 0px">
+                            <div class="section-title">
+                                <h5>Funções Automatizadas</h5>
+                            </div>
+                            <div class="row" style="padding:15px; padding-top: 0px;">
+                                <button class="col" onclick="generateDeck()" style="width: 100%;">Gerar Deck</button>
+                                <button class="col" onclick="completeDeck()" style="width: 100%;">Completar Deck</button>
+                                <button class="col" onclick="tuningDeck()" style="width: 100%;">Melhorar Deck</button>
+                                <button class="col" onclick="cleanDeck()" style="width: 100%;">Limpar Deck</button>
+                            </div>
+                        </div>
+                    </div><br>
+
                     <div class="row" style="margin-bottom: 0px; padding-left:20px;">
                         <div class="anime__details__review" style="margin-bottom: 0px">
                             <div class="section-title">
@@ -418,7 +379,7 @@
                             <div id="addByTypesList" class="row" style="margin-bottom: 0px; padding-left:20px;"></div>
                         </div>
                     </div><br>
-                    
+
                     <div class="row" style="margin-bottom: 0px; padding-left:20px;">
                         <div class="anime__details__review" style="margin-bottom: 0px">
                             <div class="section-title">
@@ -426,7 +387,17 @@
                             </div>
                             <div id="addByCostList" class="row" style="margin-bottom: 0px; padding-left:20px;"></div>
                         </div>
-                    </div>
+                    </div><br>
+
+                    <div class="row" style="margin-bottom: 0px; padding-left:20px;">
+                        <div class="anime__details__review" style="margin-bottom: 0px">
+                            <div class="section-title">
+                                <h5>Sugestões de Adição</h5>
+                            </div>
+                            <div id="suggestionsDeckList" class="row vertical-line"></div>
+                        </div>
+                    </div><br>
+
                 </div>
 
             </div><br>
