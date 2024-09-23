@@ -199,18 +199,12 @@ async function updateAnalysisFromDeck() {
       }
     }
 
-    // console.log("Aggro -> Tempo -> Control -> Combo -> Midrange");
-
-    // generateCategoryItems(
-    //   info.effectsCount,
-    //   info.comparison.effects,
-    //   "effectsContainer"
-    // );
     generateCategoryItems(
       info.categoriesCount,
       info.comparison.categories,
       "categoriesContainer"
     );
+    
   } else {
     allCards.forEach((card) => {
       card.ocurrences = getOccurrencesInDecks(card.number, decks);
@@ -228,33 +222,11 @@ async function updateAnalysisFromDeck() {
 
   updateDeckListDOM(cardsFromDeck);
   updateMiniCards(allCards, similarCardsArray, "#suggestionsDeckList");
-  let rerun = false;
-
-  if (selectedCategory) {
-    const suggestionNumbers = suggestions.map((obj) => obj.idcard);
-    let cardList = await getCardsFromDeck(suggestionNumbers, allCards);
-    filterCardsByCategory(cardList, selectedCategory);
-  }
-
-  if (selectedCost) {
-    const suggestionNumbers = suggestions.map((obj) => obj.idcard);
-    let cardList = await getCardsFromDeck(suggestionNumbers, allCards);
-    filterCardsByCost(cardList, selectedCost);
-  }
-
-  if (selectedType) {
-    const suggestionNumbers = suggestions.map((obj) => obj.idcard);
-    let cardList = await getCardsFromDeck(suggestionNumbers, allCards);
-    filterCardsByType(cardList, selectedType);
-  }
 
   document.getElementById("filters").innerHTML = "";
 
-  generateTypeSuggestions(rerun);
-
   generateTextFilterByProperty("name", "Nome", "Digite o Nome");
   generateTextFilterByProperty("text", "Text", "Digite o Texto da Carta");
-  generateTextFilterByProperty("flavor", "Flavor", "Digite o Versículo");
   generateSelectFilterByProperty(allCards, "type", "Tipo", "Tipo");
   generateSelectFilterByProperty(allCards, "subtype", "SubTipo", "SubTipo");
   generateCategoryFilter(allCards);
@@ -269,11 +241,10 @@ async function updateAnalysisFromDeck() {
   );
   generateSelectFilterByProperty(allCards, "collection", "Coleção", "Coleção");
 
-  generateCostSuggestions(rerun);
-  generateCategorySuggestions(rerun);
-
   generateArchetypeSelect();
   generateStyleSelect();
+
+  filterResults();
 }
 
 async function generateDeck() {
@@ -680,7 +651,7 @@ function generateSelectFilterByProperty(
       addSelectedFilter(property, value, prettyName);
       select.disabled = true;
     }
-    filterResults(cards);
+    filterResults();
   });
 
   filtersContainer.appendChild(select);
@@ -702,7 +673,7 @@ function generateTextFilterByProperty(property, prettyName, placeholder) {
       if (value) {
         addSelectedFilter(property, value, prettyName);
         input.disabled = true;
-        filterResults(cards);
+        filterResults();
       }
     }
   });
@@ -830,264 +801,96 @@ function addSelectedFilter(property, value, prettyName) {
 
   filterTag.addEventListener("click", function () {
     removeSelectedFilter(property, value);
-    filterResults(cards);
+    filterResults();
   });
 
   selectedFiltersContainer.appendChild(filterTag);
 }
 
-async function generateTypeSuggestions(rerun) {
-  const suggestionNumbers = allCards.map((obj) => obj.number);
+function removeSelectedFilter(property, value) {
+  const selectedFiltersContainer = document.getElementById("selected-filters");
+  const filterTag = selectedFiltersContainer.querySelector(
+    `.selected-filter[data-property="${property}"][data-value="${value}"]`
+  );
 
-  let cardList = await getCardsFromDeck(suggestionNumbers, allCards);
-  let tipos = cardList.flatMap((obj) => obj.type.split(";"));
-  tipos = [...new Set(tipos)];
-
-  const buttonContainer = document.getElementById("addByTypesList");
-  if (!buttonContainer) {
-    return;
+  if (filterTag) {
+    filterTag.remove();
   }
 
-  buttonContainer.innerHTML = "";
+  const select = document.getElementById(`${property}Filter`);
+  if (select) {
+    select.value = "";
+    select.disabled = false;
+  }
+}
 
-  tipos.forEach((tipo) => {
-    // Verifica se existe ao menos uma carta com o tipo
-    const hasCardsWithType = cardList.some((card) =>
-      card.type.split("#").includes(tipo)
-    );
+async function filterResults() {
+  const selectedFiltersContainer = document.getElementById("selected-filters");
+  const filters = selectedFiltersContainer.querySelectorAll(".selected-filter");
 
-    if (hasCardsWithType) {
-      const button = document.createElement("button");
-      button.innerText = tipo;
-      if (selectedCategory == tipo) {
-        button.classList.add("selected");
-      }
-      button.addEventListener("click", () =>
-        handleButtonClickType(tipo, button, cardList, rerun)
-      );
-      buttonContainer.appendChild(button);
+  const suggestionNumbers = suggestions.map((obj) => obj.idcard);
+
+  let filteredData = await getCardsFromDeck(suggestionNumbers, allCards);
+
+  filters.forEach((filterTag) => {
+    const property = filterTag.getAttribute("data-property");
+    const value = filterTag.getAttribute("data-value");
+
+    if (property === "effects") {
+      filteredData = filteredData.filter((item) => {
+        const effects = item.effects.split(";");
+        return effects.includes(value);
+      });
+    } else if (property === "categories") {
+      filteredData = filteredData.filter((item) => {
+        const categories = item.categories.split(";");
+        return categories.includes(value);
+      });
+    } else {
+      filteredData = filteredData.filter((item) => {
+        if (
+          property === "name" ||
+          property === "flavor" ||
+          property === "text"
+        ) {
+          return item[property].toLowerCase().includes(value.toLowerCase());
+        } else if (property === "stars") {
+          return Math.floor(parseFloat(item[property])) === parseInt(value);
+        } else if (property === "date") {
+          return new Date(item[property]).getFullYear() === parseInt(value);
+        } else {
+          return item[property] == value;
+        }
+      });
     }
   });
-}
 
-async function generateCostSuggestions(rerun) {
-  const suggestionNumbers = allCards.map((obj) => obj.number);
+  document.getElementById("filters").innerHTML = "";
 
-  let cardList = await getCardsFromDeck(suggestionNumbers, allCards);
-  let custos = cardList.flatMap((obj) => obj.cost).sort((a, b) => a - b);
-  custos = [...new Set(custos)];
+  filteredData = sortByStarsAndDate(filteredData).slice(0, suggestionsQtd);
 
-  const buttonContainer = document.getElementById("addByCostList");
-  if (!buttonContainer) {
-    return;
-  }
+  generateTextFilterByProperty("name", "Nome", "Digite o Nome");
+  generateTextFilterByProperty("text", "Text", "Digite o Texto da Carta");
+  generateSelectFilterByProperty(filteredData, "type", "Tipo", "Tipo");
+  generateSelectFilterByProperty(filteredData, "subtype", "SubTipo", "SubTipo");
+  generateSelectFilterByProperty(filteredData, "cost", "Custo", "Custo");
+  generateCategoryFilter(filteredData);
+  generateEffectFilter(filteredData);
+  generateSelectFilterByProperty(filteredData, "strength", "Força", "Força");
+  generateSelectFilterByProperty(
+    filteredData,
+    "resistence",
+    "Resistência",
+    "Resistência"
+  );
+  generateSelectFilterByProperty(
+    filteredData,
+    "collection",
+    "Coleção",
+    "Coleção"
+  );
 
-  buttonContainer.innerHTML = "";
-
-  custos.forEach((custo) => {
-    // Verifica se existe ao menos uma carta com o tipo
-    const hasCardsWithCost = cardList.some((card) => card.cost == custo);
-
-    if (hasCardsWithCost) {
-      const button = document.createElement("button");
-      button.innerText = custo;
-      if (selectedCost == custo) {
-        button.classList.add("selected");
-      }
-      button.addEventListener("click", () =>
-        handleButtonClickCost(custo, button, cardList, rerun)
-      );
-      buttonContainer.appendChild(button);
-    }
-  });
-}
-
-async function generateCategorySuggestions(rerun) {
-  const suggestionNumbers = allCards.map((obj) => obj.number);
-
-  let cardList = await getCardsFromDeck(suggestionNumbers, allCards);
-  let categorias = cardList.flatMap((obj) => obj.categories.split(";"));
-  categorias = [...new Set(categorias)];
-
-  const buttonContainer = document.getElementById("addByCategoriesList");
-  if (!buttonContainer) {
-    return;
-  }
-
-  buttonContainer.innerHTML = "";
-
-  categorias.forEach((categoria) => {
-    // Verifica se existe ao menos uma carta com a categoria
-    const hasCardsWithCategory = cardList.some((card) =>
-      card.categories.split("#").includes(categoria)
-    );
-
-    if (hasCardsWithCategory) {
-      const button = document.createElement("button");
-      button.innerText = categoria;
-      if (selectedCategory == categoria) {
-        button.classList.add("selected");
-      }
-      button.addEventListener("click", () =>
-        handleButtonClickCategory(categoria, button, cardList, rerun)
-      );
-      buttonContainer.appendChild(button);
-    }
-  });
-}
-
-function handleButtonClickType(tipo, button, cardList, rerun) {
-  if (selectedType === tipo) {
-    selectedType = null;
-    if (!rerun) button.classList.remove("selected");
-    updateAnalysisFromDeck();
-  } else {
-    if (selectedType !== null) {
-      const previousButton = document.querySelector(".type.selected");
-      if (previousButton) {
-        previousButton.classList.remove("selected");
-      }
-    }
-    selectedType = tipo;
-    selectedCost = null;
-    selectedCategory = null;
-    button.classList.add("type");
-    button.classList.add("selected");
-
-    if (selectedCategory == null) {
-      const previousButton = document.querySelector(".category.selected");
-      if (previousButton) {
-        previousButton.classList.remove("selected");
-      }
-    }
-
-    if (selectedCost == null) {
-      const previousButton = document.querySelector(".cost.selected");
-      if (previousButton) {
-        previousButton.classList.remove("selected");
-      }
-    }
-  }
-
-  filterCardsByType(cardList, selectedType);
-}
-
-function handleButtonClickCost(custo, button, cardList, rerun) {
-  if (selectedCost === custo) {
-    selectedCost = null;
-    if (!rerun) button.classList.remove("selected");
-    updateAnalysisFromDeck();
-  } else {
-    if (selectedCost !== null) {
-      const previousButton = document.querySelector(".cost.selected");
-      if (previousButton) {
-        previousButton.classList.remove("selected");
-      }
-    }
-    selectedCost = custo;
-    selectedType = null;
-    selectedCategory = null;
-    button.classList.add("cost");
-    button.classList.add("selected");
-
-    if (selectedType == null) {
-      const previousButton = document.querySelector(".type.selected");
-      if (previousButton) {
-        previousButton.classList.remove("selected");
-      }
-    }
-
-    if (selectedCategory == null) {
-      const previousButton = document.querySelector(".category.selected");
-      if (previousButton) {
-        previousButton.classList.remove("selected");
-      }
-    }
-  }
-
-  filterCardsByCost(cardList, selectedCost);
-}
-
-function handleButtonClickCategory(categoria, button, cardList, rerun) {
-  if (selectedCategory === categoria) {
-    selectedCategory = null;
-    if (!rerun) button.classList.remove("selected");
-    updateAnalysisFromDeck();
-  } else {
-    if (selectedCategory !== null) {
-      const previousButton = document.querySelector(".category.selected");
-      if (previousButton) {
-        previousButton.classList.remove("selected");
-      }
-    }
-    selectedType = null;
-    selectedCost = null;
-    selectedCategory = categoria;
-    button.classList.add("category");
-    button.classList.add("selected");
-
-    if (selectedType == null) {
-      const previousButton = document.querySelector(".type.selected");
-      if (previousButton) {
-        previousButton.classList.remove("selected");
-      }
-    }
-
-    if (selectedCost == null) {
-      const previousButton = document.querySelector(".cost.selected");
-      if (previousButton) {
-        previousButton.classList.remove("selected");
-      }
-    }
-  }
-
-  filterCardsByCategory(cardList, selectedCategory);
-}
-
-async function filterCardsByType(cardList, type) {
-  let filteredCards = [];
-  if (type) {
-    filteredCards = cardList.filter((card) =>
-      card.type.split(";").includes(type)
-    );
-  }
-
-  if (filteredCards.length > 0) {
-    updateMiniCards(allCards, filteredCards, "#suggestionsDeckList");
-  } else {
-    selectedType = null;
-    updateAnalysisFromDeck();
-  }
-}
-
-async function filterCardsByCost(cardList, cost) {
-  let filteredCards = [];
-  if (cost) {
-    filteredCards = cardList.filter((card) => card.cost == cost);
-  }
-
-  if (filteredCards.length > 0) {
-    updateMiniCards(allCards, filteredCards, "#suggestionsDeckList");
-  } else {
-    selectedCost = null;
-    updateAnalysisFromDeck();
-  }
-}
-
-async function filterCardsByCategory(cardList, category) {
-  let filteredCards = [];
-  if (category) {
-    filteredCards = cardList.filter((card) =>
-      card.categories.split(";").includes(category)
-    );
-  }
-
-  if (filteredCards.length > 0) {
-    updateMiniCards(allCards, filteredCards, "#suggestionsDeckList");
-  } else {
-    selectedCategory = null;
-    updateAnalysisFromDeck();
-  }
+  updateMiniCards(allCards, filteredData, "#suggestionsDeckList");
 }
 
 function updateDeckListDOM(cardsFromDeck) {
@@ -1104,7 +907,7 @@ function updateDeckListDOM(cardsFromDeck) {
     if (card.type == "Herói de Fé" && card.subtype == "Lendário") {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-1 col-md-1 col-1 card__related__sidebar__view__item set-bg";
+        "col-lg-2 col-md-2 col-2 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
@@ -1121,7 +924,7 @@ function updateDeckListDOM(cardsFromDeck) {
     } else {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-1 col-md-1 col-3 card__related__sidebar__view__item set-bg";
+        "col-lg-2 col-md-2 col-2 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
@@ -1327,44 +1130,6 @@ async function prepareSimilarCardsArray(similarCardsArray) {
   }
 }
 
-function generateCategoryItems(categoriesCount, averages, id) {
-  const container = document.getElementById(id);
-  container.innerHTML = "";
-  const categoryArray = Object.entries(categoriesCount);
-
-  categoryArray.sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
-
-  categoryArray.forEach(([category, count]) => {
-    const comparison = averages[category];
-    const color = getComparisonColor(category, comparison);
-    const input = document.createElement("div");
-
-    if (comparison == "higher") {
-      input.classList.add("green");
-    } else if (comparison == "lower") {
-      input.classList.add("red");
-    }
-
-    input.setAttribute(
-      "style",
-      "font-size: 1rem !important; margin-right: 0px !important; margin-bottom: 0px !important;"
-    );
-    input.classList.add("custom-text-input", "category-item");
-
-    input.innerHTML = `${category} : ${count} <span style="color:${color}"> ${
-      comparison === "higher"
-        ? "&#9650;"
-        : comparison === "lower"
-        ? "&#9660;"
-        : comparison === "equal"
-        ? "&#8860;"
-        : ""
-    }</span>`;
-
-    container.appendChild(input);
-  });
-}
-
 function generateStyleSelect() {
   document.getElementById("addByStyleList").innerHTML = "";
 
@@ -1435,6 +1200,44 @@ function generateArchetypeSelect() {
   addByArchetypeList.appendChild(select);
 }
 
+function generateCategoryItems(categoriesCount, averages, id) {
+  const container = document.getElementById(id);
+  container.innerHTML = "";
+  const categoryArray = Object.entries(categoriesCount);
+
+  categoryArray.sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
+
+  categoryArray.forEach(([category, count]) => {
+    const comparison = averages[category];
+    const color = getComparisonColor(category, comparison);
+    const input = document.createElement("div");
+
+    if (comparison == "higher") {
+      input.classList.add("green");
+    } else if (comparison == "lower") {
+      input.classList.add("red");
+    }
+
+    input.setAttribute(
+      "style",
+      "font-size: 1rem !important; margin-right: 0px !important; margin-bottom: 0px !important;"
+    );
+    input.classList.add("custom-text-input", "category-item");
+
+    input.innerHTML = `${category} : ${count} <span style="color:${color}"> ${
+      comparison === "higher"
+        ? "&#9650;"
+        : comparison === "lower"
+        ? "&#9660;"
+        : comparison === "equal"
+        ? "&#8860;"
+        : ""
+    }</span>`;
+
+    container.appendChild(input);
+  });
+}
+
 function chooseStyle(value) {
   selectedStyle = value;
   updateAnalysisFromDeck();
@@ -1447,8 +1250,4 @@ function chooseArchetype(value) {
 
 function transformToObjectArray(cards) {
   return cards.map((card) => ({ idcard: card.number, qtd: card.ocurrences }));
-}
-
-function getCategoryClass(categoria) {
-  return categoryValues[categoria] ? "green" : "red";
 }
