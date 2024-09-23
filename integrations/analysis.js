@@ -349,7 +349,11 @@ async function analyzeDecks(decks, selectedStyle, selectedArchetype) {
     totalResult.averageQtdSin /= totalResult.totalDecks;
     totalResult.averageQtdArtifact /= totalResult.totalDecks;
 
-    totalResult.averageQtd = Math.round(totalResult.averageQtd);
+    totalResult.averageQtd = Math.floor(totalResult.averageQtd);
+    totalResult.averageQtdHero = Math.floor(totalResult.averageQtdHero);
+    totalResult.averageQtdMiracle = Math.floor(totalResult.averageQtdMiracle);
+    totalResult.averageQtdSin = Math.floor(totalResult.averageQtdSin);
+    totalResult.averageQtdArtifact = Math.floor(totalResult.averageQtdArtifact);
   }
 
   totalResult.averageCategories = Object.entries(
@@ -362,7 +366,7 @@ async function analyzeDecks(decks, selectedStyle, selectedArchetype) {
   totalResult.averageEffects = Object.entries(totalResult.effectsCount).map(
     ([name, count]) => ({
       name,
-      media: Math.round(count / totalResult.totalDecks),
+      media: Math.floor(count / totalResult.totalDecks),
     })
   );
 
