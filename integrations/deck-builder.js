@@ -204,7 +204,6 @@ async function updateAnalysisFromDeck() {
       info.comparison.categories,
       "categoriesContainer"
     );
-    
   } else {
     allCards.forEach((card) => {
       card.ocurrences = getOccurrencesInDecks(card.number, decks);
@@ -296,7 +295,6 @@ async function completeDeck(flagGenerate) {
 }
 
 async function tuningDeck() {
-  console.log(analysisAverages);
 
   if (deck.cards.length > 0) {
     let markerHasChanged = true;
@@ -357,13 +355,13 @@ async function tuningDeck() {
           }
         });
 
-        console.log(`Inexistente: ${innexistentCategories}`);
-        console.log(
-          `Menor valor: ${menorValor}, Categoria menor: ${menorCategoria}`
-        );
-        console.log(
-          `Maior valor: ${maiorValor}, Categoria maior: ${maiorCategoria}`
-        );
+        // console.log(`Inexistente: ${innexistentCategories}`);
+        // console.log(
+        //   `Menor valor: ${menorValor}, Categoria menor: ${menorCategoria}`
+        // );
+        // console.log(
+        //   `Maior valor: ${maiorValor}, Categoria maior: ${maiorCategoria}`
+        // );
 
         // Filtra os itens cujo "number" está em filteredDeck e retorna apenas "commonNumber"
         const filteredCommonNumbers = legendaries.reduce((acc, item) => {
@@ -446,10 +444,18 @@ async function tuningDeck() {
       (str) => !legendaries.some((json) => json.number === str)
     );
 
+    // console.log(suggestions);
+    let suggestionNumbers = suggestions.map((obj) => obj.idcard);
+
+    filteredDeck = [...new Set([...filteredDeck, ...suggestionNumbers.filter(
+      (str) => legendaries.some((json) => json.number === str)
+    )])];
+
     filteredDeck.forEach(async (card) => {
       addCardToDeckBuilder(card);
       await wait(1);
     });
+
   }
 }
 
@@ -465,7 +471,7 @@ async function addCardFromSpecifiedCategory(category, suggestionNumbers) {
     return cardCategories.some((cat) => category == cat);
   });
 
-  console.log("addCardFromSpecifiedCategory(" + category + ")");
+  // console.log("addCardFromSpecifiedCategory(" + category + ")");
   // console.log(suggestionList);
 
   addCardToDeckBuilder(suggestionList[0].number);
@@ -498,7 +504,7 @@ async function removeCardFromSpecifiedCategory(category) {
     }
   });
 
-  console.log("removeCardFromSpecifiedCategory(" + category + ")");
+  // console.log("removeCardFromSpecifiedCategory(" + category + ")");
   // console.log(cardList);
 
   if (cardsMenorOcorrencia.length > 0) {
@@ -550,7 +556,7 @@ async function autoGenerateHand(isMulligan) {
     (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
   );
 
-  console.log(cardList);
+  // console.log(cardList);
 
   handTestCards.forEach((id) => {
     const index = cardList.findIndex((obj) => obj.number === id);
@@ -1007,7 +1013,7 @@ function updateMiniCards(allCards, cardsList, id) {
 
 function addCardToDeckBuilder(id) {
   deck.cards.push(id);
-  console.log(deck.cards);
+  // console.log(deck.cards);
   updateAnalysisFromDeck();
 }
 

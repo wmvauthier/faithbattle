@@ -401,7 +401,7 @@ async function getRelatedCardsInDecks(
 
       let weightCategory = WEIGHT_CATEGORY;
       if (!isDeckBuilder) {
-        WEIGHT_CATEGORY = WEIGHT_CATEGORY * 2;
+        WEIGHT_CATEGORY = WEIGHT_CATEGORY * 1.0;
       }
 
       selectedCardcategories.forEach((selectedCategory) => {
@@ -449,10 +449,19 @@ async function getRelatedCardsInDecks(
   return relatedCardsArray;
 }
 
-function getRelatedDecks(relatedCards, decks) {
+function getRelatedDecks(cardNumber, relatedCards, decks) {
+  // Ordena os relatedCards pela quantidade (qtd) em ordem decrescente
   relatedCards.sort((a, b) => b.qtd - a.qtd);
 
-  const deckScores = decks.map((deck) => {
+  // Filtra apenas os decks que contêm o cardNumber em algum dos arrays: cards, sideboard, extra ou topcards
+  const filteredDecks = decks.filter((deck) =>
+    [deck.cards, deck.sideboard, deck.extra, deck.topcards].some((array) =>
+      array.includes(cardNumber)
+    )
+  );
+
+  // Calcula o score dos decks filtrados
+  const deckScores = filteredDecks.map((deck) => {
     const score = deck.cards.reduce((acc, cardId) => {
       const relatedCard = relatedCards.find(
         (relatedCard) => relatedCard.idcard === cardId
@@ -463,6 +472,7 @@ function getRelatedDecks(relatedCards, decks) {
     return { deck, score };
   });
 
+  // Ordena pelo score, retorna apenas os 4 primeiros decks
   return deckScores
     .sort((a, b) => b.score - a.score)
     .slice(0, 4)

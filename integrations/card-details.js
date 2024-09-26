@@ -20,13 +20,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         null
       );
       similarCards = similarCards.slice(0, 12);
-      let relatedDecks = getRelatedDecks(similarCards, decks);
+
+      // console.log(card);
+      // console.log(similarCards);
+
+      let relatedDecks = getRelatedDecks(card.number, similarCards, decks);
 
       const similarCardDetails = await fetchRelatedCardsDetails(
         similarCards.map((card) => card.idcard)
       );
-
-      console.log(similarCards);
 
       const elementsToUpdate = {
         tag_cardName: card.name,
