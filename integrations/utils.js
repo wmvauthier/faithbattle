@@ -23,8 +23,8 @@ const WEIGHT_OCURRENCY_DECK = 200;
 const WEIGHT_OCURRENCY_EXTRA = 200;
 const WEIGHT_OCURRENCY_SIDEBOARD = 200;
 
-const WEIGHT_DECK_STYLE = 20;
-const WEIGHT_DECK_ARCHETYPE = 100;
+const WEIGHT_DECK_STYLE = 30;
+const WEIGHT_DECK_ARCHETYPE = 70;
 
 const excludedWords = [
   "zona",
@@ -409,7 +409,6 @@ async function getRelatedCardsInDecks(
           addCardWithWeight(card.number, weightCategory);
         }
       });
-
     }
   });
 
@@ -472,7 +471,7 @@ function getRelatedDecks(relatedCards, decks) {
 
 function calculateWeightedScore(stars, monthDiff, usage) {
   const weightStars = 0.75;
-  const weightDate  = 0.01;
+  const weightDate = 0.01;
   const weightUsage = 0.24;
 
   const score =
@@ -536,7 +535,7 @@ function scaleToFive(num) {
 function limitStringOccurrences(arr, maxOccurrences) {
   const counts = {};
 
-  return arr.filter(item => {
+  return arr.filter((item) => {
     counts[item] = (counts[item] || 0) + 1;
     return counts[item] <= maxOccurrences;
   });
