@@ -8,10 +8,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   data.forEach((card) => {
     card.ocurrences = getOccurrencesInDecks(card.number, decks);
-    card.stars = scaleToFive((getOccurrencesInSides(card.number, decks) / decks.length) * 100);
+    card.stars = scaleToFive(
+      (getOccurrencesInSides(card.number, decks) / decks.length) * 100,
+      card.ocurrences
+    );
   });
 
   cards = sortByStarsAndDate(data);
+console.log(cards);
 
   generateTextFilterByProperty("name", "Nome", "Digite o Nome");
   generateTextFilterByProperty("text", "Text", "Digite o Texto da Carta");

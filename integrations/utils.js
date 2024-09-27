@@ -538,8 +538,11 @@ function wait(segundos) {
   });
 }
 
-function scaleToFive(num) {
-  return Math.min(5, Math.max(1, (num / 20).toFixed(1)));
+function scaleToFive(num, ocurrences) {
+  if(num > 0){ num += 20; }
+  if(ocurrences > 0){ num += 20; }
+  const scaledValue = Math.min(5, Math.max(1, num / 20));
+  return scaledValue.toFixed(1);
 }
 
 function limitStringOccurrences(arr, maxOccurrences) {

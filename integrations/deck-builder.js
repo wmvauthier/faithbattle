@@ -208,7 +208,8 @@ async function updateAnalysisFromDeck() {
     allCards.forEach((card) => {
       card.ocurrences = getOccurrencesInDecks(card.number, decks);
       card.stars = scaleToFive(
-        (getOccurrencesInSides(card.number, decks) / decks.length) * 100
+        (getOccurrencesInSides(card.number, decks) / decks.length) * 100,
+        card.ocurrences
       );
     });
 
@@ -295,7 +296,6 @@ async function completeDeck(flagGenerate) {
 }
 
 async function tuningDeck() {
-
   if (deck.cards.length > 0) {
     let markerHasChanged = true;
     let counterLoop = 0;
@@ -447,15 +447,19 @@ async function tuningDeck() {
     // console.log(suggestions);
     let suggestionNumbers = suggestions.map((obj) => obj.idcard);
 
-    filteredDeck = [...new Set([...filteredDeck, ...suggestionNumbers.filter(
-      (str) => legendaries.some((json) => json.number === str)
-    )])];
+    filteredDeck = [
+      ...new Set([
+        ...filteredDeck,
+        ...suggestionNumbers.filter((str) =>
+          legendaries.some((json) => json.number === str)
+        ),
+      ]),
+    ];
 
     filteredDeck.forEach(async (card) => {
       addCardToDeckBuilder(card);
       await wait(1);
     });
-
   }
 }
 
