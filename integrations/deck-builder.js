@@ -1017,7 +1017,7 @@ function updateMiniCards(allCards, cardsList, id) {
 
 function addCardToDeckBuilder(id) {
   deck.cards.push(id);
-  // console.log(deck.cards);
+  console.log(deck.cards);
   updateAnalysisFromDeck();
 }
 

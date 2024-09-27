@@ -7,7 +7,7 @@ const URL_LEGENDARIES_JSON = "data/legendary.json";
 
 const WEIGHT_LEGENDARY = 100000;
 // const WEIGHT_LEGENDARY = 0;
-const WEIGHT_SAME = 500;
+const WEIGHT_SAME = 100;
 // const WEIGHT_SAME = 0;
 // const WEIGHT_NAME = 1000;
 const WEIGHT_NAME = 0;

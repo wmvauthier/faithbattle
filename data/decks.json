@@ -861,5 +861,64 @@
             99
         ],
         "sabedorias": 10
+    },
+    {
+        "number": "14",
+        "name": "Conhecimento e Fé",
+        "img": "img/artefatos/97.png",
+        "style": "Agressivo",
+        "archetype": "Santificação",
+        "format": "Standard",
+        "keywords": "Proteção;Combo",
+        "active": true,
+        "cards": [
+            5,
+            68,
+            12,
+            12,
+            60,
+            10,
+            7,
+            2,
+            92,
+            92,
+            71,
+            71,
+            62,
+            62,
+            68,
+            18,
+            18,
+            115,
+            115,
+            20,
+            20,
+            72,
+            29,
+            29,
+            97,
+            90,
+            90,
+            59,
+            59,
+            83
+        ],
+        "extra": [
+            96,
+            112,
+            113,
+            94,
+            53
+        ],
+        "sideboard": [],
+        "topcards": [
+            61,
+            10,
+            4,
+            14,
+            77,
+            99
+        ],
+        "sabedorias": 10
     }
 ]
