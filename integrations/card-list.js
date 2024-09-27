@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   });
 
   cards = sortByStarsAndDate(data);
-console.log(cards);
+  // console.log(cards);
 
   generateTextFilterByProperty("name", "Nome", "Digite o Nome");
   generateTextFilterByProperty("text", "Text", "Digite o Texto da Carta");
