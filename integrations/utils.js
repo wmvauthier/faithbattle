@@ -539,8 +539,8 @@ function wait(segundos) {
 }
 
 function scaleToFive(num, ocurrences) {
-  if(num > 0){ num += 20; }
-  if(ocurrences > 0){ num += 20; }
+  if(num > 0){ num += 15; }
+  if(ocurrences > 0){ num += 15; }
   const scaledValue = Math.min(5, Math.max(1, num / 20));
   return scaledValue.toFixed(1);
 }

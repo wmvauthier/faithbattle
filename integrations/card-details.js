@@ -53,7 +53,22 @@ document.addEventListener("DOMContentLoaded", async function () {
           if (id === "tag_cardImg") {
             element.src = value;
           } else if (id === "tag_cardStars") {
-            updateStars(element, value); // Atualizar as estrelas
+
+            card.ocurrences = getOccurrencesInDecks(card.number, decks);
+            card.stars = scaleToFive(
+              (card.ocurrences / decks.length) * 100,
+              card.ocurrences
+            );
+
+            // if (card.number == 29) {
+            //   console.log(card);
+            //   console.log("ocurrences -> " + card.ocurrences);
+            //   console.log("decks -> " + decks.length);
+            //   console.log("count -> " + card.ocurrences / decks.length);
+            //   console.log("stars -> " + card.stars);
+            // }
+
+            updateStars(element, card.stars); // Atualizar as estrelas
           } else {
             element.textContent = value;
           }
@@ -144,8 +159,11 @@ async function fetchRelatedCardsDetails(cardIds) {
 
 // Função para atualizar as estrelas
 function updateStars(element, stars) {
-  const fullStars = Math.floor(stars);
-  const halfStar = stars % 1 !== 0;
+
+  const resStars = parseInt(stars);
+
+  const fullStars = Math.floor(resStars);
+  const halfStar = resStars % 1 !== 0;
   const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
   element.innerHTML = "";

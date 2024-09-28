@@ -9,9 +9,18 @@ document.addEventListener("DOMContentLoaded", async function () {
   data.forEach((card) => {
     card.ocurrences = getOccurrencesInDecks(card.number, decks);
     card.stars = scaleToFive(
-      (getOccurrencesInSides(card.number, decks) / decks.length) * 100,
+      (card.ocurrences / decks.length) * 100,
       card.ocurrences
     );
+
+    // if (card.number == 29) {
+    //   console.log(card);
+    //   console.log("ocurrences -> " + card.ocurrences);
+    //   console.log("decks -> " + decks.length);
+    //   console.log("count -> " + card.ocurrences / decks.length);
+    //   console.log("stars -> " + card.stars);
+    // }
+
   });
 
   cards = sortByStarsAndDate(data);
@@ -150,6 +159,7 @@ function generateTextFilterByProperty(property, prettyName, placeholder) {
 
   filtersContainer.appendChild(input);
 }
+
 function generateCategoryFilter(jsonData) {
   const filtersContainer = document.getElementById("filters");
   const currentSelectedFilters = getCurrentSelectedFilters();

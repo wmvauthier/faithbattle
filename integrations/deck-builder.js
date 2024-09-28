@@ -208,9 +208,18 @@ async function updateAnalysisFromDeck() {
     allCards.forEach((card) => {
       card.ocurrences = getOccurrencesInDecks(card.number, decks);
       card.stars = scaleToFive(
-        (getOccurrencesInSides(card.number, decks) / decks.length) * 100,
+        (card.ocurrences / decks.length) * 100,
         card.ocurrences
       );
+
+      // if (card.number == 29) {
+      //   console.log(card);
+      //   console.log("ocurrences -> " + card.ocurrences);
+      //   console.log("decks -> " + decks.length);
+      //   console.log("count -> " + card.ocurrences / decks.length);
+      //   console.log("stars -> " + card.stars);
+      // }
+
     });
 
     similarCardsArray = sortByStarsAndDate(allCards);
@@ -1017,7 +1026,7 @@ function updateMiniCards(allCards, cardsList, id) {
 
 function addCardToDeckBuilder(id) {
   deck.cards.push(id);
-  console.log(deck.cards);
+  // console.log(deck.cards);
   updateAnalysisFromDeck();
 }
 
