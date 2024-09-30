@@ -206,10 +206,12 @@ async function updateAnalysisFromDeck() {
     );
   } else {
     allCards.forEach((card) => {
+      
       card.ocurrences = getOccurrencesInDecks(card.number, decks);
+      card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
       card.stars = scaleToFive(
-        (card.ocurrences / decks.length) * 100,
-        card.ocurrences
+        (card.ocurrencesInSides / decks.length) * 100,
+        card.ocurrencesInSides
       );
 
       // if (card.number == 29) {

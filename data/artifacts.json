@@ -239,7 +239,7 @@
         "text": "Quando o herói equipado atacar, o jogador defensor revela a carta do topo do seu baralho e perde pontos de fé igual ao custo de sabedoria dessa carta", 
         "stars": "5.0",
         "type": "Artefato",
-        "subtype": "-",
+        "subtype": "Lendário",
         "categories": "Escudo",
         "cost": 1,
         "strength": 1,

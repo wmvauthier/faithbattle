@@ -55,9 +55,10 @@ document.addEventListener("DOMContentLoaded", async function () {
           } else if (id === "tag_cardStars") {
 
             card.ocurrences = getOccurrencesInDecks(card.number, decks);
+            card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
             card.stars = scaleToFive(
-              (card.ocurrences / decks.length) * 100,
-              card.ocurrences
+              (card.ocurrencesInSides / decks.length) * 100,
+              card.ocurrencesInSides
             );
 
             // if (card.number == 29) {
