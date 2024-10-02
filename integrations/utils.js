@@ -475,7 +475,7 @@ function getRelatedDecks(cardNumber, relatedCards, decks) {
   // Ordena pelo score, retorna apenas os 4 primeiros decks
   return deckScores
     .sort((a, b) => b.score - a.score)
-    .slice(0, 4)
+    .slice(0, 8)
     .map((deckScore) => deckScore.deck);
 }
 

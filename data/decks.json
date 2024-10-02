@@ -197,10 +197,9 @@
     {
         "number": "4",
         "name": "Legends",
-        "img": "img/herois/64.png",
+        "img": "img/lendarias/95.png",
         "style": "Equilibrado",
         "archetype": "Santificação",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
@@ -266,11 +265,12 @@
             98
         ],
         "topcards": [
-            49,
-            27,
-            14,
-            21,
-            3
+            52,
+            53,
+            94,
+            96,
+            100,
+            113
         ],
         "sabedorias": 10
     },
@@ -280,7 +280,6 @@
         "img": "img/lendarias/53.png",
         "style": "Equilibrado",
         "archetype": "Batalha",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": false,
         "cards": [
@@ -358,7 +357,6 @@
         "img": "img/lendarias/52.png",
         "style": "Controlador",
         "archetype": "Maravilhas",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
@@ -414,7 +412,6 @@
         "img": "img/herois/60.png",
         "style": "Agressivo",
         "archetype": "Batalha",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
@@ -472,7 +469,6 @@
         "img": "img/milagres/16.png",
         "style": "Controlador",
         "archetype": "Santificação",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
@@ -550,7 +546,6 @@
         "img": "img/herois/3.png",
         "style": "Equilibrado",
         "archetype": "Batalha",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
@@ -606,7 +601,6 @@
         "img": "img/herois/62.png",
         "style": "Agressivo",
         "archetype": "Santificação",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
@@ -684,7 +678,6 @@
         "img": "img/milagres/116.png",
         "style": "Controlador",
         "archetype": "Supressão",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
@@ -760,7 +753,6 @@
         "img": "img/herois/65.png",
         "style": "Controlador",
         "archetype": "Batalha",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
@@ -834,7 +826,6 @@
         "img": "img/herois/4.png",
         "style": "Equilibrado",
         "archetype": "Batalha",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
@@ -890,7 +881,6 @@
         "img": "img/artefatos/97.png",
         "style": "Agressivo",
         "archetype": "Santificação",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [

@@ -92,11 +92,23 @@ async function updateAnalysisFromDeck() {
       .sort((a, b) => b.qtd - a.qtd)
       .slice(0, suggestionsQtd);
 
+      let sumStars = 0;
+
+      cardsFromDeck.forEach(card =>{
+        card.ocurrences = getOccurrencesInDecks(card.number, decks);
+        card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
+        card.stars = scaleToFive(
+          (card.ocurrencesInSides / decks.length) * 100,
+          card.ocurrencesInSides
+        );
+        sumStars += parseFloat(card.stars);
+      });
+
     const elementsToUpdate = {
       tag_deckName: deck.name,
 
       tag_deckStyle: deck.style,
-      tag_deckFormat: deck.format,
+      tag_deckLevel: parseInt(sumStars),
       tag_deckCategory: getKeyWithMaxAbsoluteValue(info.categoriesCount)
         ? getKeyWithMaxAbsoluteValue(info.categoriesCount)
         : "-",
@@ -928,7 +940,7 @@ function updateDeckListDOM(cardsFromDeck) {
     if (card.type == "Herói de Fé" && card.subtype == "Lendário") {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-2 col-md-2 col-2 card__related__sidebar__view__item set-bg";
+        "col-lg-1 col-md-2 col-2 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
@@ -945,7 +957,7 @@ function updateDeckListDOM(cardsFromDeck) {
     } else {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-2 col-md-2 col-2 card__related__sidebar__view__item set-bg";
+        "col-lg-1 col-md-2 col-2 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />

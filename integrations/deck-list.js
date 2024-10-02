@@ -1,4 +1,4 @@
-const CARDS_PER_PAGE = 16; // Número de cards por página
+const CARDS_PER_PAGE = 36; // Número de cards por página
 let currentPage = 1; // Página atual
 let decks = []; // Lista de todos os decks
 let cards = []; // Lista de todos os decks
@@ -50,8 +50,8 @@ async function renderPage(page) {
           <div class="wrapper">
 
               <div class="banner-img" style="width: 100%; height: 250px; overflow: hidden; position: relative;">
-                <img src="${deck.img}" alt="Image 1"
-                    style="width: 100%; height: 100%; transform: scale(1.8); object-fit: cover; position: absolute; top: 100px; left: 0;">
+                <img src="${deck.img}" alt="."
+                    style="width: 100%; height: 100%; transform: scale(1.9); object-fit: cover; position: absolute; top: 100px; left: 0;">
               </div>
 
               <div class="stats">
@@ -59,7 +59,9 @@ async function renderPage(page) {
 
                   <b style="text-align:center">${deck.name.toUpperCase()}</b><br>
 
-                  <div class="row" style="width: 100%; padding-left: 40px;">
+                  <b style="text-align:center">${deck.name.toUpperCase()}</b><br>
+
+                  <div class="row" style="width: 100%; padding-left: 40px; padding-top: 5px;">
                       <div class="banner-img col-2" style="width: 100%; height: 40px; overflow: hidden; position: relative;">
                         <img src="${filteredObjects[0]?.img}" alt="Image 1"
                             style="width: 100%; height: 100%; transform: scale(1.5); object-fit: cover; position: absolute; top: 20%; left: 0;">
@@ -90,25 +92,21 @@ async function renderPage(page) {
 
               </div>
 
-              <div class="stats" style="padding-top:0px; margin:0;">
-                <hr style="padding-top:0px; margin:0;">
-              </div>
-              
-              <div class="stats" style="padding-top:0px;">
-
-                  <div style="width:50%;">
-                      <strong>ESTILO</strong> ${deck.style.toUpperCase()}
-                  </div>
-
-                  <div style="width:50%;">
-                      <strong>ARQUÉTIPO</strong> ${deck.archetype.toUpperCase()}
-                  </div>
-
-              </div>
-
           </div>
       </div> 
     `;
+
+    //   <div class="stats" style="padding-top:0px; margin:0;">
+    //   <hr style="padding-top:0px; margin:0;">
+    // </div>
+    //     <div class="stats" style="padding-top:0px;">
+    //     <div style="width:50%;">
+    //         <strong>META</strong> ${deck.style.toUpperCase()}
+    //     </div>
+    //     <div style="width:50%;">
+    //         <strong>ESTRELAS</strong> ${deck.archetype.toUpperCase()}
+    //     </div>
+    // </div>
 
     row.addEventListener("click", (event) => {
       if (!event.target.classList.contains("copy-button")) {
@@ -117,7 +115,7 @@ async function renderPage(page) {
     });
 
     row.style.cursor = "pointer";
-    row.classList.add("col-lg-3", "col-md-4", "col-sm-6", "col-xs-6");
+    row.classList.add("col-xl-2", "col-lg-3", "col-md-6", "col-sm-6", "col-xs-6");
 
     tableBody.appendChild(row);
   });

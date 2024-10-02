@@ -21,13 +21,25 @@ document.addEventListener("DOMContentLoaded", async function () {
       let info = await analyzeCards(cardsFromDeck, analysisAverages);
       const cardsFromDeckWithExtra = selectedDeck.cards.concat(selectedDeck.extra); // Concatenando todas as listas de cards
 
+      let sumStars = 0;
+
+      cardsFromDeck.forEach(card =>{
+        card.ocurrences = getOccurrencesInDecks(card.number, decks);
+        card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
+        card.stars = scaleToFive(
+          (card.ocurrencesInSides / decks.length) * 100,
+          card.ocurrencesInSides
+        );
+        sumStars += parseFloat(card.stars);
+      });
+
       // console.log(info);
 
       const elementsToUpdate = {
         tag_deckName: selectedDeck.name,
 
         tag_deckStyle: selectedDeck.style,
-        tag_deckFormat: selectedDeck.format,
+        tag_deckLevel: parseInt(sumStars),
         tag_deckCategory: getKeyWithMaxAbsoluteValue(info.categoriesCount),
         tag_deckEffect: selectedDeck.archetype,
 
@@ -197,7 +209,7 @@ function updateCardListDOM(cardsFromDeck) {
   cardsFromDeck.forEach((card) => {
     const cardElement = document.createElement("div");
     cardElement.className =
-      "col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2 card__related__sidebar__view__item set-bg";
+      "col-lg-1 col-md-2 col-sm-2 col-xs-2 col-2 card__related__sidebar__view__item set-bg";
     cardElement.style.cursor = "pointer";
     cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />

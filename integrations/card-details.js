@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         null,
         null
       );
-      similarCards = similarCards.slice(0, 12);
+
+      similarCards = similarCards.slice(0, 18);
 
       // console.log(card);
       // console.log(similarCards);
@@ -53,7 +54,6 @@ document.addEventListener("DOMContentLoaded", async function () {
           if (id === "tag_cardImg") {
             element.src = value;
           } else if (id === "tag_cardStars") {
-
             card.ocurrences = getOccurrencesInDecks(card.number, decks);
             card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
             card.stars = scaleToFive(
@@ -106,8 +106,10 @@ function updateSimilarCardsDOM(similarCardDetails, similarCards) {
     if (details) {
       const cardElement = document.createElement("div");
       cardElement.className =
-        "col-lg-1 col-md-3 col-sm-4 col-3 card__related__sidebar__view__item set-bg";
+        "col-lg-2 col-md-3 col-sm-4 col-3 card__related__sidebar__view__item set-bg";
       cardElement.style.cursor = "pointer";
+      cardElement.style.padding = "5px";
+      cardElement.style["margin-bottom"] = "5px";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
         <div class="card__related__info">
@@ -148,6 +150,7 @@ function updateRelatedDecks(relatedDecks) {
 </div>
 </div>`;
 
+    deckElement.className = "col-6";
     deckElement.style.cursor = "pointer";
     deckElement.addEventListener("click", () => getDeckDetails(deck.number));
     relatedDecksContainer.appendChild(deckElement);
@@ -160,7 +163,6 @@ async function fetchRelatedCardsDetails(cardIds) {
 
 // Função para atualizar as estrelas
 function updateStars(element, stars) {
-
   const resStars = parseInt(stars);
 
   const fullStars = Math.floor(resStars);

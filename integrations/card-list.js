@@ -1,4 +1,4 @@
-const CARDS_PER_PAGE = 30; // Número de cards por página
+const CARDS_PER_PAGE = 48; // Número de cards por página
 let currentPage = 1; // Página atual
 let cards = []; // Lista de todos os cards
 
@@ -473,7 +473,7 @@ function renderCards(cards) {
       const categoriesArray = card.categories.split(";");
 
       const productItem = document.createElement("div");
-      productItem.className = "col-lg-2 col-md-3 col-sm-3 col-6";
+      productItem.className = "col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6";
       productItem.setAttribute("onclick", `getCardDetails(${card.number})`);
       productItem.style.cursor = "pointer";
 
