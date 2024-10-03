@@ -102,7 +102,7 @@ async function renderPage(page) {
       colorArchetype = "#32CD32"; // Verde claro
       textArchetype = "#fff"; // Branco
     } else if (deck.archetype == "Supressão") {
-      symbolArchetype = '<i class="fa-solid fa-hand"></i>'; // Mão controlando (ícone colorido via FontAwesome)
+      symbolArchetype = '<i class="fa-solid fa-ban"></i>'; // Mão controlando (ícone colorido via FontAwesome)
       colorArchetype = "#000000"; // Preto
       textArchetype = "#fff"; // Branco
     }
