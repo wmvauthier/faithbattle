@@ -58,30 +58,87 @@ async function renderPage(page) {
     });
 
     let badges = "";
-
-    // console.log(filteredObjects);
+    let symbolStyle = "";
+    let colorStyle = "";
+    let textStyle = "";
 
     let arrKeywords = deck.keywords.split(";");
     console.log(deck);
+
+    if (deck.style == "Agressivo") {
+      symbolStyle = '<i class="fa-solid fa-hand-back-fist"></i>';
+      colorStyle = "#B22222";
+      textStyle = "#fff";
+    } else if (deck.style == "Equilibrado") {
+      symbolStyle = '<i class="fa-solid fa-hand-scissors"></i>';
+      colorStyle = "#FFD700";
+      textStyle = "#000";
+    } else if (deck.style == "Controlador") {
+      symbolStyle = '<i class="fa-solid fa-hand"></i>';
+      colorStyle = "#1E90FF";
+      textStyle = "#fff";
+    }
+
+    let symbolArchetype = "";
+    let colorArchetype = "";
+    let textArchetype = "";
+    let borderArchetype = "none"; // Valor padrão para borderArchetype
+
+    if (deck.archetype == "Batalha") {
+      symbolArchetype = '<i class="fa-solid fa-hand-fist"></i>'; // Espadas cruzadas (ícone colorido via FontAwesome)
+      colorArchetype = "#FF8C00"; // Laranja
+      textArchetype = "#000"; // Preto
+    } else if (deck.archetype == "Santificação") {
+      symbolArchetype = '<i class="fa-solid fa-droplet"></i>'; // Coroa (ícone colorido via FontAwesome)
+      colorArchetype = "whitesmoke"; // Branco esfumaçado
+      textArchetype = "#000"; // Preto
+      borderArchetype = "0.5px solid black"; // Borda preta fina
+    } else if (deck.archetype == "Combo") {
+      symbolArchetype = '<i class="fa-solid fa-gears"></i>'; // Engrenagens (ícone colorido via FontAwesome)
+      colorArchetype = "#800080"; // Roxo
+      textArchetype = "#fff"; // Branco
+    } else if (deck.archetype == "Maravilhas") {
+      symbolArchetype = '<i class="fa-solid fa-hat-wizard"></i>'; // Estrela (ícone colorido via FontAwesome)
+      colorArchetype = "#32CD32"; // Verde claro
+      textArchetype = "#fff"; // Branco
+    } else if (deck.archetype == "Supressão") {
+      symbolArchetype = '<i class="fa-solid fa-hand"></i>'; // Mão controlando (ícone colorido via FontAwesome)
+      colorArchetype = "#000000"; // Preto
+      textArchetype = "#fff"; // Branco
+    }
 
     badges =
       badges +
       '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
       'style="color: #fff; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
       sumStars.toFixed(2) +
-      " &#9733;</span>";
+      ' <i style="color: #FFD700; font-size: 12px;" class="fa-solid fa-star"></i></span>';
 
     badges =
       badges +
       '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
-      'style="color: #fff; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
+      'style="color: ' +
+      textStyle +
+      "; background-color: " +
+      colorStyle +
+      ' !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
+      symbolStyle +
+      "&nbsp;" +
       deck.style +
       " </span>";
 
-    badges =
+      badges =
       badges +
-      '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
-      'style="color: #fff; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
+      '<span class="badge rounded-pill mx-1 text-bg-secondary" ' +
+      'style="color: ' +
+      textArchetype +
+      "; background-color: " +
+      colorArchetype +
+      " !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px; border: " +
+      borderArchetype +
+      '"> ' +
+      symbolArchetype +
+      "&nbsp;" +
       deck.archetype +
       " </span>";
 
