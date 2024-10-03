@@ -116,7 +116,7 @@ function generateSelectFilterByProperty(
         starsHTML += "&#9733;"; // Estrela preenchida
       }
       for (let i = value; i < 5; i++) {
-        starsHTML += "&#9734;"; // Estrela vazia
+        starsHTML += "&#9733;"; // Estrela vazia
       }
       option.innerHTML = starsHTML;
     } else {
@@ -285,7 +285,7 @@ function generateStarsFilter(uniqueStars, order = "DESC") {
       starsHTML += "&#9733;"; // Estrela preenchida
     }
     for (let i = value; i < 5; i++) {
-      starsHTML += "&#9734;"; // Estrela vazia
+      starsHTML += "&#9733;"; // Estrela vazia
     }
     option.innerHTML = starsHTML;
 

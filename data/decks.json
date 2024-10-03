@@ -5,8 +5,7 @@
         "img": "img/artefatos/23.png",
         "style": "Controlador",
         "archetype": "Combo",
-        "format": "Standard",
-        "keywords": "Controle;Combo;Proteção;Artefato",
+        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             1,
@@ -79,8 +78,7 @@
         "img": "img/milagres/20.png",
         "style": "Agressivo",
         "archetype": "Batalha",
-        "format": "Standard",
-        "keywords": "Proteção;Combo",
+        "keywords": "Lapada;Dano na Cara",
         "active": true,
         "cards": [
             60,
@@ -136,7 +134,6 @@
         "img": "img/milagres/14.png",
         "style": "Equilibrado",
         "archetype": "Batalha",
-        "format": "Standard",
         "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
@@ -277,11 +274,11 @@
     {
         "number": "5",
         "name": "Batedores de Jericó",
-        "img": "img/lendarias/53.png",
+        "img": "img/herois/61.png",
         "style": "Equilibrado",
         "archetype": "Batalha",
         "keywords": "Proteção;Combo",
-        "active": false,
+        "active": true,
         "cards": [
             60,
             60,

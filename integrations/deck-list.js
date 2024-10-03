@@ -32,6 +32,7 @@ async function renderPage(page) {
   const decksToShow = decks.slice(startIndex, endIndex);
 
   let allCards = await getCards();
+  let rowsToAdd = [];
 
   decksToShow.forEach((deck) => {
     const arrays = [deck.cards, deck.extra, deck.sideboard];
@@ -42,7 +43,56 @@ async function renderPage(page) {
       deck.topcards.includes(obj.number)
     );
 
+    let sumStars = 0;
+
+    let cardsFromDeck = getCardsFromDeck(deck.cards, allCards);
+
+    cardsFromDeck.forEach((card) => {
+      card.ocurrences = getOccurrencesInDecks(card.number, decks);
+      card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
+      card.stars = scaleToFive(
+        (card.ocurrencesInSides / decks.length) * 100,
+        card.ocurrencesInSides
+      );
+      sumStars += parseFloat(card.stars) / deck.cards.length;
+    });
+
+    let badges = "";
+
     // console.log(filteredObjects);
+
+    let arrKeywords = deck.keywords.split(";");
+    console.log(deck);
+
+    badges =
+      badges +
+      '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
+      'style="color: #fff; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
+      sumStars.toFixed(2) +
+      " &#9733;</span>";
+
+    badges =
+      badges +
+      '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
+      'style="color: #fff; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
+      deck.style +
+      " </span>";
+
+    badges =
+      badges +
+      '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
+      'style="color: #fff; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
+      deck.archetype +
+      " </span>";
+
+    // arrKeywords.forEach((keyword) => {
+    //   badges =
+    //     badges +
+    //     '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
+    //     'style="color: #fff; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> #' +
+    //     keyword +
+    //     " </span>";
+    // });
 
     const row = document.createElement("div");
     row.innerHTML = `
@@ -59,31 +109,31 @@ async function renderPage(page) {
 
                   <b style="text-align:center">${deck.name.toUpperCase()}</b><br>
 
-                  <b style="text-align:center">${deck.name.toUpperCase()}</b><br>
+                  ${badges}
 
                   <div class="row" style="width: 100%; padding-left: 40px; padding-top: 5px;">
                       <div class="banner-img col-2" style="width: 100%; height: 40px; overflow: hidden; position: relative;">
-                        <img src="${filteredObjects[0]?.img}" alt="Image 1"
+                        <img src="${filteredObjects[0]?.img}" alt="."
                             style="width: 100%; height: 100%; transform: scale(1.5); object-fit: cover; position: absolute; top: 20%; left: 0;">
                       </div>
                       <div class="banner-img col-2" style="width: 100%; height: 40px; overflow: hidden; position: relative;">
-                        <img src="${filteredObjects[1]?.img}" alt="Image 1"
+                        <img src="${filteredObjects[1]?.img}" alt="."
                             style="width: 100%; height: 100%; transform: scale(1.5); object-fit: cover; position: absolute; top: 20%; left: 0;">
                       </div>
                       <div class="banner-img col-2" style="width: 100%; height: 40px; overflow: hidden; position: relative;">
-                        <img src="${filteredObjects[2]?.img}" alt="Image 1"
+                        <img src="${filteredObjects[2]?.img}" alt="."
                             style="width: 100%; height: 100%; transform: scale(1.5); object-fit: cover; position: absolute; top: 20%; left: 0;">
                       </div>
                       <div class="banner-img col-2" style="width: 100%; height: 40px; overflow: hidden; position: relative;">
-                        <img src="${filteredObjects[3]?.img}" alt="Image 1"
+                        <img src="${filteredObjects[3]?.img}" alt="."
                             style="width: 100%; height: 100%; transform: scale(1.5); object-fit: cover; position: absolute; top: 20%; left: 0;">
                       </div>
                       <div class="banner-img col-2" style="width: 100%; height: 40px; overflow: hidden; position: relative;">
-                        <img src="${filteredObjects[4]?.img}" alt="Image 1"
+                        <img src="${filteredObjects[4]?.img}" alt="."
                             style="width: 100%; height: 100%; transform: scale(1.5); object-fit: cover; position: absolute; top: 20%; left: 0;">
                       </div>
                       <div class="banner-img col-2" style="width: 100%; height: 40px; overflow: hidden; position: relative;">
-                        <img src="${filteredObjects[5]?.img}" alt="Image 1"
+                        <img src="${filteredObjects[5]?.img}" alt="."
                             style="width: 100%; height: 100%; transform: scale(1.5); object-fit: cover; position: absolute; top: 20%; left: 0;">
                       </div>
                   </div>
@@ -115,8 +165,21 @@ async function renderPage(page) {
     });
 
     row.style.cursor = "pointer";
-    row.classList.add("col-xl-2", "col-lg-3", "col-md-6", "col-sm-6", "col-xs-6");
+    row.classList.add(
+      "col-xl-2",
+      "col-lg-3",
+      "col-md-6",
+      "col-sm-6",
+      "col-xs-6"
+    );
 
+    row.stars = sumStars;
+
+    rowsToAdd.push(row);
+  });
+
+  rowsToAdd.sort((a, b) => b.stars - a.stars);
+  rowsToAdd.forEach((row) => {
     tableBody.appendChild(row);
   });
 

@@ -101,14 +101,14 @@ async function updateAnalysisFromDeck() {
           (card.ocurrencesInSides / decks.length) * 100,
           card.ocurrencesInSides
         );
-        sumStars += parseFloat(card.stars);
+        sumStars += parseFloat(card.stars) / deck.cards.length;
       });
 
     const elementsToUpdate = {
       tag_deckName: deck.name,
 
       tag_deckStyle: deck.style,
-      tag_deckLevel: parseInt(sumStars),
+      tag_deckLevel: sumStars.toFixed(2),
       tag_deckCategory: getKeyWithMaxAbsoluteValue(info.categoriesCount)
         ? getKeyWithMaxAbsoluteValue(info.categoriesCount)
         : "-",
@@ -668,7 +668,7 @@ function generateSelectFilterByProperty(
         starsHTML += "&#9733;"; // Estrela preenchida
       }
       for (let i = value; i < 5; i++) {
-        starsHTML += "&#9734;"; // Estrela vazia
+        starsHTML += "&#9733;"; // Estrela vazia
       }
       option.innerHTML = starsHTML;
     } else {

@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           (card.ocurrencesInSides / decks.length) * 100,
           card.ocurrencesInSides
         );
-        sumStars += parseFloat(card.stars);
+        sumStars += parseFloat(card.stars) / deck.cards.length;
       });
 
       // console.log(info);
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         tag_deckName: selectedDeck.name,
 
         tag_deckStyle: selectedDeck.style,
-        tag_deckLevel: parseInt(sumStars),
+        tag_deckLevel: sumStars.toFixed(2),
         tag_deckCategory: getKeyWithMaxAbsoluteValue(info.categoriesCount),
         tag_deckEffect: selectedDeck.archetype,
 

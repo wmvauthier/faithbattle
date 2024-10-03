@@ -91,7 +91,6 @@ socket.onopen = () => {
 
 socket.onmessage = (event) => {
   const data = JSON.parse(event.data);
-  console.log(data);
   if (data.boardState) {
     updateBoard(data.boardState, data.type === "move");
   }
@@ -815,7 +814,6 @@ function sendBoard() {
 }
 
 function updateBoard(data, isAMoveRequisition) {
-  console.log(data);
 
   let enemyState = {};
 
