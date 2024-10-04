@@ -44,8 +44,10 @@ async function renderPage(page) {
     );
 
     let sumStars = 0;
+    const mergedArray = [...deck.cards, ...deck.extra];
+    let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
 
-    let cardsFromDeck = getCardsFromDeck(deck.cards, allCards);
+    console.log(cardsFromDeck);
 
     cardsFromDeck.forEach((card) => {
       card.ocurrences = getOccurrencesInDecks(card.number, decks);
@@ -54,7 +56,7 @@ async function renderPage(page) {
         (card.ocurrencesInSides / decks.length) * 100,
         card.ocurrencesInSides
       );
-      sumStars += parseFloat(card.stars) / deck.cards.length;
+      sumStars += parseFloat(card.stars) / mergedArray.length;
     });
 
     let badges = "";
@@ -100,7 +102,7 @@ async function renderPage(page) {
     } else if (deck.archetype == "Maravilhas") {
       symbolArchetype = '<i class="fa-solid fa-hat-wizard"></i>'; // Estrela (ícone colorido via FontAwesome)
       colorArchetype = "#32CD32"; // Verde claro
-      textArchetype = "#fff"; // Branco
+      textArchetype = "#000"; // Branco
     } else if (deck.archetype == "Supressão") {
       symbolArchetype = '<i class="fa-solid fa-ban"></i>'; // Mão controlando (ícone colorido via FontAwesome)
       colorArchetype = "#000000"; // Preto
