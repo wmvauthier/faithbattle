@@ -280,14 +280,17 @@ function generateStarsFilter(uniqueStars, order = "DESC") {
     const option = document.createElement("option");
     option.value = value;
 
+    console.log(value);
+
     let starsHTML = "";
     for (let i = 0; i < value; i++) {
       starsHTML += "&#9733;"; // Estrela preenchida
     }
     for (let i = value; i < 5; i++) {
-      starsHTML += "&#9733;"; // Estrela vazia
+      starsHTML += "&#9734;"; // Estrela vazia
     }
     option.innerHTML = starsHTML;
+    console.log(value);
 
     select.appendChild(option);
   });

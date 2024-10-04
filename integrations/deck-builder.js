@@ -51,7 +51,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 async function updateAnalysisFromDeck() {
   deck.cards = limitStringOccurrences(deck.cards, 2);
 
-  cardsFromDeck = await getCardsFromDeck(deck.cards, allCards);
+  const mergedArray = [...deck.cards, ...deck.extra];
+  let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
 
   let similarCardsArray = [];
 
@@ -83,26 +84,23 @@ async function updateAnalysisFromDeck() {
     similarCardsArray = await prepareSimilarCardsArray(similarCardsArray);
     const mergedAndSummed = mergeAndSumSimilarCards(similarCardsArray);
 
-    // console.log(info);
-    // console.log(similarCardsArray);
-
     suggestions = mergedAndSummed.sort((a, b) => b.qtd - a.qtd);
 
     similarCardsArray = mergedAndSummed
       .sort((a, b) => b.qtd - a.qtd)
       .slice(0, suggestionsQtd);
 
-      let sumStars = 0;
+    let sumStars = 0;
 
-      cardsFromDeck.forEach(card =>{
-        card.ocurrences = getOccurrencesInDecks(card.number, decks);
-        card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
-        card.stars = scaleToFive(
-          (card.ocurrencesInSides / decks.length) * 100,
-          card.ocurrencesInSides
-        );
-        sumStars += parseFloat(card.stars) / deck.cards.length;
-      });
+    cardsFromDeck.forEach((card) => {
+      card.ocurrences = getOccurrencesInDecks(card.number, decks);
+      card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
+      card.stars = scaleToFive(
+        (card.ocurrencesInSides / decks.length) * 100,
+        card.ocurrencesInSides
+      );
+      sumStars += parseFloat(card.stars) / deck.cards.length;
+    });
 
     const elementsToUpdate = {
       tag_deckName: deck.name,
@@ -218,7 +216,6 @@ async function updateAnalysisFromDeck() {
     );
   } else {
     allCards.forEach((card) => {
-      
       card.ocurrences = getOccurrencesInDecks(card.number, decks);
       card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
       card.stars = scaleToFive(
@@ -233,7 +230,6 @@ async function updateAnalysisFromDeck() {
       //   console.log("count -> " + card.ocurrences / decks.length);
       //   console.log("stars -> " + card.stars);
       // }
-
     });
 
     similarCardsArray = sortByStarsAndDate(allCards);

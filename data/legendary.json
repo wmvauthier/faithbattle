@@ -13,7 +13,7 @@
         "effects": "Ativável",
         "number": 51,
         "commonNumber": 6,
-        "collection": "Alpha",
+        "collection": "APH",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
         "img": "img/lendarias/51.png"
@@ -32,7 +32,7 @@
         "effects": "Ativável",
         "number": 52,
         "commonNumber": 1,
-        "collection": "Alpha",
+        "collection": "APH",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
         "img": "img/lendarias/52.png"
@@ -51,7 +51,7 @@
         "effects": "Ativável",
         "number": 53,
         "commonNumber": 2,
-        "collection": "Alpha",
+        "collection": "APH",
         "date": "2023-12-01",
         "artist": "Lucas Bird",
         "img": "img/lendarias/53.png"
@@ -70,7 +70,7 @@
         "effects": "Ativável",
         "number": 94,
         "commonNumber": 7,
-        "collection": "Gênesis",
+        "collection": "GEN",
         "date": "2024-10-01",
         "artist": "Lucas Bird",
         "img": "img/lendarias/94.png"
@@ -89,7 +89,7 @@
         "effects": "Ativável",
         "number": 96,
         "commonNumber": 60,
-        "collection": "Gênesis",
+        "collection": "GEN",
         "date": "2024-10-01",
         "artist": "Lucas Bird",
         "img": "img/lendarias/96.png"
@@ -108,7 +108,7 @@
         "effects": "Ativável",
         "number": 100,
         "commonNumber": 69,
-        "collection": "Gênesis",
+        "collection": "GEN",
         "date": "2024-10-01",
         "artist": "Lucas Bird",
         "img": "img/lendarias/100.png"
@@ -127,7 +127,7 @@
         "effects": "Ativável",
         "number": 112,
         "commonNumber": 10,
-        "collection": "Gênesis",
+        "collection": "GEN",
         "date": "2024-10-01",
         "artist": "Lucas Bird",
         "img": "img/lendarias/112.png"
@@ -146,7 +146,7 @@
         "effects": "Ativável",
         "number": 113,
         "commonNumber": 5,
-        "collection": "Gênesis",
+        "collection": "GEN",
         "date": "2024-10-01",
         "artist": "Lucas Bird",
         "img": "img/lendarias/113.png"
@@ -165,7 +165,7 @@
         "effects": "Ativável",
         "number": 95,
         "commonNumber": 64,
-        "collection": "Gênesis",
+        "collection": "GEN",
         "date": "2024-10-01",
         "artist": "Lucas Bird",
         "img": "img/lendarias/95.png"

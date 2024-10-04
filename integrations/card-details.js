@@ -126,35 +126,35 @@ function updateSimilarCardsDOM(similarCardDetails, similarCards) {
 }
 
 function updateRelatedDecks(relatedDecks) {
-  const relatedDecksContainer = document.getElementById(
-    "related-decks-container"
-  );
-  relatedDecksContainer.innerHTML = ""; // Limpa o conteúdo existente
+//   const relatedDecksContainer = document.getElementById(
+//     "related-decks-container"
+//   );
+//   relatedDecksContainer.innerHTML = ""; // Limpa o conteúdo existente
 
-  relatedDecks.forEach((deck) => {
-    const keywordsArray = deck.keywords.split(";");
+//   relatedDecks.forEach((deck) => {
+//     const keywordsArray = deck.keywords.split(";");
 
-    const deckElement = document.createElement("div");
-    deckElement.innerHTML = `
-<div class="product__sidebar__comment__item">
-<div class="product__sidebar__comment__item__pic">
-  <img src="${
-    deck.img
-  }" alt="Deck Image" style="max-width: 90px; height: auto; max-height: 130px;">
-</div>
-<div class="product__sidebar__comment__item__text">
-  <ul>
-    ${keywordsArray.map((keyword) => `<li>${keyword}</li>`).join("")}
-  </ul>
-  <h5><a href="#">${deck.name}</a></h5>
-</div>
-</div>`;
+//     const deckElement = document.createElement("div");
+//     deckElement.innerHTML = `
+// <div class="product__sidebar__comment__item">
+// <div class="product__sidebar__comment__item__pic">
+//   <img src="${
+//     deck.img
+//   }" alt="Deck Image" style="max-width: 90px; height: auto; max-height: 130px;">
+// </div>
+// <div class="product__sidebar__comment__item__text">
+//   <ul>
+//     ${keywordsArray.map((keyword) => `<li>${keyword}</li>`).join("")}
+//   </ul>
+//   <h5><a href="#">${deck.name}</a></h5>
+// </div>
+// </div>`;
 
-    deckElement.className = "col-6";
-    deckElement.style.cursor = "pointer";
-    deckElement.addEventListener("click", () => getDeckDetails(deck.number));
-    relatedDecksContainer.appendChild(deckElement);
-  });
+//     deckElement.className = "col-6";
+//     deckElement.style.cursor = "pointer";
+//     deckElement.addEventListener("click", () => getDeckDetails(deck.number));
+//     relatedDecksContainer.appendChild(deckElement);
+//   });
 }
 
 async function fetchRelatedCardsDetails(cardIds) {

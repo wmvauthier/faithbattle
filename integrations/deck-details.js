@@ -19,18 +19,19 @@ document.addEventListener("DOMContentLoaded", async function () {
       const analysisAverages = await analyzeDecks(decks, null, null);
       let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
       let info = await analyzeCards(cardsFromDeck, analysisAverages);
-      const cardsFromDeckWithExtra = selectedDeck.cards.concat(selectedDeck.extra); // Concatenando todas as listas de cards
 
       let sumStars = 0;
-
-      cardsFromDeck.forEach(card =>{
+      const mergedArray = [...deck.cards, ...deck.extra];
+      let cardsFromDeckWithExtra = getCardsFromDeck(mergedArray, allCards);
+    
+      cardsFromDeckWithExtra.forEach((card) => {
         card.ocurrences = getOccurrencesInDecks(card.number, decks);
         card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
         card.stars = scaleToFive(
           (card.ocurrencesInSides / decks.length) * 100,
           card.ocurrencesInSides
         );
-        sumStars += parseFloat(card.stars) / deck.cards.length;
+        sumStars += parseFloat(card.stars) / mergedArray.length;
       });
 
       // console.log(info);

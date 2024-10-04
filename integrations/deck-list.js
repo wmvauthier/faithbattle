@@ -45,11 +45,9 @@ async function renderPage(page) {
 
     let sumStars = 0;
     const mergedArray = [...deck.cards, ...deck.extra];
-    let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
-
-    console.log(cardsFromDeck);
-
-    cardsFromDeck.forEach((card) => {
+    let cardsFromDeckWithExtra = getCardsFromDeck(mergedArray, allCards);
+  
+    cardsFromDeckWithExtra.forEach((card) => {
       card.ocurrences = getOccurrencesInDecks(card.number, decks);
       card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
       card.stars = scaleToFive(
@@ -64,7 +62,7 @@ async function renderPage(page) {
     let colorStyle = "";
     let textStyle = "";
 
-    let arrKeywords = deck.keywords.split(";");
+    // let arrKeywords = deck.keywords.split(";");
     console.log(deck);
 
     if (deck.style == "Agressivo") {

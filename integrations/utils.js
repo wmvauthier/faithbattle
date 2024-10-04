@@ -279,7 +279,7 @@ function getOccurrencesInDecks(cardId, decks) {
 
 function getOccurrencesInSides(cardId, decks) {
   return decks.reduce((count, deck) => {
-    const cards = deck.cards.concat(deck.extra).concat(deck.sideboard); // Concatenando todas as listas de cards
+    const cards = deck.cards.concat(deck.extra).concat(deck.sideboard).concat(deck.topcards); // Concatenando todas as listas de cards
     return count + (cards.includes(cardId) ? 1 : 0);
   }, 0);
 }

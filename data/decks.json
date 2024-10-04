@@ -5,7 +5,6 @@
         "img": "img/artefatos/23.png",
         "style": "Controlador",
         "archetype": "Combo",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             1,
@@ -78,7 +77,6 @@
         "img": "img/milagres/20.png",
         "style": "Agressivo",
         "archetype": "Batalha",
-        "keywords": "Lapada;Dano na Cara",
         "active": true,
         "cards": [
             60,
@@ -134,7 +132,6 @@
         "img": "img/milagres/14.png",
         "style": "Equilibrado",
         "archetype": "Batalha",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             1,
@@ -197,7 +194,6 @@
         "img": "img/lendarias/95.png",
         "style": "Equilibrado",
         "archetype": "Santificação",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             1,
@@ -276,7 +272,6 @@
         "img": "img/herois/61.png",
         "style": "Equilibrado",
         "archetype": "Batalha",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             60,
@@ -353,7 +348,6 @@
         "img": "img/lendarias/52.png",
         "style": "Controlador",
         "archetype": "Maravilhas",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             1,
@@ -408,7 +402,6 @@
         "img": "img/herois/60.png",
         "style": "Agressivo",
         "archetype": "Batalha",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             1,
@@ -465,7 +458,6 @@
         "img": "img/milagres/16.png",
         "style": "Controlador",
         "archetype": "Santificação",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             5,
@@ -542,7 +534,6 @@
         "img": "img/herois/3.png",
         "style": "Equilibrado",
         "archetype": "Batalha",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             73,
@@ -577,6 +568,7 @@
             59
         ],
         "extra": [
+            113,
             52,
             95
         ],
@@ -597,7 +589,6 @@
         "img": "img/herois/62.png",
         "style": "Agressivo",
         "archetype": "Santificação",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             7,
@@ -674,7 +665,6 @@
         "img": "img/milagres/116.png",
         "style": "Controlador",
         "archetype": "Supressão",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             18,
@@ -749,7 +739,6 @@
         "img": "img/herois/65.png",
         "style": "Controlador",
         "archetype": "Batalha",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             4,
@@ -822,7 +811,6 @@
         "img": "img/herois/4.png",
         "style": "Equilibrado",
         "archetype": "Batalha",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             61,
@@ -877,7 +865,6 @@
         "img": "img/artefatos/97.png",
         "style": "Agressivo",
         "archetype": "Santificação",
-        "keywords": "Proteção;Combo",
         "active": true,
         "cards": [
             5,
@@ -945,6 +932,79 @@
             14,
             77,
             99
+        ],
+        "sabedorias": 10
+    },
+    {
+        "number": "15",
+        "name": "Miracles 2.0",
+        "img": "img/milagres/84.png",
+        "style": "Controlador",
+        "archetype": "Maravilhas",
+        "active": true,
+        "cards": [
+            60,
+            60,
+            5,
+            12,
+            12,
+            61,
+            61,
+            1,
+            8,
+            25,
+            25,
+            79,
+            79,
+            84,
+            84,
+            17,
+            17,
+            85,
+            85,
+            18,
+            18,
+            20,
+            20,
+            111,
+            111,
+            48,
+            19,
+            19,
+            83,
+            83
+        ],
+        "extra": [
+            113,
+            52
+        ],
+        "sideboard": [
+            9,
+            47,
+            68,
+            69,
+            22,
+            58,
+            13,
+            14,
+            21,
+            42,
+            76,
+            77,
+            86,
+            99,
+            27,
+            30,
+            88,
+            114
+        ],
+        "topcards": [
+            60,
+            1,
+            8,
+            52,
+            79,
+            25
         ],
         "sabedorias": 10
     }
