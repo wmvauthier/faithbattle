@@ -180,8 +180,6 @@ async function fetchJSON(url) {
       throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
     return await response.json();
   } catch (error) {
-    // console.error(url);
-    // console.error(error);
     return [];
   }
 }
@@ -279,7 +277,14 @@ function getOccurrencesInDecks(cardId, decks) {
 
 function getOccurrencesInSides(cardId, decks) {
   return decks.reduce((count, deck) => {
-    const cards = deck.cards.concat(deck.extra).concat(deck.sideboard).concat(deck.topcards); // Concatenando todas as listas de cards
+    let imgTitle = deck.img.replace(/\d+/g, "");
+    const cards = deck.cards
+      .concat(deck.extra)
+      .concat(deck.sideboard)
+      .concat(deck.topcards)
+      .concat(deck.topcards)
+      .concat([imgTitle, imgTitle, imgTitle]); // Adicionando imgTitle ao array usando concat
+
     return count + (cards.includes(cardId) ? 1 : 0);
   }, 0);
 }
@@ -539,8 +544,12 @@ function wait(segundos) {
 }
 
 function scaleToFive(num, ocurrences) {
-  if(num > 0){ num += 10; }
-  if(ocurrences > 0){ num += 10; }
+  if (num > 0) {
+    num += 10;
+  }
+  if (ocurrences > 0) {
+    num += 10;
+  }
   const scaledValue = Math.min(5, Math.max(1, num / 20));
   return scaledValue.toFixed(1);
 }

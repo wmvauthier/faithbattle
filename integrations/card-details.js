@@ -163,11 +163,11 @@ async function fetchRelatedCardsDetails(cardIds) {
 
 // Função para atualizar as estrelas
 function updateStars(element, stars) {
-  const resStars = parseInt(stars);
+  const resStars = parseFloat(stars); // Use parseFloat para manter a parte decimal
 
-  const fullStars = Math.floor(resStars);
-  const halfStar = resStars % 1 !== 0;
-  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+  const fullStars = Math.floor(resStars); // Parte inteira
+  const halfStar = resStars % 1 >= 0.5; // Verifica se há uma meia estrela
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0); // Ajusta a contagem das estrelas vazias
 
   element.innerHTML = "";
 
