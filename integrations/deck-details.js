@@ -6,50 +6,28 @@ document.addEventListener("DOMContentLoaded", async function () {
   let idSelectedDeck = localStorage.getItem("idSelectedDeck");
 
   if (idSelectedDeck && idSelectedDeck > 0) {
-    allCards = await getCards();
-    decks = await getDecks();
-
+    const [allCards, decks] = await Promise.all([getCards(), getDecks()]);
     const selectedDeck = decks.find(
       (element) => element.number == idSelectedDeck
     );
 
     if (selectedDeck) {
-      deck = selectedDeck;
-
       const analysisAverages = await analyzeDecks(decks, null, null);
-      let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
+      const mergedArray = [...selectedDeck.cards];
+      let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
       let info = await analyzeCards(cardsFromDeck, analysisAverages);
-
-      let sumStars = 0;
-      const mergedArray = [...deck.cards, ...deck.extra];
-      let cardsFromDeckWithExtra = getCardsFromDeck(mergedArray, allCards);
-    
-      cardsFromDeckWithExtra.forEach((card) => {
-        card.ocurrences = getOccurrencesInDecks(card.number, decks);
-        card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
-        card.stars = scaleToFive(
-          (card.ocurrencesInSides / decks.length) * 100,
-          card.ocurrencesInSides
-        );
-        sumStars += parseFloat(card.stars) / mergedArray.length;
-      });
-
-      // console.log(info);
 
       const elementsToUpdate = {
         tag_deckName: selectedDeck.name,
-
         tag_deckStyle: selectedDeck.style,
-        tag_deckLevel: sumStars.toFixed(2),
+        tag_deckLevel: selectedDeck.level,
         tag_deckCategory: getKeyWithMaxAbsoluteValue(info.categoriesCount),
         tag_deckEffect: selectedDeck.archetype,
-
-        tag_deckSize: `${selectedDeck.cards.length} `,
+        tag_deckSize: `${selectedDeck.cards.length}`,
         tag_deckSizeExtra: selectedDeck.extra.length,
         tag_deckMedCost: info.averageCost.toFixed(2),
         tag_deckStrength: info.averageStrength.toFixed(2),
         tag_deckResistence: info.averageResistance.toFixed(2),
-
         tag_deckQtdHero:
           info.heroCount > 0 ? info.heroCount : info.comparison.hero.count,
         tag_deckQtdMiracle:
@@ -62,7 +40,6 @@ document.addEventListener("DOMContentLoaded", async function () {
           info.artifactCount > 0
             ? info.artifactCount
             : info.comparison.artifact.count,
-
         tag_deckCostHero:
           info.heroCount > 0
             ? info.averageCostHero.toFixed(2)
@@ -82,48 +59,45 @@ document.addEventListener("DOMContentLoaded", async function () {
       };
 
       const comparisonElements = {
-        // Comparações Gerais
         tag_deckQtdComparison: info.comparison.general.qtd,
         tag_deckMedCostComparison: info.comparison.general.cost,
         tag_deckStrengthComparison: info.comparison.general.strength,
         tag_deckResistanceComparison: info.comparison.general.resistance,
-        // Comparações de custo
         tag_deckCostHeroComparison: info.comparison.hero.cost,
         tag_deckCostMiracleComparison: info.comparison.miracle.cost,
         tag_deckCostSinComparison: info.comparison.sin.cost,
         tag_deckCostArtifactComparison: info.comparison.artifact.cost,
-        // Comparações de quantidade
         tag_deckQtdHeroComparison: info.comparison.hero.count,
         tag_deckQtdMiracleComparison: info.comparison.miracle.count,
         tag_deckQtdSinComparison: info.comparison.sin.count,
         tag_deckQtdArtifactComparison: info.comparison.artifact.count,
       };
 
-      for (const [key, value] of Object.entries(elementsToUpdate)) {
+      // Update elements in DOM
+      Object.entries(elementsToUpdate).forEach(([key, value]) => {
         const element = document.getElementById(key);
         if (element) {
           element.textContent = value;
         }
-      }
+      });
 
-      for (const [key, value] of Object.entries(comparisonElements)) {
+      Object.entries(comparisonElements).forEach(([key, value]) => {
         const element = document.getElementById(key);
-
         if (element) {
           const color = getComparisonColor(key, value);
           element.style.color = color;
 
-          if (value === "higher") {
-            element.innerHTML = "&#9652;";
-          } else if (value === "lower") {
-            element.innerHTML = "&#9662;";
-          } else if (value === "equal") {
-            element.innerHTML = "&#8860;";
-          } else {
-            element.innerHTML = "";
-          }
+          element.innerHTML =
+            value === "higher"
+              ? "&#9652;"
+              : value === "lower"
+              ? "&#9662;"
+              : value === "equal"
+              ? "&#8860;"
+              : "";
 
-          if (key == "tag_deckQtdComparison") {
+          // Specific logic for comparison of deck size
+          if (key === "tag_deckQtdComparison") {
             if (
               info.comparison.totalCards > deckMinimumSize &&
               info.comparison.totalCards < analysisAverages.averageQtd
@@ -134,27 +108,19 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
           }
         }
-      }
+      });
 
-      // console.log("Aggro -> Tempo -> Control -> Combo -> Midrange");
-
-      // generateCategoryItems(
-      //   info.effectsCount,
-      //   info.comparison.effects,
-      //   "effectsContainer"
-      // );
       generateCategoryItems(
         info.categoriesCount,
         info.comparison.categories,
         "categoriesContainer"
       );
-
       updateCardListDOM(cardsFromDeck);
       updateDeckListDOM(cardsFromDeck);
       updateMiniCards(allCards, selectedDeck.extra, "#extraDeckList");
       updateMiniCards(allCards, selectedDeck.sideboard, "#sideboardList");
 
-      // renderGraph(cardsFromDeck);
+      // renderGraph(cardsFromDeck); // Uncomment if needed
     } else {
       location.href = "./deck-list.html";
     }
@@ -165,65 +131,58 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 function generateCategoryItems(categoriesCount, averages, id) {
   const container = document.getElementById(id);
+  const fragment = document.createDocumentFragment();
 
-  const categoryArray = Object.entries(categoriesCount);
-
-  categoryArray.sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
+  const categoryArray = Object.entries(categoriesCount).sort(
+    (a, b) => Math.abs(b[1]) - Math.abs(a[1])
+  );
 
   categoryArray.forEach(([category, count]) => {
     const comparison = averages[category];
     const color = getComparisonColor(category, comparison);
-    const input = document.createElement("div");
 
-    if (comparison == "higher") {
-      input.classList.add("green");
-    } else if (comparison == "lower") {
-      input.classList.add("red");
-    }
-
-    input.setAttribute(
-      "style",
-      "font-size: 1rem !important; margin-right: 0px !important; margin-bottom: 0px !important;"
-    );
-    input.classList.add("custom-text-input", "category-item");
-
+    const input = createDivWithClass("custom-text-input category-item");
+    input.style.fontSize = "1rem";
     input.innerHTML = `${category} : ${count} <span style="color:${color}"> ${
       comparison === "higher"
         ? "&#9650;"
         : comparison === "lower"
         ? "&#9660;"
-        : comparison === "equal"
-        ? "&#8860;"
-        : ""
+        : "&#8860;"
     }</span>`;
 
-    container.appendChild(input);
+    if (comparison === "higher") input.classList.add("green");
+    else if (comparison === "lower") input.classList.add("red");
+
+    fragment.appendChild(input);
   });
+
+  container.appendChild(fragment);
 }
 
 function updateCardListDOM(cardsFromDeck) {
   const deckListContainer = document.querySelector("#deckCards");
   if (!deckListContainer) return;
 
+  const fragment = document.createDocumentFragment();
   deckListContainer.innerHTML = "";
 
   cardsFromDeck.forEach((card) => {
-    const cardElement = document.createElement("div");
-    cardElement.className =
-      "col-lg-1 col-md-2 col-sm-2 col-xs-2 col-2 card__related__sidebar__view__item set-bg";
+    const cardElement = createDivWithClass(
+      "col-lg-1 col-md-2 col-sm-2 col-xs-2 col-2 card__related__sidebar__view__item set-bg"
+    );
     cardElement.style.cursor = "pointer";
+    cardElement.style.padding = "0 5px";
     cardElement.innerHTML = `
-        <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
-        <div class="card__related__info">
-        </div>
-      `;
+      <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
+      <div class="card__related__info"></div>
+    `;
 
     cardElement.addEventListener("click", () => getCardDetails(card.number));
-
-    cardElement.style = "padding-right:5px; padding-left: 5px;";
-
-    deckListContainer.appendChild(cardElement);
+    fragment.appendChild(cardElement);
   });
+
+  deckListContainer.appendChild(fragment);
 }
 
 function updateDeckListDOM(cardsFromDeck) {
@@ -231,50 +190,27 @@ function updateDeckListDOM(cardsFromDeck) {
   if (!deckListContainer) return;
 
   const result = removeDuplicatesAndCount(cardsFromDeck);
+  const fragment = document.createDocumentFragment();
   deckListContainer.innerHTML = "";
 
-  // console.log(cardsFromDeck);
-  // console.log(result);
-
-  // Cria a tabela
   const table = document.createElement("table");
   table.style.width = "100%";
   table.style.borderCollapse = "collapse";
-  table.style.color = "white"; // Define o texto da tabela para branco
+  table.style.color = "white"; // Definir o texto para branco
 
-  // Cria o cabeçalho da tabela
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
-
   thead.appendChild(headerRow);
   table.appendChild(thead);
 
-  // Cria o corpo da tabela
   const tbody = document.createElement("tbody");
 
   result.forEach((card) => {
     const row = document.createElement("tr");
 
-    const countCell = document.createElement("td");
-    countCell.textContent = card.count + "x";
-    countCell.style.border = "1px solid black";
-    countCell.style.padding = "8px";
-    countCell.style.border = "none"; // Remove a borda
-    countCell.style.padding = "0"; // Remove a borda
-
-    const nameCell = document.createElement("td");
-    nameCell.textContent = card.name;
-    nameCell.style.border = "1px solid black";
-    nameCell.style.padding = "8px";
-    nameCell.style.border = "none"; // Remove a borda
-    nameCell.style.padding = "0"; // Remove a borda
-
-    const valueCell = document.createElement("td");
-    valueCell.textContent = String.fromCharCode(10121 + card.cost);
-    valueCell.style.border = "1px solid black";
-    valueCell.style.padding = "8px";
-    valueCell.style.border = "none"; // Remove a borda
-    valueCell.style.padding = "0"; // Remove a borda
+    const countCell = createTableCell(`${card.count}x`);
+    const nameCell = createTableCell(card.name);
+    const valueCell = createTableCell(String.fromCharCode(10121 + card.cost));
 
     row.appendChild(countCell);
     row.appendChild(nameCell);
@@ -283,37 +219,38 @@ function updateDeckListDOM(cardsFromDeck) {
   });
 
   table.appendChild(tbody);
-  deckListContainer.appendChild(table);
+  fragment.appendChild(table);
+  deckListContainer.appendChild(fragment);
 }
 
 function updateMiniCards(allCards, cardsList, id) {
   const similarCardsContainer = document.querySelector(id);
   if (!similarCardsContainer) return;
 
+  const fragment = document.createDocumentFragment();
   similarCardsContainer.innerHTML = "";
 
   cardsList.forEach((similarCard) => {
     const details = allCards.find((card) => card.number === similarCard);
     if (details) {
-      const cardElement = document.createElement("div");
-      cardElement.className =
-        "col-lg-2 col-md-2 col-sm-2 col-2 card__related__sidebar__view__item set-bg";
+      const cardElement = createDivWithClass(
+        "col-lg-2 col-md-2 col-sm-2 col-2 card__related__sidebar__view__item set-bg"
+      );
       cardElement.style.cursor = "pointer";
+      cardElement.style.padding = "0 5px";
       cardElement.innerHTML = `
         <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
-        <div class="card__related__info">
-        </div>
+        <div class="card__related__info"></div>
       `;
 
       cardElement.addEventListener("click", () =>
         getCardDetails(details.number)
       );
-
-      cardElement.style = "padding-right:5px; padding-left: 5px;";
-
-      similarCardsContainer.appendChild(cardElement);
+      fragment.appendChild(cardElement);
     }
   });
+
+  similarCardsContainer.appendChild(fragment);
 }
 
 function removeDuplicatesAndCount(arr) {
@@ -321,16 +258,29 @@ function removeDuplicatesAndCount(arr) {
 
   arr.forEach((obj) => {
     if (map.has(obj.number)) {
-      // Incrementa a contagem se o objeto já estiver no map
       map.get(obj.number).count++;
     } else {
-      // Insere o objeto com count = 1 se for a primeira vez
       map.set(obj.number, { ...obj, count: 1 });
     }
   });
 
-  // Converte o map de volta para um array
   return Array.from(map.values());
+}
+
+// Função auxiliar para criar divs com classes
+function createDivWithClass(className) {
+  const div = document.createElement("div");
+  div.className = className;
+  return div;
+}
+
+// Função auxiliar para criar células da tabela
+function createTableCell(content) {
+  const cell = document.createElement("td");
+  cell.textContent = content;
+  cell.style.border = "none"; // Remove bordas
+  cell.style.padding = "0"; // Remove preenchimento
+  return cell;
 }
 
 // function renderGraph(cardsFromDeck) {

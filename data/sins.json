@@ -3,7 +3,7 @@
         "name": "Fruto Proibido",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Destrói o herói do oponente que esteja te atacando. Se ele tem Adão e/ou Eva na zona de batalha, ambos são destruídos.",
-        "stars": "5.0",
+        
         "type": "Pecado",
         "subtype": "-",
         "categories": "Remoção",
@@ -21,7 +21,7 @@
         "name": "Traição",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O oponente que te esteja atacando não pode atacar neste turno. Se Sansão estava entre os heróis atacantes, destrua-o.",
-        "stars": "5.0",
+        
         "type": "Pecado",
         "subtype": "-",
         "categories": "Proteção",
@@ -39,7 +39,7 @@
         "name": "Idolatria",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
-        "stars": "5.0",
+        
         "type": "Pecado",
         "subtype": "-",
         "categories": "Remoção",
@@ -57,7 +57,7 @@
         "name": "Clamor de Sangue",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
-        "stars": "5.0",
+        
         "type": "Pecado",
         "subtype": "-",
         "categories": "Remoção",
@@ -75,7 +75,7 @@
         "name": "Corrupção",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
-        "stars": "5.0",
+        
         "type": "Pecado",
         "subtype": "-",
         "categories": "Descarte;Renúncia;Dano",
@@ -93,7 +93,7 @@
         "name": "Duvidar da Promessa",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
-        "stars": "5.0",
+        
         "type": "Pecado",
         "subtype": "-",
         "categories": "Dano;Confusão",
@@ -111,7 +111,7 @@
         "name": "Sodomia",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
-        "stars": "5.0",
+        
         "type": "Pecado",
         "subtype": "-",
         "categories": "Dano",
@@ -129,7 +129,7 @@
         "name": "Estátua de Sal",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
-        "stars": "5.0",
+        
         "type": "Pecado",
         "subtype": "-",
         "categories": "Remoção",

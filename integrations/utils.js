@@ -26,6 +26,14 @@ const WEIGHT_OCURRENCY_SIDEBOARD = 200;
 const WEIGHT_DECK_STYLE = 30;
 const WEIGHT_DECK_ARCHETYPE = 70;
 
+const WEIGHT_LEVEL_SINERGY_BEETWEEN_CARDS = 0.9;
+const WEIGHT_LEVEL_STAPLE_USING_FOR_CARDS = 0.1;
+const WEIGHT_LEVEL_ADICTION_FOR_REPETITION = 0.05;
+
+const WEIGHT_LEVEL_ADICTION_FOR_CATEGORY = 0.05;
+const WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY = 0.05;
+const REDUCTION_FOR_INEXISTENT_CATEGORY = 0.3;
+
 const excludedWords = [
   "zona",
   "batalha",
@@ -160,8 +168,8 @@ const excludedWords = [
   "outros",
 ];
 
-// const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horask
-const CACHE_DURATION = 1000; // 24 horas
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
+// const CACHE_DURATION = 1000; // 24 horas
 
 function getCardDetails(cardNumber) {
   localStorage.setItem("idSelectedCard", cardNumber);
@@ -219,74 +227,176 @@ async function getCards() {
 }
 
 async function getDecks() {
-  return await fetchOrGetFromLocalStorage("decks", URL_DECKS_JSON);
-}
+  let key = "decks";
+  let url = URL_DECKS_JSON;
+  let allCards = await getCards();
 
-function getCardsFromDeck(ids, cards) {
-  const allCards = [];
+  let decks = await fetchOrGetFromLocalStorage(key, url);
 
-  ids.forEach((id) => {
-    cards.forEach((card) => {
-      if (card.number === id) {
-        allCards.push(card);
-      }
-    });
-  });
+  let legendaries = await fetchOrGetFromLocalStorage(
+    "legendaries",
+    URL_LEGENDARIES_JSON
+  );
 
-  return orderCardsFromDeck(allCards);
-}
-
-function orderCardsFromDeck(cards) {
-  const typeOrder = {
-    "Herói de Fé - Lendário": 1,
-    "Herói de Fé": 2,
-    Artefato: 3,
-    Milagre: 4,
-    Pecado: 5,
-  };
-
-  cards = cards.sort((a, b) => {
-    const typeA =
-      a.type === "Herói de Fé" && a.subtype === "Lendário"
-        ? "Herói de Fé - Lendário"
-        : a.type;
-    const typeB =
-      b.type === "Herói de Fé" && b.subtype === "Lendário"
-        ? "Herói de Fé - Lendário"
-        : b.type;
-
-    if (typeA === typeB) {
-      if (a.cost === b.cost) {
-        return a.name.localeCompare(b.name);
-      }
-      return a.cost - b.cost;
+  if (decks.length > 0 && !decks[0].level) {
+    for (let selectedDeck of decks) {
+      selectedDeck = await calculateStarsFromDeck(
+        selectedDeck,
+        allCards,
+        decks,
+        legendaries
+      );
     }
+    const now = Date.now();
+    localStorage.setItem(key, JSON.stringify(decks));
+    localStorage.setItem(`${key}_timestamp`, now);
+    return decks;
+  } else {
+    return decks;
+  }
+}
 
-    return typeOrder[typeA] - typeOrder[typeB];
+async function calculateStarsFromDeck(
+  selectedDeck,
+  allCards,
+  decks,
+  legendaries
+) {
+  const mergedArray = [...selectedDeck.cards, ...selectedDeck.extra];
+  let cardsFromDeckWithExtra = getCardsFromDeck(mergedArray, allCards);
+  let level = await compareAllCardsToLevelADeck(
+    cardsFromDeckWithExtra,
+    decks,
+    legendaries
+  );
+
+  let sumStars = 0;
+
+  cardsFromDeckWithExtra.forEach((card) => {
+    card.ocurrences = getOccurrencesInDecks(card.number, decks);
+    card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
+    card.stars = scaleToFive(
+      (card.ocurrencesInSides / decks.length) * 100,
+      card.ocurrencesInSides
+    );
+    sumStars += parseFloat(card.stars) / mergedArray.length;
   });
 
-  return cards;
+  const analysisAverages = await analyzeDecks(decks, null, null);
+  let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
+  let info = await analyzeCards(cardsFromDeck, analysisAverages);
+
+  const filteredCategories = analysisAverages.averageCategories.filter(
+    (category) => category.media !== 0
+  );
+
+  const innexistentCategories = filteredCategories
+    .map((category) => category.name)
+    .filter((cat) => !(cat in info.categoriesCount));
+
+  let sum = 0;
+
+  // Itera sobre as categorias
+  for (const category in info.comparison.categories) {
+    let categoryAverage =
+      analysisAverages.averageCategories.find((cat) => cat.name === category)
+        ?.media || 0;
+
+    let categoryCount = info.categoriesCount[category] || 0;
+    let difference = categoryCount - categoryAverage; // Calcula a diferença da categoria com a média
+
+    if (info.comparison.categories[category] === "higher") {
+      sum += WEIGHT_LEVEL_ADICTION_FOR_CATEGORY * difference; // Adiciona proporcionalmente à diferença
+    } else if (info.comparison.categories[category] === "lower") {
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY * Math.abs(difference); // Reduz proporcionalmente à diferença
+    }
+  }
+
+  // console.log(sum);
+  // console.log(innexistentCategories);
+  sum -= innexistentCategories.length * REDUCTION_FOR_INEXISTENT_CATEGORY;
+  // console.log(sum);
+  // console.log("sumStars -> " + sumStars);
+  // console.log("leveling -> " + level);
+  // console.log("resulting -> " + calculateWeightedAverage(sumStars, level, sum));
+
+  selectedDeck.level = calculateWeightedAverage(sumStars, level, sum).toFixed(
+    2
+  );
+
+  return selectedDeck;
 }
 
-function getOccurrencesInDecks(cardId, decks) {
-  return decks.reduce((count, deck) => {
-    const cards = deck.cards.concat(deck.extra); // Concatenando todas as listas de cards
-    return count + (cards.includes(cardId) ? 1 : 0);
-  }, 0);
+async function compareAllCardsToLevelADeck(cards, decks, legendaries) {
+  let totalCompatibility = 0;
+  let comparisonCount = 0;
+
+  for (let i = 0; i < cards.length; i++) {
+    const cardA = cards[i];
+
+    // Comparando cardA com os outros cards no array
+    for (let j = 0; j < cards.length; j++) {
+      const cardB = cards[j];
+
+      // Evitar comparar o card consigo mesmo
+      if (i !== j) {
+        const compatibility = await compareCardsToLevelADeck(
+          cardA,
+          cardB,
+          decks,
+          legendaries
+        );
+        totalCompatibility += compatibility;
+        comparisonCount++;
+      }
+    }
+  }
+
+  // Calcula a média de compatibilidade
+  let averageCompatibility = totalCompatibility / comparisonCount;
+
+  // Limita a média de compatibilidade entre 1 e 5
+  averageCompatibility = Math.max(1, Math.min(averageCompatibility, 5));
+
+  // console.log(`Média de compatibilidade: ${averageCompatibility}`);
+  return averageCompatibility.toFixed(2);
 }
 
-function getOccurrencesInSides(cardId, decks) {
-  return decks.reduce((count, deck) => {
-    let imgTitle = deck.img.replace(/\d+/g, "");
-    const cards = deck.cards
-      .concat(deck.extra)
-      .concat(deck.sideboard)
-      .concat(deck.topcards)
-      .concat(deck.topcards)
-      .concat([imgTitle, imgTitle, imgTitle]); // Adicionando imgTitle ao array usando concat
+async function compareCardsToLevelADeck(cardA, cardB, decks, legendaries) {
+  const similarCards = await getRelatedCardsInDecks(
+    cardA.number,
+    decks,
+    false,
+    null,
+    null
+  );
 
-    return count + (cards.includes(cardId) ? 1 : 0);
-  }, 0);
+  // Verifica se cardB é a versão comum ou lendária de cardA
+  const isCommonOrLegendary = legendaries.some(
+    ({ number, commonNumber }) =>
+      number === cardB.number || commonNumber === cardB.number
+  );
+
+  // Se cardB for uma versão comum ou lendária, define position como -1
+  const position = isCommonOrLegendary
+    ? -1
+    : similarCards.findIndex(({ idcard }) => idcard === cardB.number);
+
+  // Para evitar divisão por zero e calcular a compatibilidade
+  const compatibility =
+    position === -1
+      ? 1 // Se não encontrado, assume a maior compatibilidade
+      : 1 - position / (similarCards.length - 1);
+
+  // Calcula a compatibilidade na escala [1, 5]
+  return Math.min(Math.max(Math.round(compatibility * 4) + 1, 1), 5);
+}
+
+function calculateWeightedAverage(sumStars, leveling, sumCategories) {
+  const weightedAverage =
+    WEIGHT_LEVEL_SINERGY_BEETWEEN_CARDS * leveling +
+    WEIGHT_LEVEL_STAPLE_USING_FOR_CARDS * sumStars;
+  return weightedAverage + sumCategories;
 }
 
 async function getRelatedCardsInDecks(
@@ -452,6 +562,65 @@ async function getRelatedCardsInDecks(
     .sort((a, b) => b.qtd - a.qtd);
 
   return relatedCardsArray;
+}
+
+function getCardsFromDeck(ids, cards) {
+  const cardsMap = new Map(cards.map((card) => [card.number, card]));
+  const allCards = ids.map((id) => cardsMap.get(id)).filter(Boolean);
+  return orderCardsFromDeck(allCards);
+}
+
+function orderCardsFromDeck(cards) {
+  const typeOrder = {
+    "Herói de Fé - Lendário": 1,
+    "Herói de Fé": 2,
+    Artefato: 3,
+    Milagre: 4,
+    Pecado: 5,
+  };
+
+  cards = cards.sort((a, b) => {
+    const typeA =
+      a.type === "Herói de Fé" && a.subtype === "Lendário"
+        ? "Herói de Fé - Lendário"
+        : a.type;
+    const typeB =
+      b.type === "Herói de Fé" && b.subtype === "Lendário"
+        ? "Herói de Fé - Lendário"
+        : b.type;
+
+    if (typeA === typeB) {
+      if (a.cost === b.cost) {
+        return a.name.localeCompare(b.name);
+      }
+      return a.cost - b.cost;
+    }
+
+    return typeOrder[typeA] - typeOrder[typeB];
+  });
+
+  return cards;
+}
+
+function getOccurrencesInDecks(cardId, decks) {
+  return decks.reduce((count, deck) => {
+    const cards = deck.cards.concat(deck.extra); // Concatenando todas as listas de cards
+    return count + (cards.includes(cardId) ? 1 : 0);
+  }, 0);
+}
+
+function getOccurrencesInSides(cardId, decks) {
+  return decks.reduce((count, deck) => {
+    let imgTitle = deck.img.replace(/\d+/g, "");
+    const cards = deck.cards
+      .concat(deck.extra)
+      .concat(deck.sideboard)
+      .concat(deck.topcards)
+      .concat(deck.topcards)
+      .concat([imgTitle, imgTitle, imgTitle]); // Adicionando imgTitle ao array usando concat
+
+    return count + (cards.includes(cardId) ? 1 : 0);
+  }, 0);
 }
 
 function getRelatedDecks(cardNumber, relatedCards, decks) {

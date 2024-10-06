@@ -3,7 +3,7 @@
         "name": "Força de Sansão",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Herói alvo ganha +3/+3 até o final do turno. Se o alvo é Sansão, ele se torna imbloqueável até o fim do turno.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Amplificação",
@@ -21,7 +21,7 @@
         "name": "Fogo do Céu",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Destrói uma carta da zona de batalha",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Remoção",
@@ -39,7 +39,7 @@
         "name": "Passagem Segura",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Os heróis do jogador alvo são imbloqueáveis neste turno",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Evasão",
@@ -57,7 +57,7 @@
         "name": "Restauração de Fé",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador alvo ganha um ponto de fé por cada herói no campo de batalha dele",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Santificação",
@@ -75,7 +75,7 @@
         "name": "Proteção Divina",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O jogador alvo não sofre dano de efeitos ou ataque de Heróis neste turno",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Proteção",
@@ -93,7 +93,7 @@
         "name": "Liberação Celestial",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Anule qualquer efeito de milagre ou pecado nesse instante",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Counter",
@@ -111,7 +111,7 @@
         "name": "Ressurreição",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Retorna um herói de qualquer mar do esquecimento ao jogo sob seu controle. Você escolhe em qual zona ele voltará.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Buscador",
@@ -129,7 +129,7 @@
         "name": "Sarça Ardente",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O jogador alvo ganha 2 pontos de fé. O oponente alvo perde 2 pontos de fé.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Dano;Santificação",
@@ -147,7 +147,7 @@
         "name": "Dilúvio",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Destrói todos os heróis e artefatos da zona de batalha. Noé e a Arca sobrevivem",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Juízo",
@@ -165,7 +165,7 @@
         "name": "Cordeiro de Deus",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Até o seu próximo turno, o jogador alvo não perde pontos de fé, pecados não o afetam, e suas cartas são indestrutíveis",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Proteção",
@@ -183,7 +183,7 @@
         "name": "Sabedoria de Salomão",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O jogador alvo reativa 3 cartas de sabedoria. Se Salomão está em jogo, compre uma carta.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Recapitulação",
@@ -201,7 +201,7 @@
         "name": "No Céu tem Pão",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Compra",
@@ -219,7 +219,7 @@
         "name": "Resgate do Justo",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Buscador",
@@ -237,7 +237,7 @@
         "name": "Adjuntora Idônea",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Buscador",
@@ -255,7 +255,7 @@
         "name": "Shabbat",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Proteção;Compra;Santificação",
@@ -273,7 +273,7 @@
         "name": "Ira de Deus",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Juízo",
@@ -291,7 +291,7 @@
         "name": "Protoevangelho",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Counter",
@@ -309,7 +309,7 @@
         "name": "Filho da Promessa",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Buscador",
@@ -327,7 +327,7 @@
         "name": "Sinal Divino",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Proteção",
@@ -345,7 +345,7 @@
         "name": "Gênese de Tudo",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Conhecimento",
@@ -363,7 +363,7 @@
         "name": "Oferta do Justo",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Compra;Santificação",
@@ -381,7 +381,7 @@
         "name": "Herança de Abraão",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Amplificação",
@@ -399,7 +399,7 @@
         "name": "Provação de Fé",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Proteção",
@@ -417,7 +417,7 @@
         "name": "Imagem e Semelhança",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Buscador;Remoção",
@@ -435,7 +435,7 @@
         "name": "Dízimo",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Compra;Renúncia",
@@ -453,7 +453,7 @@
         "name": "Circuncisão",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Compra;Descarte",
@@ -471,7 +471,7 @@
         "name": "Casos de Família",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Compra;Escolha;Santificação",
@@ -489,7 +489,7 @@
         "name": "Dias Contados",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
-        "stars": "5.0",
+        
         "type": "Milagre",
         "subtype": "-",
         "categories": "Modificação",

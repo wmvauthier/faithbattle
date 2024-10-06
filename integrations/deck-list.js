@@ -5,20 +5,6 @@ let cards = []; // Lista de todos os decks
 
 document.addEventListener("DOMContentLoaded", async function () {
   decks = await getDecks();
-  // cards = await getCards();
-
-  // let analysis = await analyzeDecks(decks);
-  // console.log(analysis);
-
-  // decks.forEach((deck) => {
-  //   let cardsFromDeck = getCardsFromDeck(deck.cards, cards);
-  //   console.log(deck);
-  //   console.log(cardsFromDeck);
-  //   let cardAnalysis = analyzeCards(cardsFromDeck,analysis);
-  //   console.log(cardAnalysis);
-  //   deck.analysis = cardAnalysis;
-  // });
-
   renderPage(currentPage);
 });
 
@@ -35,35 +21,14 @@ async function renderPage(page) {
   let rowsToAdd = [];
 
   decksToShow.forEach((deck) => {
-    const arrays = [deck.cards, deck.extra, deck.sideboard];
-
-    const result = arrays.map((arr) => `[${arr.join(",")}]`).join("");
-
     const filteredObjects = allCards.filter((obj) =>
       deck.topcards.includes(obj.number)
     );
-
-    let sumStars = 0;
-    const mergedArray = [...deck.cards, ...deck.extra];
-    let cardsFromDeckWithExtra = getCardsFromDeck(mergedArray, allCards);
-  
-    cardsFromDeckWithExtra.forEach((card) => {
-      card.ocurrences = getOccurrencesInDecks(card.number, decks);
-      card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
-      card.stars = scaleToFive(
-        (card.ocurrencesInSides / decks.length) * 100,
-        card.ocurrencesInSides
-      );
-      sumStars += parseFloat(card.stars) / mergedArray.length;
-    });
 
     let badges = "";
     let symbolStyle = "";
     let colorStyle = "";
     let textStyle = "";
-
-    // let arrKeywords = deck.keywords.split(";");
-    console.log(deck);
 
     if (deck.style == "Agressivo") {
       symbolStyle = '<i class="fa-solid fa-hand-back-fist"></i>';
@@ -111,7 +76,7 @@ async function renderPage(page) {
       badges +
       '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
       'style="color: #fff; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
-      sumStars.toFixed(2) +
+      deck.level +
       ' <i style="color: #FFD700; font-size: 12px;" class="fa-solid fa-star"></i></span>';
 
     badges =
@@ -127,7 +92,7 @@ async function renderPage(page) {
       deck.style +
       " </span>";
 
-      badges =
+    badges =
       badges +
       '<span class="badge rounded-pill mx-1 text-bg-secondary" ' +
       'style="color: ' +
@@ -203,18 +168,6 @@ async function renderPage(page) {
       </div> 
     `;
 
-    //   <div class="stats" style="padding-top:0px; margin:0;">
-    //   <hr style="padding-top:0px; margin:0;">
-    // </div>
-    //     <div class="stats" style="padding-top:0px;">
-    //     <div style="width:50%;">
-    //         <strong>META</strong> ${deck.style.toUpperCase()}
-    //     </div>
-    //     <div style="width:50%;">
-    //         <strong>ESTRELAS</strong> ${deck.archetype.toUpperCase()}
-    //     </div>
-    // </div>
-
     row.addEventListener("click", (event) => {
       if (!event.target.classList.contains("copy-button")) {
         getDeckDetails(deck.number);
@@ -230,12 +183,12 @@ async function renderPage(page) {
       "col-xs-6"
     );
 
-    row.stars = sumStars;
+    row.level = deck.level;
 
     rowsToAdd.push(row);
   });
 
-  rowsToAdd.sort((a, b) => b.stars - a.stars);
+  rowsToAdd.sort((a, b) => b.level - a.level);
   rowsToAdd.forEach((row) => {
     tableBody.appendChild(row);
   });
@@ -264,8 +217,6 @@ function renderPagination(currentPage) {
 }
 
 async function copyDeckHash(deckCards, button) {
-  // Lógica para copiar o deck
-
   let hashedString = await cryptoDeck(deckCards);
 
   navigator.clipboard

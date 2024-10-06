@@ -106,7 +106,7 @@ async function updateAnalysisFromDeck() {
       tag_deckName: deck.name,
 
       tag_deckStyle: deck.style,
-      tag_deckLevel: sumStars.toFixed(2),
+      tag_deckLevel: deck.level,
       tag_deckCategory: getKeyWithMaxAbsoluteValue(info.categoriesCount)
         ? getKeyWithMaxAbsoluteValue(info.categoriesCount)
         : "-",
@@ -270,6 +270,7 @@ async function generateDeck() {
   if (deck.cards.length <= 0) {
     await completeDeck(true);
     await tuningDeck();
+    await calculateStarsFromDeck(deck, allCards, decks, legendaries);
     updateAnalysisFromDeck();
   }
 }
@@ -310,7 +311,9 @@ async function completeDeck(flagGenerate) {
       cardList = await getCardsFromDeck(suggestionNumbers, allCards);
     }
 
+    await calculateStarsFromDeck(deck, allCards, decks, legendaries);
     updateAnalysisFromDeck();
+
   }
 }
 
@@ -479,6 +482,10 @@ async function tuningDeck() {
       addCardToDeckBuilder(card);
       await wait(1);
     });
+
+    await calculateStarsFromDeck(deck, allCards, decks, legendaries);
+    updateAnalysisFromDeck();
+
   }
 }
 
@@ -607,66 +614,43 @@ async function autoGenerateHand(isMulligan) {
   updateTestHand(allCards, handTestCards, "#handTestList");
 }
 
-function generateSelectFilterByProperty(
-  jsonData,
-  property,
-  prettyName,
-  text,
-  order
-) {
+function generateSelectFilterByProperty(jsonData, property, prettyName, text, order) {
   const filtersContainer = document.getElementById("filters");
   const currentSelectedFilters = getCurrentSelectedFilters();
 
-  let uniqueValues = Array.from(
-    new Set(
-      jsonData.map((item) => {
-        if (property === "stars") {
-          return Math.floor(parseFloat(item[property]));
-        } else if (property === "date") {
-          return new Date(item[property]).getFullYear();
-        } else if (item[property] != "") {
-          return item[property];
-        }
-      })
-    )
-  ).filter(
-    (value) => !Object.values(currentSelectedFilters).includes(String(value))
-  ); // Exclude currently selected values
-
-  uniqueValues.sort((a, b) => {
-    if (order === "ASC") {
-      return a - b;
-    } else {
-      return b - a;
+  // Obtenha os valores únicos com base na propriedade
+  const uniqueValues = [...new Set(jsonData.map(item => {
+    if (property === "stars") {
+      return Math.floor(parseFloat(item[property]));
+    } else if (property === "date") {
+      return new Date(item[property]).getFullYear();
+    } else if (item[property] != null && item[property] !== "") {
+      return item[property];
     }
-  });
+  })).values()].filter(value => !Object.values(currentSelectedFilters).includes(String(value)));
 
-  uniqueValues = uniqueValues.filter((item) => item !== undefined);
+  // Ordenar valores
+  uniqueValues.sort((a, b) => (order === "ASC" ? a - b : b - a));
 
+  // Criar o elemento <select>
   const select = document.createElement("select");
-
-  select.setAttribute("name", property);
+  select.name = property;
   select.setAttribute("prettyName", prettyName);
-  select.setAttribute("id", `${property}Filter`);
+  select.id = `${property}Filter`;
   select.classList.add("form-select", "mb-3", "mr-3", "custom-select-input");
+
   const defaultOption = document.createElement("option");
   defaultOption.text = text;
   defaultOption.value = "";
   select.appendChild(defaultOption);
 
-  uniqueValues.forEach((value) => {
+  // Adicionar opções ao select
+  uniqueValues.forEach(value => {
     const option = document.createElement("option");
     option.value = value;
 
     if (property === "stars") {
-      let starsHTML = "";
-      for (let i = 0; i < value; i++) {
-        starsHTML += "&#9733;"; // Estrela preenchida
-      }
-      for (let i = value; i < 5; i++) {
-        starsHTML += "&#9733;"; // Estrela vazia
-      }
-      option.innerHTML = starsHTML;
+      option.innerHTML = '★'.repeat(value) + '☆'.repeat(5 - value); // Estrelas preenchidas e vazias
     } else {
       option.text = value;
     }
@@ -674,13 +658,14 @@ function generateSelectFilterByProperty(
     select.appendChild(option);
   });
 
+  // Adicionar evento de mudança
   select.addEventListener("change", function () {
     const value = select.value;
     if (value) {
       addSelectedFilter(property, value, prettyName);
-      select.disabled = true;
+      select.disabled = true; // Desabilitar o select após a seleção
     }
-    filterResults();
+    filterResults(); // Filtrar resultados com base nos filtros aplicados
   });
 
   filtersContainer.appendChild(select);
@@ -690,21 +675,33 @@ function generateTextFilterByProperty(property, prettyName, placeholder) {
   const filtersContainer = document.getElementById("filters");
 
   const input = document.createElement("input");
-  input.setAttribute("type", "text");
-  input.setAttribute("name", property);
+  input.type = "text";
+  input.name = property;
   input.setAttribute("prettyName", prettyName);
-  input.setAttribute("id", `${property}Filter`);
-  input.setAttribute("placeholder", placeholder);
+  input.id = `${property}Filter`;
+  input.placeholder = placeholder;
   input.classList.add("mb-3", "mr-3", "custom-text-input");
-  input.addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-      const value = input.value;
-      if (value) {
-        addSelectedFilter(property, value, prettyName);
-        input.disabled = true;
-        filterResults();
-      }
+
+  // Função para aplicar filtro
+  const applyFilter = () => {
+    const value = input.value.trim(); // Remove espaços em branco
+    if (value) {
+      addSelectedFilter(property, value, prettyName);
+      input.disabled = true; // Desabilita o campo após a seleção
+      filterResults();
     }
+  };
+
+  // Evento de tecla pressionada (Enter)
+  input.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      applyFilter();
+    }
+  });
+
+  // Evento de perda de foco
+  input.addEventListener("blur", () => {
+    applyFilter();
   });
 
   filtersContainer.appendChild(input);
@@ -763,27 +760,36 @@ function generateEffectFilter(jsonData) {
   const filtersContainer = document.getElementById("filters");
   const effectsSet = new Set();
 
-  // Itera sobre os dados para extrair todas as categorias únicas
+  // Itera sobre os dados para extrair todos os efeitos únicos
   jsonData.forEach((item) => {
-    const effects = item.effects.split(";");
-    effects.forEach((effect) => {
-      effectsSet.add(effect.trim()); // Adiciona a categoria ao conjunto
-    });
+    if (item.effects) { // Verifica se a propriedade effects existe
+      const effects = item.effects.split(";");
+      effects.forEach((effect) => {
+        const trimmedEffect = effect.trim();
+        if (trimmedEffect) { // Adiciona somente efeitos não vazios
+          effectsSet.add(trimmedEffect);
+        }
+      });
+    }
   });
 
-  // Converte o conjunto de categorias de volta para um array
-  const uniqueEffects = Array.from(effectsSet).filter((item) => item != "");
+  // Converte o conjunto de efeitos de volta para um array
+  const uniqueEffects = Array.from(effectsSet);
 
-  // Cria o select e adiciona as opções com as categorias únicas
+  // Cria o select e adiciona as opções com os efeitos únicos
   const select = document.createElement("select");
   select.setAttribute("name", "effects");
   select.setAttribute("prettyName", "Efeito");
-  select.setAttribute("id", `effectsFilter`);
+  select.setAttribute("id", "effectsFilter");
   select.classList.add("form-select", "mb-3", "mr-3", "custom-select-input");
+
+  // Adiciona opção padrão
   const defaultOption = document.createElement("option");
-  defaultOption.text = "Efeitos";
+  defaultOption.text = "Selecione um Efeito"; // Mensagem padrão
   defaultOption.value = "";
   select.appendChild(defaultOption);
+
+  // Adiciona as opções de efeitos
   uniqueEffects.forEach((effect) => {
     const option = document.createElement("option");
     option.text = effect;
@@ -796,9 +802,9 @@ function generateEffectFilter(jsonData) {
     const value = select.value;
     if (value) {
       addSelectedFilter("effects", value, "Efeito");
-      select.disabled = true;
+      select.disabled = true; // Desabilita após a seleção
+      filterResults(jsonData); // Aplica o filtro
     }
-    filterResults(jsonData);
   });
 
   // Adiciona o select ao contêiner de filtros
@@ -808,12 +814,33 @@ function generateEffectFilter(jsonData) {
 function getCurrentSelectedFilters() {
   const selectedFilters = {};
   const selectedFiltersContainer = document.getElementById("selected-filters");
+
+  // Verifica se o contêiner de filtros selecionados existe
+  if (!selectedFiltersContainer) {
+    console.warn("O contêiner de filtros selecionados não foi encontrado.");
+    return selectedFilters; // Retorna um objeto vazio se não existir
+  }
+
+  // Seleciona todos os filtros atualmente aplicados
   const filters = selectedFiltersContainer.querySelectorAll(".selected-filter");
 
+  // Itera sobre cada filtro selecionado para coletar suas propriedades e valores
   filters.forEach((filterTag) => {
     const property = filterTag.getAttribute("data-property");
     const value = filterTag.getAttribute("data-value");
-    selectedFilters[property] = value;
+
+    // Se a propriedade já existe, converte o valor para um array se não for um
+    if (selectedFilters[property]) {
+      // Se o valor já for um array, adiciona o novo valor; caso contrário, transforma em um array
+      if (Array.isArray(selectedFilters[property])) {
+        selectedFilters[property].push(value);
+      } else {
+        selectedFilters[property] = [selectedFilters[property], value];
+      }
+    } else {
+      // Caso contrário, simplesmente define o valor
+      selectedFilters[property] = value;
+    }
   });
 
   return selectedFilters;

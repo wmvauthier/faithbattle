@@ -3,7 +3,7 @@
         "name": "Moisés",
         "flavor": "O Senhor falava com Moisés face a face, como quem fala com seu amigo - Êxodo 33:11",
         "text": "Quando Moisés entra em jogo, procure um Milagre no seu baralho ou no Mar do Esquecimento, revele-o e compre essa carta",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Buscador",
@@ -21,7 +21,7 @@
         "name": "Davi",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Sempre que Davi ataca, um oponente à sua escolha perde 1 ponto de fé",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Lança;Dano",
@@ -39,7 +39,7 @@
         "name": "Elias",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Elias entra em jogo, destrói uma carta alvo da zona de batalha",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Remoção",
@@ -57,7 +57,7 @@
         "name": "Salomão",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Acrescente uma carta de sabedoria ao jogo sob seu controle. Quando Salomão ataca reative uma carta de sabedoria já usada",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Conhecimento",
@@ -75,7 +75,7 @@
         "name": "Eva",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Eva entra em jogo, compre uma carta",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Compra",
@@ -93,7 +93,7 @@
         "name": "Josué",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Josué ataca, todos os seus outros heróis que estejam atacando ganham +1/+0",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Amplificação",
@@ -111,7 +111,7 @@
         "name": "Abraão",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Se Abraão estiver na sua zona de batalha, ganhe um ponto de fé sempre que um herói entra em jogo sob seu controle",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Santificação",
@@ -129,7 +129,7 @@
         "name": "Sansão",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Sansão entra em jogo diretamente a zona de batalha e pode atacar",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Lança",
@@ -147,7 +147,7 @@
         "name": "Jacó",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Jacó ataca a um oponente ele revela uma carta aleatória da mão, se for um milagre, você compra uma carta",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Compra",
@@ -165,7 +165,7 @@
         "name": "Adão",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Adão recebe +2/+2 se você tiver Eva em jogo sob seu controle",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Lança",
@@ -183,7 +183,7 @@
         "name": "José do Egito",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando José causa dano a um oponente, ele descarta uma carta aleatoria da mão. Se José é bloqueado, compre uma carta",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Compra;Descarte",
@@ -201,7 +201,7 @@
         "name": "Maria",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Maria entra em jogo, busque um Herói no seu baralho, embaralhe seu baralho e coloque essa carta no topo.",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Buscador",
@@ -219,7 +219,7 @@
         "name": "Daniel",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Daniel ataca ganha +1/+0, até o final do turno, por cada Herói na zona de batalha do oponente atacado",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Lança",
@@ -237,7 +237,7 @@
         "name": "Noé",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Noé não pode ser alvo de milagres",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Lança",
@@ -255,7 +255,7 @@
         "name": "Ester",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Buscador",
@@ -273,7 +273,7 @@
         "name": "Ismael",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Escudo",
@@ -291,7 +291,7 @@
         "name": "Abel",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Lança;Compra",
@@ -309,7 +309,7 @@
         "name": "Eliézer",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Amplificação",
@@ -327,7 +327,7 @@
         "name": "Enoque",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Lança",
@@ -345,7 +345,7 @@
         "name": "Isaque",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Compra",
@@ -363,7 +363,7 @@
         "name": "Matusalém",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Lança;Escudo",
@@ -381,7 +381,7 @@
         "name": "Rebeca",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Remoção",
@@ -399,7 +399,7 @@
         "name": "Sara",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Santificação",
@@ -417,7 +417,7 @@
         "name": "Sem",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Santificação",
@@ -435,7 +435,7 @@
         "name": "Sete",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Lança",
@@ -453,7 +453,7 @@
         "name": "Agar",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Buscador",
@@ -471,7 +471,7 @@
         "name": "Pelegue",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Lança;Recapitulação;Confusão",
@@ -489,7 +489,7 @@
         "name": "Enos",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Santificação",
@@ -507,7 +507,7 @@
         "name": "Héber",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Dano",
@@ -525,7 +525,7 @@
         "name": "Jó",
         "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
         "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
-        "stars": "5.0",
+        
         "type": "Herói de Fé",
         "subtype": "-",
         "categories": "Proteção;Escudo",
