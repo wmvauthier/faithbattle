@@ -32,7 +32,8 @@ const WEIGHT_LEVEL_ADICTION_FOR_REPETITION = 0.05;
 
 const WEIGHT_LEVEL_ADICTION_FOR_CATEGORY = 0.05;
 const WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY = 0.05;
-const REDUCTION_FOR_INEXISTENT_CATEGORY = 0.3;
+const WEIGHT_LEVEL_ADICTION_FOR_EXCLUSIVE_CATEGORY = 0.005;
+const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY = 0.3;
 
 const excludedWords = [
   "zona",
@@ -262,64 +263,77 @@ async function calculateStarsFromDeck(
   decks,
   legendaries
 ) {
-  const mergedArray = [...selectedDeck.cards, ...selectedDeck.extra];
-  let cardsFromDeckWithExtra = getCardsFromDeck(mergedArray, allCards);
-  let level = await compareAllCardsToLevelADeck(
-    cardsFromDeckWithExtra,
-    decks,
-    legendaries
-  );
+  const mergedArray = selectedDeck.cards.concat(selectedDeck.extra); // Evitar cópia desnecessária
+  const cardsFromDeckWithExtra = getCardsFromDeck(mergedArray, allCards);
 
+  // Calcular o nível do deck em paralelo
+  const [level, analysisAverages] = await Promise.all([
+    compareAllCardsToLevelADeck(cardsFromDeckWithExtra, decks, legendaries),
+    analyzeDecks(decks, null, null),
+  ]);
+
+  // Inicializar variáveis
   let sumStars = 0;
+  const deckLength = mergedArray.length; // Evitar recalcular o tamanho do array repetidamente
+  const deckCount = decks.length;
 
+  // Loop único para calcular estrelas e ocorrências
   cardsFromDeckWithExtra.forEach((card) => {
-    card.ocurrences = getOccurrencesInDecks(card.number, decks);
-    card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
-    card.stars = scaleToFive(
-      (card.ocurrencesInSides / decks.length) * 100,
-      card.ocurrencesInSides
+    const occurrences = getOccurrencesInDecks(card.number, decks);
+    const occurrencesInSides = getOccurrencesInSides(card.number, decks);
+
+    card.ocurrences = occurrences;
+    card.ocurrencesInSides = occurrencesInSides;
+
+    const scaledStars = scaleToFive(
+      (occurrencesInSides / deckCount) * 100,
+      occurrencesInSides
     );
-    sumStars += parseFloat(card.stars) / mergedArray.length;
+    card.stars = scaledStars;
+    sumStars += parseFloat(scaledStars) / deckLength;
   });
 
-  const analysisAverages = await analyzeDecks(decks, null, null);
-  let cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
-  let info = await analyzeCards(cardsFromDeck, analysisAverages);
-
+  // Preparar informações sobre categorias
   const filteredCategories = analysisAverages.averageCategories.filter(
     (category) => category.media !== 0
   );
+  const cardsFromDeck = getCardsFromDeck(selectedDeck.cards, allCards);
+  const info = await analyzeCards(cardsFromDeck, analysisAverages);
 
-  const innexistentCategories = filteredCategories
-    .map((category) => category.name)
-    .filter((cat) => !(cat in info.categoriesCount));
+  // Criar uma lista de categorias inexistentes
+  const categoryNamesSet = new Set(
+    filteredCategories.map((category) => category.name)
+  );
+  const innexistentCategories = [...categoryNamesSet].filter(
+    (cat) => !(cat in info.categoriesCount)
+  );
 
   let sum = 0;
 
-  // Itera sobre as categorias
+  // Iterar sobre as categorias e aplicar as diferenças
   for (const category in info.comparison.categories) {
-    let categoryAverage =
-      analysisAverages.averageCategories.find((cat) => cat.name === category)
-        ?.media || 0;
+    const categoryData = analysisAverages.averageCategories.find(
+      (cat) => cat.name === category
+    );
+    const categoryAverage = categoryData?.media || 0;
+    const categoryCount = info.categoriesCount[category] || 0;
+    const difference = categoryCount - categoryAverage; // Calcular diferença
 
-    let categoryCount = info.categoriesCount[category] || 0;
-    let difference = categoryCount - categoryAverage; // Calcula a diferença da categoria com a média
+    if (categoryAverage <= 0 && categoryCount > 0) {
+      sum += WEIGHT_LEVEL_ADICTION_FOR_EXCLUSIVE_CATEGORY * categoryCount;
+    }
 
     if (info.comparison.categories[category] === "higher") {
-      sum += WEIGHT_LEVEL_ADICTION_FOR_CATEGORY * difference; // Adiciona proporcionalmente à diferença
+      sum += WEIGHT_LEVEL_ADICTION_FOR_CATEGORY * difference;
     } else if (info.comparison.categories[category] === "lower") {
-      sum -= WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY * Math.abs(difference); // Reduz proporcionalmente à diferença
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY * Math.abs(difference);
     }
   }
 
-  // console.log(sum);
-  // console.log(innexistentCategories);
-  sum -= innexistentCategories.length * REDUCTION_FOR_INEXISTENT_CATEGORY;
-  // console.log(sum);
-  // console.log("sumStars -> " + sumStars);
-  // console.log("leveling -> " + level);
-  // console.log("resulting -> " + calculateWeightedAverage(sumStars, level, sum));
+  // Ajustar somatório pelas categorias inexistentes
+  sum -= innexistentCategories.length * WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY;
 
+  // Calcular o nível final do deck
   selectedDeck.level = calculateWeightedAverage(sumStars, level, sum).toFixed(
     2
   );
