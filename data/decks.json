@@ -171,7 +171,6 @@
         "sideboard": [
             51,
             18,
-            18,
             17,
             29,
             45,
@@ -585,7 +584,7 @@
     },
     {
         "number": "10",
-        "name": "Aggro Faith",
+        "name": "Zelo Imparável",
         "img": "img/herois/62.png",
         "style": "Agressivo",
         "archetype": "Santificação",
@@ -661,7 +660,7 @@
     },
     {
         "number": "11",
-        "name": "Circuncisão Mill",
+        "name": "Lâmina do Pacto",
         "img": "img/milagres/116.png",
         "style": "Controlador",
         "archetype": "Supressão",
@@ -735,7 +734,7 @@
     },
     {
         "number": "12",
-        "name": "Walls",
+        "name": "Fortaleza Inabalável",
         "img": "img/herois/65.png",
         "style": "Controlador",
         "archetype": "Batalha",
@@ -861,7 +860,7 @@
     },
     {
         "number": "14",
-        "name": "Conhecimento e Fé",
+        "name": "Sabedoria Iluminada",
         "img": "img/artefatos/97.png",
         "style": "Agressivo",
         "archetype": "Santificação",

@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    overflow: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #00bcd4;
+    text-shadow: 0 0 10px #00bcd4;
+}
+
+.bracket {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.round {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+    position: relative; /* Adicionado para posicionar as linhas */
+}
+
+.round h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #00e5ff;
+    text-shadow: 0 0 10px #00e5ff;
+}
+
+.matchup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.matchup:hover {
+    background-color: rgba(0, 188, 212, 0.3);
+}
+
+.player {
+    font-size: 1.2rem;
+    color: #00e5ff;
+    text-shadow: 0 0 5px #00e5ff;
+}
+
+.vs {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff4081;
+    text-shadow: 0 0 5px #ff4081;
+    width: 20%;
+    text-align: center;
+}
+
+.passage {
+    position: absolute;
+    left: 50%;
+    width: 2px; /* Largura da linha */
+    background-color: #00bcd4; /* Cor da linha */
+    height: 100%; /* Altura da linha */
+    transform: translateX(-50%); /* Centraliza a linha */
+}
+
+@media (max-width: 768px) {
+    .bracket {
+        flex-direction: column;
+    }
+    .player {
+        font-size: 1rem;
+    }
+    .vs {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Campeonato - Estilo Swiss</title>
+    <link rel="stylesheet" href="swiss.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div id="capture" style="background-color: rgba(255, 255, 255, 0.05); text-align: center;" class="container">
+        <!-- <h1>Pré-Release GEN - Swiss Phase</h1> -->
+        <div class="rounds row">
+
+            <div class="col">
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">PLAY-IN QUARTERS</h2>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G1</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 9</div>
+                        <div class="vs">VS</div>
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 16</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
+                        <div class="vs">VS</div>
+                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G2</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 10</div>
+                        <div class="vs">VS</div>
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 15</div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
+                        <div class="vs">VS</div>
+                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G3</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 11</div>
+                        <div class="vs">VS</div>
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 14</div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
+                        <div class="vs">VS</div>
+                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G4</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 12</div>
+                        <div class="vs">VS</div>
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 13</div>
+                    </div>
+                </div><br>
+            </div>
+
+            <div class="col">
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">PLAY-IN SEMI-FINALS</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i></div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G5</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G1</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G2</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G6</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G3</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G4</div>
+                    </div>
+                </div><br>
+            </div>
+
+            <div class="col">
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">PLAY-IN FINALS</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G7</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 7</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G5</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G1</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G1</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G1</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G8</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 8</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G6</div>
+                    </div>
+                </div><br>
+            </div>
+
+            <div class="col">
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">BRACKETS</h2>
+                </div><br>
+                <div class="round">
+                    <h2>G9</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 1</div>
+                        <div class="vs">VS</div>
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 6</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2>G10</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 2</div>
+                        <div class="vs">VS</div>
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 5</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2>G11</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 3</div>
+                        <div class="vs">VS</div>
+                        <div class="player specified"><i class="fa-solid fa-square"></i> TOP 4</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2>G12</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G7</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G8</div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">LOWER BRACKET</h2>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G13</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> LOS G9</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> LOS G10</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G14</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> LOS G11</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> LOS G12</div>
+                    </div>
+                </div><br>
+            </div>
+
+            <div class="col">
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">UPPER BRACKET</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">LOWER BRACKET</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G15</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G13</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G14</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+            </div>
+
+            <div class="col">
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">UPPER BRACKET</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2>G16</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G9</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G10</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2>G17</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G11</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G12</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">LOWER BRACKET</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G18</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G15</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> LOS G17</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+            </div>
+
+            <div class="col">
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">UPPER BRACKET</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">LOWER BRACKET</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G19</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G18</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> LOS G16</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+            </div>
+
+            <div class="col">
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">SEMI-FINALS UPPER</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2>G20</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G16</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G17</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">SEMI-FINALS LOWER</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round roundElimination">
+                    <h2>G21</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G19</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> LOS G20</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+            </div>
+
+            <div class="col">
+                <div class="round">
+                    <h2 style="margin-bottom: 0px;">FINALS</h2>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2 style="margin-bottom: 0px;">FINALS</h2>
+                </div><br>
+                <div class="round roundClassification">
+                    <h2>G22</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G20</div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G21</div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+                <div class="round" style="visibility: hidden;">
+                    <h2>G0</h2>
+                    <div class="matchup" style="margin-bottom: 0px;">
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                        <div class="vs">VS</div>
+                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
+                    </div>
+                </div><br>
+            </div>
+
+            <div class="col">
+
+                <div class="round">
+                    <h2>CLASSIFICAÇÃO</h2>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-solid fa-star"></i> TOP 1</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-solid fa-star"></i> TOP 2</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-solid fa-star"></i> TOP 3</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-solid fa-star"></i> TOP 4</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-solid fa-star"></i> TOP 5</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-solid fa-star"></i> TOP 6</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-solid fa-star-half-stroke"></i> TOP 7</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-solid fa-star-half-stroke"></i> TOP 8</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-regular fa-star"></i> TOP 9</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-regular fa-star"></i> TOP 10</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-regular fa-star"></i> TOP 11</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-regular fa-star"></i> TOP 12</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-regular fa-star"></i> TOP 13</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-regular fa-star"></i> TOP 14</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-regular fa-star"></i> TOP 15</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                    <div class="matchup podium">
+                        <div class="player notSpecified"><i class="fa-regular fa-star"></i> TOP 16</div>
+                        <div class="vs">-></div>
+                        <div class="player notSpecified">Jogador</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Função que gera o PNG da div depois de 10 segundos
+        function captureDivAsPNG() {
+            const captureElement = document.getElementById('capture');
+
+            // Usa o html2canvas para capturar a div e gerar a imagem PNG, definindo o background como preto
+            html2canvas(captureElement, {
+                backgroundColor: '#000000' // Define o background da captura como preto
+            }).then(canvas => {
+                // Cria um link temporário para baixar o PNG gerado
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'captured-div.png';
+                link.click();  // Baixa automaticamente o PNG
+            });
+        }
+
+        // Executa a função automaticamente após 10 segundos
+        window.onload = function () {
+            setTimeout(captureDivAsPNG, 10000); // 10000 ms = 10 segundos
+        };
+    </script>
+
+</body>
+
+</html>

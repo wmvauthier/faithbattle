@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    /* max-width: 1200px; */
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    overflow: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #00bcd4;
+    text-shadow: 0 0 10px #00bcd4;
+}
+
+.rounds {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.round {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+    display: flex;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.roundClassification {
+    border: 1px solid #00e5ff;
+}
+
+.roundElimination {
+    border: 1px solid #ff4c4c;
+}
+
+.player {
+    font-size: 1.3rem;
+    color: #00e5ff;
+    text-shadow: 0 0 5px #00e5ff;
+}
+
+.win {
+    color: #00e5ff;
+}
+
+.loss {
+    color: #ff4c4c;
+    text-shadow: 0 0 5px #ff4c4c;
+}
+
+.notSpecified {
+    color: gray!important;
+    text-shadow: none!important;
+}
+
+.specified {
+    color: whitesmoke!important;
+    text-shadow: none!important;
+}
+
+.round h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    text-shadow: 0 0 10px whitesmoke;
+}
+
+.matchup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    min-width: 400px;
+}
+
+.matchup:hover {
+    background-color: rgba(0, 188, 212, 0.3);
+}
+
+.podium{
+    text-align: left;
+}
+
+.vs {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4081;
+    text-shadow: 0 0 5px #ff4081;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+@media (max-width: 768px) {
+    .rounds {
+        flex-direction: column;
+    }
+    .player {
+        font-size: 1rem;
+    }
+    .vs {
+        font-size: 1rem;
+    }
+}
