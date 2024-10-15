@@ -93,12 +93,6 @@ async function updateAnalysisFromDeck() {
     let sumStars = 0;
 
     cardsFromDeck.forEach((card) => {
-      card.ocurrences = getOccurrencesInDecks(card.number, decks);
-      card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
-      card.stars = scaleToFive(
-        (card.ocurrencesInSides / decks.length) * 100,
-        card.ocurrencesInSides
-      );
       sumStars += parseFloat(card.stars) / deck.cards.length;
     });
 
@@ -215,23 +209,6 @@ async function updateAnalysisFromDeck() {
       "categoriesContainer"
     );
   } else {
-    allCards.forEach((card) => {
-      card.ocurrences = getOccurrencesInDecks(card.number, decks);
-      card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
-      card.stars = scaleToFive(
-        (card.ocurrencesInSides / decks.length) * 100,
-        card.ocurrencesInSides
-      );
-
-      // if (card.number == 29) {
-      //   console.log(card);
-      //   console.log("ocurrences -> " + card.ocurrences);
-      //   console.log("decks -> " + decks.length);
-      //   console.log("count -> " + card.ocurrences / decks.length);
-      //   console.log("stars -> " + card.stars);
-      // }
-    });
-
     similarCardsArray = sortByStarsAndDate(allCards);
     similarCardsArray = transformToObjectArray(similarCardsArray);
     similarCardsArray = await prepareSimilarCardsArray(similarCardsArray);

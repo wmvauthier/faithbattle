@@ -54,21 +54,6 @@ document.addEventListener("DOMContentLoaded", async function () {
           if (id === "tag_cardImg") {
             element.src = value;
           } else if (id === "tag_cardStars") {
-            card.ocurrences = getOccurrencesInDecks(card.number, decks);
-            card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
-            card.stars = scaleToFive(
-              (card.ocurrencesInSides / decks.length) * 100,
-              card.ocurrencesInSides
-            );
-
-            // if (card.number == 29) {
-            //   console.log(card);
-            //   console.log("ocurrences -> " + card.ocurrences);
-            //   console.log("decks -> " + decks.length);
-            //   console.log("count -> " + card.ocurrences / decks.length);
-            //   console.log("stars -> " + card.stars);
-            // }
-
             updateStars(element, card.stars); // Atualizar as estrelas
           } else {
             element.textContent = value;
@@ -126,35 +111,32 @@ function updateSimilarCardsDOM(similarCardDetails, similarCards) {
 }
 
 function updateRelatedDecks(relatedDecks) {
-//   const relatedDecksContainer = document.getElementById(
-//     "related-decks-container"
-//   );
-//   relatedDecksContainer.innerHTML = ""; // Limpa o conteúdo existente
-
-//   relatedDecks.forEach((deck) => {
-//     const keywordsArray = deck.keywords.split(";");
-
-//     const deckElement = document.createElement("div");
-//     deckElement.innerHTML = `
-// <div class="product__sidebar__comment__item">
-// <div class="product__sidebar__comment__item__pic">
-//   <img src="${
-//     deck.img
-//   }" alt="Deck Image" style="max-width: 90px; height: auto; max-height: 130px;">
-// </div>
-// <div class="product__sidebar__comment__item__text">
-//   <ul>
-//     ${keywordsArray.map((keyword) => `<li>${keyword}</li>`).join("")}
-//   </ul>
-//   <h5><a href="#">${deck.name}</a></h5>
-// </div>
-// </div>`;
-
-//     deckElement.className = "col-6";
-//     deckElement.style.cursor = "pointer";
-//     deckElement.addEventListener("click", () => getDeckDetails(deck.number));
-//     relatedDecksContainer.appendChild(deckElement);
-//   });
+  //   const relatedDecksContainer = document.getElementById(
+  //     "related-decks-container"
+  //   );
+  //   relatedDecksContainer.innerHTML = ""; // Limpa o conteúdo existente
+  //   relatedDecks.forEach((deck) => {
+  //     const keywordsArray = deck.keywords.split(";");
+  //     const deckElement = document.createElement("div");
+  //     deckElement.innerHTML = `
+  // <div class="product__sidebar__comment__item">
+  // <div class="product__sidebar__comment__item__pic">
+  //   <img src="${
+  //     deck.img
+  //   }" alt="Deck Image" style="max-width: 90px; height: auto; max-height: 130px;">
+  // </div>
+  // <div class="product__sidebar__comment__item__text">
+  //   <ul>
+  //     ${keywordsArray.map((keyword) => `<li>${keyword}</li>`).join("")}
+  //   </ul>
+  //   <h5><a href="#">${deck.name}</a></h5>
+  // </div>
+  // </div>`;
+  //     deckElement.className = "col-6";
+  //     deckElement.style.cursor = "pointer";
+  //     deckElement.addEventListener("click", () => getDeckDetails(deck.number));
+  //     relatedDecksContainer.appendChild(deckElement);
+  //   });
 }
 
 async function fetchRelatedCardsDetails(cardIds) {

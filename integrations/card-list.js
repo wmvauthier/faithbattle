@@ -6,25 +6,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   let data = await getCards();
   let decks = await getDecks();
 
-  data.forEach((card) => {
-    
-    card.ocurrences = getOccurrencesInDecks(card.number, decks);
-    card.ocurrencesInSides = getOccurrencesInSides(card.number, decks);
-    card.stars = scaleToFive(
-      (card.ocurrencesInSides / decks.length) * 100,
-      card.ocurrencesInSides
-    );
-
-    // if (card.number == 29) {
-    //   console.log(card);
-    //   console.log("ocurrences -> " + card.ocurrences);
-    //   console.log("decks -> " + decks.length);
-    //   console.log("count -> " + card.ocurrences / decks.length);
-    //   console.log("stars -> " + card.stars);
-    // }
-
-  });
-
   cards = sortByStarsAndDate(data);
   // console.log(cards);
 
