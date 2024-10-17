@@ -1,6 +1,7 @@
 let deckMinimumSize = 30;
 
 function analyzeCards(cards, averages) {
+  // Inicializa o objeto de resultados
   const result = {
     heroCount: 0,
     miracleCount: 0,
@@ -17,13 +18,16 @@ function analyzeCards(cards, averages) {
     averageCost: 0,
   };
 
-  cards = cards.filter(
-    (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
-  );
+  // Filtra cartas que não são "Herói de Fé" ou são lendários
+  cards = cards.filter(card => card.type !== "Herói de Fé" || card.subtype !== "Lendário");
 
-  cards.forEach((card) => {
+  // Itera sobre cada carta para calcular estatísticas
+  cards.forEach(card => {
     if (Number.isInteger(card.cost)) {
+      // Acumula custo médio
       result.averageCost += card.cost;
+
+      // Atualiza contadores e custos totais de cada tipo de carta
       switch (card.type) {
         case "Herói de Fé":
           if (card.subtype !== "Lendário") {
@@ -47,14 +51,15 @@ function analyzeCards(cards, averages) {
           break;
       }
 
-      card.categories.split(";").forEach((category) => {
+      // Contagem de categorias
+      card.categories.split(";").forEach(category => {
         if (category) {
-          result.categoriesCount[category] =
-            (result.categoriesCount[category] || 0) + 1;
+          result.categoriesCount[category] = (result.categoriesCount[category] || 0) + 1;
         }
       });
 
-      card.effects.split(";").forEach((effect) => {
+      // Contagem de efeitos
+      card.effects.split(";").forEach(effect => {
         if (effect) {
           result.effectsCount[effect] = (result.effectsCount[effect] || 0) + 1;
         }
@@ -62,8 +67,8 @@ function analyzeCards(cards, averages) {
     }
   });
 
+  // Calcula as médias se houver cartas
   const totalCards = cards.length;
-
   if (totalCards > 0) {
     result.averageCost /= totalCards;
 
@@ -79,133 +84,43 @@ function analyzeCards(cards, averages) {
       result.averageCostSin = result.totalCostSin / result.sinCount;
     }
     if (result.artifactCount > 0) {
-      result.averageCostArtifact =
-        result.totalCostArtifact / result.artifactCount;
+      result.averageCostArtifact = result.totalCostArtifact / result.artifactCount;
     }
   }
 
+  // Realiza comparações com as médias, se fornecidas
   if (averages) {
-    const categoriesEffectsComparison = compareCategoriesAndEffects(
-      result,
-      averages
-    );
-
+    const categoriesEffectsComparison = compareCategoriesAndEffects(result, averages);
     result.comparison = {
       totalCards: totalCards,
       general: {
-        qtd:
-          totalCards > 0
-            ? totalCards > averages.averageQtd
-              ? "higher"
-              : totalCards < averages.averageQtd
-              ? "lower"
-              : "equal"
-            : "N/A",
-        cost:
-          totalCards > 0
-            ? result.averageCost > averages.averageCost
-              ? "higher"
-              : result.averageCost < averages.averageCost
-              ? "lower"
-              : "equal"
-            : "N/A",
-        strength:
-          result.heroCount > 0
-            ? result.averageStrength > averages.averageStrength
-              ? "higher"
-              : result.averageStrength < averages.averageStrength
-              ? "lower"
-              : "equal"
-            : "N/A",
-        resistance:
-          result.heroCount > 0
-            ? result.averageResistance > averages.averageResistance
-              ? "higher"
-              : result.averageResistance < averages.averageResistance
-              ? "lower"
-              : "equal"
-            : "N/A",
+        qtd: totalCards > 0 ? compareValues(totalCards, averages.averageQtd) : "N/A",
+        cost: totalCards > 0 ? compareValues(result.averageCost, averages.averageCost) : "N/A",
+        strength: result.heroCount > 0 ? compareValues(result.averageStrength, averages.averageStrength) : "N/A",
+        resistance: result.heroCount > 0 ? compareValues(result.averageResistance, averages.averageResistance) : "N/A",
       },
       hero: {
-        cost:
-          result.heroCount > 0
-            ? result.averageCostHero > averages.averageCostHero
-              ? "higher"
-              : result.averageCostHero < averages.averageCostHero
-              ? "lower"
-              : "equal"
-            : "N/A",
-        count:
-          result.heroCount > 0
-            ? result.heroCount > averages.averageQtdHero
-              ? "higher"
-              : result.heroCount < averages.averageQtdHero
-              ? "lower"
-              : "equal"
-            : "N/A",
+        cost: result.heroCount > 0 ? compareValues(result.averageCostHero, averages.averageCostHero) : "N/A",
+        count: result.heroCount > 0 ? compareValues(result.heroCount, averages.averageQtdHero) : "N/A",
       },
       miracle: {
-        cost:
-          result.miracleCount > 0
-            ? result.averageCostMiracle > averages.averageCostMiracle
-              ? "higher"
-              : result.averageCostMiracle < averages.averageCostMiracle
-              ? "lower"
-              : "equal"
-            : "N/A",
-        count:
-          result.miracleCount > 0
-            ? result.miracleCount > averages.averageQtdMiracle
-              ? "higher"
-              : result.miracleCount < averages.averageQtdMiracle
-              ? "lower"
-              : "equal"
-            : "N/A",
+        cost: result.miracleCount > 0 ? compareValues(result.averageCostMiracle, averages.averageCostMiracle) : "N/A",
+        count: result.miracleCount > 0 ? compareValues(result.miracleCount, averages.averageQtdMiracle) : "N/A",
       },
       sin: {
-        cost:
-          result.sinCount > 0
-            ? result.averageCostSin > averages.averageCostSin
-              ? "higher"
-              : result.averageCostSin < averages.averageCostSin
-              ? "lower"
-              : "equal"
-            : "N/A",
-        count:
-          result.sinCount > 0
-            ? result.sinCount > averages.averageQtdSin
-              ? "higher"
-              : result.sinCount < averages.averageQtdSin
-              ? "lower"
-              : "equal"
-            : "N/A",
+        cost: result.sinCount > 0 ? compareValues(result.averageCostSin, averages.averageCostSin) : "N/A",
+        count: result.sinCount > 0 ? compareValues(result.sinCount, averages.averageQtdSin) : "N/A",
       },
       artifact: {
-        cost:
-          result.artifactCount > 0
-            ? result.averageCostArtifact > averages.averageCostArtifact
-              ? "higher"
-              : result.averageCostArtifact < averages.averageCostArtifact
-              ? "lower"
-              : "equal"
-            : "N/A",
-        count:
-          result.artifactCount > 0
-            ? result.artifactCount > averages.averageQtdArtifact
-              ? "higher"
-              : result.artifactCount < averages.averageQtdArtifact
-              ? "lower"
-              : "equal"
-            : "N/A",
+        cost: result.artifactCount > 0 ? compareValues(result.averageCostArtifact, averages.averageCostArtifact) : "N/A",
+        count: result.artifactCount > 0 ? compareValues(result.artifactCount, averages.averageQtdArtifact) : "N/A",
       },
       categories: {},
       effects: {},
     };
 
     // Adiciona comparações de categories e effects ao objeto result.comparison
-    for (const [category, comparisonResult] of Object.entries(
-      categoriesEffectsComparison
-    )) {
+    for (const [category, comparisonResult] of Object.entries(categoriesEffectsComparison)) {
       if (result.categoriesCount.hasOwnProperty(category)) {
         result.comparison.categories[category] = comparisonResult;
       } else if (result.effectsCount.hasOwnProperty(category)) {
@@ -214,6 +129,7 @@ function analyzeCards(cards, averages) {
     }
   }
 
+  // Remove os totais para deixar o resultado mais limpo
   delete result.totalCostHero;
   delete result.totalCostMiracle;
   delete result.totalCostSin;
@@ -224,157 +140,120 @@ function analyzeCards(cards, averages) {
   return result;
 }
 
-async function analyzeDecks(decks, selectedStyle, selectedArchetype) {
-  let allCards = await getCards();
+// Função auxiliar para comparar valores
+function compareValues(a, b) {
+  if (a > b) return "higher";
+  if (a < b) return "lower";
+  return "equal";
+}
 
-  decks = decks.filter((deck) => {
-    let match = true;
-    if (selectedStyle) {
-      match = match && deck.style === selectedStyle;
-    }
-    if (selectedArchetype) {
-      match = match && deck.archetype === selectedArchetype;
-    }
-    return match;
+async function analyzeDecks(decks, selectedStyle, selectedArchetype) {
+  // Filtrar decks com base no estilo e arquétipo selecionados
+  const filteredDecks = decks.filter((deck) => {
+    return (!selectedStyle || deck.style === selectedStyle) &&
+           (!selectedArchetype || deck.archetype === selectedArchetype);
   });
 
   const totalResult = {
-    totalDecks: decks.length,
-
+    totalDecks: filteredDecks.length,
     averageStrength: 0,
     averageResistance: 0,
-
     averageCost: 0,
     averageCostHero: 0,
     averageCostMiracle: 0,
     averageCostSin: 0,
     averageCostArtifact: 0,
-
     averageQtd: 0,
     averageQtdHero: 0,
     averageQtdMiracle: 0,
     averageQtdSin: 0,
     averageQtdArtifact: 0,
-
     categoriesCount: {},
     effectsCount: {},
-
     averageCategories: [],
     averageEffects: [],
   };
 
-  decks.forEach((deck) => {
-    let cardsFromDeck = getCardsFromDeck(deck.cards, allCards);
+  filteredDecks.forEach((deck) => {
+    const cardsFromDeck = getCardsFromDeck(deck.cards, allCards);
     const deckAnalysis = analyzeCards(cardsFromDeck);
+    
+    // Contadores para custo e quantidade
+    const costByType = {
+      "Herói de Fé": { totalCost: 0, count: 0 },
+      "Milagre": { totalCost: 0, count: 0 },
+      "Pecado": { totalCost: 0, count: 0 },
+      "Artefato": { totalCost: 0, count: 0 }
+    };
 
-    const costByType = {};
+    cardsFromDeck.forEach((card) => {
+      const tipo = card.type;
+      const custo = card.cost;
 
-    cardsFromDeck.forEach((objeto) => {
-      const tipo = objeto.type;
-      const custo = objeto.cost;
-
-      if (!costByType[tipo]) {
-        costByType[tipo] = {
-          cards: [],
-          custoMedio: 0,
-        };
-      }
-
-      costByType[tipo].cards.push(objeto);
-      if (Number.isInteger(custo)) {
-        costByType[tipo].custoMedio += custo;
+      if (costByType[tipo]) {
+        costByType[tipo].totalCost += Number.isInteger(custo) ? custo : 0;
+        costByType[tipo].count += 1;
       }
     });
 
+    // Atualizando os custos médios
     for (const tipo in costByType) {
-      const totalCards = costByType[tipo].cards.length;
-      costByType[tipo].custoMedio /= totalCards;
+      if (costByType[tipo].count > 0) {
+        totalResult[`averageCost${tipo}`] = costByType[tipo].totalCost / costByType[tipo].count;
+      }
     }
 
-    if (Object.keys(costByType).length > 0) {
-      const types = ["Herói de Fé", "Milagre", "Pecado", "Artefato"];
-
-      const typePropertyMap = {
-        "Herói de Fé": "averageCostHero",
-        Milagre: "averageCostMiracle",
-        Pecado: "averageCostSin",
-        Artefato: "averageCostArtifact",
-      };
-
-      types.forEach((type) => {
-        if (costByType[type]) {
-          const averageCost = costByType[type].custoMedio;
-          const propertyName = typePropertyMap[type];
-          totalResult[propertyName] = averageCost;
-        }
-      });
-    }
-
+    // Acumulando totais
     totalResult.averageCost += deckAnalysis.averageCost;
-
-    totalResult.averageQtd += deck.cards.length ? deck.cards.length : 0;
+    totalResult.averageQtd += deck.cards.length;
     totalResult.averageQtdHero += deckAnalysis.heroCount;
     totalResult.averageQtdMiracle += deckAnalysis.miracleCount;
     totalResult.averageQtdSin += deckAnalysis.sinCount;
     totalResult.averageQtdArtifact += deckAnalysis.artifactCount;
+    totalResult.averageStrength += deckAnalysis.averageStrength || 0;
+    totalResult.averageResistance += deckAnalysis.averageResistance || 0;
 
-    totalResult.averageStrength += deckAnalysis.averageStrength
-      ? deckAnalysis.averageStrength
-      : 0;
-    totalResult.averageResistance += deckAnalysis.averageResistance
-      ? deckAnalysis.averageResistance
-      : 0;
-
+    // Contando categorias e efeitos
     for (const category in deckAnalysis.categoriesCount) {
-      totalResult.categoriesCount[category] =
-        (totalResult.categoriesCount[category] || 0) +
-        deckAnalysis.categoriesCount[category];
+      totalResult.categoriesCount[category] = (totalResult.categoriesCount[category] || 0) + deckAnalysis.categoriesCount[category];
     }
 
     for (const effect in deckAnalysis.effectsCount) {
-      totalResult.effectsCount[effect] =
-        (totalResult.effectsCount[effect] || 0) +
-        deckAnalysis.effectsCount[effect];
+      totalResult.effectsCount[effect] = (totalResult.effectsCount[effect] || 0) + deckAnalysis.effectsCount[effect];
     }
   });
 
   if (totalResult.totalDecks > 0) {
+    // Calculando médias
     totalResult.averageCost /= totalResult.totalDecks;
     totalResult.averageStrength /= totalResult.totalDecks;
     totalResult.averageResistance /= totalResult.totalDecks;
-
     totalResult.averageQtd /= totalResult.totalDecks;
     totalResult.averageQtdHero /= totalResult.totalDecks;
     totalResult.averageQtdMiracle /= totalResult.totalDecks;
     totalResult.averageQtdSin /= totalResult.totalDecks;
     totalResult.averageQtdArtifact /= totalResult.totalDecks;
 
-    totalResult.averageQtd = Math.floor(totalResult.averageQtd);
-    totalResult.averageQtdHero = Math.floor(totalResult.averageQtdHero);
-    totalResult.averageQtdMiracle = Math.floor(totalResult.averageQtdMiracle);
-    totalResult.averageQtdSin = Math.floor(totalResult.averageQtdSin);
-    totalResult.averageQtdArtifact = Math.floor(totalResult.averageQtdArtifact);
-  }
+    // Arredondando valores
+    const floorProps = ['averageQtd', 'averageQtdHero', 'averageQtdMiracle', 'averageQtdSin', 'averageQtdArtifact'];
+    floorProps.forEach(prop => {
+      totalResult[prop] = Math.floor(totalResult[prop]);
+    });
 
-  totalResult.averageCategories = Object.entries(
-    totalResult.categoriesCount
-  ).map(([name, count]) => ({
-    name,
-    media: Math.floor(count / totalResult.totalDecks),
-  }));  
-
-  totalResult.averageEffects = Object.entries(totalResult.effectsCount).map(
-    ([name, count]) => ({
+    // Calculando médias de categorias e efeitos
+    totalResult.averageCategories = Object.entries(totalResult.categoriesCount).map(([name, count]) => ({
       name,
       media: Math.floor(count / totalResult.totalDecks),
-    })
-  );
+    }));
 
+    totalResult.averageEffects = Object.entries(totalResult.effectsCount).map(([name, count]) => ({
+      name,
+      media: Math.floor(count / totalResult.totalDecks),
+    }));
+  }
+
+  // Remover chaves desnecessárias
   delete totalResult.totalDecks;
-  delete totalResult.heroCount;
-  delete totalResult.miracleCount;
-  delete totalResult.sinCount;
-  delete totalResult.artifactCount;
   delete totalResult.categoriesCount;
   delete totalResult.effectsCount;
 
@@ -421,23 +300,30 @@ function generateData(cards) {
 function compareCategoriesAndEffects(result, averages) {
   const comparison = {};
 
-  for (const [category, count] of Object.entries(result.categoriesCount)) {
-    const averageCategory = averages.averageCategories.find(
-      (avg) => avg["name"] === category
-    );
-    if (averageCategory) {
-      comparison[category] = compareValues(count, averageCategory["media"]);
-    }
-  }
+  // Criar mapas para médias de categorias e efeitos
+  const averageCategoryMap = Object.fromEntries(
+    averages.averageCategories.map(avg => [avg.name, avg.media])
+  );
 
-  for (const [effect, count] of Object.entries(result.effectsCount)) {
-    const averageEffect = averages.averageEffects.find(
-      (avg) => avg["name"] === effect
-    );
-    if (averageEffect) {
-      comparison[effect] = compareValues(count, averageEffect["media"]);
+  const averageEffectMap = Object.fromEntries(
+    averages.averageEffects.map(avg => [avg.name, avg.media])
+  );
+
+  // Comparar categorias
+  Object.entries(result.categoriesCount).forEach(([category, count]) => {
+    const averageCategory = averageCategoryMap[category];
+    if (averageCategory !== undefined) {
+      comparison[category] = compareValues(count, averageCategory);
     }
-  }
+  });
+
+  // Comparar efeitos
+  Object.entries(result.effectsCount).forEach(([effect, count]) => {
+    const averageEffect = averageEffectMap[effect];
+    if (averageEffect !== undefined) {
+      comparison[effect] = compareValues(count, averageEffect);
+    }
+  });
 
   return comparison;
 }

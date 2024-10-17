@@ -2,32 +2,26 @@ const fs = require("fs");
 const {
   getOccurrencesInDecks,
   getOccurrencesInSides,
-  getCards,
-  getCardsFromDeck,
-  calculateStarsFromDeck,
   scaleToFive,
 } = require("../integrations/utils");
 
 const decksObj = require("../data/decks.json");
-const decks = "../data/decks.json";
 
-const heroes = "../data/heroes.json";
-const artifacts = "../data/artifacts.json";
-const miracles = "../data/miracles.json";
-const sins = "../data/sins.json";
-const legendaries = "../data/legendary.json";
-
-let cardsArray = [heroes, artifacts, miracles, sins, legendaries];
+const cardsArray = [
+  "../data/heroes.json",
+  "../data/artifacts.json",
+  "../data/miracles.json",
+  "../data/sins.json",
+  "../data/legendary.json"
+];
 
 async function updateCards(cardsArray) {
-  cardsArray.forEach((cards) => {
-    fs.readFile(cards, "utf8", (err, data) => {
-      if (err) {
-        console.error("Erro ao ler o arquivo:", err);
-        return;
-      }
+  for (const cards of cardsArray) {
 
-      let jsonData = JSON.parse(data);
+    try {
+
+      const data = await fs.promises.readFile(cards, "utf8");
+      const jsonData = JSON.parse(data);
 
       jsonData.forEach((card) => {
         card.ocurrences = getOccurrencesInDecks(card.number, decksObj);
@@ -39,64 +33,18 @@ async function updateCards(cardsArray) {
       });
 
       const updatedJson = JSON.stringify(jsonData, null, 2);
+      await fs.promises.writeFile(cards, updatedJson, "utf8");
+      console.log("Arquivo JSON atualizado com sucesso:", cards);
 
-      fs.writeFile(cards, updatedJson, "utf8", (err) => {
-        if (err) {
-          console.error("Erro ao salvar o arquivo:", err);
-          return;
-        }
-        console.log("Arquivos JSON atualizados com sucesso!");
-      });
-      
-    });
-  });
-}
-
-async function updateDecks() {
-
-  let allCards = [
-    ...heroes,
-    ...miracles,
-    ...sins,
-    ...artifacts,
-    ...legendaries,
-  ];
-
-  fs.readFile(decks, "utf8", (err, data) => {
-
-    if (err) {
-      console.error("Erro ao ler o arquivo:", err);
-      return;
+    } catch (err) {
+      console.error("Erro:", err);
     }
-
-    let jsonData = JSON.parse(data);
-
-    jsonData.forEach(async (deck) => {
-      deck.level = await calculateStarsFromDeck(
-        deck,
-        allCards,
-        decks,
-        legendaries
-      );
-    });
-
-    const updatedJson = JSON.stringify(jsonData, null, 2);
-
-    fs.writeFile(decks, updatedJson, "utf8", (err) => {
-      if (err) {
-        console.error("Erro ao salvar o arquivo:", err);
-        return;
-      }
-      console.log("Arquivos JSON atualizados com sucesso!");
-    });
-
-  });
-
+    
+  }
 }
 
 async function main() {
   await updateCards(cardsArray);
-  await updateDecks(decks);
 }
 
-main();
+main().catch(console.error);

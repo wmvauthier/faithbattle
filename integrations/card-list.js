@@ -3,10 +3,10 @@ let currentPage = 1; // Página atual
 let cards = []; // Lista de todos os cards
 
 document.addEventListener("DOMContentLoaded", async function () {
-  let data = await getCards();
-  let decks = await getDecks();
 
-  cards = sortByStarsAndDate(data);
+  await waitForAllJSONs();
+
+  cards = sortByStarsAndDate(allCards);
   // console.log(cards);
 
   generateTextFilterByProperty("name", "Nome", "Digite o Nome");
@@ -456,6 +456,7 @@ function renderCards(cards) {
       productItem.className = "col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6";
       productItem.setAttribute("onclick", `getCardDetails(${card.number})`);
       productItem.style.cursor = "pointer";
+      productItem.style.padding = "5px";
 
       const costCircledNumber = String.fromCharCode(10121 + card.cost); // Gerando o código do caractere circulado com base no custo do card
 

@@ -1,20 +1,16 @@
-let cards;
-
 document.addEventListener("DOMContentLoaded", async function () {
+  await waitForAllJSONs();
+
   let idSelectedCard = localStorage.getItem("idSelectedCard");
 
   if (idSelectedCard && idSelectedCard > 0) {
-    const data = await getCards();
-
-    const card = data.find((element) => element.number == idSelectedCard);
+    const card = allCards.find((element) => element.number == idSelectedCard);
     let cardStatus = `&#9876;${card.strength} / &#10070;${card.resistence}`;
 
     if (card) {
-      cards = data;
-      let decks = await getDecks();
       let similarCards = await getRelatedCardsInDecks(
         card.number,
-        decks,
+        allDecks,
         false,
         null,
         null
@@ -22,10 +18,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       similarCards = similarCards.slice(0, 18);
 
-      // console.log(card);
-      // console.log(similarCards);
-
-      let relatedDecks = getRelatedDecks(card.number, similarCards, decks);
+      let relatedDecks = getRelatedDecks(card.number, similarCards, allDecks);
 
       const similarCardDetails = await fetchRelatedCardsDetails(
         similarCards.map((card) => card.idcard)
@@ -111,36 +104,155 @@ function updateSimilarCardsDOM(similarCardDetails, similarCards) {
 }
 
 function updateRelatedDecks(relatedDecks) {
-  //   const relatedDecksContainer = document.getElementById(
-  //     "related-decks-container"
-  //   );
-  //   relatedDecksContainer.innerHTML = ""; // Limpa o conteúdo existente
-  //   relatedDecks.forEach((deck) => {
-  //     const keywordsArray = deck.keywords.split(";");
-  //     const deckElement = document.createElement("div");
-  //     deckElement.innerHTML = `
-  // <div class="product__sidebar__comment__item">
-  // <div class="product__sidebar__comment__item__pic">
-  //   <img src="${
-  //     deck.img
-  //   }" alt="Deck Image" style="max-width: 90px; height: auto; max-height: 130px;">
-  // </div>
-  // <div class="product__sidebar__comment__item__text">
-  //   <ul>
-  //     ${keywordsArray.map((keyword) => `<li>${keyword}</li>`).join("")}
-  //   </ul>
-  //   <h5><a href="#">${deck.name}</a></h5>
-  // </div>
-  // </div>`;
-  //     deckElement.className = "col-6";
-  //     deckElement.style.cursor = "pointer";
-  //     deckElement.addEventListener("click", () => getDeckDetails(deck.number));
-  //     relatedDecksContainer.appendChild(deckElement);
-  //   });
+  const relatedDecksContainer = document.getElementById(
+    "related-decks-container"
+  );
+  relatedDecksContainer.innerHTML = ""; // Limpa o conteúdo existente
+
+  const fragment = document.createDocumentFragment(); // Fragmento para melhorar a performance
+
+  relatedDecks.forEach((deck) => {
+    let style, archetype, stars;
+
+    stars = createListItem(
+      "#ffffff",
+      `<i style="color: #FFD700;" class="fa-solid fa-star"></i> ${deck.level}`
+    );
+
+    // Definição do estilo
+    switch (deck.style) {
+      case "Agressivo":
+        style = createListItem(
+          "#B22222",
+          '<i style="color: #fff;" class="fa-solid fa-hand-back-fist"></i>'
+        );
+        break;
+      case "Equilibrado":
+        style = createListItem(
+          "#FFD700",
+          '<i style="color: #000;" class="fa-solid fa-hand-scissors"></i>'
+        );
+        break;
+      case "Controlador":
+        style = createListItem(
+          "#1E90FF",
+          '<i style="color: #fff;" class="fa-solid fa-hand"></i>'
+        );
+        break;
+      default:
+        style = "";
+    }
+
+    // Definição do arquétipo
+    switch (deck.archetype) {
+      case "Batalha":
+        archetype = createListItem(
+          "#FF8C00",
+          '<i style="color: #000;" class="fa-solid fa-hand-fist"></i>'
+        );
+        break;
+      case "Santificação":
+        archetype = createListItem(
+          "whitesmoke",
+          '<i style="color: #000;" class="fa-solid fa-droplet"></i>'
+        );
+        break;
+      case "Combo":
+        archetype = createListItem(
+          "#800080",
+          '<i style="color: #fff;" class="fa-solid fa-gears"></i>'
+        );
+        break;
+      case "Maravilhas":
+        archetype = createListItem(
+          "#32CD32",
+          '<i style="color: #000;" class="fa-solid fa-hat-wizard"></i>'
+        );
+        break;
+      case "Supressão":
+        archetype = createListItem(
+          "#000000",
+          '<i style="color: #fff;" class="fa-solid fa-ban"></i>'
+        );
+        break;
+      default:
+        archetype = "";
+    }
+
+    // Criação do contêiner de cada deck
+    const deckElement = document.createElement("div");
+    deckElement.className = "col-4";
+    deckElement.style.cursor = "pointer";
+    deckElement.style.display = "flex";
+    deckElement.style.flexDirection = "column";
+    deckElement.style.alignItems = "center";
+    deckElement.style.textAlign = "center";
+    deckElement.style["margin-bottom"] = "15px";
+
+    // Imagem do deck
+    const imgElement = document.createElement("img");
+    imgElement.src = deck.img;
+    imgElement.alt = "Deck Image";
+    // imgElement.style.maxWidth = "150px";
+    imgElement.style.height = "auto";
+    // imgElement.style.maxHeight = "150px";
+
+    // Nome do deck
+    const nameElement = document.createElement("h5");
+    const nameLink = document.createElement("a");
+    nameLink.href = "#";
+    nameLink.textContent = deck.name;
+    nameElement.style["font-family"] = '"Mulish", sans-serif';
+    nameElement.style.fontSize = "12px"; // Tamanho da fonte reduzido
+    nameElement.style["color"] = '#ffffff';
+    nameLink.style.color = "#fff"; // Definir a cor do texto do link como branco
+    nameElement.appendChild(nameLink);
+
+    // Lista de informações (estilo, arquétipo, estrelas)
+    const ulElement = document.createElement("ul");
+    ulElement.style.display = "flex";
+    ulElement.style.justifyContent = "space-between";
+    ulElement.style.padding = "0";
+    ulElement.style.listStyle = "none";
+    ulElement.style.width = "100%";
+    ulElement.appendChild(stars);
+    ulElement.appendChild(style);
+    ulElement.appendChild(archetype);
+
+    // Adiciona os elementos ao contêiner do deck
+    deckElement.appendChild(imgElement);
+    deckElement.appendChild(nameElement);
+    deckElement.appendChild(ulElement);
+
+    // Adiciona o evento de clique
+    deckElement.addEventListener("click", () => getDeckDetails(deck.number));
+
+    // Adiciona ao fragmento
+    fragment.appendChild(deckElement);
+  });
+
+  // Adiciona todo o fragmento ao DOM de uma vez
+  relatedDecksContainer.appendChild(fragment);
+}
+
+// Função auxiliar para criar um item de lista com estilo
+function createListItem(backgroundColor, innerHTMLContent) {
+  const li = document.createElement("li");
+  li.style.backgroundColor = backgroundColor;
+  li.style.borderRadius = "10px"; // Bordas arredondadas
+  li.style.padding = "5px 10px"; // Espaçamento interno ajustado
+  li.style.margin = "5px"; // Espaçamento externo
+  li.style.fontSize = "12px"; // Tamanho da fonte reduzido
+  li.style.display = "flex";
+  li.style.alignItems = "center";
+  li.style.justifyContent = "center";
+  li.style.fontWeight = "bold"; // Correção: sem o ponto antes
+  li.innerHTML = innerHTMLContent;
+  return li;
 }
 
 async function fetchRelatedCardsDetails(cardIds) {
-  return cards.filter((card) => cardIds.includes(card.number));
+  return allCards.filter((card) => cardIds.includes(card.number));
 }
 
 // Função para atualizar as estrelas

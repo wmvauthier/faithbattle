@@ -1,6 +1,4 @@
 let deck;
-let decks;
-let allCards;
 let idSelectedDeck;
 let cardsFromDeck;
 
@@ -28,8 +26,8 @@ let selectedStyle = null;
 let selectedArchetype = null;
 
 document.addEventListener("DOMContentLoaded", async function () {
-  allCards = await getCards();
-  decks = await getDecks();
+
+  await waitForAllJSONs();
 
   legendaries = await fetchOrGetFromLocalStorage(
     "legendaries",
@@ -58,7 +56,7 @@ async function updateAnalysisFromDeck() {
 
   if (deck.cards.length > 0) {
     analysisAverages = await analyzeDecks(
-      decks,
+      allDecks,
       selectedStyle,
       selectedArchetype
     );
@@ -69,7 +67,7 @@ async function updateAnalysisFromDeck() {
       deck.cards.map(async (card) => {
         const similarCards = await getRelatedCardsInDecks(
           card,
-          decks,
+          allDecks,
           true,
           selectedStyle,
           selectedArchetype
@@ -247,7 +245,8 @@ async function generateDeck() {
   if (deck.cards.length <= 0) {
     await completeDeck(true);
     await tuningDeck();
-    await calculateStarsFromDeck(deck, allCards, decks, legendaries);
+    await tuningDeck();
+    await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
     updateAnalysisFromDeck();
   }
 }
@@ -288,13 +287,14 @@ async function completeDeck(flagGenerate) {
       cardList = await getCardsFromDeck(suggestionNumbers, allCards);
     }
 
-    await calculateStarsFromDeck(deck, allCards, decks, legendaries);
+    await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
     updateAnalysisFromDeck();
 
   }
 }
 
 async function tuningDeck() {
+
   if (deck.cards.length > 0) {
     let markerHasChanged = true;
     let counterLoop = 0;
@@ -460,73 +460,97 @@ async function tuningDeck() {
       await wait(1);
     });
 
-    await calculateStarsFromDeck(deck, allCards, decks, legendaries);
+    await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
     updateAnalysisFromDeck();
 
   }
+  
 }
 
 // ADICIONAR A MELHOR CARTA DE UMA CATEGORIA EM ESPECÍFICO
 async function addCardFromSpecifiedCategory(category, suggestionNumbers) {
-  let suggestionList = await getCardsFromDeck(suggestionNumbers, allCards);
+  try {
+    // Obter a lista de sugestões a partir do deck
+    let suggestionList = await getCardsFromDeck(suggestionNumbers, allCards);
 
-  suggestionList = [...new Set(suggestionList)];
+    // Remover duplicatas
+    suggestionList = [...new Set(suggestionList)];
 
-  suggestionList = suggestionList.filter((card) => {
-    if (!card.categories) return false;
-    const cardCategories = card.categories.split(";").map((cat) => cat.trim());
-    return cardCategories.some((cat) => category == cat);
-  });
+    // Filtrar cartas com a categoria especificada
+    suggestionList = suggestionList.filter((card) => {
+      if (!card.categories) return false;
+      const cardCategories = card.categories.split(";").map((cat) => cat.trim());
+      return cardCategories.some((cat) => category === cat);
+    });
 
-  // console.log("addCardFromSpecifiedCategory(" + category + ")");
-  // console.log(suggestionList);
+    // Verificar se a lista de sugestões não está vazia
+    if (suggestionList.length === 0) {
+      console.warn(`Nenhuma carta encontrada para a categoria: ${category}`);
+      return; // Saia da função se não houver cartas
+    }
 
-  addCardToDeckBuilder(suggestionList[0].number);
-  await wait(500);
+    // Adicionar a primeira carta da lista filtrada ao deck
+    addCardToDeckBuilder(suggestionList[0].number);
+    await wait(500);
+  } catch (error) {
+    console.error("Erro ao adicionar carta da categoria especificada:", error);
+  }
 }
 
 // REMOVA DE UM DECK A PIOR CARTA DE UMA CATEGORIA EM ESPECÍFICO
 async function removeCardFromSpecifiedCategory(category) {
-  let cardList = getCardsFromDeck(deck.cards, allCards);
+  try {
+    // Obter a lista de cartas do deck
+    let cardList = getCardsFromDeck(deck.cards, allCards);
 
-  cardList = [...new Set(cardList)];
+    // Remover duplicatas
+    cardList = [...new Set(cardList)];
 
-  cardList = cardList.filter((card) => {
-    if (!card.categories) return false;
-    const cardCategories = card.categories.split(";").map((cat) => cat.trim());
-    return cardCategories.some((cat) => category == cat);
-  });
+    // Filtrar cartas que pertencem à categoria especificada
+    cardList = cardList.filter((card) => {
+      if (!card.categories) return false;
+      const cardCategories = card.categories.split(";").map((cat) => cat.trim());
+      return cardCategories.some((cat) => category === cat);
+    });
 
-  let menorOcorrencia = Infinity;
-  let cardsMenorOcorrencia = [];
-
-  cardList.forEach((card) => {
-    let ocorrencias = getOccurrencesInSides(card.number, decks);
-
-    if (ocorrencias < menorOcorrencia) {
-      menorOcorrencia = ocorrencias;
-      cardsMenorOcorrencia = [card];
-    } else if (ocorrencias === menorOcorrencia) {
-      cardsMenorOcorrencia.push(card);
+    // Verificar se a lista de cartas não está vazia
+    if (cardList.length === 0) {
+      console.warn(`Nenhuma carta encontrada para a categoria: ${category}`);
+      return; // Saia da função se não houver cartas
     }
-  });
 
-  // console.log("removeCardFromSpecifiedCategory(" + category + ")");
-  // console.log(cardList);
+    let menorOcorrencia = Infinity;
+    let cardsMenorOcorrencia = [];
 
-  if (cardsMenorOcorrencia.length > 0) {
-    removeCardFromDeckBuilder(cardsMenorOcorrencia[0].number);
-    await wait(500);
+    // Encontrar a(s) carta(s) com a menor ocorrência
+    cardList.forEach((card) => {
+      const ocorrencias = getOccurrencesInSides(card.number, allDecks);
+
+      if (ocorrencias < menorOcorrencia) {
+        menorOcorrencia = ocorrencias;
+        cardsMenorOcorrencia = [card];
+      } else if (ocorrencias === menorOcorrencia) {
+        cardsMenorOcorrencia.push(card);
+      }
+    });
+
+    // Remover a carta com menor ocorrência se houver
+    if (cardsMenorOcorrencia.length > 0) {
+      removeCardFromDeckBuilder(cardsMenorOcorrencia[0].number);
+      await wait(500);
+    }
+  } catch (error) {
+    console.error("Erro ao remover carta da categoria especificada:", error);
   }
 }
 
 async function cleanDeck() {
   while (deck.cards.length > 0) {
-    deck.cards.forEach((card) => {
-      removeCardFromDeckBuilder(card);
-    });
+    const card = deck.cards[0]; // Pega a primeira carta do deck
+    removeCardFromDeckBuilder(card); // Remove a carta do construtor de deck
   }
-  await updateAnalysisFromDeck();
+  
+  await updateAnalysisFromDeck(); // Atualiza a análise do deck após a limpeza
 }
 
 async function autoGenerateHand(isMulligan) {
@@ -1049,19 +1073,20 @@ function addCardToHand(id) {
 }
 
 function removeCardFromHand(id) {
-  const index = handTestCards.indexOf(id);
+  const index = handTestCards.findIndex(card => card.id === id); // Ajuste se for um objeto
   if (index !== -1) {
     handTestCards.splice(index, 1);
+    updateTestHand(allCards, handTestCards, "#handTestList");
+  } else {
+    console.warn(`Carta com ID ${id} não encontrada na mão.`);
   }
-  updateTestHand(allCards, handTestCards, "#handTestList");
 }
 
 function removeCardFromDeckBuilder(id) {
-  const index = deck.cards.indexOf(id);
+  const index = deck.cards.indexOf(id); // Encontra o índice do ID no array
   if (index !== -1) {
-    deck.cards.splice(index, 1);
+    deck.cards.splice(index, 1); // Remove a carta se o índice for válido
   }
-  updateAnalysisFromDeck();
 }
 
 function mergeAndSumSimilarCards(similarCardsArray) {
@@ -1178,7 +1203,7 @@ function generateStyleSelect() {
   defaultOption.value = "";
   select.appendChild(defaultOption);
 
-  const styles = [...new Set(decks.map((obj) => obj.style))];
+  const styles = [...new Set(allDecks.map((obj) => obj.style))];
 
   styles.forEach((value) => {
     const option = document.createElement("option");
@@ -1213,7 +1238,7 @@ function generateArchetypeSelect() {
   defaultOption.value = "";
   select.appendChild(defaultOption);
 
-  const styles = [...new Set(decks.map((obj) => obj.archetype))];
+  const styles = [...new Set(allDecks.map((obj) => obj.archetype))];
 
   styles.forEach((value) => {
     const option = document.createElement("option");

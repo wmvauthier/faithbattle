@@ -1,18 +1,19 @@
 let deck;
-let decks;
-let allCards;
 
 document.addEventListener("DOMContentLoaded", async function () {
+
+  await waitForAllJSONs();
+
   let idSelectedDeck = localStorage.getItem("idSelectedDeck");
 
   if (idSelectedDeck && idSelectedDeck > 0) {
-    const [allCards, decks] = await Promise.all([getCards(), getDecks()]);
-    const selectedDeck = decks.find(
+
+    const selectedDeck = allDecks.find(
       (element) => element.number == idSelectedDeck
     );
 
     if (selectedDeck) {
-      const analysisAverages = await analyzeDecks(decks, null, null);
+      const analysisAverages = await analyzeDecks(allDecks, null, null);
       const mergedArray = [...selectedDeck.cards];
       let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
       let info = await analyzeCards(cardsFromDeck, analysisAverages);

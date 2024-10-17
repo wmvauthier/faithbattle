@@ -1,10 +1,8 @@
 const CARDS_PER_PAGE = 36; // Número de cards por página
 let currentPage = 1; // Página atual
-let decks = []; // Lista de todos os decks
-let cards = []; // Lista de todos os decks
 
 document.addEventListener("DOMContentLoaded", async function () {
-  decks = await getDecks();
+  await waitForAllJSONs();
   renderPage(currentPage);
 });
 
@@ -15,9 +13,8 @@ async function renderPage(page) {
   const startIndex = (page - 1) * CARDS_PER_PAGE;
   const endIndex = page * CARDS_PER_PAGE;
 
-  const decksToShow = decks.slice(startIndex, endIndex);
+  const decksToShow = allDecks.slice(startIndex, endIndex);
 
-  let allCards = await getCards();
   let rowsToAdd = [];
 
   decksToShow.forEach((deck) => {
@@ -197,7 +194,7 @@ async function renderPage(page) {
 }
 
 function renderPagination(currentPage) {
-  const totalPages = Math.ceil(decks.length / CARDS_PER_PAGE);
+  const totalPages = Math.ceil(allDecks.length / CARDS_PER_PAGE);
   const paginationContainer = document.getElementById("pagination");
 
   paginationContainer.innerHTML = "";
