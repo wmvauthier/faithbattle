@@ -1087,6 +1087,7 @@ function removeCardFromDeckBuilder(id) {
   if (index !== -1) {
     deck.cards.splice(index, 1); // Remove a carta se o índice for válido
   }
+  updateAnalysisFromDeck();
 }
 
 function mergeAndSumSimilarCards(similarCardsArray) {
