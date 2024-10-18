@@ -26,16 +26,20 @@ let selectedStyle = null;
 let selectedArchetype = null;
 
 document.addEventListener("DOMContentLoaded", async function () {
-
+  // Carregar os JSONs em paralelo para aumentar a eficiência
   await waitForAllJSONs();
 
-  legendaries = await fetchOrGetFromLocalStorage(
-    "legendaries",
-    URL_LEGENDARIES_JSON
-  );
+  // Carregamento paralelo das informações
+  const [legendariesData, artifactsData] = await Promise.all([
+    fetchOrGetFromLocalStorage("legendaries", URL_LEGENDARIES_JSON),
+    fetchOrGetFromLocalStorage("artifacts", URL_ARTIFACTS_JSON),
+  ]);
 
-  artifacts = await fetchOrGetFromLocalStorage("artifacts", URL_ARTIFACTS_JSON);
+  // Atualizar as variáveis após o carregamento
+  legendaries = legendariesData;
+  artifacts = artifactsData;
 
+  // Inicializar o deck e sugestões
   deck = {
     cards: [],
     extra: [],
@@ -43,6 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   suggestions = [];
 
+  // Atualizar a análise do deck
   await updateAnalysisFromDeck();
 });
 

@@ -468,7 +468,6 @@ function getOccurrencesInSides(cardId, decks) {
 }
 
 function getRelatedDecks(cardNumber, relatedCards, decks) {
-  
   // Ordena os relatedCards pela quantidade (qtd) em ordem decrescente
   relatedCards.sort((a, b) => b.qtd - a.qtd);
 
@@ -483,19 +482,28 @@ function getRelatedDecks(cardNumber, relatedCards, decks) {
   // Função para calcular o score com pesos baseados nas áreas do deck
   function calculateDeckScore(deck, cardNumber) {
     let score = 0;
+    let priority = 0;
 
-    // Aplica os pesos para cada parte do deck
+    // Aumenta a prioridade se a cardNumber está em topcards, cards ou extra
+    if (deck.img.includes(cardNumber)) {
+      priority += 5; // Maior prioridade para topcards
+      score += 5; // Peso para topcards
+    }
+    // Aumenta a prioridade se a cardNumber está em topcards, cards ou extra
     if (deck.topcards.includes(cardNumber)) {
+      priority += 4; // Maior prioridade para topcards
       score += 5; // Peso para topcards
     }
     if (deck.cards.includes(cardNumber)) {
-      score += 4; // Peso para cards
+      priority += 3; // Prioridade intermediária para cards principais
+      score += 5; // Peso para cards
     }
     if (deck.extra.includes(cardNumber)) {
-      score += 4; // Peso para extra
+      priority += 3; // Prioridade para cartas no extra
+      score += 5; // Peso para extra
     }
     if (deck.sideboard.includes(cardNumber)) {
-      score += 1; // Peso para sideboard
+      score += 1; // Peso para sideboard, sem aumentar prioridade
     }
 
     // Aumenta o score com base na quantidade de cartas relacionadas
@@ -503,27 +511,33 @@ function getRelatedDecks(cardNumber, relatedCards, decks) {
       return acc + (relatedCardMap[cardId] || 0);
     }, 0);
 
-    return score;
+    return { score, priority };
   }
 
-  // Filtra os decks e calcula o score
+  // Filtra os decks e calcula o score e a prioridade
   const deckScores = decks
     .filter((deck) =>
       [deck.cards, deck.sideboard, deck.extra, deck.topcards].some((array) =>
         array.includes(cardNumber)
       )
     )
-    .map((deck) => ({
-      deck,
-      score: calculateDeckScore(deck, cardNumber),
-    }));
+    .map((deck) => {
+      const { score, priority } = calculateDeckScore(deck, cardNumber);
+      return { deck, score, priority };
+    });
 
-  // Ordena os decks com base no score calculado e retorna os 9 melhores
+  // Ordena os decks por prioridade e depois por score
   return deckScores
-    .sort((a, b) => b.score - a.score)
+    .sort((a, b) => {
+      // Primeiro, ordena pela prioridade (decrescente)
+      if (b.priority !== a.priority) {
+        return b.priority - a.priority;
+      }
+      // Se as prioridades forem iguais, ordena pelo score (decrescente)
+      return b.score - a.score;
+    })
     .slice(0, 9)
     .map((deckScore) => deckScore.deck);
-
 }
 
 function calculateWeightedScore(stars, monthDiff, usage) {

@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           if (id === "tag_cardImg") {
             element.src = value;
           } else if (id === "tag_cardStars") {
-            updateStars(element, card.stars); // Atualizar as estrelas
+            element.innerHTML = updateStars(card.stars); // Atualizar as estrelas
           } else {
             element.textContent = value;
           }
@@ -256,29 +256,32 @@ async function fetchRelatedCardsDetails(cardIds) {
 }
 
 // Função para atualizar as estrelas
-function updateStars(element, stars) {
+function updateStars(stars) {
   const resStars = parseFloat(stars); // Use parseFloat para manter a parte decimal
 
   const fullStars = Math.floor(resStars); // Parte inteira
   const halfStar = resStars % 1 >= 0.5; // Verifica se há uma meia estrela
   const emptyStars = 5 - fullStars - (halfStar ? 1 : 0); // Ajusta a contagem das estrelas vazias
 
-  element.innerHTML = "";
+  let innerHTML = "";
 
   // Adiciona estrelas cheias
   for (let i = 0; i < fullStars; i++) {
-    element.innerHTML += '<a href="#"><i class="fa fa-star"></i></a>';
+    innerHTML += '<a href="#"><i class="fa-solid fa-star"></i></a>';
   }
 
   // Adiciona meia estrela, se necessário
   if (halfStar) {
-    element.innerHTML += '<a href="#"><i class="fa fa-star-half-o"></i></a>';
+    innerHTML += '<a href="#"><i class="fa-solid fa-star-half-stroke"></i></a>';
   }
 
   // Adiciona estrelas vazias
   for (let i = 0; i < emptyStars; i++) {
-    element.innerHTML += '<a href="#"><i class="fa fa-star-o"></i></a>';
+    innerHTML += '<a href="#"><i class="fa-regular fa-star"></i></a>';
   }
+
+  return innerHTML;
+
 }
 
 function formatDate(dateString) {
