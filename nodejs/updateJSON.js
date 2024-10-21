@@ -4,7 +4,6 @@ const {
   getOccurrencesInSides,
   scaleToFive,
 } = require("../integrations/utils");
-
 const decksObj = require("../data/decks.json");
 
 const cardsArray = [
@@ -12,14 +11,12 @@ const cardsArray = [
   "../data/artifacts.json",
   "../data/miracles.json",
   "../data/sins.json",
-  "../data/legendary.json"
+  "../data/legendary.json",
 ];
 
 async function updateCards(cardsArray) {
   for (const cards of cardsArray) {
-
     try {
-
       const data = await fs.promises.readFile(cards, "utf8");
       const jsonData = JSON.parse(data);
 
@@ -35,11 +32,9 @@ async function updateCards(cardsArray) {
       const updatedJson = JSON.stringify(jsonData, null, 2);
       await fs.promises.writeFile(cards, updatedJson, "utf8");
       console.log("Arquivo JSON atualizado com sucesso:", cards);
-
     } catch (err) {
       console.error("Erro:", err);
     }
-    
   }
 }
 

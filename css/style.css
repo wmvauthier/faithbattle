@@ -725,11 +725,11 @@ ol {
 }
 
 .product__item {
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 
 .product__item__pic {
-	height: 250px;
+	height: 190px;
 	position: relative;
 	border-radius: 5px;
 }
@@ -771,11 +771,11 @@ ol {
 }
 
 .product__item__text {
-	padding-top: 20px;
+	padding-top: 5px;
 }
 
 .product__item__text ul {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .product__item__text ul li {
@@ -793,6 +793,7 @@ ol {
 	color: #ffffff;
 	font-weight: 700;
 	line-height: 26px;
+	font-size:13px;
 }
 
 .product__sidebar .section-title h5 {

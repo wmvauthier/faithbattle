@@ -6,18 +6,6 @@ const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
 
 const WEIGHT_LEGENDARY = 100000;
-// const WEIGHT_LEGENDARY = 0;
-const WEIGHT_SAME = 100;
-// const WEIGHT_SAME = 0;
-// const WEIGHT_NAME = 1000;
-// const WEIGHT_NAME = 0;
-// const WEIGHT_TEXT = 60;
-// const WEIGHT_TEXT = 0;
-// const WEIGHT_TYPE = 10;
-// const WEIGHT_TYPE = 10;
-// const WEIGHT_EFFECT = 10;
-// const WEIGHT_EFFECT = 0;
-// const WEIGHT_CATEGORY = 100;
 let WEIGHT_CATEGORY = 200;
 const WEIGHT_OCURRENCY_DECK = 200;
 const WEIGHT_OCURRENCY_EXTRA = 200;
@@ -41,12 +29,30 @@ const CACHE_DURATION = 1000; // 24 horas
 let allCards;
 let allDecks;
 
-document.addEventListener("DOMContentLoaded", async function () {
-  window.allJSONsLoaded = false; // Defina um sinal global para indicar que o processo ainda está em andamento
-  allCards = await getCards();
-  allDecks = await getDecks();
-  window.allJSONsLoaded = true; // Marque como carregado
-});
+const isBrowser = (typeof window !== "undefined" && typeof document !== "undefined");
+
+if (isBrowser) {
+
+  document.addEventListener("DOMContentLoaded", async function () {
+    window.allJSONsLoaded = false;
+
+    try {
+      allCards = await getCards(); // Carrega as cartas
+      allDecks = await getDecks(); // Carrega os decks
+      window.allJSONsLoaded = true;
+    } catch (error) {
+      console.error("Erro ao carregar os dados:", error);
+    }
+  });
+
+} else {
+  // Código específico para Node.js
+  module.exports = {
+    getOccurrencesInDecks,
+    getOccurrencesInSides,
+    scaleToFive
+  };
+}
 
 const waitForAllJSONs = async () => {
   while (!window.allJSONsLoaded) {
@@ -434,12 +440,14 @@ function orderCardsFromDeck(cards) {
 
 function getOccurrencesInDecks(cardId, decks) {
   return decks.reduce((count, deck) => {
-    // Iterar pelos cards do deck
-    deck.cards.concat(deck.extra).forEach((card) => {
-      if (card === cardId) {
-        count++;
-      }
-    });
+    // Combina 'cards' e 'extra' e remove duplicatas usando um Set
+    const uniqueCards = new Set([...deck.cards, ...deck.extra]);
+
+    // Itera pelos elementos únicos e conta as ocorrências
+    if (uniqueCards.has(cardId)) {
+      count++;
+    }
+
     return count;
   }, 0);
 }
@@ -457,11 +465,13 @@ function getOccurrencesInSides(cardId, decks) {
       imgTitle, // Adicionar imgTitle 3 vezes diretamente
     ];
 
-    allCards.forEach((card) => {
-      if (card === cardId) {
-        count++;
-      }
-    });
+    // Criar um Set para remover duplicatas
+    const uniqueCards = new Set(allCards);
+
+    // Itera pelos elementos únicos e conta as ocorrências
+    if (uniqueCards.has(cardId)) {
+      count++;
+    }
 
     return count;
   }, 0);

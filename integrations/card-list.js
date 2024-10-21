@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   generateTextFilterByProperty("name", "Nome", "Digite o Nome");
   generateTextFilterByProperty("text", "Text", "Digite o Texto da Carta");
-  generateTextFilterByProperty("flavor", "Flavor", "Digite o Versículo");
+  // generateTextFilterByProperty("flavor", "Flavor", "Digite o Versículo");
   generateSelectFilterByProperty(cards, "type", "Tipo", "Tipo");
   generateSelectFilterByProperty(cards, "subtype", "SubTipo", "SubTipo");
   generateCategoryFilter(cards);
   generateSelectFilterByProperty(cards, "cost", "Custo", "Custo");
-  generateEffectFilter(cards);
+  // generateEffectFilter(cards);
   generateSelectFilterByProperty(cards, "strength", "Força", "Força");
   generateSelectFilterByProperty(
     cards,

@@ -73,8 +73,9 @@ async function renderPage(page) {
       badges +
       '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
       'style="color: #fff; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
-      '<i style="color: #FFD700; font-size: 12px;" class="fa-solid fa-star"></i> '+deck.level +
-      '</span>';
+      '<i style="color: #FFD700; font-size: 12px;" class="fa-solid fa-star"></i> ' +
+      deck.level +
+      "</span>";
 
     badges =
       badges +
