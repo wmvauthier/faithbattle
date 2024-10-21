@@ -18,7 +18,7 @@
     "img": "img/lendarias/51.png",
     "ocurrences": 0,
     "ocurrencesInSides": 1,
-    "stars": "1.3"
+    "stars": "1.4"
   },
   {
     "name": "Moisés",
@@ -58,9 +58,9 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/lendarias/53.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 4,
-    "stars": "2.3"
+    "ocurrences": 2,
+    "ocurrencesInSides": 3,
+    "stars": "2.1"
   },
   {
     "name": "Abraão",
@@ -79,9 +79,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/lendarias/94.png",
-    "ocurrences": 4,
-    "ocurrencesInSides": 4,
-    "stars": "2.3"
+    "ocurrences": 3,
+    "ocurrencesInSides": 3,
+    "stars": "2.1"
   },
   {
     "name": "Abel",
@@ -100,9 +100,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/lendarias/96.png",
-    "ocurrences": 5,
+    "ocurrences": 4,
     "ocurrencesInSides": 5,
-    "stars": "2.7"
+    "stars": "2.8"
   },
   {
     "name": "Sara",
@@ -121,9 +121,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/lendarias/100.png",
-    "ocurrences": 4,
+    "ocurrences": 5,
     "ocurrencesInSides": 5,
-    "stars": "2.7"
+    "stars": "2.8"
   },
   {
     "name": "Adão",
@@ -142,9 +142,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/lendarias/112.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 4,
-    "stars": "2.3"
+    "ocurrences": 2,
+    "ocurrencesInSides": 3,
+    "stars": "2.1"
   },
   {
     "name": "Eva",
@@ -165,7 +165,7 @@
     "img": "img/lendarias/113.png",
     "ocurrences": 8,
     "ocurrencesInSides": 8,
-    "stars": "3.7"
+    "stars": "3.9"
   },
   {
     "name": "Isaque",
@@ -185,7 +185,7 @@
     "artist": "Lucas Bird",
     "img": "img/lendarias/95.png",
     "ocurrences": 5,
-    "ocurrencesInSides": 5,
-    "stars": "2.7"
+    "ocurrencesInSides": 6,
+    "stars": "3.1"
   }
 ]

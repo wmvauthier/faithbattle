@@ -735,7 +735,7 @@ ol {
 }
 
 .product__item__pic .ep {
-	font-size: 15px;
+	font-size: 12px;
 	color: #ffffff;
 	background: #e53637;
 	display: inline-block;
@@ -747,7 +747,7 @@ ol {
 }
 
 .product__item__pic .comment {
-	font-size: 15px;
+	font-size: 12px;
 	color: #ffffff;
 	background: #3d3d3d;
 	display: inline-block;
@@ -759,7 +759,7 @@ ol {
 }
 
 .product__item__pic .view {
-	font-size: 15px;
+	font-size: 12px;
 	color: #ffffff;
 	background: #3d3d3d;
 	display: inline-block;

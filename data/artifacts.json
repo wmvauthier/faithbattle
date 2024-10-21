@@ -17,7 +17,7 @@
     "img": "img/artefatos/22.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.3"
+    "stars": "2.4"
   },
   {
     "name": "Espada do Espírito",
@@ -37,7 +37,7 @@
     "img": "img/artefatos/23.png",
     "ocurrences": 3,
     "ocurrencesInSides": 6,
-    "stars": "3.0"
+    "stars": "3.1"
   },
   {
     "name": "Escudo da Fé",
@@ -57,7 +57,7 @@
     "img": "img/artefatos/24.png",
     "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "2.7"
+    "stars": "2.8"
   },
   {
     "name": "Cajado de Moisés",
@@ -77,7 +77,7 @@
     "img": "img/artefatos/25.png",
     "ocurrences": 3,
     "ocurrencesInSides": 4,
-    "stars": "2.3"
+    "stars": "2.4"
   },
   {
     "name": "Couraça da Justiça",
@@ -97,7 +97,7 @@
     "img": "img/artefatos/26.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.3"
+    "stars": "2.4"
   },
   {
     "name": "Arca da Aliança",
@@ -116,8 +116,8 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/28.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 4,
-    "stars": "2.3"
+    "ocurrencesInSides": 3,
+    "stars": "2.1"
   },
   {
     "name": "Botas do Evangelho",
@@ -137,7 +137,7 @@
     "img": "img/artefatos/43.png",
     "ocurrences": 3,
     "ocurrencesInSides": 3,
-    "stars": "2.0"
+    "stars": "2.1"
   },
   {
     "name": "Capacete da Salvação",
@@ -196,8 +196,8 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/50.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 3,
-    "stars": "2.0"
+    "ocurrencesInSides": 2,
+    "stars": "1.7"
   },
   {
     "name": "Arco de Ismael",
@@ -237,7 +237,7 @@
     "img": "img/artefatos/56.png",
     "ocurrences": 3,
     "ocurrencesInSides": 3,
-    "stars": "2.0"
+    "stars": "2.1"
   },
   {
     "name": "Cântaros de Rebeca",
@@ -277,7 +277,7 @@
     "img": "img/artefatos/58.png",
     "ocurrences": 3,
     "ocurrencesInSides": 6,
-    "stars": "3.0"
+    "stars": "3.1"
   },
   {
     "name": "Punhal do Sacrifício",
@@ -295,9 +295,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/artefatos/59.png",
-    "ocurrences": 4,
-    "ocurrencesInSides": 5,
-    "stars": "2.7"
+    "ocurrences": 2,
+    "ocurrencesInSides": 3,
+    "stars": "2.1"
   },
   {
     "name": "Árvore do Conhecimento",
@@ -316,8 +316,8 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/97.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 2,
-    "stars": "1.7"
+    "ocurrencesInSides": 1,
+    "stars": "1.4"
   },
   {
     "name": "Árvore da Vida",
@@ -337,6 +337,6 @@
     "img": "img/artefatos/98.png",
     "ocurrences": 2,
     "ocurrencesInSides": 4,
-    "stars": "2.3"
+    "stars": "2.4"
   }
 ]

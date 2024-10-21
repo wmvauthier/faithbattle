@@ -16,8 +16,8 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/13.png",
     "ocurrences": 5,
-    "ocurrencesInSides": 11,
-    "stars": "4.7"
+    "ocurrencesInSides": 10,
+    "stars": "4.6"
   },
   {
     "name": "Fogo do Céu",
@@ -37,7 +37,7 @@
     "img": "img/milagres/14.png",
     "ocurrences": 3,
     "ocurrencesInSides": 9,
-    "stars": "4.0"
+    "stars": "4.2"
   },
   {
     "name": "Passagem Segura",
@@ -56,8 +56,8 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/15.png",
     "ocurrences": 2,
-    "ocurrencesInSides": 4,
-    "stars": "2.3"
+    "ocurrencesInSides": 3,
+    "stars": "2.1"
   },
   {
     "name": "Restauração de Fé",
@@ -76,8 +76,8 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/16.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 2,
-    "stars": "1.7"
+    "ocurrencesInSides": 1,
+    "stars": "1.4"
   },
   {
     "name": "Proteção Divina",
@@ -97,7 +97,7 @@
     "img": "img/milagres/17.png",
     "ocurrences": 4,
     "ocurrencesInSides": 7,
-    "stars": "3.3"
+    "stars": "3.5"
   },
   {
     "name": "Liberação Celestial",
@@ -116,7 +116,7 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/18.png",
     "ocurrences": 11,
-    "ocurrencesInSides": 14,
+    "ocurrencesInSides": 13,
     "stars": "5.0"
   },
   {
@@ -136,7 +136,7 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/19.png",
     "ocurrences": 13,
-    "ocurrencesInSides": 14,
+    "ocurrencesInSides": 13,
     "stars": "5.0"
   },
   {
@@ -155,9 +155,9 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/milagres/20.png",
-    "ocurrences": 8,
-    "ocurrencesInSides": 8,
-    "stars": "3.7"
+    "ocurrences": 7,
+    "ocurrencesInSides": 7,
+    "stars": "3.5"
   },
   {
     "name": "Dilúvio",
@@ -177,7 +177,7 @@
     "img": "img/milagres/21.png",
     "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "2.7"
+    "stars": "2.8"
   },
   {
     "name": "Cordeiro de Deus",
@@ -195,9 +195,9 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/milagres/29.png",
-    "ocurrences": 8,
-    "ocurrencesInSides": 8,
-    "stars": "3.7"
+    "ocurrences": 7,
+    "ocurrencesInSides": 7,
+    "stars": "3.5"
   },
   {
     "name": "Sabedoria de Salomão",
@@ -217,7 +217,7 @@
     "img": "img/milagres/42.png",
     "ocurrences": 7,
     "ocurrencesInSides": 10,
-    "stars": "4.3"
+    "stars": "4.6"
   },
   {
     "name": "No Céu tem Pão",
@@ -237,7 +237,7 @@
     "img": "img/milagres/48.png",
     "ocurrences": 7,
     "ocurrencesInSides": 8,
-    "stars": "3.7"
+    "stars": "3.9"
   },
   {
     "name": "Resgate do Justo",
@@ -255,9 +255,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/milagres/72.png",
-    "ocurrences": 2,
-    "ocurrencesInSides": 3,
-    "stars": "2.0"
+    "ocurrences": 1,
+    "ocurrencesInSides": 2,
+    "stars": "1.7"
   },
   {
     "name": "Adjuntora Idônea",
@@ -277,7 +277,7 @@
     "img": "img/milagres/73.png",
     "ocurrences": 4,
     "ocurrencesInSides": 5,
-    "stars": "2.7"
+    "stars": "2.8"
   },
   {
     "name": "Shabbat",
@@ -297,7 +297,7 @@
     "img": "img/milagres/76.png",
     "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "2.7"
+    "stars": "2.8"
   },
   {
     "name": "Ira de Deus",
@@ -316,8 +316,8 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/77.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 7,
-    "stars": "3.3"
+    "ocurrencesInSides": 6,
+    "stars": "3.1"
   },
   {
     "name": "Protoevangelho",
@@ -335,9 +335,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/milagres/83.png",
-    "ocurrences": 9,
-    "ocurrencesInSides": 12,
-    "stars": "5.0"
+    "ocurrences": 8,
+    "ocurrencesInSides": 11,
+    "stars": "4.9"
   },
   {
     "name": "Filho da Promessa",
@@ -357,7 +357,7 @@
     "img": "img/milagres/80.png",
     "ocurrences": 2,
     "ocurrencesInSides": 3,
-    "stars": "2.0"
+    "stars": "2.1"
   },
   {
     "name": "Sinal Divino",
@@ -376,8 +376,8 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/87.png",
     "ocurrences": 4,
-    "ocurrencesInSides": 8,
-    "stars": "3.7"
+    "ocurrencesInSides": 7,
+    "stars": "3.5"
   },
   {
     "name": "Paternidade",
@@ -417,7 +417,7 @@
     "img": "img/milagres/99.png",
     "ocurrences": 4,
     "ocurrencesInSides": 5,
-    "stars": "2.7"
+    "stars": "2.8"
   },
   {
     "name": "Oferta do Justo",
@@ -437,7 +437,7 @@
     "img": "img/milagres/84.png",
     "ocurrences": 7,
     "ocurrencesInSides": 7,
-    "stars": "3.3"
+    "stars": "3.5"
   },
   {
     "name": "Herança de Abraão",
@@ -455,9 +455,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/milagres/115.png",
-    "ocurrences": 2,
-    "ocurrencesInSides": 3,
-    "stars": "2.0"
+    "ocurrences": 1,
+    "ocurrencesInSides": 2,
+    "stars": "1.7"
   },
   {
     "name": "Provação de Fé",
@@ -477,7 +477,7 @@
     "img": "img/milagres/85.png",
     "ocurrences": 1,
     "ocurrencesInSides": 6,
-    "stars": "3.0"
+    "stars": "3.1"
   },
   {
     "name": "Imagem e Semelhança",
@@ -496,8 +496,8 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/111.png",
     "ocurrences": 2,
-    "ocurrencesInSides": 5,
-    "stars": "2.7"
+    "ocurrencesInSides": 4,
+    "stars": "2.4"
   },
   {
     "name": "Dízimo",
@@ -515,9 +515,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/milagres/79.png",
-    "ocurrences": 4,
-    "ocurrencesInSides": 7,
-    "stars": "3.3"
+    "ocurrences": 3,
+    "ocurrencesInSides": 6,
+    "stars": "3.1"
   },
   {
     "name": "Circuncisão",
@@ -556,8 +556,8 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/86.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 6,
-    "stars": "3.0"
+    "ocurrencesInSides": 5,
+    "stars": "2.8"
   },
   {
     "name": "Dias Contados",
@@ -576,7 +576,7 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/78.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 3,
-    "stars": "2.0"
+    "ocurrencesInSides": 2,
+    "stars": "1.7"
   }
 ]
