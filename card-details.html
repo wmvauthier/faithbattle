@@ -141,8 +141,7 @@
                                             <div class="col-lg-6 col-md-6">
                                                 <ul style="margin-bottom: 0px;">
                                                     <li><span>Tipo:</span> <text id="tag_cardType"></text></li>
-                                                    <li><span>Categorias:</span> <text id="tag_cardCategories"></text>
-                                                    </li>
+
                                                     <li><span>Custo:</span> <text id="tag_cardCost"></text></li>
                                                     <li><span>Status:</span> <text id="tag_cardStatus"></text></li>
                                                     <!-- <li><span>Efeito:</span> <text id="tag_cardEffect"></text></li> -->
@@ -150,15 +149,13 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <ul style="margin-bottom: 0px;">
-                                                    <li><span>Level:</span> <span id="tag_cardStars"
-                                                            style="color: red"></span>
-                                                        <div class="anime__details__rating">
-                                                            <div id="tag_cardStars" class="rating"></div>
-                                                        </div>
-                                                    </li>
                                                     <li><span>Número:</span> <text id="tag_cardNumber"></text></li>
-                                                    <li><span>Coleção:</span> <text id="tag_cardCollection"></text></li>
-                                                    <li><span>Lançamento:</span> <text id="tag_cardDate"></text></li>
+                                                    <li><span>Categorias:</span> <text id="tag_cardCategories"></text>
+                                                    </li>
+                                                    <li><span>Coleção:</span> <text id="tag_cardCollection"></text>
+                                                        <text id="tag_cardDate"></text>
+                                                    </li>
+                                                    <!-- <li><span>Lançamento:</span> <text id="tag_cardDate"></text></li> -->
                                                     <!-- <li><span>Quality:</span> <text id="tag_cardResistence"></text></li> -->
                                                 </ul>
                                             </div>
@@ -171,19 +168,86 @@
                                     </div> -->
                                 </div><br>
 
-                                <div class="anime__details__review">
-                                    <div class="section-title">
-                                        <h5>Funcionamento do card</h5>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="anime__details__review">
+                                            <div class="section-title">
+                                                <h5>Funcionamento do card</h5>
+                                            </div>
+                                            <div class="anime__review__item">
+                                                <!-- <div class="anime__review__item__pic">
+                                                <img src="img/anime/review-1.jpg" alt="">
+                                            </div> -->
+                                                <div class="anime__review__item__text">
+                                                    <h6>Chris Curry - <span>1 Hour ago</span></h6>
+                                                    <p>whachikan Just noticed that someone categorized this as belonging
+                                                        to the
+                                                        genre
+                                                        "demons" LOL</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="anime__review__item">
-                                        <!-- <div class="anime__review__item__pic">
-                                        <img src="img/anime/review-1.jpg" alt="">
-                                    </div> -->
-                                        <div class="anime__review__item__text">
-                                            <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                                            <p>whachikan Just noticed that someone categorized this as belonging to the
-                                                genre
-                                                "demons" LOL</p>
+                                    <div class="col">
+                                        <div class="anime__details__review">
+                                            <div class="section-title">
+                                                <h5>Análise</h5>
+                                            </div>
+                                            <div class="anime__review__item">
+                                                <!-- <div class="anime__review__item__pic">
+                                                <img src="img/anime/review-1.jpg" alt="">
+                                            </div> -->
+                                                <div class="anime__review__item__text">
+
+                                                    <style>
+                                                        .gauge-container {
+                                                            width: 100%;
+                                                            height: 20px;
+                                                            background-color: #e6e6e6;
+                                                            border-radius: 5px;
+                                                            position: relative;
+                                                            display: flex;
+                                                            overflow: hidden;
+                                                            border: 1px solid #ccc;
+                                                        }
+
+                                                        .gauge-section {
+                                                            display: flex;
+                                                            justify-content: center;
+                                                            align-items: center;
+                                                            color: white;
+                                                            position: relative;
+                                                            height: 100%;
+                                                        }
+
+                                                        .gauge-section i {
+                                                            font-size: 10px;
+                                                            position: absolute;
+                                                        }
+                                                    </style>
+
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <h6 style="margin-top:10px;">Level</h6>
+                                                            <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                            <div id="tag_cardStars" class="rating"></div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <h6 style="margin-top:10px;">Ocorrências</h6>
+                                                            <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                            <h6><i class="fa-solid fa-cube"></i> 4 / <i class="fa-solid fa-cubes"></i> 5</h6>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- <h6>Estilos - <span>1 Hour ago</span></h6> -->
+                                                    <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                    <h6 style="margin-top:10px;">Estilos</h6>
+                                                    <div class="gauge-container" id="gaugeContainerStyle"></div>
+                                                    <h6 style="margin-top:10px;">Arquétipos</h6>
+                                                    <div class="gauge-container" id="gaugeContainerArchetype"></div>
+
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

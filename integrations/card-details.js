@@ -62,7 +62,19 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
 
       updateSimilarCardsDOM(similarCardDetails, similarCards);
-      updateRelatedDecks(relatedDecks);
+      updateRelatedDecks(relatedDecks);  
+      // Exemplo de atualização do gauge com valor 75%
+
+      const gaugeSections = [
+        { width: 40, color: '#ff4d4d', icon: 'fa-star' },  // 10% vermelho com ícone de estrela
+        { width: 25, color: '#ffcc00', icon: 'fa-sun' },   // 25% amarelo com ícone de sol
+        { width: 10, color: '#4caf50', icon: 'fa-list' },  // 10% verde com ícone de lista
+        // Você pode adicionar mais seções aqui
+      ];
+
+      fillGauge('gaugeContainerStyle', gaugeSections);
+      fillGauge('gaugeContainerArchetype', gaugeSections);
+
     } else {
       location.href = "./card-list.html";
     }
@@ -233,6 +245,23 @@ function updateRelatedDecks(relatedDecks) {
 
   // Adiciona todo o fragmento ao DOM de uma vez
   relatedDecksContainer.appendChild(fragment);
+}
+
+function fillGauge(containerId, sections) {
+  const container = document.getElementById(containerId);
+
+  sections.forEach(section => {
+    const sectionDiv = document.createElement('div');
+    sectionDiv.classList.add('gauge-section');
+    sectionDiv.style.width = section.width + '%';
+    sectionDiv.style.backgroundColor = section.color;
+
+    const icon = document.createElement('i');
+    icon.classList.add('fas', section.icon);
+
+    sectionDiv.appendChild(icon);
+    container.appendChild(sectionDiv);
+  });
 }
 
 // Função auxiliar para criar um item de lista com estilo
