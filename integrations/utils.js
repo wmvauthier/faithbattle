@@ -6,13 +6,14 @@ const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
 
 const WEIGHT_LEGENDARY = 100000;
+const WEIGHT_SAME = 100;
 let WEIGHT_CATEGORY = 200;
 const WEIGHT_OCURRENCY_DECK = 200;
 const WEIGHT_OCURRENCY_EXTRA = 200;
 const WEIGHT_OCURRENCY_SIDEBOARD = 200;
 
-const WEIGHT_DECK_STYLE = 30;
-const WEIGHT_DECK_ARCHETYPE = 70;
+const WEIGHT_DECK_STYLE = 20;
+const WEIGHT_DECK_ARCHETYPE = 80;
 
 const WEIGHT_LEVEL_SINERGY_BEETWEEN_CARDS = 0.85;
 const WEIGHT_LEVEL_STAPLE_USING_FOR_CARDS = 0.15;
@@ -545,7 +546,6 @@ function getRelatedDecks(cardNumber, relatedCards, decks) {
       // Se as prioridades forem iguais, ordena pelo score (decrescente)
       return b.score - a.score;
     })
-    .slice(0, 9)
     .map((deckScore) => deckScore.deck);
 }
 

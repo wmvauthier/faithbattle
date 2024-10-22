@@ -17,7 +17,83 @@
     "img": "img/herois/1.png",
     "ocurrences": 11,
     "ocurrencesInSides": 14,
-    "stars": "5.0"
+    "stars": "5.0",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 35.714285714285715,
+        "roundedWidth": 36,
+        "width": 37
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
+      }
+    ]
   },
   {
     "name": "Davi",
@@ -37,7 +113,83 @@
     "img": "img/herois/2.png",
     "ocurrences": 2,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Elias",
@@ -57,7 +209,83 @@
     "img": "img/herois/3.png",
     "ocurrences": 2,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ]
   },
   {
     "name": "Salomão",
@@ -77,7 +305,83 @@
     "img": "img/herois/4.png",
     "ocurrences": 4,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 76
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Eva",
@@ -97,7 +401,83 @@
     "img": "img/herois/5.png",
     "ocurrences": 13,
     "ocurrencesInSides": 14,
-    "stars": "5.0"
+    "stars": "5.0",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 35.714285714285715,
+        "roundedWidth": 36,
+        "width": 37
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
+      }
+    ]
   },
   {
     "name": "Josué",
@@ -116,8 +496,84 @@
     "artist": "Lucas Bird",
     "img": "img/herois/6.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 3,
-    "stars": "2.1"
+    "ocurrencesInSides": 2,
+    "stars": "1.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Abraão",
@@ -137,7 +593,83 @@
     "img": "img/herois/7.png",
     "ocurrences": 4,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Sansão",
@@ -157,7 +689,83 @@
     "img": "img/herois/8.png",
     "ocurrences": 4,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Jacó",
@@ -177,7 +785,83 @@
     "img": "img/herois/9.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ]
   },
   {
     "name": "Adão",
@@ -196,8 +880,84 @@
     "artist": "Lucas Bird",
     "img": "img/herois/10.png",
     "ocurrences": 6,
-    "ocurrencesInSides": 7,
-    "stars": "3.5"
+    "ocurrencesInSides": 6,
+    "stars": "3.1",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 83.33333333333334,
+        "roundedWidth": 83,
+        "width": 83
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "José do Egito",
@@ -217,7 +977,83 @@
     "img": "img/herois/11.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ]
   },
   {
     "name": "Maria",
@@ -237,7 +1073,83 @@
     "img": "img/herois/12.png",
     "ocurrences": 7,
     "ocurrencesInSides": 10,
-    "stars": "4.6"
+    "stars": "4.6",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 31
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 60,
+        "roundedWidth": 60,
+        "width": 60
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 30
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 30
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      }
+    ]
   },
   {
     "name": "Daniel",
@@ -257,7 +1169,83 @@
     "img": "img/herois/45.png",
     "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.7"
+    "stars": "1.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Noé",
@@ -277,7 +1265,83 @@
     "img": "img/herois/46.png",
     "ocurrences": 1,
     "ocurrencesInSides": 1,
-    "stars": "1.4"
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Ester",
@@ -297,7 +1361,83 @@
     "img": "img/herois/47.png",
     "ocurrences": 1,
     "ocurrencesInSides": 5,
-    "stars": "2.8"
+    "stars": "2.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      }
+    ]
   },
   {
     "name": "Ismael",
@@ -317,7 +1457,83 @@
     "img": "img/herois/54.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ]
   },
   {
     "name": "Abel",
@@ -337,7 +1553,83 @@
     "img": "img/herois/60.png",
     "ocurrences": 7,
     "ocurrencesInSides": 10,
-    "stars": "4.6"
+    "stars": "4.6",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 30
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 21
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 30
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      }
+    ]
   },
   {
     "name": "Eliézer",
@@ -357,7 +1649,83 @@
     "img": "img/herois/62.png",
     "ocurrences": 1,
     "ocurrencesInSides": 1,
-    "stars": "1.4"
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Enoque",
@@ -377,7 +1745,83 @@
     "img": "img/herois/63.png",
     "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.7"
+    "stars": "1.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Isaque",
@@ -397,7 +1841,83 @@
     "img": "img/herois/64.png",
     "ocurrences": 5,
     "ocurrencesInSides": 6,
-    "stars": "3.1"
+    "stars": "3.1",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Matusalém",
@@ -417,7 +1937,83 @@
     "img": "img/herois/66.png",
     "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "2.8"
+    "stars": "2.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 41
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 60,
+        "roundedWidth": 60,
+        "width": 60
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      }
+    ]
   },
   {
     "name": "Rebeca",
@@ -437,7 +2033,83 @@
     "img": "img/herois/68.png",
     "ocurrences": 6,
     "ocurrencesInSides": 10,
-    "stars": "4.6"
+    "stars": "4.6",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 31
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      }
+    ]
   },
   {
     "name": "Sara",
@@ -457,7 +2129,83 @@
     "img": "img/herois/69.png",
     "ocurrences": 5,
     "ocurrencesInSides": 6,
-    "stars": "3.1"
+    "stars": "3.1",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": -1
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      }
+    ]
   },
   {
     "name": "Sem",
@@ -477,7 +2225,83 @@
     "img": "img/herois/70.png",
     "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.7"
+    "stars": "1.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Sete",
@@ -497,7 +2321,83 @@
     "img": "img/herois/71.png",
     "ocurrences": 4,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Agar",
@@ -517,7 +2417,83 @@
     "img": "img/herois/61.png",
     "ocurrences": 8,
     "ocurrencesInSides": 8,
-    "stars": "3.9"
+    "stars": "3.9",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 37
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 38
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 74
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Pelegue",
@@ -537,7 +2513,83 @@
     "img": "img/herois/67.png",
     "ocurrences": 3,
     "ocurrencesInSides": 3,
-    "stars": "2.1"
+    "stars": "2.1",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 67
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Enos",
@@ -557,7 +2609,83 @@
     "img": "img/herois/92.png",
     "ocurrences": 2,
     "ocurrencesInSides": 2,
-    "stars": "1.7"
+    "stars": "1.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Héber",
@@ -577,7 +2705,83 @@
     "img": "img/herois/93.png",
     "ocurrences": 0,
     "ocurrencesInSides": 0,
-    "stars": "1.0"
+    "stars": "1.0",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      }
+    ]
   },
   {
     "name": "Jó",
@@ -597,6 +2801,82 @@
     "img": "img/herois/65.png",
     "ocurrences": 3,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   }
 ]

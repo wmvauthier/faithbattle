@@ -247,12 +247,13 @@ async function updateAnalysisFromDeck() {
 }
 
 async function generateDeck() {
+  await updateAnalysisFromDeck();
   if (deck.cards.length <= 0) {
     await completeDeck(true);
     await tuningDeck();
     await tuningDeck();
     await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
-    updateAnalysisFromDeck();
+    await updateAnalysisFromDeck();
   }
 }
 
@@ -293,8 +294,7 @@ async function completeDeck(flagGenerate) {
     }
 
     await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
-    updateAnalysisFromDeck();
-
+    await updateAnalysisFromDeck();
   }
 }
 
@@ -466,10 +466,8 @@ async function tuningDeck() {
     });
 
     await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
-    updateAnalysisFromDeck();
-
+    await updateAnalysisFromDeck();
   }
-  
 }
 
 // ADICIONAR A MELHOR CARTA DE UMA CATEGORIA EM ESPECÍFICO
@@ -484,7 +482,9 @@ async function addCardFromSpecifiedCategory(category, suggestionNumbers) {
     // Filtrar cartas com a categoria especificada
     suggestionList = suggestionList.filter((card) => {
       if (!card.categories) return false;
-      const cardCategories = card.categories.split(";").map((cat) => cat.trim());
+      const cardCategories = card.categories
+        .split(";")
+        .map((cat) => cat.trim());
       return cardCategories.some((cat) => category === cat);
     });
 
@@ -514,7 +514,9 @@ async function removeCardFromSpecifiedCategory(category) {
     // Filtrar cartas que pertencem à categoria especificada
     cardList = cardList.filter((card) => {
       if (!card.categories) return false;
-      const cardCategories = card.categories.split(";").map((cat) => cat.trim());
+      const cardCategories = card.categories
+        .split(";")
+        .map((cat) => cat.trim());
       return cardCategories.some((cat) => category === cat);
     });
 
@@ -554,8 +556,9 @@ async function cleanDeck() {
     const card = deck.cards[0]; // Pega a primeira carta do deck
     removeCardFromDeckBuilder(card); // Remove a carta do construtor de deck
   }
-  
   await updateAnalysisFromDeck(); // Atualiza a análise do deck após a limpeza
+  await updateAnalysisFromDeck(); // Atualiza a análise do deck após a limpeza
+  updateDeckListDOM([]);
 }
 
 async function autoGenerateHand(isMulligan) {
@@ -620,20 +623,32 @@ async function autoGenerateHand(isMulligan) {
   updateTestHand(allCards, handTestCards, "#handTestList");
 }
 
-function generateSelectFilterByProperty(jsonData, property, prettyName, text, order) {
+function generateSelectFilterByProperty(
+  jsonData,
+  property,
+  prettyName,
+  text,
+  order
+) {
   const filtersContainer = document.getElementById("filters");
   const currentSelectedFilters = getCurrentSelectedFilters();
 
   // Obtenha os valores únicos com base na propriedade
-  const uniqueValues = [...new Set(jsonData.map(item => {
-    if (property === "stars") {
-      return Math.floor(parseFloat(item[property]));
-    } else if (property === "date") {
-      return new Date(item[property]).getFullYear();
-    } else if (item[property] != null && item[property] !== "") {
-      return item[property];
-    }
-  })).values()].filter(value => !Object.values(currentSelectedFilters).includes(String(value)));
+  const uniqueValues = [
+    ...new Set(
+      jsonData.map((item) => {
+        if (property === "stars") {
+          return Math.floor(parseFloat(item[property]));
+        } else if (property === "date") {
+          return new Date(item[property]).getFullYear();
+        } else if (item[property] != null && item[property] !== "") {
+          return item[property];
+        }
+      })
+    ).values(),
+  ].filter(
+    (value) => !Object.values(currentSelectedFilters).includes(String(value))
+  );
 
   // Ordenar valores
   uniqueValues.sort((a, b) => (order === "ASC" ? a - b : b - a));
@@ -651,12 +666,12 @@ function generateSelectFilterByProperty(jsonData, property, prettyName, text, or
   select.appendChild(defaultOption);
 
   // Adicionar opções ao select
-  uniqueValues.forEach(value => {
+  uniqueValues.forEach((value) => {
     const option = document.createElement("option");
     option.value = value;
 
     if (property === "stars") {
-      option.innerHTML = '★'.repeat(value) + '☆'.repeat(5 - value); // Estrelas preenchidas e vazias
+      option.innerHTML = "★".repeat(value) + "☆".repeat(5 - value); // Estrelas preenchidas e vazias
     } else {
       option.text = value;
     }
@@ -768,11 +783,13 @@ function generateEffectFilter(jsonData) {
 
   // Itera sobre os dados para extrair todos os efeitos únicos
   jsonData.forEach((item) => {
-    if (item.effects) { // Verifica se a propriedade effects existe
+    if (item.effects) {
+      // Verifica se a propriedade effects existe
       const effects = item.effects.split(";");
       effects.forEach((effect) => {
         const trimmedEffect = effect.trim();
-        if (trimmedEffect) { // Adiciona somente efeitos não vazios
+        if (trimmedEffect) {
+          // Adiciona somente efeitos não vazios
           effectsSet.add(trimmedEffect);
         }
       });
@@ -1078,7 +1095,7 @@ function addCardToHand(id) {
 }
 
 function removeCardFromHand(id) {
-  const index = handTestCards.findIndex(card => card.id === id); // Ajuste se for um objeto
+  const index = handTestCards.findIndex((card) => card.id === id); // Ajuste se for um objeto
   if (index !== -1) {
     handTestCards.splice(index, 1);
     updateTestHand(allCards, handTestCards, "#handTestList");
@@ -1196,8 +1213,13 @@ async function prepareSimilarCardsArray(similarCardsArray) {
 
 function generateStyleSelect() {
   document.getElementById("addByStyleList").innerHTML = "";
+  document.getElementById("addByStyleIcon").innerHTML = "";
 
   const addByStyleList = document.getElementById("addByStyleList");
+
+  // Criar um contêiner para o select e o ícone
+  const container = document.createElement("div");
+  container.classList.add("select-container");
 
   const select = document.createElement("select");
   select.setAttribute("name", "style");
@@ -1226,13 +1248,19 @@ function generateStyleSelect() {
     }
   });
 
-  addByStyleList.appendChild(select);
+  container.appendChild(select);
+  addByStyleList.appendChild(container);
 }
 
 function generateArchetypeSelect() {
   document.getElementById("addByArchetypeList").innerHTML = "";
+  document.getElementById("addByArchetypeIcon").innerHTML = "";
 
   const addByArchetypeList = document.getElementById("addByArchetypeList");
+
+  // Criar um contêiner para o select e o ícone
+  const container = document.createElement("div");
+  container.classList.add("select-container");
 
   const select = document.createElement("select");
   select.setAttribute("name", "archetype");
@@ -1244,9 +1272,9 @@ function generateArchetypeSelect() {
   defaultOption.value = "";
   select.appendChild(defaultOption);
 
-  const styles = [...new Set(allDecks.map((obj) => obj.archetype))];
+  const archetypes = [...new Set(allDecks.map((obj) => obj.archetype))];
 
-  styles.forEach((value) => {
+  archetypes.forEach((value) => {
     const option = document.createElement("option");
     option.value = value;
     option.innerHTML = value;
@@ -1261,7 +1289,9 @@ function generateArchetypeSelect() {
     }
   });
 
-  addByArchetypeList.appendChild(select);
+  // Adicionar o select e o ícone ao contêiner
+  container.appendChild(select);
+  addByArchetypeList.appendChild(container);
 }
 
 function generateCategoryItems(categoriesCount, averages, id) {
@@ -1305,11 +1335,93 @@ function generateCategoryItems(categoriesCount, averages, id) {
 function chooseStyle(value) {
   selectedStyle = value;
   updateAnalysisFromDeck();
+
+  const icon = document.querySelector("#addByStyleIcon"); // Seleciona o ícone ao lado do select
+  if (icon) {
+    if (value) {
+      icon.className = ""; // Limpa as classes do ícone
+      icon.classList.add("fa"); // Adiciona a classe base do FontAwesome
+      icon.classList.add("fa-solid"); // Adiciona a classe base do FontAwesome
+      icon.style.padding = "5px"; // Ajuste o padding como necessário
+      icon.style.borderRadius = "5px"; // Adicione bordas arredondadas se desejado
+      icon.style.marginLeft = "5px"; // Espaçamento entre o select e o ícone
+      icon.style.marginBottom = "5px"; // Espaçamento entre o select e o ícone
+
+      switch (value) {
+        case "Agressivo":
+          icon.classList.add("fa-hand-back-fist");
+          icon.style.backgroundColor = "#B22222";
+          icon.style.color = "#fff";
+          break;
+        case "Equilibrado":
+          icon.classList.add("fa-hand-scissors");
+          icon.style.backgroundColor = "#FFD700";
+          icon.style.color = "#000";
+          break;
+        case "Controlador":
+          icon.classList.add("fa-hand");
+          icon.style.backgroundColor = "#1E90FF";
+          icon.style.color = "#fff";
+          break;
+        default:
+          icon.classList.add("fa-question");
+          icon.style.backgroundColor = "#6c757d";
+          icon.style.color = "#fff";
+      }
+    }
+  }
 }
 
 function chooseArchetype(value) {
   selectedArchetype = value;
   updateAnalysisFromDeck();
+
+  const icon = document.querySelector("#addByArchetypeIcon"); // Seleciona o ícone ao lado do select
+  if (icon) {
+    if (value) {
+      icon.className = ""; // Limpa as classes do ícone
+      icon.classList.add("fa"); // Adiciona a classe base do FontAwesome
+      icon.classList.add("fa-solid"); // Adiciona a classe base do FontAwesome
+      icon.style.padding = "5px"; // Ajuste o padding como necessário
+      icon.style.borderRadius = "5px"; // Adicione bordas arredondadas se desejado
+      icon.style.marginLeft = "5px"; // Espaçamento entre o select e o ícone
+      icon.style.marginBottom = "5px"; // Espaçamento entre o select e o ícone
+
+      switch (value) {
+        case "Batalha":
+          icon.classList.add("fa-hand-fist");
+          icon.style.backgroundColor = "#FF8C00";
+          icon.style.color = "#000";
+          break;
+        case "Santificação":
+          icon.classList.add("fa-droplet");
+          icon.style.backgroundColor = "whitesmoke";
+          icon.style.color = "#000";
+          break;
+        case "Combo":
+          icon.classList.add("fa-gears");
+          icon.style.backgroundColor = "#800080";
+          icon.style.color = "#fff";
+          break;
+        case "Maravilhas":
+          icon.classList.add("fa-hat-wizard");
+          icon.style.backgroundColor = "#32CD32";
+          icon.style.color = "#000";
+          break;
+        case "Supressão":
+          icon.classList.add("fa-ban");
+          icon.style.backgroundColor = "#000000";
+          icon.style.color = "#fff";
+          break;
+        default:
+          icon.classList.add("fa-question");
+          icon.style.backgroundColor = "#6c757d";
+          icon.style.color = "#fff";
+      }
+    }
+
+    icon.textContent = value;
+  }
 }
 
 function transformToObjectArray(cards) {

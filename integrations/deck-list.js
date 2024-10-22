@@ -1,4 +1,4 @@
-const CARDS_PER_PAGE = 36; // Número de cards por página
+const CARDS_PER_PAGE = 48; // Número de cards por página
 let currentPage = 1; // Página atual
 
 document.addEventListener("DOMContentLoaded", async function () {

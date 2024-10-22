@@ -131,17 +131,16 @@
                                 </div>
 
                                 <div class="anime__review__item__text">
-                                    <div class="anime__details__title">
-                                        <h3 id="tag_cardName"></h3>
-                                        <span><i id="tag_cardFlavor"></i></span>
+                                    <div style="margin-bottom: 5px;" class="anime__details__title">
+                                        <h3 style="margin-bottom: 5px;" id="tag_cardName"></h3>
+                                        <!-- <span><i id="tag_cardFlavor"></i></span> -->
                                     </div>
-                                    <p id="tag_cardText"></p>
+                                    <p id="tag_cardText" style="margin-bottom: 5px;"></p>
                                     <div class="anime__details__widget" style="margin-bottom: 0px;">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <ul style="margin-bottom: 0px;">
                                                     <li><span>Tipo:</span> <text id="tag_cardType"></text></li>
-
                                                     <li><span>Custo:</span> <text id="tag_cardCost"></text></li>
                                                     <li><span>Status:</span> <text id="tag_cardStatus"></text></li>
                                                     <!-- <li><span>Efeito:</span> <text id="tag_cardEffect"></text></li> -->
@@ -188,10 +187,11 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="col">
                                         <div class="anime__details__review">
                                             <div class="section-title">
-                                                <h5>Análise</h5>
+                                                <h5>Análise de Utilização</h5>
                                             </div>
                                             <div class="anime__review__item">
                                                 <!-- <div class="anime__review__item__pic">
@@ -221,21 +221,21 @@
                                                         }
 
                                                         .gauge-section i {
-                                                            font-size: 10px;
+                                                            font-size: 12px;
                                                             position: absolute;
                                                         }
                                                     </style>
 
                                                     <div class="row">
-                                                        <div class="col">
-                                                            <h6 style="margin-top:10px;">Level</h6>
+                                                        <div class="col-5">
+                                                            <h6>Level</h6>
                                                             <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
-                                                            <div id="tag_cardStars" class="rating"></div>
+                                                            <div style="font-size:12px;" id="tag_cardStars" class="rating"></div>
                                                         </div>
-                                                        <div class="col">
-                                                            <h6 style="margin-top:10px;">Ocorrências</h6>
+                                                        <div class="col-7">
+                                                            <h6>Ocorrências</h6>
                                                             <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
-                                                            <h6><i class="fa-solid fa-cube"></i> 4 / <i class="fa-solid fa-cubes"></i> 5</h6>
+                                                            <h6 style="font-size:12px;"><i id="tag_cardOcurrences" class="fa-solid fa-cube"></i> / <i id="tag_cardOcurrencesInSides" class="fa-solid fa-cubes"></i></h6>
                                                         </div>
                                                     </div>
 
@@ -254,68 +254,6 @@
 
                             </div>
 
-                        </div>
-
-                        <div class="anime__details__review">
-                            <div class="section-title">
-                                <h5>Principais Interações</h5>
-                            </div>
-                            <div class="anime__review__item">
-                                <div class="anime__review__item__pic">
-                                    <img src="img/anime/review-1.jpg" alt="">
-                                </div>
-                                <div class="anime__review__item__text">
-                                    <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                                    <p>whachikan Just noticed that someone categorized this as belonging to the genre
-                                        "demons" LOL</p>
-                                </div>
-                            </div>
-                            <div class="anime__review__item">
-                                <div class="anime__review__item__pic">
-                                    <img src="img/anime/review-2.jpg" alt="">
-                                </div>
-                                <div class="anime__review__item__text">
-                                    <h6>Lewis Mann - <span>5 Hour ago</span></h6>
-                                    <p>Finally it came out ages ago</p>
-                                </div>
-                            </div>
-                            <div class="anime__review__item">
-                                <div class="anime__review__item__pic">
-                                    <img src="img/anime/review-3.jpg" alt="">
-                                </div>
-                                <div class="anime__review__item__text">
-                                    <h6>Louis Tyler - <span>20 Hour ago</span></h6>
-                                    <p>Where is the episode 15 ? Slow update! Tch</p>
-                                </div>
-                            </div>
-                            <div class="anime__review__item">
-                                <div class="anime__review__item__pic">
-                                    <img src="img/anime/review-4.jpg" alt="">
-                                </div>
-                                <div class="anime__review__item__text">
-                                    <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                                    <p>whachikan Just noticed that someone categorized this as belonging to the genre
-                                        "demons" LOL</p>
-                                </div>
-                            </div>
-                            <div class="anime__review__item">
-                                <div class="anime__review__item__pic">
-                                    <img src="img/anime/review-5.jpg" alt="">
-                                </div>
-                                <div class="anime__review__item__text">
-                                    <h6>Lewis Mann - <span>5 Hour ago</span></h6>
-                                    <p>Finally it came out ages ago</p>
-                                </div>
-                            </div>
-                            <div class="anime__review__item">
-                                <div class="anime__review__item__pic">
-                                    <img src="img/anime/review-6.jpg" alt="">
-                                </div>
-                                <div class="anime__review__item__text">
-                                    <h6>Louis Tyler - <span>20 Hour ago</span></h6>
-                                    <p>Where is the episode 15 ? Slow update! Tch</p>
-                                </div>
-                            </div>
                         </div>
 
                         <!-- <div class="anime__details__form">
@@ -339,7 +277,14 @@
                             <div id="relatedCardsList" class="row"></div>
                         </div>
 
-                        <div class="product__sidebar__comment">
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="anime__details__review">
                             <div class="section-title">
                                 <h5>Melhores Decks</h5>
                             </div>
@@ -349,11 +294,9 @@
                                 rel="stylesheet">
 
                             <div class="row" id="related-decks-container"></div>
-
                         </div>
-
+                        
                     </div>
-
                 </div>
 
             </div>

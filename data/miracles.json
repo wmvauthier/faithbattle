@@ -17,7 +17,83 @@
     "img": "img/milagres/13.png",
     "ocurrences": 5,
     "ocurrencesInSides": 10,
-    "stars": "4.6"
+    "stars": "4.6",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 30
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 31
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 30
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      }
+    ]
   },
   {
     "name": "Fogo do Céu",
@@ -36,8 +112,84 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/14.png",
     "ocurrences": 3,
-    "ocurrencesInSides": 9,
-    "stars": "4.2"
+    "ocurrencesInSides": 8,
+    "stars": "3.9",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": -1
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 38
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 62.5,
+        "roundedWidth": 63,
+        "width": 64
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 24
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      }
+    ]
   },
   {
     "name": "Passagem Segura",
@@ -57,7 +209,83 @@
     "img": "img/milagres/15.png",
     "ocurrences": 2,
     "ocurrencesInSides": 3,
-    "stars": "2.1"
+    "stars": "2.1",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 67
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Restauração de Fé",
@@ -77,7 +305,83 @@
     "img": "img/milagres/16.png",
     "ocurrences": 1,
     "ocurrencesInSides": 1,
-    "stars": "1.4"
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Proteção Divina",
@@ -97,7 +401,83 @@
     "img": "img/milagres/17.png",
     "ocurrences": 4,
     "ocurrencesInSides": 7,
-    "stars": "3.5"
+    "stars": "3.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 30
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 71.42857142857143,
+        "roundedWidth": 71,
+        "width": 71
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 29
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 29
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      }
+    ]
   },
   {
     "name": "Liberação Celestial",
@@ -117,7 +497,83 @@
     "img": "img/milagres/18.png",
     "ocurrences": 11,
     "ocurrencesInSides": 13,
-    "stars": "5.0"
+    "stars": "5.0",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 23.076923076923077,
+        "roundedWidth": 23,
+        "width": 23
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 30.76923076923077,
+        "roundedWidth": 31,
+        "width": 32
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 46.15384615384615,
+        "roundedWidth": 46,
+        "width": 46
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 46.15384615384615,
+        "roundedWidth": 46,
+        "width": 46
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 23.076923076923077,
+        "roundedWidth": 23,
+        "width": 23
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 7.6923076923076925,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 15.384615384615385,
+        "roundedWidth": 15,
+        "width": 15
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 7.6923076923076925,
+        "roundedWidth": 8,
+        "width": 8
+      }
+    ]
   },
   {
     "name": "Ressurreição",
@@ -137,7 +593,83 @@
     "img": "img/milagres/19.png",
     "ocurrences": 13,
     "ocurrencesInSides": 13,
-    "stars": "5.0"
+    "stars": "5.0",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 15.384615384615385,
+        "roundedWidth": 15,
+        "width": 16
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 38.46153846153847,
+        "roundedWidth": 38,
+        "width": 38
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 46.15384615384615,
+        "roundedWidth": 46,
+        "width": 47
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 46.15384615384615,
+        "roundedWidth": 46,
+        "width": 46
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 23.076923076923077,
+        "roundedWidth": 23,
+        "width": 23
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 7.6923076923076925,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 15.384615384615385,
+        "roundedWidth": 15,
+        "width": 15
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 7.6923076923076925,
+        "roundedWidth": 8,
+        "width": 8
+      }
+    ]
   },
   {
     "name": "Sarça Ardente",
@@ -157,7 +689,83 @@
     "img": "img/milagres/20.png",
     "ocurrences": 7,
     "ocurrencesInSides": 7,
-    "stars": "3.5"
+    "stars": "3.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 15
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 28
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 29
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Dilúvio",
@@ -177,7 +785,83 @@
     "img": "img/milagres/21.png",
     "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "2.8"
+    "stars": "2.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      }
+    ]
   },
   {
     "name": "Cordeiro de Deus",
@@ -197,7 +881,83 @@
     "img": "img/milagres/29.png",
     "ocurrences": 7,
     "ocurrencesInSides": 7,
-    "stars": "3.5"
+    "stars": "3.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 30
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 71.42857142857143,
+        "roundedWidth": 71,
+        "width": 71
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 29
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 29
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      }
+    ]
   },
   {
     "name": "Sabedoria de Salomão",
@@ -217,7 +977,83 @@
     "img": "img/milagres/42.png",
     "ocurrences": 7,
     "ocurrencesInSides": 10,
-    "stars": "4.6"
+    "stars": "4.6",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 31
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      }
+    ]
   },
   {
     "name": "No Céu tem Pão",
@@ -237,7 +1073,83 @@
     "img": "img/milagres/48.png",
     "ocurrences": 7,
     "ocurrencesInSides": 8,
-    "stars": "3.9"
+    "stars": "3.9",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 37
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      }
+    ]
   },
   {
     "name": "Resgate do Justo",
@@ -257,7 +1169,83 @@
     "img": "img/milagres/72.png",
     "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.7"
+    "stars": "1.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Adjuntora Idônea",
@@ -277,7 +1265,83 @@
     "img": "img/milagres/73.png",
     "ocurrences": 4,
     "ocurrencesInSides": 5,
-    "stars": "2.8"
+    "stars": "2.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 41
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 80,
+        "roundedWidth": 80,
+        "width": 80
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Shabbat",
@@ -297,7 +1361,83 @@
     "img": "img/milagres/76.png",
     "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "2.8"
+    "stars": "2.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 21
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 80,
+        "roundedWidth": 80,
+        "width": 80
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Ira de Deus",
@@ -316,8 +1456,84 @@
     "artist": "Lucas Bird",
     "img": "img/milagres/77.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 6,
-    "stars": "3.1"
+    "ocurrencesInSides": 5,
+    "stars": "2.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 21
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 80,
+        "roundedWidth": 80,
+        "width": 80
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      }
+    ]
   },
   {
     "name": "Protoevangelho",
@@ -337,7 +1553,83 @@
     "img": "img/milagres/83.png",
     "ocurrences": 8,
     "ocurrencesInSides": 11,
-    "stars": "4.9"
+    "stars": "4.9",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 27.27272727272727,
+        "roundedWidth": 27,
+        "width": 28
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 27.27272727272727,
+        "roundedWidth": 27,
+        "width": 27
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 45.45454545454545,
+        "roundedWidth": 45,
+        "width": 46
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 45.45454545454545,
+        "roundedWidth": 45,
+        "width": 46
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 27.27272727272727,
+        "roundedWidth": 27,
+        "width": 27
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 9.090909090909092,
+        "roundedWidth": 9,
+        "width": 9
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 9.090909090909092,
+        "roundedWidth": 9,
+        "width": 9
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 9.090909090909092,
+        "roundedWidth": 9,
+        "width": 9
+      }
+    ]
   },
   {
     "name": "Filho da Promessa",
@@ -357,7 +1649,83 @@
     "img": "img/milagres/80.png",
     "ocurrences": 2,
     "ocurrencesInSides": 3,
-    "stars": "2.1"
+    "stars": "2.1",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 67
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Sinal Divino",
@@ -377,7 +1745,83 @@
     "img": "img/milagres/87.png",
     "ocurrences": 4,
     "ocurrencesInSides": 7,
-    "stars": "3.5"
+    "stars": "3.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 44
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 57.14285714285714,
+        "roundedWidth": 57,
+        "width": 57
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Paternidade",
@@ -397,7 +1841,83 @@
     "img": "img/milagres/91.png",
     "ocurrences": 0,
     "ocurrencesInSides": 0,
-    "stars": "1.0"
+    "stars": "1.0",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
+      }
+    ]
   },
   {
     "name": "Gênese de Tudo",
@@ -417,7 +1937,83 @@
     "img": "img/milagres/99.png",
     "ocurrences": 4,
     "ocurrencesInSides": 5,
-    "stars": "2.8"
+    "stars": "2.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 60,
+        "roundedWidth": 60,
+        "width": 61
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 80,
+        "roundedWidth": 80,
+        "width": 80
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Oferta do Justo",
@@ -437,7 +2033,83 @@
     "img": "img/milagres/84.png",
     "ocurrences": 7,
     "ocurrencesInSides": 7,
-    "stars": "3.5"
+    "stars": "3.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 30
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 57.14285714285714,
+        "roundedWidth": 57,
+        "width": 57
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 15
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      }
+    ]
   },
   {
     "name": "Herança de Abraão",
@@ -457,7 +2129,83 @@
     "img": "img/milagres/115.png",
     "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.7"
+    "stars": "1.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Provação de Fé",
@@ -477,7 +2225,83 @@
     "img": "img/milagres/85.png",
     "ocurrences": 1,
     "ocurrencesInSides": 6,
-    "stars": "3.1"
+    "stars": "3.1",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": -1
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      }
+    ]
   },
   {
     "name": "Imagem e Semelhança",
@@ -497,7 +2321,83 @@
     "img": "img/milagres/111.png",
     "ocurrences": 2,
     "ocurrencesInSides": 4,
-    "stars": "2.4"
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   },
   {
     "name": "Dízimo",
@@ -517,7 +2417,83 @@
     "img": "img/milagres/79.png",
     "ocurrences": 3,
     "ocurrencesInSides": 6,
-    "stars": "3.1"
+    "stars": "3.1",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 67
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 32
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      }
+    ]
   },
   {
     "name": "Circuncisão",
@@ -537,7 +2513,83 @@
     "img": "img/milagres/116.png",
     "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.7"
+    "stars": "1.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ]
   },
   {
     "name": "Casos de Família",
@@ -557,7 +2609,83 @@
     "img": "img/milagres/86.png",
     "ocurrences": 0,
     "ocurrencesInSides": 5,
-    "stars": "2.8"
+    "stars": "2.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 21
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 60,
+        "roundedWidth": 60,
+        "width": 60
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 60,
+        "roundedWidth": 60,
+        "width": 60
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      }
+    ]
   },
   {
     "name": "Dias Contados",
@@ -577,6 +2705,82 @@
     "img": "img/milagres/78.png",
     "ocurrences": 0,
     "ocurrencesInSides": 2,
-    "stars": "1.7"
+    "stars": "1.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
   }
 ]
