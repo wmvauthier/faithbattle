@@ -1,13 +1,11 @@
 let deck;
 
 document.addEventListener("DOMContentLoaded", async function () {
-
   await waitForAllJSONs();
 
   let idSelectedDeck = localStorage.getItem("idSelectedDeck");
 
   if (idSelectedDeck && idSelectedDeck > 0) {
-
     const selectedDeck = allDecks.find(
       (element) => element.number == idSelectedDeck
     );

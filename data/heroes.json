@@ -1071,7 +1071,7 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/herois/12.png",
-    "ocurrences": 7,
+    "ocurrences": 8,
     "ocurrencesInSides": 10,
     "stars": "4.6",
     "stylePercentage": [
@@ -2223,7 +2223,7 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/herois/70.png",
-    "ocurrences": 1,
+    "ocurrences": 0,
     "ocurrencesInSides": 2,
     "stars": "1.7",
     "stylePercentage": [

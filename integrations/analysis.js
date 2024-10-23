@@ -91,6 +91,7 @@ function analyzeCards(cards, averages) {
   // Realiza comparações com as médias, se fornecidas
   if (averages) {
     const categoriesEffectsComparison = compareCategoriesAndEffects(result, averages);
+
     result.comparison = {
       totalCards: totalCards,
       general: {
@@ -148,6 +149,14 @@ function compareValues(a, b) {
 }
 
 async function analyzeDecks(decks, selectedStyle, selectedArchetype) {
+  // Mapeamento dos tipos de cartas para tradução
+  const typeTranslation = {
+    "Herói de Fé": "Hero",
+    "Milagre": "Miracle",
+    "Pecado": "Sin",
+    "Artefato": "Artifact"
+  };
+
   // Filtrar decks com base no estilo e arquétipo selecionados
   const filteredDecks = decks.filter((deck) => {
     return (!selectedStyle || deck.style === selectedStyle) &&
@@ -196,10 +205,11 @@ async function analyzeDecks(decks, selectedStyle, selectedArchetype) {
       }
     });
 
-    // Atualizando os custos médios
+    // Atualizando os custos médios com tradução
     for (const tipo in costByType) {
       if (costByType[tipo].count > 0) {
-        totalResult[`averageCost${tipo}`] = costByType[tipo].totalCost / costByType[tipo].count;
+        const translatedType = typeTranslation[tipo];
+        totalResult[`averageCost${translatedType}`] = costByType[tipo].totalCost / costByType[tipo].count;
       }
     }
 

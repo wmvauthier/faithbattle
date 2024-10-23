@@ -15,24 +15,42 @@ const WEIGHT_OCURRENCY_SIDEBOARD = 200;
 const WEIGHT_DECK_STYLE = 20;
 const WEIGHT_DECK_ARCHETYPE = 80;
 
-const WEIGHT_LEVEL_SINERGY_BEETWEEN_CARDS = 0.85;
-const WEIGHT_LEVEL_STAPLE_USING_FOR_CARDS = 0.15;
+const WEIGHT_LEVEL_SINERGY_BEETWEEN_CARDS = 0.80;
+const WEIGHT_LEVEL_STAPLE_USING_FOR_CARDS = 0.20;
 const WEIGHT_LEVEL_ADICTION_FOR_REPETITION = 0.05;
 
 const WEIGHT_LEVEL_ADICTION_FOR_CATEGORY = 0.05;
+const WEIGHT_LEVEL_EQUAL_FOR_CATEGORY = 0.05;
 const WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY = 0.05;
 const WEIGHT_LEVEL_ADICTION_FOR_EXCLUSIVE_CATEGORY = 0.005;
-const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY = 0.3;
+const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY = 0.30;
+
+const WEIGHT_LEVEL_ADICTION_FOR_COUNT = 0.20;
+const WEIGHT_LEVEL_EQUAL_FOR_COUNT = 0.15;
+const WEIGHT_LEVEL_REDUCTION_FOR_COUNT = 0.30;
+const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_COUNT = 0.30;
+
+const WEIGHT_LEVEL_ADICTION_FOR_COST = 0.20;
+const WEIGHT_LEVEL_EQUAL_FOR_COST = 0.15;
+const WEIGHT_LEVEL_REDUCTION_FOR_COST = 0.30;
+
+const WEIGHT_LEVEL_ADICTION_FOR_QTD = 0.10;
+const WEIGHT_LEVEL_EQUAL_FOR_QTD = 0.005;
+const WEIGHT_LEVEL_REDUCTION_FOR_QTD = 0.40;
+
+const WEIGHT_LEVEL_ADICTION_FOR_STRENGHT_AND_RESISTANCE = 0.20;
+const WEIGHT_LEVEL_EQUAL_FOR_STRENGHT_AND_RESISTANCE = 0.10;
+const WEIGHT_LEVEL_REDUCTION_FOR_STRENGHT_AND_RESISTANCE = 0.20;
 
 const CACHE_DURATION = 1000; // 24 horas
 
 let allCards;
 let allDecks;
 
-const isBrowser = (typeof window !== "undefined" && typeof document !== "undefined");
+const isBrowser =
+  typeof window !== "undefined" && typeof document !== "undefined";
 
 if (isBrowser) {
-
   document.addEventListener("DOMContentLoaded", async function () {
     window.allJSONsLoaded = false;
 
@@ -44,13 +62,12 @@ if (isBrowser) {
       console.error("Erro ao carregar os dados:", error);
     }
   });
-
 } else {
   // Código específico para Node.js
   module.exports = {
     getOccurrencesInDecks,
     getOccurrencesInSides,
-    scaleToFive
+    scaleToFive,
   };
 }
 
@@ -222,7 +239,9 @@ async function calculateStarsFromDeck(
     }
 
     if (info.comparison.categories[category] === "higher") {
-      sum += WEIGHT_LEVEL_ADICTION_FOR_CATEGORY * difference;
+      sum += WEIGHT_LEVEL_ADICTION_FOR_CATEGORY * Math.abs(difference);
+    } else if (info.comparison.categories[category] === "equal") {
+      sum += WEIGHT_LEVEL_EQUAL_FOR_CATEGORY;
     } else if (info.comparison.categories[category] === "lower") {
       sum -= WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY * Math.abs(difference);
     }
@@ -231,6 +250,152 @@ async function calculateStarsFromDeck(
   sum -=
     innexistentCategories.length *
     WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY;
+
+  console.log(selectedDeck.name);
+  console.log(info);
+  console.log(analysisAverages);
+
+  const comparisons = ["hero", "miracle", "sin", "artifact"];
+
+  // Comparar AverageCosts
+  const costs = [
+    "averageCostHero",
+    "averageCostMiracle",
+    "averageCostSin",
+    "averageCostArtifact",
+  ];
+
+  for (let i = 0; i < costs.length; i++) {
+    const cost = costs[i];
+    const deckValue = info[cost] || 0;
+    const averageValue = analysisAverages[cost] || 0;
+    const difference = deckValue - averageValue;
+
+    console.log(cost + " -> " + difference);
+
+    // Usar o index i para acessar a comparação correta
+    if (info.comparison[comparisons[i]].cost === "higher") {
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_COST * Math.abs(difference); // Adiciona diferença se for igual ou maior
+    } else if (info.comparison[comparisons[i]].cost === "equal") {
+      sum += WEIGHT_LEVEL_EQUAL_FOR_COST; // Subtrai a diferença se for menor
+    } else if (info.comparison[comparisons[i]].cost === "lower") {
+      sum += WEIGHT_LEVEL_ADICTION_FOR_COST * Math.abs(difference); // Subtrai a diferença se for menor
+    } else {
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_COST * Math.abs(difference); // Adiciona diferença se for igual ou maior
+    }
+  }
+
+  // Comparar AverageQtds
+  const counts = ["heroCount", "miracleCount", "sinCount", "artifactCount"];
+  const averageQtds = [
+    "averageQtdHero",
+    "averageQtdMiracle",
+    "averageQtdSin",
+    "averageQtdArtifact",
+  ];
+
+  for (let i = 0; i < counts.length; i++) {
+    const count = counts[i];
+    const averageQtd = averageQtds[i];
+
+    const deckCount = info[count] || 0;
+    const averageCount = analysisAverages[averageQtd] || 0;
+    const difference = deckCount - averageCount;
+
+    console.log(count + " -> " + difference);
+
+    // Usar o index i para acessar a comparação correta
+    if (info.comparison[comparisons[i]].count === "higher") {
+      sum += WEIGHT_LEVEL_ADICTION_FOR_COUNT * Math.abs(difference); // Adiciona diferença se for igual ou maior
+    } else if (info.comparison[comparisons[i]].count === "equal") {
+      sum += WEIGHT_LEVEL_EQUAL_FOR_COUNT; // Subtrai a diferença se for menor
+    } else if (info.comparison[comparisons[i]].count === "lower") {
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_COUNT * Math.abs(difference); // Subtrai a diferença se for menor
+    } else {
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_COUNT * Math.abs(difference); // Subtrai a diferença se for menor
+    }
+
+    if (deckCount <= 0) {
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_COUNT;
+    }
+  }
+
+  info.averageQtd = info.comparison.totalCards;
+
+  const lastComparisonsUpper = ["strength", "resistance"];
+  const lastComparisonsLower = ["qtd"];
+  const lastComparisonsCost = ["cost"];
+
+  const statsUpper = [
+    { stat: "averageStrength", average: "averageStrength" },
+    { stat: "averageResistance", average: "averageResistance" },
+  ];
+
+  const statsLower = [
+    { stat: "averageQtd", average: "averageQtd" }, // Total de cartas
+  ];
+
+  const statsCost = [
+    { stat: "averageCost", average: "averageCost" }, // Total de cartas
+  ];
+
+  for (let i = 0; i < statsUpper.length; i++) {
+    const { stat, average } = statsUpper[i];
+    const deckStat = info[stat] || 0;
+    const averageStat = analysisAverages[average] || 0;
+    const difference = deckStat - averageStat;
+    const comparisonType = info.comparison.general[lastComparisonsUpper[i]];
+
+    console.log(stat + " -> " + comparisonType + " -> " + difference);
+
+    if (comparisonType === "higher") {
+      sum += WEIGHT_LEVEL_ADICTION_FOR_STRENGHT_AND_RESISTANCE * Math.abs(difference); // Adiciona diferença se for maior
+    } else if (comparisonType === "equal") {
+      sum += WEIGHT_LEVEL_EQUAL_FOR_STRENGHT_AND_RESISTANCE; // Não muda o sum se for igual
+    } else if (comparisonType === "lower") {
+      sum -=
+        WEIGHT_LEVEL_REDUCTION_FOR_STRENGHT_AND_RESISTANCE *
+        Math.abs(difference); // Subtrai a diferença se for menor
+    }
+  }
+
+  for (let i = 0; i < statsLower.length; i++) {
+    const { stat, average } = statsLower[i];
+    const deckStat = info[stat] || 0;
+    const averageStat = analysisAverages[average] || 0;
+    const difference = deckStat - averageStat;
+    const comparisonType = info.comparison.general[lastComparisonsLower[i]];
+
+    console.log(stat + " -> " + comparisonType + " -> " + difference);
+
+    if (comparisonType === "higher") {
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_QTD * Math.abs(difference); // Adiciona diferença se for maior
+    } else if (comparisonType === "equal") {
+      sum += WEIGHT_LEVEL_EQUAL_FOR_QTD; // Não muda o sum se for igual
+    } else if (comparisonType === "lower") {
+      sum += WEIGHT_LEVEL_ADICTION_FOR_QTD * Math.abs(difference); // Subtrai a diferença se for menor
+    }
+  }
+
+  for (let i = 0; i < statsCost.length; i++) {
+    const { stat, average } = statsCost[i];
+    const deckStat = info[stat] || 0;
+    const averageStat = analysisAverages[average] || 0;
+    const difference = deckStat - averageStat;
+    const comparisonType = info.comparison.general[lastComparisonsCost[i]];
+
+    console.log(stat + " -> " + comparisonType + " -> " + difference);
+
+    if (comparisonType === "higher") {
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_COST * Math.abs(difference); // Adiciona diferença se for maior
+    } else if (comparisonType === "equal") {
+      sum += WEIGHT_LEVEL_EQUAL_FOR_COST; // Não muda o sum se for igual
+    } else if (comparisonType === "lower") {
+      sum += WEIGHT_LEVEL_ADICTION_FOR_COST * Math.abs(difference); // Subtrai a diferença se for menor
+    }
+  }
+
+  console.log("sum -> " + sum);
 
   selectedDeck.level = calculateWeightedAverage(sumStars, level, sum).toFixed(
     2
