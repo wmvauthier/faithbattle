@@ -17,7 +17,7 @@
     "img": "img/artefatos/22.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.4",
+    "stars": "2.5",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -113,7 +113,7 @@
     "img": "img/artefatos/23.png",
     "ocurrences": 3,
     "ocurrencesInSides": 6,
-    "stars": "3.1",
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -209,7 +209,7 @@
     "img": "img/artefatos/24.png",
     "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "2.8",
+    "stars": "2.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -303,9 +303,9 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/artefatos/25.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 4,
-    "stars": "2.4",
+    "ocurrences": 2,
+    "ocurrencesInSides": 3,
+    "stars": "2.2",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -321,18 +321,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
       }
     ],
     "archetypePercentage": [
@@ -341,9 +341,9 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 67
       },
       {
         "archetype": "Santificação",
@@ -368,9 +368,9 @@
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-hat-wizard",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
       },
       {
         "archetype": "Supressão",
@@ -401,7 +401,7 @@
     "img": "img/artefatos/26.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.4",
+    "stars": "2.5",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -497,7 +497,7 @@
     "img": "img/artefatos/28.png",
     "ocurrences": 1,
     "ocurrencesInSides": 3,
-    "stars": "2.1",
+    "stars": "2.2",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -593,7 +593,7 @@
     "img": "img/artefatos/43.png",
     "ocurrences": 3,
     "ocurrencesInSides": 3,
-    "stars": "2.1",
+    "stars": "2.2",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -689,7 +689,7 @@
     "img": "img/artefatos/44.png",
     "ocurrences": 2,
     "ocurrencesInSides": 2,
-    "stars": "1.7",
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -881,7 +881,7 @@
     "img": "img/artefatos/50.png",
     "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.7",
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -977,7 +977,7 @@
     "img": "img/artefatos/55.png",
     "ocurrences": 0,
     "ocurrencesInSides": 2,
-    "stars": "1.7",
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1073,7 +1073,7 @@
     "img": "img/artefatos/56.png",
     "ocurrences": 3,
     "ocurrencesInSides": 3,
-    "stars": "2.1",
+    "stars": "2.2",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1169,7 +1169,7 @@
     "img": "img/artefatos/57.png",
     "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.7",
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1265,7 +1265,7 @@
     "img": "img/artefatos/58.png",
     "ocurrences": 3,
     "ocurrencesInSides": 6,
-    "stars": "3.1",
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1361,7 +1361,7 @@
     "img": "img/artefatos/59.png",
     "ocurrences": 2,
     "ocurrencesInSides": 3,
-    "stars": "2.1",
+    "stars": "2.2",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1553,7 +1553,7 @@
     "img": "img/artefatos/98.png",
     "ocurrences": 2,
     "ocurrencesInSides": 4,
-    "stars": "2.4",
+    "stars": "2.5",
     "stylePercentage": [
       {
         "style": "Agressivo",

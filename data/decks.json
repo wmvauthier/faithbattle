@@ -1,7 +1,7 @@
 [
   {
     "number": "1",
-    "name": "Armadura de Deus",
+    "name": "Armadura Divina",
     "img": "img/artefatos/23.png",
     "style": "Controlador",
     "archetype": "Combo",
@@ -343,62 +343,9 @@
     ],
     "sabedorias": 10
   },
+
   {
     "number": "6",
-    "name": "Miracles",
-    "img": "img/lendarias/52.png",
-    "style": "Controlador",
-    "archetype": "Maravilhas",
-    "active": true,
-    "cards": [
-      1,
-      5,
-      5,
-      8,
-      9,
-      12,
-      12,
-      47,
-      47,
-      13,
-      13,
-      14,
-      14,
-      17,
-      17,
-      18,
-      18,
-      19,
-      19,
-      20,
-      20,
-      21,
-      29,
-      29,
-      42,
-      42,
-      48,
-      48,
-      25,
-      25,
-      30
-    ],
-    "extra": [
-      52
-    ],
-    "sideboard": [],
-    "topcards": [
-      1,
-      25,
-      8,
-      48,
-      18,
-      19
-    ],
-    "sabedorias": 10
-  },
-  {
-    "number": "7",
     "name": "Nascidos do Éden",
     "img": "img/herois/60.png",
     "style": "Agressivo",
@@ -454,8 +401,8 @@
     "sabedorias": 10
   },
   {
-    "number": "8",
-    "name": "Controle Faith",
+    "number": "7",
+    "name": "Firme Fundamento",
     "img": "img/milagres/76.png",
     "style": "Controlador",
     "archetype": "Santificação",
@@ -530,7 +477,7 @@
     "sabedorias": 10
   },
   {
-    "number": "9",
+    "number": "8",
     "name": "Tempestade do Céu",
     "img": "img/herois/3.png",
     "style": "Equilibrado",
@@ -585,7 +532,7 @@
     "sabedorias": 10
   },
   {
-    "number": "10",
+    "number": "9",
     "name": "Zelo Imparável",
     "img": "img/herois/62.png",
     "style": "Agressivo",
@@ -661,7 +608,7 @@
     "sabedorias": 10
   },
   {
-    "number": "11",
+    "number": "10",
     "name": "Lâmina do Pacto",
     "img": "img/milagres/116.png",
     "style": "Controlador",
@@ -735,7 +682,7 @@
     "sabedorias": 10
   },
   {
-    "number": "12",
+    "number": "11",
     "name": "Fortaleza Inabalável",
     "img": "img/herois/65.png",
     "style": "Controlador",
@@ -807,7 +754,7 @@
     "sabedorias": 10
   },
   {
-    "number": "13",
+    "number": "12",
     "name": "As Minas do Rei Salomon",
     "img": "img/herois/4.png",
     "style": "Equilibrado",
@@ -861,8 +808,8 @@
     "sabedorias": 10
   },
   {
-    "number": "14",
-    "name": "Miracles 2.0",
+    "number": "13",
+    "name": "Miracles",
     "img": "img/milagres/84.png",
     "style": "Controlador",
     "archetype": "Maravilhas",
