@@ -173,6 +173,9 @@ async function renderPage(page) {
     });
 
     row.style.cursor = "pointer";
+    row.style.paddingLeft = "5px";
+    row.style.paddingRight = "5px";
+
     row.classList.add(
       "col-xl-2",
       "col-lg-3",
