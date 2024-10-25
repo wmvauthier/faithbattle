@@ -85,7 +85,7 @@
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/banner/banner-x.png">
+    <section class="normal-breadcrumb set-bg" data-setbg="img/banner/banner-1.png">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -102,198 +102,123 @@
     <!-- Blog Section Begin -->
     <section class="blog spad">
         <div class="container">
+            <div class="row">
 
-            <div class="row" style="padding-left: 5%; padding-right: 5%;">
-
-                <style>
-                    .row {
-                        display: flex;
-                        flex-wrap: wrap;
-                        padding: 0 4px;
-                    }
-
-                    /* Create four equal columns that sits next to each other */
-                    .column {
-                        flex: 25%;
-                        max-width: 25%;
-                        padding: 0 4px;
-                    }
-
-                    .column img {
-                        margin-top: 8px;
-                        vertical-align: middle;
-                        width: 100%;
-                    }
-
-                    .miniColumn {
-                        /* padding-left: 5px; */
-                        /* padding-right: 5px; */
-                        /* padding-left:0; */
-                        /* padding-right:0; */
-                        width: 100%;
-                    }
-
-                    .miniColumn img {
-                        width: 100%;
-                        /* padding-right: 5px; */
-                        /* padding-left: 5px; */
-                    }
-
-                    .miniColumnLeft {
-                        margin-right: 4px !important;
-                        padding-right: 0px !important;
-                        padding-left: 11px !important;
-                    }
-
-                    .miniColumnRight {
-                        margin-left: 4px !important;
-                        padding-left: 0px !important;
-                        padding-right: 11px !important;
-                    }
-                    /* Container da imagem */
-                    .image-container {
-                        position: relative;
-                        display: inline-block;
-                    }
-
-                    /* Imagem */
-                    .image-container img {
-                        width: 100%;
-                        height: auto;
-                    }
-
-                    /* Texto e ícone que aparecem ao fazer hover */
-                    .overlay {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        background-color: rgba(0, 0, 0, 0.6);
-                        /* Fundo semi-transparente */
-                        color: white;
-                        text-align: center;
-                        padding: 10px;
-                        opacity: 0;
-                        /* Invisível inicialmente */
-                        transition: opacity 0.3s ease;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        flex-direction: column;
-                    }
-
-                    /* Ícone */
-                    .overlay i {
-                        font-size: 24px;
-                        margin-bottom: 5px;
-                    }
-
-                    /* Texto */
-                    .overlay p {
-                        margin: 0;
-                        font-size: 14px;
-                    }
-
-                    /* Aparecer o overlay ao passar o mouse sobre o container */
-                    .image-container:hover .overlay {
-                        opacity: 1;
-                    }
-
-                    /* Responsive layout - makes a two column-layout instead of four columns */
-                    @media screen and (max-width: 800px) {
-                        .column {
-                            flex: 50%;
-                            max-width: 50%;
-                        }
-                    }
-
-                    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-                    @media screen and (max-width: 600px) {
-                        .column {
-                            flex: 100%;
-                            max-width: 100%;
-                        }
-                    }
-
-                </style>
-
-                <!-- FontAwesome -->
-                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-                    rel="stylesheet">
-
-                <div class="row">
-
-                    <div class="column">
-
-                        <div class="row">
-                            <div class="col miniColumn miniColumnLeft">
-
-                                <div class="miniImageLeft image-container">
-                                    <img src="img/blog/blog-1.jpg">
-                                    <div class="overlay">
-                                        <i class="fas fa-info-circle"></i>
-                                        <p>Informações sobre a imagem</p>
-                                    </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="blog__item set-bg" data-setbg="img/blog/blog-4.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 Nov 2023</p>
+                                    <p><span class="icon_globe_alt"></span> Pré-Release APH</p>
+                                    <h4><a href="#">Gustavo Furjan</a></h4>
                                 </div>
-
-                                <div class="miniImageLeft image-container">
-                                    <img src="img/blog/blog-2.jpg">
-                                    <div class="overlay">
-                                        <i class="fas fa-info-circle"></i>
-                                        <p>Informações sobre a imagem</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col miniColumn miniColumnRight">
-                                
-                                <div class="miniImageRight image-container">
-                                    <img src="img/blog/blog-3.jpg">
-                                    <div class="overlay">
-                                        <i class="fas fa-info-circle"></i>
-                                        <p>Informações sobre a imagem</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="miniImageRight image-container">
-                                    <img src="img/blog/blog-4.jpg">
-                                    <div class="overlay">
-                                        <i class="fas fa-info-circle"></i>
-                                        <p>Informações sobre a imagem</p>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
-
-                        <img src="img/blog/blog-5.jpg">
-
-                    </div>
-
-                    <div class="column">
-                        <img src="img/blog/blog-6.jpg">
-                        <div class="image-container">
-                            <img src="img/blog/blog-7.jpg">
-                            <div class="overlay">
-                                <i class="fas fa-info-circle"></i>
-                                <p>Informações sobre a imagem</p>
+                        <div class="col-lg-12">
+                            <div class="blog__item set-bg" data-setbg="img/blog/blog-1.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Yuri Kuma Arashi Viverra Tortor Pharetra</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-4.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Bok no Hero Academia Season 4 – 18</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-5.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Fate/Stay Night: Untimated Blade World</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="blog__item set-bg" data-setbg="img/blog/blog-7.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Housekishou Richard shi no Nazo Kantei Season 08 - 20</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-10.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Fate/Stay Night: Untimated Blade World</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-11.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Building a Better LiA Drilling Down</a></h4>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="column">
-                        <img src="wedding.jpg">
-                        <img src="rocks.jpg">
-                    </div>
-                    <div class="column">
-                        <img src="underwater.jpg">
-                        <img src="ocean.jpg">
-                    </div>
-
                 </div>
 
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-2.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Fate/Stay Night: Untimated Blade World</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-3.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Building a Better LiA Drilling Down</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="blog__item set-bg" data-setbg="img/blog/blog-6.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Yuri Kuma Arashi Viverra Tortor Pharetra</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-8.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Bok no Hero Academia Season 4 – 18</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-9.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Fate/Stay Night: Untimated Blade World</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="blog__item set-bg" data-setbg="img/blog/blog-12.jpg">
+                                <div class="blog__item__text">
+                                    <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                    <h4><a href="#">Yuri Kuma Arashi Viverra Tortor Pharetra</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </section>
     <!-- Blog Section End -->
