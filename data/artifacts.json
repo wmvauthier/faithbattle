@@ -15,9 +15,297 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/artefatos/22.png",
+    "ocurrences": 0,
+    "ocurrencesInSides": 3,
+    "stars": "2.3",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 67
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Espada do Espírito",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "O Herói equipado ganha +1/+0 e não pode ser bloqueado",
+    "type": "Artefato",
+    "subtype": "Lendário",
+    "categories": "Amplificação;Modificação;Evasão",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "Equipável",
+    "number": 23,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "artist": "Lucas Bird",
+    "img": "img/artefatos/23.png",
+    "ocurrences": 3,
+    "ocurrencesInSides": 5,
+    "stars": "3.1",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 60,
+        "roundedWidth": 60,
+        "width": 61
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 60,
+        "roundedWidth": 60,
+        "width": 60
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Escudo da Fé",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "O Herói equipado ganha +0/+2",
+    "type": "Artefato",
+    "subtype": "Lendário",
+    "categories": "Amplificação",
+    "cost": 1,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "Equipável",
+    "number": 24,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "artist": "Lucas Bird",
+    "img": "img/artefatos/24.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.5",
+    "stars": "2.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Maravilhas",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-hat-wizard",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Cajado de Moisés",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "O herói equipado ganha +1/+0. Se está equipado a Moisés, seus milagres custam -1 de sabedoria.",
+    "type": "Artefato",
+    "subtype": "-",
+    "categories": "Instrução",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "Equipável",
+    "number": 25,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "artist": "Lucas Bird",
+    "img": "img/artefatos/25.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 2,
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -62,294 +350,6 @@
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Espada do Espírito",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Herói equipado ganha +1/+0 e não pode ser bloqueado",
-    "type": "Artefato",
-    "subtype": "Lendário",
-    "categories": "Amplificação;Modificação;Evasão",
-    "cost": 3,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Equipável",
-    "number": 23,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/artefatos/23.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 6,
-    "stars": "3.3",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 16
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 67
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 18
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 66
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Escudo da Fé",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Herói equipado ganha +0/+2",
-    "type": "Artefato",
-    "subtype": "Lendário",
-    "categories": "Amplificação",
-    "cost": 1,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Equipável",
-    "number": 24,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/artefatos/24.png",
-    "ocurrences": 2,
-    "ocurrencesInSides": 5,
-    "stars": "2.9",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 41
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 60,
-        "roundedWidth": 60,
-        "width": 60
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Cajado de Moisés",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O herói equipado ganha +1/+0. Se está equipado a Moisés, seus milagres custam -1 de sabedoria.",
-    "type": "Artefato",
-    "subtype": "-",
-    "categories": "Instrução",
-    "cost": 2,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Equipável",
-    "number": 25,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/artefatos/25.png",
-    "ocurrences": 2,
-    "ocurrencesInSides": 3,
-    "stars": "2.2",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 68
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 67
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0
@@ -368,9 +368,9 @@
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-hat-wizard",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       },
       {
         "archetype": "Supressão",
@@ -401,7 +401,7 @@
     "img": "img/artefatos/26.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.5",
+    "stars": "2.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -497,7 +497,7 @@
     "img": "img/artefatos/28.png",
     "ocurrences": 1,
     "ocurrencesInSides": 3,
-    "stars": "2.2",
+    "stars": "2.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -591,9 +591,9 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/artefatos/43.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 3,
-    "stars": "2.2",
+    "ocurrences": 2,
+    "ocurrencesInSides": 2,
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -609,18 +609,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 68
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       }
     ],
     "archetypePercentage": [
@@ -629,9 +629,9 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 67
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       },
       {
         "archetype": "Santificação",
@@ -647,9 +647,9 @@
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       },
       {
         "archetype": "Maravilhas",
@@ -976,8 +976,8 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/55.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "ocurrencesInSides": 3,
+    "stars": "2.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -993,18 +993,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
       }
     ],
     "archetypePercentage": [
@@ -1072,35 +1072,35 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/56.png",
     "ocurrences": 3,
-    "ocurrencesInSides": 3,
-    "stars": "2.2",
+    "ocurrencesInSides": 4,
+    "stars": "2.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       }
     ],
     "archetypePercentage": [
@@ -1109,18 +1109,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
       },
       {
         "archetype": "Combo",
@@ -1265,7 +1265,7 @@
     "img": "img/artefatos/58.png",
     "ocurrences": 3,
     "ocurrencesInSides": 6,
-    "stars": "3.3",
+    "stars": "3.5",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1361,7 +1361,7 @@
     "img": "img/artefatos/59.png",
     "ocurrences": 2,
     "ocurrencesInSides": 3,
-    "stars": "2.2",
+    "stars": "2.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1553,7 +1553,7 @@
     "img": "img/artefatos/98.png",
     "ocurrences": 2,
     "ocurrencesInSides": 4,
-    "stars": "2.5",
+    "stars": "2.7",
     "stylePercentage": [
       {
         "style": "Agressivo",

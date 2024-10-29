@@ -17,35 +17,35 @@
     "artist": "Lucas Bird",
     "img": "img/lendarias/51.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 1,
-    "stars": "1.4",
+    "ocurrencesInSides": 0,
+    "stars": "1.0",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 101
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       }
     ],
     "archetypePercentage": [
@@ -54,45 +54,45 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "archetype": "Maravilhas",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       }
     ]
   },
@@ -113,8 +113,8 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/lendarias/52.png",
-    "ocurrences": 11,
-    "ocurrencesInSides": 12,
+    "ocurrences": 10,
+    "ocurrencesInSides": 11,
     "stars": "5.0",
     "stylePercentage": [
       {
@@ -122,27 +122,27 @@
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 27.27272727272727,
+        "roundedWidth": 27,
+        "width": 28
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 41.66666666666667,
-        "roundedWidth": 42,
-        "width": 43
+        "rawWidth": 36.36363636363637,
+        "roundedWidth": 36,
+        "width": 36
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 36.36363636363637,
+        "roundedWidth": 36,
+        "width": 37
       }
     ],
     "archetypePercentage": [
@@ -151,45 +151,45 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 45.45454545454545,
+        "roundedWidth": 45,
+        "width": 46
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 27.27272727272727,
+        "roundedWidth": 27,
+        "width": 27
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 9.090909090909092,
+        "roundedWidth": 9,
+        "width": 9
       },
       {
         "archetype": "Maravilhas",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-hat-wizard",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 9.090909090909092,
+        "roundedWidth": 9,
+        "width": 9
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 9.090909090909092,
+        "roundedWidth": 9,
+        "width": 9
       }
     ]
   },
@@ -211,35 +211,35 @@
     "artist": "Lucas Bird",
     "img": "img/lendarias/53.png",
     "ocurrences": 2,
-    "ocurrencesInSides": 3,
-    "stars": "2.2",
+    "ocurrencesInSides": 4,
+    "stars": "2.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       }
     ],
     "archetypePercentage": [
@@ -248,18 +248,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 67
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       },
       {
         "archetype": "Combo",
@@ -308,35 +308,35 @@
     "artist": "Lucas Bird",
     "img": "img/lendarias/94.png",
     "ocurrences": 3,
-    "ocurrencesInSides": 3,
-    "stars": "2.2",
+    "ocurrencesInSides": 4,
+    "stars": "2.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       }
     ],
     "archetypePercentage": [
@@ -345,18 +345,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
       },
       {
         "archetype": "Combo",
@@ -406,7 +406,7 @@
     "img": "img/lendarias/96.png",
     "ocurrences": 4,
     "ocurrencesInSides": 5,
-    "stars": "2.9",
+    "stars": "3.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -502,35 +502,35 @@
     "artist": "Lucas Bird",
     "img": "img/lendarias/100.png",
     "ocurrences": 5,
-    "ocurrencesInSides": 5,
-    "stars": "2.9",
+    "ocurrencesInSides": 6,
+    "stars": "3.5",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 21
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 60,
-        "roundedWidth": 60,
-        "width": 60
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       }
     ],
     "archetypePercentage": [
@@ -539,27 +539,27 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 60,
-        "roundedWidth": 60,
-        "width": 60
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Maravilhas",
@@ -575,9 +575,9 @@
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       }
     ]
   },
@@ -697,7 +697,7 @@
     "img": "img/lendarias/113.png",
     "ocurrences": 8,
     "ocurrencesInSides": 8,
-    "stars": "4.1",
+    "stars": "4.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -794,7 +794,7 @@
     "img": "img/lendarias/95.png",
     "ocurrences": 5,
     "ocurrencesInSides": 6,
-    "stars": "3.3",
+    "stars": "3.5",
     "stylePercentage": [
       {
         "style": "Agressivo",
