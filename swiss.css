@@ -12,6 +12,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    /* transform: scale(0.4); */
+      /* transform-origin: top left; */
+      /* width: 250%; Ajuste para simular o zoom */
 }
 
 .container {
