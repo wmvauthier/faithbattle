@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 // Função auxiliar para atualizar os elementos do DOM
 function updateDOMElements(card, cardStatus) {
   const elementsToUpdate = {
-    tag_cardName: card.name,
+    tag_cardName: card.name.toUpperCase(),
     tag_cardFlavor: card.flavor,
     tag_cardText: card.text,
     tag_cardType: card.type,
