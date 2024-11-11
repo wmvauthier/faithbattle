@@ -479,11 +479,12 @@ async function compareCardsToLevelADeck(cardA, cardB, decks, legendaries) {
 }
 
 function calculateWeightedAverage(sumStars, leveling, sumCategories) {
-  return (
+  const weightedAverage =
     WEIGHT_LEVEL_SINERGY_BEETWEEN_CARDS * leveling +
     WEIGHT_LEVEL_STAPLE_USING_FOR_CARDS * sumStars +
-    sumCategories
-  );
+    sumCategories;
+
+  return Math.max(0, weightedAverage);
 }
 
 async function getRelatedCardsInDecks(

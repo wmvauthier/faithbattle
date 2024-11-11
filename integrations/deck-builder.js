@@ -244,6 +244,9 @@ async function updateAnalysisFromDeck() {
   generateStyleSelect();
 
   filterResults();
+
+  deck = await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
+
 }
 
 async function generateDeck() {
