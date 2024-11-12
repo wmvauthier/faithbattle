@@ -99,6 +99,8 @@ async function updateAnalysisFromDeck() {
       sumStars += parseFloat(card.stars) / deck.cards.length;
     });
 
+    deck = await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
+    
     const elementsToUpdate = {
       tag_deckName: deck.name,
 
@@ -244,9 +246,7 @@ async function updateAnalysisFromDeck() {
   generateStyleSelect();
 
   filterResults();
-
-  deck = await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
-
+  
 }
 
 async function generateDeck() {

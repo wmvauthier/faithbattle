@@ -23,23 +23,23 @@ const WEIGHT_LEVEL_ADICTION_FOR_CATEGORY = 0.05;
 const WEIGHT_LEVEL_EQUAL_FOR_CATEGORY = 0.05;
 const WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY = 0.05;
 const WEIGHT_LEVEL_ADICTION_FOR_EXCLUSIVE_CATEGORY = 0.005;
-const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY = 0.30;
+const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY = 0.3;
 
 const WEIGHT_LEVEL_ADICTION_FOR_COUNT = 0.05;
-const WEIGHT_LEVEL_EQUAL_FOR_COUNT = 0.00;
-const WEIGHT_LEVEL_REDUCTION_FOR_COUNT = 0.10;
+const WEIGHT_LEVEL_EQUAL_FOR_COUNT = 0.0;
+const WEIGHT_LEVEL_REDUCTION_FOR_COUNT = 0.1;
 const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_COUNT = 0.05;
 
 const WEIGHT_LEVEL_ADICTION_FOR_COST = 0.05;
-const WEIGHT_LEVEL_EQUAL_FOR_COST = 0.00;
-const WEIGHT_LEVEL_REDUCTION_FOR_COST = 0.10;
+const WEIGHT_LEVEL_EQUAL_FOR_COST = 0.0;
+const WEIGHT_LEVEL_REDUCTION_FOR_COST = 0.1;
 
 const WEIGHT_LEVEL_ADICTION_FOR_QTD = 0.05;
-const WEIGHT_LEVEL_EQUAL_FOR_QTD = 0.00;
+const WEIGHT_LEVEL_EQUAL_FOR_QTD = 0.0;
 const WEIGHT_LEVEL_REDUCTION_FOR_QTD = 0.25;
 
 const WEIGHT_LEVEL_ADICTION_FOR_STRENGHT_AND_RESISTANCE = 0.25;
-const WEIGHT_LEVEL_EQUAL_FOR_STRENGHT_AND_RESISTANCE = 0.10;
+const WEIGHT_LEVEL_EQUAL_FOR_STRENGHT_AND_RESISTANCE = 0.1;
 const WEIGHT_LEVEL_REDUCTION_FOR_STRENGHT_AND_RESISTANCE = 0.25;
 
 const CACHE_DURATION = 1000; // 24 horas
@@ -349,7 +349,9 @@ async function calculateStarsFromDeck(
     console.log(stat + " -> " + comparisonType + " -> " + difference);
 
     if (comparisonType === "higher") {
-      sum += WEIGHT_LEVEL_ADICTION_FOR_STRENGHT_AND_RESISTANCE * Math.abs(difference); // Adiciona diferença se for maior
+      sum +=
+        WEIGHT_LEVEL_ADICTION_FOR_STRENGHT_AND_RESISTANCE *
+        Math.abs(difference); // Adiciona diferença se for maior
     } else if (comparisonType === "equal") {
       sum += WEIGHT_LEVEL_EQUAL_FOR_STRENGHT_AND_RESISTANCE; // Não muda o sum se for igual
     } else if (comparisonType === "lower") {
@@ -397,9 +399,13 @@ async function calculateStarsFromDeck(
 
   console.log("sum -> " + sum);
 
-  selectedDeck.level = calculateWeightedAverage(sumStars, level, sum).toFixed(
-    2
+  selectedDeck.level = parseFloat(
+    calculateWeightedAverage(sumStars, level, sum).toFixed(2)
   );
+
+  selectedDeck.level = isNaN(selectedDeck.level) ? "0.00" : selectedDeck.level.toFixed(2);
+
+  console.log(level);
 
   return selectedDeck;
 }

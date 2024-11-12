@@ -496,26 +496,26 @@
     "artist": "Lucas Bird",
     "img": "img/herois/6.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "ocurrencesInSides": 3,
+    "stars": "2.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
       },
       {
         "style": "Controlador",
@@ -533,18 +533,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 67
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
       },
       {
         "archetype": "Combo",
@@ -592,35 +592,35 @@
     "artist": "Lucas Bird",
     "img": "img/herois/7.png",
     "ocurrences": 3,
-    "ocurrencesInSides": 4,
-    "stars": "2.7",
+    "ocurrencesInSides": 5,
+    "stars": "3.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 60,
+        "roundedWidth": 60,
+        "width": 61
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
       }
     ],
     "archetypePercentage": [
@@ -629,18 +629,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 75,
-        "roundedWidth": 75,
-        "width": 75
+        "rawWidth": 60,
+        "roundedWidth": 60,
+        "width": 60
       },
       {
         "archetype": "Combo",
@@ -2128,35 +2128,35 @@
     "artist": "Lucas Bird",
     "img": "img/herois/69.png",
     "ocurrences": 5,
-    "ocurrencesInSides": 7,
-    "stars": "3.9",
+    "ocurrencesInSides": 8,
+    "stars": "4.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 28.57142857142857,
-        "roundedWidth": 29,
-        "width": 30
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 38
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 57.14285714285714,
-        "roundedWidth": 57,
-        "width": 57
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
       }
     ],
     "archetypePercentage": [
@@ -2165,45 +2165,45 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 15
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 24
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 42.857142857142854,
-        "roundedWidth": 43,
-        "width": 43
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 37
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Maravilhas",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-hat-wizard",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       }
     ]
   },
