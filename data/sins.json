@@ -582,7 +582,7 @@
     "type": "Pecado",
     "subtype": "-",
     "categories": "Dano",
-    "cost": 2,
+    "cost": 3,
     "strength": 0,
     "resistence": 0,
     "effects": "Alvo",
