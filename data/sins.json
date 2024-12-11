@@ -293,6 +293,7 @@
     "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
     "type": "Pecado",
     "subtype": "-",
+    "sinergies": "60",
     "categories": "Remoção",
     "cost": 2,
     "strength": 0,

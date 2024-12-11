@@ -8,6 +8,8 @@ const URL_LEGENDARIES_JSON = "data/legendary.json";
 const WEIGHT_LEGENDARY = 100000;
 const WEIGHT_SAME = 100;
 let WEIGHT_CATEGORY = 200;
+
+const WEIGHT_DIRECT_SINERGY = 200;
 const WEIGHT_OCURRENCY_DECK = 200;
 const WEIGHT_OCURRENCY_EXTRA = 200;
 const WEIGHT_OCURRENCY_SIDEBOARD = 200;
@@ -251,9 +253,9 @@ async function calculateStarsFromDeck(
     innexistentCategories.length *
     WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY;
 
-  console.log(selectedDeck.name);
-  console.log(info);
-  console.log(analysisAverages);
+  // console.log(selectedDeck.name);
+  // console.log(info);
+  // console.log(analysisAverages);
 
   const comparisons = ["hero", "miracle", "sin", "artifact"];
 
@@ -271,7 +273,7 @@ async function calculateStarsFromDeck(
     const averageValue = analysisAverages[cost] || 0;
     const difference = deckValue - averageValue;
 
-    console.log(cost + " -> " + difference);
+    // console.log(cost + " -> " + difference);
 
     // Usar o index i para acessar a comparação correta
     if (info.comparison[comparisons[i]].cost === "higher") {
@@ -302,7 +304,7 @@ async function calculateStarsFromDeck(
     const averageCount = analysisAverages[averageQtd] || 0;
     const difference = deckCount - averageCount;
 
-    console.log(count + " -> " + difference);
+    // console.log(count + " -> " + difference);
 
     // Usar o index i para acessar a comparação correta
     if (info.comparison[comparisons[i]].count === "higher") {
@@ -346,7 +348,7 @@ async function calculateStarsFromDeck(
     const difference = deckStat - averageStat;
     const comparisonType = info.comparison.general[lastComparisonsUpper[i]];
 
-    console.log(stat + " -> " + comparisonType + " -> " + difference);
+    // console.log(stat + " -> " + comparisonType + " -> " + difference);
 
     if (comparisonType === "higher") {
       sum +=
@@ -368,7 +370,7 @@ async function calculateStarsFromDeck(
     const difference = deckStat - averageStat;
     const comparisonType = info.comparison.general[lastComparisonsLower[i]];
 
-    console.log(stat + " -> " + comparisonType + " -> " + difference);
+    // console.log(stat + " -> " + comparisonType + " -> " + difference);
 
     if (comparisonType === "higher") {
       sum -= WEIGHT_LEVEL_REDUCTION_FOR_QTD * Math.abs(difference); // Adiciona diferença se for maior
@@ -386,7 +388,7 @@ async function calculateStarsFromDeck(
     const difference = deckStat - averageStat;
     const comparisonType = info.comparison.general[lastComparisonsCost[i]];
 
-    console.log(stat + " -> " + comparisonType + " -> " + difference);
+    // console.log(stat + " -> " + comparisonType + " -> " + difference);
 
     if (comparisonType === "higher") {
       sum -= WEIGHT_LEVEL_REDUCTION_FOR_COST * Math.abs(difference); // Adiciona diferença se for maior
@@ -397,15 +399,17 @@ async function calculateStarsFromDeck(
     }
   }
 
-  console.log("sum -> " + sum);
+  // console.log("sum -> " + sum);
 
   selectedDeck.level = parseFloat(
     calculateWeightedAverage(sumStars, level, sum).toFixed(2)
   );
 
-  selectedDeck.level = isNaN(selectedDeck.level) ? "0.00" : selectedDeck.level.toFixed(2);
+  selectedDeck.level = isNaN(selectedDeck.level)
+    ? "0.00"
+    : selectedDeck.level.toFixed(2);
 
-  console.log(level);
+  // console.log(level);
 
   return selectedDeck;
 }
@@ -521,6 +525,19 @@ async function getRelatedCardsInDecks(
         selectedCard.commonNumber === card.number)
     ) {
       addCardWithWeight(card.number, WEIGHT_LEGENDARY);
+    }
+
+    let sinergies = selectedCard.sinergies?.split(",");
+
+    if (sinergies) {
+      sinergies.forEach((sinergy) => {
+        // console.log(card.number);
+        // console.log(sinergy);
+        if (card.number == sinergy) {
+          // console.log(sinergy + "->" + card.number);
+          addCardWithWeight(card.number, WEIGHT_DIRECT_SINERGY);
+        }
+      });
     }
 
     // Comparar categorias
