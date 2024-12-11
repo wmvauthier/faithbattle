@@ -5,6 +5,7 @@
     "text": "O Herói equipado é indestrutível",
     "type": "Artefato",
     "subtype": "-",
+    "sinergies": "21,46",
     "categories": "Modificação",
     "cost": 5,
     "strength": 0,

@@ -1258,6 +1258,7 @@
     "text": "Noé não pode ser alvo de milagres",
     "type": "Herói de Fé",
     "subtype": "-",
+    "sinergies": "21,22",
     "categories": "Lança",
     "cost": 1,
     "strength": 2,
