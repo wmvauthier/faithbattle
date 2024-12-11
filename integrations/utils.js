@@ -6,7 +6,7 @@ const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
 
 const WEIGHT_LEGENDARY = 100000;
-const WEIGHT_SAME = 100;
+const WEIGHT_SAME = 200;
 let WEIGHT_CATEGORY = 200;
 
 const WEIGHT_DIRECT_SINERGY = 200;
@@ -19,7 +19,9 @@ const WEIGHT_DECK_ARCHETYPE = 80;
 
 const WEIGHT_LEVEL_SINERGY_BEETWEEN_CARDS = 0.85;
 const WEIGHT_LEVEL_STAPLE_USING_FOR_CARDS = 0.15;
-const WEIGHT_LEVEL_ADICTION_FOR_REPETITION = 0.05;
+const WEIGHT_LEVEL_ADICTION_FOR_LEGENDARY_AND_EXTRA = 0.01;
+const WEIGHT_LEVEL_ADICTION_FOR_REPETITION = 0.03;
+const WEIGHT_LEVEL_REDUCTION_FOR_REPETITION = 0.06;
 
 const WEIGHT_LEVEL_ADICTION_FOR_CATEGORY = 0.05;
 const WEIGHT_LEVEL_EQUAL_FOR_CATEGORY = 0.05;
@@ -181,6 +183,74 @@ async function getDecks() {
   } else {
     return decks;
   }
+}
+
+async function getMostUsedCardsFromType(
+  decks,
+  selectedStyle,
+  selectedArchetype,
+  deckMinimumSize
+) {
+  // Criar um Map para rastrear a frequência de cada card
+  const cardFrequency = new Map();
+
+  // Iterar pelos decks, filtrando e contando frequências no mesmo passo
+  for (const deck of decks) {
+    if (
+      (!selectedStyle || deck.style === selectedStyle) &&
+      (!selectedArchetype || deck.archetype === selectedArchetype)
+    ) {
+      // Combinar todas as propriedades relevantes diretamente
+      const allCards = [deck.cards, deck.sideboard, deck.topcards];
+
+      for (const cardList of allCards) {
+        for (const card of cardList) {
+          const currentFrequency = cardFrequency.get(card) || 0;
+          cardFrequency.set(card, currentFrequency + 1);
+        }
+      }
+    }
+  }
+
+  // Ordenar os cards pelo número de aparições e pegar os mais frequentes
+  return Array.from(cardFrequency.entries())
+    .sort((a, b) => b[1] - a[1]) // Ordenar por frequência decrescente
+    .slice(0, deckMinimumSize) // Selecionar o topX mais frequentes
+    .map(([card, frequency]) => ({ card: Number(card), frequency })); // Retornar no formato desejado
+}
+
+function getRepeatedAndUniqueCards(deck) {
+  const allCardsInDeck = [...deck.cards];
+
+  // Criar um Map para contar a frequência de cada card
+  const cardFrequency = new Map();
+  allCardsInDeck.forEach((card) => {
+    cardFrequency.set(card, (cardFrequency.get(card) || 0) + 1);
+  });
+
+  // Contar os cards repetidos e únicos
+  let repeated = 0;
+  let unique = 0;
+  cardFrequency.forEach((count, card) => {
+    if (count > 1) {
+      repeated++;
+    } else {
+      // Verificar se o card é lendário
+      const cardDetails = allCards.find(legendary => legendary.number === card);
+      if (cardDetails && cardDetails.subtype === 'Lendário') {
+        // Se for lendário, desconsiderar como único
+        unique--;
+      } else {
+        unique++;
+      }
+    }
+  });
+
+  return {
+    deckName: deck.name || "Unknown", // Nome do deck para identificação
+    repeated,
+    unique,
+  };
 }
 
 async function calculateStarsFromDeck(
@@ -401,6 +471,12 @@ async function calculateStarsFromDeck(
 
   // console.log("sum -> " + sum);
 
+  let repeatsAndUniques = getRepeatedAndUniqueCards(selectedDeck, legendaries);
+
+  sum += WEIGHT_LEVEL_ADICTION_FOR_LEGENDARY_AND_EXTRA * Math.abs(selectedDeck.extra.length);
+  sum += WEIGHT_LEVEL_ADICTION_FOR_REPETITION * Math.abs(repeatsAndUniques.repeated);
+  sum -= WEIGHT_LEVEL_REDUCTION_FOR_REPETITION * Math.abs(repeatsAndUniques.unique);
+
   selectedDeck.level = parseFloat(
     calculateWeightedAverage(sumStars, level, sum).toFixed(2)
   );
@@ -531,10 +607,7 @@ async function getRelatedCardsInDecks(
 
     if (sinergies) {
       sinergies.forEach((sinergy) => {
-        // console.log(card.number);
-        // console.log(sinergy);
         if (card.number == sinergy) {
-          // console.log(sinergy + "->" + card.number);
           addCardWithWeight(card.number, WEIGHT_DIRECT_SINERGY);
         }
       });

@@ -100,7 +100,7 @@ async function updateAnalysisFromDeck() {
     });
 
     deck = await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
-    
+
     const elementsToUpdate = {
       tag_deckName: deck.name,
 
@@ -246,12 +246,23 @@ async function updateAnalysisFromDeck() {
   generateStyleSelect();
 
   filterResults();
-  
 }
 
 async function generateDeck() {
   await updateAnalysisFromDeck();
   if (deck.cards.length <= 0) {
+    let mostUsedCards = await getMostUsedCardsFromType(
+      allDecks,
+      selectedStyle,
+      selectedArchetype,
+      deckMinimumSize
+    );
+    if (mostUsedCards) {
+      mostUsedCards.forEach((card) => {
+        addCardToDeckBuilder(card.card);
+        // await wait(1);
+      });
+    }
     await completeDeck(true);
     await tuningDeck();
     await tuningDeck();
@@ -302,7 +313,6 @@ async function completeDeck(flagGenerate) {
 }
 
 async function tuningDeck() {
-
   if (deck.cards.length > 0) {
     let markerHasChanged = true;
     let counterLoop = 0;
