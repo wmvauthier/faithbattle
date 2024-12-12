@@ -194,23 +194,22 @@ async function getMostUsedCardsFromType(
   // Criar um Map para rastrear a frequência de cada card
   const cardFrequency = new Map();
 
-  // Iterar pelos decks, filtrando e contando frequências no mesmo passo
-  for (const deck of decks) {
-    if (
-      (!selectedStyle || deck.style === selectedStyle) &&
-      (!selectedArchetype || deck.archetype === selectedArchetype)
-    ) {
-      // Combinar todas as propriedades relevantes diretamente
-      const allCards = [deck.cards, deck.sideboard, deck.topcards];
+  // Filtrar decks de forma eficiente e processar os cards em lote
+  decks
+    .filter(
+      (deck) =>
+        (!selectedStyle || deck.style === selectedStyle) &&
+        (!selectedArchetype || deck.archetype === selectedArchetype)
+    )
+    .forEach((deck) => {
+      // Agrupar todas as listas de cards
+      const allCards = deck.cards.concat(deck.sideboard, deck.topcards);
 
-      for (const cardList of allCards) {
-        for (const card of cardList) {
-          const currentFrequency = cardFrequency.get(card) || 0;
-          cardFrequency.set(card, currentFrequency + 1);
-        }
+      // Contabilizar as frequências usando um único loop
+      for (const card of allCards) {
+        cardFrequency.set(card, (cardFrequency.get(card) || 0) + 1);
       }
-    }
-  }
+    });
 
   // Ordenar os cards pelo número de aparições e pegar os mais frequentes
   return Array.from(cardFrequency.entries())

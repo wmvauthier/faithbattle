@@ -568,8 +568,8 @@ async function cleanDeck() {
   while (deck.cards.length > 0) {
     const card = deck.cards[0]; // Pega a primeira carta do deck
     removeCardFromDeckBuilder(card); // Remove a carta do construtor de deck
+    await updateAnalysisFromDeck(); // Atualiza a análise do deck após a limpeza
   }
-  await updateAnalysisFromDeck(); // Atualiza a análise do deck após a limpeza
   await updateAnalysisFromDeck(); // Atualiza a análise do deck após a limpeza
   updateDeckListDOM([]);
 }
