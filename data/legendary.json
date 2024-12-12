@@ -886,42 +886,42 @@
     "strength": 2,
     "resistence": 2,
     "effects": "Entrada",
-    "number": 108,
+    "number": 118,
     "commonNumber": 46,
     "collection": "GEN",
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/lendarias/108.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 1,
-    "stars": "1.4",
+    "ocurrences": 0,
+    "ocurrencesInSides": 0,
+    "stars": "1.0",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 1
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       }
     ],
     "archetypePercentage": [
@@ -930,45 +930,45 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "archetype": "Maravilhas",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": null,
+        "roundedWidth": null,
+        "width": null
       }
     ]
   }

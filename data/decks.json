@@ -175,7 +175,7 @@
     "sideboard": [
       79,
       84,
-      116,
+      117,
       83,
       65,
       62,
@@ -560,7 +560,7 @@
   {
     "number": "9",
     "name": "Lâmina do Pacto",
-    "img": "img/milagres/116.png",
+    "img": "img/milagres/117.png",
     "style": "Controlador",
     "archetype": "Supressão",
     "active": true,
@@ -588,8 +588,8 @@
       89,
       84,
       84,
-      116,
-      116,
+      117,
+      117,
       58,
       83,
       1,
