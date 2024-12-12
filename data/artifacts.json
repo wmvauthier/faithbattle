@@ -882,8 +882,8 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/50.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "ocurrencesInSides": 1,
+    "stars": "1.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -919,9 +919,9 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
         "archetype": "Santificação",
@@ -937,9 +937,9 @@
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
       },
       {
         "archetype": "Maravilhas",
@@ -1267,8 +1267,8 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/58.png",
     "ocurrences": 4,
-    "ocurrencesInSides": 6,
-    "stars": "3.5",
+    "ocurrencesInSides": 5,
+    "stars": "3.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1284,18 +1284,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 18
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 21
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 83.33333333333334,
-        "roundedWidth": 83,
-        "width": 83
+        "rawWidth": 80,
+        "roundedWidth": 80,
+        "width": 80
       }
     ],
     "archetypePercentage": [
@@ -1304,45 +1304,45 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 32
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
       },
       {
         "archetype": "Maravilhas",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-hat-wizard",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
       }
     ]
   },
@@ -1651,35 +1651,35 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/119.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 0,
-    "stars": "1.0",
+    "ocurrencesInSides": 1,
+    "stars": "1.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
       }
     ],
     "archetypePercentage": [
@@ -1688,45 +1688,45 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
         "archetype": "Maravilhas",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-hat-wizard",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ]
   }
