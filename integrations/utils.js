@@ -4,6 +4,7 @@ const URL_MIRACLES_JSON = "data/miracles.json";
 const URL_SINS_JSON = "data/sins.json";
 const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
+const URL_DECKS_HISTORIC_JSON = "data/decks_historic.json";
 
 const WEIGHT_LEGENDARY = 100000;
 const WEIGHT_SAME = 200;
@@ -50,6 +51,7 @@ const CACHE_DURATION = 1000; // 24 horas
 
 let allCards;
 let allDecks;
+let allDecksHistoric;
 
 const isBrowser =
   typeof window !== "undefined" && typeof document !== "undefined";
@@ -61,6 +63,7 @@ if (isBrowser) {
     try {
       allCards = await getCards(); // Carrega as cartas
       allDecks = await getDecks(); // Carrega os decks
+      allDecksHistoric = await getDecksHistoric(); // Carrega os decks
       window.allJSONsLoaded = true;
     } catch (error) {
       console.error("Erro ao carregar os dados:", error);
@@ -157,6 +160,37 @@ async function getCards() {
 async function getDecks() {
   const key = "decks";
   const url = URL_DECKS_JSON;
+
+  // Paraleliza as requisições para decks e legendaries
+  const [decks, legendaries] = await Promise.all([
+    fetchOrGetFromLocalStorage(key, url),
+    fetchOrGetFromLocalStorage("legendaries", URL_LEGENDARIES_JSON),
+  ]);
+
+  // Verifica se os decks precisam ser atualizados
+  if (decks.length > 0 && !decks[0].level) {
+    const updatedDecks = await Promise.all(
+      decks.map((selectedDeck) =>
+        calculateStarsFromDeck(selectedDeck, allCards, decks, legendaries)
+      )
+    );
+
+    // Atualiza o localStorage apenas se necessário
+    if (JSON.stringify(updatedDecks) !== JSON.stringify(decks)) {
+      const now = Date.now();
+      localStorage.setItem(key, JSON.stringify(updatedDecks));
+      localStorage.setItem(`${key}_timestamp`, now);
+    }
+
+    return updatedDecks;
+  } else {
+    return decks;
+  }
+}
+
+async function getDecksHistoric() {
+  const key = "decks_historic";
+  const url = URL_DECKS_HISTORIC_JSON;
 
   // Paraleliza as requisições para decks e legendaries
   const [decks, legendaries] = await Promise.all([

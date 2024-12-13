@@ -1,0 +1,208 @@
+const CARDS_PER_PAGE = 48; // Número de cards por página
+let currentPage = 1; // Página atual
+
+document.addEventListener("DOMContentLoaded", async function () {
+  await waitForAllJSONs();
+  renderPage(currentPage);
+});
+
+async function renderPage(page) {
+  const tableBody = document.getElementById("decks-table-body");
+  tableBody.innerHTML = "";
+
+  const startIndex = (page - 1) * CARDS_PER_PAGE;
+  const endIndex = page * CARDS_PER_PAGE;
+
+  const decksToShow = allDecksHistoric.slice(startIndex, endIndex);
+
+  let rowsToAdd = [];
+
+  decksToShow.forEach((deck) => {
+
+    let badges = "";
+    let symbolStyle = "";
+    let colorStyle = "";
+    let textStyle = "";
+
+    if (deck.style == "Agressivo") {
+      symbolStyle = '<i class="fa-solid fa-hand-back-fist"></i>';
+      colorStyle = "#B22222";
+      textStyle = "#fff";
+    } else if (deck.style == "Equilibrado") {
+      symbolStyle = '<i class="fa-solid fa-hand-scissors"></i>';
+      colorStyle = "#FFD700";
+      textStyle = "#000";
+    } else if (deck.style == "Controlador") {
+      symbolStyle = '<i class="fa-solid fa-hand"></i>';
+      colorStyle = "#1E90FF";
+      textStyle = "#fff";
+    }
+
+    let symbolArchetype = "";
+    let colorArchetype = "";
+    let textArchetype = "";
+    let borderArchetype = "none"; // Valor padrão para borderArchetype
+
+    if (deck.archetype == "Batalha") {
+      symbolArchetype = '<i class="fa-solid fa-hand-fist"></i>'; // Espadas cruzadas (ícone colorido via FontAwesome)
+      colorArchetype = "#FF8C00"; // Laranja
+      textArchetype = "#000"; // Preto
+    } else if (deck.archetype == "Santificação") {
+      symbolArchetype = '<i class="fa-solid fa-droplet"></i>'; // Coroa (ícone colorido via FontAwesome)
+      colorArchetype = "whitesmoke"; // Branco esfumaçado
+      textArchetype = "#000"; // Preto
+      borderArchetype = "0.5px solid black"; // Borda preta fina
+    } else if (deck.archetype == "Combo") {
+      symbolArchetype = '<i class="fa-solid fa-gears"></i>'; // Engrenagens (ícone colorido via FontAwesome)
+      colorArchetype = "#800080"; // Roxo
+      textArchetype = "#fff"; // Branco
+    } else if (deck.archetype == "Maravilhas") {
+      symbolArchetype = '<i class="fa-solid fa-hat-wizard"></i>'; // Estrela (ícone colorido via FontAwesome)
+      colorArchetype = "#32CD32"; // Verde claro
+      textArchetype = "#000"; // Branco
+    } else if (deck.archetype == "Supressão") {
+      symbolArchetype = '<i class="fa-solid fa-ban"></i>'; // Mão controlando (ícone colorido via FontAwesome)
+      colorArchetype = "#000000"; // Preto
+      textArchetype = "#fff"; // Branco
+    }
+
+    badges =
+      badges +
+      '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
+      'style="color: #fff; font-size: 10px; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
+      '<i style="color: #FFD700; font-size: 10px;" class="fa-solid fa-star"></i> ' +
+      deck.level +
+      "</span>";
+
+    badges =
+      badges +
+      '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
+      'style="color: ' +
+      textStyle +
+      "; background-color: " +
+      colorStyle +
+      ' !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
+      symbolStyle +
+      " </span>";
+
+    badges =
+      badges +
+      '<span class="badge rounded-pill mx-1 text-bg-secondary" ' +
+      'style="color: ' +
+      textArchetype +
+      "; background-color: " +
+      colorArchetype +
+      " !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px; border: " +
+      borderArchetype +
+      '"> ' +
+      symbolArchetype +
+      " </span>";
+
+    // arrKeywords.forEach((keyword) => {
+    //   badges =
+    //     badges +
+    //     '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
+    //     'style="color: #fff; background-color: #6C757D !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> #' +
+    //     keyword +
+    //     " </span>";
+    // });
+
+    const row = document.createElement("div");
+    row.innerHTML = `
+      <div class="tile">
+          <div class="wrapper">
+
+              <div class="banner-img" style="width: 100%; height: 170px; overflow: hidden; position: relative;">
+                <img src="${deck.img}" alt="."
+                    style="width: 100%; height: 100%; transform: scale(2.8); object-fit: cover; position: absolute; top: 100px; left: 0;">
+              </div>
+
+              <div class="stats">
+                <div style="width:100%; text-align: center;">
+
+                  <b style="text-align:center; padding-bottom: 15px; font-size: 10px;">${deck.name.toUpperCase()}</b><br>
+
+                  ${badges}
+
+                </div>  
+
+              </div>
+
+          </div>
+      </div> 
+    `;
+
+    row.addEventListener("click", (event) => {
+      if (!event.target.classList.contains("copy-button")) {
+        getDeckDetails(deck.number);
+      }
+    });
+
+    row.style.cursor = "pointer";
+    row.style.paddingLeft = "5px";
+    row.style.paddingRight = "5px";
+
+    row.classList.add(
+      "col-xl-1",
+      "col-lg-2",
+      "col-md-6",
+      "col-sm-6",
+      "col-xs-6"
+    );
+
+    row.level = deck.level;
+
+    rowsToAdd.push(row);
+  });
+
+  rowsToAdd.sort((a, b) => b.level - a.level);
+  rowsToAdd.forEach((row) => {
+    tableBody.appendChild(row);
+  });
+
+  renderPagination(page);
+}
+
+function renderPagination(currentPage) {
+  const totalPages = Math.ceil(allDecksHistoric.length / CARDS_PER_PAGE);
+  const paginationContainer = document.getElementById("pagination");
+
+  paginationContainer.innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    const pageButton = document.createElement("button");
+    pageButton.textContent = i;
+    if (i === currentPage) {
+      pageButton.classList.add("active");
+    }
+    pageButton.addEventListener("click", () => {
+      currentPage = i;
+      renderPage(currentPage);
+    });
+    paginationContainer.appendChild(pageButton);
+  }
+}
+
+async function copyDeckHash(deckCards, button) {
+  let hashedString = await cryptoDeck(deckCards);
+
+  navigator.clipboard
+    .writeText(hashedString)
+    .then(() => {
+      console.log("Deck copiado para a área de transferência:", hashedString);
+
+      button.textContent = "Deck Copiado";
+      button.classList.add("copied");
+      button.disabled = true;
+
+      setTimeout(() => {
+        button.textContent = "Copiar Deck";
+        button.classList.remove("copied");
+        button.disabled = false;
+      }, 5000); // Voltar ao estado normal após 3 segundos
+    })
+    .catch((err) => {
+      console.error("Erro ao copiar o hash:", err);
+      alert("Erro ao copiar o hash!");
+    });
+}

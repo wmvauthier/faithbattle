@@ -114,7 +114,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="section-title">
-                                        <h4>Lista de Cards</h4>
+                                        <h4>Decks do Meta</h4>
                                     </div>
                                 </div>
 
@@ -133,10 +133,6 @@
 
                             </div>
                         </div>
-
-                        <style>
-
-                        </style>
 
                         <div class="row">
                             <div class="col-lg-12 col-md-9 col-sm-9">
@@ -173,18 +169,160 @@
 
                         </div>
 
-                        <div style="margin-top: 30px;" id="products-container" class="row"></div>
-                        <div id="pagination-container"></div>
+                        <style>
+                            .pagination {
+                                margin: 20px auto;
+                                text-align: center;
+                            }
+
+                            .pagination button {
+                                background-color: #e53637;
+                                color: #fff;
+                                border: none;
+                                padding: 8px 16px;
+                                margin: 0 5px;
+                                cursor: pointer;
+                            }
+
+                            .pagination button:hover {
+                                background-color: #e5363795;
+                            }
+
+                            .pagination button.active {
+                                background-color: #e5363795;
+                            }
+
+                            .copied {
+                                background-color: #4CAF50;
+                                color: white;
+                                cursor: not-allowed;
+                            }
+
+                            .tile {
+                                width: 100%;
+                                background: #fff;
+                                border-radius: 5px;
+                                box-shadow: 0px 2px 3px -1px rgba(151, 171, 187, 0.7);
+                                float: left;
+                                transform-style: preserve-3d;
+                                margin: 10px 5px;
+
+                            }
+
+                            .banner-img {
+                                padding: 5px 5px 0;
+                            }
+
+                            .banner-img img {
+                                width: 100%;
+                                border-radius: 5px;
+                            }
+
+                            .dates {
+                                border: 1px solid #ebeff2;
+                                border-radius: 5px;
+                                padding: 20px 0px;
+                                margin: 10px 20px;
+                                font-size: 16px;
+                                color: #5aadef;
+                                font-weight: 600;
+                                overflow: auto;
+                            }
+
+                            .dates div {
+                                float: left;
+                                width: 50%;
+                                text-align: center;
+                                position: relative;
+                            }
+
+                            .dates strong,
+                            .stats strong {
+                                display: block;
+                                color: #adb8c2;
+                                font-size: 11px;
+                                font-weight: 700;
+                            }
+
+                            .dates span {
+                                width: 1px;
+                                height: 40px;
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                background: #ebeff2;
+                            }
+
+                            .stats {
+                                /* border-top: 1px solid #ebeff2; */
+                                background: whitesmoke;
+                                overflow: auto;
+                                padding: 15px 0;
+                                font-size: 16px;
+                                color: #59687f;
+                                font-weight: 600;
+                                border-radius: 0 0 5px 5px;
+                            }
+
+                            .stats div {
+                                border-right: 1px solid rgb(245, 245, 245);
+                                width: 33.33333%;
+                                float: left;
+                                text-align: center
+                            }
+
+                            .stats div:nth-of-type(3) {
+                                border: none;
+                            }
+
+                            div.footer {
+                                text-align: right;
+                                position: relative;
+                                margin: 20px 5px;
+                            }
+
+                            div.footer a.Cbtn {
+                                padding: 10px 25px;
+                                background-color: #DADADA;
+                                color: #666;
+                                margin: 10px 2px;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                text-decoration: none;
+                                border-radius: 3px;
+                            }
+
+                            div.footer a.Cbtn-primary {
+                                background-color: #5AADF2;
+                                color: #FFF;
+                            }
+
+                            div.footer a.Cbtn-primary:hover {
+                                background-color: #7dbef5;
+                            }
+
+                            div.footer a.Cbtn-danger {
+                                background-color: #fc5a5a;
+                                color: #FFF;
+                            }
+
+                            div.footer a.Cbtn-danger:hover {
+                                background-color: #fd7676;
+                            }
+                        </style>
+
+                        <!-- FontAwesome -->
+                        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+                            rel="stylesheet">
+
+                        <div id="decks-table-body" class="card-deck row">
+
+                        </div>
+
+                        <div class="pagination" id="pagination"></div>
 
                     </div>
-                    <!-- <div class="product__pagination">
-                        <a href="#" class="current-page">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
-                    </div> -->
+
                 </div>
 
             </div>
@@ -256,7 +394,8 @@
 
     <script src="integrations/utils.js"></script>
     <script src="integrations/analysis.js"></script>
-    <script src="integrations/card-list.js"></script>
+    <script src="integrations/cryptoDeck.js"></script>
+    <script src="integrations/deck-meta.js"></script>
 
 </body>
 

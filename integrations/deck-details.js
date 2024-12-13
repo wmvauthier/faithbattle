@@ -121,11 +121,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       // renderGraph(cardsFromDeck); // Uncomment if needed
     } else {
-      location.href = "./deck-list.html";
+      location.href = "./deck-meta.html";
     }
   } else {
-    location.href = "./deck-list.html";
+    location.href = "./deck-meta.html";
   }
+  
 });
 
 function generateCategoryItems(categoriesCount, averages, id) {
