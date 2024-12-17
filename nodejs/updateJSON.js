@@ -68,7 +68,9 @@ function calculateStylePercentages(decks) {
   return rawPercentages.map((section) => {
     const adjustment = difference > 0 ? 1 : -1; // Decide se deve adicionar ou subtrair
     const adjustedWidth =
-      difference !== 0 ? section.roundedWidth + adjustment : section.roundedWidth;
+      difference !== 0
+        ? section.roundedWidth + adjustment
+        : section.roundedWidth;
 
     difference += -adjustment; // Diminui a diferença ajustada
 
@@ -180,14 +182,14 @@ async function updateCards(cardsArray) {
         });
 
         card.ocurrences = getOccurrencesInDecks(card.number, relatedDecks);
-        card.ocurrencesInSides = getOccurrencesInSides(card.number, relatedDecks);
+        card.ocurrencesInSides = getOccurrencesInSides(
+          card.number,
+          relatedDecks
+        );
         card.stars = scaleToFive(
           (card.ocurrencesInSides / decksObj.length) * 100,
           card.ocurrencesInSides
         );
-
-        card.stylePercentage = calculateStylePercentages(relatedDecks);
-        card.archetypePercentage = calculateArchetypePercentages(relatedDecks);
 
       });
 

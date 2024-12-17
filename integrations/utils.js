@@ -24,6 +24,8 @@ const WEIGHT_LEVEL_ADICTION_FOR_LEGENDARY_AND_EXTRA = 0.01;
 const WEIGHT_LEVEL_ADICTION_FOR_REPETITION = 0.03;
 const WEIGHT_LEVEL_REDUCTION_FOR_REPETITION = 0.06;
 
+const WEIGHT_LEVEL_ADICTION_FOR_PRIZES = 0.01;
+
 const WEIGHT_LEVEL_ADICTION_FOR_CATEGORY = 0.05;
 const WEIGHT_LEVEL_EQUAL_FOR_CATEGORY = 0.05;
 const WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY = 0.05;
@@ -269,8 +271,10 @@ function getRepeatedAndUniqueCards(deck) {
       repeated++;
     } else {
       // Verificar se o card é lendário
-      const cardDetails = allCards.find(legendary => legendary.number === card);
-      if (cardDetails && cardDetails.subtype === 'Lendário') {
+      const cardDetails = allCards.find(
+        (legendary) => legendary.number === card
+      );
+      if (cardDetails && cardDetails.subtype === "Lendário") {
         // Se for lendário, desconsiderar como único
         unique--;
       } else {
@@ -306,11 +310,14 @@ async function calculateStarsFromDeck(
 
   // Paralelizar cálculo de estrelas
   const cardStarsPromises = cardsFromDeckWithExtra.map((card) => {
-    const scaledStars = scaleToFive(
-      (card.ocurrencesInSides / deckCount) * 100,
-      card.ocurrencesInSides
-    );
-    card.stars = scaledStars;
+    let scaledStars = card.stars;
+    if (!card.stars) {
+      scaledStars = scaleToFive(
+        (card.ocurrencesInSides / deckCount) * 100,
+        card.ocurrencesInSides
+      );
+      card.stars = scaledStars;
+    }
     sumStars += parseFloat(scaledStars) / deckLength;
   });
 
@@ -506,9 +513,13 @@ async function calculateStarsFromDeck(
 
   let repeatsAndUniques = getRepeatedAndUniqueCards(selectedDeck, legendaries);
 
-  sum += WEIGHT_LEVEL_ADICTION_FOR_LEGENDARY_AND_EXTRA * Math.abs(selectedDeck.extra.length);
-  sum += WEIGHT_LEVEL_ADICTION_FOR_REPETITION * Math.abs(repeatsAndUniques.repeated);
-  sum -= WEIGHT_LEVEL_REDUCTION_FOR_REPETITION * Math.abs(repeatsAndUniques.unique);
+  sum +=
+    WEIGHT_LEVEL_ADICTION_FOR_LEGENDARY_AND_EXTRA *
+    Math.abs(selectedDeck.extra.length);
+  sum +=
+    WEIGHT_LEVEL_ADICTION_FOR_REPETITION * Math.abs(repeatsAndUniques.repeated);
+  sum -=
+    WEIGHT_LEVEL_REDUCTION_FOR_REPETITION * Math.abs(repeatsAndUniques.unique);
 
   selectedDeck.level = parseFloat(
     calculateWeightedAverage(sumStars, level, sum).toFixed(2)

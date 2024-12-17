@@ -2,7 +2,7 @@
   {
     "name": "Arca de Noé",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Herói equipado é indestrutível",
+    "text": "",
     "type": "Artefato",
     "subtype": "-",
     "sinergies": "21,46",
@@ -99,7 +99,7 @@
   {
     "name": "Espada do Espírito",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Herói equipado ganha +1/+0 e não pode ser bloqueado",
+    "text": "Esta carta conta como uma das seis peças da Armadura de Deus mencionada em Efésios 6. Como Artefato Equipável, este artefato entra diretamente na sua Zona de Preparação e não pode ser avançado para a Zona de Batalha sem estar equipado a um Herói. O Herói equipado recebe +1 de Ataque como efeito estático e não pode ser bloqueado normalmente ao ser declarado como atacante, persistindo estes efeitos enquanto a Espada do Espírito estiver anexada a ele.",
     "type": "Artefato",
     "subtype": "Lendário",
     "categories": "Equipamento;Amplificação;Modificação;Evasão",
@@ -195,7 +195,7 @@
   {
     "name": "Escudo da Fé",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Herói equipado ganha +0/+2",
+    "text": "Quando Escudo da Fé está equipado a um Herói, ele recebe +0/+2, aumentando sua resistência em 2 pontos, mas sem alterar seu poder. Isso significa que o Herói equipado pode suportar mais dano antes de ser destruído. Se o Escudo da Fé for desanexado ou destruído, o bônus de resistência é perdido imediatamente.",
     "type": "Artefato",
     "subtype": "Lendário",
     "categories": "Equipamento;Amplificação",
@@ -484,7 +484,7 @@
   {
     "name": "Arca da Aliança",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Todos os heróis na zona de batalha sob seu controle ganham +1/+1. A Arca entra direto na zona de batalha.",
+    "text": "Como Artefato Não-Equipável, este artefato entra diretamente na sua Zona de Batalha e não pode ser recuado normalmente para a Zona de Preparação. Todos os Heróis na sua Zona de Batalha recebem +1 de Ataque e +1 de Defesa como efeito estático, persistindo enquanto Arca da Aliança permanecer na sua Zona de Batalha. Heróis que entrarem na sua Zona de Batalha após a Arca também receberão o bônus.",
     "type": "Artefato",
     "subtype": "-",
     "categories": "Amplificação",
@@ -1356,7 +1356,7 @@
     "cost": 2,
     "strength": 0,
     "resistence": 0,
-    "effects": "Global",
+    "effects": "Equipável",
     "number": 59,
     "collection": "GEN",
     "date": "2024-10-01",
