@@ -37,6 +37,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     allDecks
   ).slice(0, 10);
 
+  card.rulings = getRulingsByTypeAndSubtype(card.type, card.subtype);
+
+  console.log(card);
+
   updateDOMElements(card, cardStatus);
   updateSimilarCardsDOM(similarCardDetails, similarCards);
   updateRelatedDecks(relatedDecks);
@@ -50,7 +54,7 @@ function updateDOMElements(card, cardStatus) {
   const elementsToUpdate = {
     tag_cardName: card.name.toUpperCase(),
     tag_cardFlavor: card.flavor,
-    tag_cardText: card.text,
+    tag_cardText: `${card.rulings}<br><br>${card.text}`, // Quebra de linha com <br>
     tag_cardType: card.type,
     tag_cardCategories: card.categories.split(";").join("; "),
     tag_cardCost: String.fromCharCode(10121 + card.cost),
@@ -64,7 +68,13 @@ function updateDOMElements(card, cardStatus) {
     tag_cardStars: card.stars,
     tag_cardOcurrences:
       " " + Math.floor((card.ocurrences / allDecks.length) * 100, 2) + " %",
-    tag_cardOcurrencesInSides: " " + Math.floor((((card.ocurrencesInSides - card.ocurrences)) / allDecks.length) * 100, 2) + " %",
+    tag_cardOcurrencesInSides:
+      " " +
+      Math.floor(
+        ((card.ocurrencesInSides - card.ocurrences) / allDecks.length) * 100,
+        2
+      ) +
+      " %",
   };
 
   for (const [id, value] of Object.entries(elementsToUpdate)) {
@@ -74,6 +84,12 @@ function updateDOMElements(card, cardStatus) {
         element.src = value;
       } else if (id === "tag_cardStars") {
         element.innerHTML = updateStars(card.stars); // Atualizar as estrelas
+      } else if (id === "tag_cardText") {
+        // Combinar rulings como array e texto principal
+        const rulingsHtml = card.rulings
+          .map((ruling) => `${ruling}<br><br>`)
+          .join("");
+        element.innerHTML = `${rulingsHtml}${card.text}`;
       } else {
         element.textContent = value;
       }

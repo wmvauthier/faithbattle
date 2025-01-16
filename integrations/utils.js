@@ -4,6 +4,7 @@ const URL_MIRACLES_JSON = "data/miracles.json";
 const URL_SINS_JSON = "data/sins.json";
 const URL_ARTIFACTS_JSON = "data/artifacts.json";
 const URL_LEGENDARIES_JSON = "data/legendary.json";
+const URL_RULINGS_JSON = "data/rulings.json";
 const URL_DECKS_HISTORIC_JSON = "data/decks_historic.json";
 
 const WEIGHT_LEGENDARY = 100000;
@@ -54,22 +55,28 @@ const CACHE_DURATION = 1000; // 24 horas
 let allCards;
 let allDecks;
 let allDecksHistoric;
+let allRulings;
 
 const isBrowser =
   typeof window !== "undefined" && typeof document !== "undefined";
 
 if (isBrowser) {
   document.addEventListener("DOMContentLoaded", async function () {
+
     window.allJSONsLoaded = false;
 
     try {
+
       allCards = await getCards(); // Carrega as cartas
       allDecks = await getDecks(); // Carrega os decks
       allDecksHistoric = await getDecksHistoric(); // Carrega os decks
+      allRulings = await getRulings(); // Carrega os rulings
       window.allJSONsLoaded = true;
+
     } catch (error) {
       console.error("Erro ao carregar os dados:", error);
     }
+
   });
 } else {
   // Código específico para Node.js
@@ -219,6 +226,25 @@ async function getDecksHistoric() {
   } else {
     return decks;
   }
+}
+
+async function getRulings() {
+  try {
+    const [rulings] = await Promise.all([
+      fetchOrGetFromLocalStorage("rulings", URL_RULINGS_JSON)
+    ]);
+
+    return [...rulings];
+  } catch (error) {
+    console.error("Error fetching cards:", error);
+    return []; // Retorna um array vazio em caso de erro.
+  }
+}
+
+function getRulingsByTypeAndSubtype(type, subtype) {
+  return allRulings
+      .filter(ruling => ruling.type === type && ruling.subtype === subtype)
+      .map(ruling => ruling.ruling);
 }
 
 async function getMostUsedCardsFromType(

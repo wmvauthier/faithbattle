@@ -75,61 +75,6 @@
   },
   {
     "number": "2",
-    "name": "Exator de Fé",
-    "img": "img/milagres/20.png",
-    "style": "Agressivo",
-    "archetype": "Batalha",
-    "active": true,
-    "cards": [
-      60,
-      60,
-      10,
-      10,
-      5,
-      5,
-      71,
-      71,
-      61,
-      61,
-      2,
-      1,
-      65,
-      65,
-      23,
-      42,
-      42,
-      13,
-      13,
-      18,
-      18,
-      20,
-      20,
-      73,
-      73,
-      87,
-      87,
-      83,
-      83,
-      90,
-      90
-    ],
-    "extra": [
-      52,
-      53
-    ],
-    "sideboard": [],
-    "topcards": [
-      5,
-      10,
-      6,
-      61,
-      13,
-      1
-    ],
-    "sabedorias": 10
-  },
-  {
-    "number": "3",
     "name": "Tempestade do Céu",
     "img": "img/herois/3.png",
     "style": "Equilibrado",
@@ -203,7 +148,7 @@
     "sabedorias": 10
   },
   {
-    "number": "4",
+    "number": "3",
     "name": "Legends",
     "img": "img/lendarias/95.png",
     "style": "Equilibrado",
@@ -281,7 +226,7 @@
     "sabedorias": 10
   },
   {
-    "number": "5",
+    "number": "4",
     "name": "Batedores de Jericó",
     "img": "img/herois/61.png",
     "style": "Equilibrado",
@@ -290,7 +235,8 @@
     "cards": [
       60,
       60,
-      10,10,
+      10,
+      10,
       5,
       12,
       12,
@@ -349,7 +295,7 @@
     "sabedorias": 10
   },
   {
-    "number": "6",
+    "number": "5",
     "name": "Nascidos do Éden",
     "img": "img/herois/60.png",
     "style": "Agressivo",
@@ -393,7 +339,26 @@
       112,
       113
     ],
-    "sideboard": [],
+    "sideboard": [
+      45,
+      2,
+      46,
+      92,
+      6,
+      47,
+      51,
+      79,
+      84,
+      85,
+      80,
+      48,
+      115,
+      117,
+      23,
+      58,
+      98,
+      89
+    ],
     "topcards": [
       5,
       10,
@@ -405,7 +370,7 @@
     "sabedorias": 10
   },
   {
-    "number": "7",
+    "number": "6",
     "name": "Firme Fundamento",
     "img": "img/milagres/76.png",
     "style": "Controlador",
@@ -481,7 +446,7 @@
     "sabedorias": 10
   },
   {
-    "number": "8",
+    "number": "7",
     "name": "Zelo Imparável",
     "img": "img/herois/62.png",
     "style": "Agressivo",
@@ -558,7 +523,7 @@
     "sabedorias": 10
   },
   {
-    "number": "9",
+    "number": "8",
     "name": "Lâmina do Pacto",
     "img": "img/milagres/117.png",
     "style": "Controlador",
@@ -632,7 +597,7 @@
     "sabedorias": 10
   },
   {
-    "number": "10",
+    "number": "9",
     "name": "Fortaleza Inabalável",
     "img": "img/herois/65.png",
     "style": "Controlador",
@@ -704,7 +669,7 @@
     "sabedorias": 10
   },
   {
-    "number": "11",
+    "number": "10",
     "name": "As Minas do Rei Salomon",
     "img": "img/herois/4.png",
     "style": "Equilibrado",
@@ -746,7 +711,26 @@
       95,
       52
     ],
-    "sideboard": [],
+    "sideboard": [
+      69,
+      63,
+      60,
+      92,
+      71,
+      3,
+      65,
+      96,
+      100,
+      48,
+      117,
+      87,
+      76,
+      73,
+      80,
+      97,
+      89,
+      90
+    ],
     "topcards": [
       61,
       10,
@@ -758,7 +742,7 @@
     "sabedorias": 10
   },
   {
-    "number": "12",
+    "number": "11",
     "name": "Miracles",
     "img": "img/milagres/84.png",
     "style": "Controlador",

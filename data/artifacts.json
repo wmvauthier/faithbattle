@@ -18,7 +18,7 @@
     "img": "img/artefatos/22.png",
     "ocurrences": 0,
     "ocurrencesInSides": 3,
-    "stars": "2.3",
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -112,9 +112,9 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/artefatos/23.png",
-    "ocurrences": 4,
+    "ocurrences": 3,
     "ocurrencesInSides": 5,
-    "stars": "3.1",
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -210,7 +210,7 @@
     "img": "img/artefatos/24.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.7",
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -307,7 +307,7 @@
     "img": "img/artefatos/25.png",
     "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "stars": "1.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -403,7 +403,7 @@
     "img": "img/artefatos/26.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.7",
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -484,7 +484,7 @@
   {
     "name": "Arca da Aliança",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Como Artefato Não-Equipável, este artefato entra diretamente na sua Zona de Batalha e não pode ser recuado normalmente para a Zona de Preparação. Todos os Heróis na sua Zona de Batalha recebem +1 de Ataque e +1 de Defesa como efeito estático, persistindo enquanto Arca da Aliança permanecer na sua Zona de Batalha. Heróis que entrarem na sua Zona de Batalha após a Arca também receberão o bônus.",
+    "text": "Todos os Heróis na sua Zona de Batalha recebem +1 de Ataque e +1 de Defesa como efeito estático, persistindo enquanto Arca da Aliança permanecer na sua Zona de Batalha. Heróis que entrarem na sua Zona de Batalha após a Arca também receberão o bônus.",
     "type": "Artefato",
     "subtype": "-",
     "categories": "Amplificação",
@@ -499,7 +499,7 @@
     "img": "img/artefatos/28.png",
     "ocurrences": 1,
     "ocurrencesInSides": 3,
-    "stars": "2.3",
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -595,7 +595,7 @@
     "img": "img/artefatos/43.png",
     "ocurrences": 2,
     "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "stars": "1.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -691,7 +691,7 @@
     "img": "img/artefatos/44.png",
     "ocurrences": 2,
     "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "stars": "1.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -883,7 +883,7 @@
     "img": "img/artefatos/50.png",
     "ocurrences": 1,
     "ocurrencesInSides": 1,
-    "stars": "1.4",
+    "stars": "1.5",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -980,7 +980,7 @@
     "img": "img/artefatos/55.png",
     "ocurrences": 0,
     "ocurrencesInSides": 3,
-    "stars": "2.3",
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1076,7 +1076,7 @@
     "img": "img/artefatos/56.png",
     "ocurrences": 3,
     "ocurrencesInSides": 5,
-    "stars": "3.1",
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1172,7 +1172,7 @@
     "img": "img/artefatos/57.png",
     "ocurrences": 1,
     "ocurrencesInSides": 3,
-    "stars": "2.3",
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1267,8 +1267,8 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/58.png",
     "ocurrences": 4,
-    "ocurrencesInSides": 5,
-    "stars": "3.1",
+    "ocurrencesInSides": 6,
+    "stars": "3.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1364,7 +1364,7 @@
     "img": "img/artefatos/59.png",
     "ocurrences": 2,
     "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "stars": "1.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1459,8 +1459,8 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/97.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 1,
-    "stars": "1.4",
+    "ocurrencesInSides": 2,
+    "stars": "1.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1555,8 +1555,8 @@
     "artist": "Lucas Bird",
     "img": "img/artefatos/98.png",
     "ocurrences": 2,
-    "ocurrencesInSides": 4,
-    "stars": "2.7",
+    "ocurrencesInSides": 5,
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1652,7 +1652,7 @@
     "img": "img/artefatos/119.png",
     "ocurrences": 0,
     "ocurrencesInSides": 1,
-    "stars": "1.4",
+    "stars": "1.5",
     "stylePercentage": [
       {
         "style": "Agressivo",

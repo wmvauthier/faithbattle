@@ -16,8 +16,8 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/herois/1.png",
-    "ocurrences": 10,
-    "ocurrencesInSides": 12,
+    "ocurrences": 9,
+    "ocurrencesInSides": 11,
     "stars": "5.0",
     "stylePercentage": [
       {
@@ -112,9 +112,9 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/herois/2.png",
-    "ocurrences": 2,
+    "ocurrences": 1,
     "ocurrencesInSides": 5,
-    "stars": "3.1",
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -209,8 +209,8 @@
     "artist": "Lucas Bird",
     "img": "img/herois/3.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 3,
-    "stars": "2.3",
+    "ocurrencesInSides": 4,
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -307,7 +307,7 @@
     "img": "img/herois/4.png",
     "ocurrences": 3,
     "ocurrencesInSides": 3,
-    "stars": "2.3",
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -402,8 +402,8 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/herois/5.png",
-    "ocurrences": 11,
-    "ocurrencesInSides": 12,
+    "ocurrences": 10,
+    "ocurrencesInSides": 11,
     "stars": "5.0",
     "stylePercentage": [
       {
@@ -499,8 +499,8 @@
     "artist": "Lucas Bird",
     "img": "img/herois/6.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 3,
-    "stars": "2.3",
+    "ocurrencesInSides": 4,
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -596,7 +596,7 @@
     "img": "img/herois/7.png",
     "ocurrences": 3,
     "ocurrencesInSides": 5,
-    "stars": "3.1",
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -693,7 +693,7 @@
     "img": "img/herois/8.png",
     "ocurrences": 3,
     "ocurrencesInSides": 3,
-    "stars": "2.3",
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -789,7 +789,7 @@
     "img": "img/herois/9.png",
     "ocurrences": 0,
     "ocurrencesInSides": 3,
-    "stars": "2.3",
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -884,9 +884,9 @@
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/herois/10.png",
-    "ocurrences": 4,
-    "ocurrencesInSides": 4,
-    "stars": "2.7",
+    "ocurrences": 3,
+    "ocurrencesInSides": 3,
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -982,7 +982,7 @@
     "img": "img/herois/11.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.7",
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1078,7 +1078,7 @@
     "img": "img/herois/12.png",
     "ocurrences": 6,
     "ocurrencesInSides": 8,
-    "stars": "4.3",
+    "stars": "4.6",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1173,8 +1173,8 @@
     "artist": "Lucas Bird",
     "img": "img/herois/45.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 1,
-    "stars": "1.4",
+    "ocurrencesInSides": 2,
+    "stars": "1.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1270,8 +1270,8 @@
     "artist": "Lucas Bird",
     "img": "img/herois/46.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 1,
-    "stars": "1.4",
+    "ocurrencesInSides": 2,
+    "stars": "1.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1366,8 +1366,8 @@
     "artist": "Lucas Bird",
     "img": "img/herois/47.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 4,
-    "stars": "2.7",
+    "ocurrencesInSides": 5,
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1464,7 +1464,7 @@
     "img": "img/herois/54.png",
     "ocurrences": 1,
     "ocurrencesInSides": 4,
-    "stars": "2.7",
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1559,7 +1559,7 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/herois/60.png",
-    "ocurrences": 7,
+    "ocurrences": 6,
     "ocurrencesInSides": 10,
     "stars": "5.0",
     "stylePercentage": [
@@ -1657,7 +1657,7 @@
     "img": "img/herois/62.png",
     "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "stars": "1.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1752,8 +1752,8 @@
     "artist": "Lucas Bird",
     "img": "img/herois/63.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "ocurrencesInSides": 3,
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1849,7 +1849,7 @@
     "img": "img/herois/64.png",
     "ocurrences": 5,
     "ocurrencesInSides": 6,
-    "stars": "3.5",
+    "stars": "3.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1945,7 +1945,7 @@
     "img": "img/herois/66.png",
     "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "3.1",
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2136,8 +2136,8 @@
     "artist": "Lucas Bird",
     "img": "img/herois/69.png",
     "ocurrences": 5,
-    "ocurrencesInSides": 8,
-    "stars": "4.3",
+    "ocurrencesInSides": 9,
+    "stars": "5.0",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2233,7 +2233,7 @@
     "img": "img/herois/70.png",
     "ocurrences": 0,
     "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "stars": "1.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2328,9 +2328,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/herois/71.png",
-    "ocurrences": 4,
+    "ocurrences": 3,
     "ocurrencesInSides": 4,
-    "stars": "2.7",
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2424,9 +2424,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/herois/61.png",
-    "ocurrences": 8,
-    "ocurrencesInSides": 8,
-    "stars": "4.3",
+    "ocurrences": 7,
+    "ocurrencesInSides": 7,
+    "stars": "4.2",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2522,7 +2522,7 @@
     "img": "img/herois/67.png",
     "ocurrences": 3,
     "ocurrencesInSides": 3,
-    "stars": "2.3",
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2617,8 +2617,8 @@
     "artist": "Lucas Bird",
     "img": "img/herois/92.png",
     "ocurrences": 2,
-    "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "ocurrencesInSides": 4,
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2808,9 +2808,9 @@
     "date": "2024-10-01",
     "artist": "Lucas Bird",
     "img": "img/herois/65.png",
-    "ocurrences": 3,
+    "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "3.1",
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
