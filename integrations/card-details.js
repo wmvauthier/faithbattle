@@ -37,9 +37,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     allDecks
   ).slice(0, 10);
 
-  card.rulings = getRulingsByTypeAndSubtype(card.type, card.subtype);
-
-  console.log(card);
+  card.rulings = getRulingsFromCard(card.type, card.subtype, card.categories);
 
   updateDOMElements(card, cardStatus);
   updateSimilarCardsDOM(similarCardDetails, similarCards);

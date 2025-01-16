@@ -1,7 +1,23 @@
 [
     {
+        "subtype": "Lendário",
+        "ruling": "Ruling de Lendário."
+    },{
         "type": "Artefato",
         "subtype": "-",
         "ruling": "Como Artefato Não-Equipável, este artefato entra diretamente na sua Zona de Batalha e não pode ser recuado normalmente para a Zona de Preparação."
+    },{
+        "type": "Artefato",
+        "categories": "Equipamento",
+        "ruling": "Como Artefato Equipável, este artefato entra diretamente na sua Zona de Preparação e não pode ser avançado para a Zona de Batalha sem estar equipado a um Herói."
+    },{
+        "type": "Herói",
+        "ruling": "Ruling de Heróis."
+    },{
+        "type": "Milagre",
+        "ruling": "Ruling de Milagre."
+    },{
+        "type": "Pecado",
+        "ruling": "Ruling de Pecado."
     }
 ]

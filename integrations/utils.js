@@ -62,21 +62,17 @@ const isBrowser =
 
 if (isBrowser) {
   document.addEventListener("DOMContentLoaded", async function () {
-
     window.allJSONsLoaded = false;
 
     try {
-
       allCards = await getCards(); // Carrega as cartas
       allDecks = await getDecks(); // Carrega os decks
       allDecksHistoric = await getDecksHistoric(); // Carrega os decks
       allRulings = await getRulings(); // Carrega os rulings
       window.allJSONsLoaded = true;
-
     } catch (error) {
       console.error("Erro ao carregar os dados:", error);
     }
-
   });
 } else {
   // Código específico para Node.js
@@ -231,7 +227,7 @@ async function getDecksHistoric() {
 async function getRulings() {
   try {
     const [rulings] = await Promise.all([
-      fetchOrGetFromLocalStorage("rulings", URL_RULINGS_JSON)
+      fetchOrGetFromLocalStorage("rulings", URL_RULINGS_JSON),
     ]);
 
     return [...rulings];
@@ -241,11 +237,62 @@ async function getRulings() {
   }
 }
 
-function getRulingsByTypeAndSubtype(type, subtype) {
-  return allRulings
-      .filter(ruling => ruling.type === type && ruling.subtype === subtype)
+function getRulingsFromCard(type, subtype, category) {
+
+    return allRulings
+      .filter(ruling => {
+        // Dividir subtype e categories em arrays
+        const rulingSubtypes = ruling.subtype?.split(";").map(s => s.trim());
+        const rulingCategories = ruling.categories?.split(";").map(c => c.trim());
+        const cardCategories = category?.split(";").map(c => c.trim());
+  
+        // Caso 1: Só contém o type e é igual ao type do card
+        if (ruling.type && (!ruling.subtype) && !ruling.categories) {
+          return ruling.type === type;
+        }
+  
+        // Caso 2: Contém type e subtype, ambos devem coincidir
+        if (ruling.type && ruling.subtype && ruling.subtype !== "-" && !ruling.categories) {
+          return ruling.type === type && rulingSubtypes?.includes(subtype);
+        }
+  
+        // Caso 3: Contém type e categories, ambos devem coincidir
+        if (ruling.type && (!ruling.subtype) && ruling.categories) {
+          return ruling.type === type && cardCategories?.some(c => rulingCategories?.includes(c));
+        }
+  
+        // Caso 4: Contém subtype e categories, ambos devem coincidir
+        if ((!ruling.type) && ruling.subtype && ruling.categories) {
+          return (
+            rulingSubtypes?.includes(subtype) &&
+            cardCategories?.some(c => rulingCategories?.includes(c))
+          );
+        }
+  
+        // Caso 5: Contém type, subtype e categories, todos devem coincidir
+        if (ruling.type && ruling.subtype && ruling.categories) {
+          return (
+            ruling.type === type &&
+            rulingSubtypes?.includes(subtype) &&
+            cardCategories?.some(c => rulingCategories?.includes(c))
+          );
+        }
+  
+        // Caso 6: Só contém subtype e é igual ao subtype do card
+        if ((!ruling.type) && ruling.subtype && (!ruling.categories)) {
+          return rulingSubtypes?.includes(subtype);
+        }
+  
+        // Caso 7: Só contém categories e é igual ao categories do card
+        if ((!ruling.type) && (!ruling.subtype) && ruling.categories) {
+          return cardCategories?.some(c => rulingCategories?.includes(c));
+        }
+  
+        return false; // Não cumpre nenhum dos casos
+      })
       .map(ruling => ruling.ruling);
-}
+  }
+  
 
 async function getMostUsedCardsFromType(
   decks,
