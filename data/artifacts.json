@@ -1543,7 +1543,7 @@
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
     "text": "Quando o herói equipado atacar, o jogador defensor revela a carta do topo do seu baralho e perde pontos de fé igual ao custo de sabedoria dessa carta",
     "type": "Artefato",
-    "subtype": "-",
+    "subtype": "Lendário",
     "categories": "Santificação;Modificação",
     "cost": 7,
     "strength": 0,
