@@ -56,6 +56,7 @@ let allCards;
 let allDecks;
 let allDecksHistoric;
 let allRulings;
+let rulingsChosenOption;
 
 const isBrowser =
   typeof window !== "undefined" && typeof document !== "undefined";
@@ -69,6 +70,7 @@ if (isBrowser) {
       allDecks = await getDecks(); // Carrega os decks
       allDecksHistoric = await getDecksHistoric(); // Carrega os decks
       allRulings = await getRulings(); // Carrega os rulings
+      rulingsChosenOption = localStorage.getItem(rulingsChosenOption) || true;
       window.allJSONsLoaded = true;
     } catch (error) {
       console.error("Erro ao carregar os dados:", error);
@@ -239,44 +241,70 @@ async function getRulings() {
 
 function getRulingsFromCard(type, subtype, category) {
   return allRulings
-    .filter(ruling => {
+    .filter((ruling) => {
       // Dividir os campos relevantes em arrays
-      const rulingSubtypes = ruling.subtype?.split(";").map(s => s.trim());
-      const rulingCategories = ruling.categories?.split(";").map(c => c.trim());
-      const notTypes = ruling.notType?.split(";").map(t => t.trim());
-      const notSubtypes = ruling.notSubtype?.split(";").map(s => s.trim());
-      const notCategories = ruling.notCategories?.split(";").map(c => c.trim());
-      const cardCategories = category?.split(";").map(c => c.trim());
+      const rulingSubtypes = ruling.subtype?.split(";").map((s) => s.trim());
+      const rulingCategories = ruling.categories
+        ?.split(";")
+        .map((c) => c.trim());
+      const notTypes = ruling.notType?.split(";").map((t) => t.trim());
+      const notSubtypes = ruling.notSubtype?.split(";").map((s) => s.trim());
+      const notCategories = ruling.notCategories
+        ?.split(";")
+        .map((c) => c.trim());
+      const cardCategories = category?.split(";").map((c) => c.trim());
 
       // Verificar se algum notType, notSubtype ou notCategory é inválido
       const hasInvalidType = notTypes?.includes(type);
       const hasInvalidSubtype = notSubtypes?.includes(subtype);
-      const hasInvalidCategory = cardCategories?.some(c => notCategories?.includes(c));
+      const hasInvalidCategory = cardCategories?.some((c) =>
+        notCategories?.includes(c)
+      );
 
       if (hasInvalidType || hasInvalidSubtype || hasInvalidCategory) {
         return false; // Descartar se o card tiver um type/subtype/category proibido
       }
 
       // Caso 1: Só contém o type e é igual ao type do card
-      if (ruling.type && (!ruling.subtype || ruling.subtype === "-") && !ruling.categories) {
+      if (
+        ruling.type &&
+        (!ruling.subtype || ruling.subtype === "-") &&
+        !ruling.categories
+      ) {
         return ruling.type === type;
       }
 
       // Caso 2: Contém type e subtype, ambos devem coincidir
-      if (ruling.type && ruling.subtype && ruling.subtype !== "-" && !ruling.categories) {
+      if (
+        ruling.type &&
+        ruling.subtype &&
+        ruling.subtype !== "-" &&
+        !ruling.categories
+      ) {
         return ruling.type === type && rulingSubtypes?.includes(subtype);
       }
 
       // Caso 3: Contém type e categories, ambos devem coincidir
-      if (ruling.type && (!ruling.subtype || ruling.subtype === "-") && ruling.categories) {
-        return ruling.type === type && cardCategories?.some(c => rulingCategories?.includes(c));
+      if (
+        ruling.type &&
+        (!ruling.subtype || ruling.subtype === "-") &&
+        ruling.categories
+      ) {
+        return (
+          ruling.type === type &&
+          cardCategories?.some((c) => rulingCategories?.includes(c))
+        );
       }
 
       // Caso 4: Contém subtype e categories, ambos devem coincidir
-      if ((!ruling.type || ruling.type === "-") && ruling.subtype && ruling.categories) {
+      if (
+        (!ruling.type || ruling.type === "-") &&
+        ruling.subtype &&
+        ruling.categories
+      ) {
         return (
           rulingSubtypes?.includes(subtype) &&
-          cardCategories?.some(c => rulingCategories?.includes(c))
+          cardCategories?.some((c) => rulingCategories?.includes(c))
         );
       }
 
@@ -285,23 +313,31 @@ function getRulingsFromCard(type, subtype, category) {
         return (
           ruling.type === type &&
           rulingSubtypes?.includes(subtype) &&
-          cardCategories?.some(c => rulingCategories?.includes(c))
+          cardCategories?.some((c) => rulingCategories?.includes(c))
         );
       }
 
       // Caso 6: Só contém subtype e é igual ao subtype do card
-      if ((!ruling.type || ruling.type === "-") && ruling.subtype && (!ruling.categories || ruling.categories === "-")) {
+      if (
+        (!ruling.type || ruling.type === "-") &&
+        ruling.subtype &&
+        (!ruling.categories || ruling.categories === "-")
+      ) {
         return rulingSubtypes?.includes(subtype);
       }
 
       // Caso 7: Só contém categories e é igual ao categories do card
-      if ((!ruling.type || ruling.type === "-") && (!ruling.subtype || ruling.subtype === "-") && ruling.categories) {
-        return cardCategories?.some(c => rulingCategories?.includes(c));
+      if (
+        (!ruling.type || ruling.type === "-") &&
+        (!ruling.subtype || ruling.subtype === "-") &&
+        ruling.categories
+      ) {
+        return cardCategories?.some((c) => rulingCategories?.includes(c));
       }
 
       return false; // Não cumpre nenhum dos casos
     })
-    .map(ruling => ruling.ruling);
+    .map((ruling) => ruling.ruling);
 }
 
 async function getMostUsedCardsFromType(

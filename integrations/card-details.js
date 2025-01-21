@@ -38,9 +38,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   ).slice(0, 10);
 
   card.rulings = getRulingsFromCard(card.type, card.subtype, card.categories);
-  console.log(card.type);
-  console.log(card.subtype);
-  console.log(card.categories);
 
   updateDOMElements(card, cardStatus);
   updateSimilarCardsDOM(similarCardDetails, similarCards);
@@ -55,7 +52,7 @@ function updateDOMElements(card, cardStatus) {
   const elementsToUpdate = {
     tag_cardName: card.name.toUpperCase(),
     tag_cardFlavor: card.flavor,
-    tag_cardText: `${card.rulings}<br><br>${card.text}`, // Quebra de linha com <br>
+    tag_cardText: card.text, // Quebra de linha com <br>
     tag_cardType: card.type,
     tag_cardCategories: card.categories.split(";").join("; "),
     tag_cardCost: String.fromCharCode(10121 + card.cost),
@@ -86,11 +83,21 @@ function updateDOMElements(card, cardStatus) {
       } else if (id === "tag_cardStars") {
         element.innerHTML = updateStars(card.stars); // Atualizar as estrelas
       } else if (id === "tag_cardText") {
-        // Combinar rulings como array e texto principal
-        const rulingsHtml = card.rulings
-          .map((ruling) => `${ruling}<br><br>`)
-          .join("");
-        element.innerHTML = `${rulingsHtml}${card.text}`;
+        if (rulingsChosenOption) {
+          const rulingsHtml = card.rulings
+            .map(
+              (ruling) =>
+                ruling
+                  .split(";") // Dividir a string em partes usando ";"
+                  .map((part) => `-> ${part.trim()}<br>`) // Adicionar quebra de linha após cada parte
+                  .join("") // Combinar as partes novamente
+            )
+            .join("<br>"); // Separar cada ruling com <br><br>
+
+          element.innerHTML = `<br>${rulingsHtml}<br>${card.text}`;
+        } else {
+          element.innerHTML = `<br>${card.text}`;
+        }
       } else {
         element.textContent = value;
       }
