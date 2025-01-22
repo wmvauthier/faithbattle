@@ -94,9 +94,9 @@ function updateDOMElements(card, cardStatus) {
             )
             .join("<br>"); // Separar cada ruling com <br><br>
 
-          element.innerHTML = `<br>${rulingsHtml}<br>${card.text}`;
+          element.innerHTML = `<br>${rulingsHtml}<br><b>${card.text}</b>`;
         } else {
-          element.innerHTML = `<br>${card.text}`;
+          element.innerHTML = `<br><b>${card.text}</b>`;
         }
       } else {
         element.textContent = value;
