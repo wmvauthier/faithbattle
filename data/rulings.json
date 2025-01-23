@@ -2,17 +2,17 @@
     {
         "notType": "Herói de Fé",
         "subtype": "Lendário",
-        "ruling": "Cada carta lendária permite a inclusão de apenas uma unidade no baralho do jogador.;Versões não-lendárias de cartas vinculadas a cartas lendárias devem estar no Extra-Deck."
+        "ruling": "Cada carta lendária permite a inclusão de apenas uma unidade no baralho do jogador;Versões lendárias de cartas vinculadas a cartas não-lendárias devem estar no Extra-Deck."
     },
     {
         "type": "Herói de Fé",
         "subtype": "Lendário",
-        "ruling": "Heróis lendários não são colocados no baralho, mas sim no Extra-Deck, e podem ser jogados se houver uma cópia da sua versão não-lendária no baralho; Ao jogar um Herói lendário, ele se vincula à sua versão não-lendária; O Herói lendário herda as habilidades da versão não-lendária, além de suas próprias; Ele não conta como um novo Herói entrando em campo, salvo para habilidades de Entrada da própria carta; Retém todas as características de um Herói, inclusive interação com efeitos específicos; Ao se retirado do campo, retorna ao Extra-Deck, enquanto a versão não-lendária segue seu destino normal."
+        "ruling": "Heróis Lendários não são colocados no baralho convencional, mas sim no Extra-Deck; Heróis Lendários só podem ser incluídos no seu deck construído se ele contiver somente uma cópia da sua versão não-lendária; Heróis Lendários só podem ser jogados caso a sua versão não-lendária esteja em jogo sob seu controle na Zona de Preparação ou Batalha ;Ao jogar um Herói lendário, ele se vincula à sua versão não-lendária, herdando todas as habilidades dela, além de suas próprias; Caso a versão não-lendária possua uma habilidade do tipo ENTRADA, ela é desencadeada novamente no momento da evolução do herói; Para todos os efeitos, evoluir um herói não conta como um novo Herói entrando em campo sob seu controle; Retém todas as características de um Herói, inclusive interação com efeitos específicos; Ao ser retirado do campo por quaisquer efeitos, um Herói Lendário retorna ao Extra-Deck, enquanto a versão não-lendária segue seu destino normal."
     },
     {
         "type": "Artefato",
         "notCategories": "Equipamento",
-        "ruling": "Artefatos não-equipáveis são cartas constantes e só podem ser jogadas durante o turno do controlador; Entram diretamente na Zona de Batalha e permanecem no campo até serem destruídos ou enterrados; Se possuir valores de Ataque e Defesa, um artefato não-equipável pode ser declarado como atacante no início do combate; Quando o controlador estiver defendendo, ele pode ser declarado como bloqueador; Artefatos não-equipáveis não podem trocar de zona normalmente; Se forem movidos para a Zona de Preparação por algum efeito, não podem retornar à Zona de Batalha; Suas habilidades só têm efeito enquanto estiverem na Zona de Batalha, exceto as de Entrada, ativadas ao término da resolução da jogada que o coloca no campo; Quando destruído ou enterrado, o artefato deve ser enviado ao Mar do Esquecimento."
+        "ruling": "Artefatos não-equipáveis são cartas constantes e só podem ser jogadas durante o turno do controlador; Entram diretamente na Zona de Batalha e permanecem no campo até serem destruídos ou enterrados; Se possuir valores de Ataque e Defesa, um artefato não-equipável pode ser declarado como combatente, podendo ser atacante ou bloqueador; Artefatos não-equipáveis não podem trocar de zona normalmente; Se forem movidos para a Zona de Preparação por algum efeito, não podem retornar à Zona de Batalha normalmente; Suas habilidades só têm efeito enquanto estiverem na Zona de Batalha, exceto as de Entrada, ativadas ao término da resolução da jogada que o coloca no campo; Quando destruído ou enterrado, o artefato deve ser enviado ao Mar do Esquecimento."
     },
     {
         "type": "Artefato",
@@ -26,10 +26,20 @@
     },
     {
         "type": "Milagre",
-        "ruling": "Milagres são cartas instantâneas, podendo ser jogadas a qualquer momento da partida; Para jogá-los, todos os alvos devem ser válidos no momento da resolução; Após sua resolução, são enviados ao Mar do Esquecimento."
+        "ruling": "Milagres são cartas instantâneas, podendo ser jogadas a qualquer momento em que você possua a prioridade; Para jogá-los, todos os alvos devem ser válidos no momento da resolução; Após sua resolução, são enviados ao Mar do Esquecimento."
     },
     {
         "type": "Pecado",
-        "ruling": "Pecados são cartas instantâneas, podendo ser jogadas a qualquer momento pertinente, desde que as condições descritas sejam atendidas; Jogar um Pecado requer 1 ponto de Fé adicional aos custos normais da carta; O custo normal pode ser pago em qualquer combinação de Fé e Sabedoria; Para jogá-lo, todos os alvos devem ser válidos no momento da resolução; Após sua resolução, o Pecado é enviado ao Mar do Esquecimento."
+        "ruling": "Pecados são cartas instantâneas, podendo ser jogadas a qualquer momento em que você possua a prioridade, desde que as condições descritas sejam atendidas; Jogar um Pecado requer 1 ponto de Fé adicional aos custos normais da carta; O custo normal pode ser pago em qualquer combinação de Fé e Sabedoria; Para jogá-lo, todos os alvos devem ser válidos no momento da resolução; Após sua resolução, o Pecado é enviado ao Mar do Esquecimento."
+    },
+
+    {
+        "effects": "Entrada",
+        "ruling": "Quando um card entra no campo, vindo de qualquer outra Zona (<i>como mão, baralho, Mar do Esquecimento ou até mesmo de fora do jogo</i>), ele é considerado como tendo 'entrado no campo';Esse evento desencadeia habilidades que mencionem 'ENTRADA' ou 'Quando [este card] entra ...'; Um card que já estava no campo e apenas muda de estado, posição ou Zona (<i>como da Zona de Preparação para a Zona de Batalha</i>) não é considerado como tendo entrado no campo;Cartas transformadas não são consideradas como 'entrando no campo'"
+    },
+
+    {
+        "categories": "Buscador",
+        "ruling": "Buscar cartas refere-se a efeitos que permitem ao jogador procurar por uma ou mais cartas em uma Zona de jogo e colocá-las em uma Zona de destino.;Após a busca, o jogador deve revelar a carta e embaralhar seu respectivo baralho, caso a busca tenha sido feita no mesmo.;Caso a carta a ser buscada tenha critérios de busca específicos, eles devem ser checados antes de enviar a carta para a sua Zona de destino.;Quando estiverem buscando nos seus respectivos baralhos, jogadores podem optar por não encontrar cartas, mesmo que elas existam no local da busca;Após a resolução, a carta buscada é então colocada na zona indicada conforme especificado pelo efeito da busca."
     }
 ]

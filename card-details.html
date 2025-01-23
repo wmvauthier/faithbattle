@@ -125,6 +125,7 @@
                             <div class="col-lg-9 col-md-9 col-sm-9">
 
                                 <div class="row">
+
                                     <div class="col">
                                         <div class="anime__details__review">
                                             <div class="section-title">
@@ -136,40 +137,97 @@
                                             </div> -->
                                                 <div class="anime__review__item__text">
 
-                                                    <div class="anime__details__widget"
-                                                        style="margin-bottom: 0px; font-size: 14px!important;">
-                                                        <div class="row">
-                                                            <div class="col-lg-6 col-md-6">
-                                                                <ul style="margin-bottom: 0px;">
-                                                                    <li><span>Tipo:</span> <text
-                                                                            id="tag_cardType"></text></li>
-                                                                    <li><span>Custo:</span> <text
-                                                                            id="tag_cardCost"></text></li>
-                                                                    <li><span>Status:</span> <text
-                                                                            id="tag_cardStatus"></text></li>
-                                                                    <!-- <li><span>Efeito:</span> <text id="tag_cardEffect"></text></li> -->
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6">
-                                                                <ul style="margin-bottom: 0px;">
-                                                                    <li><span>Número:</span> <text
-                                                                            id="tag_cardNumber"></text></li>
-                                                                    <li><span>Categorias:</span> <text
-                                                                            id="tag_cardCategories"></text>
-                                                                    </li>
-                                                                    <li><span>Coleção:</span> <text
-                                                                            id="tag_cardCollection"></text>
-                                                                        <text id="tag_cardDate"></text>
-                                                                    </li>
-                                                                    <!-- <li><span>Lançamento:</span> <text id="tag_cardDate"></text></li> -->
-                                                                    <!-- <li><span>Quality:</span> <text id="tag_cardResistence"></text></li> -->
-                                                                </ul>
-                                                            </div>
+                                                    <style>
+                                                        .gauge-container {
+                                                            width: 100%;
+                                                            height: 20px;
+                                                            background-color: #e6e6e6;
+                                                            border-radius: 5px;
+                                                            position: relative;
+                                                            display: flex;
+                                                            overflow: hidden;
+                                                            border: 1px solid #ccc;
+                                                        }
+
+                                                        .gauge-section {
+                                                            display: flex;
+                                                            justify-content: center;
+                                                            align-items: center;
+                                                            color: white;
+                                                            position: relative;
+                                                            height: 100%;
+                                                        }
+
+                                                        .gauge-section i {
+                                                            font-size: 12px;
+                                                            position: absolute;
+                                                        }
+                                                    </style>
+
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <h6>Nª</h6>
+                                                            <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                            <h6 style="font-size:12px;"><text id="tag_cardNumber"
+                                                                    class="fa-solid fa-hashtag"></text></h6>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6>Nome</h6>
+                                                            <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                            <h6 style="font-size:12px;"><i id="tag_cardName"
+                                                                    class="fa-solid fa-circle-user"></i></h6>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- <h6>Estilos - <span>1 Hour ago</span></h6> -->
+                                                    <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <h6>Custo</h6>
+                                                            <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                            <h6 id="tag_cardCost" style="font-size:15px;"></h6>
+                                                        </div>
+                                                        <div class="col-5">
+                                                            <h6>Tipo</h6>
+                                                            <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                            <h6 id="tag_cardType" style="font-size:15px;"></h6>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <h6>Status</h6>
+                                                            <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                            <h6 id="tag_cardStatus"style="font-size:15px;"></h6>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <h6>Coleção</h6>
+                                                            <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                            <h6 style="font-size:12px;"><i id="tag_cardCollection"
+                                                                    class="fa-solid fa-database"></i></h6>
+                                                        </div>
+                                                        <div class="col-5">
+                                                            
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <h6>Lançamento</h6>
+                                                            <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                            <h6 style="font-size:12px;"><i id="tag_cardDate"
+                                                                    class="fa-solid fa-calendar"></i></h6>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <h6>Categorias</h6>
+                                                            <!-- <div class="gauge-container" id="gaugeContainerArchetype"></div> -->
+                                                            <h6 style="font-size:12px;"><i id="tag_cardCategories"
+                                                                    class="fa-solid fa-layer-group"></i></h6>
                                                         </div>
                                                     </div>
 
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -262,6 +320,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
 
                                 <div class="anime__details__review" style="margin-bottom: 0px;">
@@ -273,7 +332,7 @@
 
                                 <div class="anime__review__item__text">
                                     <div style="margin-bottom: 5px;" class="anime__details__title">
-                                        <h6 style="margin-bottom: 5px; font-weight: bold;" id="tag_cardName"></h6>
+                                        <h6 style="margin-bottom: 5px; font-weight: bold;"></h6>
                                         <!-- <span><i id="tag_cardFlavor"></i></span> -->
                                     </div>
                                     <p id="tag_cardText" style="margin-bottom: 5px;"></p>
@@ -307,7 +366,7 @@
                                                 class="fa fa-angle-right"></i></a>
                                     </div> -->
                                 </div><br>
-                                
+
                             </div>
 
                         </div>

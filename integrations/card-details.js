@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const [similarCards, similarCardDetails] = await Promise.all([
     getRelatedCardsInDecks(card.number, allDecks, false, null, null).then(
-      (cards) => cards.slice(0, 24)
+      (cards) => cards.slice(0, 48)
     ),
     fetchRelatedCardsDetails(
       (await getRelatedCardsInDecks(card.number, allDecks, false, null, null))
-        .slice(0, 24)
+        .slice(0, 48)
         .map((card) => card.idcard)
     ),
   ]);
@@ -37,7 +37,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     allDecks
   ).slice(0, 10);
 
-  card.rulings = getRulingsFromCard(card.type, card.subtype, card.categories);
+  card.rulings = getRulingsFromCard(
+    card.type,
+    card.subtype,
+    card.categories,
+    card.effects
+  );
 
   updateDOMElements(card, cardStatus);
   updateSimilarCardsDOM(similarCardDetails, similarCards);
@@ -50,11 +55,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 // Função auxiliar para atualizar os elementos do DOM
 function updateDOMElements(card, cardStatus) {
   const elementsToUpdate = {
-    tag_cardName: card.name.toUpperCase(),
+    tag_cardName: removeAccents(card.name),
     tag_cardFlavor: card.flavor,
     tag_cardText: card.text, // Quebra de linha com <br>
     tag_cardType: card.type,
-    tag_cardCategories: card.categories.split(";").join("; "),
+    tag_cardCategories: removeAccents(card.categories.split(";").join("; ")),
     tag_cardCost: String.fromCharCode(10121 + card.cost),
     tag_cardStatus: cardStatus,
     tag_cardEffect: card.effects,
@@ -94,12 +99,12 @@ function updateDOMElements(card, cardStatus) {
             )
             .join("<br>"); // Separar cada ruling com <br><br>
 
-          element.innerHTML = `<br>${rulingsHtml}<br><b>${card.text}</b>`;
+          element.innerHTML = `${rulingsHtml}<br><b>${card.text}</b>`;
         } else {
-          element.innerHTML = `<br><b>${card.text}</b>`;
+          element.innerHTML = `<b>${card.text}</b>`;
         }
       } else {
-        element.textContent = value;
+        element.textContent = " "+value;
       }
     }
   }
@@ -489,7 +494,7 @@ function updateStars(stars) {
     innerHTML += '<a href="#"><i class="fa-regular fa-star"></i></a>';
   }
 
-  return innerHTML;
+  return innerHTML + '<a href="#" style="font-size: 12px;"> ' + resStars + '</a>';
 }
 
 function formatDate(dateString) {

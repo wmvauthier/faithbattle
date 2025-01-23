@@ -239,106 +239,52 @@ async function getRulings() {
   }
 }
 
-function getRulingsFromCard(type, subtype, category) {
+function getRulingsFromCard(type, subtype, category, effect) {
+
   return allRulings
-    .filter((ruling) => {
-      // Dividir os campos relevantes em arrays
-      const rulingSubtypes = ruling.subtype?.split(";").map((s) => s.trim());
-      const rulingCategories = ruling.categories
-        ?.split(";")
-        .map((c) => c.trim());
-      const notTypes = ruling.notType?.split(";").map((t) => t.trim());
-      const notSubtypes = ruling.notSubtype?.split(";").map((s) => s.trim());
-      const notCategories = ruling.notCategories
-        ?.split(";")
-        .map((c) => c.trim());
-      const cardCategories = category?.split(";").map((c) => c.trim());
-
-      // Verificar se algum notType, notSubtype ou notCategory é inválido
-      const hasInvalidType = notTypes?.includes(type);
-      const hasInvalidSubtype = notSubtypes?.includes(subtype);
-      const hasInvalidCategory = cardCategories?.some((c) =>
-        notCategories?.includes(c)
-      );
-
-      if (hasInvalidType || hasInvalidSubtype || hasInvalidCategory) {
-        return false; // Descartar se o card tiver um type/subtype/category proibido
-      }
-
-      // Caso 1: Só contém o type e é igual ao type do card
-      if (
-        ruling.type &&
-        (!ruling.subtype || ruling.subtype === "-") &&
-        !ruling.categories
-      ) {
-        return ruling.type === type;
-      }
-
-      // Caso 2: Contém type e subtype, ambos devem coincidir
-      if (
-        ruling.type &&
-        ruling.subtype &&
-        ruling.subtype !== "-" &&
-        !ruling.categories
-      ) {
-        return ruling.type === type && rulingSubtypes?.includes(subtype);
-      }
-
-      // Caso 3: Contém type e categories, ambos devem coincidir
-      if (
-        ruling.type &&
-        (!ruling.subtype || ruling.subtype === "-") &&
-        ruling.categories
-      ) {
-        return (
-          ruling.type === type &&
-          cardCategories?.some((c) => rulingCategories?.includes(c))
-        );
-      }
-
-      // Caso 4: Contém subtype e categories, ambos devem coincidir
-      if (
-        (!ruling.type || ruling.type === "-") &&
-        ruling.subtype &&
-        ruling.categories
-      ) {
-        return (
-          rulingSubtypes?.includes(subtype) &&
-          cardCategories?.some((c) => rulingCategories?.includes(c))
-        );
-      }
-
-      // Caso 5: Contém type, subtype e categories, todos devem coincidir
-      if (ruling.type && ruling.subtype && ruling.categories) {
-        return (
-          ruling.type === type &&
-          rulingSubtypes?.includes(subtype) &&
-          cardCategories?.some((c) => rulingCategories?.includes(c))
-        );
-      }
-
-      // Caso 6: Só contém subtype e é igual ao subtype do card
-      if (
-        (!ruling.type || ruling.type === "-") &&
-        ruling.subtype &&
-        (!ruling.categories || ruling.categories === "-")
-      ) {
-        return rulingSubtypes?.includes(subtype);
-      }
-
-      // Caso 7: Só contém categories e é igual ao categories do card
-      if (
-        (!ruling.type || ruling.type === "-") &&
-        (!ruling.subtype || ruling.subtype === "-") &&
-        ruling.categories
-      ) {
-        return cardCategories?.some((c) => rulingCategories?.includes(c));
-      }
-
-      return false; // Não cumpre nenhum dos casos
-    })
-    .map((ruling) => ruling.ruling);
-}
+      .filter(ruling => {
+        // Dividir strings de ruling em arrays para comparação
+        const types = ruling.type?.split(";").map(s => s.trim()) || [];
+        const subtypes = ruling.subtype?.split(";").map(s => s.trim()) || [];
+        const categories = ruling.categories?.split(";").map(s => s.trim()) || [];
+        const effects = ruling.effects?.split(";").map(s => s.trim()) || [];
+        const notTypes = ruling.notType?.split(";").map(s => s.trim()) || [];
+        const notSubtypes = ruling.notSubtype?.split(";").map(s => s.trim()) || [];
+        const notCategories = ruling.notCategories?.split(";").map(s => s.trim()) || [];
+        const notEffects = ruling.notEffects?.split(";").map(s => s.trim()) || [];
+  
+        // Dividir as entradas em arrays
+        const inputCategories = category.split(";").map(s => s.trim());
+        const inputEffects = effect.split(";").map(s => s.trim());
+  
+        // Verificar as condições de inclusão e exclusão
+        const typeMatch = (!types.length || types.includes(type)) && !notTypes.includes(type);
+        const subtypeMatch = (!subtypes.length || subtypes.includes(subtype)) && !notSubtypes.includes(subtype);
+        const categoryMatch =
+          (!categories.length || categories.some(cat => inputCategories.includes(cat))) &&
+          !notCategories.some(cat => inputCategories.includes(cat));
+        const effectMatch =
+          (!effects.length || effects.some(eff => inputEffects.includes(eff))) &&
+          !notEffects.some(eff => inputEffects.includes(eff));
+  
+        // Retornar true apenas se TODAS as condições forem atendidas
+        return typeMatch && subtypeMatch && categoryMatch && effectMatch;
+      })
+      .map(ruling => {
+        // Construir um cabeçalho com as propriedades do ruling
+        const details = [
+          ruling.type || "",
+          ruling.subtype || "",
+          ruling.categories || "",
+          ruling.effects || ""
+        ]
+          .filter(detail => detail) // Remover valores vazios
+          .join(" "); // Combinar em uma string única
+  
+        return `<b>${details.toUpperCase()}</b>;${ruling.ruling}`; // Adicionar o ruling ao cabeçalho
+      });
+      
+}  
 
 async function getMostUsedCardsFromType(
   decks,
@@ -1067,4 +1013,35 @@ function limitStringOccurrences(arr, maxOccurrences) {
     counts[item] = (counts[item] || 0) + 1; // Incrementa a contagem para o item
     return counts[item] <= maxOccurrences; // Retorna true se a contagem não exceder o limite
   });
+}
+
+function removeAccents(input) {
+  const map = {
+      'ç': 'c', 'Ç': 'C',
+      'ã': 'a', 'Ã': 'A',
+      'á': 'a', 'Á': 'A',
+      'à': 'a', 'À': 'A',
+      'â': 'a', 'Â': 'A',
+      'ä': 'a', 'Ä': 'A',
+      'é': 'e', 'É': 'E',
+      'è': 'e', 'È': 'E',
+      'ê': 'e', 'Ê': 'E',
+      'ë': 'e', 'Ë': 'E',
+      'í': 'i', 'Í': 'I',
+      'ì': 'i', 'Ì': 'I',
+      'î': 'i', 'Î': 'I',
+      'ï': 'i', 'Ï': 'I',
+      'ó': 'o', 'Ó': 'O',
+      'ò': 'o', 'Ò': 'O',
+      'ô': 'o', 'Ô': 'O',
+      'ö': 'o', 'Ö': 'O',
+      'õ': 'o', 'Õ': 'O',
+      'ú': 'u', 'Ú': 'U',
+      'ù': 'u', 'Ù': 'U',
+      'û': 'u', 'Û': 'U',
+      'ü': 'u', 'Ü': 'U',
+      'ñ': 'n', 'Ñ': 'N'
+  };
+
+  return input.replace(/[^\w\s]/g, char => map[char] || char);
 }
