@@ -251,23 +251,27 @@ async function updateAnalysisFromDeck() {
 async function generateDeck() {
   await updateAnalysisFromDeck();
   if (deck.cards.length <= 0) {
-    let mostUsedCards = await getMostUsedCardsFromType(
-      allDecks,
-      selectedStyle,
-      selectedArchetype,
-      deckMinimumSize
-    );
-    if (mostUsedCards) {
-      mostUsedCards.forEach((card) => {
-        addCardToDeckBuilder(card.card);
-        // await wait(1);
-      });
-    }
+
+    // Usar Deck Competitivo ou Casual
+    // let mostUsedCards = await getMostUsedCardsFromType(
+    //   allDecks,
+    //   selectedStyle,
+    //   selectedArchetype,
+    //   deckMinimumSize
+    // );
+    // if (mostUsedCards) {
+    //   mostUsedCards.forEach((card) => {
+    //     addCardToDeckBuilder(card.card);
+    //     // await wait(1);
+    //   });
+    // }
+
     await completeDeck(true);
     await tuningDeck();
     await tuningDeck();
     await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
     await updateAnalysisFromDeck();
+    
   }
 }
 
