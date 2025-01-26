@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     card.type,
     card.subtype,
     card.categories,
-    card.effects
+    card.effects,
+    card.keywords
   );
 
   updateDOMElements(card, cardStatus);
@@ -104,7 +105,7 @@ function updateDOMElements(card, cardStatus) {
           element.innerHTML = `<b>${card.text}</b>`;
         }
       } else {
-        element.textContent = " "+value;
+        element.textContent = " " + value;
       }
     }
   }
@@ -494,7 +495,9 @@ function updateStars(stars) {
     innerHTML += '<a href="#"><i class="fa-regular fa-star"></i></a>';
   }
 
-  return innerHTML + '<a href="#" style="font-size: 12px;"> ' + resStars + '</a>';
+  return (
+    innerHTML + '<a href="#" style="font-size: 12px;"> ' + resStars + "</a>"
+  );
 }
 
 function formatDate(dateString) {

@@ -240,52 +240,59 @@ async function getRulings() {
   }
 }
 
-function getRulingsFromCard(type, subtype, category, effect) {
+function getRulingsFromCard(type, subtype, category, effect, keyword) {
 
   return allRulings
-      .filter(ruling => {
-        // Dividir strings de ruling em arrays para comparação
-        const types = ruling.type?.split(";").map(s => s.trim()) || [];
-        const subtypes = ruling.subtype?.split(";").map(s => s.trim()) || [];
-        const categories = ruling.categories?.split(";").map(s => s.trim()) || [];
-        const effects = ruling.effects?.split(";").map(s => s.trim()) || [];
-        const notTypes = ruling.notType?.split(";").map(s => s.trim()) || [];
-        const notSubtypes = ruling.notSubtype?.split(";").map(s => s.trim()) || [];
-        const notCategories = ruling.notCategories?.split(";").map(s => s.trim()) || [];
-        const notEffects = ruling.notEffects?.split(";").map(s => s.trim()) || [];
-  
-        // Dividir as entradas em arrays
-        const inputCategories = category.split(";").map(s => s.trim());
-        const inputEffects = effect.split(";").map(s => s.trim());
-  
-        // Verificar as condições de inclusão e exclusão
-        const typeMatch = (!types.length || types.includes(type)) && !notTypes.includes(type);
-        const subtypeMatch = (!subtypes.length || subtypes.includes(subtype)) && !notSubtypes.includes(subtype);
-        const categoryMatch =
-          (!categories.length || categories.some(cat => inputCategories.includes(cat))) &&
-          !notCategories.some(cat => inputCategories.includes(cat));
-        const effectMatch =
-          (!effects.length || effects.some(eff => inputEffects.includes(eff))) &&
-          !notEffects.some(eff => inputEffects.includes(eff));
-  
-        // Retornar true apenas se TODAS as condições forem atendidas
-        return typeMatch && subtypeMatch && categoryMatch && effectMatch;
-      })
-      .map(ruling => {
-        // Construir um cabeçalho com as propriedades do ruling
-        const details = [
-          ruling.type || "",
-          ruling.subtype || "",
-          ruling.categories || "",
-          ruling.effects || ""
-        ]
-          .filter(detail => detail) // Remover valores vazios
-          .join(" "); // Combinar em uma string única
-  
-        return `<b>${details.toUpperCase()}</b>;${ruling.ruling}`; // Adicionar o ruling ao cabeçalho
-      });
+    .filter(ruling => {
+      // Dividir strings de ruling em arrays para comparação
+      const types = ruling.type?.split(";").map(s => s.trim()) || [];
+      const subtypes = ruling.subtype?.split(";").map(s => s.trim()) || [];
+      const categories = ruling.categories?.split(";").map(s => s.trim()) || [];
+      const effects = ruling.effects?.split(";").map(s => s.trim()) || [];
+      const keywords = ruling.keywords?.split(";").map(s => s.trim()) || [];
+      const notTypes = ruling.notType?.split(";").map(s => s.trim()) || [];
+      const notSubtypes = ruling.notSubtype?.split(";").map(s => s.trim()) || [];
+      const notCategories = ruling.notCategories?.split(";").map(s => s.trim()) || [];
+      const notEffects = ruling.notEffects?.split(";").map(s => s.trim()) || [];
+      const notKeywords = ruling.notKeywords?.split(";").map(s => s.trim()) || [];
+
+      // Dividir as entradas em arrays
+      const inputCategories = category.split(";").map(s => s.trim());
+      const inputEffects = effect.split(";").map(s => s.trim());
+      const inputKeywords = keyword.split(";").map(s => s.trim());
+
+      // Verificar as condições de inclusão e exclusão
+      const typeMatch = (!types.length || types.includes(type)) && !notTypes.includes(type);
+      const subtypeMatch = (!subtypes.length || subtypes.includes(subtype)) && !notSubtypes.includes(subtype);
+      const categoryMatch =
+        (!categories.length || categories.some(cat => inputCategories.includes(cat))) &&
+        !notCategories.some(cat => inputCategories.includes(cat));
+      const effectMatch =
+        (!effects.length || effects.some(eff => inputEffects.includes(eff))) &&
+        !notEffects.some(eff => inputEffects.includes(eff));
+      const keywordMatch =
+        (!keywords.length || keywords.some(kw => inputKeywords.includes(kw))) &&
+        !notKeywords.some(kw => inputKeywords.includes(kw));
+
+      // Retornar true apenas se TODAS as condições forem atendidas
+      return typeMatch && subtypeMatch && categoryMatch && effectMatch && keywordMatch;
+    })
+    .map(ruling => {
+      // Construir um cabeçalho com as propriedades do ruling
+      const details = [
+        ruling.type || "",
+        ruling.subtype || "",
+        ruling.categories || "",
+        ruling.effects || "",
+        ruling.keywords || ""
+      ]
+        .filter(detail => detail) // Remover valores vazios
+        .join(" "); // Combinar em uma string única
+
+      return `<b>${details.toUpperCase()}</b>;${ruling.ruling}`; // Adicionar o ruling ao cabeçalho
+    });
       
-}  
+}
 
 async function getMostUsedCardsFromType(
   decks,

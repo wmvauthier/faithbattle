@@ -11,6 +11,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+    "keywords": "",
+
     "number": 22,
     "collection": "APH",
     "date": "2023-12-01",
@@ -107,6 +109,7 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+    "keywords": "",
     "number": 23,
     "collection": "APH",
     "date": "2023-12-01",
@@ -203,6 +206,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+    "keywords": "",
+
     "number": 24,
     "collection": "APH",
     "date": "2023-12-01",
@@ -300,6 +305,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+    "keywords": "",
+
     "number": 25,
     "collection": "APH",
     "date": "2023-12-01",
@@ -396,6 +403,9 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+
+    "keywords": "",
+
     "number": 26,
     "collection": "APH",
     "date": "2023-12-01",
@@ -492,6 +502,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Global",
+    "keywords": "",
+
     "number": 28,
     "collection": "APH",
     "date": "2023-12-01",
@@ -588,6 +600,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+    "keywords": "",
+
     "number": 43,
     "collection": "APH",
     "date": "2023-12-01",
@@ -684,6 +698,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+    "keywords": "",
+
     "number": 44,
     "collection": "APH",
     "date": "2023-12-01",
@@ -780,6 +796,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Global",
+    "keywords": "",
+
     "number": 49,
     "collection": "APH",
     "date": "2023-12-01",
@@ -876,6 +894,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+    "keywords": "",
+
     "number": 50,
     "collection": "APH",
     "date": "2023-12-01",
@@ -973,6 +993,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+    "keywords": "",
+
     "number": 55,
     "collection": "GEN",
     "date": "2024-10-01",
@@ -1069,6 +1091,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Global",
+    "keywords": "",
+
     "number": 56,
     "collection": "GEN",
     "date": "2024-10-01",
@@ -1165,6 +1189,7 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Global",
+    "keywords": "",
     "number": 57,
     "collection": "GEN",
     "date": "2024-10-01",
@@ -1261,6 +1286,8 @@
     "strength": 1,
     "resistence": 1,
     "effects": "Global",
+    "keywords": "",
+
     "number": 58,
     "collection": "GEN",
     "date": "2024-10-01",
@@ -1357,6 +1384,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+    "keywords": "",
+
     "number": 59,
     "collection": "GEN",
     "date": "2024-10-01",
@@ -1453,6 +1482,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Global",
+    "keywords": "",
+
     "number": 97,
     "collection": "GEN",
     "date": "2024-10-01",
@@ -1549,6 +1580,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Global",
+    "keywords": "",
+
     "number": 98,
     "collection": "GEN",
     "date": "2024-10-01",
@@ -1645,6 +1678,8 @@
     "strength": 0,
     "resistence": 0,
     "effects": "Equipável",
+    "keywords": "",
+
     "number": 119,
     "collection": "GEN",
     "date": "2024-10-01",
