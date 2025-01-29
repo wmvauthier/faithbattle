@@ -33,6 +33,10 @@
         "ruling": "Pecados são cartas instantâneas, podendo ser jogadas a qualquer momento em que você possua a prioridade, desde que as condições descritas sejam atendidas; Jogar um Pecado requer 1 ponto de Fé adicional aos custos normais da carta; O custo normal pode ser pago em qualquer combinação de Fé e Sabedoria; Para jogá-lo, todos os alvos devem ser válidos no momento da resolução; Após sua resolução, o Pecado é enviado ao Mar do Esquecimento."
     },
     {
+        "keywords": "Indestrutível",
+        "ruling": "Indestrutível é uma característica que impede uma carta de ser destruída por qualquer efeito, incluindo dano letal e efeitos que especificamente “destroem” cartas; Uma carta Indestrutível ainda pode ser movida para outras zonas do jogo por meios como Remover do Jogo, devolução à mão ou Enterrar; Caso a resistência de uma criatura Indestrutível for reduzida a 0, ela será colocada no cemitério normalmente, pois isso não conta como destruição; Indestrutível não impede que marcadores ou efeitos temporários modifiquem a carta, mas garante que ela permaneça em jogo mesmo sob condições que normalmente a destruiriam"
+    },
+    {
         "effects": "Entrada",
         "ruling": "Quando um card entra no campo, vindo de qualquer outra Zona (<i>como mão, baralho, Mar do Esquecimento ou até mesmo de fora do jogo</i>), ele é considerado como tendo 'entrado no campo';Esse evento desencadeia habilidades que mencionem 'ENTRADA' ou 'Quando [este card] entra ...'; Um card que já estava no campo e apenas muda de estado, posição ou Zona (<i>como da Zona de Preparação para a Zona de Batalha</i>) não é considerado como tendo entrado no campo;Cartas transformadas não são consideradas como 'entrando no campo'"
     },
@@ -41,11 +45,27 @@
         "ruling": "Durante a fase de combate, quando cartas forem declaradas como atacantes, seus respsctivos efeitos de ATAQUE são desencadeados; Esses efeitos são desencadeados assim que a carta é formalmente designada como atacante, antes da etapa de resolução dos danos de combate; Se a carta for removida após a declaração de atacantes e antes da resolução dos danos de combate, seu efeito desencadeado de ATAQUE continua na fila de resolução, sendo resolvido normalmente mesmo sem a presença do herói na Zona de Batalha"
     },
     {
+        "keywords": "Comprar",
+        "ruling": "Comprar é a ação de adicionar cartas do topo do deck à mão do jogador, geralmente realizada no início do turno ou por efeitos de cartas e/ou habilidades; Comprar não é o mesmo que buscar ou revelar cartas, pois as mesmas cartas vão diretamente para a mão do controlador do efeito; Se um efeito instruir um jogador a comprar múltiplas cartas, todas são compradas simultaneamente, sem que outros efeitos se intercalem entre cada compra; Se um jogador for instruído a comprar de um deck vazio, ele não realiza tal ação"
+    },
+    {
         "keywords": "Buscar",
-        "ruling": "Buscar cartas refere-se a efeitos que permitem ao jogador procurar por uma ou mais cartas em uma Zona de jogo e colocá-las em uma Zona de destino.;Após a busca, o jogador deve revelar a carta e embaralhar seu respectivo baralho, caso a busca tenha sido feita no mesmo.;Caso a carta a ser buscada tenha critérios de busca específicos, eles devem ser checados antes de enviar a carta para a sua Zona de destino.;Quando estiverem buscando nos seus respectivos baralhos, jogadores podem optar por não encontrar cartas, mesmo que elas existam no local da busca;Após a resolução, a carta buscada é então colocada na zona indicada conforme especificado pelo efeito da busca."
+        "ruling": "Buscar cartas refere-se a efeitos que permitem ao jogador procurar por uma ou mais cartas em uma Zona de jogo e colocá-las em uma Zona de destino.;Após a busca, o jogador deve revelar a carta e embaralhar seu respectivo baralho, caso a busca tenha sido feita no mesmo.;Caso a carta a ser buscada tenha critérios de busca específicos, eles devem ser checados antes de enviar a carta para a sua Zona de destino.;Quando estiverem buscando nos seus respectivos baralhos, jogadores podem optar por não encontrar cartas, mesmo que elas existam no local da busca;Após a resolução, a carta buscada é então colocada na zona indicada conforme especificado pelo efeito da busca"
     },
     {
         "keywords": "Enterrar",
         "ruling": "Enterrar é a habilidade que exige que um jogador envie uma carta constante do seu campo, seja na Zona de Preparação ou Batalha, para o Mar do Esquecimento; Enterrar difere de outras formas de remoção, pois é sempre um ato voluntário realizado pelo controlador da carta, frequentemente como custo para ativar uma habilidade ou resolver um efeito; Uma carta enterrada não pode ser protegida por efeitos que impedem destruição, pois enterrar não conta como destruir; Contudo, habilidades que desencadeiam com a saída de uma carta do campo, como 'quando esta carta deixa o campo', ainda serão desencadeadas; Cartas ou habilidades que substituem o envio ao Mar do Esquecimento, como remoção do jogo ou retorno ao topo do baralho, podem modificar o destino final de uma carta enterrada"
+    },
+    {
+        "keywords": "Anular",
+        "ruling": "Anular é um efeito que impede uma carta ou habilidade de resolver, removendo-a da fila de resolução antes que tenha qualquer impacto no jogo; Quando uma carta é anulada, ela geralmente é colocada no Mar do Esquecimento de seu dono, a menos que um efeito específico determine outro destino, como mão, baralho ou fora do jogo; Apenas cartas e habilidades na fila de resolução podem ser anuladas; Cartas constantes já em jogo (<i>Exemplo: heróis e artefatos</i>) não podem ser alvos desse efeito; Anular não desfaz custos pagos nem impede habilidades desencadeadas por seu lançamento, mas impede que seu efeito principal descrito na carta anulada ocorra"
+    },
+    {
+        "keywords": "Custo Alternativo",
+        "ruling": "Custo Alternativo é um método opcional de pagar pelo lançamento de uma carta sem utilizar seu custo de sabedoria normal; Se um jogador optar por pagar um custo alternativo, ele substitui o custo de sabedoria da carta; Quaisquer custos adicionais associados ainda devem ser pagos normalmente; Apenas um custo alternativo pode ser escolhido ao lançar uma carta, e efeitos que reduzem custos podem se aplicar a ele, a menos que indicado de outra forma"
+    },
+    {
+        "keywords": "Custo Adicional",
+        "ruling": "Custo Adicional é um requisito extra que deve ser pago além do custo de sabedoria para lançar uma carta; Custos adicionais não podem ser ignorados, a menos que um efeito permita, e múltiplos custos adicionais podem ser aplicados a uma única carta se indicados por efeitos ou regras do jogo"
     }
 ]

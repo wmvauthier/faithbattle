@@ -100,7 +100,7 @@ function updateDOMElements(card, cardStatus) {
             )
             .join("<br>"); // Separar cada ruling com <br><br>
 
-          element.innerHTML = `${rulingsHtml}<br><b>${card.text}</b>`;
+          element.innerHTML = `<b>${card.text}</b><br><br>${rulingsHtml}`;
         } else {
           element.innerHTML = `<b>${card.text}</b>`;
         }
@@ -165,22 +165,13 @@ function updateRelatedDecks(relatedDecks) {
     // Definição do estilo
     switch (deck.style) {
       case "Agressivo":
-        style = createListItem(
-          "#B22222",
-          '<i style="color: #fff;" class="fa-solid fa-hand-back-fist"></i>'
-        );
+        style = "#B22222";
         break;
       case "Equilibrado":
-        style = createListItem(
-          "#FFD700",
-          '<i style="color: #000;" class="fa-solid fa-hand-scissors"></i>'
-        );
+        style = "#FFD700";
         break;
       case "Controlador":
-        style = createListItem(
-          "#1E90FF",
-          '<i style="color: #fff;" class="fa-solid fa-hand"></i>'
-        );
+        style = "#1E90FF";
         break;
       default:
         style = "";
@@ -189,34 +180,19 @@ function updateRelatedDecks(relatedDecks) {
     // Definição do arquétipo
     switch (deck.archetype) {
       case "Batalha":
-        archetype = createListItem(
-          "#FF8C00",
-          '<i style="color: #000;" class="fa-solid fa-hand-fist"></i>'
-        );
+        archetype = "#FF8C00";
         break;
       case "Santificação":
-        archetype = createListItem(
-          "whitesmoke",
-          '<i style="color: #000;" class="fa-solid fa-droplet"></i>'
-        );
+        archetype = "whitesmoke";
         break;
       case "Combo":
-        archetype = createListItem(
-          "#800080",
-          '<i style="color: #fff;" class="fa-solid fa-gears"></i>'
-        );
+        archetype = "#800080";
         break;
       case "Maravilhas":
-        archetype = createListItem(
-          "#32CD32",
-          '<i style="color: #000;" class="fa-solid fa-hat-wizard"></i>'
-        );
+        archetype = "#32CD32";
         break;
       case "Supressão":
-        archetype = createListItem(
-          "#000000",
-          '<i style="color: #fff;" class="fa-solid fa-ban"></i>'
-        );
+        archetype = "#000000";
         break;
       default:
         archetype = "";
@@ -234,6 +210,7 @@ function updateRelatedDecks(relatedDecks) {
     deckElement.style["margin-left"] = "10px";
     deckElement.style["padding-right"] = "0px";
     deckElement.style["padding-left"] = "0px";
+    deckElement.style.justifyContent = "center"; // Centraliza verticalmente (caso necessário)
 
     // Imagem do deck
     const imgElement = document.createElement("img");
@@ -241,6 +218,10 @@ function updateRelatedDecks(relatedDecks) {
     imgElement.alt = "Deck Image";
     imgElement.style.maxWidth = "100%";
     imgElement.style.height = "auto";
+    imgElement.style.border = "1px solid transparent";
+    imgElement.style.borderImage =
+      "linear-gradient(to right, " + style + " 50%, " + archetype + " 50%) 1";
+    imgElement.style.overflow = "hidden"; // Garante que a borda arredondada funcione corretamente
     // imgElement.style.maxHeight = "150px";
 
     // Nome do deck
@@ -251,19 +232,26 @@ function updateRelatedDecks(relatedDecks) {
     nameElement.style["font-family"] = '"Mulish", sans-serif';
     nameElement.style.fontSize = "12px"; // Tamanho da fonte reduzido
     nameElement.style["color"] = "#ffffff";
+    nameElement.style.textAlign = "center"; // Garante alinhamento centralizado
+    nameElement.style.width = "100%"; // Ajusta a largura para centralizar corretamente
+
     nameLink.style.color = "#fff"; // Definir a cor do texto do link como branco
     nameElement.appendChild(nameLink);
 
     // Lista de informações (estilo, arquétipo, estrelas)
-    const ulElement = document.createElement("ul");
+    const ulElement = document.createElement("div");
     ulElement.style.display = "flex";
     ulElement.style.justifyContent = "space-between";
     ulElement.style.padding = "0";
     ulElement.style.listStyle = "none";
-    ulElement.style.width = "100%";
+    // ulElement.style.width = "100%";
     ulElement.appendChild(stars);
-    ulElement.appendChild(style);
-    ulElement.appendChild(archetype);
+
+    ulElement.style.justifyContent = "center"; // Centraliza os itens dentro da ul
+    ulElement.style.width = "auto"; // Ajusta ao conteúdo
+
+    // ulElement.appendChild(style);
+    // ulElement.appendChild(archetype);
 
     // Adiciona os elementos ao contêiner do deck
     deckElement.appendChild(imgElement);
@@ -452,7 +440,7 @@ function calculateArchetypePercentages(decks) {
 
 // Função auxiliar para criar um item de lista com estilo
 function createListItem(backgroundColor, innerHTMLContent) {
-  const li = document.createElement("li");
+  const li = document.createElement("div");
   li.style.backgroundColor = backgroundColor;
   li.style.borderRadius = "10px"; // Bordas arredondadas
   li.style.padding = "5px 10px"; // Espaçamento interno ajustado
