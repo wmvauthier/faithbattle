@@ -1569,7 +1569,7 @@
     "cost": 1,
     "strength": 0,
     "resistence": 1,
-    "effects": "Contínuo",
+    "effects": "Contínuo;Ativável",
     "keywords": "",
     "number": 60,
     "collection": "GEN",

@@ -42,11 +42,23 @@
     },
     {
         "effects": "Ataque",
-        "ruling": "Durante a fase de combate, quando cartas forem declaradas como atacantes, seus respsctivos efeitos de ATAQUE são desencadeados; Esses efeitos são desencadeados assim que a carta é formalmente designada como atacante, antes da etapa de resolução dos danos de combate; Se a carta for removida após a declaração de atacantes e antes da resolução dos danos de combate, seu efeito desencadeado de ATAQUE continua na fila de resolução, sendo resolvido normalmente mesmo sem a presença do herói na Zona de Batalha"
+        "ruling": "Durante a fase de combate, quando cartas forem declaradas como atacantes, seus respectivos efeitos de ATAQUE são desencadeados; Esses efeitos são desencadeados assim que a etapa de declaração de atacantes é finalizada, e antes da etapa de resolução dos danos de combate; Se a carta for removida após a declaração de atacantes e antes da resolução dos danos de combate, seu efeito desencadeado de ATAQUE continua na fila de resolução, sendo resolvido normalmente mesmo sem a presença do herói na Zona de Batalha"
+    },
+    {
+        "effects": "Bloqueio",
+        "ruling": "Durante a fase de combate, quando cartas forem declaradas como bloqueadoras, seus respectivos efeitos de BLOQUEIO são desencadeados; Esses efeitos são desencadeados assim que a etapa de declaração de bloqueadores é finalizada, antes da etapa de resolução dos danos de combate; Se a carta for removida após a declaração de bloqueadores e antes da resolução dos danos de combate, seu efeito desencadeado de BLOQUEIO continua na fila de resolução, sendo resolvido normalmente, mesmo sem a presença do herói na Zona de Batalha."
+    },
+    {
+        "effects": "Ativável",
+        "ruling": "Uma habilidade ativável pode ser acionada manualmente pelo seu controlador a qualquer momento em que ele possa utilizar uma carta de Milagre, desde que pague seu custo e respeite seus requisitos associados; Habilidades ativáveis seguem a estrutura de custo e efeito: primeramente os custos associados são pagos, e então a habilidade entra na fila de resolução; Se o custo não puder ser pago ou os requisitos associados não forem cumpridos, a habilidade não pode ser ativada; Caso uma habilidade ativável seja anulada, seus custos não são reembolsados."
     },
     {
         "keywords": "Comprar",
         "ruling": "Comprar é a ação de adicionar cartas do topo do deck à mão do jogador, geralmente realizada no início do turno ou por efeitos de cartas e/ou habilidades; Comprar não é o mesmo que buscar ou revelar cartas, pois as mesmas cartas vão diretamente para a mão do controlador do efeito; Se um efeito instruir um jogador a comprar múltiplas cartas, todas são compradas simultaneamente, sem que outros efeitos se intercalem entre cada compra; Se um jogador for instruído a comprar de um deck vazio, ele não realiza tal ação"
+    },
+    {
+        "keywords": "Descartar",
+        "ruling": "Descartar uma carta significa movê-la da mão para o Mar do Esquecimento; Cartas descartadas não são consideradas como destruídas nem enterradas, e não são tratadas como tendo saído do campo; Se um efeito instruir um jogador a descartar múltiplas cartas, todas são escolhidas e descartadas simultaneamente, a menos que indicado de outra forma; O termo DESCARTAR pode ser utilizado para mover cartas especificamente do topo do baralho para o Mar do Esquecimento, quando citado de maneira direta e explícita, contudo isso não conta como DESCARTE para fins de jogo"
     },
     {
         "keywords": "Buscar",
