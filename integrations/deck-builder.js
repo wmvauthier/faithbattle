@@ -24,6 +24,7 @@ let selectedButtonCategory = null;
 
 let selectedStyle = null;
 let selectedArchetype = null;
+let selectedTier = null;
 
 document.addEventListener("DOMContentLoaded", async function () {
   // Carregar os JSONs em paralelo para aumentar a eficiência
@@ -244,6 +245,7 @@ async function updateAnalysisFromDeck() {
 
   generateArchetypeSelect();
   generateStyleSelect();
+  generateTierSelect();
 
   filterResults();
 }
@@ -251,27 +253,27 @@ async function updateAnalysisFromDeck() {
 async function generateDeck() {
   await updateAnalysisFromDeck();
   if (deck.cards.length <= 0) {
-
-    // Usar Deck Competitivo ou Casual
-    // let mostUsedCards = await getMostUsedCardsFromType(
-    //   allDecks,
-    //   selectedStyle,
-    //   selectedArchetype,
-    //   deckMinimumSize
-    // );
-    // if (mostUsedCards) {
-    //   mostUsedCards.forEach((card) => {
-    //     addCardToDeckBuilder(card.card);
-    //     // await wait(1);
-    //   });
-    // }
+    if (selectedTier == "Competitivo") {
+    } else {
+      let mostUsedCards = await getMostUsedCardsFromType(
+        allDecks,
+        selectedStyle,
+        selectedArchetype,
+        deckMinimumSize
+      );
+      if (mostUsedCards) {
+        mostUsedCards.forEach((card) => {
+          addCardToDeckBuilder(card.card);
+          // await wait(1);
+        });
+      }
+    }
 
     await completeDeck(true);
     await tuningDeck();
     await tuningDeck();
     await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
     await updateAnalysisFromDeck();
-    
   }
 }
 
@@ -320,6 +322,7 @@ async function tuningDeck() {
   if (deck.cards.length > 0) {
     let markerHasChanged = true;
     let counterLoop = 0;
+    let lastAddedCards = [];
 
     let filteredDeck = deck.cards.filter((str) =>
       legendaries.some((json) => json.number === str)
@@ -330,12 +333,7 @@ async function tuningDeck() {
     );
 
     if (deck.cards.length > 0) {
-      while (
-        // deck.cards.length != analysisAverages.averageQtd &&
-        markerHasChanged == true &&
-        counterLoop < analysisAverages.averageQtd
-      ) {
-        // while (markerHasChanged == true && counterLoop < 5) {
+      while (markerHasChanged && counterLoop < analysisAverages.averageQtd) {
         markerHasChanged = false;
 
         const filteredCategories = analysisAverages.averageCategories.filter(
@@ -376,26 +374,14 @@ async function tuningDeck() {
           }
         });
 
-        // console.log(`Inexistente: ${innexistentCategories}`);
-        // console.log(
-        //   `Menor valor: ${menorValor}, Categoria menor: ${menorCategoria}`
-        // );
-        // console.log(
-        //   `Maior valor: ${maiorValor}, Categoria maior: ${maiorCategoria}`
-        // );
-
-        // Filtra os itens cujo "number" está em filteredDeck e retorna apenas "commonNumber"
         const filteredCommonNumbers = legendaries.reduce((acc, item) => {
           if (filteredDeck.includes(item.number)) acc.push(item.commonNumber);
           return acc;
         }, []);
 
-        // Mapeia suggestions para obter os ids das cartas
         let suggestionNumbers = suggestions
           .map((obj) => obj.idcard)
-          // Remove os que já estão em filteredDeck
           .filter((str) => !filteredDeck.includes(str))
-          // Remove os que já estão em filteredCommonNumbers
           .filter((str) => !filteredCommonNumbers.includes(str));
 
         if (
@@ -403,6 +389,7 @@ async function tuningDeck() {
           suggestionNumbers.length > 0
         ) {
           addCardToDeckBuilder(suggestionNumbers[0]);
+          lastAddedCards.push(suggestionNumbers[0]);
           markerHasChanged = true;
         } else if (deck.cards.length > analysisAverages.averageQtd) {
           await removeCardFromSpecifiedCategory(maiorCategoria);
@@ -422,20 +409,34 @@ async function tuningDeck() {
         } else {
           if (menorCategoria != null && maiorCategoria != null) {
             if (innexistentCategories.length > 0) {
+              let beforeAdd = [...deck.cards];
               await addCardFromSpecifiedCategory(
                 innexistentCategories[0],
                 suggestionNumbers
               );
+              let newCard = deck.cards.find(
+                (card) => !beforeAdd.includes(card)
+              );
+              if (newCard) {
+                lastAddedCards.push(newCard);
+              }
               await removeCardFromSpecifiedCategory(maiorCategoria);
               markerHasChanged = true;
             } else if (
               higherCategories.length > 0 &&
               lowerCategories.length > 0
             ) {
+              let beforeAdd = [...deck.cards];
               await addCardFromSpecifiedCategory(
                 lowerCategories[0],
                 suggestionNumbers
               );
+              let newCard = deck.cards.find(
+                (card) => !beforeAdd.includes(card)
+              );
+              if (newCard) {
+                lastAddedCards.push(newCard);
+              }
               await removeCardFromSpecifiedCategory(maiorCategoria);
               markerHasChanged = true;
             }
@@ -452,12 +453,21 @@ async function tuningDeck() {
 
         filteredDeck.push(...filteredDeck2);
 
-        if (deck.cards.length != analysisAverages.averageQtd) {
+        if (deck.cards.length !== analysisAverages.averageQtd) {
           markerHasChanged = true;
         }
 
         counterLoop++;
         await wait(1);
+
+        // Interromper se a mesma carta foi adicionada 5 vezes seguidas
+        if (
+          lastAddedCards.length >= 3 &&
+          lastAddedCards.slice(-3).every((val, _, arr) => val === arr[0])
+        ) {
+          // console.log(`Loop interrompido: a carta ${lastAddedCards[0]} foi adicionada 5 vezes seguidas.`);
+          break;
+        }
       }
     }
 
@@ -465,7 +475,6 @@ async function tuningDeck() {
       (str) => !legendaries.some((json) => json.number === str)
     );
 
-    // console.log(suggestions);
     let suggestionNumbers = suggestions.map((obj) => obj.idcard);
 
     filteredDeck = [
@@ -1311,6 +1320,48 @@ function generateArchetypeSelect() {
   addByArchetypeList.appendChild(container);
 }
 
+function generateTierSelect() {
+  document.getElementById("addByTierList").innerHTML = "";
+  document.getElementById("addByTierIcon").innerHTML = "";
+
+  const addByTierList = document.getElementById("addByTierList");
+
+  // Criar um contêiner para o select e o ícone
+  const container = document.createElement("div");
+  container.classList.add("select-container");
+
+  const select = document.createElement("select");
+  select.setAttribute("name", "tier");
+  select.setAttribute("prettyName", "Tier");
+  select.setAttribute("id", `tierFilter`);
+  select.classList.add("mb-3", "mr-3", "custom-select-input");
+  const defaultOption = document.createElement("option");
+  defaultOption.text = "Tier";
+  defaultOption.value = "";
+  select.appendChild(defaultOption);
+
+  const tiers = ["Casual", "Competitivo"];
+
+  tiers.forEach((value) => {
+    const option = document.createElement("option");
+    option.value = value;
+    option.innerHTML = value;
+    select.appendChild(option);
+  });
+
+  select.addEventListener("change", function () {
+    const value = select.value;
+    if (value) {
+      chooseTier(value);
+      // select.disabled = true;
+    }
+  });
+
+  // Adicionar o select e o ícone ao contêiner
+  container.appendChild(select);
+  addByTierList.appendChild(container);
+}
+
 function generateCategoryItems(categoriesCount, averages, id) {
   const container = document.getElementById(id);
   container.innerHTML = "";
@@ -1438,6 +1489,42 @@ function chooseArchetype(value) {
     }
 
     icon.textContent = value;
+  }
+}
+
+function chooseTier(value) {
+  selectedTier = value;
+  updateAnalysisFromDeck();
+
+  const icon = document.querySelector("#addByTierIcon"); // Seleciona o ícone ao lado do select
+  if (icon) {
+    if (value) {
+      icon.className = ""; // Limpa as classes do ícone
+      icon.classList.add("fa"); // Adiciona a classe base do FontAwesome
+      icon.classList.add("fa-solid"); // Adiciona a classe base do FontAwesome
+      icon.style.padding = "5px"; // Ajuste o padding como necessário
+      icon.style.borderRadius = "5px"; // Adicione bordas arredondadas se desejado
+      icon.style.marginLeft = "5px"; // Espaçamento entre o select e o ícone
+      icon.style.marginBottom = "5px"; // Espaçamento entre o select e o ícone
+      icon.innerHTML = value;
+
+      switch (value) {
+        case "Competitivo":
+          icon.classList.add("fa-medal");
+          icon.style.backgroundColor = "#FFD700";
+          icon.style.color = "#000";
+          break;
+        case "Casual":
+          icon.classList.add("fa-user-group");
+          icon.style.backgroundColor = "#1E90FF";
+          icon.style.color = "#fff";
+          break;
+        default:
+          icon.classList.add("fa-question");
+          icon.style.backgroundColor = "#6c757d";
+          icon.style.color = "#fff";
+      }
+    }
   }
 }
 

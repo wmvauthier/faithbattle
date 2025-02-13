@@ -26,15 +26,31 @@
     },
     {
         "type": "Milagre",
-        "ruling": "Milagres são cartas instantâneas, podendo ser jogadas a qualquer momento em que você possua a prioridade; Para jogá-los, todos os alvos devem ser válidos no momento da resolução; Após sua resolução, são enviados ao Mar do Esquecimento."
+        "ruling": "Milagres são cartas que podem ser jogados a qualquer momento em que o jogador tenha prioridade, inclusive durante o turno do oponente; Para um Milagre ser resolvido, seus alvos designados devem ser válidos no momento da resolução do mesmo; Assim que um Milagre é resolvido, seguindo a ordem da fila de resolução, seus efeitos ocorrem e ele é enviado ao Mar do Esquecimento, a menos que outra regra ou efeito indique o contrário; Se um Milagre possuir custos adicionais ou alternativos, o jogador deve declará-los e pagá-los no momento da conjuração."
     },
     {
         "type": "Pecado",
         "ruling": "Pecados são cartas instantâneas, podendo ser jogadas a qualquer momento em que você possua a prioridade, desde que as condições descritas sejam atendidas; Jogar um Pecado requer 1 ponto de Fé adicional aos custos normais da carta; O custo normal pode ser pago em qualquer combinação de Fé e Sabedoria; Para jogá-lo, todos os alvos devem ser válidos no momento da resolução; Após sua resolução, o Pecado é enviado ao Mar do Esquecimento."
     },
     {
+        "keywords": "Destruir",
+        "ruling": "Quando uma carta é destruída, ela é removida do campo e enviada para o Mar do Esquecimento, a menos que um efeito previna essa destruição ou redirecione seu destino; A destruição pode ocorrer como resultado de habilidades, efeitos ou regras do jogo; Cartas indestrutíveis não podem ser destruídas, mas ainda podem ser afetadas por outros métodos de remoção"
+    },
+    {
+        "keywords": "Revelar Sabedorias",
+        "ruling": "..."
+    },
+    {
+        "keywords": "Ocultar Sabedorias",
+        "ruling": "..."
+    },
+    {
         "keywords": "Indestrutível",
         "ruling": "Indestrutível é uma característica que impede uma carta de ser destruída por qualquer efeito, incluindo dano letal e efeitos que especificamente “destroem” cartas; Uma carta Indestrutível ainda pode ser movida para outras zonas do jogo por meios como Remover do Jogo, devolução à mão ou Enterrar; Caso a resistência de uma criatura Indestrutível for reduzida a 0, ela será colocada no cemitério normalmente, pois isso não conta como destruição; Indestrutível não impede que marcadores ou efeitos temporários modifiquem a carta, mas garante que ela permaneça em jogo mesmo sob condições que normalmente a destruiriam"
+    },
+    {
+        "keywords": "Imbloqueável",
+        "ruling": "Uma carta com a habilidade Imbloqueável não pode ser bloqueada por nenhuma outra carta durante a fase de combate; Isso significa que, ao ser declarada como atacante, ela seguirá diretamente para a resolução do dano de combate sem a interferência de bloqueadores; No entanto, efeitos que previnam dano, redirecionem ataques ou alterem o estado da carta ainda podem afetar seu impacto no jogo"
     },
     {
         "effects": "Entrada",
@@ -62,7 +78,7 @@
     },
     {
         "keywords": "Buscar",
-        "ruling": "Buscar cartas refere-se a efeitos que permitem ao jogador procurar por uma ou mais cartas em uma Zona de jogo e colocá-las em uma Zona de destino.;Após a busca, o jogador deve revelar a carta e embaralhar seu respectivo baralho, caso a busca tenha sido feita no mesmo.;Caso a carta a ser buscada tenha critérios de busca específicos, eles devem ser checados antes de enviar a carta para a sua Zona de destino.;Quando estiverem buscando nos seus respectivos baralhos, jogadores podem optar por não encontrar cartas, mesmo que elas existam no local da busca;Após a resolução, a carta buscada é então colocada na zona indicada conforme especificado pelo efeito da busca"
+        "ruling": "Buscar cartas refere-se a efeitos que permitem ao jogador procurar por uma ou mais cartas em uma Zona de jogo e colocá-las em uma Zona de destino.;Após a busca, o jogador deve revelar a carta, caso exceções em que a carta deixe explícito o contrário, e embaralhar seu respectivo baralho, caso a busca tenha sido feita no mesmo.;Caso a carta a ser buscada tenha critérios de busca específicos, eles devem ser checados antes de enviar a carta para a sua Zona de destino.;Quando estiverem buscando nos seus respectivos baralhos, jogadores podem optar por não encontrar cartas, mesmo que elas existam no local da busca;Após a resolução, a carta buscada é então colocada na zona indicada conforme especificado pelo efeito da busca"
     },
     {
         "keywords": "Enterrar",
@@ -71,6 +87,10 @@
     {
         "keywords": "Anular",
         "ruling": "Anular é um efeito que impede uma carta ou habilidade de resolver, removendo-a da fila de resolução antes que tenha qualquer impacto no jogo; Quando uma carta é anulada, ela geralmente é colocada no Mar do Esquecimento de seu dono, a menos que um efeito específico determine outro destino, como mão, baralho ou fora do jogo; Apenas cartas e habilidades na fila de resolução podem ser anuladas; Cartas constantes já em jogo (<i>Exemplo: heróis e artefatos</i>) não podem ser alvos desse efeito; Anular não desfaz custos pagos nem impede habilidades desencadeadas por seu lançamento, mas impede que seu efeito principal descrito na carta anulada ocorra"
+    },
+    {
+        "keywords": "Transformar",
+        "ruling": "..."
     },
     {
         "keywords": "Custo Alternativo",
