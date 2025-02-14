@@ -264,7 +264,10 @@ function importDeck() {
 
   let text = importField.value.trim();
   // Divide o texto usando "#" como delimitador, removendo linhas vazias
-  let lines = text.split("#").map(line => line.trim()).filter(line => line);
+  let lines = text
+    .split("#")
+    .map((line) => line.trim())
+    .filter((line) => line);
 
   console.log("Linhas importadas:", lines);
 
@@ -307,7 +310,9 @@ function importDeck() {
       decodedNames.forEach((name) => {
         // Se a carta não estava na lista, adiciona com quantidade 1
         if (!cardQuantities.has(name)) {
-          console.warn(`Carta "${name}" da string Base64 não estava na lista original.`);
+          console.warn(
+            `Carta "${name}" da string Base64 não estava na lista original.`
+          );
           cardQuantities.set(name, 1);
         }
       });
@@ -325,15 +330,17 @@ function importDeck() {
     let card = null;
     if (isLegendary) {
       // Se for lendária, filtra somente cards com subtype "Lendário" cujo nome contenha o nome base
-      card = allCards.find(c =>
-        c.subtype === "Lendário" &&
-        normalizeText(c.name).includes(normalizeText(baseName))
+      card = allCards.find(
+        (c) =>
+          c.subtype === "Lendário" &&
+          normalizeText(c.name).includes(normalizeText(baseName))
       );
     } else {
       // Se não for lendária, filtra somente cards cujo subtype não seja "Lendário" e cujo nome contenha o nome indicado
-      card = allCards.find(c =>
-        c.subtype !== "Lendário" &&
-        normalizeText(c.name).includes(normalizeText(name))
+      card = allCards.find(
+        (c) =>
+          c.subtype !== "Lendário" &&
+          normalizeText(c.name).includes(normalizeText(name))
       );
     }
 
@@ -361,53 +368,83 @@ function importDeck() {
 }
 
 function exportDeck() {
-  const mergedArray = [...deck.cards, ...deck.extra];
-  let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
+  const importField = document.getElementById("deckImporterFilter");
 
-  const typeOrder = {
-    "Herói de Fé": 1,
-    Milagre: 2,
-    Artefato: 3,
-    Pecado: 4,
-  };
+  console.log(deck.cards.length);
 
-  const cardCount = {};
+  if (deck.cards.length > 0) {
+    const mergedArray = [...deck.cards, ...deck.extra];
+    let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
 
-  cardsFromDeck.forEach((card) => {
-    let displayName = card.name;
-    if (card.type === "Herói de Fé" && card.subtype === "Lendário") {
-      displayName += " (Lendário)";
-    }
+    const typeOrder = {
+      "Herói de Fé": 1,
+      Milagre: 2,
+      Artefato: 3,
+      Pecado: 4,
+    };
 
-    const key = `${card.type}-${card.subtype}-${card.cost}-${displayName}`;
-    if (!cardCount[key]) {
-      cardCount[key] = { ...card, name: displayName, count: 0 };
-    }
-    cardCount[key].count++;
-  });
+    const cardCount = {};
 
-  const sortedCards = Object.values(cardCount).sort((a, b) => {
-    const aTypeOrder =
-      a.type === "Herói de Fé" && a.subtype === "Lendário"
-        ? 0
-        : typeOrder[a.type] || 99;
-    const bTypeOrder =
-      b.type === "Herói de Fé" && b.subtype === "Lendário"
-        ? 0
-        : typeOrder[b.type] || 99;
+    cardsFromDeck.forEach((card) => {
+      let displayName = card.name;
+      if (card.type === "Herói de Fé" && card.subtype === "Lendário") {
+        displayName += " (Lendário)";
+      }
 
-    if (aTypeOrder !== bTypeOrder) return aTypeOrder - bTypeOrder;
-    if (a.cost !== b.cost) return a.cost - b.cost;
+      const key = `${card.type}-${card.subtype}-${card.cost}-${displayName}`;
+      if (!cardCount[key]) {
+        cardCount[key] = { ...card, name: displayName, count: 0 };
+      }
+      cardCount[key].count++;
+    });
 
-    return a.name.localeCompare(b.name);
-  });
+    const sortedCards = Object.values(cardCount).sort((a, b) => {
+      const aTypeOrder =
+        a.type === "Herói de Fé" && a.subtype === "Lendário"
+          ? 0
+          : typeOrder[a.type] || 99;
+      const bTypeOrder =
+        b.type === "Herói de Fé" && b.subtype === "Lendário"
+          ? 0
+          : typeOrder[b.type] || 99;
 
-  const textLines = sortedCards.map((card) => `# (${card.count}) ${card.name}`);
-  const base64String = btoa(sortedCards.map((card) => card.name.replace(" (Lendário)", "")).join(","));
+      if (aTypeOrder !== bTypeOrder) return aTypeOrder - bTypeOrder;
+      if (a.cost !== b.cost) return a.cost - b.cost;
 
-  const finalOutput = `${textLines.join("\n")}\n#\n${base64String}\n#\n# Para usar este deck, copie-o para a área de transferência e cole no DeckBuilder do site do FAITH BATTLE.`;
+      return a.name.localeCompare(b.name);
+    });
 
-  console.log(finalOutput);
+    const textLines = sortedCards.map(
+      (card) => `# (${card.count}) ${card.name}`
+    );
+    const base64String = btoa(
+      sortedCards.map((card) => card.name.replace(" (Lendário)", "")).join(",")
+    );
+
+    const finalOutput = `${textLines.join(
+      "\n"
+    )}\n#\n${base64String}\n#\n# Para usar este deck, copie-o para a área de transferência e cole no DeckBuilder do site do FAITH BATTLE.`;
+
+    console.log(finalOutput);
+
+    navigator.clipboard
+      .writeText(finalOutput)
+      .then(() => {
+        importField.value = "Deck Copiado";
+        // button.classList.add("copied");
+        importField.disabled = true;
+
+        setTimeout(() => {
+          importField.value = "";
+          // button.classList.remove("copied");
+          importField.disabled = false;
+        }, 5000); // Voltar ao estado normal após 3 segundos
+      })
+      .catch((err) => {
+        console.error("Erro ao copiar o hash:", err);
+        alert("Erro ao copiar o hash!");
+      });
+  }
 }
 
 async function generateDeck() {
