@@ -206,6 +206,21 @@
         button:active {
             transform: scale(0.9);
         }
+
+        .deck-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            /* 10 colunas por linha */
+            gap: 5px;
+            /* Espaçamento entre os cards */
+        }
+
+        .card-item {
+            width: 100%;
+            /* Garante que os itens ocupem o espaço corretamente */
+            text-align: center;
+            padding: 5px;
+        }
     </style>
 
     <!-- Anime Section Begin -->
@@ -352,6 +367,19 @@
                     <div class="row" style="margin-bottom: 0px; padding-left:20px;">
                         <div class="anime__details__review" style="margin-bottom: 0px">
                             <div class="section-title">
+                                <h5>Importação e Exportação</h5>
+                            </div>
+                            <div class="row" id="importFieldBuilder" style="margin-left: 15px;"></div>
+                            <div class="row" style="padding:15px; padding-top: 0px;">
+                                <button class="col" onclick="importDeck()" style="width: 100%;">Importar Deck</button>
+                                <button class="col" onclick="exportDeck()" style="width: 100%;">Exportar Deck</button>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="row" style="margin-bottom: 0px; padding-left:20px;">
+                        <div class="anime__details__review" style="margin-bottom: 0px">
+                            <div class="section-title">
                                 <h5>Funções Automatizadas</h5>
                             </div>
                             <div class="row" style="padding:15px; padding-top: 0px;">
@@ -370,7 +398,7 @@
                                 <h5>Testes de Mão e Compra</h5>
                             </div>
                             <div id="handTestList" style="padding-right: 15px;" class="row vertical-line"></div>
-                            
+
                             <div class="row" style="padding:10px; padding-top: 0px;">
                                 <div class="col" style="padding:10px; padding-top: 0px;">
                                     <button onclick="autoGenerateHand(false)" style="width: 100%;">Testar</button>

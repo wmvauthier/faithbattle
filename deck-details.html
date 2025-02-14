@@ -193,6 +193,22 @@
                                             box-shadow: none;
                                             appearance: none;
                                         }
+
+                                        .deck-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            /* 10 colunas por linha */
+            gap: 5px;
+            /* Espaçamento entre os cards */
+        }
+
+        .card-item {
+            width: 100%;
+            /* Garante que os itens ocupem o espaço corretamente */
+            text-align: center;
+            padding: 5px;
+        }
+        
                                     </style>
 
                                     <!-- FontAwesome -->

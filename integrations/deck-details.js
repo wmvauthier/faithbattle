@@ -167,12 +167,12 @@ function updateCardListDOM(cardsFromDeck) {
   const fragment = document.createDocumentFragment();
   deckListContainer.innerHTML = "";
 
+  // Adiciona a classe CSS para aplicar Grid
+  deckListContainer.classList.add("deck-grid");
+
   cardsFromDeck.forEach((card) => {
-    const cardElement = createDivWithClass(
-      "col-lg-1 col-md-2 col-sm-2 col-xs-2 col-2 card__related__sidebar__view__item set-bg"
-    );
+    const cardElement = createDivWithClass("card-item");
     cardElement.style.cursor = "pointer";
-    cardElement.style.padding = "0 5px";
     cardElement.innerHTML = `
       <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
       <div class="card__related__info"></div>

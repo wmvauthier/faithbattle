@@ -243,11 +243,171 @@ async function updateAnalysisFromDeck() {
   );
   generateSelectFilterByProperty(allCards, "collection", "Coleção", "Coleção");
 
+  generateImportFieldBuilder(
+    "deckImporter",
+    "Deck Importado",
+    "Cole aqui seu deck"
+  );
   generateArchetypeSelect();
   generateStyleSelect();
   generateTierSelect();
 
   filterResults();
+}
+
+function importDeck() {
+  const importField = document.getElementById("deckImporterFilter");
+  if (!importField) {
+    console.error("Elemento #deckImporterFilter não encontrado.");
+    return [];
+  }
+
+  let text = importField.value.trim();
+  // Divide o texto usando "#" como delimitador, removendo linhas vazias
+  let lines = text.split("#").map(line => line.trim()).filter(line => line);
+
+  console.log("Linhas importadas:", lines);
+
+  const idArray = [];
+  let encodedString = null;
+  const cardQuantities = new Map();
+
+  // Função para normalizar texto (remove acentos, espaços extras e coloca em minúsculas)
+  function normalizeText(text) {
+    return text.normalize("NFKD").trim().toLowerCase();
+  }
+
+  // Processa cada linha
+  lines.forEach((line) => {
+    console.log("Processando linha:", line);
+
+    // Se a linha parece ser uma string base64 (apenas caracteres alfanuméricos e +, /, =) e comprimento razoável
+    if (/^[A-Za-z0-9+/=]+$/.test(line) && line.length > 10) {
+      console.log("String base64 detectada:", line);
+      encodedString = line;
+      return;
+    }
+
+    // Procura linhas no formato: (X) Nome da Carta
+    const match = line.match(/^\((\d+)\)\s*(.+)/);
+    if (match) {
+      const count = parseInt(match[1], 10);
+      let name = match[2]; // Mantém exatamente o que foi digitado, podendo conter " (Lendário)"
+      // Acumula a quantidade da carta
+      cardQuantities.set(name, (cardQuantities.get(name) || 0) + count);
+    }
+  });
+
+  // Se houver string base64, decodifica e adiciona cartas que não estavam na lista original
+  if (encodedString) {
+    try {
+      const decodedNames = atob(encodedString).split(",");
+      console.log("Nomes decodificados do base64:", decodedNames);
+
+      decodedNames.forEach((name) => {
+        // Se a carta não estava na lista, adiciona com quantidade 1
+        if (!cardQuantities.has(name)) {
+          console.warn(`Carta "${name}" da string Base64 não estava na lista original.`);
+          cardQuantities.set(name, 1);
+        }
+      });
+    } catch (error) {
+      console.error("Erro ao decodificar base64:", error);
+    }
+  }
+
+  // Para cada entrada (nome e quantidade) encontrada, busca o card adequado em allCards
+  cardQuantities.forEach((count, name) => {
+    let isLegendary = name.includes("Lendário");
+    // Para facilitar a busca, removemos " (Lendário)" se estiver presente para formar o nome base
+    let baseName = name.replace(" (Lendário)", "").trim();
+
+    let card = null;
+    if (isLegendary) {
+      // Se for lendária, filtra somente cards com subtype "Lendário" cujo nome contenha o nome base
+      card = allCards.find(c =>
+        c.subtype === "Lendário" &&
+        normalizeText(c.name).includes(normalizeText(baseName))
+      );
+    } else {
+      // Se não for lendária, filtra somente cards cujo subtype não seja "Lendário" e cujo nome contenha o nome indicado
+      card = allCards.find(c =>
+        c.subtype !== "Lendário" &&
+        normalizeText(c.name).includes(normalizeText(name))
+      );
+    }
+
+    if (card) {
+      for (let i = 0; i < count; i++) {
+        idArray.push(card.number);
+      }
+      console.log(`Adicionando ${count}x ${card.name} (ID: ${card.number})`);
+    } else {
+      console.warn(`Carta "${name}" não encontrada em allCards.`);
+    }
+  });
+
+  console.log("IDs gerados:", idArray);
+
+  // Limpa o campo de importação
+  importField.value = "";
+
+  // Adiciona cada card ao deck
+  idArray.forEach((element) => {
+    addCardToDeckBuilder(element);
+  });
+
+  return idArray;
+}
+
+function exportDeck() {
+  const mergedArray = [...deck.cards, ...deck.extra];
+  let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
+
+  const typeOrder = {
+    "Herói de Fé": 1,
+    Milagre: 2,
+    Artefato: 3,
+    Pecado: 4,
+  };
+
+  const cardCount = {};
+
+  cardsFromDeck.forEach((card) => {
+    let displayName = card.name;
+    if (card.type === "Herói de Fé" && card.subtype === "Lendário") {
+      displayName += " (Lendário)";
+    }
+
+    const key = `${card.type}-${card.subtype}-${card.cost}-${displayName}`;
+    if (!cardCount[key]) {
+      cardCount[key] = { ...card, name: displayName, count: 0 };
+    }
+    cardCount[key].count++;
+  });
+
+  const sortedCards = Object.values(cardCount).sort((a, b) => {
+    const aTypeOrder =
+      a.type === "Herói de Fé" && a.subtype === "Lendário"
+        ? 0
+        : typeOrder[a.type] || 99;
+    const bTypeOrder =
+      b.type === "Herói de Fé" && b.subtype === "Lendário"
+        ? 0
+        : typeOrder[b.type] || 99;
+
+    if (aTypeOrder !== bTypeOrder) return aTypeOrder - bTypeOrder;
+    if (a.cost !== b.cost) return a.cost - b.cost;
+
+    return a.name.localeCompare(b.name);
+  });
+
+  const textLines = sortedCards.map((card) => `# (${card.count}) ${card.name}`);
+  const base64String = btoa(sortedCards.map((card) => card.name.replace(" (Lendário)", "")).join(","));
+
+  const finalOutput = `${textLines.join("\n")}\n#\n${base64String}\n#\n# Para usar este deck, copie-o para a área de transferência e cole no DeckBuilder do site do FAITH BATTLE.`;
+
+  console.log(finalOutput);
 }
 
 async function generateDeck() {
@@ -1002,46 +1162,31 @@ function updateDeckListDOM(cardsFromDeck) {
   const extraDeckListContainer = document.querySelector("#extraDeckList");
   const deckListContainer = document.querySelector("#deckList");
 
-  if (!deckListContainer) return;
-  if (!extraDeckListContainer) return;
+  if (!deckListContainer || !extraDeckListContainer) return;
+
+  // Aplica a classe CSS Grid nos containers
+  deckListContainer.classList.add("deck-grid");
+  extraDeckListContainer.classList.add("deck-grid");
 
   deckListContainer.innerHTML = "";
   extraDeckListContainer.innerHTML = "";
 
   cardsFromDeck.forEach((card) => {
+    const cardElement = document.createElement("div");
+    cardElement.className = "card-item";
+    cardElement.style.cursor = "pointer";
+    cardElement.innerHTML = `
+      <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
+      <div class="card__related__info"></div>
+    `;
+
+    cardElement.addEventListener("click", () =>
+      removeCardFromDeckBuilder(card.number)
+    );
+
     if (card.type == "Herói de Fé" && card.subtype == "Lendário") {
-      const cardElement = document.createElement("div");
-      cardElement.className =
-        "col-lg-1 col-md-2 col-2 card__related__sidebar__view__item set-bg";
-      cardElement.style.cursor = "pointer";
-      cardElement.innerHTML = `
-        <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
-        <div class="card__related__info">
-        </div>
-      `;
-
-      cardElement.addEventListener("click", () =>
-        removeCardFromDeckBuilder(card.number)
-      );
-      cardElement.style = "padding-right:5px; padding-left: 5px;";
-
       extraDeckListContainer.appendChild(cardElement);
     } else {
-      const cardElement = document.createElement("div");
-      cardElement.className =
-        "col-lg-1 col-md-2 col-2 card__related__sidebar__view__item set-bg";
-      cardElement.style.cursor = "pointer";
-      cardElement.innerHTML = `
-        <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
-        <div class="card__related__info">
-        </div>
-      `;
-
-      cardElement.addEventListener("click", () =>
-        removeCardFromDeckBuilder(card.number)
-      );
-      cardElement.style = "padding-right:5px; padding-left: 5px;";
-
       deckListContainer.appendChild(cardElement);
     }
   });
@@ -1235,6 +1380,32 @@ async function prepareSimilarCardsArray(similarCardsArray) {
       return acc;
     }, {});
   }
+}
+
+function generateImportFieldBuilder(property, prettyName, placeholder) {
+  document.getElementById("importFieldBuilder").innerHTML = "";
+  const filtersContainer = document.getElementById("importFieldBuilder");
+
+  const input = document.createElement("input");
+  input.setAttribute("type", "text");
+  input.setAttribute("name", property);
+  input.setAttribute("prettyName", prettyName);
+  input.setAttribute("id", `${property}Filter`);
+  input.setAttribute("placeholder", placeholder);
+  input.classList.add("mb-3", "mr-3", "custom-text-input");
+  input.style.width = "170%";
+  input.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      const value = input.value;
+      if (value) {
+        addSelectedFilter(property, value, prettyName);
+        input.value = "";
+        importDeck(value);
+      }
+    }
+  });
+
+  filtersContainer.appendChild(input);
 }
 
 function generateStyleSelect() {
