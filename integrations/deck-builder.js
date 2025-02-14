@@ -370,8 +370,6 @@ function importDeck() {
 function exportDeck() {
   const importField = document.getElementById("deckImporterFilter");
 
-  console.log(deck.cards.length);
-
   if (deck.cards.length > 0) {
     const mergedArray = [...deck.cards, ...deck.extra];
     let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
@@ -424,8 +422,6 @@ function exportDeck() {
     const finalOutput = `${textLines.join(
       "\n"
     )}\n#\n${base64String}\n#\n# Para usar este deck, copie-o para a área de transferência e cole no DeckBuilder do site do FAITH BATTLE.`;
-
-    console.log(finalOutput);
 
     navigator.clipboard
       .writeText(finalOutput)
