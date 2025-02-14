@@ -368,79 +368,75 @@ function importDeck() {
 }
 
 function exportDeck() {
+
   const importField = document.getElementById("deckImporterFilter");
 
-  if (deck.cards.length > 0) {
-    const mergedArray = [...deck.cards, ...deck.extra];
-    let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
+  // Junta as cartas principais e extras do deck
+  const mergedArray = [...deck.cards, ...deck.extra];
+  // Obtém um array com cada cópia individual da carta (não agrupado)
+  let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
 
-    const typeOrder = {
-      "Herói de Fé": 1,
-      Milagre: 2,
-      Artefato: 3,
-      Pecado: 4,
-    };
+  // Ordem definida para os tipos (Herói lendário terá prioridade máxima)
+  const typeOrder = {
+    "Herói de Fé": 1,
+    Milagre: 2,
+    Artefato: 3,
+    Pecado: 4,
+  };
 
-    const cardCount = {};
+  // Ordena cada carta individualmente:
+  // - Se for Herói de Fé Lendário, ela tem prioridade máxima (0).
+  // - Depois, ordena por custo (ascendente).
+  // - Em caso de empate, ordena por nome.
+  const sortedCards = cardsFromDeck.sort((a, b) => {
+    const aTypeOrder =
+      a.type === "Herói de Fé" && a.subtype === "Lendário"
+        ? 0
+        : typeOrder[a.type] || 99;
+    const bTypeOrder =
+      b.type === "Herói de Fé" && b.subtype === "Lendário"
+        ? 0
+        : typeOrder[b.type] || 99;
+    if (aTypeOrder !== bTypeOrder) return aTypeOrder - bTypeOrder;
+    if (a.cost !== b.cost) return a.cost - b.cost;
+    return a.name.localeCompare(b.name);
+  });
 
-    cardsFromDeck.forEach((card) => {
-      let displayName = card.name;
-      if (card.type === "Herói de Fé" && card.subtype === "Lendário") {
-        displayName += " (Lendário)";
-      }
+  // Para cada carta, gera uma linha no formato:
+  // "# (<custo>) <nome da carta>", adicionando " (Lendário)" se necessário.
+  const textLines = sortedCards.map((card) => {
+    let displayName = card.name;
+    if (card.type === "Herói de Fé" && card.subtype === "Lendário") {
+      displayName += " (Lendário)";
+    }
+    return `# (${card.cost}) ${displayName}`;
+  });
 
-      const key = `${card.type}-${card.subtype}-${card.cost}-${displayName}`;
-      if (!cardCount[key]) {
-        cardCount[key] = { ...card, name: displayName, count: 0 };
-      }
-      cardCount[key].count++;
+  // Gera a string Base64 usando os nomes originais das cartas (sem o sufixo " (Lendário)")
+  const base64String = btoa(sortedCards.map((card) => card.name).join(","));
+
+  // Monta o texto final conforme o formato do Marvel SNAP
+  const finalOutput = `${textLines.join(
+    "\n"
+  )}\n#\n${base64String}\n#\n# Para usar este deck, copie-o para a área de transferência e cole a partir do menu de edição de decks no MARVEL SNAP.`;
+
+  navigator.clipboard
+    .writeText(finalOutput)
+    .then(() => {
+      importField.value = "Deck Copiado";
+      // button.classList.add("copied");
+      importField.disabled = true;
+
+      setTimeout(() => {
+        importField.value = "";
+        // button.classList.remove("copied");
+        importField.disabled = false;
+      }, 5000); // Voltar ao estado normal após 3 segundos
+    })
+    .catch((err) => {
+      console.error("Erro ao copiar o hash:", err);
+      alert("Erro ao copiar o hash!");
     });
-
-    const sortedCards = Object.values(cardCount).sort((a, b) => {
-      const aTypeOrder =
-        a.type === "Herói de Fé" && a.subtype === "Lendário"
-          ? 0
-          : typeOrder[a.type] || 99;
-      const bTypeOrder =
-        b.type === "Herói de Fé" && b.subtype === "Lendário"
-          ? 0
-          : typeOrder[b.type] || 99;
-
-      if (aTypeOrder !== bTypeOrder) return aTypeOrder - bTypeOrder;
-      if (a.cost !== b.cost) return a.cost - b.cost;
-
-      return a.name.localeCompare(b.name);
-    });
-
-    const textLines = sortedCards.map(
-      (card) => `# (${card.count}) ${card.name}`
-    );
-    const base64String = btoa(
-      sortedCards.map((card) => card.name.replace(" (Lendário)", "")).join(",")
-    );
-
-    const finalOutput = `${textLines.join(
-      "\n"
-    )}\n#\n${base64String}\n#\n# Para usar este deck, copie-o para a área de transferência e cole no DeckBuilder do site do FAITH BATTLE.`;
-
-    navigator.clipboard
-      .writeText(finalOutput)
-      .then(() => {
-        importField.value = "Deck Copiado";
-        // button.classList.add("copied");
-        importField.disabled = true;
-
-        setTimeout(() => {
-          importField.value = "";
-          // button.classList.remove("copied");
-          importField.disabled = false;
-        }, 5000); // Voltar ao estado normal após 3 segundos
-      })
-      .catch((err) => {
-        console.error("Erro ao copiar o hash:", err);
-        alert("Erro ao copiar o hash!");
-      });
-  }
 }
 
 async function generateDeck() {
