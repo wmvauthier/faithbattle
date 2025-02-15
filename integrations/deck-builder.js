@@ -418,7 +418,7 @@ function exportDeck() {
   // Monta o texto final conforme o formato do Marvel SNAP
   const finalOutput = `${textLines.join(
     "\n"
-  )}\n#\n${base64String}\n#\n# Para usar este deck, copie-o para a área de transferência e cole a partir do menu de edição de decks no MARVEL SNAP.`;
+  )}\n#\n${base64String}\n#\n# Para usar este deck, copie-o para a área de transferência e cole a partir do menu de edição de decks no FAITH BATTLE .`;
 
   navigator.clipboard
     .writeText(finalOutput)
