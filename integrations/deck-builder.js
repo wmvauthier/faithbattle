@@ -273,7 +273,8 @@ function importDeck() {
 
   const idArray = [];
   let encodedString = null;
-  const cardQuantities = new Map();
+  // Em vez de acumular as quantidades, usaremos um Set para garantir que cada carta seja adicionada apenas uma vez
+  const cardNames = new Set();
 
   // Função para normalizar texto (remove acentos, espaços extras e coloca em minúsculas)
   function normalizeText(text) {
@@ -284,7 +285,7 @@ function importDeck() {
   lines.forEach((line) => {
     console.log("Processando linha:", line);
 
-    // Se a linha parece ser uma string base64 (apenas caracteres alfanuméricos e +, /, =) e comprimento razoável
+    // Se a linha parece ser uma string base64 (apenas caracteres alfanuméricos e +, /, =) e com comprimento razoável
     if (/^[A-Za-z0-9+/=]+$/.test(line) && line.length > 10) {
       console.log("String base64 detectada:", line);
       encodedString = line;
@@ -294,10 +295,9 @@ function importDeck() {
     // Procura linhas no formato: (X) Nome da Carta
     const match = line.match(/^\((\d+)\)\s*(.+)/);
     if (match) {
-      const count = parseInt(match[1], 10);
-      let name = match[2]; // Mantém exatamente o que foi digitado, podendo conter " (Lendário)"
-      // Acumula a quantidade da carta
-      cardQuantities.set(name, (cardQuantities.get(name) || 0) + count);
+      // Mesmo que haja uma quantidade diferente de 1, vamos ignorá-la
+      const name = match[2]; // Mantém exatamente o que foi digitado, podendo conter " (Lendário)"
+      cardNames.add(name);
     }
   });
 
@@ -308,12 +308,12 @@ function importDeck() {
       console.log("Nomes decodificados do base64:", decodedNames);
 
       decodedNames.forEach((name) => {
-        // Se a carta não estava na lista, adiciona com quantidade 1
-        if (!cardQuantities.has(name)) {
+        // Adiciona cada nome decodificado (caso ainda não exista)
+        if (!cardNames.has(name)) {
           console.warn(
             `Carta "${name}" da string Base64 não estava na lista original.`
           );
-          cardQuantities.set(name, 1);
+          cardNames.add(name);
         }
       });
     } catch (error) {
@@ -321,22 +321,22 @@ function importDeck() {
     }
   }
 
-  // Para cada entrada (nome e quantidade) encontrada, busca o card adequado em allCards
-  cardQuantities.forEach((count, name) => {
+  // Para cada carta (única) encontrada, busca o card adequado em allCards
+  cardNames.forEach((name) => {
     let isLegendary = name.includes("Lendário");
-    // Para facilitar a busca, removemos " (Lendário)" se estiver presente para formar o nome base
+    // Remove " (Lendário)" se presente para formar o nome base para busca
     let baseName = name.replace(" (Lendário)", "").trim();
 
     let card = null;
     if (isLegendary) {
-      // Se for lendária, filtra somente cards com subtype "Lendário" cujo nome contenha o nome base
+      // Se for lendária, busca somente cards com subtype "Lendário" cujo nome contenha o baseName
       card = allCards.find(
         (c) =>
           c.subtype === "Lendário" &&
           normalizeText(c.name).includes(normalizeText(baseName))
       );
     } else {
-      // Se não for lendária, filtra somente cards cujo subtype não seja "Lendário" e cujo nome contenha o nome indicado
+      // Se não for lendária, busca cards cujo subtype não seja "Lendário" e cujo nome contenha o nome informado
       card = allCards.find(
         (c) =>
           c.subtype !== "Lendário" &&
@@ -345,10 +345,9 @@ function importDeck() {
     }
 
     if (card) {
-      for (let i = 0; i < count; i++) {
-        idArray.push(card.number);
-      }
-      console.log(`Adicionando ${count}x ${card.name} (ID: ${card.number})`);
+      // Adiciona a carta apenas uma vez, ignorando a quantidade indicada
+      idArray.push(card.number);
+      console.log(`Adicionando 1x ${card.name} (ID: ${card.number})`);
     } else {
       console.warn(`Carta "${name}" não encontrada em allCards.`);
     }
@@ -366,6 +365,7 @@ function importDeck() {
 
   return idArray;
 }
+
 
 function exportDeck() {
 
@@ -649,12 +649,16 @@ async function tuningDeck() {
         counterLoop++;
         await wait(1);
 
+        console.log(lastAddedCards);
+        console.log(counterLoop);
+        console.log(markerHasChanged);
+
         // Interromper se a mesma carta foi adicionada 5 vezes seguidas
         if (
           lastAddedCards.length >= 3 &&
           lastAddedCards.slice(-3).every((val, _, arr) => val === arr[0])
         ) {
-          // console.log(`Loop interrompido: a carta ${lastAddedCards[0]} foi adicionada 5 vezes seguidas.`);
+          console.log(`Loop interrompido: a carta ${lastAddedCards[0]} foi adicionada 5 vezes seguidas.`);
           break;
         }
       }
