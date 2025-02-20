@@ -297,7 +297,7 @@
   {
     "name": "Abraão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Pague O oponente alvo perde 1 de fé. Ative apenas uma vez por rodada",
+    "text": "Uma vez por rodada, você pode pagar duas sabedorias (habilidade ativada) para escolher um herói na Zona de Batalha, convertendo todo o dano que ele causar em pontos de fé durante esse turno",
     "type": "Herói de Fé",
     "subtype": "Lendário",
     "categories": "Santificação",
@@ -395,7 +395,7 @@
   {
     "name": "Abel",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Pague O oponente alvo perde 1 de fé. Ative apenas uma vez por rodada",
+    "text": "O topo do seu baralho permanece revelado; Quando o topo é removido, a próxima carta assume essa posição; Se o topo for um Milagre, você pode pagar uma sabedoria para jogá-lo e ganhar 1 ponto de fé",
     "type": "Herói de Fé",
     "subtype": "Lendário",
     "sinergies": "88,71",
@@ -494,7 +494,7 @@
   {
     "name": "Sara",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Pague O oponente alvo perde 1 de fé. Ative apenas uma vez por rodada",
+    "text": "Cada vez que você jogar um Milagre (se for a primera vez que esse efeito for desencadeado), ganhe 1 ponto de fé",
     "type": "Herói de Fé",
     "subtype": "Lendário",
     "categories": "Santificação",
@@ -592,7 +592,7 @@
   {
     "name": "Adão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Pague O oponente alvo perde 1 de fé. Ative apenas uma vez por rodada",
+    "text": "Todos os outros heróis na Zona de Batalha com Defesa 1 ou menor recebem +1 de Defesa, independentemente de variações momentâneas, sem que o dano reduza esse valor",
     "type": "Herói de Fé",
     "subtype": "Lendário",
     "categories": "Lança;Amplificação",
@@ -690,7 +690,7 @@
   {
     "name": "Eva",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Pague O oponente alvo perde 1 de fé. Ative apenas uma vez por rodada",
+    "text": "Todos os outros heróis na Zona de Batalha com Ataque 1 ou menor recebem +1 de Ataque, de forma estática",
     "type": "Herói de Fé",
     "subtype": "Lendário",
     "categories": "Compra;Amplificação",
@@ -788,7 +788,7 @@
   {
     "name": "Isaque",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Pague O oponente alvo perde 1 de fé. Ative apenas uma vez por rodada",
+    "text": "No fim do turno, antes de realizar a compra por efeito desencadeado, olhe as duas cartas do topo do seu baralho; Você pode pagar duas sabedorias e revelar as duas cartas; Se pelo menos uma das cartas reveladas for de herói, escolha uma e ganhe pontos de fé iguais ao custo do herói escolhido; Ao fim deste efeito, pagando ou não as duas sabedorais, compre as duas cartas",
     "type": "Herói de Fé",
     "subtype": "Lendário",
     "categories": "Compra;Santificação",
@@ -886,7 +886,7 @@
   {
     "name": "Noé",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Pague O oponente alvo perde 1 de fé. Ative apenas uma vez por rodada",
+    "text": "Ao entrar no campo, desencadeia um efeito que permite buscar um artefato de custo 4 ou superior no baralho; Revele-o, adicione-o à sua mão e embaralhe o baralho;",
     "type": "Herói de Fé",
     "subtype": "Lendário",
     "sinergies": "21,22",

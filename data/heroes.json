@@ -2,7 +2,7 @@
   {
     "name": "Moisés",
     "flavor": "O Senhor falava com Moisés face a face, como quem fala com seu amigo - Êxodo 33:11",
-    "text": "Quando Moisés entra em jogo, procure um Milagre no seu baralho ou no Mar do Esquecimento, revele-o e compre essa carta",
+    "text": "Quando Moisés entra no campo, seu controlador busca uma carta de milagre no baralho ou ME, a revela e a coloca em sua mão; Se a busca ocorrer no baralho, este deve ser embaralhado; Esse efeito de entrada não conta como compra de carta.",
     "type": "Herói de Fé",
     "subtype": "-",
     "sinergies": "25,48",
@@ -100,7 +100,7 @@
   {
     "name": "Davi",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Sempre que Davi ataca, um oponente à sua escolha perde 1 ponto de fé",
+    "text": "Sempre que Davi é declarado como atacante, escolha um oponente – esse oponente perde 1 ponto de fé; Esse efeito desencadeado ocorre antes da declaração de bloqueadores.",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Lança;Dano",
@@ -197,7 +197,7 @@
   {
     "name": "Elias",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Elias entra em jogo, destrói uma carta alvo da zona de batalha",
+    "text": "Quando Elias entra no campo, seu controlador escolhe uma carta de qualquer tipo presente em qualquer Zona de Batalha e a destrói, como efeito desencadeado de entrada; Cartas com Indestrutível não são afetadas, embora possam ser alvos válidos.",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Remoção",
@@ -294,7 +294,7 @@
   {
     "name": "Salomão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Acrescente uma carta de sabedoria ao jogo sob seu controle. Quando Salomão ataca reative uma carta de sabedoria já usada",
+    "text": "Ao entrar no campo, Salomão aciona um efeito desencadeado que adiciona 1 carta de sabedoria à sua ZS; Além disso, quando Salomão ataca, seu controlador oculta 1 carta de sabedoria, deixando-a pronta para uso, antes da declaração de bloqueadores.",
     "type": "Herói de Fé",
     "subtype": "-",
     "sinergies": "42",
@@ -392,7 +392,7 @@
   {
     "name": "Eva",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Eva entra em jogo, compre uma carta",
+    "text": "Quando Eva entra no campo, seu controlador compra uma carta, acionando o efeito desencadeado de entrada.",
     "type": "Herói de Fé",
     "subtype": "-",
     "sinergies": "10,73",
@@ -490,7 +490,7 @@
   {
     "name": "Josué",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Josué ataca, todos os seus outros heróis que estejam atacando ganham +1/+0",
+    "text": "Sempre que Josué é declarado como atacante, todos os outros heróis atacantes recebem +1 de Ataque e +0 de Defesa até o fim do turno; Esse efeito desencadeado ocorre antes da declaração de bloqueadores e se aplica apenas aos demais heróis atacantes.",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Amplificação",
@@ -587,7 +587,7 @@
   {
     "name": "Abraão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Se Abraão estiver na sua zona de batalha, ganhe um ponto de fé sempre que um herói entra em jogo sob seu controle",
+    "text": "Sempre que um Herói entra no campo sob seu controle, vindo de fora do campo para qualquer Zona (preparação ou batalha), você ganha 1 ponto de fé; Esse efeito desencadeado ocorre uma vez por herói que entra no campo; Se o mesmo herói sair e voltar, o efeito se repetirá.",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Santificação",
@@ -684,7 +684,7 @@
   {
     "name": "Sansão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Sansão entra em jogo diretamente a zona de batalha e pode atacar",
+    "text": "Quando Sansão entra no jogo, ele é colocado diretamente na Zona de Batalha (em vez de na Zona de Preparação) e pode atacar no mesmo turno; Esse efeito estático permite sua participação imediata no combate.",
     "type": "Herói de Fé",
     "subtype": "-",
     "sinergies": "13",
@@ -782,7 +782,7 @@
   {
     "name": "Jacó",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Jacó ataca a um oponente ele revela uma carta aleatória da mão, se for um milagre, você compra uma carta",
+    "text": "Sempre que Jacó é declarado como atacante, o oponente defensor revela uma carta aleatória de sua mão; Se a carta revelada for um milagre, você compra uma carta; Esse efeito desencadeado ocorre antes da declaração de bloqueadores.",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Compra",
@@ -879,7 +879,7 @@
   {
     "name": "Adão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Adão recebe +2/+2 se você tiver Eva em jogo sob seu controle",
+    "text": "Adão recebe +2 de Ataque e +2 de Defesa como efeito estático condicional, enquanto houver ao menos uma Eva em qualquer zona (preparação ou batalha) sob seu controle; Se Eva deixar o campo, o bônus é imediatamente removido",
     "type": "Herói de Fé",
     "subtype": "-",
     "sinergies": "5",
@@ -977,7 +977,7 @@
   {
     "name": "José do Egito",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando José causa dano a um oponente, ele descarta uma carta aleatoria da mão. Se José é bloqueado, compre uma carta",
+    "text": "Sempre que José do Egito causar dano a um oponente, o defensor descarta uma carta aleatória de sua mão; Se ele tiver sido bloqueado, ao invés disso, você compra uma carta; Esse efeito alternativo é resolvido antes do dano de combate.",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Compra;Descarte",
@@ -1074,7 +1074,7 @@
   {
     "name": "Maria",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Maria entra em jogo, busque um Herói no seu baralho, embaralhe seu baralho e coloque essa carta no topo.",
+    "text": "Quando Maria entra no campo, seu controlador busca uma carta de herói no baralho, a revela e, após embaralhar o baralho, coloca essa carta no topo",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Buscador",
@@ -1171,7 +1171,7 @@
   {
     "name": "Daniel",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Daniel ataca ganha +1/+0, até o final do turno, por cada Herói na zona de batalha do oponente atacado",
+    "text": "Sempre que Daniel é declarado como atacante, ele recebe +1 de Ataque (e +0 de Defesa) até o fim do turno para cada herói que o oponente possui na Zona de Batalha; Esse efeito desencadeado ocorre antes da declaração de bloqueadores.",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Lança",
@@ -1268,7 +1268,7 @@
   {
     "name": "Noé",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Noé não pode ser alvo de milagres",
+    "text": "Noé possui um efeito estático que o impede de ser escolhido como alvo de efeitos de milagres não-globais enquanto estiver na Zona de Batalha.",
     "type": "Herói de Fé",
     "subtype": "-",
     "sinergies": "21,22",
@@ -1366,7 +1366,7 @@
   {
     "name": "Ester",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Quando Ester entra no campo, seu controlador olha as três cartas do topo do baralho e as reordena conforme preferir; Esse efeito desencadeado de entrada ocorre uma única vez e não altera o fluxo normal de compra do baralho.",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Buscador",
@@ -1463,7 +1463,7 @@
   {
     "name": "Ismael",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Quando você é declarado alvo do ataque do jogador ativo, escolha até dois heróis em quaisquer zonas de batalha; Esses heróis recebem -1 de Ataque até o fim do turno",
     "type": "Herói de Fé",
     "subtype": "-",
     "sinergies": "55",
@@ -1561,7 +1561,7 @@
   {
     "name": "Abel",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Recebe +3 de Ataque como efeito estático condicional enquanto você tiver três ou mais cartas de Milagres no Mar do Esquecimento; Quando Abel é enviado para o Mar do Esquececimento vindo do campo (exceto da mão ou do baralho), seu dono compra uma carta, por meio de um efeito desencadeado",
     "type": "Herói de Fé",
     "subtype": "-",
     "sinergies": "88,71",
@@ -1569,8 +1569,8 @@
     "cost": 1,
     "strength": 0,
     "resistence": 1,
-    "effects": "Contínuo;Ativável",
-    "keywords": "",
+    "effects": "Contínuo;",
+    "keywords": "Comprar",
     "number": 60,
     "collection": "GEN",
     "date": "2024-10-01",
@@ -1659,7 +1659,7 @@
   {
     "name": "Eliézer",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Sempre que você ganhar qualquer quantidade de pontos de fé, os demais heróis na sua Zona de Batalha recebem +1 de Ataque até o fim do turno, através de um efeito desencadeado",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Amplificação",
@@ -1756,7 +1756,7 @@
   {
     "name": "Enoque",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Sempre que você ganhar mais de 1 ponto de fé, Enoque recebe +1 de Ataque e +1 de Defesa até o fim do turno, por efeito desencadeado; Se Enoque for enviado do campo para o Mar do Esquecimento (exceto se proveniente da mão ou do baralho), ele é removido do jogo",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Lança",
@@ -1853,7 +1853,7 @@
   {
     "name": "Isaque",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "No início do turno, após ocultar as sabedorias reveladas, pule a etapa de compra; No fim do turno, compre duas cartas, através de um efeito desencadeado",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Compra",
@@ -1950,7 +1950,7 @@
   {
     "name": "Matusalém",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "É imune a efeitos de destruição e tem todo o dano prevenido, por efeito estático; Se alguém jogar Dilúvio, Matusalém é enviado para o Mar do Esquecimento",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Escudo",
@@ -2047,7 +2047,7 @@
   {
     "name": "Rebeca",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Quando Rebeca entra no campo, seu controlador retorna um herói de qualquer Zona de Batalha para a mão do dono; Todos os artefatos equipados ao herói retornado também são enviados para a mão, se houver; Pode ser jogada com a flexibilidade de um Milagre",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Remoção",
@@ -2144,7 +2144,7 @@
   {
     "name": "Sara",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Se você tiver jogado pelo menos um Milagre durante o turno, no fim do turno, ganhe 1 ponto de fé, por meio de um efeito desencadeado",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Santificação",
@@ -2241,7 +2241,7 @@
   {
     "name": "Sem",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "No fim do combate do seu turno, ganhe pontos de fé iguais ao número de heróis que participaram do combate e causaram dano a um oponente, contado como um único ganho para o turno",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Santificação",
@@ -2338,7 +2338,7 @@
   {
     "name": "Sete",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Quando um herói na sua Zona de Batalha é destruído, você pode jogar Sete imediatamente, como se fosse um Milagre, sem pagar seu custo; Se jogado dessa forma, Sete entra diretamente na Zona de Batalha; Se o herói destruído for Abel, você compra uma carta",
     "type": "Herói de Fé",
     "subtype": "-",
     "sinergies": "60",
@@ -2436,7 +2436,7 @@
   {
     "name": "Agar",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Quando Agar entra no campo, desencadeia um efeito que permite buscar, no seu baralho, um herói com valor de Ataque igual ou inferior a 2; Tanto Agar quanto o herói buscado entram diretamente na Zona de Batalha; No fim do turno em que entraram, ambos são enviados para o Mar do Esquecimento, por meio de um efeito desencadeado",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Buscador",
@@ -2533,7 +2533,7 @@
   {
     "name": "Pelegue",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Ao entrar no campo, seu controlador deve ocultar três sabedorias (viradas para baixo, prontas para uso), por efeito desencadeado; Cada vez que Pelegue é declarado como atacante, o oponente defensor deve revelar uma sabedoria, que ficará impossibilitada de uso até que ela seja ocultada novamente",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Lança;Recapitulação;Confusão",
@@ -2630,7 +2630,7 @@
   {
     "name": "Enos",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Ao entrar no campo, seu controlador ganha 1 ponto de fé para cada jogador na partida e cada oponente também ganha 1 ponto de fé, através de um efeito desencadeado",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Santificação",
@@ -2727,7 +2727,7 @@
   {
     "name": "Héber",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Aplica um custo adicional estático de 1 ponto de fé a qualquer oponente que tente jogar um artefato",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Dano",
@@ -2824,7 +2824,7 @@
   {
     "name": "Jó",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando Ester entra em jogo, olhe as 3 primeiras cartas do topo de seu baralho e reorganize-as como quiser",
+    "text": "Jó não pode sofrer efeitos de cartas de Pecado e suas próprias cartas não podem ser afetadas por eles, conforme efeito estático",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Proteção;Escudo",

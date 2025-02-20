@@ -89,6 +89,26 @@ function updateDOMElements(card, cardStatus) {
       } else if (id === "tag_cardStars") {
         element.innerHTML = updateStars(card.stars); // Atualizar as estrelas
       } else if (id === "tag_cardText") {
+        console.log(card.text);
+        console.log(card.rulings);
+
+        const textHtml = (
+          "<b>" +
+          card.name.toUpperCase() +
+          "</b>" +
+          ";" +
+          card.text
+        )
+          .split(";")
+          .map(
+            (ruling) =>
+              ruling
+                .split(";") // Dividir a string em partes usando ";"
+                .map((part) => `-> ${part.trim()}`) // Adicionar quebra de linha após cada parte
+                .join("") // Combinar as partes novamente
+          )
+          .join("<br>"); // Separar cada ruling com <br><br>
+
         if (rulingsChosenOption) {
           const rulingsHtml = card.rulings
             .map(
@@ -100,9 +120,9 @@ function updateDOMElements(card, cardStatus) {
             )
             .join("<br>"); // Separar cada ruling com <br><br>
 
-          element.innerHTML = `<b>${card.text}</b><br><br>${rulingsHtml}`;
+          element.innerHTML = `${textHtml}<br><br>${rulingsHtml}`;
         } else {
-          element.innerHTML = `<b>${card.text}</b>`;
+          element.innerHTML = `<b>${textHtml}</b>`;
         }
       } else {
         element.textContent = " " + value;

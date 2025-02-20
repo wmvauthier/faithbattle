@@ -2,7 +2,7 @@
   {
     "name": "Fruto Proibido",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Destrói o herói do oponente que esteja te atacando. Se ele tem Adão e/ou Eva na zona de batalha, ambos são destruídos.",
+    "text": "Você pode jogar Fruto Proibido quando for atacado, isto é, se tornar alvo da declaração de atacantes; Ao ser jogado, destrua um herói dentre os atacantes; Se o dono do herói afetado tiver Eva e/ou Adão na Zona de Batalha, todos os heróis com essa designação são destruídos; Cartas com Indestrutível não são afetadas, embora possam ser alvos válidos para o efeito.",
     "type": "Pecado",
     "subtype": "-",
     "categories": "Remoção",
@@ -99,7 +99,7 @@
   {
     "name": "Traição",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O oponente que te esteja atacando não pode atacar neste turno. Se Sansão estava entre os heróis atacantes, destrua-o.",
+    "text": "Você pode jogar Traição quando for atacado, isto é, se tornar alvo da declaração de atacantes; Ao ser jogado, escolha qualquer número de heróis dentre os atacantes; esses heróis são retirados do combate e impedidos de atacar neste turno; Se Sansão estiver entre eles, ele é destruído como efeito condicional adicional; Os efeitos desencadeados pela declaração de ataque desses heróis não são anulados.",
     "type": "Pecado",
     "subtype": "-",
     "categories": "Proteção",
@@ -196,7 +196,7 @@
   {
     "name": "Idolatria",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
+    "text": "Você pode jogar Idolatria quando for atacado ou quando estiver atacando e houver bloqueadores; Escolha um herói dentre os atacantes ou bloqueadores, conforme sua condição de jogador ativo, e destrua todos os artefatos equipados a ele; Artefatos com Indestrutível não são afetados.",
     "type": "Pecado",
     "subtype": "-",
     "categories": "Remoção",
@@ -293,7 +293,7 @@
   {
     "name": "Clamor de Sangue",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
+    "text": "Pode ser jogada quando um dos seus heróis combatentes for destruído após bloquear ou ser bloqueado; Ao ser jogada, destrua o herói alvo que bloqueou ou foi bloqueado pelo herói destruído; Se o herói destruído for Abel, você também compra uma carta",
     "type": "Pecado",
     "subtype": "-",
     "sinergies": "60",
@@ -391,7 +391,7 @@
   {
     "name": "Corrupção",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
+    "text": "Pode ser jogada quando um oponente comprar duas ou mais cartas em um único efeito; Ao resolvê-la, todos os jogadores descartam quantas cartas desejarem de suas mãos; Em seguida, cada jogador perde pontos de fé iguais à quantidade de cartas que possui na mão",
     "type": "Pecado",
     "subtype": "-",
     "categories": "Descarte;Renúncia;Dano",
@@ -488,7 +488,7 @@
   {
     "name": "Duvidar da Promessa",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
+    "text": "Pode ser jogada quando um oponente lançar uma carta de Milagres; Ao resolvê-la, revele até três sabedorias que o oponente controla (elas permanecem viradas para cima e inativas) e o oponente perde 3 pontos de fé",
     "type": "Pecado",
     "subtype": "-",
     "categories": "Dano;Confusão",
@@ -585,7 +585,7 @@
   {
     "name": "Sodomia",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
+    "text": "Pode ser jogada quando um pecado de um oponente for resolvido; Ao resolver, todos os jogadores retornam para a mão todas as cartas de Pecado em seus respectivos Mar do Esquecimento; Em seguida, cada jogador pode buscar quantas cartas de Pecado desejar de seus baralhos para a mão; Todos perdem 2 pontos de fé para cada carta adicionada; Sodomia é enviada para o Mar do Esquecimento somente após sua completa resolução",
     "type": "Pecado",
     "subtype": "-",
     "categories": "Dano",
@@ -682,7 +682,7 @@
   {
     "name": "Olhar pra trás",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Quando um herói te ataque ou defenda, destrua todos os artefatos equipados a ele",
+    "text": "Pode ser jogada quando você for atacado, desde que ao menos um herói na Zona de Batalha do jogador ativo não esteja em combate; O herói alvo que não estiver em combate é transformado em uma Estátua de Sal (um artefato não-equipável de custo 0 e sem habilidades)",
     "type": "Pecado",
     "subtype": "-",
     "categories": "Remoção;Transformação",

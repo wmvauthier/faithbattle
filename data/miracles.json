@@ -2,7 +2,7 @@
   {
     "name": "Força de Sansão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Herói alvo ganha +3/+3 até o final do turno. Se o alvo é Sansão, ele se torna imbloqueável até o fim do turno.",
+    "text": "Escolha um herói – esse herói recebe +3 de Ataque e +3 de Defesa até o fim do turno; Se o alvo for Sansão, ele se torna imbloqueável até o fim do turno, impedindo bloqueios normais como efeito adicional condicional.",
     "type": "Milagre",
     "subtype": "-",
     "sinergies": "8",
@@ -100,7 +100,7 @@
   {
     "name": "Fogo do Céu",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Destrói uma carta da zona de batalha",
+    "text": "Ao ser resolvido, Fogo do Céu permite escolher e destruir uma carta em qualquer Zona de Batalha; Cartas com Indestrutível não são afetadas, embora possam ser alvos válidos.",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Remoção",
@@ -197,7 +197,7 @@
   {
     "name": "Passagem Segura",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Os heróis do jogador alvo são imbloqueáveis neste turno",
+    "text": "Escolha um jogador; todos os heróis desse jogador não podem ser bloqueados normalmente até o fim do turno; Esse efeito se estende inclusive para heróis que entrem na Zona de Batalha após a resolução de Passagem Segura.",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Evasão",
@@ -294,7 +294,7 @@
   {
     "name": "Restauração de Fé",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador alvo ganha um ponto de fé por cada herói no campo de batalha dele",
+    "text": "Escolha um jogador; esse jogador ganha 1 ponto de fé para cada herói presente na Zona de Batalha no exato momento da resolução de Restauração da Fé.",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Santificação",
@@ -488,7 +488,7 @@
   {
     "name": "Liberação Celestial",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Anule qualquer efeito de milagre ou pecado nesse instante",
+    "text": "Escolha uma carta de milagre ou pecado que foi jogada, mas ainda não foi resolvida; Todos os seus efeitos são anulados, impedindo a sua resolução; Esse efeito atua na pilha, interrompendo a execução dos efeitos da carta escolhida.",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Anulação",
@@ -585,7 +585,7 @@
   {
     "name": "Ressurreição",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Retorna um herói de qualquer mar do esquecimento ao jogo sob seu controle. Você escolhe em qual zona ele voltará.",
+    "text": "Busque um herói em qualquer ME e coloque-o no campo sob seu controle, em qualquer zona de sua escolha; Esse efeito não conta como se o herói tivesse sido jogado normalmente, mas aciona habilidades que dependem da entrada em jogo; Busque um herói em qualquer ME e coloque-o no campo sob seu controle, em qualquer zona de sua escolha; Esse efeito não conta como se o herói tivesse sido jogado normalmente, mas aciona habilidades que dependem da entrada em jogo.",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Buscador",
@@ -682,7 +682,7 @@
   {
     "name": "Sarça Ardente",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O jogador alvo ganha 2 pontos de fé. O oponente alvo perde 2 pontos de fé.",
+    "text": "Escolha um jogador para ganhar 2 pontos de fé, enquanto um oponente escolhido perde 2 pontos de fé simultaneamente; Esse efeito ocorre de forma imediata ao ser resolvido.",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Dano;Santificação",
@@ -779,7 +779,7 @@
   {
     "name": "Dilúvio",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Destrói todos os heróis e artefatos da zona de batalha. Noé e a Arca sobrevivem",
+    "text": "Ao ser resolvido, Dilúvio destrói todos os heróis e artefatos em todas as Zonas de Batalha, exceto o artefato Arca de Noé e o herói Noé; Cartas com Indestrutível não são afetadas por esse efeito.",
     "type": "Milagre",
     "subtype": "-",
     "sinergies": "46,22",
@@ -877,7 +877,7 @@
   {
     "name": "Cordeiro de Deus",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Até o seu próximo turno, o jogador alvo não perde pontos de fé, pecados não o afetam, e suas cartas são indestrutíveis",
+    "text": "Até o início do seu próximo turno, escolha um jogador para que todo o dano que seria causado a ele seja prevenido; Além disso, todas as cartas constantes no campo desse jogador ganham Indestrutível, tornando-as imunes a efeitos de destruição e à prevenção de dano; Esses efeitos são aplicados como estáticos até expirarem.",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Proteção",
@@ -974,7 +974,7 @@
   {
     "name": "Sabedoria de Salomão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O jogador alvo reativa 3 cartas de sabedoria. Se Salomão está em jogo, compre uma carta.",
+    "text": "Escolha um jogador; esse jogador oculta 3 cartas de sabedoria de sua ZS, tornando-as prontas para uso; Se Salomão estiver em jogo sob seu controle, você compra uma carta adicional, como efeito condicional.",
     "type": "Milagre",
     "subtype": "-",
     "sinergies": "4",
@@ -1072,7 +1072,7 @@
   {
     "name": "No Céu tem Pão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Escolha um jogador e esse jogador comprará 3 cartas; Porém, se Moisés estiver na Zona de Batalha sob seu controle, ele compra 5 cartas em vez disso, como efeito alternativo.",
     "type": "Milagre",
     "subtype": "-",
     "sinergies": "1",
@@ -1170,7 +1170,7 @@
   {
     "name": "Resgate do Justo",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Busque uma carta de artefato no seu baralho e uma de herói no seu Mar do Esquecimento; Revele ambas e coloque-as na sua mão; Em seguida, embaralhe o baralho",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Buscador",
@@ -1267,7 +1267,7 @@
   {
     "name": "Adjuntora Idônea",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Ao ser jogada, escolha um herói na sua Zona de Batalha como alvo; Em seguida, busque no seu baralho ou no Mar do Esquecimento um herói com o mesmo custo do alvo e coloque-o na sua Zona de Preparação; Se a busca ocorrer no baralho, embaralhe-o após a operação; Se o herói alvo tiver custo 1 e você possuir Eva no seu baralho, poderá buscar Eva sem pagar o custo deste milagre",
     "type": "Milagre",
     "subtype": "-",
     "sinergies": "5",
@@ -1365,7 +1365,7 @@
   {
     "name": "Shabbat",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Ao resolver, compre cartas até ter sete na mão e ganhe 7 pontos de fé; Além disso, até o final do seu próximo turno, você não pode atacar e suas cartas ganham Indestrutível, prevenindo destruição e dano",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Proteção;Compra;Santificação",
@@ -1462,7 +1462,7 @@
   {
     "name": "Ira de Deus",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Escolha um jogador; esse jogador seleciona um herói em sua própria Zona de Batalha, que é imediatamente retornado à Zona de Preparação; Em seguida, todas as demais cartas na Zona de Batalha desse jogador são destruídas",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Juízo",
@@ -1559,7 +1559,7 @@
   {
     "name": "Protoevangelho",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Escolha uma carta de qualquer tipo que tenha sido jogada mas ainda não resolvida; Todos os seus efeitos são anulados, impedindo sua resolução; Alternativamente, você pode descartar da sua mão uma carta do mesmo tipo que o alvo, em vez de pagar o custo deste milagre",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Anulação",
@@ -1656,7 +1656,7 @@
   {
     "name": "Filho da Promessa",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Escolha um herói na sua Zona de Batalha; Busque no seu baralho um herói cujo custo seja exatamente 1 ponto maior que o do herói escolhido; O herói buscado entra diretamente na Zona de Batalha e o herói escolhido é embaralhado de volta ao baralho; Em seguida, embaralhe o baralho; Este efeito é considerado de busca, não contando como jogar o herói buscado",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Buscador",
@@ -1753,7 +1753,7 @@
   {
     "name": "Sinal Divino",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Até o início do seu próximo turno, todas as cartas de todos os jogadores ganham Indestrutível, impedindo destruição e prevenindo todo dano",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Proteção",
@@ -1850,7 +1850,7 @@
   {
     "name": "Paternidade",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Escolha um herói em qualquer Zona de Batalha; Até o fim do turno, esse herói ganha Indestrutível (não pode ser destruído e tem todo o dano prevenido) e não pode ser alvo de efeitos de Pecado; Se o herói escolhido for Abraão, Isaque ou Jacó, ele também recebe +1 de Ataque e +1 de Defesa",
     "type": "Milagre",
     "subtype": "-",
     "sinergies": "7,64,9",
@@ -1948,7 +1948,7 @@
   {
     "name": "Gênese de Tudo",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Adiciona uma carta de sabedoria à sua Zona de Sabedoria, revelada (ficando impossibilitada de uso até sua próxima fase de Ocultação de Sabedorias); Se esta for a primeira carta jogada na partida, ela pode ser jogada gratuitamente",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Conhecimento",
@@ -2045,7 +2045,7 @@
   {
     "name": "Oferta do Justo",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Ao resolver, compre uma carta e ganhe 1 ponto de fé",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Compra;Santificação",
@@ -2142,7 +2142,7 @@
   {
     "name": "Herança de Abraão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Escolha um herói em qualquer Zona de Batalha; Até o fim do turno, esse herói recebe um bônus de Ataque igual ao número de heróis presentes no seu Mar do Esquecimento",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Amplificação",
@@ -2239,7 +2239,7 @@
   {
     "name": "Provação de Fé",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Escolha um herói na sua Zona de Batalha; No fim do turno, esse herói retorna para a mão do dono; Se durante o turno ele for afetado por um efeito de destruição ou receber dano letal, ele retorna imediatamente à mão e você ganha 2 pontos de fé, por efeito de substituição",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Proteção",
@@ -2336,7 +2336,7 @@
   {
     "name": "Imagem e Semelhança",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Permite escolher um herói não lendário na sua Zona de Batalha e transformá-lo em outro herói não lendário presente na mesma zona; Alternativamente, se você pagar 6 de sabedoria (ao invés de 3), os alvos podem ser escolhidos de qualquer Zona de Batalha",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Buscador;Remoção;Transformação",
@@ -2433,7 +2433,7 @@
   {
     "name": "Dízimo",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Para jogar Dízimo, descarte uma carta da sua mão; Ao resolver, compre duas cartas",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Compra;Renúncia",
@@ -2530,7 +2530,7 @@
   {
     "name": "Circuncisão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Escolha um jogador; esse jogador compra cinco cartas e, em seguida, descarta duas cartas aleatórias de sua mão",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Compra;Descarte",
@@ -2627,7 +2627,7 @@
   {
     "name": "Casos de Família",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Ao ser jogada, escolha um oponente que, por sua vez, seleciona entre ganhar 1 ponto de fé para cada herói na sua Zona de Batalha e descartar uma carta da mão, ou comprar duas cartas e perder 2 pontos de fé; Você recebe o efeito oposto ao escolhido pelo oponente",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Compra;Escolha;Santificação;Renúncia",
@@ -2724,7 +2724,7 @@
   {
     "name": "Dias Contados",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O Jogador Alvo compra 3 cartas. Se você tem a Moisés em sua zona de batalha, em vez disso, compre 5 cartas.",
+    "text": "Enquanto ativo (até o início do seu próximo turno), todos os heróis dos oponentes com Indestrutível perdem essa habilidade e não podem adquiri-la.",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Modificação",
