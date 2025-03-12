@@ -16,6 +16,7 @@ async function renderPage(page) {
   const decksToShow = allDecksCommunity.slice(startIndex, endIndex);
 
   console.log(allDecksCommunity);
+  console.log(allDecksHistoric);
 
   let rowsToAdd = [];
 

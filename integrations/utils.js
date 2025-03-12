@@ -230,7 +230,6 @@ async function getDecksHistoric() {
 }
 
 async function getDecksCommunity() {
-
   const isCommunityPage = window.location.href.includes("deck-community");
 
   if (isCommunityPage) {
@@ -274,28 +273,35 @@ async function getDecksCommunity() {
           delete deck.created_at;
           delete deck.updated_at;
           deck.img = deck.image_id;
+          deck.img = 1;
           delete deck.image_id;
           delete deck.hash;
           deck.active = true;
           deck.cards = [];
           deck.extra = [];
+          deck.style = "";
+          deck.archetype = "";
 
           let fromDeck = getCardsFromDeck(deckList, allCards);
 
-          fromDeck.forEach((fromDeck) => {
+          fromDeck.forEach((fromDeckItem) => {
             if (
-              fromDeck.type == "Herói de Fé" &&
-              fromDeck.subtype == "Lendário"
+              fromDeckItem.type == "Herói de Fé" &&
+              fromDeckItem.subtype == "Lendário"
             ) {
-              deck.extra.push(fromDeck.number);
+              deck.extra.push(fromDeckItem.number);
             } else {
-              deck.cards.push(fromDeck.number);
+              deck.cards.push(fromDeckItem.number);
+            }
+
+            if (fromDeckItem.number == deck.img) {
+              deck.img = fromDeckItem.img;
             }
           });
 
           // Carregamento paralelo das informações
           const [legendariesData, artifactsData] = await Promise.all([
-            fetchOrGetFromLocalStorage("legendaries", URL_LEGENDARIES_JSON)
+            fetchOrGetFromLocalStorage("legendaries", URL_LEGENDARIES_JSON),
           ]);
 
           // Atualizar as variáveis após o carregamento
@@ -313,7 +319,6 @@ async function getDecksCommunity() {
       console.error("Erro ao buscar os decks:", error);
     }
   }
-
 }
 
 async function saveDecksCommunity(deckData) {
