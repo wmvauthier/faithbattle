@@ -56,6 +56,7 @@ const WEIGHT_LEVEL_REDUCTION_FOR_STRENGHT_AND_RESISTANCE = 0.25;
 let allCards;
 let allDecks;
 let allDecksHistoric;
+let allDecksCommunity;
 let allRulings;
 let rulingsChosenOption;
 
@@ -70,6 +71,7 @@ if (isBrowser) {
       allCards = await getCards(); // Carrega as cartas
       allDecks = await getDecks(); // Carrega os decks
       allDecksHistoric = await getDecksHistoric(); // Carrega os decks
+      allDecksCommunity = await getDecksCommunity(); // Carrega os decks
       allRulings = await getRulings(); // Carrega os rulings
       rulingsChosenOption = localStorage.getItem(rulingsChosenOption) || true;
       window.allJSONsLoaded = true;
@@ -227,6 +229,356 @@ async function getDecksHistoric() {
   }
 }
 
+async function getDecksCommunity() {
+
+  const isCommunityPage = window.location.href.includes("deck-community");
+
+  if (isCommunityPage) {
+    const baseUrl = "https://costamateus.com.br/api/faithbattle/deck/list";
+    let currentPage = 1;
+    let allDecksCommunity = [];
+    let totalPages = 1; // Valor inicial, atualizado após a primeira requisição
+
+    try {
+      do {
+        const response = await fetch(
+          `${baseUrl}?per_page=10&page=${currentPage}`,
+          {
+            method: "GET",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`Erro na requisição: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        if (result.success && result.data) {
+          allDecksCommunity = allDecksCommunity.concat(result.data);
+          totalPages = result.meta.last_page;
+        } else {
+          throw new Error("Erro ao processar os dados da API.");
+        }
+
+        currentPage++;
+      } while (currentPage <= totalPages);
+
+      for (const deck of allDecksCommunity) {
+        try {
+          let deckList = await importDeck(deck.hash); // Aguarda a importação
+          delete deck.created_at;
+          delete deck.updated_at;
+          deck.img = deck.image_id;
+          delete deck.image_id;
+          delete deck.hash;
+          deck.active = true;
+          deck.cards = [];
+          deck.extra = [];
+
+          let fromDeck = getCardsFromDeck(deckList, allCards);
+
+          fromDeck.forEach((fromDeck) => {
+            if (
+              fromDeck.type == "Herói de Fé" &&
+              fromDeck.subtype == "Lendário"
+            ) {
+              deck.extra.push(fromDeck.number);
+            } else {
+              deck.cards.push(fromDeck.number);
+            }
+          });
+
+          // Carregamento paralelo das informações
+          const [legendariesData, artifactsData] = await Promise.all([
+            fetchOrGetFromLocalStorage("legendaries", URL_LEGENDARIES_JSON)
+          ]);
+
+          // Atualizar as variáveis após o carregamento
+          legendaries = legendariesData;
+
+          await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      console.log("Todos os decks carregados:", allDecksCommunity);
+      return allDecksCommunity;
+    } catch (error) {
+      console.error("Erro ao buscar os decks:", error);
+    }
+  }
+
+}
+
+async function saveDecksCommunity(deckData) {
+  const url = "https://costamateus.com.br/api/faithbattle/deck/save";
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(deckData),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text(); // Captura detalhes do erro
+      throw new Error(`Erro na requisição: ${response.status} - ${errorText}`);
+    }
+
+    const data = await response.json();
+    console.log("Deck salvo com sucesso:", data);
+    return data;
+  } catch (error) {
+    console.error("Erro ao salvar o deck:", error);
+  }
+}
+
+// Exemplo de uso:
+const deckTest = {
+  id: 3,
+  image_id: "123",
+  name: "Teste Deck Criado",
+  hash: `# (1) Abel (Lendário)
+# (1) Adão (Lendário)
+# (1) Eva (Lendário)
+# (2) Sara (Lendário)
+# (3) Moisés (Lendário)
+# (1) Abel
+# (1) Adão
+# (1) Eva
+# (2) Enos
+# (2) Maria
+# (2) Rebeca
+# (2) Sara
+# (3) Agar
+# (3) Moisés
+# (4) Salomão
+# (5) Jó
+# (1) Dízimo
+# (1) Oferta do Justo
+# (1) Proteção Divina
+# (1) Sabedoria de Salomão
+# (2) Força de Sansão
+# (2) Liberação Celestial
+# (2) Provação de Fé
+# (2) Sarça Ardente
+# (3) Adjuntora Idônea
+# (3) Fogo do Céu
+# (3) No Céu tem Pão
+# (3) Ressurreição
+# (3) Sinal Divino
+# (4) Cordeiro de Deus
+# (4) Gênese de Tudo
+# (5) Protoevangelho
+# (7) Shabbat
+# (4) Altar dos Patriarcas
+# (2) Traição
+#
+QWJlbCxBZONvLEV2YSxTYXJhLE1vaXPpcyxBYmVsLEFk428sRXZhLEVub3MsTWFyaWEsUmViZWNhLFNhcmEsQWdhcixNb2lz6XMsU2Fsb23jbyxK8yxE7XppbW8sT2ZlcnRhIGRvIEp1c3RvLFByb3Rl5+NvIERpdmluYSxTYWJlZG9yaWEgZGUgU2Fsb23jbyxGb3LnYSBkZSBTYW5z428sTGliZXJh5+NvIENlbGVzdGlhbCxQcm92YefjbyBkZSBG6SxTYXLnYSBBcmRlbnRlLEFkanVudG9yYSBJZPRuZWEsRm9nbyBkbyBD6XUsTm8gQ+l1IHRlbSBQ428sUmVzc3VycmVp5+NvLFNpbmFsIERpdmlubyxDb3JkZWlybyBkZSBEZXVzLEfqbmVzZSBkZSBUdWRvLFByb3RvZXZhbmdlbGhvLFNoYWJiYXQsQWx0YXIgZG9zIFBhdHJpYXJjYXMsVHJhaefjbw==
+#
+# Para usar este deck, copie-o para a área de transferência e cole no DeckBuilder do site do FAITH BATTLE .`,
+};
+
+// saveDecksCommunity(deckTest);
+
+function importDeck(importFieldParameter) {
+  let importField = document.getElementById("deckImporterFilter");
+  if (!importField) {
+    console.error("Elemento #deckImporterFilter não encontrado.");
+    if (!importFieldParameter) {
+      console.error("Parâmetro #deckImporterFilter não encontrado.");
+      return [];
+    } else {
+      importField = { value: importFieldParameter };
+    }
+  }
+
+  let text = importField.value.trim();
+  // Divide o texto usando "#" como delimitador, removendo linhas vazias
+  let lines = text
+    .split("#")
+    .map((line) => line.trim())
+    .filter((line) => line);
+
+  // console.log("Linhas importadas:", lines);
+
+  const idArray = [];
+  let encodedString = null;
+  // Em vez de acumular as quantidades, usaremos um Set para garantir que cada carta seja adicionada apenas uma vez
+  const cardNames = new Set();
+
+  // Função para normalizar texto (remove acentos, espaços extras e coloca em minúsculas)
+  function normalizeText(text) {
+    return text.normalize("NFKD").trim().toLowerCase();
+  }
+
+  // Processa cada linha
+  lines.forEach((line) => {
+    // console.log("Processando linha:", line);
+
+    // Se a linha parece ser uma string base64 (apenas caracteres alfanuméricos e +, /, =) e com comprimento razoável
+    if (/^[A-Za-z0-9+/=]+$/.test(line) && line.length > 10) {
+      // console.log("String base64 detectada:", line);
+      encodedString = line;
+      return;
+    }
+
+    // Procura linhas no formato: (X) Nome da Carta
+    const match = line.match(/^\((\d+)\)\s*(.+)/);
+    if (match) {
+      // Mesmo que haja uma quantidade diferente de 1, vamos ignorá-la
+      const name = match[2]; // Mantém exatamente o que foi digitado, podendo conter " (Lendário)"
+      cardNames.add(name);
+    }
+  });
+
+  // Se houver string base64, decodifica e adiciona cartas que não estavam na lista original
+  if (encodedString) {
+    try {
+      const decodedNames = atob(encodedString).split(",");
+      // console.log("Nomes decodificados do base64:", decodedNames);
+
+      decodedNames.forEach((name) => {
+        // Adiciona cada nome decodificado (caso ainda não exista)
+        if (!cardNames.has(name)) {
+          console.warn(
+            `Carta "${name}" da string Base64 não estava na lista original.`
+          );
+          cardNames.add(name);
+        }
+      });
+    } catch (error) {
+      console.error("Erro ao decodificar base64:", error);
+    }
+  }
+
+  // Para cada carta (única) encontrada, busca o card adequado em allCards
+  cardNames.forEach((name) => {
+    let isLegendary = name.includes("Lendário");
+    // Remove " (Lendário)" se presente para formar o nome base para busca
+    let baseName = name.replace(" (Lendário)", "").trim();
+
+    let card = null;
+    if (isLegendary) {
+      // Se for lendária, busca somente cards com subtype "Lendário" cujo nome contenha o baseName
+      card = allCards.find(
+        (c) =>
+          c.subtype === "Lendário" &&
+          normalizeText(c.name).includes(normalizeText(baseName))
+      );
+    } else {
+      // Se não for lendária, busca cards cujo subtype não seja "Lendário" e cujo nome contenha o nome informado
+      card = allCards.find(
+        (c) =>
+          c.subtype !== "Lendário" &&
+          normalizeText(c.name).includes(normalizeText(name))
+      );
+    }
+
+    if (card) {
+      // Adiciona a carta apenas uma vez, ignorando a quantidade indicada
+      idArray.push(card.number);
+      // console.log(`Adicionando 1x ${card.name} (ID: ${card.number})`);
+    } else {
+      // console.warn(`Carta "${name}" não encontrada em allCards.`);
+    }
+  });
+
+  // console.log("IDs gerados:", idArray);
+
+  // Limpa o campo de importação
+  importField.value = "";
+
+  // Adiciona cada card ao deck
+  idArray.forEach((element) => {
+    try {
+      addCardToDeckBuilder(element);
+    } catch (error) {}
+  });
+
+  return idArray;
+}
+
+function exportDeck() {
+  const importField = document.getElementById("deckImporterFilter");
+
+  // Junta as cartas principais e extras do deck
+  const mergedArray = [...deck.cards, ...deck.extra];
+  // Obtém um array com cada cópia individual da carta (não agrupado)
+  let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
+
+  // Ordem definida para os tipos (Herói lendário terá prioridade máxima)
+  const typeOrder = {
+    "Herói de Fé": 1,
+    Milagre: 2,
+    Artefato: 3,
+    Pecado: 4,
+  };
+
+  // Ordena cada carta individualmente:
+  // - Se for Herói de Fé Lendário, ela tem prioridade máxima (0).
+  // - Depois, ordena por custo (ascendente).
+  // - Em caso de empate, ordena por nome.
+  const sortedCards = cardsFromDeck.sort((a, b) => {
+    const aTypeOrder =
+      a.type === "Herói de Fé" && a.subtype === "Lendário"
+        ? 0
+        : typeOrder[a.type] || 99;
+    const bTypeOrder =
+      b.type === "Herói de Fé" && b.subtype === "Lendário"
+        ? 0
+        : typeOrder[b.type] || 99;
+    if (aTypeOrder !== bTypeOrder) return aTypeOrder - bTypeOrder;
+    if (a.cost !== b.cost) return a.cost - b.cost;
+    return a.name.localeCompare(b.name);
+  });
+
+  // Para cada carta, gera uma linha no formato:
+  // "# (<custo>) <nome da carta>", adicionando " (Lendário)" se necessário.
+  const textLines = sortedCards.map((card) => {
+    let displayName = card.name;
+    if (card.type === "Herói de Fé" && card.subtype === "Lendário") {
+      displayName += " (Lendário)";
+    }
+    return `# (${card.cost}) ${displayName}`;
+  });
+
+  // Gera a string Base64 usando os nomes originais das cartas (sem o sufixo " (Lendário)")
+  const base64String = btoa(sortedCards.map((card) => card.name).join(","));
+
+  // Monta o texto final conforme o formato do Marvel SNAP
+  const finalOutput = `${textLines.join(
+    "\n"
+  )}\n#\n${base64String}\n#\n# Para usar este deck, copie-o para a área de transferência e cole no DeckBuilder do site do FAITH BATTLE .`;
+
+  navigator.clipboard
+    .writeText(finalOutput)
+    .then(() => {
+      importField.value = "Deck Copiado";
+      // button.classList.add("copied");
+      importField.disabled = true;
+
+      setTimeout(() => {
+        importField.value = "";
+        // button.classList.remove("copied");
+        importField.disabled = false;
+      }, 5000); // Voltar ao estado normal após 3 segundos
+    })
+    .catch((err) => {
+      console.error("Erro ao copiar o hash:", err);
+      alert("Erro ao copiar o hash!");
+    });
+}
+
 async function getRulings() {
   try {
     const [rulings] = await Promise.all([
@@ -241,57 +593,72 @@ async function getRulings() {
 }
 
 function getRulingsFromCard(type, subtype, category, effect, keyword) {
-
   return allRulings
-    .filter(ruling => {
+    .filter((ruling) => {
       // Dividir strings de ruling em arrays para comparação
-      const types = ruling.type?.split(";").map(s => s.trim()) || [];
-      const subtypes = ruling.subtype?.split(";").map(s => s.trim()) || [];
-      const categories = ruling.categories?.split(";").map(s => s.trim()) || [];
-      const effects = ruling.effects?.split(";").map(s => s.trim()) || [];
-      const keywords = ruling.keywords?.split(";").map(s => s.trim()) || [];
-      const notTypes = ruling.notType?.split(";").map(s => s.trim()) || [];
-      const notSubtypes = ruling.notSubtype?.split(";").map(s => s.trim()) || [];
-      const notCategories = ruling.notCategories?.split(";").map(s => s.trim()) || [];
-      const notEffects = ruling.notEffects?.split(";").map(s => s.trim()) || [];
-      const notKeywords = ruling.notKeywords?.split(";").map(s => s.trim()) || [];
+      const types = ruling.type?.split(";").map((s) => s.trim()) || [];
+      const subtypes = ruling.subtype?.split(";").map((s) => s.trim()) || [];
+      const categories =
+        ruling.categories?.split(";").map((s) => s.trim()) || [];
+      const effects = ruling.effects?.split(";").map((s) => s.trim()) || [];
+      const keywords = ruling.keywords?.split(";").map((s) => s.trim()) || [];
+      const notTypes = ruling.notType?.split(";").map((s) => s.trim()) || [];
+      const notSubtypes =
+        ruling.notSubtype?.split(";").map((s) => s.trim()) || [];
+      const notCategories =
+        ruling.notCategories?.split(";").map((s) => s.trim()) || [];
+      const notEffects =
+        ruling.notEffects?.split(";").map((s) => s.trim()) || [];
+      const notKeywords =
+        ruling.notKeywords?.split(";").map((s) => s.trim()) || [];
 
       // Dividir as entradas em arrays
-      const inputCategories = category.split(";").map(s => s.trim());
-      const inputEffects = effect.split(";").map(s => s.trim());
-      const inputKeywords = keyword.split(";").map(s => s.trim());
+      const inputCategories = category.split(";").map((s) => s.trim());
+      const inputEffects = effect.split(";").map((s) => s.trim());
+      const inputKeywords = keyword.split(";").map((s) => s.trim());
 
       // Verificar as condições de inclusão e exclusão
-      const typeMatch = (!types.length || types.includes(type)) && !notTypes.includes(type);
-      const subtypeMatch = (!subtypes.length || subtypes.includes(subtype)) && !notSubtypes.includes(subtype);
+      const typeMatch =
+        (!types.length || types.includes(type)) && !notTypes.includes(type);
+      const subtypeMatch =
+        (!subtypes.length || subtypes.includes(subtype)) &&
+        !notSubtypes.includes(subtype);
       const categoryMatch =
-        (!categories.length || categories.some(cat => inputCategories.includes(cat))) &&
-        !notCategories.some(cat => inputCategories.includes(cat));
+        (!categories.length ||
+          categories.some((cat) => inputCategories.includes(cat))) &&
+        !notCategories.some((cat) => inputCategories.includes(cat));
       const effectMatch =
-        (!effects.length || effects.some(eff => inputEffects.includes(eff))) &&
-        !notEffects.some(eff => inputEffects.includes(eff));
+        (!effects.length ||
+          effects.some((eff) => inputEffects.includes(eff))) &&
+        !notEffects.some((eff) => inputEffects.includes(eff));
       const keywordMatch =
-        (!keywords.length || keywords.some(kw => inputKeywords.includes(kw))) &&
-        !notKeywords.some(kw => inputKeywords.includes(kw));
+        (!keywords.length ||
+          keywords.some((kw) => inputKeywords.includes(kw))) &&
+        !notKeywords.some((kw) => inputKeywords.includes(kw));
 
       // Retornar true apenas se TODAS as condições forem atendidas
-      return typeMatch && subtypeMatch && categoryMatch && effectMatch && keywordMatch;
+      return (
+        typeMatch &&
+        subtypeMatch &&
+        categoryMatch &&
+        effectMatch &&
+        keywordMatch
+      );
     })
-    .map(ruling => {
+    .map((ruling) => {
       // Construir um cabeçalho com as propriedades do ruling
       const details = [
         ruling.type || "",
         ruling.subtype || "",
         ruling.categories || "",
         ruling.effects || "",
-        ruling.keywords || ""
+        ruling.keywords || "",
       ]
-        .filter(detail => detail) // Remover valores vazios
+        .filter((detail) => detail) // Remover valores vazios
         .join(" "); // Combinar em uma string única
 
       return `<b>${details.toUpperCase()}</b>;${ruling.ruling}`; // Adicionar o ruling ao cabeçalho
     });
-      
 }
 
 async function getMostUsedCardsFromType(
@@ -435,10 +802,6 @@ async function calculateStarsFromDeck(
   sum -=
     innexistentCategories.length *
     WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY;
-
-  // console.log(selectedDeck.name);
-  // console.log(info);
-  // console.log(analysisAverages);
 
   const comparisons = ["hero", "miracle", "sin", "artifact"];
 
@@ -1025,31 +1388,55 @@ function limitStringOccurrences(arr, maxOccurrences) {
 
 function removeAccents(input) {
   const map = {
-      'ç': 'c', 'Ç': 'C',
-      'ã': 'a', 'Ã': 'A',
-      'á': 'a', 'Á': 'A',
-      'à': 'a', 'À': 'A',
-      'â': 'a', 'Â': 'A',
-      'ä': 'a', 'Ä': 'A',
-      'é': 'e', 'É': 'E',
-      'è': 'e', 'È': 'E',
-      'ê': 'e', 'Ê': 'E',
-      'ë': 'e', 'Ë': 'E',
-      'í': 'i', 'Í': 'I',
-      'ì': 'i', 'Ì': 'I',
-      'î': 'i', 'Î': 'I',
-      'ï': 'i', 'Ï': 'I',
-      'ó': 'o', 'Ó': 'O',
-      'ò': 'o', 'Ò': 'O',
-      'ô': 'o', 'Ô': 'O',
-      'ö': 'o', 'Ö': 'O',
-      'õ': 'o', 'Õ': 'O',
-      'ú': 'u', 'Ú': 'U',
-      'ù': 'u', 'Ù': 'U',
-      'û': 'u', 'Û': 'U',
-      'ü': 'u', 'Ü': 'U',
-      'ñ': 'n', 'Ñ': 'N'
+    ç: "c",
+    Ç: "C",
+    ã: "a",
+    Ã: "A",
+    á: "a",
+    Á: "A",
+    à: "a",
+    À: "A",
+    â: "a",
+    Â: "A",
+    ä: "a",
+    Ä: "A",
+    é: "e",
+    É: "E",
+    è: "e",
+    È: "E",
+    ê: "e",
+    Ê: "E",
+    ë: "e",
+    Ë: "E",
+    í: "i",
+    Í: "I",
+    ì: "i",
+    Ì: "I",
+    î: "i",
+    Î: "I",
+    ï: "i",
+    Ï: "I",
+    ó: "o",
+    Ó: "O",
+    ò: "o",
+    Ò: "O",
+    ô: "o",
+    Ô: "O",
+    ö: "o",
+    Ö: "O",
+    õ: "o",
+    Õ: "O",
+    ú: "u",
+    Ú: "U",
+    ù: "u",
+    Ù: "U",
+    û: "u",
+    Û: "U",
+    ü: "u",
+    Ü: "U",
+    ñ: "n",
+    Ñ: "N",
   };
 
-  return input.replace(/[^\w\s]/g, char => map[char] || char);
+  return input.replace(/[^\w\s]/g, (char) => map[char] || char);
 }
