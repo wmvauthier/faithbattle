@@ -76,29 +76,29 @@ async function renderPage(page) {
       deck.level +
       "</span>";
 
-    badges =
-      badges +
-      '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
-      'style="color: ' +
-      textStyle +
-      "; background-color: " +
-      colorStyle +
-      ' !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
-      symbolStyle +
-      " </span>";
+    // badges =
+    //   badges +
+    //   '<span _ngcontent-ng-c2622191440="" class="badge rounded-pill mx-1 text-bg-secondary" ' +
+    //   'style="color: ' +
+    //   textStyle +
+    //   "; background-color: " +
+    //   colorStyle +
+    //   ' !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
+    //   symbolStyle +
+    //   " </span>";
 
-    badges =
-      badges +
-      '<span class="badge rounded-pill mx-1 text-bg-secondary" ' +
-      'style="color: ' +
-      textArchetype +
-      "; background-color: " +
-      colorArchetype +
-      " !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px; border: " +
-      borderArchetype +
-      '"> ' +
-      symbolArchetype +
-      " </span>";
+    // badges =
+    //   badges +
+    //   '<span class="badge rounded-pill mx-1 text-bg-secondary" ' +
+    //   'style="color: ' +
+    //   textArchetype +
+    //   "; background-color: " +
+    //   colorArchetype +
+    //   " !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px; border: " +
+    //   borderArchetype +
+    //   '"> ' +
+    //   symbolArchetype +
+    //   " </span>";
 
     // arrKeywords.forEach((keyword) => {
     //   badges =
@@ -136,7 +136,8 @@ async function renderPage(page) {
 
     row.addEventListener("click", (event) => {
       if (!event.target.classList.contains("copy-button")) {
-        getDeckDetails(deck.number);
+        getDeckDetailsCommunity(deck);
+        // getDeckDetails(deck.number);
       }
     });
 

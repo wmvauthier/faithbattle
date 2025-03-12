@@ -4,11 +4,13 @@ document.addEventListener("DOMContentLoaded", async function () {
   await waitForAllJSONs();
 
   let idSelectedDeck = localStorage.getItem("idSelectedDeck");
+  let selectedDeckCommunity = localStorage.getItem("selectedDeckCommunity");
 
-  if (idSelectedDeck && idSelectedDeck > 0) {
-    const selectedDeck = allDecks.find(
-      (element) => element.number == idSelectedDeck
-    );
+  if ((idSelectedDeck && idSelectedDeck > 0) || selectedDeckCommunity) {
+
+    const selectedDeck =
+      JSON.parse(selectedDeckCommunity) ||
+      allDecks.find((element) => element.number == idSelectedDeck);
 
     if (selectedDeck) {
       const analysisAverages = await analyzeDecks(allDecks, null, null);
@@ -126,7 +128,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   } else {
     location.href = "./deck-meta.html";
   }
-  
 });
 
 function generateCategoryItems(categoriesCount, averages, id) {
@@ -230,7 +231,7 @@ function updateMiniCards(allCards, cardsList, id) {
   const fragment = document.createDocumentFragment();
   similarCardsContainer.innerHTML = "";
 
-  cardsList.forEach((similarCard) => {
+  cardsList?.forEach((similarCard) => {
     const details = allCards.find((card) => card.number === similarCard);
     if (details) {
       const cardElement = createDivWithClass(

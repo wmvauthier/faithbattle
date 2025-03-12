@@ -99,8 +99,15 @@ function getCardDetails(cardNumber) {
   location.href = "./card-details.html";
 }
 
-function getDeckDetails(cardNumber) {
-  localStorage.setItem("idSelectedDeck", cardNumber);
+function getDeckDetails(deckNumber) {
+  localStorage.removeItem("selectedDeckCommunity");
+  localStorage.setItem("idSelectedDeck", deckNumber);
+  location.href = "./deck-details.html";
+}
+
+function getDeckDetailsCommunity(deck) {
+  localStorage.removeItem("idSelectedDeck");
+  localStorage.setItem("selectedDeckCommunity", JSON.stringify(deck));
   location.href = "./deck-details.html";
 }
 
