@@ -589,6 +589,15 @@ function exportDeck() {
       console.error("Erro ao copiar o hash:", err);
       alert("Erro ao copiar o hash!");
     });
+
+  return finalOutput;
+}
+
+async function saveDeck() {
+
+  let output = await 
+
+  console.log("AA");
 }
 
 async function getRulings() {

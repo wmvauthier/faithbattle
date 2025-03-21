@@ -327,7 +327,9 @@ async function tuningDeck() {
   if (deck.cards.length > 0) {
     let markerHasChanged = true;
     let counterLoop = 0;
-    let lastAddedCards = [];
+    let lastAddedCard = null;
+    let consecutiveCount = 0;
+    let ignoredCards = new Set();
 
     let filteredDeck = deck.cards.filter((str) =>
       legendaries.some((json) => json.number === str)
@@ -336,6 +338,23 @@ async function tuningDeck() {
     deck.cards = deck.cards.filter(
       (str) => !legendaries.some((json) => json.number === str)
     );
+
+    // Função auxiliar para atualizar o histórico de cartas adicionadas
+    function updateLastAdded(newCard) {
+      if (newCard === lastAddedCard) {
+        consecutiveCount++;
+      } else {
+        lastAddedCard = newCard;
+        consecutiveCount = 1;
+      }
+      // Adiciona aos ignorados somente se a carta for adicionada 3 ou mais vezes consecutivas
+      if (consecutiveCount >= 3) {
+        ignoredCards.add(newCard);
+        // Reseta o histórico
+        lastAddedCard = null;
+        consecutiveCount = 0;
+      }
+    }
 
     if (deck.cards.length > 0) {
       while (markerHasChanged && counterLoop < analysisAverages.averageQtd) {
@@ -359,7 +378,6 @@ async function tuningDeck() {
 
         let menorValor = Infinity;
         let menorCategoria = null;
-
         let maiorValor = -Infinity;
         let maiorCategoria = null;
 
@@ -384,25 +402,28 @@ async function tuningDeck() {
           return acc;
         }, []);
 
+        // Monta a lista de sugestões ignorando cartas presentes em filteredDeck, filteredCommonNumbers e ignoredCards
         let suggestionNumbers = suggestions
           .map((obj) => obj.idcard)
-          .filter((str) => !filteredDeck.includes(str))
-          .filter((str) => !filteredCommonNumbers.includes(str));
+          .filter((str) => 
+            !filteredDeck.includes(str) &&
+            !filteredCommonNumbers.includes(str) &&
+            !ignoredCards.has(str)
+          );
 
         if (
           deck.cards.length < analysisAverages.averageQtd &&
           suggestionNumbers.length > 0
         ) {
-          addCardToDeckBuilder(suggestionNumbers[0]);
-          lastAddedCards.push(suggestionNumbers[0]);
+          let newCard = suggestionNumbers[0];
+          addCardToDeckBuilder(newCard);
+          updateLastAdded(newCard);
           markerHasChanged = true;
         } else if (deck.cards.length > analysisAverages.averageQtd) {
           await removeCardFromSpecifiedCategory(maiorCategoria);
           await wait(1);
-
           maiorValor = -Infinity;
           maiorCategoria = null;
-
           higherCategories.forEach((cat) => {
             let valor = infoFromDeck.categoriesCount[cat];
             if (valor > maiorValor) {
@@ -419,11 +440,9 @@ async function tuningDeck() {
                 innexistentCategories[0],
                 suggestionNumbers
               );
-              let newCard = deck.cards.find(
-                (card) => !beforeAdd.includes(card)
-              );
+              let newCard = deck.cards.find((card) => !beforeAdd.includes(card));
               if (newCard) {
-                lastAddedCards.push(newCard);
+                updateLastAdded(newCard);
               }
               await removeCardFromSpecifiedCategory(maiorCategoria);
               markerHasChanged = true;
@@ -436,11 +455,9 @@ async function tuningDeck() {
                 lowerCategories[0],
                 suggestionNumbers
               );
-              let newCard = deck.cards.find(
-                (card) => !beforeAdd.includes(card)
-              );
+              let newCard = deck.cards.find((card) => !beforeAdd.includes(card));
               if (newCard) {
-                lastAddedCards.push(newCard);
+                updateLastAdded(newCard);
               }
               await removeCardFromSpecifiedCategory(maiorCategoria);
               markerHasChanged = true;
@@ -464,21 +481,6 @@ async function tuningDeck() {
 
         counterLoop++;
         await wait(1);
-
-        console.log(lastAddedCards);
-        console.log(counterLoop);
-        console.log(markerHasChanged);
-
-        // Interromper se a mesma carta foi adicionada 5 vezes seguidas
-        if (
-          lastAddedCards.length >= 3 &&
-          lastAddedCards.slice(-3).every((val, _, arr) => val === arr[0])
-        ) {
-          console.log(
-            `Loop interrompido: a carta ${lastAddedCards[0]} foi adicionada 5 vezes seguidas.`
-          );
-          break;
-        }
       }
     }
 
@@ -497,10 +499,10 @@ async function tuningDeck() {
       ]),
     ];
 
-    filteredDeck.forEach(async (card) => {
+    for (const card of filteredDeck) {
       addCardToDeckBuilder(card);
       await wait(1);
-    });
+    }
 
     await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
     await updateAnalysisFromDeck();
