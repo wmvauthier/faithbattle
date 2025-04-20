@@ -26,7 +26,7 @@
     },
     {
         "type": "Milagre",
-        "ruling": "Milagres são cartas que podem ser jogados a qualquer momento em que o jogador tenha prioridade, inclusive durante o turno do oponente; Para um Milagre ser resolvido, seus alvos designados devem ser válidos no momento da resolução do mesmo; Assim que um Milagre é resolvido, seguindo a ordem da fila de resolução, seus efeitos ocorrem e ele é enviado ao Mar do Esquecimento, a menos que outra regra ou efeito indique o contrário; Se um Milagre possuir custos adicionais ou alternativos, o jogador deve declará-los e pagá-los no momento da conjuração."
+        "ruling": "Milagres são cartas que podem ser jogados a qualquer momento em que o jogador tenha prioridade, inclusive durante o turno do oponente; Para um Milagre ser resolvido, seus alvos designados devem ser válidos no momento da resolução do mesmo; Assim que um Milagre é resolvido, seguindo a ordem da fila de resolução, seus efeitos ocorrem e ele é enviado ao Mar do Esquecimento, a menos que outra regra ou efeito indique o contrário; Se um Milagre possuir custos adicionais ou alternativos, o jogador deve declará-los e pagá-los no momento em que a carta esteja sendo jogada."
     },
     {
         "type": "Pecado",
@@ -46,7 +46,7 @@
     },
     {
         "keywords": "Indestrutível",
-        "ruling": "Indestrutível é uma característica que impede uma carta de ser destruída por qualquer efeito, incluindo dano letal e efeitos que especificamente “destroem” cartas; Uma carta Indestrutível ainda pode ser movida para outras zonas do jogo por meios como Remover do Jogo, devolução à mão ou Enterrar; Caso a resistência de uma criatura Indestrutível for reduzida a 0, ela será colocada no cemitério normalmente, pois isso não conta como destruição; Indestrutível não impede que marcadores ou efeitos temporários modifiquem a carta, mas garante que ela permaneça em jogo mesmo sob condições que normalmente a destruiriam"
+        "ruling": "Indestrutível é uma característica que impede uma carta de ser destruída por qualquer efeito, incluindo dano letal e efeitos que especificamente “destroem” cartas; Uma carta Indestrutível ainda pode ser movida para outras zonas do jogo por meios como Remover do Jogo, devolução à mão ou Enterrar; Caso a defesa de um Herói Indestrutível for reduzida a 0, ela será colocada no Mar do Esquecimento normalmente, pois isso não conta como destruição; Indestrutível não impede que marcadores ou efeitos temporários modifiquem a carta, mas garante que ela permaneça em jogo mesmo sob condições que normalmente a destruiriam"
     },
     {
         "keywords": "Imbloqueável",
