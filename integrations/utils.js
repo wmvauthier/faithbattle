@@ -415,80 +415,63 @@ function importDeck(importFieldParameter) {
   }
 
   let text = importField.value.trim();
-  // Divide o texto usando "#" como delimitador, removendo linhas vazias
   let lines = text
     .split("#")
     .map((line) => line.trim())
     .filter((line) => line);
 
-  // console.log("Linhas importadas:", lines);
-
   const idArray = [];
   let encodedString = null;
-  // Em vez de acumular as quantidades, usaremos um Set para garantir que cada carta seja adicionada apenas uma vez
-  const cardNames = new Set();
+  const cardNames = []; // agora pode ter duplicados
 
-  // Função para normalizar texto (remove acentos, espaços extras e coloca em minúsculas)
   function normalizeText(text) {
     return text.normalize("NFKD").trim().toLowerCase();
   }
 
   // Processa cada linha
   lines.forEach((line) => {
-    // console.log("Processando linha:", line);
-
-    // Se a linha parece ser uma string base64 (apenas caracteres alfanuméricos e +, /, =) e com comprimento razoável
+    // Detecta Base64
     if (/^[A-Za-z0-9+/=]+$/.test(line) && line.length > 10) {
-      // console.log("String base64 detectada:", line);
       encodedString = line;
       return;
     }
 
-    // Procura linhas no formato: (X) Nome da Carta
-    const match = line.match(/^\((\d+)\)\s*(.+)/);
+    // Remove o custo caso exista: (X) Nome da Carta
+    const match = line.match(/^\(\d+\)\s*(.+)/);
     if (match) {
-      // Mesmo que haja uma quantidade diferente de 1, vamos ignorá-la
-      const name = match[2]; // Mantém exatamente o que foi digitado, podendo conter " (Lendário)"
-      cardNames.add(name);
+      const name = match[1];
+      cardNames.push(name); // adiciona mesmo se já existir
     }
   });
 
-  // Se houver string base64, decodifica e adiciona cartas que não estavam na lista original
-  if (encodedString) {
-    try {
-      const decodedNames = atob(encodedString).split(",");
-      // console.log("Nomes decodificados do base64:", decodedNames);
-
-      decodedNames.forEach((name) => {
-        // Adiciona cada nome decodificado (caso ainda não exista)
-        if (!cardNames.has(name)) {
-          console.warn(
-            `Carta "${name}" da string Base64 não estava na lista original.`
-          );
-          cardNames.add(name);
-        }
-      });
-    } catch (error) {
-      console.error("Erro ao decodificar base64:", error);
-    }
+  // Decodifica Base64
+// Decodifica Base64
+if (encodedString) {
+  try {
+    const decodedNames = atob(encodedString).split(",");
+    decodedNames.forEach((name) => {
+      if (!cardNames.includes(name)) { // evita duplicar
+        cardNames.push(name);
+      }
+    });
+  } catch (error) {
+    console.error("Erro ao decodificar base64:", error);
   }
+}
 
-  // Para cada carta (única) encontrada, busca o card adequado em allCards
+  // Busca cada carta no allCards respeitando duplicatas
   cardNames.forEach((name) => {
     let isLegendary = name.includes("Lendário");
-    // Remove " (Lendário)" se presente para formar o nome base para busca
     let baseName = name.replace(" (Lendário)", "").trim();
 
     let card = null;
     if (isLegendary) {
-      // Se for lendária, busca somente cards com subtype "Lendário" cujo nome contenha o baseName
       card = allCards.find(
         (c) =>
           c.subtype === "Lendário" &&
           normalizeText(c.name).includes(normalizeText(baseName))
       );
     } else {
-      // Se não for lendária, busca cards cujo subtype não seja "Lendário" e cujo nome contenha o nome informado
       card = allCards.find(
         (c) =>
           c.subtype !== "Lendário" &&
@@ -497,18 +480,16 @@ function importDeck(importFieldParameter) {
     }
 
     if (card) {
-      // Adiciona a carta apenas uma vez, ignorando a quantidade indicada
       idArray.push(card.number);
-      // console.log(`Adicionando 1x ${card.name} (ID: ${card.number})`);
-    } else {
-      // console.warn(`Carta "${name}" não encontrada em allCards.`);
     }
   });
 
-  // console.log("IDs gerados:", idArray);
-
   // Limpa o campo de importação
   importField.value = "";
+
+  console.log(lines);
+  console.log(cardNames);
+  console.log(idArray);
 
   // Adiciona cada card ao deck
   idArray.forEach((element) => {
@@ -594,10 +575,7 @@ function exportDeck() {
 }
 
 async function saveDeck() {
-
-  let output = await 
-
-  console.log("AA");
+  let output = await console.log("AA");
 }
 
 async function getRulings() {
