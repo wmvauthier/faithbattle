@@ -445,19 +445,19 @@ function importDeck(importFieldParameter) {
   });
 
   // Decodifica Base64
-// Decodifica Base64
-if (encodedString) {
-  try {
-    const decodedNames = atob(encodedString).split(",");
-    decodedNames.forEach((name) => {
-      if (!cardNames.includes(name)) { // evita duplicar
-        cardNames.push(name);
-      }
-    });
-  } catch (error) {
-    console.error("Erro ao decodificar base64:", error);
+  if (encodedString) {
+    try {
+      const decodedNames = atob(encodedString).split(",");
+      decodedNames.forEach((name) => {
+        if (!cardNames.includes(name)) {
+          // evita duplicar
+          cardNames.push(name);
+        }
+      });
+    } catch (error) {
+      console.error("Erro ao decodificar base64:", error);
+    }
   }
-}
 
   // Busca cada carta no allCards respeitando duplicatas
   cardNames.forEach((name) => {
@@ -486,10 +486,6 @@ if (encodedString) {
 
   // Limpa o campo de importação
   importField.value = "";
-
-  console.log(lines);
-  console.log(cardNames);
-  console.log(idArray);
 
   // Adiciona cada card ao deck
   idArray.forEach((element) => {
