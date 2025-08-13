@@ -1462,7 +1462,7 @@
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
     "text": "No início e no fim do turno, seu controlador perde 1 ponto de fé, cada perda ocorrendo como efeito desencadeado; Até uma vez por turno (inclusive nos turnos dos oponentes), você pode ativar uma habilidade que envia um herói da Zona de Batalha para o Mar do Esquecimento; Se ativada, você perde pontos de fé iguais ao custo do herói, compra esse número de cartas e oculta o mesmo número de sabedorias (viradas para baixo e prontas para uso)",
     "type": "Artefato",
-    "subtype": "-",
+    "subtype": "Lendário",
     "categories": "Recapitulação;Compra",
     "cost": 4,
     "strength": 0,
