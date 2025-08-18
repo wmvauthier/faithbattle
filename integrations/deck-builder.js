@@ -274,9 +274,15 @@ async function generateDeck() {
       }
     }
 
+    console.log("A");
     await completeDeck(true);
+    console.log("B");
     await tuningDeck();
+    console.log("C");
     await tuningDeck();
+    console.log("D");
+    await tuningDeck();
+
     await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
     await updateAnalysisFromDeck();
   }
@@ -327,9 +333,17 @@ async function tuningDeck() {
   if (deck.cards.length > 0) {
     let markerHasChanged = true;
     let counterLoop = 0;
+
     let lastAddedCard = null;
-    let consecutiveCount = 0;
-    let ignoredCards = new Set();
+    let consecutiveAdditions = 0;
+    let ignoredAdditions = new Set();
+
+    let lastRemovedCard = null;
+    let consecutiveRemovals = 0;
+    let ignoredRemovals = new Set();
+
+    let operationHistory = [];
+    const MAX_HISTORY = 12;
 
     let filteredDeck = deck.cards.filter((str) =>
       legendaries.some((json) => json.number === str)
@@ -339,20 +353,103 @@ async function tuningDeck() {
       (str) => !legendaries.some((json) => json.number === str)
     );
 
-    // Função auxiliar para atualizar o histórico de cartas adicionadas
+    // 🔹 Detecta carta adicionada (considera múltiplas cópias)
+    function getAddedCard(before, after) {
+      const beforeCount = {};
+      before.forEach((c) => (beforeCount[c] = (beforeCount[c] || 0) + 1));
+
+      for (const c of after) {
+        if (!beforeCount[c]) {
+          return c; // carta adicionada
+        }
+        beforeCount[c]--;
+      }
+      return null;
+    }
+
+    // 🔹 Histórico de operações
+    function recordOperation(type, card, pairedCard = null) {
+      if (!card) return;
+      // Se for add e pairedCard igual, ignora
+      if (type === "add" && card === pairedCard) return;
+      operationHistory.push({ type, card });
+      if (operationHistory.length > MAX_HISTORY) {
+        operationHistory.shift();
+      }
+    }
+
+    // 🔹 Detecta qualquer ciclo real, inclusive A <-> B
+    function detectCycle() {
+      if (operationHistory.length < 4) return false; // mínimo para A->B->A
+
+      // Monta pares (add → remove)
+      let pairs = [];
+      for (let i = 0; i < operationHistory.length - 1; i++) {
+        if (
+          operationHistory[i].type === "add" &&
+          operationHistory[i + 1].type === "remove"
+        ) {
+          pairs.push([operationHistory[i].card, operationHistory[i + 1].card]);
+        }
+      }
+
+      // Constrói grafo a partir dos pares
+      const graph = {};
+      for (const [from, to] of pairs) {
+        if (!graph[from]) graph[from] = [];
+        graph[from].push(to);
+      }
+
+      // Busca ciclos com DFS
+      function dfs(start, node, visited) {
+        if (!graph[node]) return false;
+        for (const next of graph[node]) {
+          if (next === start) return true; // ciclo detectado
+          if (!visited.has(next)) {
+            visited.add(next);
+            if (dfs(start, next, visited)) return true;
+          }
+        }
+        return false;
+      }
+
+      // Checa cada nó
+      for (const from in graph) {
+        if (dfs(from, from, new Set([from]))) return true;
+      }
+
+      return false;
+    }
+
+    // 🔹 Controle de adições repetidas
     function updateLastAdded(newCard) {
+      if (!newCard) return;
       if (newCard === lastAddedCard) {
-        consecutiveCount++;
+        consecutiveAdditions++;
       } else {
         lastAddedCard = newCard;
-        consecutiveCount = 1;
+        consecutiveAdditions = 1;
       }
-      // Adiciona aos ignorados somente se a carta for adicionada 3 ou mais vezes consecutivas
-      if (consecutiveCount >= 3) {
-        ignoredCards.add(newCard);
-        // Reseta o histórico
+      if (consecutiveAdditions >= 3) {
+        ignoredAdditions.add(newCard);
         lastAddedCard = null;
-        consecutiveCount = 0;
+        consecutiveAdditions = 0;
+      }
+    }
+
+    // 🔹 Controle de remoções repetidas
+    function updateLastRemoved(card) {
+      if (!card) return;
+      if (card === lastRemovedCard) {
+        consecutiveRemovals++;
+      } else {
+        lastRemovedCard = card;
+        consecutiveRemovals = 1;
+      }
+      if (consecutiveRemovals >= 3) {
+        ignoredRemovals.add(card);
+        lastRemovedCard = null;
+        consecutiveRemovals = 0;
       }
     }
 
@@ -402,35 +499,33 @@ async function tuningDeck() {
           return acc;
         }, []);
 
-        // Monta a lista de sugestões ignorando cartas presentes em filteredDeck, filteredCommonNumbers e ignoredCards
+        // 🔹 Monta sugestões ignorando já usadas e bloqueadas
         let suggestionNumbers = suggestions
           .map((obj) => obj.idcard)
-          .filter((str) => 
-            !filteredDeck.includes(str) &&
-            !filteredCommonNumbers.includes(str) &&
-            !ignoredCards.has(str)
+          .filter(
+            (str) =>
+              !filteredDeck.includes(str) &&
+              !filteredCommonNumbers.includes(str) &&
+              !ignoredAdditions.has(str)
           );
 
+        // 🔹 Casos principais
         if (
           deck.cards.length < analysisAverages.averageQtd &&
           suggestionNumbers.length > 0
         ) {
           let newCard = suggestionNumbers[0];
           addCardToDeckBuilder(newCard);
+          recordOperation("add", newCard);
           updateLastAdded(newCard);
           markerHasChanged = true;
         } else if (deck.cards.length > analysisAverages.averageQtd) {
-          await removeCardFromSpecifiedCategory(maiorCategoria);
+          let removedCard = await removeCardFromSpecifiedCategory(
+            maiorCategoria
+          );
+          recordOperation("remove", removedCard);
+          updateLastRemoved(removedCard);
           await wait(1);
-          maiorValor = -Infinity;
-          maiorCategoria = null;
-          higherCategories.forEach((cat) => {
-            let valor = infoFromDeck.categoriesCount[cat];
-            if (valor > maiorValor) {
-              maiorValor = valor;
-              maiorCategoria = cat;
-            }
-          });
           markerHasChanged = true;
         } else {
           if (menorCategoria != null && maiorCategoria != null) {
@@ -440,11 +535,16 @@ async function tuningDeck() {
                 innexistentCategories[0],
                 suggestionNumbers
               );
-              let newCard = deck.cards.find((card) => !beforeAdd.includes(card));
-              if (newCard) {
-                updateLastAdded(newCard);
-              }
-              await removeCardFromSpecifiedCategory(maiorCategoria);
+              let newCard = getAddedCard(beforeAdd, deck.cards);
+              recordOperation("add", newCard);
+              updateLastAdded(newCard);
+
+              let removedCard = await removeCardFromSpecifiedCategory(
+                maiorCategoria
+              );
+              recordOperation("remove", removedCard);
+              updateLastRemoved(removedCard);
+
               markerHasChanged = true;
             } else if (
               higherCategories.length > 0 &&
@@ -455,14 +555,30 @@ async function tuningDeck() {
                 lowerCategories[0],
                 suggestionNumbers
               );
-              let newCard = deck.cards.find((card) => !beforeAdd.includes(card));
-              if (newCard) {
-                updateLastAdded(newCard);
-              }
-              await removeCardFromSpecifiedCategory(maiorCategoria);
+              let newCard = getAddedCard(beforeAdd, deck.cards);
+              recordOperation("add", newCard);
+              updateLastAdded(newCard);
+
+              let removedCard = await removeCardFromSpecifiedCategory(
+                maiorCategoria
+              );
+              recordOperation("remove", removedCard);
+              updateLastRemoved(removedCard);
+
               markerHasChanged = true;
             }
           }
+        }
+
+        // 🔹 Detecta ciclos reais
+        if (detectCycle()) {
+          console.warn("⚠️ Ciclo detectado! Operações recentes ignoradas.");
+          operationHistory.slice(-6).forEach((op) => {
+            if (op.type === "add") ignoredAdditions.add(op.card);
+            if (op.type === "remove") ignoredRemovals.add(op.card);
+          });
+          markerHasChanged = false;
+          break;
         }
 
         let filteredDeck2 = deck.cards.filter((str) =>
