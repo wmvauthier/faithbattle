@@ -148,7 +148,7 @@ function compareValues(a, b) {
   return "equal";
 }
 
-async function analyzeDecks(decks, selectedStyle, selectedArchetype) {
+async function analyzeDecks(decks, selectedStyle, selectedArchetype, selectedArchetype2) {
   // Mapeamento dos tipos de cartas para tradução
   const typeTranslation = {
     "Herói de Fé": "Hero",
@@ -160,7 +160,8 @@ async function analyzeDecks(decks, selectedStyle, selectedArchetype) {
   // Filtrar decks com base no estilo e arquétipo selecionados
   const filteredDecks = decks.filter((deck) => {
     return (!selectedStyle || deck.style === selectedStyle) &&
-           (!selectedArchetype || deck.archetype === selectedArchetype);
+           (!selectedArchetype || deck.archetype === selectedArchetype) &&
+           (!selectedArchetype2 || deck.archetype2 === selectedArchetype2);
   });
 
   const totalResult = {

@@ -33,6 +33,14 @@
         "ruling": "Pecados são cartas instantâneas, podendo ser jogadas a qualquer momento em que você possua a prioridade, desde que as condições descritas sejam atendidas; Jogar um Pecado requer 1 ponto de Fé adicional aos custos normais da carta; O custo normal pode ser pago em qualquer combinação de Fé e Sabedoria; Para jogá-lo, todos os alvos devem ser válidos no momento da resolução; Após sua resolução, o Pecado é enviado ao Mar do Esquecimento."
     },
     {
+        "keywords": "Súbito",
+        "ruling": "Esta carta pode ser jogada a qualquer momento do jogo em que o controlador tiver prioridade, mesmo fora do próprio turno, da mesma forma que um milagre; Para jogá-la, o controlador precisa ter prioridade e a fila de resolução não pode estar sendo resolvida; Esse efeito funciona independentemente do tipo da carta associada a ele, então mesmo que a carta seja um herói ou artefato, ela pode ser jogada normalmente fora do seu turno"
+    },
+    {
+        "keywords": "Alvo",
+        "ruling": "Dar alvo é o ato de escolher um objeto de jogo ou jogador como alvo de uma carta, efeito ou habilidade; Apenas cartas na Zona de Batalha e Mar do Esquecimento, desde que atendam aos requisitos descritos, e/ou jogadores podem ser escolhidos; Esse conceito se aplica tanto ao jogar a carta ou ativar a habilidade quanto durante a resolução de efeitos; Um objeto só permanece como alvo enquanto for legal: se ele deixar de existir, ou se tornar um alvo inválido, o efeito que o tinha como alvo perde esse vínculo; Escolher um alvo faz parte do processo de jogar cartas ou ativar habilidades e não pode ser alterado durante a resolução, exceto se a carta ou habilidade permitir explicitamente; Alguns efeitos podem permitir que você escolha mais de um alvo para uma mesma carta ou efeito. Nesse caso, cada objeto ou jogador escolhido é considerado um alvo individual; Por outro lado, efeitos que mencionem 'todos' ou 'cada' não dão alvo, eles afetam os objetos ou jogadores indicados sem necessariamente escolhê-los como alvos; Por padrão, todo efeito de carta ou habilidade dá alvo, a menos que seu texto use explicitamente os termos 'todos' ou 'cada'. Efeitos citados desta forma não dão alvo e afetam diretamente todos os objetos de jogo ou jogadores válidos indicados desta forma"
+    },
+    {
         "keywords": "Destruir",
         "ruling": "Quando uma carta é destruída, ela é removida do campo e enviada para o Mar do Esquecimento, a menos que um efeito previna essa destruição ou redirecione seu destino; A destruição pode ocorrer como resultado de habilidades, efeitos ou regras do jogo; Cartas indestrutíveis não podem ser destruídas, mas ainda podem ser afetadas por outros métodos de remoção"
     },
@@ -89,8 +97,8 @@
         "ruling": "Anular é um efeito que impede uma carta ou habilidade de resolver, removendo-a da fila de resolução antes que tenha qualquer impacto no jogo; Quando uma carta é anulada, ela geralmente é colocada no Mar do Esquecimento de seu dono, a menos que um efeito específico determine outro destino, como mão, baralho ou fora do jogo; Apenas cartas e habilidades na fila de resolução podem ser anuladas; Cartas constantes já em jogo (<i>Exemplo: heróis e artefatos</i>) não podem ser alvos desse efeito; Anular não desfaz custos pagos nem impede habilidades desencadeadas por seu lançamento, mas impede que seu efeito principal descrito na carta anulada ocorra"
     },
     {
-        "keywords": "Transformar",          
-        "ruling": "Quando uma carta se transforma, ela se converte em outra carta, fazendo com que quaisquer efeitos dependentes de sua identidade anterior ou permanência no campo deixem de existir;Durante o processo, a carta perde todos os marcadores, contadores e efeitos anteriores, exceto os equipamentos, que permanecem anexados se a carta estiver equipada;Ao se transformar, a carta assume a exata versão impressa da sua nova forma, sem efeitos associados e/ou temporários acumulados durante a partida;Essa transformação deve ser indicada pela colocação de um marcador específico na carta"
+        "keywords": "Transformar",
+        "ruling": "Quando uma carta se transforma, ela perde todas as suas características impressas (Nome, Custo, Tipo, Ataque, Defesa, Habilidades, Número e Nome da Coleção, além da Referência Bíblica) e assume as novas listadas pelo efeito da transformação em questão; Ao se transformar, a carta permanece sendo o mesmo objeto de jogo, não entrando novamente em jogo e, portanto, não desencadeando habilidades do tipo ENTRADA; Todos os marcadores, contadores e demais efeitos permanecem nela, bem como Artefatos Equipáveis, se possível; A transformação deve ser indicada com a colocação de um marcador específico sobre a carta"
     },
     {
         "keywords": "Custo Alternativo",

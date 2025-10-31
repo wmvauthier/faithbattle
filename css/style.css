@@ -848,7 +848,7 @@ ol {
 	/* height: 190px; */
 	position: relative;
 	border-radius: 5px;
-	margin-bottom: 20px;
+	/* margin-bottom: 20px; */
 }
 
 .product__sidebar__view__item {
@@ -1031,7 +1031,7 @@ ol {
 -----------------------*/
 
 .card-details {
-	padding-top: 60px;
+	padding-top: 20px;
 }
 
 .anime__details__content {

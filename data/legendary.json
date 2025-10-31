@@ -7,46 +7,46 @@
     "subtype": "Lendário",
     "categories": "Amplificação",
     "cost": 3,
-    "strength": 0,
-    "resistence": 0,
+    "strength": 3,
+    "resistence": 2,
     "effects": "Ativável",
-    "keywords": "Ativável",
+    "keywords": "Alvo;Ativável",
     "number": 51,
     "commonNumber": 6,
     "collection": "APH",
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/lendarias/51.png",
-    "ocurrences": 0,
-    "ocurrencesInSides": 1,
-    "stars": "1.5",
+    "ocurrences": 1,
+    "ocurrencesInSides": 3,
+    "stars": "1.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ],
     "archetypePercentage": [
@@ -55,45 +55,63 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "icon": "fa-poo-storm",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ]
   },
@@ -109,427 +127,34 @@
     "strength": 2,
     "resistence": 3,
     "effects": "Ativável",
-    "keywords": "Ativável",
+    "keywords": "Alvo;Ativável",
     "number": 52,
     "commonNumber": 1,
     "collection": "APH",
     "date": "2023-12-01",
     "artist": "Lucas Bird",
     "img": "img/lendarias/52.png",
-    "ocurrences": 8,
-    "ocurrencesInSides": 8,
-    "stars": "4.6",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 27.27272727272727,
-        "roundedWidth": 27,
-        "width": 28
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 36.36363636363637,
-        "roundedWidth": 36,
-        "width": 36
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 36.36363636363637,
-        "roundedWidth": 36,
-        "width": 37
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 45.45454545454545,
-        "roundedWidth": 45,
-        "width": 46
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 27.27272727272727,
-        "roundedWidth": 27,
-        "width": 27
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
-      }
-    ]
-  },
-  {
-    "name": "Davi",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Pague O oponente alvo perde 1 de fé. Ative apenas uma vez por rodada",
-    "type": "Herói de Fé",
-    "subtype": "Lendário",
-    "categories": "Lança;Dano",
-    "cost": 3,
-    "strength": 4,
-    "resistence": 3,
-    "effects": "Ativável",
-    "keywords": "Ativável",
-    "number": 53,
-    "commonNumber": 2,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/lendarias/53.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 3,
-    "stars": "2.4",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Abraão",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Uma vez por rodada, você pode pagar duas sabedorias (habilidade ativada) para escolher um herói na Zona de Batalha, convertendo todo o dano que ele causar em pontos de fé durante esse turno",
-    "type": "Herói de Fé",
-    "subtype": "Lendário",
-    "categories": "Santificação",
-    "cost": 2,
-    "strength": 2,
-    "resistence": 2,
-    "effects": "Ativável",
-    "keywords": "Ativável",
-    "number": 94,
-    "commonNumber": 7,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/lendarias/94.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 4,
-    "stars": "2.8",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 75,
-        "roundedWidth": 75,
-        "width": 75
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Abel",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O topo do seu baralho permanece revelado; Quando o topo é removido, a próxima carta assume essa posição; Se o topo for um Milagre, você pode pagar uma sabedoria para jogá-lo e ganhar 1 ponto de fé",
-    "type": "Herói de Fé",
-    "subtype": "Lendário",
-    "sinergies": "88,71",
-    "categories": "Lança;Compra;Renúncia;Santificação",
-    "cost": 1,
-    "strength": 0,
-    "resistence": 3,
-    "effects": "Ativável",
-    "keywords": "Ativável",
-    "number": 96,
-    "commonNumber": 60,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/lendarias/96.png",
-    "ocurrences": 5,
-    "ocurrencesInSides": 7,
-    "stars": "4.2",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 21
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 60,
-        "roundedWidth": 60,
-        "width": 60
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Sara",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Cada vez que você jogar um Milagre (se for a primera vez que esse efeito for desencadeado), ganhe 1 ponto de fé",
-    "type": "Herói de Fé",
-    "subtype": "Lendário",
-    "categories": "Santificação",
-    "cost": 2,
-    "strength": 2,
-    "resistence": 2,
-    "effects": "Ativável",
-    "keywords": "",
-    "number": 100,
-    "commonNumber": 69,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/lendarias/100.png",
-    "ocurrences": 4,
+    "ocurrences": 6,
     "ocurrencesInSides": 6,
-    "stars": "3.7",
+    "stars": "3.3",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
       },
       {
         "style": "Controlador",
@@ -556,9 +181,9 @@
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
       },
       {
         "archetype": "Combo",
@@ -570,22 +195,505 @@
         "width": 17
       },
       {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "icon": "fa-poo-storm",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Davi",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Pague O oponente alvo perde 1 de fé. Ative apenas uma vez por rodada",
+    "type": "Herói de Fé",
+    "subtype": "Lendário",
+    "categories": "Lança;Dano",
+    "cost": 3,
+    "strength": 4,
+    "resistence": 3,
+    "effects": "Ativável",
+    "keywords": "Alvo;Ativável",
+    "number": 53,
+    "commonNumber": 2,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "artist": "Lucas Bird",
+    "img": "img/lendarias/53.png",
+    "ocurrences": 2,
+    "ocurrencesInSides": 2,
+    "stars": "1.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 101
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Abraão",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Uma vez por rodada, você pode pagar duas sabedorias (habilidade ativada) para escolher um herói na Zona de Batalha, convertendo todo o dano que ele causar em pontos de fé durante esse turno",
+    "type": "Herói de Fé",
+    "subtype": "Lendário",
+    "categories": "Santificação",
+    "cost": 2,
+    "strength": 2,
+    "resistence": 2,
+    "effects": "Ativável",
+    "keywords": "Alvo;Ativável",
+    "number": 94,
+    "commonNumber": 7,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "artist": "Lucas Bird",
+    "img": "img/lendarias/94.png",
+    "ocurrences": 4,
+    "ocurrencesInSides": 4,
+    "stars": "2.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 37
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 37
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Abel",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "O topo do seu baralho permanece revelado; Quando o topo é removido, a próxima carta assume essa posição; Se o topo for um Milagre, você pode pagar uma sabedoria para jogá-lo e ganhar 1 ponto de fé",
+    "type": "Herói de Fé",
+    "subtype": "Lendário",
+    "sinergies": "88,71",
+    "categories": "Lança;Compra;Descarte;Santificação",
+    "cost": 1,
+    "strength": 0,
+    "resistence": 3,
+    "effects": "Ativável",
+    "keywords": "Ativável",
+    "number": 96,
+    "commonNumber": 60,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "artist": "Lucas Bird",
+    "img": "img/lendarias/96.png",
+    "ocurrences": 4,
+    "ocurrencesInSides": 5,
+    "stars": "2.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 41
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Sara",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Cada vez que você jogar um Milagre (se for a primera vez que esse efeito for desencadeado), ganhe 1 ponto de fé",
+    "type": "Herói de Fé",
+    "subtype": "Lendário",
+    "categories": "Santificação",
+    "cost": 2,
+    "strength": 2,
+    "resistence": 2,
+    "effects": "Ativável",
+    "keywords": "",
+    "number": 100,
+    "commonNumber": 69,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "artist": "Lucas Bird",
+    "img": "img/lendarias/100.png",
+    "ocurrences": 4,
+    "ocurrencesInSides": 4,
+    "stars": "2.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 24
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ]
   },
@@ -609,7 +717,7 @@
     "img": "img/lendarias/112.png",
     "ocurrences": 2,
     "ocurrencesInSides": 2,
-    "stars": "1.9",
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -645,9 +753,9 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       },
       {
         "archetype": "Santificação",
@@ -668,10 +776,19 @@
         "width": 0
       },
       {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0
@@ -681,6 +798,15 @@
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0
@@ -707,16 +833,16 @@
     "img": "img/lendarias/113.png",
     "ocurrences": 8,
     "ocurrencesInSides": 8,
-    "stars": "4.6",
+    "stars": "4.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 24
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 37
       },
       {
         "style": "Equilibrado",
@@ -732,9 +858,593 @@
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 37.5,
-        "roundedWidth": 38,
-        "width": 39
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 24
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 18.75,
+        "roundedWidth": 19,
+        "width": 19
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 18.75,
+        "roundedWidth": 19,
+        "width": 19
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Isaque",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "No fim do turno, antes de realizar a compra por efeito desencadeado, olhe as duas cartas do topo do seu baralho; Você pode pagar duas sabedorias e revelar as duas cartas; Se pelo menos uma das cartas reveladas for de herói, escolha uma e ganhe pontos de fé iguais ao custo do herói escolhido; Ao fim deste efeito, pagando ou não as duas sabedorais, compre as duas cartas",
+    "type": "Herói de Fé",
+    "subtype": "Lendário",
+    "categories": "Santificação",
+    "cost": 4,
+    "strength": 3,
+    "resistence": 3,
+    "effects": "Ativável",
+    "keywords": "Ativável",
+    "number": 95,
+    "commonNumber": 64,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "artist": "Lucas Bird",
+    "img": "img/lendarias/95.png",
+    "ocurrences": 3,
+    "ocurrencesInSides": 3,
+    "stars": "2.2",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 67
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      }
+    ]
+  },
+  {
+    "name": "Noé",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Ao entrar no campo, desencadeia um efeito que permite buscar um artefato de custo 4 ou superior no baralho; Revele-o, adicione-o à sua mão e embaralhe o baralho;",
+    "type": "Herói de Fé",
+    "subtype": "Lendário",
+    "sinergies": "21,22",
+    "categories": "Buscador",
+    "cost": 1,
+    "strength": 2,
+    "resistence": 2,
+    "effects": "Entrada",
+    "keywords": "Buscar",
+    "number": 118,
+    "commonNumber": 46,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "artist": "Lucas Bird",
+    "img": "img/lendarias/118.png",
+    "ocurrences": 2,
+    "ocurrencesInSides": 3,
+    "stars": "1.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 32
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      }
+    ]
+  },
+  {
+    "name": "Efraim",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Toda vez que você comprar uma carta, um herói alvo em qualquer zona de batalha recebe um contador temporário que lhe concede +1 de Ataque até o fim do turno, como um efeito desencadeado; Este efeito se repete para cada carta comprada; Se um único efeito fizer você comprar mais de uma carta, ele ainda concede um contador para cada carta comprada",
+    "type": "Herói de Fé",
+    "subtype": "Lendário",
+    "sinergies": "",
+    "categories": "Lança;Compra;Amplificação",
+    "cost": 4,
+    "strength": 4,
+    "resistence": 4,
+    "effects": "",
+    "keywords": "Comprar",
+    "number": 172,
+    "commonNumber": 154,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "artist": "Lucas Bird",
+    "img": "img/lendarias/172.png",
+    "ocurrences": 2,
+    "ocurrencesInSides": 3,
+    "stars": "1.8",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 32
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      }
+    ]
+  },
+  {
+    "name": "Lia",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Esta carta pode ser jogada mesmo que a sua versão de Lia esteja sob o controle de outro jogador, em uma zona de batalha que não seja a sua; A qualquer momento, como um efeito ativado, você pode olhar a carta do topo do seu baralho; Se a carta do topo for um herói, você pode jogá-la como se estivesse na sua mão, como um efeito estático",
+    "type": "Herói de Fé",
+    "subtype": "Lendário",
+    "sinergies": "",
+    "categories": "Buscador",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 3,
+    "effects": "",
+    "keywords": "",
+    "number": 173,
+    "commonNumber": 170,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "artist": "Lucas Bird",
+    "img": "img/lendarias/173.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 3,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Judá",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Quando este herói for declarado como atacante, você pode fazer com que ele receba um contador que lhe concede -1/-1; se o fizer, ele ganha Imbloqueável até o fim do turno, como um efeito desencadeado opcional",
+    "type": "Herói de Fé",
+    "subtype": "Lendário",
+    "sinergies": "",
+    "categories": "Lança;Modificação",
+    "cost": 3,
+    "strength": 2,
+    "resistence": 2,
+    "effects": "Ataque",
+    "keywords": "Imbloqueável",
+    "number": 174,
+    "commonNumber": 147,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "artist": "Lucas Bird",
+    "img": "img/lendarias/174.png",
+    "ocurrences": 4,
+    "ocurrencesInSides": 4,
+    "stars": "2.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ],
     "archetypePercentage": [
@@ -761,15 +1471,24 @@
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
         "rawWidth": 12.5,
         "roundedWidth": 13,
         "width": 13
       },
       {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
         "rawWidth": 12.5,
         "roundedWidth": 13,
         "width": 13
@@ -782,57 +1501,67 @@
         "rawWidth": 12.5,
         "roundedWidth": 13,
         "width": 13
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ]
   },
   {
-    "name": "Isaque",
+    "name": "Jacó",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "No fim do turno, antes de realizar a compra por efeito desencadeado, olhe as duas cartas do topo do seu baralho; Você pode pagar duas sabedorias e revelar as duas cartas; Se pelo menos uma das cartas reveladas for de herói, escolha uma e ganhe pontos de fé iguais ao custo do herói escolhido; Ao fim deste efeito, pagando ou não as duas sabedorais, compre as duas cartas",
+    "text": "Quando este herói é declarado como atacante, como um efeito desencadeado condicional, caso a carta revelada pela habilidade normal não seja um milagre, este herói ganha um contador temporário que lhe cede +1 de Defesa até o início do seu próximo turno, e você ganha 1 ponto de fé",
     "type": "Herói de Fé",
     "subtype": "Lendário",
-    "categories": "Compra;Santificação",
-    "cost": 4,
+    "sinergies": "139,155",
+    "categories": "Lança;Santificação",
+    "cost": 2,
     "strength": 3,
-    "resistence": 3,
-    "effects": "Ativável",
-    "keywords": "Ativável",
-    "number": 95,
-    "commonNumber": 64,
-    "collection": "GEN",
-    "date": "2024-10-01",
+    "resistence": 2,
+    "effects": "Ataque",
+    "keywords": "",
+    "number": 176,
+    "commonNumber": 9,
+    "collection": "FIS",
+    "date": "2025-10-01",
     "artist": "Lucas Bird",
-    "img": "img/lendarias/95.png",
-    "ocurrences": 5,
-    "ocurrencesInSides": 6,
-    "stars": "3.7",
+    "img": "img/lendarias/176.png",
+    "ocurrences": 2,
+    "ocurrencesInSides": 3,
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       }
     ],
     "archetypePercentage": [
@@ -859,15 +1588,24 @@
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
         "rawWidth": 16.666666666666664,
         "roundedWidth": 17,
         "width": 17
       },
       {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0
@@ -880,58 +1618,67 @@
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ]
   },
   {
-    "name": "Noé",
+    "name": "José",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Ao entrar no campo, desencadeia um efeito que permite buscar um artefato de custo 4 ou superior no baralho; Revele-o, adicione-o à sua mão e embaralhe o baralho;",
+    "text": "A primeira vez de cada turno, quando você compra cartas, você ganha 1 ponto de fé; A primeira vez de cada turno, quando um oponente descarta cartas, este herói causa 1 ponto de dano a ele",
     "type": "Herói de Fé",
     "subtype": "Lendário",
-    "sinergies": "21,22",
-    "categories": "Buscador",
-    "cost": 1,
+    "sinergies": "130",
+    "categories": "Santificação;Dano",
+    "cost": 2,
     "strength": 2,
     "resistence": 2,
-    "effects": "Entrada",
-    "keywords": "Buscar",
-    "number": 118,
-    "commonNumber": 46,
-    "collection": "GEN",
-    "date": "2024-10-01",
+    "effects": "",
+    "keywords": "",
+    "number": 178,
+    "commonNumber": 11,
+    "collection": "FIS",
+    "date": "2025-10-01",
     "artist": "Lucas Bird",
-    "img": "img/lendarias/118.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 1,
-    "stars": "1.5",
+    "img": "img/lendarias/178.png",
+    "ocurrences": 2,
+    "ocurrencesInSides": 2,
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ],
     "archetypePercentage": [
@@ -940,45 +1687,63 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": null,
-        "roundedWidth": null,
-        "width": null
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ]
   }

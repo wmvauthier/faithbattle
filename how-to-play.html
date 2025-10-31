@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>⚔️ Faith Battle 🛡️ | O Card Game Bíblico</title>
+
+  <!-- Google Fonts & Icons (mantidos do original) -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Estilos do site (mantidos) -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+  <link rel="stylesheet" href="css/plyr.css" type="text/css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+  <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/review-youtube.css" type="text/css">
+  <link rel="stylesheet" href="css/review-instagram.css" type="text/css">
+  <link rel="stylesheet" href="css/index.css" type="text/css">
+
+  <style>
+    /* Ajustes visuais específicos desta página */
+    .section--dark {
+      background: #0e0e10;
+      color: #f6f6f7;
+      padding: 60px 0;
+    }
+
+    .section--light {
+      background: #f6f6f7;
+      color: #1a1b1e;
+      padding: 60px 0;
+    }
+
+    .section-title h2 {
+      letter-spacing: 1px;
+    }
+
+    .toc-sticky {
+      position: sticky;
+      top: 95px;
+      background: rgba(0, 0, 0, 0.03);
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .toc-sticky .list-group-item {
+      border: 0;
+      background: transparent;
+      padding-left: 0;
+    }
+
+    .feature-card .card-img-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px 14px 0 0;
+    }
+
+    .feature-card .card-img-top {
+      transition: transform .35s;
+    }
+
+    .feature-card:hover .card-img-top {
+      transform: scale(1.04);
+    }
+
+    .badge-k {
+      font-size: .75rem;
+      background: #1e90ff;
+    }
+
+    .rule-callout {
+      border-left: 4px solid #1e90ff;
+      padding: 12px 14px;
+      background: rgba(30, 144, 255, 0.08);
+      border-radius: 10px;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      background: #1e90ff;
+      color: #fff;
+      margin-right: 8px;
+    }
+
+    .icon-inset {
+      width: 22px;
+      height: 22px;
+      vertical-align: -4px;
+      opacity: .9;
+    }
+
+    .card-grid img {
+      max-height: 220px;
+      object-fit: contain;
+    }
+
+    .img-ex {
+      border-radius: 10px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    }
+
+    .small-muted {
+      font-size: .9rem;
+      opacity: .85;
+    }
+
+    .anchor-offset {
+      scroll-margin-top: 90px;
+    }
+
+    /* Garante que o botão azul fique azul sempre */
+    .btn-primary {
+      background-color: #0d6efd !important;
+      border-color: #0d6efd !important;
+      color: #fff !important;
+    }
+
+    /* Mantém o hover coerente (um pouco mais escuro) */
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #0b5ed7 !important;
+      border-color: #0a58ca !important;
+      color: #fff !important;
+    }
+
+    /* Garante que o botão cinza apareça contornado sempre */
+    .btn-outline-secondary {
+      color: #6c757d !important;
+      border-color: #6c757d !important;
+      background-color: transparent !important;
+    }
+
+    /* Mantém o efeito de hover leve e coerente */
+    .btn-outline-secondary:hover,
+    .btn-outline-secondary:focus {
+      /* background-color: #6c757d !important; */
+      border-color: #6c757d !important;
+      color: #6c757d !important;
+    }
+
+    .my-5 {
+      margin: 1rem !important;
+    }
+
+    .mb-4 {
+      margin-bottom: 0 !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-2">
+          <div class="header__logo">
+            <a href="./index.html">
+              <img src="img/logo.png" alt="Faith Battle" style="max-height:50px;">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="header__nav">
+            <nav class="header__menu mobile-menu">
+              <ul>
+                <li><a href="./index.html">Homepage</a></li>
+                <li class="active"><a href="./how-to-play.html">Informações <span class="arrow_carrot-down"></span></a>
+                  <ul class="dropdown">
+                    <li><a href="./who-we-are.html">Quem somos</a></li>
+                    <li class="active"><a href="./how-to-play.html">Como Jogar</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Game <span class="arrow_carrot-down"></span></a>
+                  <ul class="dropdown">
+                    <li><a href="./deck-builder.html">Deckbuilder</a></li>
+                    <li><a href="./card-list.html">Lista de Cards</a></li>
+                    <li><a href="./deck-meta.html">Decks do Meta</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Reviews <span class="arrow_carrot-down"></span></a>
+                  <ul class="dropdown">
+                    <li><a href="./review-instagram.html">Instagram</a></li>
+                    <li><a href="./review-youtube.html">Youtube</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Galeria <span class="arrow_carrot-down"></span></a>
+                  <ul class="dropdown">
+                    <li><a href="./gallery-gameplays.html">Gameplays</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://www.faithbattleloja.com.br/">Loja</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-lg-2"></div>
+      </div>
+      <div id="mobile-menu-wrap"></div>
+    </div>
+  </header>
+
+  <!-- TOC + Visão Geral -->
+  <section class="section--light">
+    <div class="container">
+      <div class="row g-4">
+        <aside class="col-lg-3 d-none d-lg-block">
+          <div class="toc-sticky">
+            <h6 class="text-uppercase mb-2">Navegação</h6>
+            <div class="list-group list-group-flush">
+              <a class="list-group-item" href="#visao-geral">Visão geral</a>
+              <a class="list-group-item" href="#tipos-de-carta">Tipos de Carta</a>
+              <a class="list-group-item" href="#deckbuilding">Construção de Baralho</a>
+              <a class="list-group-item" href="#componentes">O que Preciso pra Jogar</a>
+              <a class="list-group-item" href="#preparacao">Preparação</a>
+              <a class="list-group-item" href="#turno">Estrutura do turno</a>
+              <a class="list-group-item" href="#vitoria">Condições de vitória</a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="col-lg-9">
+          <div id="visao-geral" class="anchor-offset section-title text-uppercase">
+            <h2>- Visão Geral -</h2>
+          </div>
+          <div class="mb-4">
+            <p>
+              Em <b>Faith Battle</b>, você comanda heróis inspirados em histórias bíblicas e usa sua <b>Fé</b> e
+              <b>Sabedoria</b>
+              para executar jogadas impactantes. O jogo é <b>dinâmico</b> e acessível, mas com profundidade suficiente
+              para estratégias únicas e inesquecíveis.
+            </p>
+            <p>
+              O objetivo em <strong>Faith Battle</strong> é alcançar a <strong>vitória</strong> através da superioridade
+              estratégica sobre o oponente,
+              dominando o campo com poderosos <strong>Heróis</strong>, criando situações com
+              <strong>Milagres</strong>,
+              ampliando suas forças com <strong>Artefatos</strong> e mantendo o oponente em cheque através dos
+              <strong>Pecados</strong>.
+            </p>
+            <!-- <div class="row text-center card-grid g-4">
+              <div class="col-6 col-md-2"><img src="img/herois/1.png" class="img-fluid img-ex" alt="Exemplo de Herói">
+              </div>
+              <div class="col-6 col-md-2"><img src="img/milagres/48.png" class="img-fluid img-ex"
+                  alt="Exemplo de Milagre"></div>
+              <div class="col-6 col-md-2"><img src="img/artefatos/25.png" class="img-fluid img-ex"
+                  alt="Exemplo de Artefato"></div>
+              <div class="col-6 col-md-2"><img src="img/pecados/27.png" class="img-fluid img-ex"
+                  alt="Exemplo de Pecado"></div>
+              <div class="col-6 col-md-2"><img src="img/lendarias/52.png" class="img-fluid img-ex"
+                  alt="Exemplo de Lendária"></div>
+              <div class="col-6 col-md-2"><img src="img/sabedorias/103.png" class="img-fluid img-ex"
+                  alt="Exemplo de Sabedoria"></div>
+            </div> -->
+          </div>
+
+          <hr class="my-5">
+
+          <div id="tipos-de-carta" class="anchor-offset section-title text-uppercase">
+            <h2>- Tipos de Carta -</h2>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+              <div class="card feature-card h-100">
+                <div class="card-img-container">
+                  <img src="img/herois/11.png" class="card-img-top" alt="Exemplo de Herói Moisés">
+                </div>
+                <div class="card-body">
+                  <div class="card-body">
+                    <h5 class="card-title text-uppercase">Heróis <span class="badge bg-primary ms-2">Estratégia</span>
+                    </h5>
+                    <p class="card-text">Lideram o campo de batalha, definem o ritmo e o
+                      objetivo principal da sua estratégia.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card feature-card h-100">
+                <div class="card-img-container">
+                  <img src="img/milagres/155.png" class="card-img-top" alt="Exemplo de Milagre">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase">Milagres <span class="badge bg-success ms-2">Progressão</span>
+                  </h5>
+                  <p class="card-text">Representam atos divinos de poder e resultado imediato — protegem, impulsionam e
+                    criam
+                    diversas situações.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card feature-card h-100">
+                <div class="card-img-container">
+                  <img src="img/artefatos/122.png" class="card-img-top" alt="Exemplo de Artefato">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase">Artefatos <span class="badge bg-secondary ms-2">Suporte</span>
+                  </h5>
+                  <p class="card-text">Relíquias que fortalecem você e seus Heróis, aprimorando recursos e mantendo sua
+                    estratégia estável.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card feature-card h-100">
+                <div class="card-img-container">
+                  <img src="img/pecados/152.png" class="card-img-top" alt="Exemplo de Pecado">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase">Pecados <span class="badge bg-danger ms-2">Disrupção</span></h5>
+                  <p class="card-text">Armadilhas usadas para quebrar o ritmo de jogo do inimigo, punir excessos e
+                    controlar a partida.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 mb-3 rule-callout">
+            <i class="fa-solid fa-lightbulb me-2"></i>
+            <strong>Dica:</strong> Alguns <strong>Heróis</strong> possuem versões <strong>Lendárias</strong>, que vêm do
+            seu <strong>Baralho de
+              Extras</strong>.
+            Essas cartas podem ser jogadas sobre o Herói básico, herdando todas as suas habilidades e mantendo o
+            histórico de jogo da versão original.
+          </div>
+
+          <div class="rule-callout mb-3 bg-warning-subtle border-start border-4 border-warning rounded-2 p-3">
+            <i class="fa-solid fa-lightbulb me-2 text-warning"></i>
+            <strong>Importante:</strong> para usar um <b>Herói Lendário</b>, você só pode ter <b>uma cópia da versão
+              básica</b> dele no seu baralho principal.
+            O mesmo vale para quaisquer cartas com o tipo <b>"Lendário"</b> que estejam no baralho principal.
+          </div>
+
+          <hr class="my-5">
+
+          <div id="deckbuilding" class="anchor-offset section-title text-uppercase">
+            <h2>- Construção de Baralho -</h2>
+          </div>
+          <div class="row g-4 align-items-center">
+            <div class="col-md-7">
+
+              <ul class="list-unstyled mb-4">
+                <li class="mb-2">
+                  <span class="step-num">1</span> Escolha seu <strong>estilo de jogo</strong> — <em>Agressivo</em>,
+                  <em>Equilibrado</em> ou <em>Controlador</em>.
+                </li>
+                <li class="mb-2">
+                  <span class="step-num">2</span> Selecione um <strong>arquétipo principal</strong>: <em>Batalha</em>,
+                  <em>Tempestade</em>, <em>Aceleração</em>, <em>Santificação</em>, <em>Arsenal</em>, <em>Combo</em> ou
+                  <em>Supressão</em>.
+                </li>
+                <li class="mb-2">
+                  <span class="step-num">3</span> Escolha um <strong>arquétipo secundário</strong> que complemente o seu
+                  plano principal — ele define nuances e sinergias do baralho.
+                </li>
+                <li class="mb-2">
+                  <span class="step-num">4</span> Monte sua estratégia buscando cartas que se encaixem no estilo e nos
+                  arquétipos escolhidos.
+                </li>
+                <li class="mb-2">
+                  <span class="step-num">5</span> Pronto! Seu caminho da fé está traçado — agora é hora de testar sua
+                  criação em batalha.
+                </li>
+              </ul><br>
+
+              <div class="rule-callout mb-3">
+                <i class="fa-solid fa-lightbulb me-2"></i>
+                <strong>Dica:</strong> com exceção da regra das Lendárias, <b>não há restrições de cor ou tipo</b> —
+                você pode usar
+                <b>qualquer carta de qualquer coleção em qualquer baralho</b>.
+              </div>
+
+              <div class="rule-callout mb-3">
+                <i class="fa-solid fa-lightbulb me-2"></i>
+                <strong>Dica:</strong> priorize consistência — múltiplas cópias das suas cartas-chave, cartas de compra
+                e buscadores
+                aumentam as chances de executar sua
+                estratégia.
+              </div>
+
+              <a href="./deck-builder.html" class="btn btn-primary me-2">
+                <i class="fa-solid fa-screwdriver-wrench me-2"></i>
+                Abrir Deckbuilder
+              </a>
+
+              <a href="./card-list.html" class="btn btn-outline-secondary">
+                <i class="fa-solid fa-layer-group me-2"></i>
+                Ver Lista de Cartas
+              </a>
+
+
+            </div>
+
+            <div class="col-md-5 text-center">
+              <!-- ESTILOS -->
+              <h6 class="text-uppercase text-muted mb-3"><b>Estilos de Jogo</b></h6>
+              <div class="row justify-content-center mb-3">
+                <div class="col-6 col-md-4 col-lg-3 mb-3">
+                  <button class="style-tab w-100 text-center hover-item" data-type="estilo" data-key="agressivo">
+                    <i class="fas fa-hand-back-fist fa-2x mb-2" style="color:#B22222;"></i>
+                    <div class="fw-semibold text-uppercase small">Agressivo</div>
+                  </button>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-3">
+                  <button class="style-tab w-100 text-center hover-item" data-type="estilo" data-key="equilibrado">
+                    <i class="fas fa-hand-scissors fa-2x mb-2" style="color:#FFD700;"></i>
+                    <div class="fw-semibold text-uppercase small">Equilibrado</div>
+                  </button>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-3">
+                  <button class="style-tab w-100 text-center hover-item" data-type="estilo" data-key="controlador">
+                    <i class="fas fa-hand fa-2x mb-2" style="color:#1E90FF;"></i>
+                    <div class="fw-semibold text-uppercase small">Controlador</div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- ARQUÉTIPOS -->
+              <h6 class="text-uppercase text-muted mb-3"><b>Arquétipos</b></h6>
+              <div class="d-flex flex-wrap justify-content-center gap-1 mb-1">
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="batalha">
+                  <i class="fas fa-hand-fist fa-2x mb-1" style="color:#FF8C00;"></i>
+                  <div class="fw-semibold text-uppercase small">Batalha</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="tempestade">
+                  <i class="fas fa-poo-storm fa-2x mb-1" style="color:#32CD32;"></i>
+                  <div class="fw-semibold text-uppercase small">Tempestade</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="aceleracao">
+                  <i class="fas fa-stopwatch fa-2x mb-1" style="color:#8B4513;"></i>
+                  <div class="fw-semibold text-uppercase small">Aceleração</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="santificacao">
+                  <i class="fas fa-droplet fa-2x mb-1"
+                    style="color:whitesmoke; text-shadow: 0 0 1px #000, 0 0 3px #000;"></i>
+                  <div class="fw-semibold text-uppercase small">Santificação</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="arsenal">
+                  <i class="fas fa-toolbox fa-2x mb-1" style="color:#A8B3B4;"></i>
+                  <div class="fw-semibold text-uppercase small">Arsenal</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="combo">
+                  <i class="fas fa-gears fa-2x mb-1" style="color:#800080;"></i>
+                  <div class="fw-semibold text-uppercase small">Combo</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="supressao">
+                  <i class="fas fa-ban fa-2x mb-1" style="color:#000000;"></i>
+                  <div class="fw-semibold text-uppercase small">Supressão</div>
+                </button>
+              </div>
+
+              <!-- <div class="small-muted mt-2">
+                Representação visual dos <b>Estilos</b> e <b>Arquétipos</b> de Faith Battle.
+              </div> -->
+            </div>
+
+
+          </div>
+
+          <hr class="my-5">
+
+          <div id="componentes" class="anchor-offset section-title text-uppercase">
+            <h2>- O que preciso pra jogar -</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <i class="fa-solid fa-layer-group me-2"></i>
+                  <strong>Baralho de Cartas</strong> — um mínimo de 30 cartas jogáveis, podendo incluir Heróis,
+                  Milagres, Artefatos e/ou Pecados.
+                </li>
+                <li class="mb-2">
+                  <i class="fa-solid fa-crown me-2"></i>
+                  <strong>Baralho de Extras</strong> — composto pelos seus Heróis Lendários.
+                </li>
+                <li class="mb-2">
+                  <i class="fa-solid fa-scroll me-2"></i>
+                  <strong>Baralho de Sabedorias</strong> — composto por 10 Cartas de Sabedoria.
+                </li>
+                <li class="mb-2">
+                  <i class="fa-solid fa-chess-board me-2"></i>
+                  <strong>Playmat</strong> — campo de jogo que demarca as suas Zonas de Jogo.
+                </li>
+                <li class="mb-2">
+                  <i class="fa-solid fa-gem me-2"></i>
+                  <strong>Marcadores</strong> (opcional) — para acompanhar pontos de fé, modificações em cartas e outros
+                  efeitos.
+                </li>
+                <li class="mb-2">
+                  <i class="fa-solid fa-book-open me-2"></i>
+                  <strong>Manual de Regras</strong> (opcional) — ideal para novos jogadores ou para consultas rápidas
+                  durante a partida.
+                </li>
+              </ul>
+
+              <!-- <div class="rule-callout small">
+                <i class="fa-solid fa-circle-info me-2"></i>
+                Os tamanhos de baralho, limites de carta, quantidade de fé  e sabedorias podem varias dependendo da sua mesa de jogo ou formato
+              </div> -->
+            </div>
+
+            <div class="col-md-6 text-center">
+
+              <div class="row g-4">
+
+                <div class="col-md-6 text-center">
+                  <img src="img/versos/playmat.png" class="img-fluid img-ex" alt="Playmat">
+                  <div class="small-muted mt-2">Playmat de jogo padrão</div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <img src="img/versos/normal.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                  <div class="small-muted mt-2">Verso das cartas jogáveis</div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <img src="img/versos/sabedoria.png" class="img-fluid img-ex" alt="Verso padrão das sabedorias">
+                  <div class="small-muted mt-2">Verso das cartas de sabedoria</div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <hr class="my-5">
+
+          <div id="preparacao" class="anchor-offset section-title text-uppercase">
+            <h2>- Preparação -</h2>
+          </div>
+
+          <div class="row">
+            <div class="col-md-7">
+              <ul class="list-unstyled mb-4">
+                <li class="mb-2">
+                  <span class="step-num">1</span> Escolha o seu <strong>baralho</strong> e defina a estratégia que
+                  guiará
+                  sua
+                  fé na batalha.
+                </li>
+                <li class="mb-2">
+                  <span class="step-num">2</span> Organize seu <strong>playmat</strong>, posicionando suas cartas nas
+                  zonas
+                  corretas
+                </li>
+                <li class="mb-2">
+                  <span class="step-num">3</span> Decida com seu(s) oponente(s) quem inicia o duelo — por sorteio, dado,
+                  outro método aleatório ou conforme as regras do torneio vigente que estiverem jogando
+                </li>
+                <li class="mb-2">
+                  <span class="step-num">4</span> Compre suas cinco cartas iniciais e, se desejar, realize os
+                  <strong>Mulligans</strong> para ajustar sua mão inicial.
+                </li>
+                <li class="mb-2">
+                  <span class="step-num">5</span> Que a batalha comece! Mostre sua fé, sua estratégia e alcance a
+                  vitória!
+                </li>
+              </ul><br>
+
+              <div class="alert alert-info" role="alert">
+                <i class="fa-regular fa-hand-point-right me-2"></i>
+                <strong>Mulligan:</strong> no início do jogo, você pode <b>devolver qualquer quantidade de cartas</b>
+                para o seu baralho,
+                embaralhar e então <b>comprar o mesmo número de cartas novamente</b>.
+                Esse processo ajuda a <b>ajustar sua mão inicial</b> e <b>melhorar sua estratégia</b>.
+                Você pode realizar o Mulligan até <b>3 vezes</b>.
+              </div>
+
+            </div>
+
+            <div class="col-md-5">
+              <div class="row g-4">
+                <div class="col-md-1"></div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/herois/120.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/herois/46.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/herois/71.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/milagres/73.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/milagres/131.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-1"></div>
+                <div class="small-muted mt-2 text-center">
+                  Boa mão inicial com um baralho <b>Vermelho</b>.
+                </div>
+              </div><br>
+              <div class="row g-4">
+                <div class="col-md-1"></div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/herois/150.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/herois/45.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/herois/66.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/herois/151.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/milagres/79.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-1"></div>
+                <div class="small-muted mt-2 text-center">
+                  Boa mão inicial com um baralho <b>Amarelo</b>.
+                </div>
+              </div><br>
+              <div class="row g-4">
+                <div class="col-md-1"></div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/herois/47.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/milagres/84.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/milagres/17.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/milagres/140.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-2 text-center" style="padding-left:3px; padding-right:3px;">
+                  <img src="img/pecados/142.png" class="img-fluid img-ex" alt="Verso padrão das cartas jogáveis">
+                </div>
+                <div class="col-md-1"></div>
+                <div class="small-muted mt-2 text-center">
+                  Boa mão inicial com um baralho <b>Azul</b>.
+                </div>
+              </div><br>
+            </div>
+
+          </div>
+
+          <!-- COMEÇO -->
+          <!-- COMEÇO -->
+          <!-- COMEÇO -->
+          <hr class="my-5">
+
+          <div id="turno" class="anchor-offset section-title text-uppercase">
+            <h2>- Estrutura do Turno -</h2>
+          </div>
+
+          <div class="container turno-diagrama">
+
+            <!-- INÍCIO DO TURNO -->
+            <div class="row fase align-items-stretch">
+              <div
+                class="col-md-2 fase-titulo bg-primary-subtle border-start border-4 border-primary d-flex justify-content-center align-items-center">
+                <h5 class="text-primary text-uppercase vertical-text">Início do Turno</h5>
+              </div>
+              <div class="col-md-10 ps-4 py-3">
+
+                <h6 class="fw-bold text-primary">Etapa de Ocultar</h6>
+                <p>O jogador ativo oculta suas cartas de <b>Sabedoria</b>.</p>
+
+                <div class="rule-callout mt-2">
+                  <i class="fa-solid fa-lightbulb me-2"></i>
+                  <strong>Dica:</strong> a <b>Etapa de Ocultar</b> <b>não</b> cria uma Fila de Resolução e <b>não</b>
+                  gera prioridade.
+                </div>
+
+                <h6 class="fw-bold text-primary mt-3">Desencadeamentos</h6>
+                <p>Todos os efeitos que mencionem o <b>Início do Turno</b> são desencadeados simultaneamente, criando
+                  uma <b>Fila de Resolução</b>.</p>
+
+                <h6 class="fw-bold text-primary mt-3">Etapa de Compra</h6>
+                <p>Após a finalização da Fila de Resolução, o jogador ativo compra uma carta.</p>
+              </div>
+            </div>
+
+            <!-- MEIO DO TURNO (inclui COMBATE) -->
+            <!-- MEIO DO TURNO -->
+            <div class="row fase align-items-stretch mt-4">
+              <div
+                class="col-md-2 fase-titulo bg-info-subtle border-start border-4 border-info d-flex justify-content-center align-items-center">
+                <h5 class="text-info text-uppercase vertical-text">Meio do Turno</h5>
+              </div>
+
+              <div class="col-md-10 ps-4 py-3">
+
+                <h6 class="fw-bold text-info">Jogando Cartas</h6>
+                <p>
+                  O jogador ativo pode realizar quantas ações desejar, pagando seus devidos custos.<br>
+                  Cartas que não sejam <b>Milagres</b>, <b>Pecados</b> ou que não possuam a habilidade <b>Súbito</b> só
+                  podem ser jogadas nesta etapa.<br>
+                  <b>Artefatos equipáveis</b> e <b>Heróis</b> entram na <b>Zona de Preparação</b>, enquanto outros tipos
+                  podem entrar diretamente na <b>Zona de Batalha</b>.
+                </p>
+
+                <h6 class="fw-bold text-info mt-3">Ações Comuns</h6>
+                <p>Durante o Meio do Turno, o jogador pode realizar diversas ações típicas, como:</p>
+
+                <div class="row row-cols-1 row-cols-md-2 g-2 mb-3">
+                  <div class="col">
+                    <h6><i class="fa-solid fa-user-shield me-2"></i> Jogar Heróis</h6>
+                  </div>
+                  <div class="col">
+                    <h6><i class="fa-solid fa-bolt me-2"></i> Jogar Milagres</h6>
+                  </div>
+                  <div class="col">
+                    <h6><i class="fa-solid fa-cog me-2"></i> Jogar Artefatos</h6>
+                  </div>
+                  <div class="col">
+                    <h6><i class="fa-solid fa-ring me-2"></i> Equipar / Desequipar Artefatos</h6>
+                  </div>
+                  <div class="col">
+                    <h6><i class="fa-solid fa-ban me-2"></i> Usar Habilidades Ativáveis</h6>
+                  </div>
+                  <div class="col">
+                    <h6><i class="fa-solid fa-up-long me-2"></i> Evoluir Heróis</h6>
+                  </div>
+                  <div class="col">
+                    <h6><i class="fa-solid fa-hand-fist me-2"></i> Declarar Combate</h6>
+                  </div>
+                  <div class="col">
+                    <h6><i class="fa-solid fa-flag-checkered me-2"></i> Declarar Fim do Turno</h6>
+                  </div>
+                </div>
+
+                <h6 class="fw-bold text-info mt-3">Movendo Cartas</h6>
+                <p>
+                  Nesta Fase o jogador também pode mover cartas entre a <b>Zona de Preparação</b> e a <b>Zona de
+                    Batalha</b>.<br>
+                  Cartas que <b>iniciarem o turno</b> na <b>Zona de Preparação</b> podem ser enviadas para a <b>Zona de
+                    Batalha</b>, e vice-versa, conforme a estratégia do jogador.<br>
+                  Cartas que <b>subirem neste turno</b> para a <b>Zona de Batalha</b> podem <b>atacar
+                    normalmente</b>.<br>
+                  Já cartas que <b>atacaram</b> durante o turno <b>não podem ser recuadas</b> para a <b>Zona de
+                    Preparação</b>.
+                </p>
+
+
+                <div class="rule-callout mt-3 bg-warning-subtle border-start border-4 border-warning rounded-2 p-3">
+                  <i class="fa-solid fa-lightbulb me-2 text-warning"></i>
+                  <strong>Importante:</strong> antes de encerrar o <b>Meio do Turno</b>, o jogador ativo deve anunciar
+                  se haverá
+                  <b>Combate</b>. Caso contrário, a <b>Fase de Combate</b> é automaticamente pulada.
+                </div>
+              </div>
+            </div>
+
+
+            <!-- AÇÕES COMUNS -->
+            <!-- <div class="row fase align-items-stretch mt-3">
+              <div
+                class="col-md-2 fase-titulo bg-secondary-subtle border-start border-4 border-secondary d-flex justify-content-center align-items-center">
+                <h5 class="text-secondary text-uppercase vertical-text">Ações Comuns</h5>
+              </div>
+
+            </div> -->
+
+            <!-- COMBATE -->
+            <div class="row fase align-items-stretch mt-3">
+              <div
+                class="col-md-2 fase-titulo bg-danger-subtle border-start border-4 border-danger d-flex justify-content-center align-items-center">
+                <h5 class="text-danger text-uppercase vertical-text">Combate</h5>
+              </div>
+              <div class="col-md-10 ps-4 py-3">
+                <ol class="list-unstyled">
+                  <li class="mb-3">
+                    <span class="step-num">1</span>
+                    <b>Etapa de Atacantes</b> — o jogador ativo escolhe quais heróis irão atacar.
+                    <ul class="mt-2 mb-0 list-unstyled">
+                      <li>Efeitos de <b>ATAQUE</b> e <b>COMBATE</b> são desencadeados neste momento.</li>
+                    </ul>
+                  </li>
+                  <li class="mb-3">
+                    <span class="step-num">2</span>
+                    <b>Etapa de Bloqueadores</b> — o defensor declara bloqueadores.
+                    <ul class="mt-2 mb-0 list-unstyled">
+                      <li>Efeitos de <b>BLOQUEIO</b> são ativados.</li>
+                      <li>Os confrontos são <b>1x1</b>, salvo efeitos que indiquem o contrário.</li>
+                    </ul>
+                  </li>
+                  <li class="mb-0">
+                    <span class="step-num">3</span>
+                    <b>Etapa de Dano</b> — compare Força e Resistência dos combatentes simultaneamente.
+                    <ul class="mt-2 mb-0 list-unstyled">
+                      <li>Se a <b>Força</b> ≥ <b>Resistência</b> do oponente, a carta é <b>destruída</b>.</li>
+                      <li>Atacantes não bloqueados causam dano direto aos <b>Pontos de Fé</b>.</li>
+                      <li>Em seguida, resolva <b>efeitos de fim de combate</b>.</li>
+                    </ul>
+                  </li>
+                </ol>
+
+                <div class="rule-callout mt-3">
+                  <i class="fa-solid fa-lightbulb me-2"></i>
+                  <strong>Dica:</strong> durante o combate, você pode jogar <b>Milagres</b>, <b>Pecados</b> e
+                  habilidades na <b>Fila de Resolução</b>, desde que tenha prioridade. Isso <b>não</b> cria novas
+                  etapas.
+                </div>
+
+                <!-- EXEMPLOS VISUAIS DO COMBATE -->
+                <div class="row g-4 justify-content-center text-center mt-4">
+                  <div class="col-md-4">
+                    <div class="row gx-2">
+                      <div class="col-6"><img src="img/herois/67.png" class="img-fluid img-ex" alt="Herói atacante">
+                      </div>
+                      <div class="col-6"><img src="img/herois/135.png" class="img-fluid img-ex" alt="Herói defensor">
+                      </div>
+                    </div>
+                    <div class="small-muted mt-2">O herói da direita é <b>destruído</b> (Resistência menor que a Força
+                      do atacante).</div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="row gx-2">
+                      <div class="col-6"><img src="img/herois/63.png" class="img-fluid img-ex" alt="Herói atacante">
+                      </div>
+                      <div class="col-6"><img src="img/herois/171.png" class="img-fluid img-ex" alt="Herói defensor">
+                      </div>
+                    </div>
+                    <div class="small-muted mt-2"><b>Eliminação mútua</b> — ambos são destruídos.</div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="row gx-2">
+                      <div class="col-6"><img src="img/herois/139.png" class="img-fluid img-ex" alt="Herói atacante">
+                      </div>
+                      <div class="col-6"><img src="img/herois/65.png" class="img-fluid img-ex" alt="Herói defensor">
+                      </div>
+                    </div>
+                    <div class="small-muted mt-2"><b>Ambos sobrevivem</b> — nenhuma Força foi suficiente para destruir o
+                      oponente.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FIM DO TURNO -->
+            <div class="row fase align-items-stretch mt-4">
+              <div
+                class="col-md-2 fase-titulo bg-warning-subtle border-start border-4 border-warning d-flex justify-content-center align-items-center">
+                <h5 class="text-warning text-uppercase vertical-text">Fim do Turno</h5>
+              </div>
+              <div class="col-md-10 ps-4 py-3">
+                <h6 class="fw-bold text-warning">Desencadeamentos</h6>
+                <p>Todos os efeitos que mencionem o <b>Fim do Turno</b> são desencadeados simultaneamente, criando uma
+                  <b>Fila de Resolução</b>.
+                </p>
+
+                <h6 class="fw-bold text-warning mt-3">Etapa de Descarte</h6>
+                <p>Após a resolução da Fila, o jogador ativo descarta até atingir o limite de 7 cartas na mão e encerra
+                  o turno.</p>
+              </div>
+            </div>
+
+            <!-- REGRAS GERAIS -->
+            <div class="row fase align-items-stretch mt-4">
+              <div
+                class="col-md-2 fase-titulo bg-secondary-subtle border-start border-4 border-secondary d-flex justify-content-center align-items-center">
+                <h5 class="text-secondary text-uppercase vertical-text">Regras Gerais</h5>
+              </div>
+              <div class="col-md-10 ps-4 py-3">
+                <h6 class="fw-bold text-secondary">Etapas Desencadeadas</h6>
+                <p>Se um efeito resolvido adicionar algo que deveria ocorrer na Fase ou Etapa atual, ele é
+                  <b>desencadeado imediatamente</b>.
+                </p>
+                <div class="rule-callout mt-2">
+                  <i class="fa-solid fa-lightbulb me-2"></i>
+                  <strong>Exemplo:</strong> se uma carta de <b>Fim do Turno</b> entrar durante o Fim do Turno, ela é
+                  resolvida imediatamente.
+                </div>
+
+                <h6 class="fw-bold text-secondary mt-3">Fila de Resolução</h6>
+                <p>
+                  A <b>Fila de Resolução</b> é o sistema usado para organizar a ordem em que os efeitos, habilidades e
+                  ações são executados no jogo.
+                  Sempre que um jogador realiza uma ação — como jogar um <b>Milagre</b>, usar um <b>Pecado</b>, ativar
+                  uma habilidade, declarar estar passando a uma nova fase ou responder a algo — essa ação é colocada na Fila, aguardando para ser resolvida.
+                </p>
+
+                <p>
+                  As novas ações entram no <b>topo</b> da Fila, e são resolvidas uma de cada vez, <b>da última
+                    adicionada para a primeira</b>.
+                  Isso significa que as respostas mais recentes acontecem antes das ações que vieram antes delas.
+                </p>
+
+                <p>
+                  Quando a Fila está vazia e todos os jogadores passam a prioridade, o jogo prossegue normalmente para a
+                  próxima etapa.
+                </p>
+
+                <div class="rule-callout mt-2">
+                  <i class="fa-solid fa-lightbulb me-2"></i>
+                  <strong>Dica:</strong> todas as ações e efeitos criam uma <b>Fila de Resolução</b> — exceto a
+                  <b>Etapa de Ocultar Sabedorias</b>, que ocorre imediatamente e sem prioridade.
+                </div>
+
+              </div>
+            </div>
+          </div><br>
+
+          <style>
+            .turno-diagrama .fase {
+              border-radius: 8px;
+              background-color: var(--bs-body-bg);
+              box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+              transition: 0.2s ease-in-out;
+            }
+
+            .turno-diagrama .fase:hover {
+              transform: scale(1.01);
+              box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .fase-titulo {
+              text-align: center;
+              padding: 15px 10px;
+              border-radius: 8px 0 0 8px;
+              min-height: 100%;
+            }
+
+            .vertical-text {
+              writing-mode: vertical-rl;
+              transform: rotate(180deg);
+              letter-spacing: 2px;
+              font-size: 1rem;
+              margin: 0;
+            }
+
+            .turno-diagrama h6 {
+              font-size: 1rem;
+            }
+
+            .turno-diagrama p,
+            .turno-diagrama li {
+              font-size: 0.9rem;
+              line-height: 1.4;
+            }
+
+            .rule-callout {
+              background: var(--bs-light);
+              border-left: 4px solid var(--bs-warning);
+              border-radius: .5rem;
+              padding: .75rem 1rem;
+              font-size: 0.85rem;
+              /* Fonte ligeiramente menor */
+            }
+          </style>
+
+          <hr class="my-5">
+          <!-- FIM -->
+          <!-- FIM -->
+          <!-- FIM -->
+
+          <div id="vitoria" class="anchor-offset section-title text-uppercase">
+            <h2>- Condições de Vitória -</h2>
+          </div>
+
+          <div class="row align-items-center g-4">
+            <div class="col-md-7">
+              <p>
+                Existem diversas formas de conquistar a vitória em uma partida. Normalmente, o jogo termina quando um
+                jogador cumpre uma das seguintes condições:
+              </p>
+              <ul class="list-unstyled">
+                <li><b>Reduzir a Fé dos seus oponentes a zero:</b> quando os <b>Pontos de Fé</b> de um jogador chegam a
+                  0, ele é derrotado imediatamente.</li>
+                <li><b>Ter mais Fé ao final de 10 turnos:</b> se a partida atingir o limite de turnos, vence o jogador
+                  com mais Pontos de Fé.</li>
+                <li><b>Impedir o oponente de comprar cartas:</b> se um jogador não puder comprar uma carta no início de
+                  seu turno, ele perde o jogo.</li>
+                <li><b>Condição de vitória alternativa:</b> algumas cartas possuem efeitos especiais que declaram
+                  vitória instantânea se certos requisitos forem atendidos. Essas condições estão descritas nas próprias
+                  cartas.</li>
+              </ul>
+            </div>
+
+            <div class="col-md-5">
+              <div class="row gx-2 gy-3">
+
+                <!-- Fé zerada -->
+                <div class="col-4 text-center">
+                  <img src="img/milagres/177.png" class="img-fluid img-ex" alt="Fé zerada - condição de derrota">
+                  <div class="small-muted mt-1 fw-bold">Mais Fé ao fim de 10 turnos</div>
+                  <div class="small text-muted">Se o jogo chegar ao fim do 10º turno, vence quem tiver mais Fé.</div>
+                </div>
+
+                <!-- Mais fé ao fim de 10 turnos -->
+                <div class="col-4 text-center">
+                  <img src="img/milagres/117.png" class="img-fluid img-ex" alt="Mais fé ao fim de 10 turnos">
+                  <div class="small-muted mt-1 fw-bold">Impossibilidade de Compra</div>
+                  <div class="small text-muted">Se o oponente não puder comprar cartas no início de su turno ele é
+                    automaticamente eliminado</div>
+                </div>
+
+                <!-- Vitória por Mill / Condição alternativa -->
+                <div class="col-4 text-center">
+                  <img src="img/artefatos/26.png" class="img-fluid img-ex"
+                    alt="Vitória alternativa - efeito de carta especial">
+                  <div class="small-muted mt-1 fw-bold">Condição Alternativa</div>
+                  <div class="small text-muted">Se um efeito especial
+                    declarar vitória, o jogo termina imediatamente.</div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="rule-callout mb-3 bg-warning-subtle border-start border-4 border-warning rounded-2 p-3">
+              <i class="fa-solid fa-lightbulb me-2 text-warning"></i>
+              <strong>Importante:</strong> no caso de empate ao final dos 10 turnos, é jogada uma rodada adicional até
+              que um jogador termine a rodada com mais <b>Fé</b> do que os outros oponentes.
+            </div>
+            <br>
+
+          </div>
+
+          <!-- <hr class="my-5">
+
+          <div id="faq" class="anchor-offset section-title text-uppercase">
+            <h2>- Perguntas Frequentes (FAQ) -</h2>
+          </div>
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q1h">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1"
+                  aria-expanded="true" aria-controls="q1">
+                  1) Posso usar cartas de temporadas diferentes?
+                </button>
+              </h2>
+              <div id="q1" class="accordion-collapse collapse show" aria-labelledby="q1h"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Depende do <b>formato</b> do evento. Consulte as regras do campeonato ou da comunidade local.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q2h">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2"
+                  aria-expanded="false" aria-controls="q2">
+                  2) Como funciona a Evolução de Heróis?
+                </button>
+              </h2>
+              <div id="q2" class="accordion-collapse collapse" aria-labelledby="q2h" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Ao evoluir, substitua o herói pela versão evoluída seguindo o texto da carta. Marcadores/itens podem
+                  permanecer, salvo indicação contrária.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q3h">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3"
+                  aria-expanded="false" aria-controls="q3">
+                  3) O que é Sabedoria no jogo?
+                </button>
+              </h2>
+              <div id="q3" class="accordion-collapse collapse" aria-labelledby="q3h" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  É um <b>recurso</b> usado para pagar custos e habilitar combos. Algumas cartas aumentam/recuperam
+                  Sabedoria.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q4h">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4"
+                  aria-expanded="false" aria-controls="q4">
+                  4) Posso reagir ao ataque do oponente?
+                </button>
+              </h2>
+              <div id="q4" class="accordion-collapse collapse" aria-labelledby="q4h" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Sim. <b>Milagres</b> e <b>Pecados</b> podem ser usados para modificar o combate, conforme condições de
+                  cada carta.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q5h">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5"
+                  aria-expanded="false" aria-controls="q5">
+                  5) Onde encontro o conjunto completo de regras?
+                </button>
+              </h2>
+              <div id="q5" class="accordion-collapse collapse" aria-labelledby="q5h" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  No site oficial e nos canais da comunidade (Discord/Instagram/YouTube). Eventos podem usar adaptações
+                  locais.
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REDES SOCIAIS (mantido) -->
+  <section id="socials" class="section--dark">
+    <div class="section-inner container">
+      <div class="section-title text-uppercase">
+        <h2>Redes Sociais</h2>
+      </div>
+      <div class="section-text">Conecte-se com a comunidade e fique por dentro de todas as novidades:</div>
+
+      <div class="socials d-flex flex-wrap gap-2 mt-3" role="list">
+        <a role="listitem" href="https://www.instagram.com/faithbattleoficial/" target="_blank"
+          class="btn btn-outline-light btn-sm">
+          <i class="fab fa-instagram me-1"></i> Instagram
+        </a>
+        <a role="listitem" href="https://www.youtube.com/channel/UCPCsg_VdBvd-7BSOHlDB0gA" target="_blank"
+          class="btn btn-outline-light btn-sm">
+          <i class="fab fa-youtube me-1"></i> YouTube
+        </a>
+        <a role="listitem" href="https://discord.gg/cuKWBpxw" target="_blank" class="btn btn-outline-light btn-sm">
+          <i class="fab fa-discord me-1"></i> Discord
+        </a>
+        <a role="listitem" href="https://tinyurl.com/2ejfe29j" target="_blank" class="btn btn-outline-light btn-sm">
+          <i class="fab fa-whatsapp me-1"></i> WhatsApp
+        </a>
+        <a role="listitem" href="http://www.faithbattleloja.com.br/" target="_blank"
+          class="btn btn-outline-light btn-sm">
+          <i class="fas fa-shopping-cart me-1"></i> Loja
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="page-up">
+      <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-3">
+          <div class="footer__logo">
+            <a href="./index.html"><img src="img/logo.png" alt="Faith Battle" style="max-height:50px;"></a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="footer__nav">
+            <ul>
+              <li><a href="./index.html">Homepage</a></li>
+              <li class="active"><a href="./how-to-play.html">Como Jogar</a></li>
+              <li><a href="./card-list.html">Lista de Cards</a></li>
+              <li><a href="./deck-meta.html">Decks do Meta</a></li>
+              <li><a href="http://www.faithbattleloja.com.br/">Loja</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <p>
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | Template by
+            <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // realce do item ativo da TOC conforme a rolagem
+    const headings = [
+      "visao-geral", "componentes", "objetivo", "preparacao", "tipos-de-carta",
+      "turno", "acoes", "combate", "vitoria", "deckbuilding", "faq"
+    ].map(id => document.getElementById(id));
+
+    const links = Array.from(document.querySelectorAll('.toc-sticky a'));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const idx = headings.indexOf(entry.target);
+        if (idx >= 0) {
+          const link = links[idx];
+          if (entry.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        }
+      });
+    }, { root: null, rootMargin: '0px 0px -70% 0px', threshold: 0 });
+
+    headings.forEach(h => h && observer.observe(h));
+  </script>
+
+</body>
+
+</html>

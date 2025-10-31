@@ -10,695 +10,15 @@
     "cost": 2,
     "strength": 0,
     "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Imbloqueável",
+    "effects": "",
+    "keywords": "Alvo;Imbloqueável",
     "number": 13,
     "collection": "APH",
     "date": "2023-12-01",
-    "artist": "Lucas Bird",
     "img": "img/milagres/13.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 8,
-    "stars": "4.6",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 44.44444444444444,
-        "roundedWidth": 44,
-        "width": 45
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 11.11111111111111,
-        "roundedWidth": 11,
-        "width": 11
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 11.11111111111111,
-        "roundedWidth": 11,
-        "width": 11
-      }
-    ]
-  },
-  {
-    "name": "Fogo do Céu",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Ao ser resolvido, Fogo do Céu permite escolher e destruir uma carta em qualquer Zona de Batalha; Cartas com Indestrutível não são afetadas, embora possam ser alvos válidos.",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Remoção",
-    "cost": 3,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Destruir",
-    "number": 14,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/14.png",
     "ocurrences": 2,
     "ocurrencesInSides": 7,
-    "stars": "4.2",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 42.857142857142854,
-        "roundedWidth": 43,
-        "width": 44
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 57.14285714285714,
-        "roundedWidth": 57,
-        "width": 57
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 28.57142857142857,
-        "roundedWidth": 29,
-        "width": 29
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 28.57142857142857,
-        "roundedWidth": 29,
-        "width": 29
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
-      }
-    ]
-  },
-  {
-    "name": "Passagem Segura",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um jogador; todos os heróis desse jogador não podem ser bloqueados normalmente até o fim do turno; Esse efeito se estende inclusive para heróis que entrem na Zona de Batalha após a resolução de Passagem Segura.",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Evasão",
-    "cost": 4,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Global",
-    "keywords": "Imbloqueável",
-    "number": 15,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/15.png",
-    "ocurrences": 2,
-    "ocurrencesInSides": 3,
-    "stars": "2.4",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 68
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 67
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Restauração de Fé",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um jogador; esse jogador ganha 1 ponto de fé para cada herói presente na Zona de Batalha no exato momento da resolução de Restauração da Fé.",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Santificação",
-    "cost": 2,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "",
-    "number": 16,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/16.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 1,
-    "stars": "1.5",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 1
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Proteção Divina",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O jogador alvo não sofre dano de efeitos ou ataque de Heróis neste turno",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Proteção",
-    "cost": 1,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "",
-    "number": 17,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/17.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 5,
-    "stars": "3.3",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 21
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 80,
-        "roundedWidth": 80,
-        "width": 80
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      }
-    ]
-  },
-  {
-    "name": "Liberação Celestial",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha uma carta de milagre ou pecado que foi jogada, mas ainda não foi resolvida; Todos os seus efeitos são anulados, impedindo a sua resolução; Esse efeito atua na pilha, interrompendo a execução dos efeitos da carta escolhida.",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Anulação",
-    "cost": 2,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Anular",
-    "number": 18,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/18.png",
-    "ocurrences": 9,
-    "ocurrencesInSides": 10,
-    "stars": "5.0",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 27.27272727272727,
-        "roundedWidth": 27,
-        "width": 28
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 27.27272727272727,
-        "roundedWidth": 27,
-        "width": 27
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 45.45454545454545,
-        "roundedWidth": 45,
-        "width": 46
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 45.45454545454545,
-        "roundedWidth": 45,
-        "width": 46
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 27.27272727272727,
-        "roundedWidth": 27,
-        "width": 27
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
-      }
-    ]
-  },
-  {
-    "name": "Ressurreição",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Busque um herói em qualquer ME e coloque-o no campo sob seu controle, em qualquer zona de sua escolha; Esse efeito não conta como se o herói tivesse sido jogado normalmente, mas aciona habilidades que dependem da entrada em jogo; Busque um herói em qualquer ME e coloque-o no campo sob seu controle, em qualquer zona de sua escolha; Esse efeito não conta como se o herói tivesse sido jogado normalmente, mas aciona habilidades que dependem da entrada em jogo.",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Buscador",
-    "cost": 3,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Buscar",
-    "number": 19,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/19.png",
-    "ocurrences": 11,
-    "ocurrencesInSides": 11,
-    "stars": "5.0",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 18.181818181818183,
-        "roundedWidth": 18,
-        "width": 19
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 36.36363636363637,
-        "roundedWidth": 36,
-        "width": 36
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 45.45454545454545,
-        "roundedWidth": 45,
-        "width": 46
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 45.45454545454545,
-        "roundedWidth": 45,
-        "width": 46
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 27.27272727272727,
-        "roundedWidth": 27,
-        "width": 27
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
-      }
-    ]
-  },
-  {
-    "name": "Sarça Ardente",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um jogador para ganhar 2 pontos de fé, enquanto um oponente escolhido perde 2 pontos de fé simultaneamente; Esse efeito ocorre de forma imediata ao ser resolvido.",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Dano;Santificação",
-    "cost": 2,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "",
-    "number": 20,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/20.png",
-    "ocurrences": 5,
-    "ocurrencesInSides": 6,
-    "stars": "3.7",
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -736,16 +56,16 @@
         "icon": "fa-hand-fist",
         "rawWidth": 42.857142857142854,
         "roundedWidth": 43,
-        "width": 43
+        "width": 44
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 42.857142857142854,
-        "roundedWidth": 43,
-        "width": 43
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       },
       {
         "archetype": "Combo",
@@ -757,10 +77,247 @@
         "width": 0
       },
       {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
+        "icon": "fa-poo-storm",
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
+      }
+    ]
+  },
+  {
+    "name": "Fogo do Céu",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Ao ser jogado, seu controlador escolhe uma carta de qualquer tipo presente em qualquer Zona de Batalha e a destrói; Cartas com Indestrutível não são afetadas, embora possam ser alvos válidos.",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Remoção",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Destruir",
+    "number": 14,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "img": "img/milagres/14.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 6,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 18
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Passagem Segura",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Escolha um jogador; todos os heróis desse jogador não podem ser bloqueados normalmente até o fim do turno; Esse efeito se estende inclusive para heróis que entrem na Zona de Batalha após a resolução de Passagem Segura.",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Evasão",
+    "cost": 4,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "Global",
+    "keywords": "Imbloqueável",
+    "number": 15,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "img": "img/milagres/15.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 7,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 44
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 44
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
         "rawWidth": 14.285714285714285,
         "roundedWidth": 14,
         "width": 14
@@ -770,42 +327,49 @@
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       }
     ]
   },
   {
-    "name": "Dilúvio",
+    "name": "Restauração de Fé",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Ao ser resolvido, Dilúvio destrói todos os heróis e artefatos em todas as Zonas de Batalha, exceto o artefato Arca de Noé e o herói Noé; Cartas com Indestrutível não são afetadas por esse efeito.",
+    "text": "Escolha um jogador; esse jogador ganha 1 ponto de fé para cada herói presente na Zona de Batalha no exato momento da resolução de Restauração da Fé.",
     "type": "Milagre",
     "subtype": "-",
-    "sinergies": "46,22",
-    "categories": "Juízo",
-    "cost": 6,
+    "categories": "Santificação",
+    "cost": 2,
     "strength": 0,
     "resistence": 0,
-    "effects": "Global",
-    "keywords": "Destruir",
-    "number": 21,
+    "effects": "",
+    "keywords": "Alvo",
+    "number": 16,
     "collection": "APH",
     "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/21.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 4,
-    "stars": "2.8",
+    "img": "img/milagres/16.png",
+    "ocurrences": 0,
+    "ocurrencesInSides": 2,
+    "stars": "0.5",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
       },
       {
         "style": "Equilibrado",
@@ -821,9 +385,9 @@
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ],
     "archetypePercentage": [
@@ -832,9 +396,9 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       },
       {
         "archetype": "Santificação",
@@ -850,50 +414,67 @@
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
         "rawWidth": 25,
         "roundedWidth": 25,
         "width": 25
       },
       {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ]
   },
   {
-    "name": "Cordeiro de Deus",
+    "name": "Proteção Divina",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Até o início do seu próximo turno, escolha um jogador para que todo o dano que seria causado a ele seja prevenido; Além disso, todas as cartas constantes no campo desse jogador ganham Indestrutível, tornando-as imunes a efeitos de destruição e à prevenção de dano; Esses efeitos são aplicados como estáticos até expirarem.",
+    "text": "O jogador alvo não sofre dano de efeitos ou ataque de Heróis neste turno",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Proteção",
-    "cost": 4,
+    "cost": 1,
     "strength": 0,
     "resistence": 0,
-    "effects": "Global",
-    "keywords": "Indestrutível",
-    "number": 29,
+    "effects": "",
+    "keywords": "Alvo",
+    "number": 17,
     "collection": "APH",
     "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/29.png",
+    "img": "img/milagres/17.png",
     "ocurrences": 5,
-    "ocurrencesInSides": 5,
-    "stars": "3.3",
+    "ocurrencesInSides": 6,
+    "stars": "2.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -909,18 +490,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 21
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 80,
-        "roundedWidth": 80,
-        "width": 80
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 67
       }
     ],
     "archetypePercentage": [
@@ -929,335 +510,60 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      }
-    ]
-  },
-  {
-    "name": "Sabedoria de Salomão",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um jogador; esse jogador oculta 3 cartas de sabedoria de sua ZS, tornando-as prontas para uso; Se Salomão estiver em jogo sob seu controle, você compra uma carta adicional, como efeito condicional.",
-    "type": "Milagre",
-    "subtype": "-",
-    "sinergies": "4",
-    "categories": "Recapitulação",
-    "cost": 1,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Ocultar Sabedorias;Comprar",
-    "number": 42,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/42.png",
-    "ocurrences": 5,
-    "ocurrencesInSides": 7,
-    "stars": "4.2",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
         "rawWidth": 25,
         "roundedWidth": 25,
         "width": 25
       },
       {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 26
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 37.5,
-        "roundedWidth": 38,
-        "width": 37
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 24
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
-      },
-      {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "icon": "fa-poo-storm",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
-      }
-    ]
-  },
-  {
-    "name": "No Céu tem Pão",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um jogador e esse jogador comprará 3 cartas; Porém, se Moisés estiver na Zona de Batalha sob seu controle, ele compra 5 cartas em vez disso, como efeito alternativo.",
-    "type": "Milagre",
-    "subtype": "-",
-    "sinergies": "1",
-    "categories": "Compra",
-    "cost": 3,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Comprar",
-    "number": 48,
-    "collection": "APH",
-    "date": "2023-12-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/48.png",
-    "ocurrences": 5,
-    "ocurrencesInSides": 7,
-    "stars": "4.2",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 41
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
         "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 60,
-        "roundedWidth": 60,
-        "width": 60
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      }
-    ]
-  },
-  {
-    "name": "Resgate do Justo",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Busque uma carta de artefato no seu baralho e uma de herói no seu Mar do Esquecimento; Revele ambas e coloque-as na sua mão; Em seguida, embaralhe o baralho",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Buscador",
-    "cost": 3,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Buscar",
-    "number": 72,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/72.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 2,
-    "stars": "1.9",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
+        "icon": "fa-stopwatch",
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0
@@ -1265,317 +571,24 @@
     ]
   },
   {
-    "name": "Adjuntora Idônea",
+    "name": "Liberação Celestial",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Ao ser jogada, escolha um herói na sua Zona de Batalha como alvo; Em seguida, busque no seu baralho ou no Mar do Esquecimento um herói com o mesmo custo do alvo e coloque-o na sua Zona de Preparação; Se a busca ocorrer no baralho, embaralhe-o após a operação; Se o herói alvo tiver custo 1 e você possuir Eva no seu baralho, poderá buscar Eva sem pagar o custo deste milagre",
-    "type": "Milagre",
-    "subtype": "-",
-    "sinergies": "5",
-    "categories": "Buscador",
-    "cost": 3,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "",
-    "number": 73,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/73.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 5,
-    "stars": "3.3",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 41
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 80,
-        "roundedWidth": 80,
-        "width": 80
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Shabbat",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Ao resolver, compre cartas até ter sete na mão e ganhe 7 pontos de fé; Além disso, até o final do seu próximo turno, você não pode atacar e suas cartas ganham Indestrutível, prevenindo destruição e dano",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Proteção;Compra;Santificação",
-    "cost": 7,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Comprar;Indestrutível",
-    "number": 76,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/76.png",
-    "ocurrences": 2,
-    "ocurrencesInSides": 6,
-    "stars": "3.7",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 21
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 80,
-        "roundedWidth": 80,
-        "width": 80
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Ira de Deus",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um jogador; esse jogador seleciona um herói em sua própria Zona de Batalha, que é imediatamente retornado à Zona de Preparação; Em seguida, todas as demais cartas na Zona de Batalha desse jogador são destruídas",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Juízo",
-    "cost": 7,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Destruir",
-    "number": 77,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/77.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 5,
-    "stars": "3.3",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 21
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 80,
-        "roundedWidth": 80,
-        "width": 80
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      }
-    ]
-  },
-  {
-    "name": "Protoevangelho",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha uma carta de qualquer tipo que tenha sido jogada mas ainda não resolvida; Todos os seus efeitos são anulados, impedindo sua resolução; Alternativamente, você pode descartar da sua mão uma carta do mesmo tipo que o alvo, em vez de pagar o custo deste milagre",
+    "text": "Escolha uma carta de milagre ou pecado que foi jogada, mas ainda não foi resolvida; Todos os seus efeitos são anulados, impedindo a sua resolução; Esse efeito atua na pilha, interrompendo a execução dos efeitos da carta escolhida.",
     "type": "Milagre",
     "subtype": "-",
     "categories": "Anulação",
-    "cost": 5,
+    "cost": 2,
     "strength": 0,
     "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Anular;Custo Alternativo",
-    "number": 83,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/83.png",
-    "ocurrences": 7,
-    "ocurrencesInSides": 11,
-    "stars": "5.0",
+    "effects": "",
+    "keywords": "Alvo;Anular",
+    "number": 18,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "img": "img/milagres/18.png",
+    "ocurrences": 8,
+    "ocurrencesInSides": 12,
+    "stars": "4.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1611,139 +624,403 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 29.166666666666668,
+        "roundedWidth": 29,
+        "width": 28
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 4.166666666666666,
+        "roundedWidth": 4,
+        "width": 4
+      }
+    ]
+  },
+  {
+    "name": "Ressurreição",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Busque um herói em qualquer ME e coloque-o no campo sob seu controle, em qualquer zona de sua escolha; Esse efeito não conta como se o herói tivesse sido jogado normalmente, mas aciona habilidades que dependem da entrada em jogo; Busque um herói em qualquer ME e coloque-o no campo sob seu controle, em qualquer zona de sua escolha; Esse efeito não conta como se o herói tivesse sido jogado normalmente, mas aciona habilidades que dependem da entrada em jogo.",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Buscador",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Buscar",
+    "number": 19,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "img": "img/milagres/19.png",
+    "ocurrences": 4,
+    "ocurrencesInSides": 11,
+    "stars": "2.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 27.27272727272727,
+        "roundedWidth": 27,
+        "width": 28
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 36.36363636363637,
+        "roundedWidth": 36,
+        "width": 36
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 36.36363636363637,
+        "roundedWidth": 36,
+        "width": 37
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 36.36363636363637,
+        "roundedWidth": 36,
+        "width": 35
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 13.636363636363635,
+        "roundedWidth": 14,
+        "width": 13
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 4.545454545454546,
+        "roundedWidth": 5,
+        "width": 5
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 13.636363636363635,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 13.636363636363635,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 13.636363636363635,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 4.545454545454546,
+        "roundedWidth": 5,
+        "width": 5
+      }
+    ]
+  },
+  {
+    "name": "Sarça Ardente",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Escolha um jogador para ganhar 2 pontos de fé, enquanto um oponente escolhido perde 2 pontos de fé simultaneamente; Esse efeito ocorre de forma imediata ao ser resolvido.",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Dano;Santificação",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo",
+    "number": 20,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "img": "img/milagres/20.png",
+    "ocurrences": 4,
+    "ocurrencesInSides": 9,
+    "stars": "2.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 32
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 5.555555555555555,
+        "roundedWidth": 6,
+        "width": 6
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Dilúvio",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Ao ser resolvido, Dilúvio destrói todos os heróis e artefatos em todas as Zonas de Batalha, exceto o artefato Arca de Noé e o herói Noé; Cartas com Indestrutível não são afetadas por esse efeito.",
+    "type": "Milagre",
+    "subtype": "-",
+    "sinergies": "46,22",
+    "categories": "Juízo",
+    "cost": 6,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "Global",
+    "keywords": "Destruir",
+    "number": 21,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "img": "img/milagres/21.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 4,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": -1
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
         "rawWidth": 25,
         "roundedWidth": 25,
         "width": 25
       },
       {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
-      },
-      {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "icon": "fa-poo-storm",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
-      }
-    ]
-  },
-  {
-    "name": "Filho da Promessa",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um herói na sua Zona de Batalha; Busque no seu baralho um herói cujo custo seja exatamente 1 ponto maior que o do herói escolhido; O herói buscado entra diretamente na Zona de Batalha e o herói escolhido é embaralhado de volta ao baralho; Em seguida, embaralhe o baralho; Este efeito é considerado de busca, não contando como jogar o herói buscado",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Buscador",
-    "cost": 2,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Buscar",
-    "number": 80,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/80.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 4,
-    "stars": "2.8",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 38
       },
       {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
         "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
+        "icon": "fa-stopwatch",
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0
@@ -1751,219 +1028,23 @@
     ]
   },
   {
-    "name": "Sinal Divino",
+    "name": "Cordeiro de Deus",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Até o início do seu próximo turno, todas as cartas de todos os jogadores ganham Indestrutível, impedindo destruição e prevenindo todo dano",
+    "text": "Até o início do seu próximo turno, escolha um jogador para que todo o dano que seria causado a ele seja prevenido; Além disso, todas as cartas constantes no campo desse jogador ganham Indestrutível, tornando-as imunes a efeitos de destruição e à prevenção de dano; Esses efeitos são aplicados como estáticos até expirarem.",
     "type": "Milagre",
     "subtype": "-",
-    "categories": "Proteção",
-    "cost": 3,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Indestrutível",
-    "number": 87,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/87.png",
-    "ocurrences": 4,
-    "ocurrencesInSides": 7,
-    "stars": "4.2",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 42.857142857142854,
-        "roundedWidth": 43,
-        "width": 43
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 42.857142857142854,
-        "roundedWidth": 43,
-        "width": 44
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 57.14285714285714,
-        "roundedWidth": 57,
-        "width": 57
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 42.857142857142854,
-        "roundedWidth": 43,
-        "width": 43
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Paternidade",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um herói em qualquer Zona de Batalha; Até o fim do turno, esse herói ganha Indestrutível (não pode ser destruído e tem todo o dano prevenido) e não pode ser alvo de efeitos de Pecado; Se o herói escolhido for Abraão, Isaque ou Jacó, ele também recebe +1 de Ataque e +1 de Defesa",
-    "type": "Milagre",
-    "subtype": "-",
-    "sinergies": "7,64,9",
-    "categories": "Amplificação;Proteção",
-    "cost": 2,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Indestrutível",
-    "number": 91,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/91.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 2,
-    "stars": "1.9",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 1
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Gênese de Tudo",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Adiciona uma carta de sabedoria à sua Zona de Sabedoria, revelada (ficando impossibilitada de uso até sua próxima fase de Ocultação de Sabedorias); Se esta for a primeira carta jogada na partida, ela pode ser jogada gratuitamente",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Conhecimento",
+    "categories": "Modificação;Proteção",
     "cost": 4,
     "strength": 0,
     "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Revelar Sabedorias; Custo Alternativo",
-    "number": 99,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/99.png",
-    "ocurrences": 4,
-    "ocurrencesInSides": 5,
+    "effects": "Global",
+    "keywords": "Alvo;Indestrutível",
+    "number": 29,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "img": "img/milagres/29.png",
+    "ocurrences": 6,
+    "ocurrencesInSides": 8,
     "stars": "3.3",
     "stylePercentage": [
       {
@@ -1973,413 +1054,25 @@
         "icon": "fa-hand-back-fist",
         "rawWidth": 0,
         "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 60,
-        "roundedWidth": 60,
-        "width": 61
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 80,
-        "roundedWidth": 80,
-        "width": 80
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Oferta do Justo",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Ao resolver, compre uma carta e ganhe 1 ponto de fé",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Compra;Santificação",
-    "cost": 1,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Comprar",
-    "number": 84,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/84.png",
-    "ocurrences": 6,
-    "ocurrencesInSides": 8,
-    "stars": "4.6",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 28.57142857142857,
-        "roundedWidth": 29,
-        "width": 30
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 57.14285714285714,
-        "roundedWidth": 57,
-        "width": 57
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 15
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 42.857142857142854,
-        "roundedWidth": 43,
-        "width": 43
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
-      }
-    ]
-  },
-  {
-    "name": "Herança de Abraão",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um herói em qualquer Zona de Batalha; Até o fim do turno, esse herói recebe um bônus de Ataque igual ao número de heróis presentes no seu Mar do Esquecimento",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Amplificação",
-    "cost": 2,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "",
-    "number": 115,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/115.png",
-    "ocurrences": 2,
-    "ocurrencesInSides": 3,
-    "stars": "2.4",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Provação de Fé",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um herói na sua Zona de Batalha; No fim do turno, esse herói retorna para a mão do dono; Se durante o turno ele for afetado por um efeito de destruição ou receber dano letal, ele retorna imediatamente à mão e você ganha 2 pontos de fé, por efeito de substituição",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Proteção",
-    "cost": 2,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "",
-    "number": 85,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/85.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 7,
-    "stars": "4.2",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 16
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 68
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
         "width": -1
       },
       {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
-      },
-      {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
-      }
-    ]
-  },
-  {
-    "name": "Imagem e Semelhança",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Permite escolher um herói não lendário na sua Zona de Batalha e transformá-lo em outro herói não lendário presente na mesma zona; Alternativamente, se você pagar 6 de sabedoria (ao invés de 3), os alvos podem ser escolhidos de qualquer Zona de Batalha",
-    "type": "Milagre",
-    "subtype": "-",
-    "categories": "Buscador;Remoção;Transformação",
-    "cost": 3,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Transformar;Custo Alternativo",
-    "number": 111,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/111.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 4,
-    "stars": "2.8",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 38
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 62.5,
+        "roundedWidth": 63,
+        "width": 64
       }
     ],
     "archetypePercentage": [
@@ -2388,33 +1081,42 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 18.75,
+        "roundedWidth": 19,
+        "width": 18
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 18.75,
+        "roundedWidth": 19,
+        "width": 19
       },
       {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
+        "icon": "fa-poo-storm",
+        "rawWidth": 6.25,
+        "roundedWidth": 6,
+        "width": 6
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
         "rawWidth": 25,
         "roundedWidth": 25,
         "width": 25
@@ -2424,32 +1126,156 @@
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 6.25,
+        "roundedWidth": 6,
+        "width": 6
       }
     ]
   },
   {
-    "name": "Dízimo",
+    "name": "Sabedoria de Salomão",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Para jogar Dízimo, descarte uma carta da sua mão; Ao resolver, compre duas cartas",
+    "text": "Escolha um jogador; esse jogador oculta 3 cartas de sabedoria de sua ZS, tornando-as prontas para uso; Se Salomão estiver em jogo sob seu controle, você compra uma carta adicional, como efeito condicional.",
     "type": "Milagre",
     "subtype": "-",
-    "categories": "Compra;Renúncia",
+    "sinergies": "4",
+    "categories": "Recapitulação",
     "cost": 1,
     "strength": 0,
     "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Descartar;Comprar;Custo Adicional",
-    "number": 79,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/79.png",
+    "effects": "",
+    "keywords": "Alvo;Ocultar Sabedorias;Comprar",
+    "number": 42,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "img": "img/milagres/42.png",
     "ocurrences": 3,
-    "ocurrencesInSides": 8,
-    "stars": "4.6",
+    "ocurrencesInSides": 9,
+    "stars": "2.2",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 12
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 44.44444444444444,
+        "roundedWidth": 44,
+        "width": 44
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 44.44444444444444,
+        "roundedWidth": 44,
+        "width": 45
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 22.22222222222222,
+        "roundedWidth": 22,
+        "width": 21
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 5.555555555555555,
+        "roundedWidth": 6,
+        "width": 6
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 22.22222222222222,
+        "roundedWidth": 22,
+        "width": 22
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 5.555555555555555,
+        "roundedWidth": 6,
+        "width": 6
+      }
+    ]
+  },
+  {
+    "name": "No Céu tem Pão",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Escolha um jogador e esse jogador comprará 3 cartas; Porém, se Moisés estiver na Zona de Batalha sob seu controle, ele compra 5 cartas em vez disso, como efeito alternativo.",
+    "type": "Milagre",
+    "subtype": "-",
+    "sinergies": "1",
+    "categories": "Compra",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Comprar",
+    "number": 48,
+    "collection": "APH",
+    "date": "2023-12-01",
+    "img": "img/milagres/48.png",
+    "ocurrences": 5,
+    "ocurrencesInSides": 6,
+    "stars": "2.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2485,9 +1311,9 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 32
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
       },
       {
         "archetype": "Santificação",
@@ -2508,10 +1334,19 @@
         "width": 17
       },
       {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
+        "icon": "fa-poo-storm",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
         "rawWidth": 16.666666666666664,
         "roundedWidth": 17,
         "width": 17
@@ -2521,32 +1356,40 @@
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ]
   },
   {
-    "name": "Circuncisão",
+    "name": "Resgate do Justo",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Escolha um jogador; esse jogador compra cinco cartas e, em seguida, descarta duas cartas aleatórias de sua mão",
+    "text": "Busque uma carta de artefato no seu baralho e uma de herói no seu Mar do Esquecimento; Revele ambas e coloque-as na sua mão; Em seguida, embaralhe o baralho",
     "type": "Milagre",
     "subtype": "-",
-    "categories": "Compra;Descarte",
+    "categories": "Buscador",
     "cost": 3,
     "strength": 0,
     "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Comprar;Descartar",
-    "number": 117,
+    "effects": "",
+    "keywords": "Alvo;Buscar",
+    "number": 72,
     "collection": "GEN",
     "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/117.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 4,
-    "stars": "2.8",
+    "img": "img/milagres/72.png",
+    "ocurrences": 0,
+    "ocurrencesInSides": 2,
+    "stars": "0.5",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2582,9 +1425,9 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Santificação",
@@ -2600,15 +1443,24 @@
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0
       },
       {
-        "archetype": "Maravilhas",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-hat-wizard",
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0
@@ -2621,29 +1473,723 @@
         "rawWidth": 50,
         "roundedWidth": 50,
         "width": 50
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
       }
     ]
   },
   {
-    "name": "Casos de Família",
+    "name": "Adjuntora Idônea",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Ao ser jogada, escolha um oponente que, por sua vez, seleciona entre ganhar 1 ponto de fé para cada herói na sua Zona de Batalha e descartar uma carta da mão, ou comprar duas cartas e perder 2 pontos de fé; Você recebe o efeito oposto ao escolhido pelo oponente",
+    "text": "Ao ser jogada, escolha um herói na sua Zona de Batalha como alvo; Em seguida, busque no seu baralho ou no Mar do Esquecimento um herói com o mesmo custo do alvo e coloque-o na sua Zona de Preparação; Se a busca ocorrer no baralho, embaralhe-o após a operação; Se o herói alvo tiver custo 1 e você possuir Eva no seu baralho, poderá buscar Eva sem pagar o custo deste milagre",
     "type": "Milagre",
     "subtype": "-",
-    "categories": "Compra;Escolha;Santificação;Renúncia",
-    "cost": 1,
+    "sinergies": "5",
+    "categories": "Buscador",
+    "cost": 3,
     "strength": 0,
     "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Comprar;Descartar",
-    "number": 86,
+    "effects": "",
+    "keywords": "Alvo",
+    "number": 73,
     "collection": "GEN",
     "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/86.png",
+    "img": "img/milagres/73.png",
+    "ocurrences": 3,
+    "ocurrencesInSides": 6,
+    "stars": "2.2",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 41.66666666666667,
+        "roundedWidth": 42,
+        "width": 42
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      }
+    ]
+  },
+  {
+    "name": "Shabbat",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Ao resolver, compre cartas até ter sete na mão e ganhe 7 pontos de fé; Além disso, até o final do seu próximo turno, você não pode atacar e suas cartas ganham Indestrutível, prevenindo destruição e dano",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Modificação;Compra;Santificação",
+    "cost": 7,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Comprar;Indestrutível",
+    "number": 76,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/76.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 6,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 18
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 83.33333333333334,
+        "roundedWidth": 83,
+        "width": 83
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      }
+    ]
+  },
+  {
+    "name": "Ira de Deus",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Escolha um jogador; esse jogador seleciona um herói em sua própria Zona de Batalha, que é imediatamente retornado à Zona de Preparação; Em seguida, todas as demais cartas na Zona de Batalha desse jogador são destruídas",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Juízo",
+    "cost": 7,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Destruir",
+    "number": 77,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/77.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 5,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 21
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 80,
+        "roundedWidth": 80,
+        "width": 80
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 30
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      }
+    ]
+  },
+  {
+    "name": "Protoevangelho",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Escolha uma carta de qualquer tipo que tenha sido jogada mas ainda não resolvida; Todos os seus efeitos são anulados, impedindo sua resolução; Alternativamente, você pode descartar da sua mão uma carta do mesmo tipo que o alvo, em vez de pagar o custo deste milagre",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Anulação",
+    "cost": 5,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Anular;Custo Alternativo",
+    "number": 83,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/83.png",
+    "ocurrences": 7,
+    "ocurrencesInSides": 12,
+    "stars": "3.7",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 41.66666666666667,
+        "roundedWidth": 42,
+        "width": 42
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 41.66666666666667,
+        "roundedWidth": 42,
+        "width": 43
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 29.166666666666668,
+        "roundedWidth": 29,
+        "width": 28
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 4.166666666666666,
+        "roundedWidth": 4,
+        "width": 4
+      }
+    ]
+  },
+  {
+    "name": "Filho da Promessa",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Escolha um herói na sua Zona de Batalha; Busque no seu baralho um herói cujo custo seja exatamente 1 ponto maior que o do herói escolhido; O herói buscado entra diretamente na Zona de Batalha e o herói escolhido é embaralhado de volta ao baralho; Em seguida, embaralhe o baralho; Este efeito é considerado de busca, não contando como jogar o herói buscado",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Buscador",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Buscar",
+    "number": 80,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/80.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 6,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      }
+    ]
+  },
+  {
+    "name": "Sinal Divino",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Até o início do seu próximo turno, todas as cartas de todos os jogadores ganham Indestrutível, impedindo destruição e prevenindo todo dano",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Modificação",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Indestrutível",
+    "number": 87,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/87.png",
     "ocurrences": 0,
     "ocurrencesInSides": 6,
-    "stars": "3.7",
+    "stars": "0.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 41.66666666666667,
+        "roundedWidth": 42,
+        "width": 42
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      }
+    ]
+  },
+  {
+    "name": "Paternidade",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Escolha um herói em qualquer Zona de Batalha; Até o fim do turno, esse herói ganha Indestrutível (não pode ser destruído e tem todo o dano prevenido) e não pode ser alvo de efeitos de Pecado; Se o herói escolhido for Abraão, Isaque ou Jacó, ele também recebe +1 de Ataque e +1 de Defesa",
+    "type": "Milagre",
+    "subtype": "-",
+    "sinergies": "7,64,9",
+    "categories": "Modificação",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Indestrutível",
+    "number": 91,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/91.png",
+    "ocurrences": 2,
+    "ocurrencesInSides": 6,
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2679,18 +2225,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 16
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Combo",
@@ -2702,45 +2248,290 @@
         "width": 0
       },
       {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "icon": "fa-poo-storm",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
       }
     ]
   },
   {
-    "name": "Dias Contados",
+    "name": "Gênese de Tudo",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Enquanto ativo (até o início do seu próximo turno), todos os heróis dos oponentes com Indestrutível perdem essa habilidade e não podem adquiri-la.",
+    "text": "Adiciona uma carta de sabedoria à sua Zona de Sabedoria, revelada (ficando impossibilitada de uso até sua próxima fase de Ocultação de Sabedorias); Se esta for a primeira carta jogada na partida, ela pode ser jogada gratuitamente",
     "type": "Milagre",
     "subtype": "-",
-    "categories": "Modificação",
-    "cost": 3,
+    "categories": "Conhecimento",
+    "cost": 4,
     "strength": 0,
     "resistence": 0,
-    "effects": "Alvo",
-    "keywords": "Indestrutível",
-    "number": 78,
+    "effects": "",
+    "keywords": "Revelar Sabedorias; Custo Alternativo",
+    "number": 99,
     "collection": "GEN",
     "date": "2024-10-01",
-    "artist": "Lucas Bird",
-    "img": "img/milagres/78.png",
-    "ocurrences": 0,
+    "img": "img/milagres/99.png",
+    "ocurrences": 1,
     "ocurrencesInSides": 2,
-    "stars": "1.9",
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ]
+  },
+  {
+    "name": "Oferta do Justo",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Ao resolver, compre uma carta e ganhe 1 ponto de fé",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Compra;Santificação",
+    "cost": 1,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Comprar",
+    "number": 84,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/84.png",
+    "ocurrences": 5,
+    "ocurrencesInSides": 8,
+    "stars": "2.9",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 18.75,
+        "roundedWidth": 19,
+        "width": 18
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 18.75,
+        "roundedWidth": 19,
+        "width": 19
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 18.75,
+        "roundedWidth": 19,
+        "width": 19
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 18.75,
+        "roundedWidth": 19,
+        "width": 19
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Herança de Abraão",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Escolha um herói em qualquer Zona de Batalha; Até o fim do turno, esse herói recebe um bônus de Ataque igual ao número de heróis presentes no seu Mar do Esquecimento",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Amplificação",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo",
+    "number": 115,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/115.png",
+    "ocurrences": 2,
+    "ocurrencesInSides": 4,
+    "stars": "1.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2776,18 +2567,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 49
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 100
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Combo",
@@ -2799,10 +2590,19 @@
         "width": 0
       },
       {
-        "archetype": "Maravilhas",
+        "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
-        "icon": "fa-hat-wizard",
+        "icon": "fa-poo-storm",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0
@@ -2812,6 +2612,2286 @@
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Provação de Fé",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Escolha um herói na sua Zona de Batalha; No fim do turno, esse herói retorna para a mão do dono; Se durante o turno ele for afetado por um efeito de destruição ou receber dano letal, ele retorna imediatamente à mão e você ganha 2 pontos de fé, por efeito de substituição",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Proteção;Santificação",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo",
+    "number": 85,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/85.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 7,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 44
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 30
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Imagem e Semelhança",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Permite escolher um herói não lendário na sua Zona de Batalha e transformá-lo em outro herói não lendário presente na mesma zona; Alternativamente, se você pagar 6 de sabedoria (ao invés de 3), os alvos podem ser escolhidos de qualquer Zona de Batalha",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Transformação",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Transformar;Custo Alternativo",
+    "number": 111,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/111.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 4,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 24
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": -1
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 38
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      }
+    ]
+  },
+  {
+    "name": "Dízimo",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Para jogar Dízimo, descarte uma carta da sua mão; Ao resolver, compre duas cartas",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Compra;Descarte Próprio",
+    "cost": 1,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Descartar;Comprar;Custo Adicional",
+    "number": 79,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/79.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 10,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 30
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 31
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 30,
+        "roundedWidth": 30,
+        "width": 30
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 5,
+        "roundedWidth": 5,
+        "width": 5
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 15,
+        "roundedWidth": 15,
+        "width": 15
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 15,
+        "roundedWidth": 15,
+        "width": 15
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 5,
+        "roundedWidth": 5,
+        "width": 5
+      }
+    ]
+  },
+  {
+    "name": "Circuncisão",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Escolha um jogador; esse jogador compra cinco cartas e, em seguida, descarta duas cartas aleatórias de sua mão",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Compra;Descarte Próprio; Descarte Inimigo",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Comprar;Descartar",
+    "number": 117,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/117.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 2,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Casos de Família",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Ao ser jogada, escolha um oponente que, por sua vez, seleciona entre ganhar 1 ponto de fé para cada herói na sua Zona de Batalha e descartar uma carta da mão, ou comprar duas cartas e perder 2 pontos de fé; Você recebe o efeito oposto ao escolhido pelo oponente",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Compra;Escolha;Santificação;Descarte Próprio; Descarte Inimigo",
+    "cost": 1,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Comprar;Descartar",
+    "number": 86,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/86.png",
+    "ocurrences": 0,
+    "ocurrencesInSides": 2,
+    "stars": "0.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Dias Contados",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Enquanto ativo (até o início do seu próximo turno), todos os heróis dos oponentes com Indestrutível perdem essa habilidade e não podem adquiri-la.",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Modificação",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Indestrutível",
+    "number": 78,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/milagres/78.png",
+    "ocurrences": 0,
+    "ocurrencesInSides": 3,
+    "stars": "0.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Conserto das Nações",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+"text": "Todos os oponentes compram um número de cartas igual ao número de heróis na sua zona de batalha; Então você ganha um número de pontos de fé igual ao número de heróis em todas as zonas de batalha",    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Santificação",
+    "cost": 5,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Comprar",
+    "number": 123,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/123.png",
+    "ocurrences": 0,
+    "ocurrencesInSides": 4,
+    "stars": "0.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Sonhos de Liberdade",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+"text": "Você busca um herói no seu mar do esquecimento; Ele é colocado em jogo na sua zona de preparação; Este efeito não conta como se o herói tivesse sido jogado para fins de efeitos desencadeados; Então, você escolhe um jogador alvo; Ele revela as cartas da própria mão e descarta uma carta de herói à escolha dele, se houver",    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Buscador;Descarte Inimigo",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Buscar;Descartar",
+    "number": 124,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/124.png",
+    "ocurrences": 5,
+    "ocurrencesInSides": 9,
+    "stars": "2.9",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 22.22222222222222,
+        "roundedWidth": 22,
+        "width": 23
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 44.44444444444444,
+        "roundedWidth": 44,
+        "width": 44
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 32
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 5.555555555555555,
+        "roundedWidth": 6,
+        "width": 6
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 5.555555555555555,
+        "roundedWidth": 6,
+        "width": 6
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 22.22222222222222,
+        "roundedWidth": 22,
+        "width": 22
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 5.555555555555555,
+        "roundedWidth": 6,
+        "width": 6
+      }
+    ]
+  },
+  {
+    "name": "Escada para o Céu",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+"text": "Você revela as doze cartas do topo do seu baralho; Então as devolva ao fundo do seu baralho, em uma ordem aleatória; Você ganha 2 pontos de fé para cada 3 milagres revelados desta forma; Caso revele mais do que o suficiente para ganhar uma quantidade de fé, mas menos que o necessário para atingir o próximo número de milagres revelados a aumentar a quantidade de fé recebida, você recebe o mínimo possível",    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Santificação",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "",
+    "number": 127,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/127.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 3,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Seca Esperada",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Enquanto ativo (até o início do seu próximo turno), todos os heróis dos oponentes com Indestrutível perdem essa habilidade e não podem adquiri-la.",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Compra;Descarte Inimigo",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Descartar;Comprar",
+    "number": 175,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/175.png",
+    "ocurrences": 0,
+    "ocurrencesInSides": 4,
+    "stars": "0.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": -1
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 38
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Prosperidade",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+"text": "Você olha um número de cartas do topo do seu baralho igual ao número de heróis na sua zona de batalha; Escolha uma destas cartas e coloque na sua mão; Para fins de efeitos desencadeados, isso não conta como comprar uma carta; Devolva o restante para o fundo do seu baralho de forma aleatória",    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Seleção de Cartas",
+    "cost": 1,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "",
+    "number": 131,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/131.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 5,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 60,
+        "roundedWidth": 60,
+        "width": 61
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Amor Dividido",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Você escolhe dois heróis alvo, em quaisquer zonas de batalha; Um deles recebe um contador temporário que lhe cede +2 de Ataque; O outro recebe um contador temporário que lhe cede +2 de Defesa; Estes efeitos duram até o fim do turno",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Amplificação",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo",
+    "number": 134,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/134.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 5,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 40
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 41
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
+      }
+    ]
+  },
+  {
+    "name": "Filhos de Israel",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+"text": "Você revela as cinco cartas do topo do seu baralho; Então as devolva ao fundo do seu baralho, em uma ordem aleatória; Até o fim do turno, a próxima carta que você jogar custará 1 sabedoria a menos, para cada herói revelado desta forma",    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Instrução",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "",
+    "number": 136,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/136.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 4,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 76
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 49
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": -1
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      }
+    ]
+  },
+  {
+    "name": "Sacolas Cheias",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+"text": "Todos os jogadores contam e embaralham as cartas da mão nos seus respectivos baralhos; Então eles compram a mesma quantidade de cartas que havia em suas mãos, acrescida de uma carta",    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Compra",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Comprar",
+    "number": 140,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/140.png",
+    "ocurrences": 3,
+    "ocurrencesInSides": 6,
+    "stars": "2.2",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 68
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Preservação da Vida",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+"text": "Como custo adicional para jogar este milagre, você escolhe um herói na sua zona de batalha e o enterra; Todo o dano causado a todos os heróis, até o fim do turno, é prevenido",    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Proteção",
+    "cost": 1,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Enterrar",
+    "number": 144,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/144.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 6,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 41.66666666666667,
+        "roundedWidth": 42,
+        "width": 42
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Fugir da Tentação",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+"text": "Você escolhe um herói da sua própria zona de batalha; Todos os artefatos equipados a ele são desequipados e retornam para a sua zona de preparação; Então você oculta 1 sabedoria",    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Proteção; Recapitulação",
+    "cost": 1,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo;Ocultar Sabedorias",
+    "number": 145,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/145.png",
+    "ocurrences": 0,
+    "ocurrencesInSides": 2,
+    "stars": "0.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Nasce Israel",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+"text": "Você escolhe um herói alvo na sua zona de batalha; Ele recebe um contador que lhe cede -2 de Ataque; Então, o evolua imediatamente para a sua versão lendária sem pagar seu custo; Caso o alvo deste milagre seja Jacó, cada jogador revela todas as cartas da mão; Então você ganha um número de pontos de fé igual ao número de jogadores que revelaram ao menos um milagre desta forma",    "type": "Milagre",
+    "subtype": "-",
+    "sinergies": "9",
+    "categories": "Instrução",
+    "cost": 1,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo",
+    "number": 155,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/155.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 1,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 101
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Benção Velada",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+"text": "Até o fim do turno, você e cartas na sua zona de batalha não podem ser declarados como alvo de efeitos de cartas; Este efeito inclui tanto cartas jogadas quanto habilidades de cartas em jogo; Você e suas cartas ainda podem sofrer efeitos que não dão alvo; As jogadas que não podem alvejar você e suas cartas ainda acontecem, se quando jogadas os alvos delas eram válidos, mas não têm efeito se quando fossem ser resolvidas tais alvos não fossem mais elegíveis; Então, todos os jogadores ganham 2 pontos de fé",    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Proteção;Santificação",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Alvo",
+    "number": 169,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/169.png",
+    "ocurrences": 3,
+    "ocurrencesInSides": 9,
+    "stars": "2.2",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 55.55555555555556,
+        "roundedWidth": 56,
+        "width": 57
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 27.77777777777778,
+        "roundedWidth": 28,
+        "width": 27
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 5.555555555555555,
+        "roundedWidth": 6,
+        "width": 6
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 22.22222222222222,
+        "roundedWidth": 22,
+        "width": 22
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Barba, Cabelo e Bigode",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Você busca um herói alvo em qualquer mar do esquecimento; Ele é embaralhado no baralho do dono; Então, compre uma carta",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Buscador;Compra",
+    "cost": 1,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "Buscar;Comprar",
+    "number": 153,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/153.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 4,
+    "stars": "1.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 24
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Promessa Revelada",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "Enquanto ativo (até o início do seu próximo turno), todos os heróis dos oponentes com Indestrutível perdem essa habilidade e não podem adquiri-la.",
+    "type": "Milagre",
+    "subtype": "-",
+    "categories": "Santificação;Proteção",
+    "cost": 3,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "",
+    "keywords": "",
+    "number": 177,
+    "collection": "FIS",
+    "date": "2025-10-01",
+    "img": "img/milagres/177.png",
+    "ocurrences": 0,
+    "ocurrencesInSides": 1,
+    "stars": "0.5",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 100,
+        "roundedWidth": 100,
+        "width": 100
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 1
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
         "rawWidth": 0,
         "roundedWidth": 0,
         "width": 0

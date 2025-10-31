@@ -54,19 +54,63 @@ async function renderPage(page) {
       symbolArchetype = '<i class="fa-solid fa-droplet"></i>'; // Coroa (ícone colorido via FontAwesome)
       colorArchetype = "whitesmoke"; // Branco esfumaçado
       textArchetype = "#000"; // Preto
-      borderArchetype = "0.5px solid black"; // Borda preta fina
+      borderArchetype = "0.1px solid grey"; // Borda preta fina
     } else if (deck.archetype == "Combo") {
       symbolArchetype = '<i class="fa-solid fa-gears"></i>'; // Engrenagens (ícone colorido via FontAwesome)
       colorArchetype = "#800080"; // Roxo
       textArchetype = "#fff"; // Branco
-    } else if (deck.archetype == "Maravilhas") {
-      symbolArchetype = '<i class="fa-solid fa-hat-wizard"></i>'; // Estrela (ícone colorido via FontAwesome)
+    } else if (deck.archetype == "Tempestade") {
+      symbolArchetype = '<i class="fa-solid fa-poo-storm"></i>'; // Estrela (ícone colorido via FontAwesome)
       colorArchetype = "#32CD32"; // Verde claro
+      textArchetype = "#000"; // Branco
+    } else if (deck.archetype == "Arsenal") {
+      symbolArchetype = '<i class="fa-solid fa-toolbox"></i>'; // Estrela (ícone colorido via FontAwesome)
+      colorArchetype = "#A8B3B4"; // Prata claro
       textArchetype = "#000"; // Branco
     } else if (deck.archetype == "Supressão") {
       symbolArchetype = '<i class="fa-solid fa-ban"></i>'; // Mão controlando (ícone colorido via FontAwesome)
       colorArchetype = "#000000"; // Preto
       textArchetype = "#fff"; // Branco
+    } else if (deck.archetype == "Aceleração") {
+      symbolArchetype = '<i class="fa-solid fa-stopwatch"></i>'; // Mão controlando (ícone colorido via FontAwesome)
+      colorArchetype = "#8B4513"; // Preto
+      textArchetype = "#fff"; // Branco
+    }
+
+    let symbolArchetype2 = "";
+    let colorArchetype2 = "";
+    let textArchetype2 = "";
+    let borderArchetype2 = "none"; // Valor padrão para borderArchetype
+
+    if (deck.archetype2 == "Batalha") {
+      symbolArchetype2 = '<i class="fa-solid fa-hand-fist"></i>'; // Espadas cruzadas (ícone colorido via FontAwesome)
+      colorArchetype2 = "#FF8C00"; // Laranja
+      textArchetype2 = "#000"; // Preto
+    } else if (deck.archetype2 == "Santificação") {
+      symbolArchetype2 = '<i class="fa-solid fa-droplet"></i>'; // Coroa (ícone colorido via FontAwesome)
+      colorArchetype2 = "whitesmoke"; // Branco esfumaçado
+      textArchetype2 = "#000"; // Preto
+      borderArchetype2 = "0.1px solid grey"; // Borda preta fina
+    } else if (deck.archetype2 == "Combo") {
+      symbolArchetype2 = '<i class="fa-solid fa-gears"></i>'; // Engrenagens (ícone colorido via FontAwesome)
+      colorArchetype2 = "#800080"; // Roxo
+      textArchetype2 = "#fff"; // Branco
+    } else if (deck.archetype2 == "Tempestade") {
+      symbolArchetype2 = '<i class="fa-solid fa-poo-storm"></i>'; // Estrela (ícone colorido via FontAwesome)
+      colorArchetype2 = "#32CD32"; // Verde claro
+      textArchetype2 = "#000"; // Branco
+    } else if (deck.archetype2 == "Arsenal") {
+      symbolArchetype2 = '<i class="fa-solid fa-toolbox"></i>'; // Estrela (ícone colorido via FontAwesome)
+      colorArchetype2 = "#A8B3B4"; // Prata claro
+      textArchetype2 = "#000"; // Branco
+    } else if (deck.archetype2 == "Supressão") {
+      symbolArchetype2 = '<i class="fa-solid fa-ban"></i>'; // Mão controlando (ícone colorido via FontAwesome)
+      colorArchetype2 = "#000000"; // Preto
+      textArchetype2 = "#fff"; // Branco
+    } else if (deck.archetype2 == "Aceleração") {
+      symbolArchetype2 = '<i class="fa-solid fa-stopwatch"></i>'; // Mão controlando (ícone colorido via FontAwesome)
+      colorArchetype2 = "#8B4513"; // Preto
+      textArchetype2 = "#fff"; // Branco
     }
 
     badges =
@@ -84,10 +128,9 @@ async function renderPage(page) {
       textStyle +
       "; background-color: " +
       colorStyle +
-      ' !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px;"> ' +
+      ' !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 10.2833px;"> ' +
       symbolStyle +
       "&nbsp;" +
-      deck.style +
       " </span>";
 
     badges =
@@ -97,13 +140,28 @@ async function renderPage(page) {
       textArchetype +
       "; background-color: " +
       colorArchetype +
-      " !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 7px; border: " +
+      " !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 10.2833px; border: " +
       borderArchetype +
       '"> ' +
       symbolArchetype +
       "&nbsp;" +
-      deck.archetype +
       " </span>";
+
+    if (symbolArchetype2 != "") {
+      badges =
+        badges +
+        '<span class="badge rounded-pill mx-1 text-bg-secondary" ' +
+        'style="color: ' +
+        textArchetype2 +
+        "; background-color: " +
+        colorArchetype2 +
+        " !important;padding-top: 4px;padding-bottom: 4px;padding-right: 7px;padding-left: 10.2833px; border: " +
+        borderArchetype2 +
+        '"> ' +
+        symbolArchetype2 +
+        "&nbsp;" +
+        " </span>";
+    }
 
     // arrKeywords.forEach((keyword) => {
     //   badges =

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Faith Battle">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>⚔️ Faith Battle 🛡️ | O Card Game Bíblico</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+
+    <style>
+        :root {
+            --bg: #0f0f14;
+            --panel: #1e1e2b;
+            --muted: #6c757d;
+            --accent: #e53637;
+            --good: #47b26b;
+            --warn: #f2b844;
+            --bad: #df524f;
+            --radius: 10px;
+            --text: #f3f4f6;
+            font-family: 'Mulish', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            height: 100%;
+            background: linear-gradient(180deg, var(--bg), #071018);
+            color: var(--text)
+        }
+
+        .container {
+            max-width: 100%;
+        }
+
+        main.three-col {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 20px;
+            align-items: start
+        }
+
+        .panel {
+            background: linear-gradient(180deg, var(--panel), rgba(30, 30, 43, 0.95));
+            border-radius: var(--radius);
+            padding: 14px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.48)
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px
+        }
+
+        .section-title h5 {
+            margin: 0;
+            font-weight: 700;
+            color: var(--muted);
+            letter-spacing: 0.6px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .section-title i {
+            color: var(--muted);
+            font-size: 1.05rem
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .chip {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            cursor: pointer
+        }
+
+        .chip.selected {
+            background: linear-gradient(90deg, var(--accent), #ff7a74);
+            color: #fff
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px
+        }
+
+        .stat {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+            padding: 10px;
+            border-radius: 8px
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.05rem
+        }
+
+        .stat small {
+            color: var(--muted)
+        }
+
+        /* Extra / Deck grid: 10 por linha */
+        #deckList,
+        #extraDeckList {
+            display: grid;
+            grid-template-columns: repeat(10, minmax(0, 1fr));
+            gap: 8px;
+            align-items: start;
+            overflow: visible
+        }
+
+        @media(max-width:1200px) {
+
+            #deckList,
+            #extraDeckList {
+                grid-template-columns: repeat(8, 1fr)
+            }
+        }
+
+        @media(max-width:900px) {
+
+            #deckList,
+            #extraDeckList {
+                grid-template-columns: repeat(6, 1fr)
+            }
+        }
+
+        @media(max-width:640px) {
+
+            #deckList,
+            #extraDeckList {
+                grid-template-columns: repeat(4, 1fr)
+            }
+        }
+
+        .card-item {
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            overflow: visible
+        }
+
+        .card-item img {
+            height: 112px;
+            max-height: 112px;
+            object-fit: contain;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+            transition: transform .18s ease, box-shadow .18s;
+            transform-origin: center center
+        }
+
+        img.hover-zoom {
+            transform: scale(6.0) !important;
+            z-index: 9999 !important;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6) !important;
+            cursor: pointer
+        }
+
+        /* Suggestions: 5 por linha, imagens contidas */
+        #suggestionsDeckList {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px
+        }
+
+        @media(max-width:980px) {
+            #suggestionsDeckList {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        @media(max-width:640px) {
+            #suggestionsDeckList {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        #suggestionsDeckList img {
+            max-width: 100% !important;
+            object-fit: contain !important;
+            transition: transform .18s ease, box-shadow .18s;
+            transform-origin: center center;
+            display: block;
+            margin: 0 auto
+        }
+
+        #suggestionsDeckList .small-title {
+            font-size: .78rem;
+            margin-top: 6px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        /* controls / selects */
+        .controls-grid-panel {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px
+        }
+
+        @media(max-width:520px) {
+            .controls-grid-panel {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+            align-items: center
+        }
+
+        .select-container {
+            width: 100%
+        }
+
+        select,
+        input {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 8px;
+            border-radius: 8px;
+            color: var(--text);
+            width: 100%
+        }
+
+        .automation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px
+        }
+
+        .utils-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 8px
+        }
+
+        /* filters: duas colunas */
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            position: relative
+        }
+
+        @media(max-width:640px) {
+            .filters {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* selected-filters (chips) */
+        .selected-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 8px;
+            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .selected-filters .chip {
+            padding: 6px 10px;
+            font-size: .9rem
+        }
+
+        .selected-filters .meta {
+            margin-left: auto;
+            color: var(--muted);
+            font-size: .85rem;
+            display: flex;
+            gap: 8px;
+            align-items: center
+        }
+
+        .selected-filters .clear-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 6px 8px;
+            border-radius: 6px;
+            color: var(--text);
+            cursor: pointer
+        }
+
+        /* info-stat detail badges (above / avg / below) */
+        .info-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: space-between
+        }
+
+        .info-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            font-size: .92rem
+        }
+
+        .badge {
+            padding: 6px 8px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: .85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .badge.good {
+            background: rgba(71, 178, 107, 0.12);
+            color: var(--good);
+            border: 1px solid rgba(71, 178, 107, 0.18)
+        }
+
+        .badge.warn {
+            background: rgba(242, 184, 68, 0.09);
+            color: var(--warn);
+            border: 1px solid rgba(242, 184, 68, 0.15)
+        }
+
+        .badge.bad {
+            background: rgba(223, 82, 79, 0.06);
+            color: var(--bad);
+            border: 1px solid rgba(223, 82, 79, 0.12)
+        }
+
+        /* small help text */
+        .muted {
+            color: var(--muted);
+            font-size: .86rem
+        }
+
+        /* buttons */
+        button.btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: var(--text);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all .18s ease
+        }
+
+        button.btn:hover,
+        button.btn:focus {
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35)
+        }
+
+        button.btn.primary {
+            background: var(--accent);
+            border-color: transparent;
+            color: #fff
+        }
+
+        button.btn.primary:hover {
+            background: #ff4c4d;
+            box-shadow: 0 4px 14px rgba(229, 54, 55, 0.5)
+        }
+
+        button.btn:active {
+            transform: scale(.98)
+        }
+
+        /* --- Padroniza setas em categories e stats --- */
+        .categories .chip {
+            position: relative;
+            padding-right: 26px;
+            /* espaço para a seta */
+        }
+
+        .categories .chip::after {
+            content: '›';
+            /* seta padrão */
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* stats: ícone à esquerda que muda conforme classe de tendência */
+        .stats .stat {
+            position: relative;
+            /* padding-left: 36px; */
+        }
+
+        .stats .stat::before {
+            content: '\25B6';
+            /* seta à direita (padrão) */
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.95rem;
+            color: var(--muted);
+            opacity: 0.95;
+        }
+
+        /* classes de tendência (use seu JS para aplicar trend-up/trend-down/trend-equal) */
+        .stats .stat.trend-up::before {
+            content: '\25B2';
+            /* ▲ */
+            color: var(--good);
+            text-shadow: 0 2px 6px rgba(71, 178, 107, 0.12);
+        }
+
+        .stats .stat.trend-down::before {
+            content: '\25BC';
+            /* ▼ */
+            color: var(--bad);
+            text-shadow: 0 2px 6px rgba(223, 82, 79, 0.08);
+        }
+
+        .stats .stat.trend-equal::before {
+            content: '\25C6';
+            /* ◆ (igual/neutral) */
+            color: var(--warn);
+            text-shadow: 0 2px 6px rgba(242, 184, 68, 0.08);
+        }
+
+        /* opcional: colore o valor quando tendência estiver presente */
+        .stats .stat.trend-up strong {
+            color: var(--good)
+        }
+
+        .stats .stat.trend-down strong {
+            color: var(--bad)
+        }
+
+        .stats .stat.trend-equal strong {
+            color: var(--warn)
+        }
+
+        /* === Layout das stats: 4 por linha (desktop) === */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 por linha */
+            gap: 10px;
+            align-items: start;
+        }
+
+        /* Remove possíveis pseudo-setas antigas no .stat */
+        .stat::after,
+        .stat:after {
+            display: none !important;
+            content: none !important;
+        }
+
+        /* Card individual */
+        .stat {
+            position: relative;
+            /* para posicionar o ícone de comparação */
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+            padding: 12px 14px;
+            border-radius: 8px;
+            min-height: 64px;
+            box-sizing: border-box;
+        }
+
+        /* Título grande (valor) */
+        .stat strong {
+            display: block;
+            font-size: 1.05rem;
+            /* margin-bottom: 6px; */
+        }
+
+        /* texto secundário */
+        .stat small {
+            color: var(--muted);
+        }
+
+        /* área meta (média + texto pequeno) */
+        .stat .stat-meta {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 6px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ícone/comparação no canto superior direito */
+        .stat .comparison-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.95rem;
+            line-height: 1;
+            padding: 4px;
+            border-radius: 6px;
+            min-width: 20px;
+            text-align: center;
+            /* cor por JS (el.style.color) — aqui só deixamos um :default */
+            color: var(--muted);
+            background: transparent;
+        }
+
+        /* responsivo: 2 colunas / 1 coluna */
+        @media (max-width:900px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width:520px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === Layout das stats: 4 por linha === */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            align-items: start;
+        }
+
+        /* Remove pseudo-setas antigas (antes/depois) */
+        .stat::before,
+        .stat::after {
+            content: none !important;
+            display: none !important;
+        }
+
+        /* Card individual */
+        .stat {
+            position: relative;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+            padding: 10px;
+            border-radius: 8px;
+            min-height: 64px;
+            box-sizing: border-box;
+        }
+
+        /* Valor grande */
+        .stat strong {
+            display: block;
+            font-size: 1.05rem;
+            /* margin-bottom: 6px; */
+        }
+
+        /* Texto secundário */
+        .stat small {
+            color: var(--muted);
+        }
+
+        /* Ícone/comparação no canto superior direito */
+        .stat .comparison-icon {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 0.95rem;
+            line-height: 1;
+            padding: 4px;
+            border-radius: 6px;
+            min-width: 20px;
+            text-align: center;
+            color: var(--muted);
+            background: transparent;
+        }
+
+        /* cor de fundo sutil quando a cor for verde/vermelha (opcional) */
+        /* .stat .comparison-icon[style*="green"] {
+            background: rgba(0, 128, 0, 0.06);
+        }
+
+        .stat .comparison-icon[style*="red"] {
+            background: rgba(255, 0, 0, 0.04);
+        } */
+
+        /* responsivo */
+        @media (max-width:900px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width:520px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* garante que qualquer span com id *Comparison fique posicionado se esquecido no DOM */
+        [id$="Comparison"] {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 0.95rem;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html">
+                            <img src="img/logo.png" alt="" style="max-height: 50px;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">Homepage</a></li>
+                                <li><a href="./how-to-play.html">Informações <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./who-we-are.html">Quem somos</a></li>
+                                        <li><a href="./how-to-play.html">Como Jogar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./card-list.html">Game <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./deck-builder.html">Deckbuilder</a></li>
+                                        <li><a href="./card-list.html">Lista de Cards</a></li>
+                                        <li><a href="./deck-meta.html">Decks do Meta</a></li>
+                                        <li><a href="./deck-community.html">Decks da Comunidade</a></li>
+                                        <!-- <li><a href="./deck-historic.html">Decks Históricos</a></li> -->
+                                        <!-- <li><a href="./anime-watching.html">Anime Watching</a></li> -->
+                                        <!-- <li><a href="./blog-details.html">Blog Details</a></li> -->
+                                        <!-- <li><a href="./signup.html">Sign Up</a></li> -->
+                                        <!-- <li><a href="./login.html">Login</a></li> -->
+                                    </ul>
+                                </li>
+                                <!-- <li><a href="./champions-hall.html">Hall dos Campeões</a></li> -->
+                                <li><a href="http://www.faithbattleloja.com.br/">Loja</a></li>
+                                <!-- <li><a href="./blog.html">Our Blog</a></li> -->
+                                <!-- <li><a href="#">Contacts</a></li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <!-- <div class="header__right">
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <a href="./login.html"><span class="icon_profile"></span></a>
+                    </div> -->
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Anime Section Begin -->
+    <section class="card-details spad">
+        <div class="container">
+
+            <div class="row" style="margin-top: 0px;">
+
+                <div class="col-12">
+
+                    <body>
+
+                        <div class="container">
+                            <main class="three-col" role="main" aria-label="Construtor de Deck">
+
+                                <!-- coluna 1 -->
+                                <section id="col-info">
+
+                                    <!-- substitua o bloco .panel #panel-info no HTML por este -->
+                                    <div class="panel" id="panel-info">
+                                        <div class="section-title">
+                                            <h5>Informações</h5>
+                                        </div>
+
+                                        <div class="categories" id="categoriesContainer" aria-live="polite"></div>
+
+                                        <div style="height:10px"></div>
+
+                                        <div class="stats" aria-live="polite">
+
+                                            <!-- Linha 1 -->
+                                            <div class="stat">
+                                                <strong id="tag_deckLevel">—</strong>
+                                                <small>Level</small>
+                                                <!-- Sem comparação aqui (level não tem comparisonElements) -->
+                                            </div>
+
+                                            <div class="stat">
+                                                <strong id="tag_deckMedCost">—</strong>
+                                                <small>Custo Médio</small>
+                                                <span class="comparison-icon" id="tag_deckMedCostComparison"></span>
+                                            </div>
+
+                                            <div class="stat">
+                                                <strong id="tag_deckStrength">—</strong>
+                                                <small>Força</small>
+                                                <span class="comparison-icon" id="tag_deckStrengthComparison"></span>
+                                            </div>
+
+                                            <!-- Linha 2 (mais métricas) -->
+                                            <div class="stat">
+                                                <strong id="tag_deckResistence">—</strong>
+                                                <small>Resistência</small>
+                                                <span class="comparison-icon" id="tag_deckResistanceComparison"></span>
+                                            </div>
+
+                                            <div class="stat">
+                                                <strong id="tag_deckQtdHero">—</strong>
+                                                <small>Heróis</small>
+                                                <span class="comparison-icon" id="tag_deckQtdHeroComparison"></span>
+                                            </div>
+
+                                            <div class="stat">
+                                                <strong id="tag_deckQtdMiracle">—</strong>
+                                                <small>Milagres</small>
+                                                <span class="comparison-icon" id="tag_deckQtdMiracleComparison"></span>
+                                            </div>
+
+                                            <div class="stat">
+                                                <strong id="tag_deckQtdSin">—</strong>
+                                                <small>Pecados</small>
+                                                <span class="comparison-icon" id="tag_deckQtdSinComparison"></span>
+                                            </div>
+
+                                            <!-- Linha 3 -->
+                                            <div class="stat">
+                                                <strong id="tag_deckQtdArtifact">—</strong>
+                                                <small>Artefatos</small>
+                                                <span class="comparison-icon" id="tag_deckQtdArtifactComparison"></span>
+                                            </div>
+
+                                            <div class="stat">
+                                                <strong id="tag_deckCostHero">—</strong>
+                                                <small>Custo (Heróis)</small>
+                                                <span class="comparison-icon" id="tag_deckCostHeroComparison"></span>
+                                            </div>
+
+                                            <div class="stat">
+                                                <strong id="tag_deckCostMiracle">—</strong>
+                                                <small>Custo (Milagres)</small>
+                                                <span class="comparison-icon" id="tag_deckCostMiracleComparison"></span>
+                                            </div>
+
+                                            <div class="stat">
+                                                <strong id="tag_deckCostSin">—</strong>
+                                                <small>Custo (Pecados)</small>
+                                                <span class="comparison-icon" id="tag_deckCostSinComparison"></span>
+                                            </div>
+
+                                            <!-- Linha 4 -->
+                                            <div class="stat">
+                                                <strong id="tag_deckCostArtifact">—</strong>
+                                                <small>Custo (Artefatos)</small>
+                                                <span class="comparison-icon"
+                                                    id="tag_deckCostArtifactComparison"></span>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="panel lists" id="panel-builder" style="margin-top:12px">
+                                        <div class="section-title">
+                                            <h5><i class="fa-solid fa-th-large"></i>Extra Deck</h5>
+                                        </div>
+                                        <div id="extraDeckList" class="cards-row"></div>
+
+                                        <div class="section-title" style="margin-top:10px">
+                                            <h5><i class="fa-solid fa-clone"></i>Deck</h5>
+                                        </div>
+                                        <div id="deckList" class="cards-row"></div>
+                                    </div>
+                                </section>
+
+                                <!-- coluna 2 -->
+                                <aside id="col-style">
+                                    <div class="panel controls-grid-panel" id="panel-style">
+                                        <div class="section-title">
+                                            <h5><i class="fa-solid fa-palette"></i>Estilo e Arquétipo</h5>
+                                        </div><br>
+
+                                        <div class="controls">
+                                            <div id="addByStyleList" class="select-container"></div>
+                                            <div id="addByStyleIcon" aria-hidden="true"></div>
+                                        </div>
+                                        <div class="controls">
+                                            <div id="addByArchetypeList" class="select-container"></div>
+                                            <div id="addByArchetypeIcon" aria-hidden="true"></div>
+                                        </div>
+                                        <div class="controls">
+                                            <div id="addByArchetype2List" class="select-container"></div>
+                                            <div id="addByArchetype2Icon" aria-hidden="true"></div>
+                                        </div>
+                                        <div class="controls">
+                                            <div id="addByTierList" class="select-container"></div>
+                                            <div id="addByTierIcon" aria-hidden="true"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel" id="panel-automation" style="margin-top:12px">
+                                        <div class="section-title">
+                                            <h5><i class="fa-solid fa-robot"></i>Automação</h5>
+                                        </div>
+                                        <div class="automation-grid">
+                                            <button class="btn" onclick="generateDeck()">Gerar Deck</button>
+                                            <button class="btn" onclick="completeDeck()">Completar Deck</button>
+                                            <button class="btn" onclick="tuningDeck()">Melhorar Deck</button>
+                                            <button class="btn" onclick="cleanDeck()">Limpar Deck</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel" id="panel-suggestions" style="margin-top:12px">
+                                        <div class="section-title">
+                                            <h5><i class="fa-solid fa-lightbulb"></i>Sugestões de Adição</h5>
+                                        </div>
+                                        <div id="suggestionsDeckList"></div>
+                                    </div>
+
+                                </aside>
+
+                                <!-- coluna 3 -->
+                                <aside id="col-utils">
+                                    <!-- <div class="panel" id="panel-utils">
+                    <div class="section-title">
+                        <h5><i class="fa-solid fa-tools"></i>Utilidades</h5>
+                    </div>
+
+                    <div class="utils-actions" style="margin-top:10px">
+                        <div id="importFieldBuilder"></div>
+                        <button class="btn" onclick="autoGenerateHand(false)"><i class="fa-solid fa-hand"></i> Testar
+                            Mão</button>
+                        <button class="btn" onclick="autoGenerateHand(true)"><i class="fa-solid fa-rotate-left"></i>
+                            Mulligan</button>
+                        <button class="btn" onclick="autoGenerateHand('draw')"><i class="fa-solid fa-plus"></i>
+                            Comprar</button>
+                    </div>
+                </div> -->
+
+                                    <!-- <div class="panel" id="panel-filters" style="margin-top:12px"> -->
+                                    <div class="panel" id="panel-filters">
+                                        <div class="section-title">
+                                            <h5><i class="fa-solid fa-filter"></i>Filtros</h5>
+                                        </div>
+                                        <div class="selected-filters" id="selected-filters"></div><br>
+                                        <div class="filters" id="filters">
+                                            <!-- seu JS pode injetar inputs/selects aqui; eles já se organizarão em 2 colunas -->
+                                        </div>
+                                    </div>
+
+                                </aside>
+                            </main>
+                        </div>
+
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <script src="integrations/utils.js"></script>
+                        <script src="integrations/analysis.js"></script>
+
+                        <script>
+                            // garante que existam placeholders caso seu código espere os IDs
+                            (function ensureElements() {
+                                const ids = ['addByStyleList', 'addByStyleIcon', 'addByArchetypeList', 'addByArchetypeIcon', 'addByArchetype2List', 'addByArchetype2Icon', 'addByTierList', 'addByTierIcon', 'extraDeckList', 'deckList', 'suggestionsDeckList', 'filters', 'importFieldBuilder', 'selected-filters', 'handTestList'];
+                                ids.forEach(id => {
+                                    if (!document.getElementById(id)) {
+                                        const d = document.createElement('div'); d.id = id; d.style.display = 'none'; document.body.appendChild(d);
+                                    }
+                                });
+                            })();
+
+                            // fix imagens (remove width/height inline e força contain)
+                            (function enforceImageSizes() {
+                                function fixImg(el) {
+                                    if (!el || el.tagName !== 'IMG') return;
+                                    el.removeAttribute('width'); el.removeAttribute('height');
+                                    el.style.width = 'auto'; el.style.maxWidth = '100%'; el.style.objectFit = 'contain';
+                                }
+                                function runAll() {
+                                    ['deckList', 'extraDeckList', 'suggestionsDeckList'].forEach(id => {
+                                        const c = document.getElementById(id);
+                                        if (c) c.querySelectorAll('img').forEach(fixImg);
+                                    });
+                                }
+                                document.addEventListener('DOMContentLoaded', runAll);
+                                setTimeout(runAll, 1200);
+                                const mo = new MutationObserver(runAll);
+                                ['deckList', 'extraDeckList', 'suggestionsDeckList'].map(id => document.getElementById(id)).filter(Boolean).forEach(t => mo.observe(t, { childList: true, subtree: true, attributes: true }));
+                            })();
+
+                            // hover zoom com delay (1s) — aplica a deck, extra e sugestões
+                            (function delayedHoverZoom() {
+                                function add(img) {
+                                    if (!img || img.dataset.hasHoverZoom) return;
+                                    img.dataset.hasHoverZoom = '1';
+                                    let t;
+                                    img.addEventListener('mouseenter', () => { t = setTimeout(() => img.classList.add('hover-zoom'), 1000); });
+                                    img.addEventListener('mouseleave', () => { clearTimeout(t); img.classList.remove('hover-zoom'); });
+                                }
+                                function apply() {
+                                    ['deckList', 'extraDeckList', 'suggestionsDeckList'].forEach(id => {
+                                        const c = document.getElementById(id);
+                                        if (c) c.querySelectorAll('img').forEach(add);
+                                    });
+                                }
+                                document.addEventListener('DOMContentLoaded', apply);
+                                setTimeout(apply, 800);
+                                const mo = new MutationObserver(apply);
+                                ['deckList', 'extraDeckList', 'suggestionsDeckList'].map(id => document.getElementById(id)).filter(Boolean).forEach(t => mo.observe(t, { childList: true, subtree: true }));
+                            })();
+
+                            // ação do botão "Limpar" em selected-filters (se desejar comportamento padrão)
+                            (function wireClearSelected() {
+                                const btn = document.getElementById('clear-selected-filters');
+                                if (!btn) return;
+                                btn.addEventListener('click', () => {
+                                    // remove chips visuais — seu código pode também escutar esse evento e limpar filtros reais
+                                    const container = document.getElementById('selected-filters');
+                                    container.querySelectorAll('.chip').forEach(ch => ch.remove());
+                                    // dispatch custom event para seu código
+                                    document.dispatchEvent(new CustomEvent('selected-filters:cleared'));
+                                });
+                            })();
+                        </script>
+
+                        <script src="integrations/deck-builder.js"></script>
+
+                    </body>
+
+                </div>
+
+            </div><br>
+
+        </div>
+    </section>
+    <!-- Anime Section End -->
+
+    <!-- Js Plugins -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="integrations/utils.js"></script>
+    <script src="integrations/analysis.js"></script>
+    <script src="integrations/deck-builder.js"></script>
+
+</body>
+
+</html>

@@ -58,13 +58,21 @@ async function renderPage(page) {
       symbolArchetype = '<i class="fa-solid fa-gears"></i>'; // Engrenagens (ícone colorido via FontAwesome)
       colorArchetype = "#800080"; // Roxo
       textArchetype = "#fff"; // Branco
-    } else if (deck.archetype == "Maravilhas") {
-      symbolArchetype = '<i class="fa-solid fa-hat-wizard"></i>'; // Estrela (ícone colorido via FontAwesome)
+    } else if (deck.archetype == "Tempestade") {
+      symbolArchetype = '<i class="fa-solid fa-poo-storm"></i>'; // Estrela (ícone colorido via FontAwesome)
       colorArchetype = "#32CD32"; // Verde claro
+      textArchetype = "#000"; // Branco
+    } else if (deck.archetype == "Arsenal") {
+      symbolArchetype = '<i class="fa-solid fa-toolbox"></i>'; // Estrela (ícone colorido via FontAwesome)
+      colorArchetype = "#A8B3B4"; // Verde claro
       textArchetype = "#000"; // Branco
     } else if (deck.archetype == "Supressão") {
       symbolArchetype = '<i class="fa-solid fa-ban"></i>'; // Mão controlando (ícone colorido via FontAwesome)
       colorArchetype = "#000000"; // Preto
+      textArchetype = "#fff"; // Branco
+    }else if (deck.archetype == "Aceleração") {
+      symbolArchetype = '<i class="fa-solid fa-stopwatch"></i>'; // Mão controlando (ícone colorido via FontAwesome)
+      colorArchetype = "#8B4513"; // Preto
       textArchetype = "#fff"; // Branco
     }
 

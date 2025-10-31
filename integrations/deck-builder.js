@@ -9,7 +9,7 @@ let artifacts;
 
 let analysisAverages = [];
 
-let suggestionsQtd = 24;
+let suggestionsQtd = 20;
 let suggestions = [];
 let infoFromDeck = [];
 
@@ -24,215 +24,1130 @@ let selectedButtonCategory = null;
 
 let selectedStyle = null;
 let selectedArchetype = null;
+let selectedArchetype2 = null;
 let selectedTier = null;
 
+// ---------- Inicialização ----------
 document.addEventListener("DOMContentLoaded", async function () {
-  // Carregar os JSONs em paralelo para aumentar a eficiência
   await waitForAllJSONs();
 
-  // Carregamento paralelo das informações
   const [legendariesData, artifactsData] = await Promise.all([
     fetchOrGetFromLocalStorage("legendaries", URL_LEGENDARIES_JSON),
     fetchOrGetFromLocalStorage("artifacts", URL_ARTIFACTS_JSON),
   ]);
 
-  // Atualizar as variáveis após o carregamento
   legendaries = legendariesData;
   artifacts = artifactsData;
 
-  // Inicializar o deck e sugestões
-  deck = {
-    cards: [],
-    extra: [],
-  };
-
+  deck = { cards: [], extra: [] };
   suggestions = [];
 
-  // Atualizar a análise do deck
   await updateAnalysisFromDeck();
 });
 
+// ---------- Análise do deck ----------
 async function updateAnalysisFromDeck() {
-  deck.cards = limitStringOccurrences(deck.cards, 2);
+  try {
+    deck.cards = limitStringOccurrences(deck.cards, 2);
 
-  const mergedArray = [...deck.cards, ...deck.extra];
-  let cardsFromDeck = getCardsFromDeck(mergedArray, allCards);
+    const mergedArray = [...deck.cards, ...deck.extra];
+    const cardsFromDeckLocal = getCardsFromDeck(mergedArray, allCards);
 
-  let similarCardsArray = [];
+    let similarCardsArray = [];
 
-  if (deck.cards.length > 0) {
-    analysisAverages = await analyzeDecks(
-      allDecks,
-      selectedStyle,
-      selectedArchetype
-    );
-    let info = await analyzeCards(cardsFromDeck, analysisAverages);
-    infoFromDeck = info;
+    if (deck.cards.length > 0) {
+      analysisAverages = await analyzeDecks(
+        allDecks,
+        selectedStyle,
+        selectedArchetype,
+        selectedArchetype2
+      );
 
-    await Promise.all(
-      deck.cards.map(async (card) => {
-        const similarCards = await getRelatedCardsInDecks(
-          card,
-          allDecks,
-          true,
-          selectedStyle,
-          selectedArchetype
-        );
-        similarCards.forEach((c) => {
-          similarCardsArray.push(c);
-        });
-      })
-    );
+      const info = await analyzeCards(
+        await cardsFromDeckLocal,
+        analysisAverages
+      );
+      infoFromDeck = info;
 
-    similarCardsArray = mergeAndSumSimilarCards(similarCardsArray);
-    similarCardsArray = await prepareSimilarCardsArray(similarCardsArray);
-    const mergedAndSummed = mergeAndSumSimilarCards(similarCardsArray);
+      const maps = await Promise.all(
+        deck.cards.map((card) =>
+          getRelatedCardsInDecks(
+            card,
+            allDecks,
+            true,
+            selectedStyle,
+            selectedArchetype,
+            selectedArchetype2
+          )
+        )
+      );
 
-    suggestions = mergedAndSummed.sort((a, b) => b.qtd - a.qtd);
+      maps.forEach((arr) => {
+        if (Array.isArray(arr)) similarCardsArray.push(...arr);
+      });
 
-    similarCardsArray = mergedAndSummed
-      .sort((a, b) => b.qtd - a.qtd)
-      .slice(0, suggestionsQtd);
+      similarCardsArray = mergeAndSumSimilarCards(similarCardsArray);
+      similarCardsArray = await prepareSimilarCardsArray(similarCardsArray);
+      const mergedAndSummed = mergeAndSumSimilarCards(similarCardsArray);
+      suggestions = mergedAndSummed.sort((a, b) => b.qtd - a.qtd);
 
-    let sumStars = 0;
+      similarCardsArray = mergedAndSummed
+        .sort((a, b) => b.qtd - a.qtd)
+        .slice(0, suggestionsQtd);
 
-    cardsFromDeck.forEach((card) => {
-      sumStars += parseFloat(card.stars) / deck.cards.length;
-    });
+      deck = await calculateStarsFromDeck(
+        deck,
+        allCards,
+        allDecks,
+        legendaries
+      );
+      if (deck.cards.length < suggestionsQtd) deck.level = "";
 
-    deck = await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
+      // elementos valores
+      const elementsToUpdate = {
+        tag_deckName: deck.name,
+        tag_deckStyle: deck.style,
+        tag_deckLevel: deck.level,
+        tag_deckCategory:
+          getKeyWithMaxAbsoluteValue(info.categoriesCount) || "-",
+        tag_deckEffect: getKeyWithMaxAbsoluteValue(info.effectsCount) || "-",
+        tag_deckSize: info.comparison.totalCards,
+        tag_deckMedCost: info.averageCost.toFixed(2),
+        tag_deckStrength: info.averageStrength
+          ? info.averageStrength.toFixed(2)
+          : "N/A",
+        tag_deckResistence: info.averageResistance
+          ? info.averageResistance.toFixed(2)
+          : "N/A",
+        tag_deckQtdHero:
+          info.heroCount > 0 ? info.heroCount : info.comparison.hero.count,
+        tag_deckQtdMiracle:
+          info.miracleCount > 0
+            ? info.miracleCount
+            : info.comparison.miracle.count,
+        tag_deckQtdSin:
+          info.sinCount > 0 ? info.sinCount : info.comparison.sin.count,
+        tag_deckQtdArtifact:
+          info.artifactCount > 0
+            ? info.artifactCount
+            : info.comparison.artifact.count,
+        tag_deckCostHero:
+          info.heroCount > 0
+            ? info.averageCostHero.toFixed(2)
+            : info.comparison.hero.cost,
+        tag_deckCostMiracle:
+          info.miracleCount > 0
+            ? info.averageCostMiracle.toFixed(2)
+            : info.comparison.miracle.cost,
+        tag_deckCostSin:
+          info.sinCount > 0
+            ? info.averageCostSin.toFixed(2)
+            : info.comparison.sin.cost,
+        tag_deckCostArtifact:
+          info.artifactCount > 0
+            ? info.averageCostArtifact.toFixed(2)
+            : info.comparison.artifact.cost,
+      };
 
-    const elementsToUpdate = {
-      tag_deckName: deck.name,
+      const comparisonElements = {
+        tag_deckQtdComparison: info.comparison.general.qtd,
+        tag_deckMedCostComparison: info.comparison.general.cost,
+        tag_deckStrengthComparison: info.comparison.general.strength,
+        tag_deckResistanceComparison: info.comparison.general.resistance,
+        tag_deckCostHeroComparison: info.comparison.hero.cost,
+        tag_deckCostMiracleComparison: info.comparison.miracle.cost,
+        tag_deckCostSinComparison: info.comparison.sin.cost,
+        tag_deckCostArtifactComparison: info.comparison.artifact.cost,
+        tag_deckQtdHeroComparison: info.comparison.hero.count,
+        tag_deckQtdMiracleComparison: info.comparison.miracle.count,
+        tag_deckQtdSinComparison: info.comparison.sin.count,
+        tag_deckQtdArtifactComparison: info.comparison.artifact.count,
+      };
 
-      tag_deckStyle: deck.style,
-      tag_deckLevel: deck.level,
-      tag_deckCategory: getKeyWithMaxAbsoluteValue(info.categoriesCount)
-        ? getKeyWithMaxAbsoluteValue(info.categoriesCount)
-        : "-",
-      tag_deckEffect: getKeyWithMaxAbsoluteValue(info.effectsCount)
-        ? getKeyWithMaxAbsoluteValue(info.effectsCount)
-        : "-",
+      // Atualiza textos simples
+      Object.entries(elementsToUpdate).forEach(([key, value]) => {
+        const el = document.getElementById(key);
+        if (el) el.textContent = value;
+      });
 
-      tag_deckSize: info.comparison.totalCards,
-      tag_deckMedCost: info.averageCost.toFixed(2),
-      tag_deckStrength: info.averageStrength
-        ? info.averageStrength?.toFixed(2)
-        : "N/A",
-      tag_deckResistence: info.averageResistance
-        ? info.averageResistance?.toFixed(2)
-        : "N/A",
-
-      tag_deckQtdHero:
-        info.heroCount > 0 ? info.heroCount : info.comparison.hero.count,
-      tag_deckQtdMiracle:
-        info.miracleCount > 0
-          ? info.miracleCount
-          : info.comparison.miracle.count,
-      tag_deckQtdSin:
-        info.sinCount > 0 ? info.sinCount : info.comparison.sin.count,
-      tag_deckQtdArtifact:
-        info.artifactCount > 0
-          ? info.artifactCount
-          : info.comparison.artifact.count,
-
-      tag_deckCostHero:
-        info.heroCount > 0
-          ? info.averageCostHero.toFixed(2)
-          : info.comparison.hero.cost,
-      tag_deckCostMiracle:
-        info.miracleCount > 0
-          ? info.averageCostMiracle.toFixed(2)
-          : info.comparison.miracle.cost,
-      tag_deckCostSin:
-        info.sinCount > 0
-          ? info.averageCostSin.toFixed(2)
-          : info.comparison.sin.cost,
-      tag_deckCostArtifact:
-        info.artifactCount > 0
-          ? info.averageCostArtifact.toFixed(2)
-          : info.comparison.artifact.cost,
-    };
-
-    const comparisonElements = {
-      // Comparações Gerais
-      tag_deckQtdComparison: info.comparison.general.qtd,
-      tag_deckMedCostComparison: info.comparison.general.cost,
-      tag_deckStrengthComparison: info.comparison.general.strength,
-      tag_deckResistanceComparison: info.comparison.general.resistance,
-      // Comparações de custo
-      tag_deckCostHeroComparison: info.comparison.hero.cost,
-      tag_deckCostMiracleComparison: info.comparison.miracle.cost,
-      tag_deckCostSinComparison: info.comparison.sin.cost,
-      tag_deckCostArtifactComparison: info.comparison.artifact.cost,
-      // Comparações de quantidade
-      tag_deckQtdHeroComparison: info.comparison.hero.count,
-      tag_deckQtdMiracleComparison: info.comparison.miracle.count,
-      tag_deckQtdSinComparison: info.comparison.sin.count,
-      tag_deckQtdArtifactComparison: info.comparison.artifact.count,
-    };
-
-    for (const [key, value] of Object.entries(elementsToUpdate)) {
-      const element = document.getElementById(key);
-      if (element) {
-        element.textContent = value;
+      // Atualiza médias (campos tag_avg_*)
+      function setAvgIfExists(id, value) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.textContent = value === undefined || value === null ? "—" : value;
       }
-    }
 
-    for (const [key, value] of Object.entries(comparisonElements)) {
-      const element = document.getElementById(key);
+      // tenta extrair médias bem conhecidas de analysisAverages (se existirem)
+      setAvgIfExists(
+        "tag_avg_totalCards",
+        analysisAverages && analysisAverages.averageQtd
+          ? analysisAverages.averageQtd
+          : "—"
+      );
+      setAvgIfExists(
+        "tag_avg_cost",
+        analysisAverages &&
+          (analysisAverages.averageCost || analysisAverages.avgCost)
+          ? analysisAverages.averageCost || analysisAverages.avgCost
+          : "—"
+      );
+      setAvgIfExists(
+        "tag_avg_strength",
+        analysisAverages && analysisAverages.averageStrength
+          ? analysisAverages.averageStrength.toFixed
+            ? analysisAverages.averageStrength.toFixed(2)
+            : analysisAverages.averageStrength
+          : "—"
+      );
+      setAvgIfExists(
+        "tag_avg_resistance",
+        analysisAverages && analysisAverages.averageResistance
+          ? analysisAverages.averageResistance.toFixed
+            ? analysisAverages.averageResistance.toFixed(2)
+            : analysisAverages.averageResistance
+          : "—"
+      );
 
-      if (element) {
-        const color = getComparisonColor(key, value);
-        element.style.color = color;
+      // por tipo (se disponível em analysisAverages)
+      setAvgIfExists(
+        "tag_avg_heroCount",
+        analysisAverages && analysisAverages.averageHeroCount
+          ? analysisAverages.averageHeroCount
+          : "—"
+      );
+      setAvgIfExists(
+        "tag_avg_heroCost",
+        analysisAverages && analysisAverages.averageHeroCost
+          ? analysisAverages.averageHeroCost.toFixed
+            ? analysisAverages.averageHeroCost.toFixed(2)
+            : analysisAverages.averageHeroCost
+          : "—"
+      );
+      setAvgIfExists(
+        "tag_avg_miracleCount",
+        analysisAverages && analysisAverages.averageMiracleCount
+          ? analysisAverages.averageMiracleCount
+          : "—"
+      );
+      setAvgIfExists(
+        "tag_avg_miracleCost",
+        analysisAverages && analysisAverages.averageMiracleCost
+          ? analysisAverages.averageMiracleCost.toFixed
+            ? analysisAverages.averageMiracleCost.toFixed(2)
+            : analysisAverages.averageMiracleCost
+          : "—"
+      );
+      setAvgIfExists(
+        "tag_avg_sinCount",
+        analysisAverages && analysisAverages.averageSinCount
+          ? analysisAverages.averageSinCount
+          : "—"
+      );
+      setAvgIfExists(
+        "tag_avg_sinCost",
+        analysisAverages && analysisAverages.averageSinCost
+          ? analysisAverages.averageSinCost.toFixed
+            ? analysisAverages.averageSinCost.toFixed(2)
+            : analysisAverages.averageSinCost
+          : "—"
+      );
+      setAvgIfExists(
+        "tag_avg_artifactCount",
+        analysisAverages && analysisAverages.averageArtifactCount
+          ? analysisAverages.averageArtifactCount
+          : "—"
+      );
+      setAvgIfExists(
+        "tag_avg_artifactCost",
+        analysisAverages && analysisAverages.averageArtifactCost
+          ? analysisAverages.averageArtifactCost.toFixed
+            ? analysisAverages.averageArtifactCost.toFixed(2)
+            : analysisAverages.averageArtifactCost
+          : "—"
+      );
 
-        if (value === "higher") {
-          element.innerHTML = "&#9652;";
-        } else if (value === "lower") {
-          element.innerHTML = "&#9662;";
-        } else if (value === "equal") {
-          element.innerHTML = "&#8860;";
-        } else {
-          element.innerHTML = "";
-        }
+      // Atualiza comparações (setas + cor). comparisonElements contém as flags ("higher"/"lower"/"equal") em info.comparison...
+      Object.entries(comparisonElements).forEach(([key, value]) => {
+        const el = document.getElementById(key);
+        if (!el) return;
+        const color = getComparisonColor(key, value) || "";
+        el.style.color = color;
 
-        if (key == "tag_deckQtdComparison") {
+        if (value === "higher") el.innerHTML = "&#9652;"; // ▲
+        else if (value === "lower") el.innerHTML = "&#9662;"; // ▼
+        else if (value === "equal") el.innerHTML = "&#8860;"; // ≄
+        else el.innerHTML = "";
+
+        // regra especial para qtd total (manter a checagem antiga)
+        if (key === "tag_deckQtdComparison") {
           if (
             info.comparison.totalCards > deckMinimumSize &&
-            info.comparison.totalCards < analysisAverages.averageQtd
+            info.comparison.totalCards <
+              (analysisAverages && analysisAverages.averageQtd
+                ? analysisAverages.averageQtd
+                : Infinity)
           ) {
-            element.style.color = "green";
+            el.style.color = "green";
           } else if (info.comparison.totalCards < deckMinimumSize) {
-            element.style.color = "red";
+            el.style.color = "red";
           }
+        }
+      });
+
+      // categorias
+      generateCategoryItems(
+        info.categoriesCount,
+        info.comparison.categories,
+        "categoriesContainer"
+      );
+    } else {
+      similarCardsArray = sortByStarsAndDate(allCards);
+      similarCardsArray = transformToObjectArray(similarCardsArray);
+      similarCardsArray = await prepareSimilarCardsArray(similarCardsArray);
+      suggestions = similarCardsArray.sort((a, b) => b.qtd - a.qtd);
+      similarCardsArray = similarCardsArray.slice(0, suggestionsQtd);
+    }
+
+    // Atualiza DOMs
+    updateDeckListDOM(await cardsFromDeckLocal);
+    updateMiniCards(allCards, similarCardsArray, "#suggestionsDeckList");
+
+    // Gera filtros
+    const filtersEl = document.getElementById("filters");
+    if (filtersEl) filtersEl.innerHTML = "";
+
+    generateTextFilterByProperty("name", "Nome", "Digite o Nome");
+    generateTextFilterByProperty("text", "Text", "Digite o Texto da Carta");
+    generateSelectFilterByProperty(allCards, "type", "Tipo", "Tipo");
+    generateSelectFilterByProperty(allCards, "subtype", "SubTipo", "SubTipo");
+    generateCategoryFilter(allCards);
+    generateSelectFilterByProperty(allCards, "cost", "Custo", "Custo");
+    generateEffectFilter(allCards);
+    generateSelectFilterByProperty(allCards, "strength", "Força", "Força");
+    generateSelectFilterByProperty(
+      allCards,
+      "resistence",
+      "Resistência",
+      "Resistência"
+    );
+    generateSelectFilterByProperty(
+      allCards,
+      "collection",
+      "Coleção",
+      "Coleção"
+    );
+
+    generateArchetypeSelect();
+    generateArchetype2Select();
+    generateStyleSelect();
+    generateTierSelect();
+
+    filterResults();
+  } catch (err) {
+    console.error("Erro em updateAnalysisFromDeck:", err);
+  }
+}
+
+// ---------- categorias (UI) ----------
+function generateCategoryItems(categoriesCount, averages, id) {
+  const container = document.getElementById(id);
+  if (!container) return;
+  container.innerHTML = "";
+
+  const categoryArray = Object.entries(categoriesCount || {});
+
+  categoryArray.sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
+
+  categoryArray.forEach(([category, count]) => {
+    // comparison pode vir como averages[category] (string "higher"/"lower"/"equal")
+    const comparison =
+      averages && averages[category] ? averages[category] : null;
+
+    // tenta também recuperar média numérica por categoria (se analysisAverages tiver averageCategories)
+    let numericAvg = "—";
+    if (analysisAverages && Array.isArray(analysisAverages.averageCategories)) {
+      const found = analysisAverages.averageCategories.find(
+        (c) => c.name === category || c.nome === category
+      );
+      if (found)
+        numericAvg =
+          found.media !== undefined
+            ? found.media
+            : found.average !== undefined
+            ? found.average
+            : "—";
+    }
+
+    const color = getComparisonColor(category, comparison) || "";
+    const item = document.createElement("div");
+    item.classList.add("custom-text-input", "category-item");
+    item.style.fontSize = "0.95rem";
+    // item.style.margin = "4px 6px 4px 0";
+    item.style.padding = "5px";
+    item.style.display = "inline-flex";
+    item.style.alignItems = "center";
+    item.style.gap = "8px";
+    item.style.borderRadius = "6px";
+
+    // cor de fundo suave de acordo com comparison (opcional)
+    if (comparison === "higher") item.style.background = "rgba(0,128,0,0.06)";
+    else if (comparison === "lower")
+      item.style.background = "rgba(255,0,0,0.04)";
+    else item.style.background = "rgba(255,255,255,0.02)";
+
+    const arrow =
+      comparison === "higher"
+        ? "&#9650;"
+        : comparison === "lower"
+        ? "&#9660;"
+        : comparison === "equal"
+        ? "&#8860;"
+        : "";
+
+    item.innerHTML = `
+      <strong style="display:inline-block">${category}</strong>
+      <span>${count}</span>
+      <span style="color:${color}">${arrow}</span>
+    `;
+
+    container.appendChild(item);
+  });
+}
+
+// ---------- Gerar / completar / tuning ----------
+async function generateDeck() {
+  await updateAnalysisFromDeck();
+  if (deck.cards.length <= 0) {
+    if (selectedTier === "Competitivo") {
+      // sem ação específica no código original
+    } else {
+      const mostUsedCards = await getMostUsedCardsFromType(
+        allDecks,
+        selectedStyle,
+        selectedArchetype,
+        deckMinimumSize
+      );
+      if (mostUsedCards) {
+        mostUsedCards.forEach((card) => addCardToDeckBuilder(card.card));
+      }
+    }
+
+    await completeDeck(true);
+    await tuningDeck();
+    await tuningDeck();
+    await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
+    await updateAnalysisFromDeck();
+  }
+}
+
+async function completeDeck(flagGenerate) {
+  if (!(deck.cards.length > 0 || flagGenerate)) return;
+
+  let bufferCard;
+  let cardList = await getCardsFromDeck(deck.cards, allCards);
+
+  let cardsLength = cardList.filter(
+    (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
+  ).length;
+
+  for (let i = 0; cardsLength < deckMinimumSize; i++) {
+    const oldSuggestions = suggestions.sort((a, b) => b.qtd - a.qtd);
+    const cardFromSuggestion = bufferCard ? bufferCard : suggestions[0];
+    addCardToDeckBuilder(cardFromSuggestion.idcard);
+    // aguarda mudança nas suggestions
+    while (suggestions === oldSuggestions) {
+      await wait(1);
+    }
+    bufferCard = suggestions[0];
+    cardList = await getCardsFromDeck(deck.cards, allCards);
+    cardsLength = cardList.filter(
+      (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
+    ).length;
+  }
+
+  let suggestionNumbers = suggestions.map((obj) => obj.idcard);
+  cardList = await getCardsFromDeck(suggestionNumbers, allCards);
+
+  while (cardList && cardList[0] && cardList[0].subtype === "Lendário") {
+    const oldSuggestions = suggestions.sort((a, b) => b.qtd - a.qtd);
+    addCardToDeckBuilder(cardList[0].number);
+    while (suggestions === oldSuggestions) {
+      await wait(1);
+    }
+    suggestionNumbers = suggestions.map((obj) => obj.idcard);
+    cardList = await getCardsFromDeck(suggestionNumbers, allCards);
+  }
+
+  await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
+  await updateAnalysisFromDeck();
+}
+
+async function tuningDeck() {
+  if (!(deck.cards && deck.cards.length > 0)) return;
+
+  let markerHasChanged = true;
+  let counterLoop = 0;
+
+  let lastAddedCard = null;
+  let consecutiveAdditions = 0;
+  const ignoredAdditions = new Set();
+
+  let lastRemovedCard = null;
+  let consecutiveRemovals = 0;
+  const ignoredRemovals = new Set();
+
+  const operationHistory = [];
+  const MAX_HISTORY = 12;
+
+  function getAddedCard(before, after) {
+    const beforeCount = {};
+    before.forEach((c) => (beforeCount[c] = (beforeCount[c] || 0) + 1));
+    for (const c of after) {
+      if (!beforeCount[c]) return c;
+      beforeCount[c]--;
+    }
+    return null;
+  }
+
+  function recordOperation(type, card) {
+    if (!card) return;
+    if (
+      type === "add" &&
+      card === operationHistory[operationHistory.length - 1]?.card
+    )
+      return;
+    operationHistory.push({ type, card });
+    if (operationHistory.length > MAX_HISTORY) operationHistory.shift();
+  }
+
+  function detectCycle() {
+    if (operationHistory.length < 4) return false;
+    const pairs = [];
+    for (let i = 0; i < operationHistory.length - 1; i++) {
+      if (
+        operationHistory[i].type === "add" &&
+        operationHistory[i + 1].type === "remove"
+      ) {
+        pairs.push([operationHistory[i].card, operationHistory[i + 1].card]);
+      }
+    }
+    const graph = {};
+    pairs.forEach(([from, to]) => {
+      if (!graph[from]) graph[from] = [];
+      graph[from].push(to);
+    });
+
+    function dfs(start, node, visited) {
+      if (!graph[node]) return false;
+      for (const next of graph[node]) {
+        if (next === start) return true;
+        if (!visited.has(next)) {
+          visited.add(next);
+          if (dfs(start, next, visited)) return true;
+        }
+      }
+      return false;
+    }
+
+    for (const from in graph) {
+      if (dfs(from, from, new Set([from]))) return true;
+    }
+    return false;
+  }
+
+  function updateLastAdded(newCard) {
+    if (!newCard) return;
+    if (newCard === lastAddedCard) consecutiveAdditions++;
+    else {
+      lastAddedCard = newCard;
+      consecutiveAdditions = 1;
+    }
+    if (consecutiveAdditions >= 3) {
+      ignoredAdditions.add(newCard);
+      lastAddedCard = null;
+      consecutiveAdditions = 0;
+    }
+  }
+
+  function updateLastRemoved(card) {
+    if (!card) return;
+    if (card === lastRemovedCard) consecutiveRemovals++;
+    else {
+      lastRemovedCard = card;
+      consecutiveRemovals = 1;
+    }
+    if (consecutiveRemovals >= 3) {
+      ignoredRemovals.add(card);
+      lastRemovedCard = null;
+      consecutiveRemovals = 0;
+    }
+  }
+
+  // remove lendários temporariamente
+  let filteredDeck = deck.cards.filter((str) =>
+    legendaries.some((j) => j.number === str)
+  );
+  deck.cards = deck.cards.filter(
+    (str) => !legendaries.some((j) => j.number === str)
+  );
+
+  while (markerHasChanged && counterLoop < analysisAverages.averageQtd) {
+    markerHasChanged = false;
+
+    const filteredCategories = analysisAverages.averageCategories.filter(
+      (category) => category.media !== 0
+    );
+    const innexistentCategories = filteredCategories
+      .map((c) => c.name)
+      .filter((cat) => !(cat in infoFromDeck.categoriesCount));
+
+    const higherCategories = Object.keys(
+      infoFromDeck.comparison.categories
+    ).filter((k) => infoFromDeck.comparison.categories[k] === "higher");
+    const lowerCategories = Object.keys(
+      infoFromDeck.comparison.categories
+    ).filter((k) => infoFromDeck.comparison.categories[k] === "lower");
+
+    let menorValor = Infinity,
+      menorCategoria = null;
+    let maiorValor = -Infinity,
+      maiorCategoria = null;
+
+    lowerCategories.forEach((cat) => {
+      const valor = infoFromDeck.categoriesCount[cat];
+      if (valor < menorValor) {
+        menorValor = valor;
+        menorCategoria = cat;
+      }
+    });
+
+    higherCategories.forEach((cat) => {
+      const valor = infoFromDeck.categoriesCount[cat];
+      if (valor > maiorValor) {
+        maiorValor = valor;
+        maiorCategoria = cat;
+      }
+    });
+
+    const filteredCommonNumbers = legendaries.reduce((acc, item) => {
+      if (filteredDeck.includes(item.number)) acc.push(item.commonNumber);
+      return acc;
+    }, []);
+
+    let suggestionNumbers = suggestions
+      .map((obj) => obj.idcard)
+      .filter(
+        (str) =>
+          !filteredDeck.includes(str) &&
+          !filteredCommonNumbers.includes(str) &&
+          !ignoredAdditions.has(str)
+      );
+
+    if (
+      deck.cards.length < analysisAverages.averageQtd &&
+      suggestionNumbers.length > 0
+    ) {
+      const newCard = suggestionNumbers[0];
+      addCardToDeckBuilder(newCard);
+      recordOperation("add", newCard);
+      updateLastAdded(newCard);
+      markerHasChanged = true;
+    } else if (deck.cards.length > analysisAverages.averageQtd) {
+      const removedCard = await removeCardFromSpecifiedCategory(maiorCategoria);
+      recordOperation("remove", removedCard);
+      updateLastRemoved(removedCard);
+      await wait(1);
+      markerHasChanged = true;
+    } else {
+      if (menorCategoria != null && maiorCategoria != null) {
+        if (innexistentCategories.length > 0) {
+          const beforeAdd = [...deck.cards];
+          await addCardFromSpecifiedCategory(
+            innexistentCategories[0],
+            suggestionNumbers
+          );
+          const newCard = getAddedCard(beforeAdd, deck.cards);
+          recordOperation("add", newCard);
+          updateLastAdded(newCard);
+
+          const removedCard = await removeCardFromSpecifiedCategory(
+            maiorCategoria
+          );
+          recordOperation("remove", removedCard);
+          updateLastRemoved(removedCard);
+          markerHasChanged = true;
+        } else if (higherCategories.length > 0 && lowerCategories.length > 0) {
+          const beforeAdd = [...deck.cards];
+          await addCardFromSpecifiedCategory(
+            lowerCategories[0],
+            suggestionNumbers
+          );
+          const newCard = getAddedCard(beforeAdd, deck.cards);
+          recordOperation("add", newCard);
+          updateLastAdded(newCard);
+
+          const removedCard = await removeCardFromSpecifiedCategory(
+            maiorCategoria
+          );
+          recordOperation("remove", removedCard);
+          updateLastRemoved(removedCard);
+          markerHasChanged = true;
         }
       }
     }
 
-    generateCategoryItems(
-      info.categoriesCount,
-      info.comparison.categories,
-      "categoriesContainer"
+    if (detectCycle()) {
+      console.warn("⚠️ Ciclo detectado! Operações recentes ignoradas.");
+      operationHistory.slice(-6).forEach((op) => {
+        if (op.type === "add") ignoredAdditions.add(op.card);
+        if (op.type === "remove") ignoredRemovals.add(op.card);
+      });
+      markerHasChanged = false;
+      break;
+    }
+
+    // reintroduz lendários temporários ao final do loop
+    const filteredDeck2 = deck.cards.filter((str) =>
+      legendaries.some((j) => j.number === str)
     );
-  } else {
-    similarCardsArray = sortByStarsAndDate(allCards);
-    similarCardsArray = transformToObjectArray(similarCardsArray);
-    similarCardsArray = await prepareSimilarCardsArray(similarCardsArray);
-    suggestions = similarCardsArray.sort((a, b) => b.qtd - a.qtd);
-    similarCardsArray = similarCardsArray.slice(0, suggestionsQtd);
+    deck.cards = deck.cards.filter(
+      (str) => !legendaries.some((j) => j.number === str)
+    );
+    filteredDeck.push(...filteredDeck2);
+
+    if (deck.cards.length !== analysisAverages.averageQtd) {
+      markerHasChanged = true;
+    }
+
+    counterLoop++;
+    await wait(1);
   }
 
-  updateDeckListDOM(cardsFromDeck);
-  updateMiniCards(allCards, similarCardsArray, "#suggestionsDeckList");
+  deck.cards = deck.cards.filter(
+    (str) => !legendaries.some((j) => j.number === str)
+  );
+  const suggestionNumbers = suggestions.map((obj) => obj.idcard);
+  filteredDeck = [
+    ...new Set([
+      ...filteredDeck,
+      ...suggestionNumbers.filter((str) =>
+        legendaries.some((j) => j.number === str)
+      ),
+    ]),
+  ];
 
-  document.getElementById("filters").innerHTML = "";
+  for (const card of filteredDeck) {
+    addCardToDeckBuilder(card);
+    await wait(1);
+  }
+
+  await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
+  await updateAnalysisFromDeck();
+}
+
+// ---------- Helpers para adicionar/remover por categoria ----------
+async function addCardFromSpecifiedCategory(category, suggestionNumbers) {
+  try {
+    let suggestionList = await getCardsFromDeck(suggestionNumbers, allCards);
+    suggestionList = Array.from(new Set(suggestionList));
+    suggestionList = suggestionList.filter((card) => {
+      if (!card.categories) return false;
+      return card.categories
+        .split(";")
+        .map((c) => c.trim())
+        .some((c) => c === category);
+    });
+
+    if (suggestionList.length === 0) {
+      console.warn(`Nenhuma carta encontrada para a categoria: ${category}`);
+      return;
+    }
+
+    addCardToDeckBuilder(suggestionList[0].number);
+    await wait(500);
+  } catch (error) {
+    console.error("Erro ao adicionar carta da categoria especificada:", error);
+  }
+}
+
+async function removeCardFromSpecifiedCategory(category) {
+  try {
+    let cardList = await getCardsFromDeck(deck.cards, allCards);
+    cardList = Array.from(new Set(cardList));
+    cardList = cardList.filter((card) => {
+      if (!card.categories) return false;
+      return card.categories
+        .split(";")
+        .map((c) => c.trim())
+        .some((c) => c === category);
+    });
+
+    if (cardList.length === 0) {
+      console.warn(`Nenhuma carta encontrada para a categoria: ${category}`);
+      return null;
+    }
+
+    let menorOcorrencia = Infinity;
+    let cardsMenorOcorrencia = [];
+
+    cardList.forEach((card) => {
+      const ocorrencias = getOccurrencesInSides(card.number, allDecks);
+      if (ocorrencias < menorOcorrencia) {
+        menorOcorrencia = ocorrencias;
+        cardsMenorOcorrencia = [card];
+      } else if (ocorrencias === menorOcorrencia) {
+        cardsMenorOcorrencia.push(card);
+      }
+    });
+
+    if (cardsMenorOcorrencia.length > 0) {
+      removeCardFromDeckBuilder(cardsMenorOcorrencia[0].number);
+      await wait(500);
+      return cardsMenorOcorrencia[0].number;
+    }
+    return null;
+  } catch (error) {
+    console.error("Erro ao remover carta da categoria especificada:", error);
+    return null;
+  }
+}
+
+// ---------- Utilitários / limpeza ----------
+async function cleanDeck() {
+  deck.cards = [0];
+  while (deck.cards.length > 0) {
+    const card = deck.cards[0];
+    removeCardFromDeckBuilder(card);
+    await updateAnalysisFromDeck();
+  }
+  await updateAnalysisFromDeck();
+  updateDeckListDOM([]);
+}
+
+async function autoGenerateHand(isMulligan) {
+  function getRandomItemsFromArray(arr, numItems) {
+    if (numItems > arr.length)
+      throw new Error(
+        "numItems cannot be greater than the length of the array"
+      );
+    const shuffled = arr.slice();
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled.slice(0, numItems);
+  }
+
+  if (!isMulligan) handTestCards = [];
+
+  let cardList = await getCardsFromDeck(deck.cards, allCards);
+  cardList = cardList.filter(
+    (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
+  );
+
+  handTestCards.forEach((id) => {
+    const index = cardList.findIndex((obj) => obj.number === id);
+    if (index !== -1) cardList.splice(index, 1);
+  });
+
+  if (
+    deck.cards.length > 0 &&
+    handTestCards.length < 6 &&
+    isMulligan !== "draw"
+  ) {
+    const cards = getRandomItemsFromArray(cardList, 5 - handTestCards.length);
+    cards.forEach((card) => addCardToHand(card.number));
+  } else if (isMulligan === "draw") {
+    const cards = getRandomItemsFromArray(cardList, 1);
+    cards.forEach((card) => addCardToHand(card.number));
+  }
+
+  updateTestHand(allCards, handTestCards, "#handTestList");
+}
+
+// ---------- Geradores de filtros (helpers para reduzir duplicação) ----------
+function generateSelectFilterByProperty(
+  jsonData,
+  property,
+  prettyName,
+  text = "",
+  order
+) {
+  const filtersContainer = document.getElementById("filters");
+  if (!filtersContainer) return;
+
+  const currentSelectedFilters = getCurrentSelectedFilters();
+
+  const setValues = new Set();
+  jsonData.forEach((item) => {
+    if (property === "stars")
+      setValues.add(Math.floor(parseFloat(item[property] || 0)));
+    else if (property === "date")
+      setValues.add(new Date(item[property]).getFullYear());
+    else if (item[property] != null && item[property] !== "")
+      setValues.add(item[property]);
+  });
+
+  const uniqueValues = Array.from(setValues).filter(
+    (v) => !Object.values(currentSelectedFilters).includes(String(v))
+  );
+  uniqueValues.sort((a, b) => (order === "ASC" ? a - b : b - a));
+
+  const select = document.createElement("select");
+  select.name = property;
+  select.setAttribute("prettyName", prettyName);
+  select.id = `${property}Filter`;
+  select.classList.add("form-select", "mr-3", "custom-select-input");
+
+  const defaultOption = document.createElement("option");
+  defaultOption.text = text || prettyName;
+  defaultOption.value = "";
+  select.appendChild(defaultOption);
+
+  uniqueValues.forEach((value) => {
+    const option = document.createElement("option");
+    option.value = value;
+    option.text =
+      property === "stars" ? "★".repeat(value) + "☆".repeat(5 - value) : value;
+    select.appendChild(option);
+  });
+
+  select.addEventListener("change", function () {
+    const value = select.value;
+    if (value) {
+      addSelectedFilter(property, value, prettyName);
+      select.disabled = true;
+    }
+    filterResults();
+  });
+
+  filtersContainer.appendChild(select);
+}
+
+function generateTextFilterByProperty(property, prettyName, placeholder) {
+  const filtersContainer = document.getElementById("filters");
+  if (!filtersContainer) return;
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.name = property;
+  input.setAttribute("prettyName", prettyName);
+  input.id = `${property}Filter`;
+  input.placeholder = placeholder;
+  input.classList.add("mr-3", "custom-text-input");
+
+  const applyFilter = () => {
+    const value = input.value.trim();
+    if (value) {
+      addSelectedFilter(property, value, prettyName);
+      input.disabled = true;
+      filterResults();
+    }
+  };
+
+  input.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") applyFilter();
+  });
+  input.addEventListener("blur", applyFilter);
+
+  filtersContainer.appendChild(input);
+}
+
+function generateCategoryFilter(jsonData) {
+  const filtersContainer = document.getElementById("filters");
+  if (!filtersContainer) return;
+  const currentSelectedFilters = getCurrentSelectedFilters();
+  const categoriesSet = new Set();
+
+  jsonData.forEach((item) => {
+    if (!item.categories) return;
+    item.categories.split(";").forEach((c) => categoriesSet.add(c.trim()));
+  });
+
+  const uniqueCategories = Array.from(categoriesSet).filter(
+    (category) => !Object.values(currentSelectedFilters).includes(category)
+  );
+
+  const select = document.createElement("select");
+  select.name = "categories";
+  select.setAttribute("prettyName", "Categoria");
+  select.id = `categoriesFilter`;
+  select.classList.add("form-select", "mr-3", "custom-select-input");
+
+  const defaultOption = document.createElement("option");
+  defaultOption.text = "Categoria";
+  defaultOption.value = "";
+  select.appendChild(defaultOption);
+
+  uniqueCategories.forEach((category) => {
+    const option = document.createElement("option");
+    option.text = category;
+    option.value = category;
+    select.appendChild(option);
+  });
+
+  select.addEventListener("change", function () {
+    const value = select.value;
+    if (value) {
+      addSelectedFilter("categories", value, "Categoria");
+      select.disabled = true;
+    }
+    filterResults(jsonData);
+  });
+
+  filtersContainer.appendChild(select);
+}
+
+function generateEffectFilter(jsonData) {
+  const filtersContainer = document.getElementById("filters");
+  if (!filtersContainer) return;
+  const effectsSet = new Set();
+
+  jsonData.forEach((item) => {
+    if (!item.effects) return;
+    item.effects.split(";").forEach((effect) => {
+      const trimmed = effect.trim();
+      if (trimmed) effectsSet.add(trimmed);
+    });
+  });
+
+  const uniqueEffects = Array.from(effectsSet);
+  const select = document.createElement("select");
+  select.name = "effects";
+  select.setAttribute("prettyName", "Efeito");
+  select.id = "effectsFilter";
+  select.classList.add("form-select", "mr-3", "custom-select-input");
+
+  const defaultOption = document.createElement("option");
+  defaultOption.text = "Efeito";
+  defaultOption.value = "";
+  select.appendChild(defaultOption);
+
+  uniqueEffects.forEach((effect) => {
+    const option = document.createElement("option");
+    option.text = effect;
+    option.value = effect;
+    select.appendChild(option);
+  });
+
+  select.addEventListener("change", function () {
+    const value = select.value;
+    if (value) {
+      addSelectedFilter("effects", value, "Efeito");
+      select.disabled = true;
+      filterResults(jsonData);
+    }
+  });
+
+  filtersContainer.appendChild(select);
+}
+
+// ---------- Selected filters ----------
+function getCurrentSelectedFilters() {
+  const selectedFilters = {};
+  const container = document.getElementById("selected-filters");
+  if (!container) return selectedFilters;
+
+  const filters = container.querySelectorAll(".selected-filter");
+  filters.forEach((filterTag) => {
+    const property = filterTag.getAttribute("data-property");
+    const value = filterTag.getAttribute("data-value");
+    if (selectedFilters[property]) {
+      if (Array.isArray(selectedFilters[property]))
+        selectedFilters[property].push(value);
+      else selectedFilters[property] = [selectedFilters[property], value];
+    } else selectedFilters[property] = value;
+  });
+
+  return selectedFilters;
+}
+
+function addSelectedFilter(property, value, prettyName) {
+  const container = document.getElementById("selected-filters");
+  if (!container) return;
+  const filterTag = document.createElement("div");
+  filterTag.className = "selected-filter";
+  filterTag.setAttribute("data-property", property);
+  filterTag.setAttribute("data-value", value);
+  filterTag.innerText = `${prettyName}: ${value}`;
+  filterTag.addEventListener("click", function () {
+    removeSelectedFilter(property, value);
+    filterResults();
+  });
+  container.appendChild(filterTag);
+}
+
+function removeSelectedFilter(property, value) {
+  const container = document.getElementById("selected-filters");
+  if (!container) return;
+  const filterTag = container.querySelector(
+    `.selected-filter[data-property="${property}"][data-value="${value}"]`
+  );
+  if (filterTag) filterTag.remove();
+  const select = document.getElementById(`${property}Filter`);
+  if (select) {
+    select.value = "";
+    select.disabled = false;
+  }
+}
+
+// ---------- Filtragem e atualização das mini-cards ----------
+async function filterResults() {
+  const selectedFiltersContainer = document.getElementById("selected-filters");
+  if (!selectedFiltersContainer) return;
+
+  const filters = selectedFiltersContainer.querySelectorAll(".selected-filter");
+  const suggestionNumbers = suggestions.map((obj) => obj.idcard);
+  let filteredData = await getCardsFromDeck(suggestionNumbers, allCards);
+
+  filters.forEach((filterTag) => {
+    const property = filterTag.getAttribute("data-property");
+    const value = filterTag.getAttribute("data-value");
+    if (property === "effects") {
+      filteredData = filteredData.filter((item) =>
+        (item.effects || "")
+          .split(";")
+          .map((s) => s.trim())
+          .includes(value)
+      );
+    } else if (property === "categories") {
+      filteredData = filteredData.filter((item) =>
+        (item.categories || "")
+          .split(";")
+          .map((s) => s.trim())
+          .includes(value)
+      );
+    } else {
+      filteredData = filteredData.filter((item) => {
+        if (!item) return false;
+        if (["name", "flavor", "text"].includes(property)) {
+          return (item[property] || "")
+            .toLowerCase()
+            .includes(value.toLowerCase());
+        } else if (property === "stars") {
+          return (
+            Math.floor(parseFloat(item[property] || 0)) === parseInt(value)
+          );
+        } else if (property === "date") {
+          return new Date(item[property]).getFullYear() === parseInt(value);
+        } else {
+          return item[property] == value;
+        }
+      });
+    }
+  });
+
+  const filtersEl = document.getElementById("filters");
+  if (filtersEl) filtersEl.innerHTML = "";
+
+  filteredData = sortByStarsAndDate(filteredData).slice(0, suggestionsQtd);
 
   generateTextFilterByProperty("name", "Nome", "Digite o Nome");
   generateTextFilterByProperty("text", "Text", "Digite o Texto da Carta");
   generateSelectFilterByProperty(allCards, "type", "Tipo", "Tipo");
   generateSelectFilterByProperty(allCards, "subtype", "SubTipo", "SubTipo");
-  generateCategoryFilter(allCards);
   generateSelectFilterByProperty(allCards, "cost", "Custo", "Custo");
+  generateCategoryFilter(allCards);
   generateEffectFilter(allCards);
   generateSelectFilterByProperty(allCards, "strength", "Força", "Força");
   generateSelectFilterByProperty(
@@ -243,990 +1158,120 @@ async function updateAnalysisFromDeck() {
   );
   generateSelectFilterByProperty(allCards, "collection", "Coleção", "Coleção");
 
-  generateImportFieldBuilder(
-    "deckImporter",
-    "Deck Importado",
-    "Cole aqui seu deck"
-  );
-  generateArchetypeSelect();
-  generateStyleSelect();
-  generateTierSelect();
-
-  filterResults();
-}
-
-async function generateDeck() {
-  await updateAnalysisFromDeck();
-  if (deck.cards.length <= 0) {
-    if (selectedTier == "Competitivo") {
-    } else {
-      let mostUsedCards = await getMostUsedCardsFromType(
-        allDecks,
-        selectedStyle,
-        selectedArchetype,
-        deckMinimumSize
-      );
-      if (mostUsedCards) {
-        mostUsedCards.forEach((card) => {
-          addCardToDeckBuilder(card.card);
-          // await wait(1);
-        });
-      }
-    }
-
-    console.log("A");
-    await completeDeck(true);
-    console.log("B");
-    await tuningDeck();
-    console.log("C");
-    await tuningDeck();
-    console.log("D");
-    await tuningDeck();
-
-    await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
-    await updateAnalysisFromDeck();
-  }
-}
-
-async function completeDeck(flagGenerate) {
-  if (deck.cards.length > 0 || flagGenerate) {
-    let bufferCard;
-    let cardList = await getCardsFromDeck(deck.cards, allCards);
-
-    let cardsLength = cardList.filter(
-      (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
-    ).length;
-
-    for (let i = 0; cardsLength < deckMinimumSize; i++) {
-      let oldSuggestions = suggestions.sort((a, b) => b.qtd - a.qtd);
-      const cardFromSuggestion = bufferCard ? bufferCard : suggestions[0];
-      addCardToDeckBuilder(cardFromSuggestion.idcard);
-      while (suggestions == oldSuggestions) {
-        await wait(1);
-      }
-      bufferCard = suggestions[0];
-      cardList = await getCardsFromDeck(deck.cards, allCards);
-      cardsLength = cardList.filter(
-        (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
-      ).length;
-    }
-
-    let suggestionNumbers = suggestions.map((obj) => obj.idcard);
-    cardList = await getCardsFromDeck(suggestionNumbers, allCards);
-
-    while (cardList && cardList[0] && cardList[0].subtype == "Lendário") {
-      let oldSuggestions = suggestions.sort((a, b) => b.qtd - a.qtd);
-      addCardToDeckBuilder(cardList[0].number);
-      while (suggestions == oldSuggestions) {
-        await wait(1);
-      }
-      suggestionNumbers = suggestions.map((obj) => obj.idcard);
-      cardList = await getCardsFromDeck(suggestionNumbers, allCards);
-    }
-
-    await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
-    await updateAnalysisFromDeck();
-  }
-}
-
-async function tuningDeck() {
-  if (deck.cards.length > 0) {
-    let markerHasChanged = true;
-    let counterLoop = 0;
-
-    let lastAddedCard = null;
-    let consecutiveAdditions = 0;
-    let ignoredAdditions = new Set();
-
-    let lastRemovedCard = null;
-    let consecutiveRemovals = 0;
-    let ignoredRemovals = new Set();
-
-    let operationHistory = [];
-    const MAX_HISTORY = 12;
-
-    let filteredDeck = deck.cards.filter((str) =>
-      legendaries.some((json) => json.number === str)
-    );
-
-    deck.cards = deck.cards.filter(
-      (str) => !legendaries.some((json) => json.number === str)
-    );
-
-    // 🔹 Detecta carta adicionada (considera múltiplas cópias)
-    function getAddedCard(before, after) {
-      const beforeCount = {};
-      before.forEach((c) => (beforeCount[c] = (beforeCount[c] || 0) + 1));
-
-      for (const c of after) {
-        if (!beforeCount[c]) {
-          return c; // carta adicionada
-        }
-        beforeCount[c]--;
-      }
-      return null;
-    }
-
-    // 🔹 Histórico de operações
-    function recordOperation(type, card, pairedCard = null) {
-      if (!card) return;
-      // Se for add e pairedCard igual, ignora
-      if (type === "add" && card === pairedCard) return;
-      operationHistory.push({ type, card });
-      if (operationHistory.length > MAX_HISTORY) {
-        operationHistory.shift();
-      }
-    }
-
-    // 🔹 Detecta qualquer ciclo real, inclusive A <-> B
-    function detectCycle() {
-      if (operationHistory.length < 4) return false; // mínimo para A->B->A
-
-      // Monta pares (add → remove)
-      let pairs = [];
-      for (let i = 0; i < operationHistory.length - 1; i++) {
-        if (
-          operationHistory[i].type === "add" &&
-          operationHistory[i + 1].type === "remove"
-        ) {
-          pairs.push([operationHistory[i].card, operationHistory[i + 1].card]);
-        }
-      }
-
-      // Constrói grafo a partir dos pares
-      const graph = {};
-      for (const [from, to] of pairs) {
-        if (!graph[from]) graph[from] = [];
-        graph[from].push(to);
-      }
-
-      // Busca ciclos com DFS
-      function dfs(start, node, visited) {
-        if (!graph[node]) return false;
-        for (const next of graph[node]) {
-          if (next === start) return true; // ciclo detectado
-          if (!visited.has(next)) {
-            visited.add(next);
-            if (dfs(start, next, visited)) return true;
-          }
-        }
-        return false;
-      }
-
-      // Checa cada nó
-      for (const from in graph) {
-        if (dfs(from, from, new Set([from]))) return true;
-      }
-
-      return false;
-    }
-
-    // 🔹 Controle de adições repetidas
-    function updateLastAdded(newCard) {
-      if (!newCard) return;
-      if (newCard === lastAddedCard) {
-        consecutiveAdditions++;
-      } else {
-        lastAddedCard = newCard;
-        consecutiveAdditions = 1;
-      }
-      if (consecutiveAdditions >= 3) {
-        ignoredAdditions.add(newCard);
-        lastAddedCard = null;
-        consecutiveAdditions = 0;
-      }
-    }
-
-    // 🔹 Controle de remoções repetidas
-    function updateLastRemoved(card) {
-      if (!card) return;
-      if (card === lastRemovedCard) {
-        consecutiveRemovals++;
-      } else {
-        lastRemovedCard = card;
-        consecutiveRemovals = 1;
-      }
-      if (consecutiveRemovals >= 3) {
-        ignoredRemovals.add(card);
-        lastRemovedCard = null;
-        consecutiveRemovals = 0;
-      }
-    }
-
-    if (deck.cards.length > 0) {
-      while (markerHasChanged && counterLoop < analysisAverages.averageQtd) {
-        markerHasChanged = false;
-
-        const filteredCategories = analysisAverages.averageCategories.filter(
-          (category) => category.media !== 0
-        );
-
-        const innexistentCategories = filteredCategories
-          .map((category) => category.name)
-          .filter((cat) => !(cat in infoFromDeck.categoriesCount));
-
-        const higherCategories = Object.keys(
-          infoFromDeck.comparison.categories
-        ).filter((key) => infoFromDeck.comparison.categories[key] === "higher");
-
-        const lowerCategories = Object.keys(
-          infoFromDeck.comparison.categories
-        ).filter((key) => infoFromDeck.comparison.categories[key] === "lower");
-
-        let menorValor = Infinity;
-        let menorCategoria = null;
-        let maiorValor = -Infinity;
-        let maiorCategoria = null;
-
-        lowerCategories.forEach((cat) => {
-          let valor = infoFromDeck.categoriesCount[cat];
-          if (valor < menorValor) {
-            menorValor = valor;
-            menorCategoria = cat;
-          }
-        });
-
-        higherCategories.forEach((cat) => {
-          let valor = infoFromDeck.categoriesCount[cat];
-          if (valor > maiorValor) {
-            maiorValor = valor;
-            maiorCategoria = cat;
-          }
-        });
-
-        const filteredCommonNumbers = legendaries.reduce((acc, item) => {
-          if (filteredDeck.includes(item.number)) acc.push(item.commonNumber);
-          return acc;
-        }, []);
-
-        // 🔹 Monta sugestões ignorando já usadas e bloqueadas
-        let suggestionNumbers = suggestions
-          .map((obj) => obj.idcard)
-          .filter(
-            (str) =>
-              !filteredDeck.includes(str) &&
-              !filteredCommonNumbers.includes(str) &&
-              !ignoredAdditions.has(str)
-          );
-
-        // 🔹 Casos principais
-        if (
-          deck.cards.length < analysisAverages.averageQtd &&
-          suggestionNumbers.length > 0
-        ) {
-          let newCard = suggestionNumbers[0];
-          addCardToDeckBuilder(newCard);
-          recordOperation("add", newCard);
-          updateLastAdded(newCard);
-          markerHasChanged = true;
-        } else if (deck.cards.length > analysisAverages.averageQtd) {
-          let removedCard = await removeCardFromSpecifiedCategory(
-            maiorCategoria
-          );
-          recordOperation("remove", removedCard);
-          updateLastRemoved(removedCard);
-          await wait(1);
-          markerHasChanged = true;
-        } else {
-          if (menorCategoria != null && maiorCategoria != null) {
-            if (innexistentCategories.length > 0) {
-              let beforeAdd = [...deck.cards];
-              await addCardFromSpecifiedCategory(
-                innexistentCategories[0],
-                suggestionNumbers
-              );
-              let newCard = getAddedCard(beforeAdd, deck.cards);
-              recordOperation("add", newCard);
-              updateLastAdded(newCard);
-
-              let removedCard = await removeCardFromSpecifiedCategory(
-                maiorCategoria
-              );
-              recordOperation("remove", removedCard);
-              updateLastRemoved(removedCard);
-
-              markerHasChanged = true;
-            } else if (
-              higherCategories.length > 0 &&
-              lowerCategories.length > 0
-            ) {
-              let beforeAdd = [...deck.cards];
-              await addCardFromSpecifiedCategory(
-                lowerCategories[0],
-                suggestionNumbers
-              );
-              let newCard = getAddedCard(beforeAdd, deck.cards);
-              recordOperation("add", newCard);
-              updateLastAdded(newCard);
-
-              let removedCard = await removeCardFromSpecifiedCategory(
-                maiorCategoria
-              );
-              recordOperation("remove", removedCard);
-              updateLastRemoved(removedCard);
-
-              markerHasChanged = true;
-            }
-          }
-        }
-
-        // 🔹 Detecta ciclos reais
-        if (detectCycle()) {
-          console.warn("⚠️ Ciclo detectado! Operações recentes ignoradas.");
-          operationHistory.slice(-6).forEach((op) => {
-            if (op.type === "add") ignoredAdditions.add(op.card);
-            if (op.type === "remove") ignoredRemovals.add(op.card);
-          });
-          markerHasChanged = false;
-          break;
-        }
-
-        let filteredDeck2 = deck.cards.filter((str) =>
-          legendaries.some((json) => json.number === str)
-        );
-
-        deck.cards = deck.cards.filter(
-          (str) => !legendaries.some((json) => json.number === str)
-        );
-
-        filteredDeck.push(...filteredDeck2);
-
-        if (deck.cards.length !== analysisAverages.averageQtd) {
-          markerHasChanged = true;
-        }
-
-        counterLoop++;
-        await wait(1);
-      }
-    }
-
-    deck.cards = deck.cards.filter(
-      (str) => !legendaries.some((json) => json.number === str)
-    );
-
-    let suggestionNumbers = suggestions.map((obj) => obj.idcard);
-
-    filteredDeck = [
-      ...new Set([
-        ...filteredDeck,
-        ...suggestionNumbers.filter((str) =>
-          legendaries.some((json) => json.number === str)
-        ),
-      ]),
-    ];
-
-    for (const card of filteredDeck) {
-      addCardToDeckBuilder(card);
-      await wait(1);
-    }
-
-    await calculateStarsFromDeck(deck, allCards, allDecks, legendaries);
-    await updateAnalysisFromDeck();
-  }
-}
-
-// ADICIONAR A MELHOR CARTA DE UMA CATEGORIA EM ESPECÍFICO
-async function addCardFromSpecifiedCategory(category, suggestionNumbers) {
-  try {
-    // Obter a lista de sugestões a partir do deck
-    let suggestionList = await getCardsFromDeck(suggestionNumbers, allCards);
-
-    // Remover duplicatas
-    suggestionList = [...new Set(suggestionList)];
-
-    // Filtrar cartas com a categoria especificada
-    suggestionList = suggestionList.filter((card) => {
-      if (!card.categories) return false;
-      const cardCategories = card.categories
-        .split(";")
-        .map((cat) => cat.trim());
-      return cardCategories.some((cat) => category === cat);
-    });
-
-    // Verificar se a lista de sugestões não está vazia
-    if (suggestionList.length === 0) {
-      console.warn(`Nenhuma carta encontrada para a categoria: ${category}`);
-      return; // Saia da função se não houver cartas
-    }
-
-    // Adicionar a primeira carta da lista filtrada ao deck
-    addCardToDeckBuilder(suggestionList[0].number);
-    await wait(500);
-  } catch (error) {
-    console.error("Erro ao adicionar carta da categoria especificada:", error);
-  }
-}
-
-// REMOVA DE UM DECK A PIOR CARTA DE UMA CATEGORIA EM ESPECÍFICO
-async function removeCardFromSpecifiedCategory(category) {
-  try {
-    // Obter a lista de cartas do deck
-    let cardList = getCardsFromDeck(deck.cards, allCards);
-
-    // Remover duplicatas
-    cardList = [...new Set(cardList)];
-
-    // Filtrar cartas que pertencem à categoria especificada
-    cardList = cardList.filter((card) => {
-      if (!card.categories) return false;
-      const cardCategories = card.categories
-        .split(";")
-        .map((cat) => cat.trim());
-      return cardCategories.some((cat) => category === cat);
-    });
-
-    // Verificar se a lista de cartas não está vazia
-    if (cardList.length === 0) {
-      console.warn(`Nenhuma carta encontrada para a categoria: ${category}`);
-      return; // Saia da função se não houver cartas
-    }
-
-    let menorOcorrencia = Infinity;
-    let cardsMenorOcorrencia = [];
-
-    // Encontrar a(s) carta(s) com a menor ocorrência
-    cardList.forEach((card) => {
-      const ocorrencias = getOccurrencesInSides(card.number, allDecks);
-
-      if (ocorrencias < menorOcorrencia) {
-        menorOcorrencia = ocorrencias;
-        cardsMenorOcorrencia = [card];
-      } else if (ocorrencias === menorOcorrencia) {
-        cardsMenorOcorrencia.push(card);
-      }
-    });
-
-    // Remover a carta com menor ocorrência se houver
-    if (cardsMenorOcorrencia.length > 0) {
-      removeCardFromDeckBuilder(cardsMenorOcorrencia[0].number);
-      await wait(500);
-    }
-  } catch (error) {
-    console.error("Erro ao remover carta da categoria especificada:", error);
-  }
-}
-
-async function cleanDeck() {
-  while (deck.cards.length > 0) {
-    const card = deck.cards[0]; // Pega a primeira carta do deck
-    removeCardFromDeckBuilder(card); // Remove a carta do construtor de deck
-    await updateAnalysisFromDeck(); // Atualiza a análise do deck após a limpeza
-  }
-  await updateAnalysisFromDeck(); // Atualiza a análise do deck após a limpeza
-  updateDeckListDOM([]);
-}
-
-async function autoGenerateHand(isMulligan) {
-  function getRandomItemsFromArray(arr, numItems) {
-    if (numItems > arr.length) {
-      throw new Error(
-        "numItems cannot be greater than the length of the array"
-      );
-    }
-
-    // Criar uma cópia do array original para evitar modificar o array original
-    const shuffledArray = arr.slice();
-
-    // Embaralhar o array usando o algoritmo de Fisher-Yates
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [
-        shuffledArray[j],
-        shuffledArray[i],
-      ];
-    }
-
-    // Pegar os primeiros numItems itens do array embaralhado
-    return shuffledArray.slice(0, numItems);
-  }
-
-  if (!isMulligan) {
-    handTestCards = [];
-  }
-
-  let cardList = await getCardsFromDeck(deck.cards, allCards);
-
-  cardList = cardList.filter(
-    (card) => card.type !== "Herói de Fé" || card.subtype !== "Lendário"
-  );
-
-  // console.log(cardList);
-
-  handTestCards.forEach((id) => {
-    const index = cardList.findIndex((obj) => obj.number === id);
-    if (index !== -1) {
-      cardList.splice(index, 1);
-    }
-  });
-
-  if (
-    deck.cards.length > 0 &&
-    handTestCards.length < 6 &&
-    isMulligan != "draw"
-  ) {
-    const cards = getRandomItemsFromArray(cardList, 5 - handTestCards.length);
-    cards.forEach((card) => {
-      addCardToHand(card.number);
-    });
-  } else if (isMulligan == "draw") {
-    const cards = getRandomItemsFromArray(cardList, 1);
-    cards.forEach((card) => {
-      addCardToHand(card.number);
-    });
-  }
-
-  updateTestHand(allCards, handTestCards, "#handTestList");
-}
-
-function generateSelectFilterByProperty(
-  jsonData,
-  property,
-  prettyName,
-  text,
-  order
-) {
-  const filtersContainer = document.getElementById("filters");
-  const currentSelectedFilters = getCurrentSelectedFilters();
-
-  // Obtenha os valores únicos com base na propriedade
-  const uniqueValues = [
-    ...new Set(
-      jsonData.map((item) => {
-        if (property === "stars") {
-          return Math.floor(parseFloat(item[property]));
-        } else if (property === "date") {
-          return new Date(item[property]).getFullYear();
-        } else if (item[property] != null && item[property] !== "") {
-          return item[property];
-        }
-      })
-    ).values(),
-  ].filter(
-    (value) => !Object.values(currentSelectedFilters).includes(String(value))
-  );
-
-  // Ordenar valores
-  uniqueValues.sort((a, b) => (order === "ASC" ? a - b : b - a));
-
-  // Criar o elemento <select>
-  const select = document.createElement("select");
-  select.name = property;
-  select.setAttribute("prettyName", prettyName);
-  select.id = `${property}Filter`;
-  select.classList.add("form-select", "mb-3", "mr-3", "custom-select-input");
-
-  const defaultOption = document.createElement("option");
-  defaultOption.text = text;
-  defaultOption.value = "";
-  select.appendChild(defaultOption);
-
-  // Adicionar opções ao select
-  uniqueValues.forEach((value) => {
-    const option = document.createElement("option");
-    option.value = value;
-
-    if (property === "stars") {
-      option.innerHTML = "★".repeat(value) + "☆".repeat(5 - value); // Estrelas preenchidas e vazias
-    } else {
-      option.text = value;
-    }
-
-    select.appendChild(option);
-  });
-
-  // Adicionar evento de mudança
-  select.addEventListener("change", function () {
-    const value = select.value;
-    if (value) {
-      addSelectedFilter(property, value, prettyName);
-      select.disabled = true; // Desabilitar o select após a seleção
-    }
-    filterResults(); // Filtrar resultados com base nos filtros aplicados
-  });
-
-  filtersContainer.appendChild(select);
-}
-
-function generateTextFilterByProperty(property, prettyName, placeholder) {
-  const filtersContainer = document.getElementById("filters");
-
-  const input = document.createElement("input");
-  input.type = "text";
-  input.name = property;
-  input.setAttribute("prettyName", prettyName);
-  input.id = `${property}Filter`;
-  input.placeholder = placeholder;
-  input.classList.add("mb-3", "mr-3", "custom-text-input");
-
-  // Função para aplicar filtro
-  const applyFilter = () => {
-    const value = input.value.trim(); // Remove espaços em branco
-    if (value) {
-      addSelectedFilter(property, value, prettyName);
-      input.disabled = true; // Desabilita o campo após a seleção
-      filterResults();
-    }
-  };
-
-  // Evento de tecla pressionada (Enter)
-  input.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
-      applyFilter();
-    }
-  });
-
-  // Evento de perda de foco
-  input.addEventListener("blur", () => {
-    applyFilter();
-  });
-
-  filtersContainer.appendChild(input);
-}
-
-function generateCategoryFilter(jsonData) {
-  const filtersContainer = document.getElementById("filters");
-  const currentSelectedFilters = getCurrentSelectedFilters();
-  const categoriesSet = new Set();
-
-  // Itera sobre os dados para extrair todas as categorias únicas
-  jsonData.forEach((item) => {
-    const categories = item.categories.split(";");
-    categories.forEach((category) => {
-      categoriesSet.add(category.trim()); // Adiciona a categoria ao conjunto
-    });
-  });
-
-  // Converte o conjunto de categorias de volta para um array
-  const uniqueCategories = Array.from(categoriesSet).filter(
-    (category) => !Object.values(currentSelectedFilters).includes(category)
-  );
-
-  // Cria o select e adiciona as opções com as categorias únicas
-  const select = document.createElement("select");
-  select.setAttribute("name", "categories");
-  select.setAttribute("prettyName", "Categoria");
-  select.setAttribute("id", `categoriesFilter`);
-  select.classList.add("form-select", "mb-3", "mr-3", "custom-select-input");
-  const defaultOption = document.createElement("option");
-  defaultOption.text = "Categoria";
-  defaultOption.value = "";
-  select.appendChild(defaultOption);
-  uniqueCategories.forEach((category) => {
-    const option = document.createElement("option");
-    option.text = category;
-    option.value = category;
-    select.appendChild(option);
-  });
-
-  // Adiciona o evento de mudança ao select
-  select.addEventListener("change", function () {
-    const value = select.value;
-    if (value) {
-      addSelectedFilter("categories", value, "Categoria");
-      select.disabled = true;
-    }
-    filterResults(jsonData);
-  });
-
-  // Adiciona o select ao contêiner de filtros
-  filtersContainer.appendChild(select);
-}
-
-function generateEffectFilter(jsonData) {
-  const filtersContainer = document.getElementById("filters");
-  const effectsSet = new Set();
-
-  // Itera sobre os dados para extrair todos os efeitos únicos
-  jsonData.forEach((item) => {
-    if (item.effects) {
-      // Verifica se a propriedade effects existe
-      const effects = item.effects.split(";");
-      effects.forEach((effect) => {
-        const trimmedEffect = effect.trim();
-        if (trimmedEffect) {
-          // Adiciona somente efeitos não vazios
-          effectsSet.add(trimmedEffect);
-        }
-      });
-    }
-  });
-
-  // Converte o conjunto de efeitos de volta para um array
-  const uniqueEffects = Array.from(effectsSet);
-
-  // Cria o select e adiciona as opções com os efeitos únicos
-  const select = document.createElement("select");
-  select.setAttribute("name", "effects");
-  select.setAttribute("prettyName", "Efeito");
-  select.setAttribute("id", "effectsFilter");
-  select.classList.add("form-select", "mb-3", "mr-3", "custom-select-input");
-
-  // Adiciona opção padrão
-  const defaultOption = document.createElement("option");
-  defaultOption.text = "Selecione um Efeito"; // Mensagem padrão
-  defaultOption.value = "";
-  select.appendChild(defaultOption);
-
-  // Adiciona as opções de efeitos
-  uniqueEffects.forEach((effect) => {
-    const option = document.createElement("option");
-    option.text = effect;
-    option.value = effect;
-    select.appendChild(option);
-  });
-
-  // Adiciona o evento de mudança ao select
-  select.addEventListener("change", function () {
-    const value = select.value;
-    if (value) {
-      addSelectedFilter("effects", value, "Efeito");
-      select.disabled = true; // Desabilita após a seleção
-      filterResults(jsonData); // Aplica o filtro
-    }
-  });
-
-  // Adiciona o select ao contêiner de filtros
-  filtersContainer.appendChild(select);
-}
-
-function getCurrentSelectedFilters() {
-  const selectedFilters = {};
-  const selectedFiltersContainer = document.getElementById("selected-filters");
-
-  // Verifica se o contêiner de filtros selecionados existe
-  if (!selectedFiltersContainer) {
-    console.warn("O contêiner de filtros selecionados não foi encontrado.");
-    return selectedFilters; // Retorna um objeto vazio se não existir
-  }
-
-  // Seleciona todos os filtros atualmente aplicados
-  const filters = selectedFiltersContainer.querySelectorAll(".selected-filter");
-
-  // Itera sobre cada filtro selecionado para coletar suas propriedades e valores
-  filters.forEach((filterTag) => {
-    const property = filterTag.getAttribute("data-property");
-    const value = filterTag.getAttribute("data-value");
-
-    // Se a propriedade já existe, converte o valor para um array se não for um
-    if (selectedFilters[property]) {
-      // Se o valor já for um array, adiciona o novo valor; caso contrário, transforma em um array
-      if (Array.isArray(selectedFilters[property])) {
-        selectedFilters[property].push(value);
-      } else {
-        selectedFilters[property] = [selectedFilters[property], value];
-      }
-    } else {
-      // Caso contrário, simplesmente define o valor
-      selectedFilters[property] = value;
-    }
-  });
-
-  return selectedFilters;
-}
-
-function addSelectedFilter(property, value, prettyName) {
-  const selectedFiltersContainer = document.getElementById("selected-filters");
-
-  const filterTag = document.createElement("div");
-  filterTag.className = "selected-filter";
-  filterTag.setAttribute("data-property", property);
-  filterTag.setAttribute("data-value", value);
-  filterTag.innerText = `${prettyName}: ${value}`;
-
-  filterTag.addEventListener("click", function () {
-    removeSelectedFilter(property, value);
-    filterResults();
-  });
-
-  selectedFiltersContainer.appendChild(filterTag);
-}
-
-function removeSelectedFilter(property, value) {
-  const selectedFiltersContainer = document.getElementById("selected-filters");
-  const filterTag = selectedFiltersContainer.querySelector(
-    `.selected-filter[data-property="${property}"][data-value="${value}"]`
-  );
-
-  if (filterTag) {
-    filterTag.remove();
-  }
-
-  const select = document.getElementById(`${property}Filter`);
-  if (select) {
-    select.value = "";
-    select.disabled = false;
-  }
-}
-
-async function filterResults() {
-  const selectedFiltersContainer = document.getElementById("selected-filters");
-  const filters = selectedFiltersContainer.querySelectorAll(".selected-filter");
-
-  const suggestionNumbers = suggestions.map((obj) => obj.idcard);
-
-  let filteredData = await getCardsFromDeck(suggestionNumbers, allCards);
-
-  filters.forEach((filterTag) => {
-    const property = filterTag.getAttribute("data-property");
-    const value = filterTag.getAttribute("data-value");
-
-    if (property === "effects") {
-      filteredData = filteredData.filter((item) => {
-        const effects = item.effects.split(";");
-        return effects.includes(value);
-      });
-    } else if (property === "categories") {
-      filteredData = filteredData.filter((item) => {
-        const categories = item.categories.split(";");
-        return categories.includes(value);
-      });
-    } else {
-      filteredData = filteredData.filter((item) => {
-        if (
-          property === "name" ||
-          property === "flavor" ||
-          property === "text"
-        ) {
-          return item[property].toLowerCase().includes(value.toLowerCase());
-        } else if (property === "stars") {
-          return Math.floor(parseFloat(item[property])) === parseInt(value);
-        } else if (property === "date") {
-          return new Date(item[property]).getFullYear() === parseInt(value);
-        } else {
-          return item[property] == value;
-        }
-      });
-    }
-  });
-
-  document.getElementById("filters").innerHTML = "";
-
-  filteredData = sortByStarsAndDate(filteredData).slice(0, suggestionsQtd);
-
-  generateTextFilterByProperty("name", "Nome", "Digite o Nome");
-  generateTextFilterByProperty("text", "Text", "Digite o Texto da Carta");
-  generateSelectFilterByProperty(filteredData, "type", "Tipo", "Tipo");
-  generateSelectFilterByProperty(filteredData, "subtype", "SubTipo", "SubTipo");
-  generateSelectFilterByProperty(filteredData, "cost", "Custo", "Custo");
-  generateCategoryFilter(filteredData);
-  generateEffectFilter(filteredData);
-  generateSelectFilterByProperty(filteredData, "strength", "Força", "Força");
-  generateSelectFilterByProperty(
-    filteredData,
-    "resistence",
-    "Resistência",
-    "Resistência"
-  );
-  generateSelectFilterByProperty(
-    filteredData,
-    "collection",
-    "Coleção",
-    "Coleção"
-  );
-
   updateMiniCards(allCards, filteredData, "#suggestionsDeckList");
 }
 
+// ---------- DOM update: deck/extradeck/mini cards ----------
 function updateDeckListDOM(cardsFromDeck) {
   const extraDeckListContainer = document.querySelector("#extraDeckList");
   const deckListContainer = document.querySelector("#deckList");
-
   if (!deckListContainer || !extraDeckListContainer) return;
 
-  // Aplica a classe CSS Grid nos containers
   deckListContainer.classList.add("deck-grid");
   extraDeckListContainer.classList.add("deck-grid");
 
   deckListContainer.innerHTML = "";
   extraDeckListContainer.innerHTML = "";
 
-  cardsFromDeck.forEach((card) => {
+  (cardsFromDeck || []).forEach((card) => {
     const cardElement = document.createElement("div");
     cardElement.className = "card-item";
     cardElement.style.cursor = "pointer";
-    cardElement.innerHTML = `
-      <img class="card__details set-card-bg" src="${card.img}" alt="${card.name}" />
-      <div class="card__related__info"></div>
-    `;
+
+    const img = document.createElement("img");
+    img.className = "card__details set-card-bg";
+    img.src = card.img;
+    img.alt = card.name;
+
+    const related = document.createElement("div");
+    related.className = "card__related__info";
+
+    cardElement.appendChild(img);
+    cardElement.appendChild(related);
 
     cardElement.addEventListener("click", () =>
       removeCardFromDeckBuilder(card.number)
     );
 
-    if (card.type == "Herói de Fé" && card.subtype == "Lendário") {
+    if (card.type === "Herói de Fé" && card.subtype === "Lendário")
       extraDeckListContainer.appendChild(cardElement);
-    } else {
-      deckListContainer.appendChild(cardElement);
-    }
+    else deckListContainer.appendChild(cardElement);
   });
 }
 
-function updateTestHand(allCards, cardsList, id) {
+function updateTestHand(allCardsParam, cardsList, id) {
   const similarCardsContainer = document.querySelector(id);
   if (!similarCardsContainer) return;
-
   similarCardsContainer.innerHTML = "";
 
-  cardsList.forEach((similarCard) => {
-    const details = allCards.find((card) => card.number == similarCard);
-    if (details) {
-      const cardElement = document.createElement("div");
-      cardElement.className =
-        "col-lg-2 col-md-2 col-sm-2 card__related__sidebar__view__item set-bg";
-      cardElement.style.cursor = "pointer";
-      cardElement.style.padding = "2px";
-      cardElement.style.margin = "2px";
-      cardElement.innerHTML = `
-        <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
-        <div class="card__related__info">
-        </div>
-      `;
+  (cardsList || []).forEach((similarCard) => {
+    const details = allCardsParam.find((card) => card.number == similarCard);
+    if (!details) return;
 
-      cardElement.addEventListener("click", () =>
-        removeCardFromHand(details.number)
-      );
+    const cardElement = document.createElement("div");
+    cardElement.className =
+      "col-lg-2 col-md-2 col-sm-2 card__related__sidebar__view__item set-bg";
+    cardElement.style.cursor = "pointer";
+    cardElement.style.padding = "2px";
+    cardElement.style.margin = "2px";
 
-      similarCardsContainer.appendChild(cardElement);
-    }
-  });
-}
+    const img = document.createElement("img");
+    img.className = "card__details set-card-bg";
+    img.src = details.img;
+    img.alt = details.name;
 
-function updateMiniCards(allCards, cardsList, id) {
-  const similarCardsContainer = document.querySelector(id);
-  if (!similarCardsContainer) return;
+    const related = document.createElement("div");
+    related.className = "card__related__info";
 
-  similarCardsContainer.innerHTML = "";
+    cardElement.appendChild(img);
+    cardElement.appendChild(related);
 
-  cardsList.forEach((similarCard) => {
-    const details = allCards.find(
-      (card) =>
-        card.number ==
-        (similarCard.idcard ? similarCard.idcard : similarCard.number)
+    cardElement.addEventListener("click", () =>
+      removeCardFromHand(details.number)
     );
-    if (details) {
-      const cardElement = document.createElement("div");
-      cardElement.className =
-        "col-lg-2 col-md-2 col-sm-2 col-2 card__related__sidebar__view__item set-bg";
-      cardElement.style.cursor = "pointer";
-      cardElement.innerHTML = `
-        <img class="card__details set-card-bg" src="${details.img}" alt="${details.name}" />
-        <div class="card__related__info">
-        </div>
-      `;
-
-      cardElement.addEventListener("click", () =>
-        addCardToDeckBuilder(details.number)
-      );
-      cardElement.style = "padding-right:5px; padding-left: 5px;";
-
-      similarCardsContainer.appendChild(cardElement);
-    }
+    similarCardsContainer.appendChild(cardElement);
   });
 }
 
+function updateMiniCards(allCardsParam, cardsList, id) {
+  const similarCardsContainer = document.querySelector(id);
+  if (!similarCardsContainer) return;
+  similarCardsContainer.innerHTML = "";
+
+  (cardsList || []).forEach((similarCard) => {
+    const cardNumber = similarCard.idcard
+      ? similarCard.idcard
+      : similarCard.number;
+    const details = allCardsParam.find((card) => card.number == cardNumber);
+    if (!details) return;
+
+    const cardElement = document.createElement("div");
+    cardElement.className = "card__related__sidebar__view__item set-bg";
+    cardElement.style.cursor = "pointer";
+    cardElement.style.paddingRight = "5px";
+    cardElement.style.paddingLeft = "5px";
+
+    const img = document.createElement("img");
+    img.className = "card__details set-card-bg";
+    img.src = details.img;
+    img.alt = details.name;
+
+    const related = document.createElement("div");
+    related.className = "card__related__info";
+
+    cardElement.appendChild(img);
+    cardElement.appendChild(related);
+
+    cardElement.addEventListener("click", () =>
+      addCardToDeckBuilder(details.number)
+    );
+    similarCardsContainer.appendChild(cardElement);
+  });
+}
+
+// ---------- operações básicas ----------
 function addCardToDeckBuilder(id) {
   deck.cards.push(id);
-  // console.log(deck.cards);
   updateAnalysisFromDeck();
 }
 
@@ -1235,7 +1280,7 @@ function addCardToHand(id) {
 }
 
 function removeCardFromHand(id) {
-  const index = handTestCards.findIndex((card) => card.id === id); // Ajuste se for um objeto
+  const index = handTestCards.findIndex((card) => card === id);
   if (index !== -1) {
     handTestCards.splice(index, 1);
     updateTestHand(allCards, handTestCards, "#handTestList");
@@ -1245,16 +1290,14 @@ function removeCardFromHand(id) {
 }
 
 function removeCardFromDeckBuilder(id) {
-  const index = deck.cards.indexOf(id); // Encontra o índice do ID no array
-  if (index !== -1) {
-    deck.cards.splice(index, 1); // Remove a carta se o índice for válido
-  }
+  const index = deck.cards.indexOf(id);
+  if (index !== -1) deck.cards.splice(index, 1);
   updateAnalysisFromDeck();
 }
 
+// ---------- misc helpers ----------
 function mergeAndSumSimilarCards(similarCardsArray) {
   const mergedCards = {};
-
   const filteredSimilarCards = similarCardsArray.filter((card) => {
     const occurrencesInDeck = deck.cards.filter(
       (item) => item == card.idcard
@@ -1264,27 +1307,25 @@ function mergeAndSumSimilarCards(similarCardsArray) {
 
   filteredSimilarCards.forEach((card) => {
     const { idcard, qtd } = card;
-    if (mergedCards[idcard]) {
-      mergedCards[idcard].qtd += qtd;
-    } else {
-      mergedCards[idcard] = { idcard, qtd };
-    }
+    if (mergedCards[idcard]) mergedCards[idcard].qtd += qtd;
+    else mergedCards[idcard] = { idcard, qtd };
   });
 
   return Object.values(mergedCards).sort((a, b) => b.qtd - a.qtd);
 }
 
 async function prepareSimilarCardsArray(similarCardsArray) {
-  const commonCardCounts = getCommonCardCounts(deck.cards);
+  const commonCardCounts = ((cards) =>
+    cards.reduce((acc, c) => {
+      acc[c] = (acc[c] || 0) + 1;
+      return acc;
+    }, {}))(deck.cards);
 
   deck.cards.forEach((card) => {
     if (commonCardCounts[card] == 1) {
       const similarCard = similarCardsArray.find((sc) => sc.idcard == card);
-      if (similarCard) {
-        similarCard.qtd += 100;
-      } else {
-        similarCardsArray.push({ idcard: card, qtd: WEIGHT_SAME });
-      }
+      if (similarCard) similarCard.qtd += 100;
+      else similarCardsArray.push({ idcard: card, qtd: WEIGHT_SAME });
     }
   });
 
@@ -1323,14 +1364,13 @@ async function prepareSimilarCardsArray(similarCardsArray) {
       deck.cards.filter((card) => card == legendary.number).length == 1
     ) {
       deck.cards = deck.cards.filter((card) => card != legendary.number);
-      const cardsFromDeck = await getCardsFromDeck(deck.cards, allCards);
-      updateDeckListDOM(cardsFromDeck);
+      const cardsFromDeckLocal = await getCardsFromDeck(deck.cards, allCards);
+      updateDeckListDOM(cardsFromDeckLocal);
     }
 
     const legendaryCount = deck.cards.filter(
       (card) => card === legendary.number
     ).length;
-
     if (legendaryCount >= 1) {
       similarCardsArray = similarCardsArray.filter(
         (card) =>
@@ -1341,28 +1381,26 @@ async function prepareSimilarCardsArray(similarCardsArray) {
   }
 
   return similarCardsArray;
+}
 
-  // Função auxiliar para contar ocorrências de cartas
-  function getCommonCardCounts(cards) {
-    return cards.reduce((acc, card) => {
-      acc[card] = (acc[card] || 0) + 1;
-      return acc;
-    }, {});
-  }
+function transformToObjectArray(cards) {
+  return cards.map((card) => ({ idcard: card.number, qtd: card.ocurrences }));
 }
 
 function generateImportFieldBuilder(property, prettyName, placeholder) {
-  document.getElementById("importFieldBuilder").innerHTML = "";
-  const filtersContainer = document.getElementById("importFieldBuilder");
+  const container = document.getElementById("importFieldBuilder");
+  if (!container) return;
+  container.innerHTML = "";
 
   const input = document.createElement("input");
-  input.setAttribute("type", "text");
-  input.setAttribute("name", property);
+  input.type = "text";
+  input.name = property;
   input.setAttribute("prettyName", prettyName);
-  input.setAttribute("id", `${property}Filter`);
-  input.setAttribute("placeholder", placeholder);
+  input.id = `${property}Filter`;
+  input.placeholder = placeholder;
   input.classList.add("mb-3", "mr-3", "custom-text-input");
   input.style.width = "170%";
+
   input.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
       const value = input.value;
@@ -1374,209 +1412,160 @@ function generateImportFieldBuilder(property, prettyName, placeholder) {
     }
   });
 
-  filtersContainer.appendChild(input);
+  container.appendChild(input);
+}
+
+// ---------- selects Estilo / Arquétipo / Tier (DRY) ----------
+function createSelectContainer(
+  idListEl,
+  iconEl,
+  name,
+  prettyName,
+  defaultText,
+  options = []
+) {
+  const root = document.getElementById(idListEl);
+  if (!root) return;
+  root.innerHTML = "";
+  const iconRoot = document.getElementById(iconEl);
+  if (iconRoot) iconRoot.innerHTML = "";
+
+  const container = document.createElement("div");
+  container.classList.add("select-container");
+
+  const select = document.createElement("select");
+  select.name = name;
+  select.setAttribute("prettyName", prettyName);
+  select.id = `${name}Filter`;
+  select.classList.add("mr-3", "custom-select-input");
+
+  const defaultOption = document.createElement("option");
+  defaultOption.text = defaultText;
+  defaultOption.value = "";
+  select.appendChild(defaultOption);
+
+  options.forEach((value) => {
+    const option = document.createElement("option");
+    option.value = value;
+    option.innerHTML = value;
+    select.appendChild(option);
+  });
+
+  container.appendChild(select);
+  root.appendChild(container);
+
+  return select;
 }
 
 function generateStyleSelect() {
-  document.getElementById("addByStyleList").innerHTML = "";
-  document.getElementById("addByStyleIcon").innerHTML = "";
-
-  const addByStyleList = document.getElementById("addByStyleList");
-
-  // Criar um contêiner para o select e o ícone
-  const container = document.createElement("div");
-  container.classList.add("select-container");
-
-  const select = document.createElement("select");
-  select.setAttribute("name", "style");
-  select.setAttribute("prettyName", "Estilo");
-  select.setAttribute("id", `styleFilter`);
-  select.classList.add("mb-3", "mr-3", "custom-select-input");
-  const defaultOption = document.createElement("option");
-  defaultOption.text = "Estilo";
-  defaultOption.value = "";
-  select.appendChild(defaultOption);
-
-  const styles = [...new Set(allDecks.map((obj) => obj.style))];
-
-  styles.forEach((value) => {
-    const option = document.createElement("option");
-    option.value = value;
-    option.innerHTML = value;
-    select.appendChild(option);
-  });
-
+  const styles = Array.from(new Set(allDecks.map((d) => d.style)));
+  const select = createSelectContainer(
+    "addByStyleList",
+    "addByStyleIcon",
+    "style",
+    "Estilo",
+    "Estilo",
+    styles
+  );
+  if (!select) return;
   select.addEventListener("change", function () {
     const value = select.value;
-    if (value) {
-      chooseStyle(value);
-      // select.disabled = true;
-    }
+    if (value) chooseStyle(value);
   });
-
-  container.appendChild(select);
-  addByStyleList.appendChild(container);
 }
 
 function generateArchetypeSelect() {
-  document.getElementById("addByArchetypeList").innerHTML = "";
-  document.getElementById("addByArchetypeIcon").innerHTML = "";
-
-  const addByArchetypeList = document.getElementById("addByArchetypeList");
-
-  // Criar um contêiner para o select e o ícone
-  const container = document.createElement("div");
-  container.classList.add("select-container");
-
-  const select = document.createElement("select");
-  select.setAttribute("name", "archetype");
-  select.setAttribute("prettyName", "Arquétipo");
-  select.setAttribute("id", `archetypeFilter`);
-  select.classList.add("mb-3", "mr-3", "custom-select-input");
-  const defaultOption = document.createElement("option");
-  defaultOption.text = "Arquétipo";
-  defaultOption.value = "";
-  select.appendChild(defaultOption);
-
-  const archetypes = [...new Set(allDecks.map((obj) => obj.archetype))];
-
-  archetypes.forEach((value) => {
-    const option = document.createElement("option");
-    option.value = value;
-    option.innerHTML = value;
-    select.appendChild(option);
-  });
-
+  const archetypes = Array.from(new Set(allDecks.map((d) => d.archetype)));
+  const select = createSelectContainer(
+    "addByArchetypeList",
+    "addByArchetypeIcon",
+    "archetype",
+    "Arquétipo",
+    "Arquétipo",
+    archetypes
+  );
+  if (!select) return;
   select.addEventListener("change", function () {
     const value = select.value;
-    if (value) {
-      chooseArchetype(value);
-      // select.disabled = true;
-    }
+    if (value) chooseArchetype(value);
   });
+}
 
-  // Adicionar o select e o ícone ao contêiner
-  container.appendChild(select);
-  addByArchetypeList.appendChild(container);
+function generateArchetype2Select() {
+  const archetypes = Array.from(new Set(allDecks.map((d) => d.archetype2)));
+  const select = createSelectContainer(
+    "addByArchetype2List",
+    "addByArchetype2Icon",
+    "archetype2",
+    "Apoio",
+    "Apoio",
+    archetypes
+  );
+  if (!select) return;
+  select.addEventListener("change", function () {
+    const value = select.value;
+    if (value) chooseArchetype2(value);
+  });
 }
 
 function generateTierSelect() {
-  document.getElementById("addByTierList").innerHTML = "";
-  document.getElementById("addByTierIcon").innerHTML = "";
-
-  const addByTierList = document.getElementById("addByTierList");
-
-  // Criar um contêiner para o select e o ícone
-  const container = document.createElement("div");
-  container.classList.add("select-container");
-
-  const select = document.createElement("select");
-  select.setAttribute("name", "tier");
-  select.setAttribute("prettyName", "Tier");
-  select.setAttribute("id", `tierFilter`);
-  select.classList.add("mb-3", "mr-3", "custom-select-input");
-  const defaultOption = document.createElement("option");
-  defaultOption.text = "Tier";
-  defaultOption.value = "";
-  select.appendChild(defaultOption);
-
   const tiers = ["Casual", "Competitivo"];
-
-  tiers.forEach((value) => {
-    const option = document.createElement("option");
-    option.value = value;
-    option.innerHTML = value;
-    select.appendChild(option);
-  });
-
+  const select = createSelectContainer(
+    "addByTierList",
+    "addByTierIcon",
+    "tier",
+    "Tier",
+    "Tier",
+    tiers
+  );
+  if (!select) return;
   select.addEventListener("change", function () {
     const value = select.value;
-    if (value) {
-      chooseTier(value);
-      // select.disabled = true;
-    }
-  });
-
-  // Adicionar o select e o ícone ao contêiner
-  container.appendChild(select);
-  addByTierList.appendChild(container);
-}
-
-function generateCategoryItems(categoriesCount, averages, id) {
-  const container = document.getElementById(id);
-  container.innerHTML = "";
-  const categoryArray = Object.entries(categoriesCount);
-
-  categoryArray.sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
-
-  categoryArray.forEach(([category, count]) => {
-    const comparison = averages[category];
-    const color = getComparisonColor(category, comparison);
-    const input = document.createElement("div");
-
-    if (comparison == "higher") {
-      input.classList.add("green");
-    } else if (comparison == "lower") {
-      input.classList.add("red");
-    }
-
-    input.setAttribute(
-      "style",
-      "font-size: 1rem !important; margin-right: 0px !important; margin-bottom: 0px !important;"
-    );
-    input.classList.add("custom-text-input", "category-item");
-
-    input.innerHTML = `${category} : ${count} <span style="color:${color}"> ${
-      comparison === "higher"
-        ? "&#9650;"
-        : comparison === "lower"
-        ? "&#9660;"
-        : comparison === "equal"
-        ? "&#8860;"
-        : ""
-    }</span>`;
-
-    container.appendChild(input);
+    if (value) chooseTier(value);
   });
 }
 
+// ---------- escolha de estilos/archetypes/tier: atualiza ícone (sem quebrar FontAwesome usage) ----------
 function chooseStyle(value) {
   selectedStyle = value;
   updateAnalysisFromDeck();
 
-  const icon = document.querySelector("#addByStyleIcon"); // Seleciona o ícone ao lado do select
-  if (icon) {
-    if (value) {
-      icon.className = ""; // Limpa as classes do ícone
-      icon.classList.add("fa"); // Adiciona a classe base do FontAwesome
-      icon.classList.add("fa-solid"); // Adiciona a classe base do FontAwesome
-      icon.style.padding = "5px"; // Ajuste o padding como necessário
-      icon.style.borderRadius = "5px"; // Adicione bordas arredondadas se desejado
-      icon.style.marginLeft = "5px"; // Espaçamento entre o select e o ícone
-      icon.style.marginBottom = "5px"; // Espaçamento entre o select e o ícone
+  const icon = document.querySelector("#addByStyleIcon");
+  if (!icon) return;
+  try {
+    icon.className = "";
+    icon.style = "";
+    icon.textContent = "";
+    if (!value) return;
+    icon.classList.add("fa", "fa-solid");
+    icon.style.padding = "5px";
+    icon.style.borderRadius = "5px";
+    icon.style.marginLeft = "5px";
+    icon.style.marginBottom = "5px";
 
-      switch (value) {
-        case "Agressivo":
-          icon.classList.add("fa-hand-back-fist");
-          icon.style.backgroundColor = "#B22222";
-          icon.style.color = "#fff";
-          break;
-        case "Equilibrado":
-          icon.classList.add("fa-hand-scissors");
-          icon.style.backgroundColor = "#FFD700";
-          icon.style.color = "#000";
-          break;
-        case "Controlador":
-          icon.classList.add("fa-hand");
-          icon.style.backgroundColor = "#1E90FF";
-          icon.style.color = "#fff";
-          break;
-        default:
-          icon.classList.add("fa-question");
-          icon.style.backgroundColor = "#6c757d";
-          icon.style.color = "#fff";
-      }
+    switch (value) {
+      case "Agressivo":
+        icon.classList.add("fa-hand-back-fist");
+        icon.style.backgroundColor = "#B22222";
+        icon.style.color = "#fff";
+        break;
+      case "Equilibrado":
+        icon.classList.add("fa-hand-scissors");
+        icon.style.backgroundColor = "#FFD700";
+        icon.style.color = "#000";
+        break;
+      case "Controlador":
+        icon.classList.add("fa-hand");
+        icon.style.backgroundColor = "#1E90FF";
+        icon.style.color = "#fff";
+        break;
+      default:
+        icon.classList.add("fa-question");
+        icon.style.backgroundColor = "#6c757d";
+        icon.style.color = "#fff";
     }
+  } catch (e) {
+    console.warn("Erro ao atualizar ícone de style:", e);
   }
 }
 
@@ -1584,51 +1573,127 @@ function chooseArchetype(value) {
   selectedArchetype = value;
   updateAnalysisFromDeck();
 
-  const icon = document.querySelector("#addByArchetypeIcon"); // Seleciona o ícone ao lado do select
-  if (icon) {
-    if (value) {
-      icon.className = ""; // Limpa as classes do ícone
-      icon.classList.add("fa"); // Adiciona a classe base do FontAwesome
-      icon.classList.add("fa-solid"); // Adiciona a classe base do FontAwesome
-      icon.style.padding = "5px"; // Ajuste o padding como necessário
-      icon.style.borderRadius = "5px"; // Adicione bordas arredondadas se desejado
-      icon.style.marginLeft = "5px"; // Espaçamento entre o select e o ícone
-      icon.style.marginBottom = "5px"; // Espaçamento entre o select e o ícone
+  const icon = document.querySelector("#addByArchetypeIcon");
+  if (!icon) return;
+  try {
+    icon.className = "";
+    icon.style = "";
+    icon.textContent = "";
+    if (!value) return;
+    icon.classList.add("fa", "fa-solid");
+    icon.style.padding = "5px";
+    icon.style.borderRadius = "5px";
+    icon.style.marginLeft = "5px";
+    icon.style.marginBottom = "5px";
 
-      switch (value) {
-        case "Batalha":
-          icon.classList.add("fa-hand-fist");
-          icon.style.backgroundColor = "#FF8C00";
-          icon.style.color = "#000";
-          break;
-        case "Santificação":
-          icon.classList.add("fa-droplet");
-          icon.style.backgroundColor = "whitesmoke";
-          icon.style.color = "#000";
-          break;
-        case "Combo":
-          icon.classList.add("fa-gears");
-          icon.style.backgroundColor = "#800080";
-          icon.style.color = "#fff";
-          break;
-        case "Maravilhas":
-          icon.classList.add("fa-hat-wizard");
-          icon.style.backgroundColor = "#32CD32";
-          icon.style.color = "#000";
-          break;
-        case "Supressão":
-          icon.classList.add("fa-ban");
-          icon.style.backgroundColor = "#000000";
-          icon.style.color = "#fff";
-          break;
-        default:
-          icon.classList.add("fa-question");
-          icon.style.backgroundColor = "#6c757d";
-          icon.style.color = "#fff";
-      }
+    switch (value) {
+      case "Batalha":
+        icon.classList.add("fa-hand-fist");
+        icon.style.backgroundColor = "#FF8C00";
+        icon.style.color = "#000";
+        break;
+      case "Santificação":
+        icon.classList.add("fa-droplet");
+        icon.style.backgroundColor = "whitesmoke";
+        icon.style.color = "#000";
+        break;
+      case "Combo":
+        icon.classList.add("fa-gears");
+        icon.style.backgroundColor = "#800080";
+        icon.style.color = "#fff";
+        break;
+      case "Tempestade":
+        icon.classList.add("fa-poo-storm");
+        icon.style.backgroundColor = "#32CD32";
+        icon.style.color = "#000";
+        break;
+      case "Arsenal":
+        icon.classList.add("fa-toolbox");
+        icon.style.backgroundColor = "#A8B3B4";
+        icon.style.color = "#000";
+        break;
+      case "Supressão":
+        icon.classList.add("fa-ban");
+        icon.style.backgroundColor = "#000000";
+        icon.style.color = "#fff";
+        break;
+      case "Aceleração":
+        icon.classList.add("fa-stopwatch");
+        icon.style.backgroundColor = "#8B4513";
+        icon.style.color = "#000";
+        break;
+      default:
+        icon.classList.add("fa-question");
+        icon.style.backgroundColor = "#6c757d";
+        icon.style.color = "#fff";
     }
-
     icon.textContent = value;
+  } catch (e) {
+    console.warn("Erro ao atualizar ícone de archetype:", e);
+  }
+}
+
+function chooseArchetype2(value) {
+  selectedArchetype2 = value;
+  updateAnalysisFromDeck();
+
+  const icon = document.querySelector("#addByArchetype2Icon");
+  if (!icon) return;
+  try {
+    icon.className = "";
+    icon.style = "";
+    icon.textContent = "";
+    if (!value) return;
+    icon.classList.add("fa", "fa-solid");
+    icon.style.padding = "5px";
+    icon.style.borderRadius = "5px";
+    icon.style.marginLeft = "5px";
+    icon.style.marginBottom = "5px";
+
+    switch (value) {
+      case "Batalha":
+        icon.classList.add("fa-hand-fist");
+        icon.style.backgroundColor = "#FF8C00";
+        icon.style.color = "#000";
+        break;
+      case "Santificação":
+        icon.classList.add("fa-droplet");
+        icon.style.backgroundColor = "whitesmoke";
+        icon.style.color = "#000";
+        break;
+      case "Combo":
+        icon.classList.add("fa-gears");
+        icon.style.backgroundColor = "#800080";
+        icon.style.color = "#fff";
+        break;
+      case "Tempestade":
+        icon.classList.add("fa-poo-storm");
+        icon.style.backgroundColor = "#32CD32";
+        icon.style.color = "#000";
+        break;
+      case "Arsenal":
+        icon.classList.add("fa-toolbox");
+        icon.style.backgroundColor = "#A8B3B4";
+        icon.style.color = "#000";
+        break;
+      case "Supressão":
+        icon.classList.add("fa-ban");
+        icon.style.backgroundColor = "#000000";
+        icon.style.color = "#fff";
+        break;
+      case "Aceleração":
+        icon.classList.add("fa-stopwatch");
+        icon.style.backgroundColor = "#8B4513";
+        icon.style.color = "#000";
+        break;
+      default:
+        icon.classList.add("fa-question");
+        icon.style.backgroundColor = "#6c757d";
+        icon.style.color = "#fff";
+    }
+    icon.textContent = value;
+  } catch (e) {
+    console.warn("Erro ao atualizar ícone de archetype2:", e);
   }
 }
 
@@ -1636,38 +1701,40 @@ function chooseTier(value) {
   selectedTier = value;
   updateAnalysisFromDeck();
 
-  const icon = document.querySelector("#addByTierIcon"); // Seleciona o ícone ao lado do select
-  if (icon) {
-    if (value) {
-      icon.className = ""; // Limpa as classes do ícone
-      icon.classList.add("fa"); // Adiciona a classe base do FontAwesome
-      icon.classList.add("fa-solid"); // Adiciona a classe base do FontAwesome
-      icon.style.padding = "5px"; // Ajuste o padding como necessário
-      icon.style.borderRadius = "5px"; // Adicione bordas arredondadas se desejado
-      icon.style.marginLeft = "5px"; // Espaçamento entre o select e o ícone
-      icon.style.marginBottom = "5px"; // Espaçamento entre o select e o ícone
-      icon.innerHTML = value;
+  const icon = document.querySelector("#addByTierIcon");
+  if (!icon) return;
+  try {
+    icon.className = "";
+    icon.style = "";
+    icon.innerHTML = "";
+    if (!value) return;
+    icon.classList.add("fa", "fa-solid");
+    icon.style.padding = "5px";
+    icon.style.borderRadius = "5px";
+    icon.style.marginLeft = "5px";
+    icon.style.marginBottom = "5px";
+    icon.innerHTML = value;
 
-      switch (value) {
-        case "Competitivo":
-          icon.classList.add("fa-medal");
-          icon.style.backgroundColor = "#FFD700";
-          icon.style.color = "#000";
-          break;
-        case "Casual":
-          icon.classList.add("fa-user-group");
-          icon.style.backgroundColor = "#1E90FF";
-          icon.style.color = "#fff";
-          break;
-        default:
-          icon.classList.add("fa-question");
-          icon.style.backgroundColor = "#6c757d";
-          icon.style.color = "#fff";
-      }
+    switch (value) {
+      case "Competitivo":
+        icon.classList.add("fa-medal");
+        icon.style.backgroundColor = "#FFD700";
+        icon.style.color = "#000";
+        break;
+      case "Casual":
+        icon.classList.add("fa-user-group");
+        icon.style.backgroundColor = "#1E90FF";
+        icon.style.color = "#fff";
+        break;
+      default:
+        icon.classList.add("fa-question");
+        icon.style.backgroundColor = "#6c757d";
+        icon.style.color = "#fff";
     }
+  } catch (e) {
+    console.warn("Erro ao atualizar ícone de tier:", e);
   }
 }
 
-function transformToObjectArray(cards) {
-  return cards.map((card) => ({ idcard: card.number, qtd: card.ocurrences }));
-}
+// ---------- utilidades finais ----------
+/* transformToObjectArray já declarada acima para compatibilidade */

@@ -102,10 +102,16 @@ function calculateArchetypePercentages(decks) {
       icon: "fa-gears",
     },
     {
-      archetype: "Maravilhas",
+      archetype: "Tempestade",
       backgroundColor: "#32CD32",
       color: "#fff",
-      icon: "fa-hat-wizard",
+      icon: "fa-poo-storm",
+    },
+    {
+      archetype: "Arsenal",
+      backgroundColor: "#A8B3B4",
+      color: "#000",
+      icon: "fa-toolbox",
     },
     {
       archetype: "Supressão",
@@ -113,28 +119,43 @@ function calculateArchetypePercentages(decks) {
       color: "#fff",
       icon: "fa-ban",
     },
-    // Você pode adicionar mais archetypes aqui
+    {
+      archetype: "Aceleração",
+      backgroundColor: "#8B4513",
+      color: "#fff",
+      icon: "fa-stopwatch",
+    }
   ];
 
-  // Contagem de cada archetype
+  // Contagem de cada archetype (considerando archetype e archetype2)
   const archetypeCount = decks.reduce((acc, deck) => {
-    if (gaugeArchetypes.some((ga) => ga.archetype === deck.archetype)) {
-      // Verifica se o archetype existe no array gaugeSectionsArchetypes
-      acc[deck.archetype] = (acc[deck.archetype] || 0) + 1;
-    }
+    [deck.archetype, deck.archetype2].forEach((arch) => {
+      if (
+        arch &&
+        gaugeArchetypes.some((ga) => ga.archetype === arch)
+      ) {
+        acc[arch] = (acc[arch] || 0) + 1;
+      }
+    });
     return acc;
   }, {});
 
-  const totalDecks = decks.length;
+  // total de arquétipos considerados (não apenas total de decks)
+  const totalArchetypes = Object.values(archetypeCount).reduce(
+    (sum, count) => sum + count,
+    0
+  );
 
   // Calcular as porcentagens brutas
   const rawPercentages = gaugeArchetypes.map((gaugeArchetype) => {
     const count = archetypeCount[gaugeArchetype.archetype] || 0;
-    const percentage = (count / totalDecks) * 100;
+    const percentage = totalArchetypes
+      ? (count / totalArchetypes) * 100
+      : 0;
     return {
       ...gaugeArchetype,
       rawWidth: percentage,
-      roundedWidth: Math.round(percentage), // Arredondar para números inteiros
+      roundedWidth: Math.round(percentage),
     };
   });
 
@@ -144,23 +165,22 @@ function calculateArchetypePercentages(decks) {
     0
   );
 
-  // Ajuste final se a soma das porcentagens não for 100
   const difference = 100 - totalRoundedWidth;
 
-  // Distribuir a diferença entre as seções (se houver diferença)
+  // Ajuste final se a soma das porcentagens não for 100
   return rawPercentages.map((section, index) => {
     if (index < Math.abs(difference)) {
-      // Se precisar adicionar/subtrair a diferença, ajuste
       return {
         ...section,
-        width: section.roundedWidth + (difference > 0 ? 1 : -1), // Adiciona ou subtrai 1
+        width: section.roundedWidth + (difference > 0 ? 1 : -1),
       };
     }
-    return { ...section, width: section.roundedWidth }; // Sem ajuste
+    return { ...section, width: section.roundedWidth };
   });
 }
 
 async function updateCards(cardsArray) {
+  
   for (const cards of cardsArray) {
     try {
       const data = await fs.promises.readFile(cards, "utf8");
@@ -187,19 +207,24 @@ async function updateCards(cardsArray) {
           relatedDecks
         );
         card.stars = scaleToFive(
-          (card.ocurrencesInSides / decksObj.length) * 100,
+          (card.ocurrences / decksObj.length) * 100,
           card.ocurrencesInSides
         );
+
+        card.archetypePercentage = calculateArchetypePercentages(relatedDecks);
+        card.stylePercentage = calculateStylePercentages(relatedDecks);
 
       });
 
       const updatedJson = JSON.stringify(jsonData, null, 2);
       await fs.promises.writeFile(cards, updatedJson, "utf8");
       console.log("Arquivo JSON atualizado com sucesso:", cards);
+
     } catch (err) {
       console.error("Erro:", err);
     }
   }
+
 }
 
 async function main() {

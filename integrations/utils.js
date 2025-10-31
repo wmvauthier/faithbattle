@@ -7,49 +7,73 @@ const URL_LEGENDARIES_JSON = "data/legendary.json";
 const URL_RULINGS_JSON = "data/rulings.json";
 const URL_DECKS_HISTORIC_JSON = "data/decks_historic.json";
 
-const WEIGHT_LEGENDARY = 100000;
+const WEIGHT_LEGENDARY = 10000000;
 const WEIGHT_SAME = 200;
 let WEIGHT_CATEGORY = 200;
 
 const WEIGHT_DIRECT_SINERGY = 200;
 const WEIGHT_OCURRENCY_DECK = 200;
 const WEIGHT_OCURRENCY_EXTRA = 200;
-const WEIGHT_OCURRENCY_SIDEBOARD = 200;
+const WEIGHT_OCURRENCY_SIDEBOARD = 150;
 
-const WEIGHT_DECK_STYLE = 30;
-const WEIGHT_DECK_ARCHETYPE = 70;
+const WEIGHT_DECK_STYLE = 40;
+const WEIGHT_DECK_ARCHETYPE = 60;
+const WEIGHT_DECK_ARCHETYPE_2 = 40;
 
+// const WEIGHT_LEVEL_SINERGY_BEETWEEN_CARDS = 0.85;
 const WEIGHT_LEVEL_SINERGY_BEETWEEN_CARDS = 0.85;
-const WEIGHT_LEVEL_STAPLE_USING_FOR_CARDS = 0.15;
+// const WEIGHT_LEVEL_STAPLE_USING_FOR_CARDS = 0.15;
+const WEIGHT_LEVEL_STAPLE_USING_FOR_CARDS = 0.05;
+// const WEIGHT_LEVEL_ADICTION_FOR_LEGENDARY_AND_EXTRA = 0.01;
 const WEIGHT_LEVEL_ADICTION_FOR_LEGENDARY_AND_EXTRA = 0.01;
-const WEIGHT_LEVEL_ADICTION_FOR_REPETITION = 0.03;
-const WEIGHT_LEVEL_REDUCTION_FOR_REPETITION = 0.06;
+// const WEIGHT_LEVEL_ADICTION_FOR_REPETITION = 0.01;
+const WEIGHT_LEVEL_ADICTION_FOR_REPETITION = 0.01;
+// const WEIGHT_LEVEL_REDUCTION_FOR_REPETITION = 0.04;
+const WEIGHT_LEVEL_REDUCTION_FOR_REPETITION = 0.04;
 
 const WEIGHT_LEVEL_ADICTION_FOR_PRIZES = 0.01;
 const WEIGHT_LEVEL_ADICTION_FOR_HISTORIC = 0.01;
 
-const WEIGHT_LEVEL_ADICTION_FOR_CATEGORY = 0.05;
-const WEIGHT_LEVEL_EQUAL_FOR_CATEGORY = 0.05;
-const WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY = 0.05;
+// const WEIGHT_LEVEL_ADICTION_FOR_CATEGORY = 0.05;
+const WEIGHT_LEVEL_ADICTION_FOR_CATEGORY = 0.01;
+// const WEIGHT_LEVEL_EQUAL_FOR_CATEGORY = 0.05;
+const WEIGHT_LEVEL_EQUAL_FOR_CATEGORY = 0.01;
+// const WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY = 0.05;
+const WEIGHT_LEVEL_REDUCTION_FOR_CATEGORY = 0.03;
+// const WEIGHT_LEVEL_ADICTION_FOR_EXCLUSIVE_CATEGORY = 0.005;
 const WEIGHT_LEVEL_ADICTION_FOR_EXCLUSIVE_CATEGORY = 0.005;
-const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY = 0.3;
+// const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY = 0.3;
+const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_CATEGORY = 0.005;
 
-const WEIGHT_LEVEL_ADICTION_FOR_COUNT = 0.05;
-const WEIGHT_LEVEL_EQUAL_FOR_COUNT = 0.0;
-const WEIGHT_LEVEL_REDUCTION_FOR_COUNT = 0.1;
-const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_COUNT = 0.05;
+// const WEIGHT_LEVEL_ADICTION_FOR_COUNT = 0.01;
+const WEIGHT_LEVEL_ADICTION_FOR_COUNT = 0.001;
+// const WEIGHT_LEVEL_EQUAL_FOR_COUNT = 0.01;
+const WEIGHT_LEVEL_EQUAL_FOR_COUNT = 0.001;
+// const WEIGHT_LEVEL_REDUCTION_FOR_COUNT = 0.1;
+const WEIGHT_LEVEL_REDUCTION_FOR_COUNT = 0.001;
+// const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_COUNT = 0.05;
+const WEIGHT_LEVEL_REDUCTION_FOR_INEXISTENT_COUNT = 0.005;
 
+// const WEIGHT_LEVEL_ADICTION_FOR_COST = 0.05;
 const WEIGHT_LEVEL_ADICTION_FOR_COST = 0.05;
-const WEIGHT_LEVEL_EQUAL_FOR_COST = 0.0;
-const WEIGHT_LEVEL_REDUCTION_FOR_COST = 0.1;
+// const WEIGHT_LEVEL_EQUAL_FOR_COST = 0.01;
+const WEIGHT_LEVEL_EQUAL_FOR_COST = 0.01;
+// const WEIGHT_LEVEL_REDUCTION_FOR_COST = 0.1;
+const WEIGHT_LEVEL_REDUCTION_FOR_COST = 0.05;
 
-const WEIGHT_LEVEL_ADICTION_FOR_QTD = 0.05;
-const WEIGHT_LEVEL_EQUAL_FOR_QTD = 0.0;
-const WEIGHT_LEVEL_REDUCTION_FOR_QTD = 0.25;
+// const WEIGHT_LEVEL_ADICTION_FOR_QTD = 0.05;
+const WEIGHT_LEVEL_ADICTION_FOR_QTD = 0.1;
+// const WEIGHT_LEVEL_EQUAL_FOR_QTD = 0.01;
+const WEIGHT_LEVEL_EQUAL_FOR_QTD = 0.1;
+// const WEIGHT_LEVEL_REDUCTION_FOR_QTD = 1.05;
+const WEIGHT_LEVEL_REDUCTION_FOR_QTD = 0.5;
 
-const WEIGHT_LEVEL_ADICTION_FOR_STRENGHT_AND_RESISTANCE = 0.25;
-const WEIGHT_LEVEL_EQUAL_FOR_STRENGHT_AND_RESISTANCE = 0.1;
-const WEIGHT_LEVEL_REDUCTION_FOR_STRENGHT_AND_RESISTANCE = 0.25;
+// const WEIGHT_LEVEL_ADICTION_FOR_STRENGHT_AND_RESISTANCE = 0.35;
+const WEIGHT_LEVEL_ADICTION_FOR_STRENGHT_AND_RESISTANCE = 0.35;
+// const WEIGHT_LEVEL_EQUAL_FOR_STRENGHT_AND_RESISTANCE = 0.01;
+const WEIGHT_LEVEL_EQUAL_FOR_STRENGHT_AND_RESISTANCE = 0.01;
+// const WEIGHT_LEVEL_REDUCTION_FOR_STRENGHT_AND_RESISTANCE = 0.35;
+const WEIGHT_LEVEL_REDUCTION_FOR_STRENGHT_AND_RESISTANCE = 0.35;
 
 // const CACHE_DURATION = 1000; // 24 horas
 
@@ -288,6 +312,7 @@ async function getDecksCommunity() {
           deck.extra = [];
           deck.style = "";
           deck.archetype = "";
+          deck.archetype2 = "";
 
           let fromDeck = getCardsFromDeck(deckList, allCards);
 
@@ -660,6 +685,7 @@ async function getMostUsedCardsFromType(
   decks,
   selectedStyle,
   selectedArchetype,
+  selectedArchetype2,
   deckMinimumSize
 ) {
   // Criar um Map para rastrear a frequência de cada card
@@ -670,7 +696,8 @@ async function getMostUsedCardsFromType(
     .filter(
       (deck) =>
         (!selectedStyle || deck.style === selectedStyle) &&
-        (!selectedArchetype || deck.archetype === selectedArchetype)
+        (!selectedArchetype || deck.archetype === selectedArchetype) &&
+        (!selectedArchetype2 || deck.archetype2 === selectedArchetype2)
     )
     .forEach((deck) => {
       // Agrupar todas as listas de cards
@@ -698,9 +725,15 @@ function getRepeatedAndUniqueCards(deck) {
     cardFrequency.set(card, (cardFrequency.get(card) || 0) + 1);
   });
 
-  // Contar os cards repetidos e únicos
+  const legendarySetDivineArmor = [43, 23, 26, 50, 44, 24];
+
+  const hasAllLegendarySetDivineArmor = legendarySetDivineArmor.every((num) =>
+    allCardsInDeck.includes(num)
+  );
+
   let repeated = 0;
   let unique = 0;
+
   cardFrequency.forEach((count, card) => {
     if (count > 1) {
       repeated++;
@@ -709,8 +742,18 @@ function getRepeatedAndUniqueCards(deck) {
       const cardDetails = allCards.find(
         (legendary) => legendary.number === card
       );
-      if (cardDetails && cardDetails.subtype === "Lendário") {
-        // Se for lendário, desconsiderar como único
+
+      if (
+        cardDetails &&
+        cardDetails.subtype === "Lendário" &&
+        hasAllLegendarySetDivineArmor &&
+        legendarySetDivineArmor.includes(cardDetails.number)
+      ) {
+        // unique--;
+        // unique--;
+        // unique--;
+        // unique--;
+      } else if (cardDetails && cardDetails.subtype === "Lendário") {
         unique--;
       } else {
         unique++;
@@ -719,7 +762,7 @@ function getRepeatedAndUniqueCards(deck) {
   });
 
   return {
-    deckName: deck.name || "Unknown", // Nome do deck para identificação
+    deckName: deck.name || "Unknown",
     repeated,
     unique,
   };
@@ -819,6 +862,12 @@ async function calculateStarsFromDeck(
     // Usar o index i para acessar a comparação correta
     if (info.comparison[comparisons[i]].cost === "higher") {
       sum -= WEIGHT_LEVEL_REDUCTION_FOR_COST * Math.abs(difference); // Adiciona diferença se for igual ou maior
+      if (costs[i] == "averageCostHero") {
+        sum -= WEIGHT_LEVEL_ADICTION_FOR_COST * Math.abs(difference) * 10;
+      }
+      if (costs[i] == "averageCostMiracle") {
+        sum -= WEIGHT_LEVEL_ADICTION_FOR_COST * Math.abs(difference) * 10;
+      }
     } else if (info.comparison[comparisons[i]].cost === "equal") {
       sum += WEIGHT_LEVEL_EQUAL_FOR_COST; // Subtrai a diferença se for menor
     } else if (info.comparison[comparisons[i]].cost === "lower") {
@@ -853,9 +902,15 @@ async function calculateStarsFromDeck(
     } else if (info.comparison[comparisons[i]].count === "equal") {
       sum += WEIGHT_LEVEL_EQUAL_FOR_COUNT; // Subtrai a diferença se for menor
     } else if (info.comparison[comparisons[i]].count === "lower") {
-      sum -= WEIGHT_LEVEL_REDUCTION_FOR_COUNT * Math.abs(difference); // Subtrai a diferença se for menor
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_COUNT * Math.abs(difference);
+      if (averageQtds[i] == "averageQtdHero") {
+        sum -= WEIGHT_LEVEL_REDUCTION_FOR_COUNT * Math.abs(difference) * 200;
+      }
+      if (averageQtds[i] == "averageQtdMiracle") {
+        sum -= WEIGHT_LEVEL_REDUCTION_FOR_COUNT * Math.abs(difference) * 100;
+      }
     } else {
-      sum -= WEIGHT_LEVEL_REDUCTION_FOR_COUNT * Math.abs(difference); // Subtrai a diferença se for menor
+      sum -= WEIGHT_LEVEL_REDUCTION_FOR_COUNT * Math.abs(difference);
     }
 
     if (deckCount <= 0) {
@@ -942,7 +997,7 @@ async function calculateStarsFromDeck(
 
   // console.log("sum -> " + sum);
 
-  let repeatsAndUniques = getRepeatedAndUniqueCards(selectedDeck, legendaries);
+  let repeatsAndUniques = getRepeatedAndUniqueCards(selectedDeck);
 
   sum +=
     WEIGHT_LEVEL_ADICTION_FOR_LEGENDARY_AND_EXTRA *
@@ -1053,7 +1108,8 @@ async function getRelatedCardsInDecks(
   decks,
   isDeckBuilder,
   selectedStyle,
-  selectedArchetype
+  selectedArchetype,
+  selectedArchetype2
 ) {
   const selectedCard = allCards.find((card) => card.number == cardId);
   if (!selectedCard) return [];
@@ -1121,8 +1177,20 @@ async function getRelatedCardsInDecks(
         weight *= WEIGHT_DECK_STYLE;
       }
 
-      if (selectedArchetype && deck.archetype == selectedArchetype) {
+      if (
+        selectedArchetype &&
+        (deck.archetype == selectedArchetype ||
+          deck.archetype2 == selectedArchetype)
+      ) {
         weight *= WEIGHT_DECK_ARCHETYPE;
+      }
+
+      if (
+        selectedArchetype2 &&
+        (deck.archetype == selectedArchetype2 ||
+          deck.archetype2 == selectedArchetype2)
+      ) {
+        weight *= WEIGHT_DECK_ARCHETYPE_2;
       }
 
       addCardWithWeight(id, weight);
@@ -1367,7 +1435,7 @@ function scaleToFive(num, occurrences) {
   }
 
   // Escala o valor para o intervalo de 1 a 5
-  const scaledValue = Math.min(5, Math.max(1, num / 20));
+  const scaledValue = Math.min(5, Math.max(0, num / 20));
 
   return scaledValue.toFixed(1); // Retorna o valor escalado com uma casa decimal
 }

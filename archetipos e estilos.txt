@@ -4,3 +4,82 @@ combate	   OK	OK	OK
 fé	       OK	OK	OK
 combo	   ?	OK	OK
 supressão  OK	OK	OK
+
+B87333 -> próxima cor
+
+📜 Lista de Arquétipos
+
+⚔️ Agressivo (Aggro)
+Cor: 🔴 Vermelho (#DC3545)
+Ícone: ⚔️ (espadas cruzadas)
+
+Descrição: Prioriza velocidade e pressão constante. Busca derrotar o oponente antes que ele estabilize, usando criaturas rápidas e efeitos de dano direto.
+
+🛡 Controle (Control)
+Cor: 🔵 Azul (#0D6EFD, tom mais escuro que você pediu)
+Ícone: 🛡️ (escudo)
+
+Descrição: Retarda o jogo, neutraliza ameaças e ganha vantagem de cartas até conseguir fechar a partida com uma condição inevitável.
+
+🌳 Midrange
+Cor: 🟢 Verde (#198754)
+Ícone: 🌳 (árvore)
+
+Descrição: Joga para estabilizar o começo do jogo e, depois, dominar o campo com criaturas consistentes e mágicas versáteis. Equilibra ataque e defesa.
+
+🌀 Combo
+Cor: 🟣 Roxo (#6F42C1)
+Ícone: 🌀 (redemoinho)
+
+Descrição: Usa combinações específicas de cartas para criar interações explosivas, geralmente levando a uma vitória repentina e inesperada.
+
+⚒️ Arsenal (Toolbox)
+Cor: ⚙️ Cinza marcante (#7F8C8D)
+Ícone: ⚒️ (martelo e picareta)
+
+Descrição: Versatilidade acima de tudo. Usa cartas que buscam ou se adaptam a diferentes situações, sempre tendo a “ferramenta certa” para cada desafio.
+
+🔗 Supressão (Lockdown/Prison)
+Cor: 🟡 Amarelo (#FFC107)
+Ícone: 🔗 (correntes)
+
+Descrição: Estratégia de impedir o oponente de jogar, controlando recursos, travando ataques ou limitando opções até ele não ter saída.
+
+⏳ Tempo
+Cor: 🌙 Azul-esverdeado (#20C997)
+Ícone: ⏳ (ampulheta)
+
+Descrição: Não busca eliminar todas as ameaças, mas atrasar o oponente enquanto desenvolve suas próprias. Explora pequenas vantagens de tempo até transformar em vitória.
+
+⚡ Aceleração (Ramp)
+Cor: 🌟 Verde-claro/amarelado (#A3CB38)
+Ícone: ⚡ (raio)
+
+Descrição: Usa cartas que geram recursos extras rapidamente para jogar mágicas e criaturas maiores muito antes do esperado, atropelando o adversário com poder bruto.
+
+✨ Santificação (Vida)
+
+Cor: 🤍 Branco (whitesmoke)
+Ícone: ✨ (estrela/brilho)
+Descrição: Estratégia que gira em torno de ganhar vida e transformar essa vida extra em vantagem. Representa pureza, fé e proteção, trazendo resistência contra ataques e sustentando o jogador até virar o jogo com combos de vida ou efeitos que escalam com o ganho de pontos de vida.
+
+⚔️ Batalha (Heróis)
+
+Cor: 🟠 Laranja (#FF7F32)
+Ícone: ⚔️ (espadas cruzadas)
+Descrição: Focado em heróis e combate direto. Valoriza criaturas fortes, buffs e habilidades que exaltam os guerreiros do campo de batalha. A vitória vem pela força e coragem, representando tanto narrativas bíblicas de luta quanto a agressividade em jogo, pressionando o oponente desde cedo.
+
+🌪️ Tempestade (Mágicas)
+
+Cor: 🟢 Verde-esmeralda com toque azulado (#2ECC71)
+Ícone: 🌪️ (tornado)
+Descrição: Um arquétipo voltado para lançar muitas mágicas em sequência e criar sinergias explosivas. Representa milagres, interações divinas e poder sobrenatural se manifestando de forma acumulativa, onde cada feitiço fortalece o próximo até um clímax avassalador.
+
+
+
+
+acidente
+passional
+latrocinio
+assassinato
+

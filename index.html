@@ -1,41 +1,45 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Faith Battle">
-    <meta name="keywords" content="Anime, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Faith Battle | Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>⚔️ Faith Battle 🛡️ | O Card Game Bíblico</title>
+
+    <!-- Mantive fonts / ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS (necessário para carousel) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <!-- <link rel="stylesheet" href="css/nice-select.css" type="text/css"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/socials.css" type="text/css">
+    <link rel="stylesheet" href="css/review-youtube.css" type="text/css">
+    <link rel="stylesheet" href="css/review-instagram.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
 
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
 
-    <!-- Header Section Begin -->
+    <!-- HEADER -->
     <header class="header">
         <div class="container">
             <div class="row">
@@ -51,23 +55,36 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li class="active"><a href="./index.html">Homepage</a></li>
-                                <li><a href="#">Informações <span class="arrow_carrot-down"></span></a>
+                                <li><a href="./how-to-play.html">Informações <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="./who-we-are.html">Quem somos</a></li>
-                                        <li><a href="./about-game.html">Sobre o Game</a></li>
+                                        <li><a href="./how-to-play.html">Como Jogar</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./card-list.html">Game <span class="arrow_carrot-down"></span></a>
+                                <li><a href="#">Game <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="./deck-builder.html">Deckbuilder</a></li>
                                         <li><a href="./card-list.html">Lista de Cards</a></li>
                                         <li><a href="./deck-meta.html">Decks do Meta</a></li>
-                                        <li><a href="./deck-community.html">Decks da Comunidade</a></li>
+                                        <!-- <li><a href="./deck-community.html">Decks da Comunidade</a></li> -->
                                         <!-- <li><a href="./deck-historic.html">Decks Históricos</a></li> -->
                                         <!-- <li><a href="./anime-watching.html">Anime Watching</a></li> -->
                                         <!-- <li><a href="./blog-details.html">Blog Details</a></li> -->
                                         <!-- <li><a href="./signup.html">Sign Up</a></li> -->
                                         <!-- <li><a href="./login.html">Login</a></li> -->
+                                    </ul>
+                                </li>
+                                <li><a href="#">Reviews <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./review-instagram.html">Instagram</a></li>
+                                        <li><a href="./review-youtube.html">Youtube</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Galeria <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./gallery-gameplays.html">Gameplays</a></li>
+                                        <!-- <li><a href="./gallery-tutorial.html">Tutoriais</a></li> -->
+                                        <!-- <li><a href="./gallery-championship.html">Campeonatos</a></li> -->
                                     </ul>
                                 </li>
                                 <!-- <li><a href="./champions-hall.html">Hall dos Campeões</a></li> -->
@@ -88,423 +105,407 @@
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>
-    <!-- Header End -->
 
-    <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="img/banner/banner-1.png">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <!-- <div class="label">Adventure</div> -->
-                                <!-- <h2>Teste do Lucass</h2> -->
-                                <!-- <p>After 30 days of travel across the world...</p> -->
-                                <!-- <a href="https://google.com"><span>WClieuq aqui</span> <i class="fa fa-angle-right"></i></a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__items set-bg" data-setbg="img/banner/banner-whoweare-fb.png">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <!-- <div class="label">Adventure</div> -->
-                                <!-- <h2>Fate / Stay Night: Unlimited Blade Works</h2> -->
-                                <!-- <p>After 30 days of travel across the world...</p> -->
-                                <!-- <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="hero__items set-bg" data-setbg="img/banner/banner-3.png">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Adventure</div>
-                                <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                                <p>After 30 days of travel across the world...</p>
-                                <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+    <!-- HERO (escuro -> letras claras) -->
+    <section id="home" class="section--dark" style="padding-bottom: 0px; text-align: center;">
+        <img src="img/logo.png" class="card-img-top zoom-img" alt="Dinâmico"
+            style="max-width:40%; display: inline-block;">
+    </section>
+
+    <!-- LORE (claro -> letras escuras) -->
+    <section id="lore" class="section--dark">
+        <div class="section-inner text-center">
+            <div class="section-title text-uppercase">
+                <h2>- Conheça o Faith Battle -</h2>
+            </div>
+            <div class="section-text mx-auto" style="max-width: 700px;">
+                Neste card game estratégico, sua Fé e Sabedoria definem a vitória.
+                Combine heróis, milagres e artefatos para criar sinergias poderosas,
+                resista aos pecados e evolua seus heróis até versões lendárias.
+                Derrote seus adversários com coragem, inteligência e estratégia.
             </div>
         </div>
     </section>
-    <!-- Hero Section End -->
 
-    <!-- Product Section Begin -->
-    <section class="product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
+    <!-- GAME FEATURES (claro) -->
+    <section id="game-features" class="section--dark" style="padding-top: 0px;">
+        <div class="section-inner">
+            <div class="row justify-content-center">
 
-                    <div class="trending__product" style="margin-bottom: 0px;">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8">
-                                <div class="section-title">
-                                    <h4>Conheça o Jogo</h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="btn__all">
-                                    <!-- <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a> -->
-                                </div>
-                            </div>
+                <!-- Card 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/129.png" class="card-img-top zoom-img" alt="Dinâmico">
+                            <div class="fade-overlay"></div>
                         </div>
-                        <div class="row">
-
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-
-                                <a href="https://youtu.be/u4wjq5w15QU" target="_blank" rel="noopener noreferrer">
-
-                                    <div class="product__item">
-
-                                        <div class="product__item__pic set-bg"
-                                            data-setbg="https://img.youtube.com/vi/u4wjq5w15QU/hqdefault.jpg">
-                                            <!-- <div class="ep">18 / 18</div> -->
-                                            <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                                            <!-- <div class="view"><i class="fa fa-eye"></i> 9141</div> -->
-                                        </div>
-
-                                        <div class="product__item__text">
-                                            <ul>
-                                                <li>André Manenti</li>
-                                                <li>UMotivo</li>
-                                            </ul>
-                                            <h5><a href="#">FIZERAM UM CARD GAME DO QUE?!?</a></h5>
-                                        </div>
-
-                                    </div>
-                                </a>
-
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-
-                                <a href="https://youtu.be/3bgoOAFI9is" target="_blank" rel="noopener noreferrer">
-
-                                    <div class="product__item">
-
-                                        <div class="product__item__pic set-bg"
-                                            data-setbg="https://img.youtube.com/vi/3bgoOAFI9is/hqdefault.jpg">
-                                            <!-- <div class="ep">18 / 18</div> -->
-                                            <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                                            <!-- <div class="view"><i class="fa fa-eye"></i> 9141</div> -->
-                                        </div>
-
-                                        <div class="product__item__text">
-                                            <ul>
-                                                <li>André Manenti</li>
-                                                <li>UMotivo</li>
-                                            </ul>
-                                            <h5><a href="#">EIS QUE EU JOGUEI *AQUELE* CARD GAME ...</a></h5>
-                                        </div>
-
-                                    </div>
-                                </a>
-
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-
-                                <a href="https://youtu.be/KeZ9XA2IrE8" target="_blank" rel="noopener noreferrer">
-
-                                    <div class="product__item">
-
-                                        <div class="product__item__pic set-bg"
-                                            data-setbg="https://img.youtube.com/vi/KeZ9XA2IrE8/hqdefault.jpg">
-                                            <!-- <div class="ep">18 / 18</div> -->
-                                            <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                                            <!-- <div class="view"><i class="fa fa-eye"></i> 9141</div> -->
-                                        </div>
-
-                                        <div class="product__item__text">
-                                            <ul>
-                                                <li>Romir</li>
-                                                <li>Romir Play House</li>
-                                            </ul>
-                                            <h5><a href="#">Faith Battle - Como Jogar</a></h5>
-                                        </div>
-
-                                    </div>
-                                </a>
-
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-
-                                <a href="https://youtu.be/cMkrL9HfNsw" target="_blank" rel="noopener noreferrer">
-
-                                    <div class="product__item">
-
-                                        <div class="product__item__pic set-bg"
-                                            data-setbg="https://img.youtube.com/vi/cMkrL9HfNsw/hqdefault.jpg">
-                                            <!-- <div class="ep">18 / 18</div> -->
-                                            <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                                            <!-- <div class="view"><i class="fa fa-eye"></i> 9141</div> -->
-                                        </div>
-
-                                        <div class="product__item__text">
-                                            <ul>
-                                                <li>Lucas Bird</li>
-                                                <li>Faith Battle</li>
-                                            </ul>
-                                            <h5><a href="#">Como Jogar Faith Battle Online peelo Tabletopia?</a></h5>
-                                        </div>
-
-                                    </div>
-                                </a>
-
-                            </div>
-
-
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase"><span>Dinâmico</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Partidas rápidas, imprevisíveis e cheias de emoção</p>
                         </div>
-                    </div><br>
-
-                    <!-- <div class="trending__product" style="margin-bottom: 0px;">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8">
-                                <div class="section-title">
-                                    <h4>Últimas Notícias</h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="btn__all">
-                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                        <div class="ep">18 / 18</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
-                                        <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/trend-2.jpg">
-                                        <div class="ep">18 / 18</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
-                                        <h5><a href="#">Gintama Movie 2: Kanketsu-hen - Yorozuya yo Eien</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/trend-3.jpg">
-                                        <div class="ep">18 / 18</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
-                                        <h5><a href="#">Shingeki no Kyojin Season 3 Part 2</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="popular__product">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8">
-                                <div class="section-title">
-                                    <h4>Campeonatos</h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="btn__all">
-                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/popular/popular-4.jpg">
-                                        <div class="ep">18 / 18</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
-                                        <h5><a href="#">Rurouni Kenshin: Meiji Kenkaku Romantan</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/popular/popular-5.jpg">
-                                        <div class="ep">18 / 18</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
-                                        <h5><a href="#">Mushishi Zoku Shou 2nd Season</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/popular/popular-6.jpg">
-                                        <div class="ep">18 / 18</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
-                                        <h5><a href="#">Monogatari Series: Second Season</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="product__sidebar">
-
-
-                        <div class="product__sidebar__comment">
-
-                            <div class="section-title">
-                                <h5>Teste Online Aqui</h5>
-                            </div>
-
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__text social-buttons">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <a href="https://tabletopia.com/games/faithbattletcg-xifdyk/play-now"
-                                                class="btn yellow"><img src="./img/tabletopia.png"></a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                            <div class="section-title">
-                                <h5>Redes Sociais</h5>
-                            </div>
-
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__text social-buttons">
-
-                                    <a href="http://tinyurl.com/2ejfe29j" class="btn whatsapp"><i
-                                            class="fab fa-whatsapp" style="margin-right:0px;"></i></a>
-                                    <a href="https://www.instagram.com/faithbattleoficial/" class="btn instagram"><i
-                                            class="fab fa-instagram" style="margin-right:0px;"></i></a>
-                                    <a href="https://www.youtube.com/channel/UCPCsg_VdBvd-7BSOHlDB0gA"
-                                        class="btn youtube"><i class="fab fa-youtube" style="margin-right:0px;"></i></a>
-                                    <a href="https://discord.gg/cuKWBpxw" class="btn discord"><i class="fab fa-discord"
-                                            style="margin-right:0px;"></i></a>
-                                    <a href="mailto:contato@faithbattle.com.br" class="btn email"><i
-                                            class="fas fa-envelope" style="margin-right:0px;"></i> </a>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- <div class="product__sidebar__comment">
-                            <div class="section-title">
-                                <h5>Top Cards</h5>
-                            </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="img/sidebar/comment-1.jpg" alt="">
-                                </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Active</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-                                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                                </div>
-                            </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="img/sidebar/comment-2.jpg" alt="">
-                                </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Active</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
-                                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                                </div>
-                            </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="img/sidebar/comment-3.jpg" alt="">
-                                </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Active</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
-                                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                                </div>
-                            </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="img/sidebar/comment-4.jpg" alt="">
-                                </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Active</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">Monogatari Series: Second Season</a></h5>
-                                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                                </div>
-                            </div>
-                        </div> -->
-
                     </div>
                 </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/170.png" class="card-img-top zoom-img" alt="Simples">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase"><span>Simples</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Aprenda e jogue rapidamente — diversão garantida para todas as idades
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/125.png" class="card-img-top zoom-img" alt="Único">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase"><span>Único</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Combinações e estratégias únicas que tornam cada partida inesquecível
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/168.png" class="card-img-top zoom-img" alt="Fiel">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase"><span>Fiel</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Reviva as histórias bíblicas de forma épica e autêntica</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-    <!-- Product Section End -->
+
+    <!-- CARDS (claro) -->
+    <section id="cards" class="section--light">
+        <div class="section-inner text-center">
+
+            <div class="section-title text-uppercase mb-4">
+                <h2>- Escolha seus Heróis -</h2>
+            </div>
+
+            <div class="section-text mx-auto" style="max-width: 700px;">
+                Quais heróis lutarão ao seu lado nessa Batalha de Fé?
+            </div><br>
+
+            <div class="row justify-content-center">
+
+                <!-- Card 1 -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/1.png" class="card-img-top zoom-img" alt="MOISÉS">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><span>MOISÉS</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Com Moisés, cada Milagre encontrado se torna uma chama de esperança,
+                                trazendo poder celestial ao campo de batalha</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/2.png" class="card-img-top zoom-img" alt="DAVI">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><span>DAVI</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Davi ataca com precisão implacável, ferindo diretamente os seus
+                                inimigos com golpes certeiros</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/3.png" class="card-img-top zoom-img" alt="ELIAS">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><span>ELIAS</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Com um gesto, Elias traz chamas celestiais que queimam e consomem tudo
+                                diante
+                                dele</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/6.png" class="card-img-top zoom-img" alt="JOSUÉ">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><span>JOSUÉ</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Sob o comando de Josué, cada aliado encontra coragem. Juntos, atacam
+                                com força ampliada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/7.png" class="card-img-top zoom-img" alt="ABRÃAO">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><span>ABRÃAO</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Com o aumento da sua descendência, Abraão aumenta ainda mais sua Fé,
+                                como sinal da
+                                promessa cumprida
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/69.png" class="card-img-top zoom-img" alt="SARA">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><span>SARA</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Enquanto corre atrás do seu Milagre, cada ação aumenta sua fé,
+                                refletindo sua perseverança e confiança</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/8.png" class="card-img-top zoom-img" alt="SANSÃO">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><span>SANSÃO</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Nenhum herói o supera em força bruta: Sansão entra atacando direto,
+                                mostrando
+                                seu poder colossal
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/4.png" class="card-img-top zoom-img" alt="SALOMÃO">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><span>SALOMÃO</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">A presença de Salomão concede conhecimento imediato. Receba sabedoria
+                                adicional para amplificar suas jogadas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-img-container">
+                            <img src="img/herois/12.png" class="card-img-top zoom-img" alt="MARIA">
+                            <div class="fade-overlay"></div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><span>MARIA</span></h5>
+                            <hr class="card-separator">
+                            <p class="card-text">Maria chega com fé e esperança, trazendo consigo um herói que resolve
+                                qualquer situação</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="meta" class="section--light" style="padding-top:0px;">
+        <div class="section-inner text-center">
+
+            <div class="section-title text-uppercase mb-4">
+                <h2>- Construa seu Deck -</h2>
+            </div>
+
+            <div class="section-text mx-auto" style="max-width: 700px;">
+                No Faith Battle cada deck segue seu próprio estilo e estratégia. As cores servem, não como
+                delimitadoras, mas como orientadoras no processo de construção de deck, lhe mostrando caminhos e
+                sinergias,
+                mas nunca limitando sua criatividade.
+                <br><br>
+                É hora de descobrir as cartas e estratégias que melhor representam a sua maneira de jogar. Quais heróis,
+                milagres, pecados e artefatos você vai reunir para criar a sua própria estratégia de vitória?
+            </div><br>
+
+            <!-- ESTILOS -->
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <button class="style-tab w-100 text-center hover-item" data-type="estilo" data-key="agressivo">
+                        <i class="fas fa-hand-back-fist fa-2x mb-1" style="color:#B22222;"></i>
+                        <div>Agressivo</div>
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <button class="style-tab w-100 text-center hover-item" data-type="estilo" data-key="equilibrado">
+                        <i class="fas fa-hand-scissors fa-2x mb-1" style="color:#FFD700;"></i>
+                        <div>Equilibrado</div>
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <button class="style-tab w-100 text-center hover-item" data-type="estilo" data-key="controlador">
+                        <i class="fas fa-hand fa-2x mb-1" style="color:#1E90FF;"></i>
+                        <div>Controlador</div>
+                    </button>
+                </div>
+            </div><br>
+
+            <!-- ARQUÉTIPOS -->
+            <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="batalha">
+                    <i class="fas fa-hand-fist fa-2x mb-1" style="color:#FF8C00;"></i>
+                    <div>Batalha</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="tempestade">
+                    <i class="fas fa-poo-storm fa-2x mb-1" style="color:#32CD32;"></i>
+                    <div>Tempestade</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="aceleracao">
+                    <i class="fas fa-stopwatch fa-2x mb-1" style="color:#8B4513;"></i>
+                    <div>Aceleração</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="santificacao">
+                    <i class="fas fa-droplet fa-2x mb-1"
+                        style="color:whitesmoke; text-shadow: 0 0 1px #000, 0 0 3px #000;"></i>
+                    <div>Santificação</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="arsenal">
+                    <i class="fas fa-toolbox fa-2x mb-1" style="color:#A8B3B4;"></i>
+                    <div>Arsenal</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="combo">
+                    <i class="fas fa-gears fa-2x mb-1" style="color:#800080;"></i>
+                    <div>Combo</div>
+                </button>
+                <button class="archetype-tab text-center hover-item" data-type="arquetipo" data-key="supressao">
+                    <i class="fas fa-ban fa-2x mb-1" style="color:#000000;"></i>
+                    <div>Supressão</div>
+                </button>
+            </div>
+
+            <!-- Conteúdo dinâmico -->
+            <div id="archetype-content" class="archetype-content">
+                <div id="cards-container" class="row g-4 justify-content-center">
+                    <!-- Cartas padrão (iniciais) -->
+                </div>
+                <div id="description" class="mt-4 section-text mx-auto archetype-description"
+                    style="max-width: 700px; font-style: italic;">
+                    <!-- Descrição padrão (iniciais) -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALERIA DE REVIEWS -->
+    <section id="reviews" class="section--dark">
+        <div class="section-inner">
+            <div class="section-title text-uppercase">
+                <h2>Reviews dos Influenciadores</h2>
+            </div>
+            <div class="section-text">
+                Esses influenciadores já testaram o jogo. Confira a opinião deles!
+            </div>
+
+            <!-- Lista de reviewers -->
+            <div id="reviewerList" class="reviewer-list"></div>
+
+            <div id="gridInstagram" class="reviews-wrap"></div>
+
+            <!-- Botões personalizados para abrir todos os reviews -->
+            <div class="reviews-actions">
+                <a href="./review-instagram.html" class="btn-ver-todos btn-instagram">Ver todos os reviews do
+                    Instagram</a>
+                <a href="./review-youtube.html" class="btn-ver-todos btn-youtube">Ver todos os reviews do YouTube</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- REDES SOCIAIS (claro) -->
+    <section id="socials" class="section--dark">
+        <div class="section-inner">
+            <div class="section-title text-uppercase">
+                <h2>Redes Sociais</h2>
+            </div>
+            <div class="section-text">Conecte-se com a comunidade e fique por dentro de todas as novidades:</div>
+
+            <div class="socials" role="list">
+                <a role="listitem" href="https://www.instagram.com/faithbattleoficial/" target="_blank"
+                    class="social-btn instagram">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a role="listitem" href="https://www.youtube.com/channel/UCPCsg_VdBvd-7BSOHlDB0gA" target="_blank"
+                    class="social-btn youtube">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+                <a role="listitem" href="https://discord.gg/cuKWBpxw" target="_blank" class="social-btn discord">
+                    <i class="fab fa-discord"></i> Discord
+                </a>
+                <a role="listitem" href="http://tinyurl.com/2ejfe29j" target="_blank" class="social-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a role="listitem" href="http://www.faithbattleloja.com.br/" target="_blank" class="social-btn loja">
+                    <i class="fas fa-shopping-cart"></i> Loja
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -522,7 +523,8 @@
                     <div class="footer__nav">
                         <ul>
                             <li class="active"><a href="./index.html">Homepage</a></li>
-                            <li><a href="./card-list.html">Listas</a></li>
+                            <li><a href="./card-list.html">Lista de Cards</a></li>
+                            <li><a href="./deck-meta.html">Decks do Meta</a></li>
                             <li><a href="http://www.faithbattleloja.com.br/">Loja</a></li>
                             <!-- <li><a href="./blog.html">Our Blog</a></li> -->
                             <!-- <li><a href="#">Contacts</a></li> -->
@@ -544,27 +546,273 @@
     </footer>
     <!-- Footer Section End -->
 
-    <!-- Search model Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch"><i class="icon_close"></i></div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search model end -->
+    <script>
 
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+        const data = {
+            default: {
+                default: {
+                    desc: "Passe o mouse sobre um estilo ou arquétipo para ver mais detalhes. Aqui você encontrará a essência de como cada forma de jogar molda as batalhas no Faith Battle.",
+                    cards: ["img/versos/normal.png", "img/versos/normal.png", "img/versos/normal.png", "img/versos/normal.png"]
+                }
+            },
+            estilos: {
+                agressivo: {
+                    desc: "Decks agressivos focam em pressionar o inimigo desde o início da partida. A ideia é agir rapidamente, antes que o oponente consiga se preparar. Cada carta busca desenvolver sua estratégia de forma implacável, forçando decisões urgentes e mantendo a tensão constante.",
+                    cards: ["img/herois/10.png", "img/herois/5.png", "img/herois/60.png", "img/milagres/115.png"]
+                },
+                equilibrado: {
+                    desc: "Decks equilibrados misturam ataque e defesa, mantendo versatilidade em qualquer situação. Eles conseguem alternar entre agressividade e controle, aproveitando o melhor dos dois mundos. É o estilo ideal para jogadores que preferem se adaptar ao ritmo do duelo e explorar fraquezas no momento certo.",
+                    cards: ["img/herois/121.png", "img/herois/154.png", "img/milagres/19.png", "img/pecados/27.png"]
+                },
+                controlador: {
+                    desc: "Decks controladores buscam vencer no longo prazo. Eles focam em neutralizar ameaças e desgastar o inimigo até que a vitória seja inevitável. A cada turno, o jogador controlador retira as opções do adversário, mantendo o jogo sob domínio até impor sua condição de vitória de maneira precisa e definitiva.",
+                    cards: ["img/herois/54.png", "img/artefatos/58.png", "img/milagres/169.png", "img/pecados/30.png"]
+                }
+            },
+            arquetipos: {
+                batalha: {
+                    desc: "O arquétipo de Batalha aposta na força bruta e nos confrontos diretos. Aqui, cada jogada é um duelo de poder, onde heróis e milagres se encontram em choques épicos. É a escolha dos jogadores que acreditam que a vitória deve ser conquistada na linha de frente, sem medo de arriscar tudo em combate.",
+                    cards: ["img/herois/61.png", "img/herois/147.png", "img/artefatos/23.png", "img/milagres/13.png"]
+                },
+                santificacao: {
+                    desc: "Santificação é o arquétipo que transforma a fé em sua principal arma, acumulando-a constantemente ao longo da partida. Cada carta fortalece sua resistência e amplia a distância entre seus pontos de fé e os dos oponentes. O objetivo é construir uma vantagem espiritual, garantindo um triunfo inevitável.",
+                    cards: ["img/herois/92.png", "img/artefatos/56.png", "img/milagres/16.png", "img/milagres/127.png"]
+                },
+                combo: {
+                    desc: "Combo depende da sinergia perfeita entre cartas, criando jogadas explosivas e inesperadas. O jogador monta sua estratégia passo a passo, preparando um efeito devastador que muda completamente a partida. É um estilo que exige paciência, cálculo e visão de longo prazo para surpreender o inimigo no momento certo.",
+                    cards: ["img/milagres/18.png", "img/artefatos/141.png", "img/artefatos/149.png", "img/pecados/116.png"]
+                },
+                tempestade: {
+                    desc: "O arquétipo de Tempestade se apoia em sequências de jogadas que se fortalecem a cada interação. Ele utiliza cartas de milagre, efeitos de compra e aumentos de poder para criar uma bola de neve imparável. A cada turno aumentam as suas interações até que o campo inteiro se transforma em uma onda de poder que o inimigo não consegue conter.",
+                    cards: ["img/milagres/20.png", "img/milagres/134.png", "img/milagres/48.png", "img/pecados/132.png"]
+                },
+                arsenal: {
+                    desc: "O Arsenal é o arquétipo da versatilidade, oferecendo ferramentas para lidar com qualquer situação. Seja atacando, defendendo ou se adaptando, ele sempre tem uma resposta à altura. Esse estilo recompensa jogadores criativos, que sabem usar cada carta como uma peça-chave em um tabuleiro cheio de possibilidades.",
+                    cards: ["img/herois/64.png", "img/artefatos/137.png", "img/milagres/29.png", "img/pecados/88.png"]
+                },
+                supressao: {
+                    desc: "Supressão é a arte de sufocar o inimigo, neutralizando cada tentativa de ação ou reação. Seus recursos se concentram em anular, impedir e travar as jogadas do adversário, até deixá-lo sem saída. É a escolha dos estrategistas que preferem vencer pelo controle absoluto, onde cada ação inimiga é prevista e desarmada.",
+                    cards: ["img/herois/93.png", "img/milagres/14.png", "img/artefatos/126.png", "img/pecados/89.png"]
+                },
+                aceleracao: {
+                    desc: "Aceleração aposta em quebrar o ritmo normal do jogo, reduzindo custos e colocando cartas de Sabedoria antes do tempo. Assim, o jogador conquista recursos muito cedo e pode trazer à mesa ameaças poderosas mesmo nos turnos iniciais. Seja com várias pequenas jogadas em sequência ou com efeitos gigantescos e inesperados, esse arquétipo sempre busca estar à frente da curva.",
+                    cards: ["img/herois/146.png", "img/artefatos/49.png", "img/milagres/42.png", "img/milagres/99.png"]
+                }
+            }
+        };
 
+        const descriptionEl = document.getElementById("description");
+        const cardsContainer = document.getElementById("cards-container");
+
+        function updateContent(info) {
+            descriptionEl.textContent = info.desc;
+            cardsContainer.innerHTML = "";
+            info.cards.forEach(src => {
+                const col = document.createElement("div");
+                col.className = "col-6 col-md-3";
+                col.innerHTML = `<img src="${src}" class="img-fluid card-lor" alt="Carta">`;
+                cardsContainer.appendChild(col);
+            });
+        }
+
+        // Hover nos botões
+        document.querySelectorAll(".style-tab, .archetype-tab").forEach(btn => {
+            btn.addEventListener("mouseenter", () => {
+                const type = btn.dataset.type;
+                const key = btn.dataset.key;
+                const info = data[type + "s"][key];
+                if (info) updateContent(info);
+            });
+        });
+
+        // Exibir conteúdo inicial (por exemplo, "Agressivo")
+        updateContent(data.default.default);
+
+        const grid = document.getElementById('gridInstagram');
+        const reviewerList = document.getElementById('reviewerList');
+        let allPosts = [];
+
+        // 👇 Recria a mesma lógica de agrupamento usada em renderReviewers
+        const userAliases = {
+            skullservantdobem: 'Skull Servant do Bem',
+            rafaelfanganiello: 'Rafael Fanganiello',
+        };
+
+        async function carregarPosts() {
+            try {
+                const [instaRes, ytRes] = await Promise.all([
+                    fetch("./review/instagram.json").then(r => r.json()),
+                    fetch("./review/youtube.json").then(r => r.json())
+                ]);
+
+                const instagram = instaRes.map(normalizeInstagram);
+                const youtube = ytRes.map(normalizeYouTube);
+
+                // junta tudo
+                allPosts = [...instagram, ...youtube];
+
+                function getCanonicalUser(user) {
+                    return userAliases[user] || user;
+                }
+
+                const reviewerMap = {};
+
+                allPosts.forEach(p => {
+                    const canonicalUser = getCanonicalUser(p.user || p.channel);
+
+                    if (!reviewerMap[canonicalUser]) {
+                        reviewerMap[canonicalUser] = {
+                            latest: p,
+                            count: 1,
+                            rank: p.rank ?? Infinity,
+                            avatar: p.avatar,
+                            source: p.source || '',
+                        };
+                    } else {
+                        reviewerMap[canonicalUser].count++;
+
+                        if (new Date(p.date) > new Date(reviewerMap[canonicalUser].latest.date)) {
+                            reviewerMap[canonicalUser].latest = p;
+                        }
+
+                        if (p.rank > reviewerMap[canonicalUser].rank) {
+                            reviewerMap[canonicalUser].rank = p.rank;
+                        }
+
+                        if ((p.source || '').toLowerCase() === 'instagram') {
+                            reviewerMap[canonicalUser].avatar = p.avatar;
+                            reviewerMap[canonicalUser].source = p.source;
+                        }
+                    }
+                });
+
+                // 👇 Ordena pelos reviewers mais influentes (rank melhor → count maior)
+                const sortedReviewers = Object.values(reviewerMap)
+                    .sort((a, b) => {
+                        if (a.rank !== b.rank) return b.rank - a.rank; // rank menor é melhor
+                        return b.count - a.count; // mais posts = mais influência
+                    })
+                    .slice(0, 8); // pega só os 8 mais influentes
+
+                // 👇 Extrai o post mais recente de cada um
+                const topPosts = sortedReviewers
+                    .map(r => r.latest)
+                    .sort((a, b) => new Date(b.date) - new Date(a.date)); // ordena os 8 por data
+
+                // Renderiza esses 8 posts
+                renderPosts(topPosts);
+
+                // Atualiza a lista de reviewers normalmente
+                renderReviewers(allPosts);
+
+            } catch (error) {
+                console.error("Erro ao carregar JSON:", error);
+            }
+        }
+
+        function renderPosts(posts) {
+            grid.innerHTML = "";
+            posts.forEach(p => grid.appendChild(createCard(p)));
+        }
+
+        function createCard(p) {
+            const a = document.createElement('a');
+            a.href = p.url;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            a.className = "ig-card";
+            a.setAttribute(
+                'aria-label',
+                `Abrir postagem de ${p.user} no ${p.source === "youtube" ? "YouTube" : "Instagram"}`
+            );
+
+            const relativeDate = formatRelativeDate(p.date);
+
+            a.innerHTML = `
+          <img loading="lazy" class="thumb" src="${p.image}" alt="Imagem do post de ${p.user}">
+          <div class="meta">
+            <div class="avatar"><img src="${p.avatar}" alt="Avatar de ${p.user}"></div>
+            <div class="info">
+              <span class="user">${p.user}</span>
+              <span class="date">${relativeDate}</span>
+            </div>
+          </div>
+        `;
+            return a;
+        }
+
+        // --- Renderiza reviewers ---
+        function renderReviewers(posts) {
+
+            reviewerList.innerHTML = "";
+
+            // Retorna o identificador canônico (final) de um usuário
+            function getCanonicalUser(user) {
+                return userAliases[user] || user;
+            }
+
+            // Mapa de reviewer → { postMaisRecente, totalPosts, rank, sourcePreferida }
+            const reviewerMap = {};
+
+            posts.forEach(p => {
+                const canonicalUser = getCanonicalUser(p.user || p.channel);
+
+                if (!reviewerMap[canonicalUser]) {
+                    reviewerMap[canonicalUser] = {
+                        latest: p,
+                        count: 1,
+                        rank: p.rank ?? Infinity,
+                        avatar: p.avatar,
+                        source: p.source || '',
+                    };
+                } else {
+                    reviewerMap[canonicalUser].count++;
+
+                    // Atualiza o mais recente
+                    if (new Date(p.date) > new Date(reviewerMap[canonicalUser].latest.date)) {
+                        reviewerMap[canonicalUser].latest = p;
+                    }
+
+                    // Mantém o menor rank
+                    if (p.rank < reviewerMap[canonicalUser].rank) {
+                        reviewerMap[canonicalUser].rank = p.rank;
+                    }
+
+                    // 🧠 Preferência: se o novo post vem do YouTube, atualiza o avatar
+                    if ((p.source || '').toLowerCase() === 'instagram') {
+                        reviewerMap[canonicalUser].avatar = p.avatar;
+                        reviewerMap[canonicalUser].source = p.source;
+                    }
+                }
+            });
+
+            // Ordena por rank (menor é melhor), depois por número de posts (maior é melhor)
+            const sortedReviewers = Object.values(reviewerMap)
+                .sort((a, b) => {
+                    if (a.rank !== b.rank) return b.rank - a.rank;
+                    return b.count - a.count;
+                });
+
+            // Renderiza
+            sortedReviewers.forEach(({ latest, avatar }) => {
+                const div = document.createElement('div');
+                div.className = 'reviewer';
+                div.innerHTML = `
+            <a href="${latest.url}" target="_blank">
+                <div class="reviewer-avatar">
+                    <img src="${avatar}" alt="${latest.user || latest.channel}">
+                </div>
+            </a>
+        `;
+                reviewerList.appendChild(div);
+            });
+        }
+
+        carregarPosts();
+
+    </script>
+
+    <script src="integrations/utils-gallery.js"></script>
 
 </body>
 

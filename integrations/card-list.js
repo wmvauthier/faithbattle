@@ -1,4 +1,4 @@
-const CARDS_PER_PAGE = 48; // Número de cards por página
+const CARDS_PER_PAGE = 60; // Número de cards por página
 let currentPage = 1; // Página atual
 let cards = []; // Lista de todos os cards
 
@@ -478,7 +478,7 @@ function renderCards(cards) {
           <h5>
             <a href="#">${costCircledNumber} ${card.name}</a>
             ${
-              card.strength !== 0 && card.resistence !== 0
+              card.strength > 0 || card.resistence > 0
                 ? `<a href="#" style="float:right;">&#9876;${card.strength} / &#10070;${card.resistence}</a>`
                 : ""
             }

@@ -1,0 +1,165 @@
+:root {
+    --bg: #0f1720;
+    --card: #1b2733;
+    --muted: #9aa6b2;
+    --accent: #E1306C;
+    /* rosa instagram-like */
+    --gap: 18px;
+}
+
+.container {
+    /* max-width: 1100px; */
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0 0 18px 0;
+    font-size: 1.6rem;
+    letter-spacing: 0.2px;
+}
+
+/* Grid responsivo */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--gap);
+    align-items: start;
+}
+
+/* Card */
+.ig-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.05));
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+    transition: transform .18s ease, box-shadow .18s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.ig-card {
+    text-decoration: none;
+}
+
+.ig-card .user,
+.ig-card .date {
+    text-decoration: none;
+    display: block;
+}
+
+.ig-card .date {
+    text-decoration: none;
+    color: var(--muted);
+    display: block;
+}
+
+.ig-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(2, 6, 23, 0.75);
+}
+
+.thumb {
+    width: 100%;
+    /* aspect-ratio: 4/4; */
+    /* quadrado */
+    object-fit: cover;
+    display: block;
+}
+
+.meta {
+    padding: 12px 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex: 0 0 40px;
+    background: linear-gradient(135deg, #fff2, #0002);
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info {
+    flex: 1;
+    min-width: 0;
+}
+
+.user {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.caption {
+    font-size: 0.84rem;
+    color: var(--muted);
+    margin-top: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #fff;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    transition: all .14s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.likes {
+    font-size: 0.9rem;
+    color: var(--muted);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* small screens */
+@media (max-width:420px) {
+    .meta {
+        padding: 10px;
+    }
+
+    .card-footer {
+        padding: 8px 10px;
+    }
+}
