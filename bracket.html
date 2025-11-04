@@ -2,921 +2,264 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela de Campeonato - Estilo Swiss</title>
-    <link rel="stylesheet" href="swiss.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double Elimination – Top 8</title>
+    <link rel="stylesheet" href="swiss.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* --- Layout base --- */
+        body {
+            background: radial-gradient(ellipse at top, #0d0e14 0%, #050608 100%);
+            color: #f0f0f0;
+            font-family: "Montserrat", sans-serif;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .bracket-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .bracket-section h1 {
+            color: #f6e27a;
+            font-family: "Cinzel", serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(246, 226, 122, 0.4);
+            border-bottom: 2px solid rgba(246, 226, 122, 0.3);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .rounds {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .round {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 20px 18px;
+            min-width: 380px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            transition: transform 0.2s ease;
+        }
+
+        .round:hover {
+            transform: translateY(-3px);
+            border-color: rgba(246, 226, 122, 0.5);
+            box-shadow: 0 0 25px rgba(246, 226, 122, 0.2);
+        }
+
+        h2 {
+            color: #f6e27a;
+            font-size: 1.1rem;
+            font-family: "Cinzel", serif;
+            margin-bottom: 10px;
+        }
+
+        .matchup {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        .matchup:hover {
+            border-color: rgba(246, 226, 122, 0.3);
+            box-shadow: 0 0 10px rgba(246, 226, 122, 0.15);
+        }
+
+        .player {
+            flex: 1;
+            text-align: left;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .player:last-child {
+            text-align: right;
+            justify-content: flex-end;
+        }
+
+        .vs {
+            flex: 0 0 auto;
+            font-weight: bold;
+            color: #2a6fb4;
+            text-shadow: 0 0 6px rgba(46, 137, 255, 0.4);
+        }
+
+        .win {
+            color: #39d98a;
+            text-shadow: 0 0 6px rgba(57, 217, 138, 0.3);
+        }
+
+        .loss {
+            color: #ff5c7a;
+            text-shadow: 0 0 6px rgba(255, 92, 122, 0.3);
+        }
+
+        .podium {
+            border-color: rgba(246, 226, 122, 0.4);
+            background: linear-gradient(90deg, rgba(246, 226, 122, 0.15), rgba(255, 255, 255, 0.05));
+            box-shadow: 0 0 20px rgba(246, 226, 122, 0.2);
+        }
+
+        /* separação */
+        hr {
+            border: none;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.15);
+            width: 80%;
+            margin: 40px auto;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="capture" style="background-color: rgba(255, 255, 255, 0.05); text-align: center;" class="container">
-        <!-- <h1>Pré-Release GEN - Swiss Phase</h1> -->
-        <div class="rounds row">
+    <div id="capture" class="container">
 
-            <!-- <div class="col">
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">PLAY-IN QUARTERS</h2>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G1</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> William Dobner</div>
-                        <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid fa-xmark"></i> Leandro Alves</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
-                        <div class="vs">VS</div>
-                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G2</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Danilo de Oliveira</div>
-                        <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid fa-question"></i> Davi Brocchieri</div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
-                        <div class="vs">VS</div>
-                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G3</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Jonatan Zanluca</div>
-                        <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid fa-question"></i> Felipe Guimarães</div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
-                        <div class="vs">VS</div>
-                        <div class="player specified"><i class="fa-solid fa-square"></i> Jogador</div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G4</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player loss"><i class="fa-solid fa-question"></i> Mateus Costa</div>
-                        <div class="vs">VS</div>
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Thiago Henrique</div>
-                    </div>
-                </div><br>
-            </div> -->
+        <!-- =============== UPPER BRACKET =============== -->
+        <div class="bracket-section">
+            <h1><i class="fa-solid fa-crown"></i> Upper Bracket</h1>
 
-            <!-- <div class="col">
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">PLAY-IN SEMI-FINALS</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player specified"><i class="fa-solid fa-square"></i></div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G5</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> William Dobner</div>
-                        <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid f-xmark"></i> Danilo de Oliveira</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G6</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Jonatan Zanluca</div>
-                        <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid fa-xmark"></i> Thiago Henrique</div>
-                    </div>
-                </div><br>
-            </div> -->
+            <div class="rounds">
 
-            <!-- <div class="col">
+                <!-- Quarterfinals -->
                 <div class="round">
-                    <h2 style="margin-bottom: 0px;">PLAY-IN FINALS</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                    <h2>Round 1</h2>
+                    <div class="matchup">
+                        <div class="player">Group 1</div>
                         <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
+                        <div class="player">Group 2</div>
                     </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G7</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> João Felipe</div>
+                    <div class="matchup">
+                        <div class="player">Group 1</div>
                         <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid fa-xmark"></i> Luis Oliveira</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G1</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G1</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i></div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G1</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G8</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Cadmiel de Castro</div>
-                        <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid fa-xmark"></i> Cleber Faustino</div>
-                    </div>
-                </div><br>
-            </div> -->
-
-            <div class="col">
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">BRACKETS</h2>
-                </div><br>
-                <div class="round">
-                    <h2>G9</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Yohan Volcov</div>
-                        <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid fa-square-caret-down"></i> Cadmiel de Castro</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2>G10</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Fabrício Machado</div>
-                        <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid fa-question"></i> João Felipe</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2>G11</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player loss"><i class="fa-solid fa-square-caret-down"></i> Agustin Rey</div>
-                        <div class="vs">VS</div>
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Matheus Moreira</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2>G12</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player loss"><i class="fa-solid fa-square-caret-down"></i> William Dobner</div>
-                        <div class="vs">VS</div>
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Jonatan Zanluca</div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">LOWER BRACKET</h2>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G13</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player loss"><i class="fa-solid fa-xmark"></i> Cadmiel de Castro</div>
-                        <div class="vs">VS</div>
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> João Felipe</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G14</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player loss"><i class="fa-solid fa-xmark"></i> Agustin Rey</div>
-                        <div class="vs">VS</div>
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> William Dobner</div>
-                    </div>
-                </div><br>
-            </div>
-
-            <div class="col">
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">UPPER BRACKET</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">LOWER BRACKET</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G15</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> João Felipe</div>
-                        <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid fa-xmark"></i> William Dobner</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-            </div>
-
-            <div class="col">
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">UPPER BRACKET</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2>G16</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player loss"><i class="fa-solid fa-square-caret-down"></i> Yohan Volcov</div>
-                        <div class="vs">VS</div>
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Fabrício Machado</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2>G17</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player loss"><i class="fa-solid fa-square-caret-down"></i> Matheus Moreira</div>
-                        <div class="vs">VS</div>
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Jonatan Zanluca</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">LOWER BRACKET</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G18</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> João Felipe</div>
-                        <div class="vs">VS</div>
-                        <div class="player loss"><i class="fa-solid fa-xmark"></i> Matheus Moreira</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-            </div>
-
-            <div class="col">
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">UPPER BRACKET</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">LOWER BRACKET</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G19</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player loss"><i class="fa-solid fa-xmark"></i> João Felipe</div>
-                        <div class="vs">VS</div>
-                        <div class="player win"><i class="fa-solid fa-square-caret-up"></i> Yohan Volcov</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-            </div>
-
-            <div class="col">
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">SEMI-FINALS UPPER</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2>G20</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player specified"><i class="fa-solid fa-square"></i> Fabrício Machado</div>
-                        <div class="vs">VS</div>
-                        <div class="player specified"><i class="fa-solid fa-square"></i> Jonatan Zanluca</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">SEMI-FINALS LOWER</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round roundElimination">
-                    <h2>G21</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player specified"><i class="fa-solid fa-square"></i> Yohan Volcov</div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> LOS G20</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-            </div>
-
-            <div class="col">
-                <div class="round">
-                    <h2 style="margin-bottom: 0px;">FINALS</h2>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2 style="margin-bottom: 0px;">FINALS</h2>
-                </div><br>
-                <div class="round roundClassification">
-                    <h2>G22</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G20</div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> WIN G21</div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-                <div class="round" style="visibility: hidden;">
-                    <h2>G0</h2>
-                    <div class="matchup" style="margin-bottom: 0px;">
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                        <div class="vs">VS</div>
-                        <div class="player notSpecified"><i class="fa-solid fa-square"></i> </div>
-                    </div>
-                </div><br>
-            </div>
-
-            <div class="col"></div>
-
-            <div class="col">
-
-                <div class="round">
-                    <h2>CLASSIFICAÇÃO</h2>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-star"></i> TOP 1</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-star"></i> TOP 2</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-star"></i> TOP 3</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-star"></i> TOP 4</div>
-                        <div class="vs">-></div>
-                        <div class="player specified">João Felipe</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-star"></i> TOP 5</div>
-                        <div class="vs">-></div>
-                        <div class="player specified">Matheus Moreira</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-star"></i> TOP 6</div>
-                        <div class="vs">-></div>
-                        <div class="player specified">William Dobner</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-star-half-stroke"></i> TOP 7</div>
-                        <div class="vs">-></div>
-                        <div class="player specified">Agustin Rey</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-star-half-stroke"></i> TOP 8</div>
-                        <div class="vs">-></div>
-                        <div class="player specified">Cadmiel de Castro</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-regular fa-star"></i> TOP 9</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Thiago Henrique</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-regular fa-star"></i> TOP 10</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Danilo de Oliveira</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-regular fa-star"></i> TOP 11</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Luis Oliveira</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-regular fa-star"></i> TOP 12</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Cleber Faustino</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-regular fa-star"></i> TOP 13</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Leandro Alves</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-regular fa-star"></i> TOP 14</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Mateus Costa</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-regular fa-star"></i> TOP 15</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Felipe Guimarães</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-regular fa-star"></i> TOP 16</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Davi Brocchieri</div>
+                        <div class="player">Group 2</div>
                     </div>
                 </div>
 
-            </div>
-
-            <div class="col">
-
+                <!-- Semifinals -->
                 <div class="round">
-                    <h2>CLASSIFICAÇÃO</h2>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-user-minus"></i> TOP 17</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">João Cardozo</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-user-minus"></i> TOP 18</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Lucas Febronio</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-user-minus"></i> TOP 19</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Chaingui Rafael</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-user-minus"></i> TOP 20</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Santiago Milano</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-user-minus"></i> TOP 21</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Lautaro Ocampo</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-user-minus"></i> TOP 22</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Fernando Milano</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-user-minus"></i> TOP 23</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Alexandre França</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player specified"><i class="fa-solid fa-user-minus"></i> TOP 24</div>
-                        <div class="vs">-></div>
-                        <div class="player loss">Erykles Silva</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-user-minus"></i> TOP 25</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-user-minus"></i> TOP 26</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-user-minus"></i> TOP 27</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-user-minus"></i> TOP 28</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-user-minus"></i> TOP 29</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-user-minus"></i> TOP 30</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-user-minus"></i> TOP 31</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
-                    </div>
-                    <div class="matchup podium">
-                        <div class="player notSpecified"><i class="fa-solid fa-user-minus"></i> TOP 32</div>
-                        <div class="vs">-></div>
-                        <div class="player notSpecified">Jogador</div>
+                    <h2>Round 2</h2>
+                    <div class="matchup">
+                        <div class="player">Winner of G1</div>
+                        <div class="vs">VS</div>
+                        <div class="player">Winner of G2</div>
                     </div>
                 </div>
 
-            </div>
+                <!-- Final -->
+                <div class="round"></div>
 
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- =============== LOWER BRACKET =============== -->
+        <div class="bracket-section">
+            <h1><i class="fa-solid fa-fire"></i> Lower Bracket</h1>
+
+            <div class="rounds">
+                <!-- Round 1 -->
+                <div class="round">
+                    <h2>Round 1</h2>
+                    <div class="matchup">
+                        <div class="player">Group 3</div>
+                        <div class="vs">VS</div>
+                        <div class="player">Group 3</div>
+                    </div>
+                    <div class="matchup">
+                        <div class="player">Group 3</div>
+                        <div class="vs">VS</div>
+                        <div class="player">Group 3</div>
+                    </div>
+                </div>
+
+                <!-- Round 2 -->
+                <div class="round">
+                    <h2>Round 2</h2>
+                    <div class="matchup">
+                        <div class="player">Winner of G3</div>
+                        <div class="vs">VS</div>
+                        <div class="player">Loser of G1</div>
+                    </div>
+                    <div class="matchup">
+                        <div class="player">Winner of G4</div>
+                        <div class="vs">VS</div>
+                        <div class="player">Loser of G2</div>
+                    </div>
+                </div>
+
+                <!-- Lower Final -->
+                <div class="round">
+                    <h2>Round 3</h2>
+                    <div class="matchup">
+                        <div class="player">Winner of G6</div>
+                        <div class="vs">VS</div>
+                        <div class="player">Winner of G7</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- =============== GRAND FINAL =============== -->
+        <div class="bracket-section">
+            <h1><i class="fa-solid fa-trophy"></i> Grand Final</h1>
+            <div class="rounds">
+
+                <div class="round">
+                    <h2>Lower Finals</h2>
+                    <div class="matchup">
+                        <div class="player">Winner of G8</div>
+                        <div class="vs">VS</div>
+                        <div class="player">Loser of G5</div>
+                    </div>
+                </div>
+
+                <div class="round">
+                    <h2>Championship Match</h2>
+                    <div class="matchup">
+                        <div class="player">Winner of G5</div>
+                        <div class="vs">VS</div>
+                        <div class="player">Winner of G9</div>
+                    </div>
+                </div>
+
+                <div class="round podium">
+                    <h2>🏆 Champion</h2>
+                    <div class="matchup">
+                        <div class="player specified"><i class="fa-solid fa-crown"></i> Champion</div>
+                        <div class="vs">-></div>
+                        <div class="player win">Name of Winner</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <script>
-        
-        // Função que gera o PNG da div depois de 10 segundos
-        function captureDivAsPNG() {
-            const captureElement = document.getElementById('capture');
-
-            // Usa o html2canvas para capturar a div e gerar a imagem PNG, definindo o background como preto
-            html2canvas(captureElement, {
-                backgroundColor: '#000000' // Define o background da captura como preto
-            }).then(canvas => {
-                // Cria um link temporário para baixar o PNG gerado
-                const link = document.createElement('a');
-                link.href = canvas.toDataURL('image/png');
-                link.download = 'captured-div.png';
-                link.click();  // Baixa automaticamente o PNG
-            });
-        }
-
-        // Executa a função automaticamente após 10 segundos
-        // window.onload = function () {
-        //     setTimeout(captureDivAsPNG, 1000); // 10000 ms = 10 segundos
-        // };
-        
-    </script>
-
 </body>
 
-</html>                                                                                      
+</html>

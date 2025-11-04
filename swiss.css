@@ -1,138 +1,554 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ============================
+   Swiss.css — tema "card frame" dourado
+   ============================ */
+
+/* Paleta */
+:root{
+  --bg-deep: #0a0b10;
+  --bg-panel: #11131b;
+  --bg-panel-2: #0d1018;
+  --line: #1b2233;
+
+  --gold-1: #f6e27a;
+  --gold-2: #d8b84c;
+  --gold-3: #a8862f;
+
+  --blue-1: #1b3b6f;
+  --blue-2: #1e4f8a;
+  --blue-3: #2a6fb4;
+  --blue-glow: rgba(46, 137, 255, 0.45);
+
+  --success: #39d98a;
+  --danger: #ff5c7a;
+  --muted: #a8b3c7;
+
+  --text: #e7ecf5;
+  --text-dim: #c7cfdd;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0d0d0d;
-    color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* transform: scale(0.4); */
-      /* transform-origin: top left; */
-      /* width: 250%; Ajuste para simular o zoom */
+/* Reset básico */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* Fundo com “textura” sutil (gradientes sobrepostos) */
+body{
+  font-family: "Cinzel", "Trajan Pro", "Garamond", serif;
+  color: var(--text);
+  background:
+    radial-gradient(1000px 600px at 20% -10%, rgba(40,60,110,.35), transparent 60%),
+    radial-gradient(900px 650px at 110% 0%, rgba(20,120,220,.18), transparent 55%),
+    linear-gradient(180deg, #0a0b12 0%, #07080e 100%);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:40px 24px;
 }
 
-.container {
-    /* max-width: 1200px; */
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 2px solid #00bcd4;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-    overflow: auto;
+/* Container com borda “metálica” e brilho azulado */
+.container{
+  width:min(1600px, 98vw);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0) 18%),
+    linear-gradient(0deg, rgba(255,255,255,.02), rgba(255,255,255,0) 18%),
+    linear-gradient(180deg, var(--bg-panel), var(--bg-panel-2));
+  border-radius:18px;
+  padding:36px 28px 28px;
+  position:relative;
+
+  /* moldura dourada com leve relevo */
+  border:1px solid var(--gold-3);
+  box-shadow:
+    0 0 0 2px rgba(168,134,47,.25) inset,
+    0 0 40px var(--blue-glow),
+    0 8px 24px rgba(0,0,0,.6);
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #00bcd4;
-    text-shadow: 0 0 10px #00bcd4;
+/* filete dourado decorativo no topo */
+.container::before{
+  content:"";
+  position:absolute;
+  inset:10px 14px auto 14px;
+  height:2px;
+  border-radius:2px;
+  background: linear-gradient(90deg, transparent, var(--gold-1), var(--gold-2), transparent);
+  opacity:.9;
 }
 
-.rounds {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+/* título com “engrave” leve */
+h1{
+  font-size: clamp(24px, 3vw, 40px);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-align:center;
+  margin-bottom:28px;
+  color: var(--gold-1);
+  text-shadow:
+    0 0 18px rgba(246,226,122,.35),
+    0 1px 0 rgba(0,0,0,.8);
 }
 
-.round {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
-    display: flex;
-    flex-direction: column; /* Empilha os elementos verticalmente */
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
+/* grid das colunas de rodadas */
+.rounds{
+  display:flex;
+  flex-wrap:wrap;
+  gap:22px;
+  justify-content:center;
 }
 
-.roundClassification {
-    border: 1px solid #00e5ff;
+/* coluna */
+.col{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
 }
 
-.roundElimination {
-    border: 1px solid #ff4c4c;
+/* cartão de rodada com moldura e filetes */
+.round{
+  min-width: 420px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0) 40%),
+    linear-gradient(180deg, rgba(255,255,255,.015), rgba(0,0,0,.06)),
+    radial-gradient(120% 100% at 50% -20%, rgba(33,53,98,.16), transparent 55%),
+    var(--bg-panel-2);
+  border-radius:14px;
+  padding:16px 16px 14px;
+  border:1px solid var(--line);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 0 22px rgba(28,88,160,.25);
+  position:relative;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
-.player {
-    font-size: 1.3rem;
-    color: #00e5ff;
-    text-shadow: 0 0 5px #00e5ff;
+.round:hover{
+  transform: translateY(-2px);
+  border-color: rgba(246,226,122,.45);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05) inset,
+    0 0 28px rgba(46,137,255,.35);
 }
 
-.win {
-    color: #00e5ff;
+/* etiqueta da rodada */
+.round h2{
+  font-family: "Cinzel", serif;
+  font-size: 18px;
+  color: var(--gold-1);
+  letter-spacing:.06em;
+  margin: 2px 0 10px;
+  text-shadow: 0 0 10px rgba(246,226,122,.3);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.round h2::before,
+.round h2::after{
+  content:"";
+  flex:1 1 auto;
+  height:1px;
+  background: linear-gradient(90deg, transparent, rgba(246,226,122,.4), transparent);
 }
 
-.loss {
-    color: #ff4c4c;
-    text-shadow: 0 0 5px #ff4c4c;
+/* partida */
+.matchup{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:12px 14px;
+  border-radius:12px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.06)),
+    radial-gradient(80% 150% at -10% -40%, rgba(46,137,255,.16), transparent 60%),
+    #0d1118;
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.03) inset,
+    0 4px 14px rgba(0,0,0,.35);
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.matchup + .matchup{ margin-top:10px; }
+
+.matchup:hover{
+  border-color: rgba(246,226,122,.35);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05) inset,
+    0 6px 20px rgba(46,137,255,.25);
 }
 
-.notSpecified {
-    color: gray!important;
-    text-shadow: none!important;
+/* jogadores */
+.player{
+  flex:1 1 0;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height:1.2;
+  color: var(--text);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
-.specified {
-    color: whitesmoke!important;
-    text-shadow: none!important;
+/* lado esquerdo/ direito ficam simétricos */
+.player:first-child{ justify-content:flex-start; }
+.player:last-child{ justify-content:flex-end; }
+
+/* marcador VS */
+.vs{
+  flex:0 0 auto;
+  font-weight:700;
+  letter-spacing:.05em;
+  color: var(--blue-3);
+  text-shadow: 0 0 8px var(--blue-glow);
 }
 
-.round h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: whitesmoke;
-    text-shadow: 0 0 10px whitesmoke;
+/* estados */
+.win{
+  color: var(--success);
+  text-shadow: 0 0 10px rgba(57,217,138,.35);
+  font-weight:700;
+}
+.loss{
+  color: var(--danger);
+  text-shadow: 0 0 8px rgba(255,92,122,.3);
+}
+.specified{
+  color: var(--gold-1) !important;
+  text-shadow: 0 0 10px rgba(246,226,122,.25);
+  font-weight:700;
 }
 
-.matchup {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    transition: background-color 0.3s;
-    min-width: 400px;
-}
-
-.matchup:hover {
-    background-color: rgba(0, 188, 212, 0.3);
-}
-
+/* podium/ classificação */
 .podium{
-    text-align: left;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.08)),
+    radial-gradient(140% 120% at 120% -20%, rgba(246,226,122,.15), transparent 50%),
+    #0e1219;
+  border:1px solid rgba(246,226,122,.28);
+}
+.podium:hover{
+  border-color: rgba(246,226,122,.45);
+  box-shadow:
+    0 0 0 1px rgba(246,226,122,.15) inset,
+    0 8px 24px rgba(46,137,255,.25);
 }
 
-.vs {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ff4081;
-    text-shadow: 0 0 5px #ff4081;
-    margin-right: 30px;
-    margin-left: 30px;
+/* variação de moldura por tipo */
+.roundClassification{ border-color: rgba(246,226,122,.5); }
+.roundElimination{ border-color: rgba(255,92,122,.35); }
+
+/* ícones */
+.fa-solid, .fa-regular{
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.15));
+  transition: transform .15s ease;
+}
+.matchup:hover i{ transform: translateY(-1px) scale(1.05); }
+
+/* botão opcional, se você criar um “Baixar imagem” */
+.btn{
+  appearance:none; border:none; cursor:pointer;
+  padding:10px 16px; border-radius:12px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)),
+    linear-gradient(90deg, var(--blue-2), var(--blue-3));
+  color:#fff; font-weight:700; letter-spacing:.04em;
+  box-shadow: 0 6px 20px rgba(46,137,255,.35), inset 0 0 0 1px rgba(255,255,255,.12);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(46,137,255,.45), inset 0 0 0 1px rgba(255,255,255,.16);
+}
+.btn:active{
+  transform: translateY(0);
+  filter: brightness(.96);
 }
 
-@media (max-width: 768px) {
-    .rounds {
-        flex-direction: column;
-    }
-    .player {
-        font-size: 1rem;
-    }
-    .vs {
-        font-size: 1rem;
-    }
+/* responsivo */
+@media (max-width: 980px){
+  .round{ min-width: min(560px, 100%); }
+}
+@media (max-width: 560px){
+  .container{ padding:24px 16px; }
+  .round{ min-width:100%; padding:14px; }
+  .player{ font-size:15px; }
+  .vs{ font-size:14px; }
+}
+/* ============================
+   Swiss.css — tema "card frame" dourado
+   ============================ */
+
+/* Paleta */
+:root{
+  --bg-deep: #0a0b10;
+  --bg-panel: #11131b;
+  --bg-panel-2: #0d1018;
+  --line: #1b2233;
+
+  --gold-1: #f6e27a;
+  --gold-2: #d8b84c;
+  --gold-3: #a8862f;
+
+  --blue-1: #1b3b6f;
+  --blue-2: #1e4f8a;
+  --blue-3: #2a6fb4;
+  --blue-glow: rgba(46, 137, 255, 0.45);
+
+  --success: #39d98a;
+  --danger: #ff5c7a;
+  --muted: #a8b3c7;
+
+  --text: #e7ecf5;
+  --text-dim: #c7cfdd;
+}
+
+/* Reset básico */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* Fundo com “textura” sutil (gradientes sobrepostos) */
+body{
+  font-family: "Cinzel", "Trajan Pro", "Garamond", serif;
+  color: var(--text);
+  background:
+    radial-gradient(1000px 600px at 20% -10%, rgba(40,60,110,.35), transparent 60%),
+    radial-gradient(900px 650px at 110% 0%, rgba(20,120,220,.18), transparent 55%),
+    linear-gradient(180deg, #0a0b12 0%, #07080e 100%);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:40px 24px;
+}
+
+/* Container com borda “metálica” e brilho azulado */
+.container{
+  width:min(1600px, 98vw);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0) 18%),
+    linear-gradient(0deg, rgba(255,255,255,.02), rgba(255,255,255,0) 18%),
+    linear-gradient(180deg, var(--bg-panel), var(--bg-panel-2));
+  border-radius:18px;
+  padding:36px 28px 28px;
+  position:relative;
+
+  /* moldura dourada com leve relevo */
+  border:1px solid var(--gold-3);
+  box-shadow:
+    0 0 0 2px rgba(168,134,47,.25) inset,
+    0 0 40px var(--blue-glow),
+    0 8px 24px rgba(0,0,0,.6);
+}
+
+/* filete dourado decorativo no topo */
+.container::before{
+  content:"";
+  position:absolute;
+  inset:10px 14px auto 14px;
+  height:2px;
+  border-radius:2px;
+  background: linear-gradient(90deg, transparent, var(--gold-1), var(--gold-2), transparent);
+  opacity:.9;
+}
+
+/* título com “engrave” leve */
+h1{
+  font-size: clamp(24px, 3vw, 40px);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-align:center;
+  margin-bottom:28px;
+  color: var(--gold-1);
+  text-shadow:
+    0 0 18px rgba(246,226,122,.35),
+    0 1px 0 rgba(0,0,0,.8);
+}
+
+/* grid das colunas de rodadas */
+.rounds{
+  display:flex;
+  flex-wrap:wrap;
+  gap:22px;
+  justify-content:center;
+}
+
+/* coluna */
+.col{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* cartão de rodada com moldura e filetes */
+.round{
+  min-width: 420px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0) 40%),
+    linear-gradient(180deg, rgba(255,255,255,.015), rgba(0,0,0,.06)),
+    radial-gradient(120% 100% at 50% -20%, rgba(33,53,98,.16), transparent 55%),
+    var(--bg-panel-2);
+  border-radius:14px;
+  padding:16px 16px 14px;
+  border:1px solid var(--line);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 0 22px rgba(28,88,160,.25);
+  position:relative;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.round:hover{
+  transform: translateY(-2px);
+  border-color: rgba(246,226,122,.45);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05) inset,
+    0 0 28px rgba(46,137,255,.35);
+}
+
+/* etiqueta da rodada */
+.round h2{
+  font-family: "Cinzel", serif;
+  font-size: 18px;
+  color: var(--gold-1);
+  letter-spacing:.06em;
+  margin: 2px 0 10px;
+  text-shadow: 0 0 10px rgba(246,226,122,.3);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.round h2::before,
+.round h2::after{
+  content:"";
+  flex:1 1 auto;
+  height:1px;
+  background: linear-gradient(90deg, transparent, rgba(246,226,122,.4), transparent);
+}
+
+/* partida */
+.matchup{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:12px 14px;
+  border-radius:12px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.06)),
+    radial-gradient(80% 150% at -10% -40%, rgba(46,137,255,.16), transparent 60%),
+    #0d1118;
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.03) inset,
+    0 4px 14px rgba(0,0,0,.35);
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.matchup + .matchup{ margin-top:10px; }
+
+.matchup:hover{
+  border-color: rgba(246,226,122,.35);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05) inset,
+    0 6px 20px rgba(46,137,255,.25);
+}
+
+/* jogadores */
+.player{
+  flex:1 1 0;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height:1.2;
+  color: var(--text);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* lado esquerdo/ direito ficam simétricos */
+.player:first-child{ justify-content:flex-start; }
+.player:last-child{ justify-content:flex-end; }
+
+/* marcador VS */
+.vs{
+  flex:0 0 auto;
+  font-weight:700;
+  letter-spacing:.05em;
+  color: var(--blue-3);
+  text-shadow: 0 0 8px var(--blue-glow);
+}
+
+/* estados */
+.win{
+  color: var(--success);
+  text-shadow: 0 0 10px rgba(57,217,138,.35);
+  font-weight:700;
+}
+.loss{
+  color: var(--danger);
+  text-shadow: 0 0 8px rgba(255,92,122,.3);
+}
+.specified{
+  color: var(--gold-1) !important;
+  text-shadow: 0 0 10px rgba(246,226,122,.25);
+  font-weight:700;
+}
+
+/* podium/ classificação */
+.podium{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.08)),
+    radial-gradient(140% 120% at 120% -20%, rgba(246,226,122,.15), transparent 50%),
+    #0e1219;
+  border:1px solid rgba(246,226,122,.28);
+}
+.podium:hover{
+  border-color: rgba(246,226,122,.45);
+  box-shadow:
+    0 0 0 1px rgba(246,226,122,.15) inset,
+    0 8px 24px rgba(46,137,255,.25);
+}
+
+/* variação de moldura por tipo */
+.roundClassification{ border-color: rgba(246,226,122,.5); }
+.roundElimination{ border-color: rgba(255,92,122,.35); }
+
+/* ícones */
+.fa-solid, .fa-regular{
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.15));
+  transition: transform .15s ease;
+}
+.matchup:hover i{ transform: translateY(-1px) scale(1.05); }
+
+/* botão opcional, se você criar um “Baixar imagem” */
+.btn{
+  appearance:none; border:none; cursor:pointer;
+  padding:10px 16px; border-radius:12px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)),
+    linear-gradient(90deg, var(--blue-2), var(--blue-3));
+  color:#fff; font-weight:700; letter-spacing:.04em;
+  box-shadow: 0 6px 20px rgba(46,137,255,.35), inset 0 0 0 1px rgba(255,255,255,.12);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(46,137,255,.45), inset 0 0 0 1px rgba(255,255,255,.16);
+}
+.btn:active{
+  transform: translateY(0);
+  filter: brightness(.96);
+}
+
+/* responsivo */
+@media (max-width: 980px){
+  .round{ min-width: min(560px, 100%); }
+}
+@media (max-width: 560px){
+  .container{ padding:24px 16px; }
+  .round{ min-width:100%; padding:14px; }
+  .player{ font-size:15px; }
+  .vs{ font-size:14px; }
 }
