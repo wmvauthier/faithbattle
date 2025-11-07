@@ -130,8 +130,8 @@
     "date": "2023-12-01",
     "img": "img/pecados/30.png",
     "ocurrences": 2,
-    "ocurrencesInSides": 5,
-    "stars": "1.8",
+    "ocurrencesInSides": 6,
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -147,18 +147,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 21
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 18
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 80,
-        "roundedWidth": 80,
-        "width": 80
+        "rawWidth": 83.33333333333334,
+        "roundedWidth": 83,
+        "width": 83
       }
     ],
     "archetypePercentage": [
@@ -167,54 +167,54 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 10,
-        "roundedWidth": 10,
-        "width": 10
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 7
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 10,
-        "roundedWidth": 10,
-        "width": 10
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 30,
-        "roundedWidth": 30,
-        "width": 30
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 10,
-        "roundedWidth": 10,
-        "width": 10
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Aceleração",
@@ -474,7 +474,7 @@
     "img": "img/pecados/89.png",
     "ocurrences": 2,
     "ocurrencesInSides": 3,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -588,7 +588,7 @@
     "img": "img/pecados/90.png",
     "ocurrences": 3,
     "ocurrencesInSides": 4,
-    "stars": "2.2",
+    "stars": "2.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -915,7 +915,8 @@
   {
     "name": "Vender a Benção",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-"text": "Você pode jogar este pecado quando um oponente jogar um milagre que tenha como alvo um ou mais heróis; Você escolhe um outro alvo válido para o efeito do milagre afetado; Ele se torna o alvo do milagre no lugar de um dos alvos originais definidos quando o milagre foi lançado; O controlador do milagre ganha um marcador que conta como um artefato chamado Prato de Lentilhas; Ele tem a habilidade ENTERRE: Previna o próximo 1 ponto de dano que seria causado ao herói alvo; Isso significa que ele pode enterrar este artefato como um efeito ativado; Quando faz isso, ele previne 1 ponto de dano que seria causado ao herói alvo em qualquer zona de batalha",    "type": "Pecado",
+    "text": "Você pode jogar este pecado quando um oponente jogar um milagre que tenha como alvo um ou mais heróis; Você escolhe um outro alvo válido para o efeito do milagre afetado; Ele se torna o alvo do milagre no lugar de um dos alvos originais definidos quando o milagre foi lançado; O controlador do milagre ganha um marcador que conta como um artefato chamado Prato de Lentilhas; Ele tem a habilidade ENTERRE: Previna o próximo 1 ponto de dano que seria causado ao herói alvo; Isso significa que ele pode enterrar este artefato como um efeito ativado; Quando faz isso, ele previne 1 ponto de dano que seria causado ao herói alvo em qualquer zona de batalha",
+    "type": "Pecado",
     "subtype": "-",
     "categories": "Anulação",
     "cost": 2,
@@ -928,7 +929,7 @@
     "date": "2025-10-01",
     "img": "img/pecados/132.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 6,
+    "ocurrencesInSides": 7,
     "stars": "0.5",
     "stylePercentage": [
       {
@@ -936,27 +937,27 @@
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 44
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
       }
     ],
     "archetypePercentage": [
@@ -965,70 +966,71 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 30
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       },
       {
         "archetype": "Aceleração",
         "backgroundColor": "#8B4513",
         "color": "#fff",
         "icon": "fa-stopwatch",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       }
     ]
   },
   {
     "name": "Salário da Desonra",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-"text": "Você pode jogar este pecado quando você for atacado; Cada herói, em todas as zonas de batalha, recebe 1 ponto de dano; Caso algum herói tenha sido destruído até a etapa de dano de combate, este efeito é repetido; Isso significa que todos os heróis sofrem 1 ponto de dano mais uma vez, e que, se algum outro herói for destruído, o efeito é desencadeado novamente, até que nenhum herói seja destruído; Se um herói bloqueador for retirado do campo, seja por este efeito ou outro, o herói bloqueado por ele continua bloqueado",    "type": "Pecado",
+    "text": "Você pode jogar este pecado quando você for atacado; Cada herói, em todas as zonas de batalha, recebe 1 ponto de dano; Caso algum herói tenha sido destruído até a etapa de dano de combate, este efeito é repetido; Isso significa que todos os heróis sofrem 1 ponto de dano mais uma vez, e que, se algum outro herói for destruído, o efeito é desencadeado novamente, até que nenhum herói seja destruído; Se um herói bloqueador for retirado do campo, seja por este efeito ou outro, o herói bloqueado por ele continua bloqueado",
+    "type": "Pecado",
     "subtype": "-",
     "categories": "Juízo",
     "cost": 6,
@@ -1141,7 +1143,8 @@
   {
     "name": "Inveja entre Irmãos",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-"text": "Você pode jogar este pecado quando um oponente coloca um herói na própria zona de batalha, vindo de qualquer lugar; Aquele herói é destruído; Caso vários heróis entrem na zona de batalha do oponente simultaneamente, você escolhe qual é o alvo deste pecado; O controlador do herói alvo compra duas cartas",    "type": "Pecado",
+    "text": "Você pode jogar este pecado quando um oponente coloca um herói na própria zona de batalha, vindo de qualquer lugar; Aquele herói é destruído; Caso vários heróis entrem na zona de batalha do oponente simultaneamente, você escolhe qual é o alvo deste pecado; O controlador do herói alvo compra duas cartas",
+    "type": "Pecado",
     "subtype": "-",
     "categories": "Remoção",
     "cost": 2,
@@ -1154,35 +1157,35 @@
     "date": "2025-10-01",
     "img": "img/pecados/152.png",
     "ocurrences": 2,
-    "ocurrencesInSides": 7,
-    "stars": "1.8",
+    "ocurrencesInSides": 8,
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 14.285714285714285,
-        "roundedWidth": 14,
-        "width": 14
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 42.857142857142854,
-        "roundedWidth": 43,
-        "width": 44
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 38
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 42.857142857142854,
-        "roundedWidth": 43,
-        "width": 43
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
       }
     ],
     "archetypePercentage": [
@@ -1191,54 +1194,54 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 28.57142857142857,
-        "roundedWidth": 29,
-        "width": 29
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 24
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 7.142857142857142,
-        "roundedWidth": 7,
-        "width": 7
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 21.428571428571427,
-        "roundedWidth": 21,
-        "width": 21
+        "rawWidth": 18.75,
+        "roundedWidth": 19,
+        "width": 19
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 7.142857142857142,
-        "roundedWidth": 7,
-        "width": 7
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 7.142857142857142,
-        "roundedWidth": 7,
-        "width": 7
+        "rawWidth": 6.25,
+        "roundedWidth": 6,
+        "width": 6
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 28.57142857142857,
-        "roundedWidth": 29,
-        "width": 29
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Aceleração",

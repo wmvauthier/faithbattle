@@ -60,7 +60,7 @@
 
         main.three-col {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-columns: 2.3fr 1.6fr 0.1fr;
             gap: 20px;
             align-items: start
         }
@@ -650,6 +650,36 @@
             font-size: 0.95rem;
             pointer-events: none;
         }
+
+        /* Garante que as cartas de sugestões possam "sair" do grid */
+        #suggestionsDeckList {
+            position: relative;
+            overflow: visible !important;
+            z-index: 0;
+        }
+
+        #suggestionsDeckList .card-item {
+            position: relative;
+            overflow: visible;
+            z-index: 1;
+        }
+
+        /* Quando o item está em hover, sobe o z-index */
+        #suggestionsDeckList .card-item:hover {
+            z-index: 9999 !important;
+        }
+
+        /* Corrige o hover-zoom para que fique acima de tudo */
+        #suggestionsDeckList img.hover-zoom {
+            position: relative;
+            z-index: 99999 !important;
+            transform: scale(6.0) !important;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6) !important;
+            cursor: pointer;
+            /* pointer-events: auto mantém o hover ativo */
+            pointer-events: auto;
+        }
+
     </style>
 
 </head>
@@ -927,6 +957,7 @@
                                     </div>
 
                                 </aside>
+
                             </main>
                         </div>
 

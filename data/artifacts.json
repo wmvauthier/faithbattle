@@ -360,7 +360,7 @@
     "date": "2023-12-01",
     "img": "img/artefatos/25.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 1,
+    "ocurrencesInSides": 2,
     "stars": "1.4",
     "stylePercentage": [
       {
@@ -406,9 +406,9 @@
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Combo",
@@ -433,9 +433,9 @@
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Supressão",
@@ -703,7 +703,7 @@
     "img": "img/artefatos/43.png",
     "ocurrences": 2,
     "ocurrencesInSides": 3,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1273,7 +1273,7 @@
     "date": "2024-10-01",
     "img": "img/artefatos/56.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 1,
+    "ocurrencesInSides": 2,
     "stars": "1.4",
     "stylePercentage": [
       {
@@ -1310,9 +1310,9 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Santificação",
@@ -1337,9 +1337,9 @@
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Arsenal",
@@ -1501,8 +1501,122 @@
     "date": "2024-10-01",
     "img": "img/artefatos/58.png",
     "ocurrences": 4,
-    "ocurrencesInSides": 8,
-    "stars": "2.5",
+    "ocurrencesInSides": 9,
+    "stars": "2.4",
+    "stylePercentage": [
+      {
+        "style": "Agressivo",
+        "backgroundColor": "#B22222",
+        "color": "#fff",
+        "icon": "fa-hand-back-fist",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      },
+      {
+        "style": "Equilibrado",
+        "backgroundColor": "#FFD700",
+        "color": "#000",
+        "icon": "fa-hand-scissors",
+        "rawWidth": 44.44444444444444,
+        "roundedWidth": 44,
+        "width": 45
+      },
+      {
+        "style": "Controlador",
+        "backgroundColor": "#1E90FF",
+        "color": "#fff",
+        "icon": "fa-hand",
+        "rawWidth": 55.55555555555556,
+        "roundedWidth": 56,
+        "width": 56
+      }
+    ],
+    "archetypePercentage": [
+      {
+        "archetype": "Batalha",
+        "backgroundColor": "#FF8C00",
+        "color": "#fff",
+        "icon": "fa-hand-fist",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
+      },
+      {
+        "archetype": "Santificação",
+        "backgroundColor": "whitesmoke",
+        "color": "#000",
+        "icon": "fa-droplet",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
+      },
+      {
+        "archetype": "Combo",
+        "backgroundColor": "#800080",
+        "color": "#fff",
+        "icon": "fa-gears",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Tempestade",
+        "backgroundColor": "#32CD32",
+        "color": "#fff",
+        "icon": "fa-poo-storm",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Arsenal",
+        "backgroundColor": "#A8B3B4",
+        "color": "#000",
+        "icon": "fa-toolbox",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Supressão",
+        "backgroundColor": "#000000",
+        "color": "#fff",
+        "icon": "fa-ban",
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
+      },
+      {
+        "archetype": "Aceleração",
+        "backgroundColor": "#8B4513",
+        "color": "#fff",
+        "icon": "fa-stopwatch",
+        "rawWidth": 0,
+        "roundedWidth": 0,
+        "width": 0
+      }
+    ]
+  },
+  {
+    "name": "Punhal do Sacrifício",
+    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
+    "text": "O herói equipado recebe +1 de Ataque, de forma estática; Toda vez que o herói equipado causar dano a um jogador, você ganha 1 ponto de fé, por meio de um efeito desencadeado",
+    "type": "Artefato",
+    "subtype": "-",
+    "categories": "Equipamento;Santificação",
+    "cost": 2,
+    "strength": 0,
+    "resistence": 0,
+    "effects": "Equipável",
+    "keywords": "",
+    "number": 59,
+    "collection": "GEN",
+    "date": "2024-10-01",
+    "img": "img/artefatos/59.png",
+    "ocurrences": 1,
+    "ocurrencesInSides": 2,
+    "stars": "1.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1538,132 +1652,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 18.75,
-        "roundedWidth": 19,
-        "width": 18
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 12
-      },
-      {
-        "archetype": "Combo",
-        "backgroundColor": "#800080",
-        "color": "#fff",
-        "icon": "fa-gears",
-        "rawWidth": 18.75,
-        "roundedWidth": 19,
-        "width": 19
-      },
-      {
-        "archetype": "Tempestade",
-        "backgroundColor": "#32CD32",
-        "color": "#fff",
-        "icon": "fa-poo-storm",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
-      },
-      {
-        "archetype": "Arsenal",
-        "backgroundColor": "#A8B3B4",
-        "color": "#000",
-        "icon": "fa-toolbox",
-        "rawWidth": 18.75,
-        "roundedWidth": 19,
-        "width": 19
-      },
-      {
-        "archetype": "Supressão",
-        "backgroundColor": "#000000",
-        "color": "#fff",
-        "icon": "fa-ban",
-        "rawWidth": 18.75,
-        "roundedWidth": 19,
-        "width": 19
-      },
-      {
-        "archetype": "Aceleração",
-        "backgroundColor": "#8B4513",
-        "color": "#fff",
-        "icon": "fa-stopwatch",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ]
-  },
-  {
-    "name": "Punhal do Sacrifício",
-    "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "O herói equipado recebe +1 de Ataque, de forma estática; Toda vez que o herói equipado causar dano a um jogador, você ganha 1 ponto de fé, por meio de um efeito desencadeado",
-    "type": "Artefato",
-    "subtype": "-",
-    "categories": "Equipamento;Santificação",
-    "cost": 2,
-    "strength": 0,
-    "resistence": 0,
-    "effects": "Equipável",
-    "keywords": "",
-    "number": 59,
-    "collection": "GEN",
-    "date": "2024-10-01",
-    "img": "img/artefatos/59.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 1,
-    "stars": "1.4",
-    "stylePercentage": [
-      {
-        "style": "Agressivo",
-        "backgroundColor": "#B22222",
-        "color": "#fff",
-        "icon": "fa-hand-back-fist",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      },
-      {
-        "style": "Equilibrado",
-        "backgroundColor": "#FFD700",
-        "color": "#000",
-        "icon": "fa-hand-scissors",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 101
-      },
-      {
-        "style": "Controlador",
-        "backgroundColor": "#1E90FF",
-        "color": "#fff",
-        "icon": "fa-hand",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
-      }
-    ],
-    "archetypePercentage": [
-      {
-        "archetype": "Batalha",
-        "backgroundColor": "#FF8C00",
-        "color": "#fff",
-        "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
-      },
-      {
-        "archetype": "Santificação",
-        "backgroundColor": "whitesmoke",
-        "color": "#000",
-        "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Combo",
@@ -1679,9 +1679,9 @@
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Arsenal",
@@ -1697,9 +1697,9 @@
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Aceleração",
@@ -2413,7 +2413,7 @@
     "img": "img/artefatos/137.png",
     "ocurrences": 2,
     "ocurrencesInSides": 7,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2640,8 +2640,8 @@
     "date": "2025-10-01",
     "img": "img/artefatos/141.png",
     "ocurrences": 3,
-    "ocurrencesInSides": 8,
-    "stars": "2.2",
+    "ocurrencesInSides": 9,
+    "stars": "2.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2657,18 +2657,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 44.44444444444444,
+        "roundedWidth": 44,
+        "width": 45
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 55.55555555555556,
+        "roundedWidth": 56,
+        "width": 56
       }
     ],
     "archetypePercentage": [
@@ -2677,61 +2677,61 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 24
+        "rawWidth": 22.22222222222222,
+        "roundedWidth": 22,
+        "width": 21
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 18.75,
-        "roundedWidth": 19,
-        "width": 19
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 6.25,
-        "roundedWidth": 6,
-        "width": 6
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 18.75,
-        "roundedWidth": 19,
-        "width": 19
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Aceleração",
         "backgroundColor": "#8B4513",
         "color": "#fff",
         "icon": "fa-stopwatch",
-        "rawWidth": 6.25,
+        "rawWidth": 5.555555555555555,
         "roundedWidth": 6,
         "width": 6
       }

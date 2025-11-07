@@ -16,36 +16,36 @@
     "collection": "APH",
     "date": "2023-12-01",
     "img": "img/herois/1.png",
-    "ocurrences": 6,
-    "ocurrencesInSides": 9,
-    "stars": "3.3",
+    "ocurrences": 7,
+    "ocurrencesInSides": 10,
+    "stars": "3.5",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 11.11111111111111,
-        "roundedWidth": 11,
-        "width": 12
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 44.44444444444444,
-        "roundedWidth": 44,
-        "width": 44
+        "rawWidth": 40,
+        "roundedWidth": 40,
+        "width": 41
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 44.44444444444444,
-        "roundedWidth": 44,
-        "width": 45
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       }
     ],
     "archetypePercentage": [
@@ -54,54 +54,54 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 27.77777777777778,
-        "roundedWidth": 28,
-        "width": 27
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 11.11111111111111,
-        "roundedWidth": 11,
-        "width": 11
+        "rawWidth": 15,
+        "roundedWidth": 15,
+        "width": 15
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 11.11111111111111,
-        "roundedWidth": 11,
-        "width": 11
+        "rawWidth": 10,
+        "roundedWidth": 10,
+        "width": 10
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 20,
+        "roundedWidth": 20,
+        "width": 20
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 15,
+        "roundedWidth": 15,
+        "width": 15
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 15,
+        "roundedWidth": 15,
+        "width": 15
       },
       {
         "archetype": "Aceleração",
@@ -132,7 +132,7 @@
     "img": "img/herois/2.png",
     "ocurrences": 2,
     "ocurrencesInSides": 4,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -361,7 +361,7 @@
     "img": "img/herois/4.png",
     "ocurrences": 2,
     "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -474,36 +474,36 @@
     "collection": "APH",
     "date": "2023-12-01",
     "img": "img/herois/5.png",
-    "ocurrences": 10,
-    "ocurrencesInSides": 11,
-    "stars": "4.8",
+    "ocurrences": 11,
+    "ocurrencesInSides": 12,
+    "stars": "4.9",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 27.27272727272727,
-        "roundedWidth": 27,
-        "width": 28
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 36.36363636363637,
-        "roundedWidth": 36,
-        "width": 36
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 36.36363636363637,
-        "roundedWidth": 36,
-        "width": 37
+        "rawWidth": 41.66666666666667,
+        "roundedWidth": 42,
+        "width": 42
       }
     ],
     "archetypePercentage": [
@@ -512,63 +512,63 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 31.818181818181817,
-        "roundedWidth": 32,
-        "width": 31
+        "rawWidth": 29.166666666666668,
+        "roundedWidth": 29,
+        "width": 28
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 13.636363636363635,
-        "roundedWidth": 14,
-        "width": 14
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 13.636363636363635,
-        "roundedWidth": 14,
-        "width": 14
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 9.090909090909092,
-        "roundedWidth": 9,
-        "width": 9
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 18.181818181818183,
-        "roundedWidth": 18,
-        "width": 18
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Aceleração",
         "backgroundColor": "#8B4513",
         "color": "#fff",
         "icon": "fa-stopwatch",
-        "rawWidth": 4.545454545454546,
-        "roundedWidth": 5,
-        "width": 5
+        "rawWidth": 4.166666666666666,
+        "roundedWidth": 4,
+        "width": 4
       }
     ]
   },
@@ -704,7 +704,7 @@
     "img": "img/herois/7.png",
     "ocurrences": 4,
     "ocurrencesInSides": 4,
-    "stars": "2.5",
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -818,8 +818,8 @@
     "date": "2023-12-01",
     "img": "img/herois/8.png",
     "ocurrences": 2,
-    "ocurrencesInSides": 3,
-    "stars": "1.8",
+    "ocurrencesInSides": 4,
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -835,18 +835,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 26
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 67
+        "rawWidth": 75,
+        "roundedWidth": 75,
+        "width": 75
       }
     ],
     "archetypePercentage": [
@@ -855,18 +855,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 24
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 12
       },
       {
         "archetype": "Combo",
@@ -882,18 +882,18 @@
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 38
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Supressão",
@@ -909,9 +909,9 @@
         "backgroundColor": "#8B4513",
         "color": "#fff",
         "icon": "fa-stopwatch",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       }
     ]
   },
@@ -934,7 +934,7 @@
     "img": "img/herois/9.png",
     "ocurrences": 2,
     "ocurrencesInSides": 4,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1049,7 +1049,7 @@
     "img": "img/herois/10.png",
     "ocurrences": 5,
     "ocurrencesInSides": 5,
-    "stars": "2.9",
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1162,36 +1162,36 @@
     "collection": "APH",
     "date": "2023-12-01",
     "img": "img/herois/11.png",
-    "ocurrences": 2,
-    "ocurrencesInSides": 7,
-    "stars": "1.8",
+    "ocurrences": 3,
+    "ocurrencesInSides": 8,
+    "stars": "2.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 42.857142857142854,
-        "roundedWidth": 43,
-        "width": 42
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 37
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 28.57142857142857,
-        "roundedWidth": 29,
-        "width": 29
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 28.57142857142857,
-        "roundedWidth": 29,
-        "width": 30
+        "rawWidth": 37.5,
+        "roundedWidth": 38,
+        "width": 39
       }
     ],
     "archetypePercentage": [
@@ -1200,54 +1200,54 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 28.57142857142857,
-        "roundedWidth": 29,
-        "width": 29
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 24
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 7.142857142857142,
-        "roundedWidth": 7,
-        "width": 7
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 21.428571428571427,
-        "roundedWidth": 21,
-        "width": 21
+        "rawWidth": 18.75,
+        "roundedWidth": 19,
+        "width": 19
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 7.142857142857142,
-        "roundedWidth": 7,
-        "width": 7
+        "rawWidth": 12.5,
+        "roundedWidth": 13,
+        "width": 13
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 7.142857142857142,
-        "roundedWidth": 7,
-        "width": 7
+        "rawWidth": 6.25,
+        "roundedWidth": 6,
+        "width": 6
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 28.57142857142857,
-        "roundedWidth": 29,
-        "width": 29
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Aceleração",
@@ -1276,17 +1276,17 @@
     "collection": "APH",
     "date": "2023-12-01",
     "img": "img/herois/12.png",
-    "ocurrences": 3,
-    "ocurrencesInSides": 8,
-    "stars": "2.2",
+    "ocurrences": 4,
+    "ocurrencesInSides": 9,
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
         "width": 12
       },
       {
@@ -1294,18 +1294,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 44.44444444444444,
+        "roundedWidth": 44,
+        "width": 44
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 37.5,
-        "roundedWidth": 38,
-        "width": 39
+        "rawWidth": 44.44444444444444,
+        "roundedWidth": 44,
+        "width": 45
       }
     ],
     "archetypePercentage": [
@@ -1314,25 +1314,25 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 31.25,
-        "roundedWidth": 31,
-        "width": 31
+        "rawWidth": 27.77777777777778,
+        "roundedWidth": 28,
+        "width": 27
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 18.75,
-        "roundedWidth": 19,
-        "width": 19
+        "rawWidth": 22.22222222222222,
+        "roundedWidth": 22,
+        "width": 22
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 6.25,
+        "rawWidth": 5.555555555555555,
         "roundedWidth": 6,
         "width": 6
       },
@@ -1341,18 +1341,18 @@
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 22.22222222222222,
+        "roundedWidth": 22,
+        "width": 22
       },
       {
         "archetype": "Supressão",
@@ -1368,7 +1368,7 @@
         "backgroundColor": "#8B4513",
         "color": "#fff",
         "icon": "fa-stopwatch",
-        "rawWidth": 6.25,
+        "rawWidth": 5.555555555555555,
         "roundedWidth": 6,
         "width": 6
       }
@@ -1507,7 +1507,7 @@
     "img": "img/herois/46.png",
     "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1620,7 +1620,7 @@
     "date": "2023-12-01",
     "img": "img/herois/47.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 1,
+    "ocurrencesInSides": 2,
     "stars": "1.4",
     "stylePercentage": [
       {
@@ -1637,18 +1637,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 100,
-        "roundedWidth": 100,
-        "width": 101
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 51
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       }
     ],
     "archetypePercentage": [
@@ -1657,18 +1657,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Combo",
@@ -1684,18 +1684,18 @@
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Supressão",
@@ -1735,8 +1735,8 @@
     "date": "2024-10-01",
     "img": "img/herois/54.png",
     "ocurrences": 2,
-    "ocurrencesInSides": 6,
-    "stars": "1.8",
+    "ocurrencesInSides": 7,
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -1752,18 +1752,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 30
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 67
+        "rawWidth": 71.42857142857143,
+        "roundedWidth": 71,
+        "width": 71
       }
     ],
     "archetypePercentage": [
@@ -1772,8 +1772,8 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
         "width": 8
       },
       {
@@ -1781,45 +1781,45 @@
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 22
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Aceleração",
@@ -1849,36 +1849,36 @@
     "collection": "GEN",
     "date": "2024-10-01",
     "img": "img/herois/60.png",
-    "ocurrences": 4,
-    "ocurrencesInSides": 6,
-    "stars": "2.5",
+    "ocurrences": 5,
+    "ocurrencesInSides": 7,
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 28
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 29
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 44
       }
     ],
     "archetypePercentage": [
@@ -1887,54 +1887,54 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 30
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Aceleração",
@@ -1965,7 +1965,7 @@
     "img": "img/herois/62.png",
     "ocurrences": 2,
     "ocurrencesInSides": 2,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2193,7 +2193,7 @@
     "img": "img/herois/64.png",
     "ocurrences": 3,
     "ocurrencesInSides": 6,
-    "stars": "2.2",
+    "stars": "2.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2306,7 +2306,7 @@
     "date": "2024-10-01",
     "img": "img/herois/66.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 6,
+    "ocurrencesInSides": 7,
     "stars": "1.4",
     "stylePercentage": [
       {
@@ -2314,27 +2314,27 @@
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 30
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 50
+        "rawWidth": 57.14285714285714,
+        "roundedWidth": 57,
+        "width": 57
       }
     ],
     "archetypePercentage": [
@@ -2343,63 +2343,63 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 22
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 22
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       },
       {
         "archetype": "Aceleração",
         "backgroundColor": "#8B4513",
         "color": "#fff",
         "icon": "fa-stopwatch",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       }
     ]
   },
@@ -2420,35 +2420,35 @@
     "date": "2024-10-01",
     "img": "img/herois/68.png",
     "ocurrences": 6,
-    "ocurrencesInSides": 12,
-    "stars": "3.3",
+    "ocurrencesInSides": 13,
+    "stars": "3.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 23.076923076923077,
+        "roundedWidth": 23,
+        "width": 23
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 30.76923076923077,
+        "roundedWidth": 31,
+        "width": 32
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 41.66666666666667,
-        "roundedWidth": 42,
-        "width": 42
+        "rawWidth": 46.15384615384615,
+        "roundedWidth": 46,
+        "width": 46
       }
     ],
     "archetypePercentage": [
@@ -2457,61 +2457,61 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 32
+        "rawWidth": 30.76923076923077,
+        "roundedWidth": 31,
+        "width": 30
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 11.538461538461538,
+        "roundedWidth": 12,
+        "width": 12
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "rawWidth": 11.538461538461538,
+        "roundedWidth": 12,
+        "width": 12
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "rawWidth": 15.384615384615385,
+        "roundedWidth": 15,
+        "width": 15
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "rawWidth": 11.538461538461538,
+        "roundedWidth": 12,
+        "width": 12
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 15.384615384615385,
+        "roundedWidth": 15,
+        "width": 15
       },
       {
         "archetype": "Aceleração",
         "backgroundColor": "#8B4513",
         "color": "#fff",
         "icon": "fa-stopwatch",
-        "rawWidth": 4.166666666666666,
+        "rawWidth": 3.8461538461538463,
         "roundedWidth": 4,
         "width": 4
       }
@@ -2533,9 +2533,9 @@
     "collection": "GEN",
     "date": "2024-10-01",
     "img": "img/herois/69.png",
-    "ocurrences": 4,
-    "ocurrencesInSides": 5,
-    "stars": "2.5",
+    "ocurrences": 5,
+    "ocurrencesInSides": 6,
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2551,18 +2551,18 @@
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 21
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 18
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 80,
-        "roundedWidth": 80,
-        "width": 80
+        "rawWidth": 83.33333333333334,
+        "roundedWidth": 83,
+        "width": 83
       }
     ],
     "archetypePercentage": [
@@ -2571,54 +2571,54 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 10,
-        "roundedWidth": 10,
-        "width": 10
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 7
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 25,
+        "roundedWidth": 25,
+        "width": 25
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 10,
-        "roundedWidth": 10,
-        "width": 10
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Aceleração",
@@ -2878,7 +2878,7 @@
     "img": "img/herois/61.png",
     "ocurrences": 7,
     "ocurrencesInSides": 7,
-    "stars": "3.7",
+    "stars": "3.5",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -2992,7 +2992,7 @@
     "img": "img/herois/67.png",
     "ocurrences": 2,
     "ocurrencesInSides": 3,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -3106,7 +3106,7 @@
     "img": "img/herois/92.png",
     "ocurrences": 2,
     "ocurrencesInSides": 3,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -3333,7 +3333,7 @@
     "date": "2024-10-01",
     "img": "img/herois/65.png",
     "ocurrences": 1,
-    "ocurrencesInSides": 5,
+    "ocurrencesInSides": 6,
     "stars": "1.4",
     "stylePercentage": [
       {
@@ -3341,27 +3341,27 @@
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 41
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
+        "rawWidth": 50,
+        "roundedWidth": 50,
+        "width": 50
       }
     ],
     "archetypePercentage": [
@@ -3370,18 +3370,18 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 40,
-        "roundedWidth": 40,
-        "width": 40
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
       },
       {
         "archetype": "Combo",
@@ -3397,18 +3397,18 @@
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 30,
-        "roundedWidth": 30,
-        "width": 30
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 20,
-        "roundedWidth": 20,
-        "width": 20
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Supressão",
@@ -3424,9 +3424,9 @@
         "backgroundColor": "#8B4513",
         "color": "#fff",
         "icon": "fa-stopwatch",
-        "rawWidth": 10,
-        "roundedWidth": 10,
-        "width": 10
+        "rawWidth": 8.333333333333332,
+        "roundedWidth": 8,
+        "width": 8
       }
     ]
   },
@@ -3448,7 +3448,7 @@
     "img": "img/herois/120.png",
     "ocurrences": 2,
     "ocurrencesInSides": 3,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -3676,7 +3676,7 @@
     "img": "img/herois/125.png",
     "ocurrences": 3,
     "ocurrencesInSides": 6,
-    "stars": "2.2",
+    "stars": "2.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -3790,7 +3790,7 @@
     "img": "img/herois/129.png",
     "ocurrences": 3,
     "ocurrencesInSides": 4,
-    "stars": "2.2",
+    "stars": "2.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -4133,7 +4133,7 @@
     "img": "img/herois/139.png",
     "ocurrences": 2,
     "ocurrencesInSides": 4,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -4247,7 +4247,7 @@
     "img": "img/herois/143.png",
     "ocurrences": 3,
     "ocurrencesInSides": 6,
-    "stars": "2.2",
+    "stars": "2.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -4361,7 +4361,7 @@
     "img": "img/herois/146.png",
     "ocurrences": 3,
     "ocurrencesInSides": 6,
-    "stars": "2.2",
+    "stars": "2.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -4475,7 +4475,7 @@
     "img": "img/herois/147.png",
     "ocurrences": 4,
     "ocurrencesInSides": 5,
-    "stars": "2.5",
+    "stars": "2.4",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -4702,35 +4702,35 @@
     "date": "2025-10-01",
     "img": "img/herois/150.png",
     "ocurrences": 5,
-    "ocurrencesInSides": 6,
-    "stars": "2.9",
+    "ocurrencesInSides": 7,
+    "stars": "2.8",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 16
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 66.66666666666666,
-        "roundedWidth": 67,
-        "width": 67
+        "rawWidth": 57.14285714285714,
+        "roundedWidth": 57,
+        "width": 58
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 18
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 29
       }
     ],
     "archetypePercentage": [
@@ -4739,54 +4739,54 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 34
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 29
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 29
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       },
       {
         "archetype": "Aceleração",
@@ -4816,35 +4816,35 @@
     "date": "2025-10-01",
     "img": "img/herois/151.png",
     "ocurrences": 3,
-    "ocurrencesInSides": 8,
-    "stars": "2.2",
+    "ocurrencesInSides": 9,
+    "stars": "2.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 37.5,
-        "roundedWidth": 38,
-        "width": 37
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 37.5,
-        "roundedWidth": 38,
-        "width": 38
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 26
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       }
     ],
     "archetypePercentage": [
@@ -4853,43 +4853,43 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 37.5,
-        "roundedWidth": 38,
-        "width": 37
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 32
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 6.25,
-        "roundedWidth": 6,
-        "width": 6
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 6.25,
+        "rawWidth": 5.555555555555555,
         "roundedWidth": 6,
         "width": 6
       },
@@ -4898,16 +4898,16 @@
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 18.75,
-        "roundedWidth": 19,
-        "width": 19
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Aceleração",
         "backgroundColor": "#8B4513",
         "color": "#fff",
         "icon": "fa-stopwatch",
-        "rawWidth": 6.25,
+        "rawWidth": 5.555555555555555,
         "roundedWidth": 6,
         "width": 6
       }
@@ -4931,7 +4931,7 @@
     "img": "img/herois/154.png",
     "ocurrences": 2,
     "ocurrencesInSides": 5,
-    "stars": "1.8",
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -5157,36 +5157,36 @@
     "collection": "FIS",
     "date": "2025-10-01",
     "img": "img/herois/170.png",
-    "ocurrences": 1,
-    "ocurrencesInSides": 6,
-    "stars": "1.4",
+    "ocurrences": 2,
+    "ocurrencesInSides": 7,
+    "stars": "1.7",
     "stylePercentage": [
       {
         "style": "Agressivo",
         "backgroundColor": "#B22222",
         "color": "#fff",
         "icon": "fa-hand-back-fist",
-        "rawWidth": 33.33333333333333,
-        "roundedWidth": 33,
-        "width": 33
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 28
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 50,
-        "roundedWidth": 50,
-        "width": 51
+        "rawWidth": 42.857142857142854,
+        "roundedWidth": 43,
+        "width": 43
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 16.666666666666664,
-        "roundedWidth": 17,
-        "width": 17
+        "rawWidth": 28.57142857142857,
+        "roundedWidth": 29,
+        "width": 30
       }
     ],
     "archetypePercentage": [
@@ -5195,54 +5195,54 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 41.66666666666667,
-        "roundedWidth": 42,
-        "width": 43
+        "rawWidth": 35.714285714285715,
+        "roundedWidth": 36,
+        "width": 37
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 14.285714285714285,
+        "roundedWidth": 14,
+        "width": 14
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 8.333333333333332,
-        "roundedWidth": 8,
-        "width": 8
+        "rawWidth": 7.142857142857142,
+        "roundedWidth": 7,
+        "width": 7
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 21.428571428571427,
+        "roundedWidth": 21,
+        "width": 21
       },
       {
         "archetype": "Aceleração",
@@ -5272,8 +5272,8 @@
     "date": "2025-10-01",
     "img": "img/herois/128.png",
     "ocurrences": 3,
-    "ocurrencesInSides": 8,
-    "stars": "2.2",
+    "ocurrencesInSides": 9,
+    "stars": "2.1",
     "stylePercentage": [
       {
         "style": "Agressivo",
@@ -5282,25 +5282,25 @@
         "icon": "fa-hand-back-fist",
         "rawWidth": 0,
         "roundedWidth": 0,
-        "width": -1
+        "width": 0
       },
       {
         "style": "Equilibrado",
         "backgroundColor": "#FFD700",
         "color": "#000",
         "icon": "fa-hand-scissors",
-        "rawWidth": 37.5,
-        "roundedWidth": 38,
-        "width": 38
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 34
       },
       {
         "style": "Controlador",
         "backgroundColor": "#1E90FF",
         "color": "#fff",
         "icon": "fa-hand",
-        "rawWidth": 62.5,
-        "roundedWidth": 63,
-        "width": 64
+        "rawWidth": 66.66666666666666,
+        "roundedWidth": 67,
+        "width": 67
       }
     ],
     "archetypePercentage": [
@@ -5309,61 +5309,61 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 18.75,
-        "roundedWidth": 19,
-        "width": 18
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 18.75,
-        "roundedWidth": 19,
-        "width": 19
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 6.25,
-        "roundedWidth": 6,
-        "width": 6
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
       },
       {
         "archetype": "Arsenal",
         "backgroundColor": "#A8B3B4",
         "color": "#000",
         "icon": "fa-toolbox",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 22.22222222222222,
+        "roundedWidth": 22,
+        "width": 22
       },
       {
         "archetype": "Supressão",
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 12.5,
-        "roundedWidth": 13,
-        "width": 13
+        "rawWidth": 11.11111111111111,
+        "roundedWidth": 11,
+        "width": 11
       },
       {
         "archetype": "Aceleração",
         "backgroundColor": "#8B4513",
         "color": "#fff",
         "icon": "fa-stopwatch",
-        "rawWidth": 6.25,
+        "rawWidth": 5.555555555555555,
         "roundedWidth": 6,
         "width": 6
       }
@@ -5372,7 +5372,7 @@
   {
     "name": "Aser",
     "flavor": "... Assim Davi venceu o filisteu com uma funda e uma pedra; sem espada na mão ele derrubou o filisteu e o matou - 1 Samuel 17:50",
-    "text": "Jó não pode sofrer efeitos de cartas de Pecado e suas próprias cartas não podem ser afetadas por eles, conforme efeito estático",
+    "text": "Na sua fase inicial, você é obrigado a descartar uma carta, como um efeito desencadeado; Na sua fase final, cada oponente compra uma carta e você ganha X pontos de fé, como um efeito desencadeado;Este X corresponde ao número de jogadores.",
     "type": "Herói de Fé",
     "subtype": "-",
     "categories": "Santificação;Descarte Próprio",
@@ -5386,7 +5386,7 @@
     "date": "2025-10-01",
     "img": "img/herois/171.png",
     "ocurrences": 0,
-    "ocurrencesInSides": 2,
+    "ocurrencesInSides": 3,
     "stars": "0.5",
     "stylePercentage": [
       {
@@ -5423,36 +5423,36 @@
         "backgroundColor": "#FF8C00",
         "color": "#fff",
         "icon": "fa-hand-fist",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 16
       },
       {
         "archetype": "Santificação",
         "backgroundColor": "whitesmoke",
         "color": "#000",
         "icon": "fa-droplet",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 33.33333333333333,
+        "roundedWidth": 33,
+        "width": 33
       },
       {
         "archetype": "Combo",
         "backgroundColor": "#800080",
         "color": "#fff",
         "icon": "fa-gears",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Tempestade",
         "backgroundColor": "#32CD32",
         "color": "#fff",
         "icon": "fa-poo-storm",
-        "rawWidth": 0,
-        "roundedWidth": 0,
-        "width": 0
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Arsenal",
@@ -5468,9 +5468,9 @@
         "backgroundColor": "#000000",
         "color": "#fff",
         "icon": "fa-ban",
-        "rawWidth": 25,
-        "roundedWidth": 25,
-        "width": 25
+        "rawWidth": 16.666666666666664,
+        "roundedWidth": 17,
+        "width": 17
       },
       {
         "archetype": "Aceleração",

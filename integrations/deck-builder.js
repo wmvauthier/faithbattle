@@ -1492,7 +1492,7 @@ function generateArchetypeSelect() {
 }
 
 function generateArchetype2Select() {
-  const archetypes = Array.from(new Set(allDecks.map((d) => d.archetype2)));
+  const archetypes = Array.from(new Set(allDecks.map((d) => d.archetype)));
   const select = createSelectContainer(
     "addByArchetype2List",
     "addByArchetype2Icon",
