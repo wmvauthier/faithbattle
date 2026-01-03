@@ -177,7 +177,7 @@ async function renderPage(page) {
       <div class="tile">
           <div class="wrapper">
 
-              <div class="banner-img" style="width: 100%; height: 250px; overflow: hidden; position: relative;">
+              <div class="banner-img" style="width: 100%; height: 380px; overflow: hidden; position: relative;">
                 <img src="${deck.img}" alt="."
                     style="width: 100%; height: 100%; transform: scale(1.9); object-fit: cover; position: absolute; top: 100px; left: 0;">
               </div>
